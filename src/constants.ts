@@ -1,0 +1,1 @@
+export const LS_KEY = 'vtm_character_sheet';
