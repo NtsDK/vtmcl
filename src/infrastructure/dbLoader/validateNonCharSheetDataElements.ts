@@ -22,7 +22,9 @@ export const logSchema: JSONSchemaType<Log> = {
 };
 
 export const versionSchema: JSONSchemaType<Version> = {
+  // type: "string",
   type: "string",
+  pattern: '0.1.1'
 };
 
 export const settingsSchema: JSONSchemaType<Settings> = {

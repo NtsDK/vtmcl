@@ -1,30 +1,62 @@
 import React, { useState, PropsWithChildren } from "react";
 import { useContext } from "react";
-// import { 
+import { 
 //   GameStorageService, 
 //   ServerDatabaseStorageService, 
 //   ServerStorageService,
 //   ErrorDescriptionService,
-// } from "../application/ports";
+  AbilitiesService,
+  AttributesService,
+  DisciplinesService,
+  LogService,
+  MeritsNFlawsService,
+  MetaService,
+  NotesService,
+  ProfileService,
+  SettingsService,
+  StateNHealthService,
+  BackgroundsService,
+  VirtuesService,
+} from "../application/ports";
+import { 
+  Abilities,
+  Attributes,
+  Backgrounds,
+  Disciplines,
+  Flaws,
+  Health, 
+  Log, 
+  Merits, 
+  Meta, 
+  Notes, 
+  Profile, 
+  Settings, 
+  State,
+  Virtues,
+} from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
 // import { Server, ServerStatus } from "../domain/server";
 // import { ServerDatabase } from "../domain/serverDatabase";
 import { getCharSheetFromLS, saveCharSheetInLS } from "../infrastructure/lsDbService";
+import { initialAbilities, initialAttributes, initialBackgrounds, initialDisciplines, initialFlaws, initialHealth, initialLog, initialMerits, initialMeta, initialNotes, initialProfile, initialSettings, initialState, initialVirtues } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
-// interface StateStore extends 
-//   GameStorageService, 
-//   ServerStorageService,
-//   ServerDatabaseStorageService,
-//   ErrorDescriptionService
-// {
-// }
-interface StateStore {
+interface StateStore extends 
+  ProfileService,
+  AttributesService,
+  AbilitiesService,
+  DisciplinesService,
+  BackgroundsService,
+  VirtuesService,
+  MeritsNFlawsService,
+  StateNHealthService,
+  NotesService,
+  LogService,
+  MetaService,
+  SettingsService
+{
 }
-
-// const initialGames: Game[] = [];
-// const initialServers: Server[] = [];
 
 // @ts-ignore
 const StoreContext = React.createContext<StateStore>({});
@@ -36,6 +68,23 @@ interface ProviderProps {
 export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children }) => {
 
   const [initialized, setInitialized] = useState(false);
+
+  const [profile, setProfile] = useState<Profile>(initialProfile);
+  const [attributes, setAttributes] = useState<Attributes>(initialAttributes);
+  const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
+  const [disciplines, setDisciplines] = useState<Disciplines>(initialDisciplines);
+  const [backgrounds, setBackgrounds] = useState<Backgrounds>(initialBackgrounds);
+  const [virtues, setVirtues] = useState<Virtues>(initialVirtues);
+  const [merits, setMerits] = useState<Merits>(initialMerits);
+  const [flaws, setFlaws] = useState<Flaws>(initialFlaws);
+  const [state, setState] = useState<State>(initialState);
+  const [health, setHealth] = useState<Health>(initialHealth);
+  const [notes, setNotes] = useState<Notes>(initialNotes);
+  
+  const [settings, setSettings] = useState<Settings>(initialSettings);
+  const [meta, setMeta] = useState<Meta>(initialMeta);
+  const [log, setLog] = useState<Log>(initialLog);
+
   // const [servers, innerSetServers] = useState<Server[]>(initialServers);
   // // const [games, setGames] = useState<Game[]>([]);
   // const [games, innerSetGames] = useState<Game[]>(initialGames);
@@ -48,12 +97,44 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setInitialized(true);
     const cs = getCharSheetFromLS();
     if (cs !== null) {
+      setProfile(cs.profile);
+      setAttributes(cs.attributes);
+      setAbilities(cs.abilities);
+      setDisciplines(cs.disciplines);
+      setBackgrounds(cs.backgrounds);
+      setVirtues(cs.virtues);
+      setMerits(cs.merits);
+      setFlaws(cs.flaws);
+      setState(cs.state);
+      setHealth(cs.health);
+      setNotes(cs.notes);
+
+      setSettings(cs.Settings);
+      setLog(cs.Log);
+      setMeta(cs.Meta);
     //   innerSetServers(db.serverData);
     //   innerSetGames(db.gameData);
     }
   }
 
   const value: StateStore = {
+    profile,
+    health,
+    state,
+
+    settings,
+    
+    notes,
+    meta,
+    merits,
+    flaws,
+    log,
+    disciplines,
+    attributes,
+    abilities,
+    backgrounds,
+    virtues,
+
     // servers,
     // // setServers: innerSetServers,
     // setServers: function(servers: Server[]): void {
