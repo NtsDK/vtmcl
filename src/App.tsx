@@ -16,6 +16,8 @@ import { Header } from "./ui/Header";
 import { ErrorNotification } from './ui/ErrorNotification';
 import { CharSheetPage } from './ui/CharSheetPage';
 import { InstructionPage } from './ui/CharSheetPage/InstructionPage';
+import { LogPage } from './ui/LogPage';
+import { AboutPage } from './ui/AboutPage';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Switch>
           <Route path="/charsheet" component={CharSheetPage} />
           <Route path="/instruction" component={InstructionPage} />
+          <Route path="/log" component={LogPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/" component={CharSheetPage} />
         </Switch>
       </div>

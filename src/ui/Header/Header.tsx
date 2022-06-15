@@ -47,6 +47,22 @@ export function Header(props: HeaderProps) {
                 {t('header.instruction')}
               </NavLink>
             </Nav.Item>
+            <Nav.Item as="li">
+              <NavLink
+                className="tw-px-3 tw-py-2 tw-text-lg"
+                to={'/log'}
+              >
+                {t('header.logViewer')}
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <NavLink
+                className="tw-px-3 tw-py-2 tw-text-lg"
+                to={'/about'}
+              >
+                {t('header.about')}
+              </NavLink>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
 
