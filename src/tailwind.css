@@ -466,8 +466,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.tw-fixed {
+  position: fixed;
+}
+
+.tw-top-8 {
+  top: 2rem;
+}
+
+.tw-right-8 {
+  right: 2rem;
+}
+
 .tw-hidden {
   display: none;
+}
+
+.tw-w-96 {
+  width: 24rem;
 }
 
 .tw-px-3 {
@@ -492,4 +508,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.tw-shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.tw-shadow-black {
+  --tw-shadow-color: #000;
+  --tw-shadow: var(--tw-shadow-colored);
 }

@@ -13,13 +13,14 @@ import { Settings } from "luxon";
 import { defaultLang } from "./i18nResources";
 
 import { Header } from "./ui/Header";
+import { ErrorNotification } from './ui/ErrorNotification';
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Header />
-        {/* <ErrorNotification /> */}
+        <ErrorNotification />
         {/* <Switch>
           <Route path="/games" component={GamePage} />
           <Route path="/servers" component={ServerPage} />

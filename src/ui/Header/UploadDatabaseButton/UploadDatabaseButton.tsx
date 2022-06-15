@@ -76,11 +76,21 @@ export function UploadDatabaseButton(props) {
           console.log('Ошибка при загрузке базы', database2, validateCharSheetInJson.errors);
 
         } catch (error) {
+          setErrorDescription({
+            title: 'Ошибка при загрузке базы',
+            text: 'См. консоль разработчика'
+          });
           console.log('Ошибка при загрузке базы', database2, error);
         }
       } else {
         setCharSheet(charSheetFromJson(database2));
       }
+    }).catch(error => {
+      setErrorDescription({
+        title: 'Ошибка при загрузке базы',
+        text: 'См. консоль разработчика'
+      });
+      console.log('Ошибка при загрузке базы', error);
     });
   }
 
