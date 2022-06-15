@@ -14,6 +14,8 @@ import { defaultLang } from "./i18nResources";
 
 import { Header } from "./ui/Header";
 import { ErrorNotification } from './ui/ErrorNotification';
+import { CharSheetPage } from './ui/CharSheetPage';
+import { InstructionPage } from './ui/CharSheetPage/InstructionPage';
 
 function App() {
   return (
@@ -21,29 +23,13 @@ function App() {
       <div className="app">
         <Header />
         <ErrorNotification />
-        {/* <Switch>
-          <Route path="/games" component={GamePage} />
-          <Route path="/servers" component={ServerPage} />
-          <Route path="/" component={GamePage} />
-        </Switch> */}
+        <Switch>
+          <Route path="/charsheet" component={CharSheetPage} />
+          <Route path="/instruction" component={InstructionPage} />
+          <Route path="/" component={CharSheetPage} />
+        </Switch>
       </div>
     </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
