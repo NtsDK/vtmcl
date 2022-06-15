@@ -4,7 +4,7 @@ import {
 //   GameStorageService, 
 //   ServerDatabaseStorageService, 
 //   ServerStorageService,
-//   ErrorDescriptionService,
+  ErrorDescriptionService,
   AbilitiesService,
   AttributesService,
   DisciplinesService,
@@ -17,12 +17,15 @@ import {
   StateNHealthService,
   BackgroundsService,
   VirtuesService,
+  CharSheetStorageService,
 } from "../application/ports";
 import { 
   Abilities,
   Attributes,
   Backgrounds,
+  CharSheet,
   Disciplines,
+  ErrorDescription,
   Flaws,
   Health, 
   Log, 
@@ -39,8 +42,25 @@ import {
 // import { Server, ServerStatus } from "../domain/server";
 // import { ServerDatabase } from "../domain/serverDatabase";
 import { getCharSheetFromLS, saveCharSheetInLS } from "../infrastructure/lsDbService";
-import { initialAbilities, initialAttributes, initialBackgrounds, initialDisciplines, initialFlaws, initialHealth, initialLog, initialMerits, initialMeta, initialNotes, initialProfile, initialSettings, initialState, initialVirtues } from "./initialValues";
+import { 
+  initialAbilities, 
+  initialAttributes, 
+  initialBackgrounds, 
+  initialDisciplines, 
+  initialFlaws, 
+  initialHealth, 
+  initialLog, 
+  initialMerits, 
+  initialMeta, 
+  initialNotes, 
+  initialProfile, 
+  initialSettings, 
+  initialState, 
+  initialVirtues 
+} from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
+
+import { CURRENT_VERSION } from "../constants";
 
 interface StateStore extends 
   ProfileService,
@@ -54,7 +74,9 @@ interface StateStore extends
   NotesService,
   LogService,
   MetaService,
-  SettingsService
+  SettingsService,
+  CharSheetStorageService,
+  ErrorDescriptionService
 {
 }
 
@@ -88,32 +110,34 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   // const [servers, innerSetServers] = useState<Server[]>(initialServers);
   // // const [games, setGames] = useState<Game[]>([]);
   // const [games, innerSetGames] = useState<Game[]>(initialGames);
-  // const [
-  //   errorDescription, 
-  //   setErrorDescription
-  // ] = useState<ErrorDescription | null>(null);
+  const [
+    errorDescription, 
+    setErrorDescription
+  ] = useState<ErrorDescription | null>(null);
+
+  function setCharSheet(cs: CharSheet) {
+    setProfile(cs.profile);
+    setAttributes(cs.attributes);
+    setAbilities(cs.abilities);
+    setDisciplines(cs.disciplines);
+    setBackgrounds(cs.backgrounds);
+    setVirtues(cs.virtues);
+    setMerits(cs.merits);
+    setFlaws(cs.flaws);
+    setState(cs.state);
+    setHealth(cs.health);
+    setNotes(cs.notes);
+
+    setSettings(cs.Settings);
+    setLog(cs.Log);
+    setMeta(cs.Meta);
+  }
 
   if (!initialized) {
     setInitialized(true);
     const cs = getCharSheetFromLS();
     if (cs !== null) {
-      setProfile(cs.profile);
-      setAttributes(cs.attributes);
-      setAbilities(cs.abilities);
-      setDisciplines(cs.disciplines);
-      setBackgrounds(cs.backgrounds);
-      setVirtues(cs.virtues);
-      setMerits(cs.merits);
-      setFlaws(cs.flaws);
-      setState(cs.state);
-      setHealth(cs.health);
-      setNotes(cs.notes);
-
-      setSettings(cs.Settings);
-      setLog(cs.Log);
-      setMeta(cs.Meta);
-    //   innerSetServers(db.serverData);
-    //   innerSetGames(db.gameData);
+      setCharSheet(cs);
     }
   }
 
@@ -159,18 +183,32 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     // findGameByServerId(id: UniqueId): Game | undefined {
     //   return games.find(el => el.serverId === id);
     // },
-    // getServerDatabase() {
-    //   return {
-    //     serverData: servers,
-    //     gameData: games
-    //   }
-    // },
+    getCharSheet() {
+      return {
+        Meta: meta,
+        Version: CURRENT_VERSION,
+        Log: log,
+        Settings: settings, 
+        profile, 
+        attributes, 
+        abilities,
+        disciplines, 
+        backgrounds, 
+        virtues, 
+        merits,
+        flaws, 
+        state, 
+        health, 
+        notes
+      }
+    },
+    setCharSheet,
     // setServerDatabase(serverDatabase: ServerDatabase) {
     //   innerSetServers(serverDatabase.serverData.map(el => ({...el, status: ServerStatus.unknown})));
     //   innerSetGames(serverDatabase.gameData);
     // },
-    // errorDescription, 
-    // setErrorDescription
+    errorDescription, 
+    setErrorDescription
     // // user,
     // // cart,
     // // // cookies,

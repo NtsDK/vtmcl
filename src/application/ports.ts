@@ -7,7 +7,9 @@ import {
   Abilities, 
   Attributes, 
   Backgrounds, 
+  CharSheet, 
   Disciplines, 
+  ErrorDescription, 
   Flaws, 
   Health, 
   Log, 
@@ -90,7 +92,12 @@ export interface LogService {
 //   getServerDatabase(): ServerDatabase;
 // }
 
-// export interface ErrorDescriptionService {
-//   errorDescription: ErrorDescription | null;
-//   setErrorDescription(errorDescription: ErrorDescription | null): void;
-// }
+export interface CharSheetStorageService {
+  setCharSheet(charSheet: CharSheet): void;
+  getCharSheet(): CharSheet;
+}
+
+export interface ErrorDescriptionService {
+  errorDescription: ErrorDescription | null;
+  setErrorDescription(errorDescription: ErrorDescription | null): void;
+}
