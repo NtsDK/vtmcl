@@ -11,6 +11,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { DownloadDatabaseButton } from './DownloadDatabaseButton';
 import { UploadDatabaseButton } from './UploadDatabaseButton';
+import { CreateDatabaseButton } from './CreateDatabaseButton';
 
 interface HeaderProps {
 }
@@ -71,6 +72,7 @@ export function Header(props: HeaderProps) {
           <Dropdown.Menu style={{ zIndex: 2000 }}>
             <UploadDatabaseButton />
             <DownloadDatabaseButton />
+            <CreateDatabaseButton />
           </Dropdown.Menu>
         </Dropdown>
       </Navbar>

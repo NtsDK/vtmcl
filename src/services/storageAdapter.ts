@@ -1,4 +1,5 @@
 import {
+  CharSheetStorageService,
   // GameStorageService, 
   // ServerDatabaseStorageService, 
   // ServerStorageService,
@@ -16,5 +17,8 @@ import { useStore } from "./store";
 //   return useStore();
 // }
 export function useErrorDescription(): ErrorDescriptionService {
+  return useStore();
+}
+export function useCharSheetStorage(): CharSheetStorageService {
   return useStore();
 }

@@ -4,15 +4,15 @@ import './DownloadDatabaseButton.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
 import { json2File, makeFileName } from '../../../lib/fileUtils';
-import { useStore } from '../../../services/store';
 import { charSheetToJson } from '../../../infrastructure/dbLoader';
+import { useCharSheetStorage } from '../../../services/storageAdapter';
 
 interface DownloadDatabaseButtonProps {
 };
 
 export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
   const { t } = useTranslation();
-  const { getCharSheet } = useStore();
+  const { getCharSheet } = useCharSheetStorage();
 
   function downloadDatabaseAsFile() {
     const charSheet = getCharSheet();

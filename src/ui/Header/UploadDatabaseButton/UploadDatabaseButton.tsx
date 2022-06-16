@@ -13,6 +13,10 @@ import {
   validateCharSheetInJson,
   
 } from '../../../infrastructure/dbLoader';
+import { 
+  useCharSheetStorage, 
+  useErrorDescription 
+} from '../../../services/storageAdapter';
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {
@@ -28,7 +32,8 @@ export function UploadDatabaseButton(props) {
   const { onChange } = props;
   const { t } = useTranslation();
 
-  const { setErrorDescription, setCharSheet } = useStore();
+  const { setErrorDescription } = useErrorDescription();
+  const { setCharSheet } = useCharSheetStorage();
 
   function onUploadFileSelected(evt: ChangeEventHandler<HTMLInputElement>) {
     readJsonFile(evt).then((database2) => {
