@@ -15,7 +15,7 @@ import { defaultLang } from "./i18nResources";
 import { Header } from "./ui/Header";
 import { ErrorNotification } from './ui/ErrorNotification';
 import { CharSheetPage } from './ui/CharSheetPage';
-import { InstructionPage } from './ui/CharSheetPage/InstructionPage';
+import { InstructionPage } from './ui/InstructionPage';
 import { LogPage } from './ui/LogPage';
 import { AboutPage } from './ui/AboutPage';
 
