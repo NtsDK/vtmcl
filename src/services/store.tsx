@@ -178,10 +178,22 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         [virtueName]: applyRange(1, 5, value)
       })
     },
-
-
+    
+    
     health,
     state,
+    setHealth(healthName: keyof Health, value: number) {
+      setHealth({
+        ...health,
+        [healthName]: applyRange(0, 2, value)
+      })
+    },
+    setState(stateName: keyof State, value: number) {
+      setState({
+        ...state,
+        [stateName]: applyRange(0, stateName === 'bloodpool' ? 20 : 10, value)
+      })
+    },
 
     settings,
     

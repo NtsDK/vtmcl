@@ -514,6 +514,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 6rem;
 }
 
+.tw-w-full {
+  width: 100%;
+}
+
 .tw-flex-1 {
   flex: 1 1 0%;
 }
@@ -524,6 +528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-flex-grow {
   flex-grow: 1;
+}
+
+.tw-flex-wrap {
+  flex-wrap: wrap;
 }
 
 .tw-px-3 {

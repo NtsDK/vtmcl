@@ -58,7 +58,9 @@ export interface MeritsNFlawsService {
 
 export interface StateNHealthService {
   state: State;
+  setState(stateName: keyof State, value: number): void;
   health: Health;
+  setHealth(healthName: keyof Health, value: number): void;
 }
 
 export interface NotesService {

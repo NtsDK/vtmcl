@@ -7,6 +7,7 @@ import {
   // ServerStorageService,
   ErrorDescriptionService,
   ProfileService,
+  StateNHealthService,
   VirtuesService,
 } from "../application/ports";
 import { useStore } from "./store";
@@ -36,5 +37,8 @@ export function useAbilities(): AbilitiesService {
   return useStore();
 }
 export function useVirtues(): VirtuesService {
+  return useStore();
+}
+export function useStateNHealth(): StateNHealthService {
   return useStore();
 }
