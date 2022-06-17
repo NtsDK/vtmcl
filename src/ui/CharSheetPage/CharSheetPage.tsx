@@ -2,6 +2,12 @@ import React from 'react';
 import './CharSheetPage.css';
 
 import { useTranslation } from 'react-i18next';
+import { ProfileSection } from "./ProfileSection";
+import { AttributeSection } from "./AttributeSection";
+import { AbilitiesSection } from "./AbilitiesSection";
+import { SectionHeader } from "./SectionHeader";
+import { AdvantagesSection } from './AdvantagesSection';
+import { MiscSection } from './MiscSection';
 
 interface CharSheetPageProps {
 }
@@ -11,61 +17,16 @@ export function CharSheetPage(props: CharSheetPageProps) {
 
   return (
     <div className="CharSheetPage">
-      CharSheetPage content
-
-      {/* profile */}
-      <div className="custom-panel">
-        <div className="columns profile-container">
-          <div>
-            <div>
-              <span>{t('charsheet.name')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.player')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.chronicle')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.age')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.sex')}</span>
-              <input/>
-            </div>
-          </div>
-          <div>
-            <div>
-              <span>{t('charsheet.nature')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.demeanor')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.concept')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.clan')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.generation')}</span>
-              <input/>
-            </div>
-            <div>
-              <span>{t('charsheet.sire')}</span>
-              <input/>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProfileSection/>
+      <SectionHeader>{t('charsheet.attributes')}</SectionHeader>
+      <AttributeSection/>
+      <SectionHeader>{t('charsheet.abilities')}</SectionHeader>
+      <AbilitiesSection/>
+      <SectionHeader>{t('charsheet.advantages')}</SectionHeader>
+      <AdvantagesSection/>
+      <SectionHeader/>
+      <MiscSection/>
+      <SectionHeader>{t('charsheet.notes')}</SectionHeader>
     </div>
   );
 }

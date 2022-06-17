@@ -478,6 +478,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 2rem;
 }
 
+.tw-m-8 {
+  margin: 2rem;
+}
+
+.tw-m-4 {
+  margin: 1rem;
+}
+
+.tw-flex {
+  display: flex;
+}
+
 .tw-hidden {
   display: none;
 }
