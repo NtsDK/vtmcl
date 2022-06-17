@@ -7,58 +7,58 @@ interface ProfileSectionProps {
 }
 
 export function ProfileSection(props: ProfileSectionProps) {
-  // const { t } = props;
   const { t } = useTranslation();
 
   return (
     <div className="ProfileSection">
       <div className="custom-panel tw-m-4">
         <div className="columns profile-container tw-flex">
-          <div>
+          <div className='tw-flex-1'>
             <div>
-              <span>{t('charsheet.name')}</span>
+              <label className='tw-w-24'>{t('charsheet.name')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.player')}</span>
+              <label className='tw-w-24'>{t('charsheet.player')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.chronicle')}</span>
+              <label className='tw-w-24'>{t('charsheet.chronicle')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.age')}</span>
+              <label className='tw-w-24'>{t('charsheet.age')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.sex')}</span>
+              <label className='tw-w-24'>{t('charsheet.sex')}</label>
               <input/>
             </div>
           </div>
-          <div>
+
+          <div className='tw-flex-1'>
             <div>
-              <span>{t('charsheet.nature')}</span>
+              <label className='tw-w-24'>{t('charsheet.nature')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.demeanor')}</span>
+              <label className='tw-w-24'>{t('charsheet.demeanor')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.concept')}</span>
+              <label className='tw-w-24'>{t('charsheet.concept')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.clan')}</span>
+              <label className='tw-w-24'>{t('charsheet.clan')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.generation')}</span>
+              <label className='tw-w-24'>{t('charsheet.generation')}</label>
               <input/>
             </div>
             <div>
-              <span>{t('charsheet.sire')}</span>
+              <label className='tw-w-24'>{t('charsheet.sire')}</label>
               <input/>
             </div>
           </div>

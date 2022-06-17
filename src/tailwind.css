@@ -498,6 +498,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 24rem;
 }
 
+.tw-w-24 {
+  width: 6rem;
+}
+
+.tw-flex-1 {
+  flex: 1 1 0%;
+}
+
 .tw-px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
