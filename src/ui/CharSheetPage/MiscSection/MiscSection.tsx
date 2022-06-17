@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 import { useStateNHealth } from '../../../services/storageAdapter';
 import { RangeInput } from '../RangeInput';
+import { HealthSection } from './HealthSection';
 
 interface MiscSectionProps {
   className?: string;
@@ -22,14 +23,14 @@ export function MiscSection(props: MiscSectionProps) {
         <Subheader>{t('charsheet.flaws')}</Subheader>
       </div>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.humanity')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.humanity')}</Subheader>
         <RangeInput 
           max={10} 
           value={state.humanity}
           onClick={(value: number) => setState('humanity', value)}
           className=""
         />
-        <Subheader>{t('charsheet.willpower')}</Subheader>
+        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.willpower')}</Subheader>
         <RangeInput 
           max={10} 
           value={state.willpower}
@@ -42,7 +43,7 @@ export function MiscSection(props: MiscSectionProps) {
           onClick={(value: number) => setState('willpower2', value)}
           className=""
         />
-        <Subheader>{t('charsheet.bloodpool')}</Subheader>
+        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.bloodpool')}</Subheader>
         <RangeInput 
           max={20} 
           value={state.bloodpool}
@@ -52,7 +53,8 @@ export function MiscSection(props: MiscSectionProps) {
         />
       </div>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.health')}</Subheader>
+        <Subheader className="tw-mb-4">{t('charsheet.health')}</Subheader>
+        <HealthSection/>
       </div>
     </div>
   );

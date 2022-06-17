@@ -486,6 +486,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-mb-0 {
+  margin-bottom: 0px;
+}
+
+.tw-mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.tw-mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.tw-mb-4 {
+  margin-bottom: 1rem;
+}
+
+.tw-mt-2 {
+  margin-top: 0.5rem;
+}
+
 .tw-flex {
   display: flex;
 }
@@ -518,6 +538,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.tw-w-4 {
+  width: 1rem;
+}
+
+.tw-w-5 {
+  width: 1.25rem;
+}
+
 .tw-flex-1 {
   flex: 1 1 0%;
 }
@@ -532,6 +560,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-flex-wrap {
   flex-wrap: wrap;
+}
+
+.tw-justify-center {
+  justify-content: center;
 }
 
 .tw-px-3 {
@@ -560,6 +592,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.tw-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .tw-shadow-lg {
