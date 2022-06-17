@@ -143,6 +143,12 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
 
   const value: StateStore = {
     profile,
+    setProfileItem(itemName: keyof Profile, value: string) {
+      setProfile({
+        ...profile,
+        [itemName]: value
+      })
+    },
     health,
     state,
 

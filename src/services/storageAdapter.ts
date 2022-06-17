@@ -4,6 +4,7 @@ import {
   // ServerDatabaseStorageService, 
   // ServerStorageService,
   ErrorDescriptionService,
+  ProfileService,
 } from "../application/ports";
 import { useStore } from "./store";
 
@@ -20,5 +21,8 @@ export function useErrorDescription(): ErrorDescriptionService {
   return useStore();
 }
 export function useCharSheetStorage(): CharSheetStorageService {
+  return useStore();
+}
+export function useProfile(): ProfileService {
   return useStore();
 }

@@ -1,0 +1,15 @@
+.ProfileSection .profile-input {
+  width: 180px;
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+.ProfileSection .profile-input:hover {
+  outline: 1px solid red;
+}
+
+.ProfileSection label {
+  margin-bottom: 0;
+}

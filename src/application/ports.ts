@@ -26,6 +26,7 @@ import {
 
 export interface ProfileService {
   profile: Profile;
+  setProfileItem(itemName: keyof Profile, value: string): void;
 }
 
 export interface AttributesService {
