@@ -164,6 +164,15 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         [attributeName]: applyRange(1, 5, value)
       })
     },
+    abilities,
+    setAbility(abilityName: keyof Abilities, value: number) {
+      setAbilities({
+        ...abilities,
+        [abilityName]: applyRange(0, 5, value)
+      })
+    },
+
+
     health,
     state,
 
@@ -175,7 +184,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     flaws,
     log,
     disciplines,
-    abilities,
     backgrounds,
     virtues,
 

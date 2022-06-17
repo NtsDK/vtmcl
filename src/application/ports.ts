@@ -36,6 +36,7 @@ export interface AttributesService {
 
 export interface AbilitiesService {
   abilities: Abilities;
+  setAbility(abilityName: keyof Abilities, value: number): void;
 }
 
 export interface DisciplinesService {
