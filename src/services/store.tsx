@@ -141,12 +141,27 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     }
   }
 
+  function applyRange(min: number, max: number, value: number) {
+    return value < min
+      ? min
+      : value > max
+        ? max
+        : value;
+  }
+
   const value: StateStore = {
     profile,
     setProfileItem(itemName: keyof Profile, value: string) {
       setProfile({
         ...profile,
         [itemName]: value
+      })
+    },
+    attributes,
+    setAttribute(attributeName: keyof Attributes, value: number) {
+      setAttributes({
+        ...attributes,
+        [attributeName]: applyRange(1, 5, value)
       })
     },
     health,
@@ -160,7 +175,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     flaws,
     log,
     disciplines,
-    attributes,
     abilities,
     backgrounds,
     virtues,

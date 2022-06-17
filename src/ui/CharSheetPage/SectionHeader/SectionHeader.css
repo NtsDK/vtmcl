@@ -1,0 +1,8 @@
+.SectionHeader .left-arrow,
+.SectionHeader .right-arrow {
+  flex-basis: 2rem;
+}
+
+.SectionHeader .header-text {
+  flex-basis: 10rem;
+}

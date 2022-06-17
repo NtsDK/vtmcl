@@ -3,144 +3,147 @@ import { RangeInput } from '../RangeInput';
 import { SectionHeader } from '../SectionHeader';
 import { useTranslation } from 'react-i18next';
 import './AbilitiesSection.css';
+import classnames from "classnames";
 
 interface AbilitiesSectionProps {
+  className?: string;
 }
 
 export function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();
+  const { className } = props;
 
   return (
-    <div className="AbilitiesSection">
+    <div className={classnames("AbilitiesSection", className)}>
       <div className="custom-panel">
         
         <div className="columns abilities-container tw-flex">
           <div>
             <div className="stat-container">
               <span>{t('charsheet.alertness')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.athletics')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.awareness')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.brawl')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.empathy')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.expression')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.intimidation')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.leadership')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.streetwise')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.subterfuge')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
           </div>
 
           <div>
             <div className="stat-container">
               <span>{t('charsheet.animalken')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.crafts')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.drive')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.etiquette')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.firearms')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.larceny')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.melee')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.performance')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.stealth')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.survival')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
           </div>
 
           <div>
             <div className="stat-container">
               <span>{t('charsheet.academics')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.computer')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.finance')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.investigation')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.law')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.medicine')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.occult')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.politics')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.science')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
             <div className="stat-container">
               <span>{t('charsheet.technology')}</span>
-              <RangeInput />
+              {/* <RangeInput /> */}
             </div>
           </div>
 

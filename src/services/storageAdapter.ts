@@ -1,4 +1,5 @@
 import {
+  AttributesService,
   CharSheetStorageService,
   // GameStorageService, 
   // ServerDatabaseStorageService, 
@@ -24,5 +25,8 @@ export function useCharSheetStorage(): CharSheetStorageService {
   return useStore();
 }
 export function useProfile(): ProfileService {
+  return useStore();
+}
+export function useAttributes(): AttributesService {
   return useStore();
 }

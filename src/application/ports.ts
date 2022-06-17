@@ -31,6 +31,7 @@ export interface ProfileService {
 
 export interface AttributesService {
   attributes: Attributes;
+  setAttribute(attributeName: keyof Attributes, value: number): void;
 }
 
 export interface AbilitiesService {

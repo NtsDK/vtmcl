@@ -17,16 +17,16 @@ export function CharSheetPage(props: CharSheetPageProps) {
 
   return (
     <div className="CharSheetPage">
-      <ProfileSection/>
-      <SectionHeader>{t('charsheet.attributes')}</SectionHeader>
-      <AttributeSection/>
-      <SectionHeader>{t('charsheet.abilities')}</SectionHeader>
-      <AbilitiesSection/>
-      <SectionHeader>{t('charsheet.advantages')}</SectionHeader>
-      <AdvantagesSection/>
-      <SectionHeader/>
-      <MiscSection/>
-      <SectionHeader>{t('charsheet.notes')}</SectionHeader>
+      <ProfileSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3">{t('charsheet.attributes')}</SectionHeader>
+      <AttributeSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3">{t('charsheet.abilities')}</SectionHeader>
+      <AbilitiesSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3">{t('charsheet.advantages')}</SectionHeader>
+      <AdvantagesSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3"/>
+      <MiscSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3">{t('charsheet.notes')}</SectionHeader>
     </div>
   );
 }

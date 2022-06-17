@@ -3,16 +3,18 @@ import { Subheader } from '../Subheader';
 import './AdvantagesSection.css';
 import { useTranslation } from 'react-i18next';
 import { RangeInput } from '../RangeInput';
+import classnames from "classnames";
 
 interface AdvantagesSectionProps {
+  className?: string;
 }
 
 export function AdvantagesSection(props: AdvantagesSectionProps) {
-  // const { t } = props;
+  const { className } = props;
   const { t } = useTranslation();
 
   return (
-    <div className="AdvantagesSection tw-flex">
+    <div className={classnames("AdvantagesSection tw-flex", className)}>
       <div>
         <Subheader>{t('charsheet.disciplines')}</Subheader>  
       </div>
@@ -25,15 +27,15 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
         <div>
           <div className="stat-container">
             <span>{t('charsheet.conscience')}</span>
-            <RangeInput />
+            {/* <RangeInput /> */}
           </div>
           <div className="stat-container">
             <span>{t('charsheet.self_control')}</span>
-            <RangeInput />
+            {/* <RangeInput /> */}
           </div>
           <div className="stat-container">
             <span>{t('charsheet.courage')}</span>
-            <RangeInput />
+            {/* <RangeInput /> */}
           </div>
         </div>
       </div>

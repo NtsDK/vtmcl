@@ -1,0 +1,17 @@
+.stat-container {
+  display: flex;
+  margin: 0.25rem;
+}
+
+.stat-container label {
+  margin-bottom: 0;
+  flex-basis: 8rem;
+  /* -webkit-box-flex: 0;
+  -ms-flex-positive: 0; */
+  flex-grow: 0;
+  /* -ms-flex-negative: 0; */
+  flex-shrink: 0;
+  display: block;
+  word-break: break-all;
+  font-size: 0.875rem;
+}

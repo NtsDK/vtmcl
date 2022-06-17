@@ -1,15 +1,18 @@
 import React, { ChangeEvent } from 'react';
 import './ProfileSection.css';
+import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../../services/storageAdapter';
 import { Profile } from '../../../domain';
 
 interface ProfileSectionProps {
+  className?: string;
 }
 
 export function ProfileSection(props: ProfileSectionProps) {
   const { t } = useTranslation();
+  const { className } = props;
 
   const { profile, setProfileItem } = useProfile();
 
@@ -20,7 +23,7 @@ export function ProfileSection(props: ProfileSectionProps) {
   }
 
   return (
-    <div className="ProfileSection">
+    <div className={classnames("ProfileSection", className)}>
       <div className="custom-panel tw-m-4">
         <div className="columns profile-container tw-flex">
           <div className='tw-flex-1'>
