@@ -1,15 +1,17 @@
 import React, { PropsWithChildren } from 'react';
 import './Subheader.css';
+import classnames from "classnames";
 
 interface SubheaderProps {
+  className?: string;
 }
 
 export function Subheader(props: PropsWithChildren<SubheaderProps>) {
-  // const { t } = props;
   const { children } = props;
+  const { className } = props;
 
   return (
-    <h2 className="Subheader">
+    <h2 className={classnames("Subheader tw-text-center", className)}>
       {children}
     </h2>
   );

@@ -7,6 +7,7 @@ import {
   // ServerStorageService,
   ErrorDescriptionService,
   ProfileService,
+  VirtuesService,
 } from "../application/ports";
 import { useStore } from "./store";
 
@@ -32,5 +33,8 @@ export function useAttributes(): AttributesService {
   return useStore();
 }
 export function useAbilities(): AbilitiesService {
+  return useStore();
+}
+export function useVirtues(): VirtuesService {
   return useStore();
 }

@@ -48,6 +48,7 @@ export interface BackgroundsService {
 
 export interface VirtuesService {
   virtues: Virtues;
+  setVirtue(virtueName: keyof Virtues, value: number): void;
 }
 
 export interface MeritsNFlawsService {

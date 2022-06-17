@@ -171,6 +171,13 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         [abilityName]: applyRange(0, 5, value)
       })
     },
+    virtues,
+    setVirtue(virtueName: keyof Virtues, value: number) {
+      setVirtues({
+        ...virtues,
+        [virtueName]: applyRange(1, 5, value)
+      })
+    },
 
 
     health,
@@ -185,7 +192,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     log,
     disciplines,
     backgrounds,
-    virtues,
 
     // servers,
     // // setServers: innerSetServers,
