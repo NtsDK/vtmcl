@@ -6,6 +6,8 @@ import classnames from "classnames";
 import { useStateNHealth } from '../../../services/storageAdapter';
 import { RangeInput } from '../RangeInput';
 import { HealthSection } from './HealthSection';
+import { MeritsSection } from './MeritsSection';
+import { FlawsSection } from './FlawsSection';
 
 interface MiscSectionProps {
   className?: string;
@@ -20,7 +22,9 @@ export function MiscSection(props: MiscSectionProps) {
     <div className={classnames("MiscSection tw-flex", className)}>
       <div className="tw-flex-1">
         <Subheader>{t('charsheet.merits')}</Subheader>
+        <MeritsSection/>
         <Subheader>{t('charsheet.flaws')}</Subheader>
+        <FlawsSection/>
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2">{t('charsheet.humanity')}</Subheader>

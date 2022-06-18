@@ -8,6 +8,7 @@ import {
   // ServerDatabaseStorageService, 
   // ServerStorageService,
   ErrorDescriptionService,
+  MeritsNFlawsService,
   ProfileService,
   StateNHealthService,
   VirtuesService,
@@ -48,5 +49,8 @@ export function useBackgrounds(): BackgroundsService {
   return useStore();
 }
 export function useStateNHealth(): StateNHealthService {
+  return useStore();
+}
+export function useMeritsNFlaws(): MeritsNFlawsService {
   return useStore();
 }

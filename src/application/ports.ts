@@ -61,7 +61,13 @@ export interface VirtuesService {
 
 export interface MeritsNFlawsService {
   merits: Merits;
+  addMerit(): void;
+  setMerit(index: number, name: string): void;
+  removeMerit(index: number): void;
   flaws: Flaws;
+  addFlaw(): void;
+  setFlaw(index: number, name: string): void;
+  removeFlaw(index: number): void;
 }
 
 export interface StateNHealthService {

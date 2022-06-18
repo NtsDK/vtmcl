@@ -191,7 +191,31 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     
     notes,
     merits,
+    addMerit() {
+      setMerits([...merits, '']);
+    },
+    removeMerit(index: number) {
+      setMerits(merits.filter((el, index2) => index2 !== index));
+    },
+    setMerit(index: number, name: string) {
+      setMerits(merits.map((el, index2) => {
+        if (index2 !== index) return el;
+        return name;
+      }));
+    },
     flaws,
+    addFlaw() {
+      setFlaws([...flaws, '']);
+    },
+    removeFlaw(index: number) {
+      setFlaws(flaws.filter((el, index2) => index2 !== index));
+    },
+    setFlaw(index: number, name: string) {
+      setFlaws(flaws.map((el, index2) => {
+        if (index2 !== index) return el;
+        return name;
+      }));
+    },
 
     disciplines,
     addDiscipline() {
