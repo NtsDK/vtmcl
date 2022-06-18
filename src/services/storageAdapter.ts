@@ -1,7 +1,9 @@
 import {
   AbilitiesService,
   AttributesService,
+  BackgroundsService,
   CharSheetStorageService,
+  DisciplinesService,
   // GameStorageService, 
   // ServerDatabaseStorageService, 
   // ServerStorageService,
@@ -37,6 +39,12 @@ export function useAbilities(): AbilitiesService {
   return useStore();
 }
 export function useVirtues(): VirtuesService {
+  return useStore();
+}
+export function useDisciplines(): DisciplinesService {
+  return useStore();
+}
+export function useBackgrounds(): BackgroundsService {
   return useStore();
 }
 export function useStateNHealth(): StateNHealthService {

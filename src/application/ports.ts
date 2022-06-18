@@ -41,9 +41,17 @@ export interface AbilitiesService {
 
 export interface DisciplinesService {
   disciplines: Disciplines;
+  addDiscipline(): void;
+  setDisciplineName(index: number, name: string): void;
+  setDisciplineValue(index: number, value: number): void;
+  removeDiscipline(index: number): void;
 }
 export interface BackgroundsService {
   backgrounds: Backgrounds;
+  addBackground(): void;
+  setBackgroundName(index: number, name: string): void;
+  setBackgroundValue(index: number, value: number): void;
+  removeBackground(index: number): void;
 }
 
 export interface VirtuesService {

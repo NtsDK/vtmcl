@@ -1,13 +1,17 @@
 .ProfileSection .profile-input {
-  width: 180px;
-  margin: 0 10px;
+  width: 11rem;
+  margin: 0 0.5rem;
   background-color: transparent;
   border: none;
   text-align: center;
 }
 
-.ProfileSection .profile-input:hover {
+.ProfileSection .profile-input:hover,
+.name-number-input:hover {
   outline: 1px solid red;
+}
+.name-number-input {
+  outline: 1px solid #333333;
 }
 
 .ProfileSection label {

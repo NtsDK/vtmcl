@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { RangeInput } from '../RangeInput';
 import classnames from "classnames";
 import { VirtuesSection } from './VirtuesSection';
+import { DisciplinesSection } from './DisciplinesSection';
+import { BackgroundsSection } from './BackgroundsSection';
 
 interface AdvantagesSectionProps {
   className?: string;
@@ -17,10 +19,12 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   return (
     <div className={classnames("AdvantagesSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.disciplines')}</Subheader>  
+        <Subheader>{t('charsheet.disciplines')}</Subheader>
+        <DisciplinesSection/>
       </div>
       <div className="tw-flex-1">
         <Subheader>{t('charsheet.backgrounds')}</Subheader>  
+        <BackgroundsSection/>
       </div>
       <div className="tw-flex-1">
         <Subheader>{t('charsheet.virtues')}</Subheader>  

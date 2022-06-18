@@ -202,8 +202,58 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     merits,
     flaws,
     log,
+
     disciplines,
+    addDiscipline() {
+      setDisciplines([...disciplines, {name: '', value: 0}]);
+    },
+    removeDiscipline(index: number) {
+      setDisciplines(disciplines.filter((el, index2) => index2 !== index));
+    },
+    setDisciplineName(index: number, name: string) {
+      setDisciplines(disciplines.map((el, index2) => {
+        if (index2 !== index) return el;
+        return {
+          ...el,
+          name
+        }
+      }));
+    },
+    setDisciplineValue(index: number, value: number) {
+      setDisciplines(disciplines.map((el, index2) => {
+        if (index2 !== index) return el;
+        return {
+          ...el,
+          value
+        }
+      }));
+    },
+
     backgrounds,
+    addBackground() {
+      setBackgrounds([...backgrounds, {name: '', value: 0}]);
+    },
+    removeBackground(index: number) {
+      setBackgrounds(backgrounds.filter((el, index2) => index2 !== index));
+    },
+    setBackgroundName(index: number, name: string) {
+      setBackgrounds(backgrounds.map((el, index2) => {
+        if (index2 !== index) return el;
+        return {
+          ...el,
+          name
+        }
+      }));
+    },
+    setBackgroundValue(index: number, value: number) {
+      setBackgrounds(backgrounds.map((el, index2) => {
+        if (index2 !== index) return el;
+        return {
+          ...el,
+          value
+        }
+      }));
+    },
 
     // servers,
     // // setServers: innerSetServers,
