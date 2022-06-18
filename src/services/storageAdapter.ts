@@ -9,6 +9,7 @@ import {
   // ServerStorageService,
   ErrorDescriptionService,
   MeritsNFlawsService,
+  NotesService,
   ProfileService,
   StateNHealthService,
   VirtuesService,
@@ -52,5 +53,8 @@ export function useStateNHealth(): StateNHealthService {
   return useStore();
 }
 export function useMeritsNFlaws(): MeritsNFlawsService {
+  return useStore();
+}
+export function useNotes(): NotesService {
   return useStore();
 }

@@ -10,7 +10,8 @@
 .name-number-input:hover {
   outline: 1px solid red;
 }
-.name-number-input {
+.name-number-input,
+.NotesSection textarea {
   outline: 1px solid #333333;
 }
 

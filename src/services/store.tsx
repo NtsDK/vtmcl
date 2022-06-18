@@ -147,49 +147,53 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setProfile({
         ...profile,
         [itemName]: value
-      })
+      });
     },
     attributes,
     setAttribute(attributeName: keyof Attributes, value: number) {
       setAttributes({
         ...attributes,
         [attributeName]: applyRange(1, 5, value)
-      })
+      });
     },
     abilities,
     setAbility(abilityName: keyof Abilities, value: number) {
       setAbilities({
         ...abilities,
         [abilityName]: applyRange(0, 5, value)
-      })
+      });
     },
     virtues,
     setVirtue(virtueName: keyof Virtues, value: number) {
       setVirtues({
         ...virtues,
         [virtueName]: applyRange(1, 5, value)
-      })
+      });
     },
-    
-    
+
+
     health,
     state,
     setHealth(healthName: keyof Health, value: number) {
       setHealth({
         ...health,
         [healthName]: applyRange(0, 2, value)
-      })
+      });
     },
     setState(stateName: keyof State, value: number) {
       setState({
         ...state,
         [stateName]: applyRange(0, stateName === 'bloodpool' ? 20 : 10, value)
-      })
+      });
     },
 
     settings,
-    
+
     notes,
+    setNotes: function (notes: Notes): void {
+      setNotes(notes);
+    },
+
     merits,
     addMerit() {
       setMerits([...merits, '']);
@@ -199,7 +203,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     },
     setMerit(index: number, name: string) {
       setMerits(merits.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return name;
       }));
     },
@@ -212,60 +217,65 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     },
     setFlaw(index: number, name: string) {
       setFlaws(flaws.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return name;
       }));
     },
 
     disciplines,
     addDiscipline() {
-      setDisciplines([...disciplines, {name: '', value: 0}]);
+      setDisciplines([...disciplines, { name: '', value: 0 }]);
     },
     removeDiscipline(index: number) {
       setDisciplines(disciplines.filter((el, index2) => index2 !== index));
     },
     setDisciplineName(index: number, name: string) {
       setDisciplines(disciplines.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return {
           ...el,
           name
-        }
+        };
       }));
     },
     setDisciplineValue(index: number, value: number) {
       setDisciplines(disciplines.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return {
           ...el,
           value
-        }
+        };
       }));
     },
 
     backgrounds,
     addBackground() {
-      setBackgrounds([...backgrounds, {name: '', value: 0}]);
+      setBackgrounds([...backgrounds, { name: '', value: 0 }]);
     },
     removeBackground(index: number) {
       setBackgrounds(backgrounds.filter((el, index2) => index2 !== index));
     },
     setBackgroundName(index: number, name: string) {
       setBackgrounds(backgrounds.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return {
           ...el,
           name
-        }
+        };
       }));
     },
     setBackgroundValue(index: number, value: number) {
       setBackgrounds(backgrounds.map((el, index2) => {
-        if (index2 !== index) return el;
+        if (index2 !== index)
+          return el;
         return {
           ...el,
           value
-        }
+        };
       }));
     },
 
@@ -296,26 +306,26 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     getCharSheet() {
       return {
         Version: CURRENT_VERSION,
-        Settings: settings, 
-        profile, 
-        attributes, 
+        Settings: settings,
+        profile,
+        attributes,
         abilities,
-        disciplines, 
-        backgrounds, 
-        virtues, 
+        disciplines,
+        backgrounds,
+        virtues,
         merits,
-        flaws, 
-        state, 
-        health, 
+        flaws,
+        state,
+        health,
         notes
-      }
+      };
     },
     setCharSheet,
     // setServerDatabase(serverDatabase: ServerDatabase) {
     //   innerSetServers(serverDatabase.serverData.map(el => ({...el, status: ServerStatus.unknown})));
     //   innerSetGames(serverDatabase.gameData);
     // },
-    errorDescription, 
+    errorDescription,
     setErrorDescription
     // // user,
     // // cart,
@@ -325,6 +335,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     // // updateCart: setCart,
     // // updateOrders: setOrders,
     // // emptyCart: () => setCart({ products: [] }),
+
   };
 
   return (

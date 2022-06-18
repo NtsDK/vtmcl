@@ -79,6 +79,7 @@ export interface StateNHealthService {
 
 export interface NotesService {
   notes: Notes;
+  setNotes(notes: Notes): void;
 }
 
 // non char sheet

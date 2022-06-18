@@ -1,0 +1,1 @@
+export { NotesSection } from './NotesSection';

@@ -8,6 +8,7 @@ import { AbilitiesSection } from "./AbilitiesSection";
 import { SectionHeader } from "./SectionHeader";
 import { AdvantagesSection } from './AdvantagesSection';
 import { MiscSection } from './MiscSection';
+import { NotesSection } from './NotesSection';
 
 interface CharSheetPageProps {
 }
@@ -27,6 +28,7 @@ export function CharSheetPage(props: CharSheetPageProps) {
       <SectionHeader className="tw-mb-3"/>
       <MiscSection className="tw-mb-3"/>
       <SectionHeader className="tw-mb-3">{t('charsheet.notes')}</SectionHeader>
+      <NotesSection />
     </div>
   );
 }
