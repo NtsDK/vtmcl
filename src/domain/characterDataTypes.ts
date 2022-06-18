@@ -49,9 +49,15 @@ export interface Virtues {
   "courage": number;
 }
 
-export type Disciplines = Record<string, number>;
-export type Backgrounds = Record<string, number>;
-export type Merits = Record<string, boolean>;
-export type Flaws = Record<string, boolean>;
+export type Disciplines = {
+  name: string, 
+  value: number
+}[];
+export type Backgrounds = {
+  name: string, 
+  value: number
+}[];
+export type Merits = string[];
+export type Flaws = string[];
 
 export type Notes = string;

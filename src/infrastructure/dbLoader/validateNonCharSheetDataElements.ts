@@ -5,6 +5,7 @@ import {
   Version,
   Settings
 } from "../../domain";
+import { CURRENT_VERSION } from "../../constants";
 
 export const logSchema: JSONSchemaType<Log> = {
   type: "array",
@@ -24,7 +25,7 @@ export const logSchema: JSONSchemaType<Log> = {
 export const versionSchema: JSONSchemaType<Version> = {
   // type: "string",
   type: "string",
-  pattern: '0.1.1'
+  pattern: CURRENT_VERSION
 };
 
 export const settingsSchema: JSONSchemaType<Settings> = {

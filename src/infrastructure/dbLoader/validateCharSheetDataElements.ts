@@ -134,20 +134,27 @@ export const stateInJsonSchema: JSONSchemaType<StateInJson> = {
   additionalProperties: false,
 };
 
-const stringNumberObjSchema: JSONSchemaType<Backgrounds & Disciplines> = {
-  type: "object",
-  required: [],
-  additionalProperties: { "type": "number" },
+const stringNumberArrSchema: JSONSchemaType<Backgrounds & Disciplines> = {
+  type: "array",
+  items: {
+    type: 'object',
+    properties: {
+      name: { type: 'string'},
+      value: { type: 'number'},
+    },
+    required: ['name', 'value']
+  },
 };
 
-export const disciplinesSchema = stringNumberObjSchema;
-export const backgroundsSchema = stringNumberObjSchema;
+export const disciplinesSchema = stringNumberArrSchema;
+export const backgroundsSchema = stringNumberArrSchema;
 
-const stringBooleanObjSchema: JSONSchemaType<Flaws & Merits> = {
-  type: "object",
-  required: [],
-  additionalProperties: { "type": "boolean" },
+const stringArraySchema: JSONSchemaType<Flaws & Merits> = {
+  type: "array",
+  items: {
+    type: 'string'
+  }
 };
 
-export const meritsSchema = stringBooleanObjSchema;
-export const flawsSchema = stringBooleanObjSchema;
+export const meritsSchema = stringArraySchema;
+export const flawsSchema = stringArraySchema;

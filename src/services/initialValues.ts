@@ -73,8 +73,8 @@ export const initialAbilities: Abilities = {
 };
 
 // advantages
-export const initialDisciplines: Disciplines = {};
-export const initialBackgrounds: Backgrounds = {};
+export const initialDisciplines: Disciplines = [];
+export const initialBackgrounds: Backgrounds = [];
 export const initialVirtues: Virtues = {
   "conscience": 1,
   "self_control": 1,
@@ -82,8 +82,8 @@ export const initialVirtues: Virtues = {
 };
 
 // 
-export const initialMerits: Merits = {};
-export const initialFlaws: Flaws = {};
+export const initialMerits: Merits = [];
+export const initialFlaws: Flaws = [];
 
 export const initialState: State = {
   bloodpool: 0,

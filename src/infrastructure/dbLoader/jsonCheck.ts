@@ -1,4 +1,5 @@
 import { CharSheetInJson } from "./types";
+import { CURRENT_VERSION } from "../../constants";
 
 export const m: CharSheetInJson = {
   "Meta": {
@@ -8,7 +9,7 @@ export const m: CharSheetInJson = {
     "description": "",
     "saveTime": "Mon Jun 06 2022 14:15:24 GMT+0200 (Центральная Европа, летнее время)"
   },
-  "Version": "0.1.1",
+  "Version": CURRENT_VERSION,
   "Log": [
     [
       "user",
@@ -74,23 +75,19 @@ export const m: CharSheetInJson = {
       "science": 0,
       "technology": 0
     },
-    "disciplines": {
-      "123": 2
-    },
-    "backgrounds": {
-      "2342": 0
-    },
+    "disciplines": [
+      { name: "123", value: 2 }
+    ],
+    "backgrounds": [
+      { name: "2342", value: 0 }
+    ],
     "virtues": {
       "conscience": 1,
       "self_control": 4,
       "courage": 1
     },
-    "merits": {
-      "324": true
-    },
-    "flaws": {
-      "sdfsdf": true
-    },
+    "merits": ["324"],
+    "flaws": ["sdfsdf"],
     "state": {
       "humanity": 5,
       "willpower": 7,
