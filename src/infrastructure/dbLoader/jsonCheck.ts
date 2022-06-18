@@ -2,22 +2,7 @@ import { CharSheetInJson } from "./types";
 import { CURRENT_VERSION } from "../../constants";
 
 export const m: CharSheetInJson = {
-  "Meta": {
-    "name": "",
-    "date": "",
-    "preGameDate": "",
-    "description": "",
-    "saveTime": "Mon Jun 06 2022 14:15:24 GMT+0200 (Центральная Европа, летнее время)"
-  },
   "Version": CURRENT_VERSION,
-  "Log": [
-    [
-      "user",
-      "Mon Jun 06 2022 14:14:47 GMT+0200 (Центральная Европа, летнее время)",
-      "setProfileItem",
-      "[\"name\",\"123\",null]"
-    ]
-  ],
   "Charsheet": {
     "profile": {
       "name": "123",
@@ -92,16 +77,16 @@ export const m: CharSheetInJson = {
       "humanity": 5,
       "willpower": 7,
       "bloodpool": 3,
-      "health": {
-        "bruised": 0,
-        "hurt": 2,
-        "injured": 1,
-        "wounded": 1,
-        "mauled": 0,
-        "crippled": 0,
-        "incapacitated": 0
-      },
       "willpower2": 0
+    },
+    "health": {
+      "bruised": 0,
+      "hurt": 2,
+      "injured": 1,
+      "wounded": 1,
+      "mauled": 0,
+      "crippled": 0,
+      "incapacitated": 0
     },
     "notes": "sdsdsdf"
   },

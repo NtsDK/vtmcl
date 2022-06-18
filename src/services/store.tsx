@@ -8,9 +8,7 @@ import {
   AbilitiesService,
   AttributesService,
   DisciplinesService,
-  LogService,
   MeritsNFlawsService,
-  MetaService,
   NotesService,
   ProfileService,
   SettingsService,
@@ -72,8 +70,6 @@ interface StateStore extends
   MeritsNFlawsService,
   StateNHealthService,
   NotesService,
-  LogService,
-  MetaService,
   SettingsService,
   CharSheetStorageService,
   ErrorDescriptionService
@@ -104,8 +100,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [notes, setNotes] = useState<Notes>(initialNotes);
   
   const [settings, setSettings] = useState<Settings>(initialSettings);
-  const [meta, setMeta] = useState<Meta>(initialMeta);
-  const [log, setLog] = useState<Log>(initialLog);
 
   // const [servers, innerSetServers] = useState<Server[]>(initialServers);
   // // const [games, setGames] = useState<Game[]>([]);
@@ -129,8 +123,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setNotes(cs.notes);
 
     setSettings(cs.Settings);
-    setLog(cs.Log);
-    setMeta(cs.Meta);
   }
 
   if (!initialized) {
@@ -198,10 +190,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     settings,
     
     notes,
-    meta,
     merits,
     flaws,
-    log,
 
     disciplines,
     addDiscipline() {
@@ -281,9 +271,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     // },
     getCharSheet() {
       return {
-        Meta: meta,
         Version: CURRENT_VERSION,
-        Log: log,
         Settings: settings, 
         profile, 
         attributes, 

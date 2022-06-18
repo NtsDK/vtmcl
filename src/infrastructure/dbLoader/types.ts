@@ -25,16 +25,13 @@ export interface CharSheetData {
   "virtues": Virtues;
   "merits": Merits;
   "flaws": Flaws;
-  "state": StateInJson;
+  "state": State;
+  "health": Health;
   "notes": Notes;
 }
 
 export interface CharSheetInJson {
-  Meta: Meta;
   Version: Version;
-  Log: Log;
   Charsheet: CharSheetData;
   Settings: Settings;
 }
-
-export type StateInJson = State & { health: Health }

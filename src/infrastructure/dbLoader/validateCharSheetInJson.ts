@@ -18,16 +18,12 @@ const ajv = new Ajv({
 export const charSheetInJsonSchema: JSONSchemaType<CharSheetInJson> = {
   type: "object",
   properties: {
-    "Meta":       metaSchema,
     "Version":    versionSchema,
-    "Log":        logSchema,
     "Charsheet":  charSheetDataSchema,
     "Settings":   settingsSchema,
   },
   required: [
-    "Meta",
     "Version",
-    "Log",
     "Charsheet",
     "Settings",
   ],

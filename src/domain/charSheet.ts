@@ -19,9 +19,7 @@ import {
 } from "./nonCharacterDataTypes";
 
 export interface CharSheet {
-  Meta: Meta;
   Version: Version;
-  Log: Log;
   Settings: Settings;
   profile: Profile;
   attributes: Attributes;

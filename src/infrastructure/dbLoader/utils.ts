@@ -5,8 +5,6 @@ import { CharSheetInJson } from "./types";
 
 export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
   return {
-    Log: charSheet.Log,
-    Meta: charSheet.Meta,
     Settings: charSheet.Settings,
     Version: charSheet.Version,
     Charsheet: {
@@ -21,16 +19,14 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       virtues: charSheet.virtues,
       state: {
         ...charSheet.state,
-        health: charSheet.health
-      }
+      },
+      health: charSheet.health
     },
   };
 }
 
 export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
   return {
-    Log: charSheetInJson.Log,
-    Meta: charSheetInJson.Meta,
     Settings: charSheetInJson.Settings,
     Version: charSheetInJson.Version,
     // character
@@ -43,12 +39,7 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     merits: charSheetInJson.Charsheet.merits,
     notes: charSheetInJson.Charsheet.notes,
     virtues: charSheetInJson.Charsheet.virtues,
-    state: {
-      bloodpool: charSheetInJson.Charsheet.state.bloodpool,
-      humanity: charSheetInJson.Charsheet.state.humanity,
-      willpower: charSheetInJson.Charsheet.state.willpower,
-      willpower2: charSheetInJson.Charsheet.state.willpower2,
-    },
-    health: charSheetInJson.Charsheet.state.health
+    state: charSheetInJson.Charsheet.state,
+    health: charSheetInJson.Charsheet.health
   };
 }

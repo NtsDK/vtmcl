@@ -9,10 +9,9 @@ import {
   Merits,
   Health,
   Notes,
-  // State,
-  Virtues
+  Virtues,
+  State
 } from "../../domain";
-import { StateInJson } from "./types";
 
 
 export const notesSchema: JSONSchemaType<Notes> = {
@@ -115,21 +114,19 @@ export const healthSchema: JSONSchemaType<Health> = {
   additionalProperties: false,
 };
 
-export const stateInJsonSchema: JSONSchemaType<StateInJson> = {
+export const stateSchema: JSONSchemaType<State> = {
   type: "object",
   properties: {
     "humanity":   {type: "number"},
     "willpower": {type: "number"},
     "bloodpool":      {type: "number"},
     "willpower2":      {type: "number"},
-    "health":      healthSchema,
   },
   required: [
     "humanity",
     "willpower",
     "bloodpool",
     "willpower2",
-    "health"
   ],
   additionalProperties: false,
 };

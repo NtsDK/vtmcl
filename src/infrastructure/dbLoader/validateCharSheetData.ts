@@ -8,7 +8,8 @@ import {
   meritsSchema,
   notesSchema,
   profileSchema,
-  stateInJsonSchema,
+  stateSchema,
+  healthSchema,
   virtuesSchema,
 } from "./validateCharSheetDataElements";
 import { abilitiesSchema } from "./abilitiesSchema";
@@ -24,7 +25,8 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "virtues":        virtuesSchema,
     "merits":   meritsSchema,
     "flaws":    flawsSchema,
-    "state":       stateInJsonSchema,
+    "state":       stateSchema,
+    "health": healthSchema,
     "notes": notesSchema,
   },
   required: [
@@ -37,6 +39,7 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "merits",
     "flaws",
     "state",
+    "health",
     "notes",
   ],
   additionalProperties: false,

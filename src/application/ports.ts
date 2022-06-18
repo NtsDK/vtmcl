@@ -81,14 +81,6 @@ export interface SettingsService {
   settings: Settings;
 }
 
-export interface MetaService {
-  meta: Meta;
-}
-
-export interface LogService {
-  log: Log;
-}
-
 // export interface GameStorageService {
 //   games: Game[];
 //   setGames(games: Game[]): void;
