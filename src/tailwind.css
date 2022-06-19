@@ -550,6 +550,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.25rem;
 }
 
+.tw-w-auto {
+  width: auto;
+}
+
 .tw-flex-1 {
   flex: 1 1 0%;
 }
@@ -562,6 +566,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-grow: 0;
 }
 
+.tw-flex-col {
+  flex-direction: column;
+}
+
 .tw-flex-wrap {
   flex-wrap: wrap;
 }
@@ -572,6 +580,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-bg-transparent {
   background-color: transparent;
+}
+
+.tw-bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .tw-px-3 {
