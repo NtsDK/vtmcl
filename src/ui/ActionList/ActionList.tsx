@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { UploadDatabaseButton } from '../Header/UploadDatabaseButton';
 import { DownloadDatabaseButton } from '../Header/DownloadDatabaseButton';
 import { CreateDatabaseButton } from '../Header/CreateDatabaseButton';
+import { LangButton } from '../Header/LangButton';
 
 interface ActionListProps {
   className?: string;
@@ -17,6 +18,8 @@ export function ActionList(props: ActionListProps) {
       <UploadDatabaseButton />
       <DownloadDatabaseButton />
       <CreateDatabaseButton />
+      <LangButton lang='ru'/>
+      <LangButton lang='en'/>
     </div>
   );
 }

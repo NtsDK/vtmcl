@@ -514,6 +514,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0px;
 }
 
+.tw-mr-4 {
+  margin-right: 1rem;
+}
+
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
+.tw-inline {
+  display: inline;
+}
+
 .tw-flex {
   display: flex;
 }
@@ -617,6 +629,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-text-sm {
   font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.tw-leading-5 {
   line-height: 1.25rem;
 }
 

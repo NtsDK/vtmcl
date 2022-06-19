@@ -1,0 +1,1 @@
+export { LangButton } from './LangButton';

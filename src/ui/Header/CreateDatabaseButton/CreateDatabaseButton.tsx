@@ -13,9 +13,7 @@ import {
   initialDisciplines, 
   initialFlaws, 
   initialHealth, 
-  initialLog, 
   initialMerits, 
-  initialMeta, 
   initialNotes, 
   initialProfile, 
   initialSettings, 
@@ -34,9 +32,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
 
   function setEmptyCharSheet() {
     setCharSheet(R.clone({
-      Meta: initialMeta,
       Version: CURRENT_VERSION,
-      Log: initialLog,
       Settings: initialSettings,
 
       profile: initialProfile,
@@ -59,7 +55,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       type="button"
       data-original-title=""
       onClick={setEmptyCharSheet}
-      title={t('header.save-database')}
+      title={t('header.create-database')}
       className="CreateDatabaseButton tw-py-3 tw-text-lg"
     >
       {t('header.create-database')}

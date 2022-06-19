@@ -106,17 +106,6 @@ export const initialNotes: Notes = '';
 
 
 // no character data
-
-export const initialLog: Log = [];
-
-export const initialMeta: Meta = {
-  name: "",
-  date: "",
-  preGameDate: "",
-  description: "",
-  saveTime: ""
-};
-
 export const initialSettings: Settings = {
   backgroundColor: "#ababab",
   charsheetBackColor: "#ffffff",
