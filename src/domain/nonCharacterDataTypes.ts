@@ -10,9 +10,15 @@ export type Log = [string,string,string,string][];
 
 export type Version = string;
 
+export type CharsheetBackMode = 
+  | "charsheet-image"
+  | "charsheet-none"
+  | "charsheet-color"
+;
+
 export interface Settings {
   "backgroundColor": string;
   "charsheetBackColor": string;
   "charsheetBackImage": string;
-  "charsheetBackMode": string;
+  "charsheetBackMode": CharsheetBackMode;
 }

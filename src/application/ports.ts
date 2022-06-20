@@ -8,13 +8,12 @@ import {
   Attributes, 
   Backgrounds, 
   CharSheet, 
+  CharsheetBackMode, 
   Disciplines, 
   ErrorDescription, 
   Flaws, 
   Health, 
-  Log, 
   Merits, 
-  Meta, 
   Notes, 
   Profile, 
   Settings, 
@@ -86,6 +85,10 @@ export interface NotesService {
 
 export interface SettingsService {
   settings: Settings;
+  setBackgroundColor(backgroundColor: string): void;
+  setCharsheetBackColor(charsheetBackColor: string): void;
+  setCharsheetBackImage(charsheetBackImage: string): void;
+  setCharsheetBackMode(charsheetBackMode: CharsheetBackMode): void;
 }
 
 // export interface GameStorageService {

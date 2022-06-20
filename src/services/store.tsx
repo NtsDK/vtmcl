@@ -22,13 +22,12 @@ import {
   Attributes,
   Backgrounds,
   CharSheet,
+  CharsheetBackMode,
   Disciplines,
   ErrorDescription,
   Flaws,
   Health, 
-  Log, 
   Merits, 
-  Meta, 
   Notes, 
   Profile, 
   Settings, 
@@ -185,8 +184,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       });
     },
 
-    settings,
-
     notes,
     setNotes: function (notes: Notes): void {
       setNotes(notes);
@@ -275,6 +272,20 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
           value
         };
       }));
+    },
+
+    settings,
+    setBackgroundColor(backgroundColor: string) {
+      setSettings({...settings, backgroundColor});
+    },
+    setCharsheetBackColor(charsheetBackColor: string) {
+      setSettings({...settings, charsheetBackColor});
+    },
+    setCharsheetBackImage(charsheetBackImage: string) {
+      setSettings({...settings, charsheetBackImage});
+    },
+    setCharsheetBackMode(charsheetBackMode: CharsheetBackMode) {
+      setSettings({...settings, charsheetBackMode});
     },
 
     // servers,

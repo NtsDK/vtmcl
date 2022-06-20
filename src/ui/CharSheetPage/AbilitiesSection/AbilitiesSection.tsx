@@ -1,6 +1,6 @@
 import React from 'react';
 import { RangeInput } from '../RangeInput';
-import { SectionHeader } from '../SectionHeader';
+// import { SectionHeader } from '../SectionHeader';
 import { useTranslation } from 'react-i18next';
 import './AbilitiesSection.css';
 import classnames from "classnames";
