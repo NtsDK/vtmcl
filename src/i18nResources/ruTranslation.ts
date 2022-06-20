@@ -190,7 +190,8 @@ export const ruTranslation = {
     "l10n": "Русский",
     "dictionary-icon": "ru",
     "lang-ru": "Русский язык",
-    "lang-en": "Английский язык"
+    "lang-en": "Английский язык",
+    "fullcreen-toggle": "Полноэкранный режим"
   },
   "common": {
     "to": "в",

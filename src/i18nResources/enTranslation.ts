@@ -193,7 +193,8 @@ export const enTranslation: TranslationInfo = {
     "l10n": "English",
     "dictionary-icon": "gb",
     "lang-ru": "Russian language",
-    "lang-en": "English language"
+    "lang-en": "English language",
+    "fullcreen-toggle": "Fullscreen mode"
   },
   "common": {
     "to": "to",
