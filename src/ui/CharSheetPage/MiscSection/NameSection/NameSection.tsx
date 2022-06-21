@@ -1,11 +1,20 @@
 import React, { ChangeEvent } from 'react';
 import './NameSection.css';
+import classnames from "classnames";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faXmark
+} from '@fortawesome/free-solid-svg-icons';
 
 interface NameSectionProps {
-  items: string[],
-  addItem: () => void,
-  removeItem: (index: number) => void,
-  setItem: (index: number, name: string) => void,
+  items: string[];
+  addItem: () => void;
+  removeItem: (index: number) => void;
+  setItem: (index: number, name: string) => void;
+  addItemMsg: string;
+  removeItemMsg: string;
+  className?: string;
 }
 
 export function NameSection(props: NameSectionProps) {
@@ -13,7 +22,10 @@ export function NameSection(props: NameSectionProps) {
     items,
     addItem,
     removeItem,
-    setItem
+    setItem,
+    addItemMsg,
+    removeItemMsg,
+    className
   } = props;
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,22 +34,32 @@ export function NameSection(props: NameSectionProps) {
   }
 
   return (
-    <div className="NameSection">
+    <div className={classnames("NameSection", className)}>
       {
         items.map((name, index) => <div className='tw-flex tw-m-1'>
           <input
-            className='tw-bg-transparent tw-flex-grow-0 name-number-input tw-text-sm' 
-            style={{width: '7rem'}}
+            className='tw-bg-transparent tw-flex-grow-1 tw-w-full name-number-input tw-text-sm' 
             value={name} 
             onChange={onNameChange(index)}
           />
-          <button onClick={() => removeItem(index)}>RE</button>
+          <button 
+            onClick={() => removeItem(index)} 
+            aria-label={removeItemMsg} 
+            title={removeItemMsg}
+          >
+            <FontAwesomeIcon
+              className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
+              icon={faXmark}
+            />
+          </button>
         </div>)
       }
       <div className='tw-text-center tw-mt-4'>
         <button
           className='tw-w-8' 
           onClick={addItem}
+          aria-label={addItemMsg} 
+          title={addItemMsg}
         >
           <img src="images/add-squared-button.svg"/>
         </button>

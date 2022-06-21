@@ -21,9 +21,9 @@ export function MiscSection(props: MiscSectionProps) {
   return (
     <div className={classnames("MiscSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.merits')}</Subheader>
-        <MeritsSection/>
-        <Subheader>{t('charsheet.flaws')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.merits')}</Subheader>
+        <MeritsSection className="tw-mb-4"/>
+        <Subheader className="tw-mb-2">{t('charsheet.flaws')}</Subheader>
         <FlawsSection/>
       </div>
       <div className="tw-flex-1">

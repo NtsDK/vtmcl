@@ -3,7 +3,11 @@ import { useBackgrounds } from '../../../../services/storageAdapter';
 import { NameNumberSection } from '../NameNumberSection';
 import './BackgroundsSection.css';
 
+import classnames from "classnames";
+import { useTranslation } from 'react-i18next';
+
 interface BackgroundsSectionProps {
+  className?: string;
 }
 
 export function BackgroundsSection(props: BackgroundsSectionProps) {
@@ -14,14 +18,19 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
     setBackgroundValue,
     removeBackground,
   } = useBackgrounds();
+  const { t } = useTranslation();
+  const { className } = props;
 
   return (
     <NameNumberSection
+      className={classnames("BackgroundsSection", className)}
       addItem={addBackground}
       items={backgrounds}
       removeItem={removeBackground}
       setItemName={setBackgroundName}
       setItemValue={setBackgroundValue}
+      addItemMsg={t('buttons.add-background')}
+      removeItemMsg={t('buttons.remove-background')}
     />
   );
 }

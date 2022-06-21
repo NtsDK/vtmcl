@@ -3,7 +3,11 @@ import { useMeritsNFlaws } from '../../../../services/storageAdapter';
 import { NameSection } from '../NameSection';
 import './MeritsSection.css';
 
+import classnames from "classnames";
+import { useTranslation } from 'react-i18next';
+
 interface MeritsSectionProps {
+  className?: string;
 }
 
 export function MeritsSection(props: MeritsSectionProps) {
@@ -11,15 +15,20 @@ export function MeritsSection(props: MeritsSectionProps) {
     merits,
     addMerit,
     removeMerit,
-    setMerit
+    setMerit,
   } = useMeritsNFlaws();
+  const { t } = useTranslation();
+  const { className } = props;
 
   return (
     <NameSection 
+      className={classnames("MeritsSection", className)}
       addItem={addMerit}
       items={merits}
       removeItem={removeMerit}
       setItem={setMerit}
+      addItemMsg={t('buttons.add-merit')}
+      removeItemMsg={t('buttons.remove-merit')}
     />
   );
 }

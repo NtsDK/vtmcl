@@ -3,6 +3,16 @@ import { ruTranslation } from "./ruTranslation";
 type TranslationInfo = typeof ruTranslation;
 
 export const enTranslation: TranslationInfo = {
+  "buttons": {
+    'add-merit': 'Add merit',
+    'remove-merit': 'Remove merit',
+    'add-flaw': 'Add flaw',
+    'remove-flaw': 'Remove flaw',
+    'add-discipline': 'Add discipline',
+    'remove-discipline': 'Remove discipline',
+    'add-background': 'Add background',
+    'remove-background': 'Remove background',
+  },
   "instruction-tab": {
     'actions-n-possibilities': 'Actions and possibilities',
     'video': 'Video',

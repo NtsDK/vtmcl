@@ -1,5 +1,15 @@
 
 export const ruTranslation = {
+  "buttons": {
+    'add-merit': 'Добавить достоинство',
+    'remove-merit': 'Удалить достоинство',
+    'add-flaw': 'Добавить недостаток',
+    'remove-flaw': 'Удалить недостаток',
+    'add-discipline': 'Добавить дисциплину',
+    'remove-discipline': 'Удалить дисциплину',
+    'add-background': 'Добавить дополнение',
+    'remove-background': 'Удалить дополнение',
+  },
   "instruction-tab": {
     'actions-n-possibilities': 'Действия и возможности',
     'video': 'Видео',

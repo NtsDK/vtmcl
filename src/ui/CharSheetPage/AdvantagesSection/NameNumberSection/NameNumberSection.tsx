@@ -2,15 +2,25 @@ import React, { ChangeEvent } from 'react';
 import { RangeInput } from '../../RangeInput';
 import './NameNumberSection.css';
 
+import classnames from "classnames";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faXmark
+} from '@fortawesome/free-solid-svg-icons';
+
 interface NameNumberSectionProps {
   items: {
-    name: string, 
-    value: number
-  }[],
-  addItem: () => void,
-  removeItem: (index: number) => void,
-  setItemName: (index: number, name: string) => void,
-  setItemValue: (index: number, value: number) => void
+    name: string;
+    value: number;
+  }[];
+  addItem: () => void;
+  removeItem: (index: number) => void;
+  setItemName: (index: number, name: string) => void;
+  setItemValue: (index: number, value: number) => void;
+  addItemMsg: string;
+  removeItemMsg: string;
+  className?: string;
 }
 
 export function NameNumberSection(props: NameNumberSectionProps) {
@@ -19,7 +29,10 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     addItem,
     removeItem,
     setItemName,
-    setItemValue
+    setItemValue,
+    addItemMsg,
+    removeItemMsg,
+    className
   } = props;
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +41,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
   }
 
   return (
-    <div className="NameNumberSection">
+    <div className={classnames("NameNumberSection", className)}>
       {
         items.map(({name, value}, index) => <div className='tw-flex tw-m-1'>
           <input
@@ -37,7 +50,16 @@ export function NameNumberSection(props: NameNumberSectionProps) {
             value={name} 
             onChange={onNameChange(index)}
           />
-          <button onClick={() => removeItem(index)}>RE</button>
+          <button 
+            onClick={() => removeItem(index)}
+            aria-label={removeItemMsg} 
+            title={removeItemMsg}
+          >
+            <FontAwesomeIcon
+              className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
+              icon={faXmark}
+            />
+          </button>
           <RangeInput
             max={5} 
             value={value}
@@ -50,6 +72,8 @@ export function NameNumberSection(props: NameNumberSectionProps) {
         <button
           className='tw-w-8' 
           onClick={addItem}
+          aria-label={addItemMsg} 
+          title={addItemMsg}
         >
           <img src="images/add-squared-button.svg"/>
         </button>
