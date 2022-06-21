@@ -1,6 +1,9 @@
 import React, { ChangeEvent } from 'react';
 import './SettingsSection.css';
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '../../services/storageAdapter';
 import { initialSettings } from '../../services/initialValues';
@@ -34,7 +37,7 @@ export function SettingsSection(props: SettingsSectionProps) {
   return (
     <div className="SettingsSection">
       <div className="tw-m-4">
-        <label>{t('charsheet-tab.background-color')}</label>
+        <label className="tw-mr-4">{t('charsheet-tab.background-color')}</label>
         <input 
           type="color" 
           className="background-color-input" 
@@ -43,21 +46,27 @@ export function SettingsSection(props: SettingsSectionProps) {
         />
       </div>
       <div className="tw-m-4">
-        <div className="tw-mb-4">
-          <label>{t('charsheet-tab.charsheet-background-mode')}</label>
-          <select 
-            className="mode-select select2-mono-selector charsheet-back-mode" 
-            value={settings.charsheetBackMode}
-            // @ts-ignore
-            onChange={(e) => setCharsheetBackMode(e.target.value)}
-          >
-            <option value="charsheet-image">{t('constant.charsheet-image')}</option>
-            <option value="charsheet-none">{t('constant.charsheet-none')}</option>
-            <option value="charsheet-color">{t('constant.charsheet-color')}</option>
-          </select>
-        </div>
-        <div className="tw-mb-4">
-          <label>{t('charsheet-tab.charsheet-background-color')}</label>
+        <h2 className='tw-text-lg tw-mb-4'>{t('charsheet-tab.charsheet-background-mode')}</h2>
+        <Form.Check 
+          type="radio"
+          id="charsheet-none"
+          name="charsheet-back-mode"
+          className="tw-mb-4"
+          label={t('constant.charsheet-none')}
+          checked={settings.charsheetBackMode === 'charsheet-none'}
+          onChange={(e) => setCharsheetBackMode('charsheet-none')}
+        />
+        <Form.Check 
+          type="radio"
+          id="charsheet-color"
+          name="charsheet-back-mode"
+          className="tw-mb-2"
+          label={t('constant.charsheet-color')}
+          checked={settings.charsheetBackMode === 'charsheet-color'}
+          onChange={(e) => setCharsheetBackMode('charsheet-color')}
+        />
+        <fieldset className="tw-border-2 tw-border-solid tw-border-gray-600 tw-px-6 tw-py-4 tw-mb-4">
+          <label className="tw-mr-4">{t('charsheet-tab.charsheet-background-color')}</label>
           <input 
             type="color" 
             className="charsheet-background-color-input" 
@@ -65,25 +74,37 @@ export function SettingsSection(props: SettingsSectionProps) {
             onChange={(e) => setCharsheetBackColor(e.target.value)}
             disabled={settings.charsheetBackMode !== 'charsheet-color'}
           />
-        </div>
-        <div className="tw-mb-4">
-          <label>{t('charsheet-tab.charsheet-background-image')}</label>
-          <input 
-            type="file" 
-            className="charsheet-background-image-input"
-            onChange={readImage}
-            disabled={settings.charsheetBackMode !== 'charsheet-image'}
-          />
-        </div>
-        <div>
-          <button 
-            className="back-image-to-default"
-            onClick={() => setCharsheetBackImage(initialSettings.charsheetBackImage)}
-            disabled={settings.charsheetBackMode !== 'charsheet-image'}
-          >
-            {t('charsheet-tab.to-default-background-image')}
-          </button>
-        </div>
+        </fieldset>
+        <Form.Check 
+          type="radio"
+          id="charsheet-image"
+          name="charsheet-back-mode"
+          className="tw-mb-2"
+          label={t('constant.charsheet-image')}
+          checked={settings.charsheetBackMode === 'charsheet-image'}
+          onChange={(e) => setCharsheetBackMode('charsheet-image')}
+        />
+        <fieldset className="tw-border-2 tw-border-solid tw-border-gray-600 tw-px-6 tw-py-4">
+          <div className="tw-mb-8">
+            <label>{t('charsheet-tab.charsheet-background-image')}</label>
+            <input 
+              type="file" 
+              className="charsheet-background-image-input"
+              onChange={readImage}
+              disabled={settings.charsheetBackMode !== 'charsheet-image'}
+            />
+          </div>
+          <div>
+            <Button 
+              style={{backgroundColor: '#007bff'}}
+              className="back-image-to-default"
+              onClick={() => setCharsheetBackImage(initialSettings.charsheetBackImage)}
+              disabled={settings.charsheetBackMode !== 'charsheet-image'}
+            >
+              {t('charsheet-tab.to-default-background-image')}
+            </Button>
+          </div>
+        </fieldset>
       </div>
     </div>
   );

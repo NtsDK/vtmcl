@@ -47,7 +47,7 @@ function App() {
             style={{flexBasis: '25rem'}}
           >
             {/* <Header /> */}
-            <PageNav className='tw-flex-col'/>
+            <PageNav className='tw-flex-col tw-mb-8'/>
 
             <Accordion defaultActiveKey="0">
               <Card>
