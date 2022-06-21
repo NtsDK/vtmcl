@@ -490,16 +490,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-mb-4 {
+  margin-bottom: 1rem;
+}
+
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
 
 .tw-mt-2 {
   margin-top: 0.5rem;
-}
-
-.tw-mb-4 {
-  margin-bottom: 1rem;
 }
 
 .tw-mr-2 {

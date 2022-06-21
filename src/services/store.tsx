@@ -1,4 +1,5 @@
-import React, { useState, PropsWithChildren } from "react";
+import React, { useState, PropsWithChildren, useEffect } from "react";
+import * as R from 'ramda';
 import { useContext } from "react";
 import { 
 //   GameStorageService, 
@@ -97,6 +98,37 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [notes, setNotes] = useState<Notes>(initialNotes);
   
   const [settings, setSettings] = useState<Settings>(initialSettings);
+
+  useEffect(() => {
+    saveCharSheetInLS(R.clone({
+      profile, 
+      attributes,
+      abilities,
+      disciplines,
+      backgrounds,
+      virtues,
+      merits,
+      flaws,
+      state,
+      health,
+      notes,
+      Settings: settings,
+      Version: CURRENT_VERSION
+    }))
+  }, [
+    profile, 
+    attributes,
+    abilities,
+    disciplines,
+    backgrounds,
+    virtues,
+    merits,
+    flaws,
+    state,
+    health,
+    notes,
+    settings,
+  ]);
 
   // const [servers, innerSetServers] = useState<Server[]>(initialServers);
   // // const [games, setGames] = useState<Game[]>([]);
@@ -288,30 +320,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setSettings({...settings, charsheetBackMode});
     },
 
-    // servers,
-    // // setServers: innerSetServers,
-    // setServers: function(servers: Server[]): void {
-    //   innerSetServers(servers);
-    //   saveDbInLS({
-    //     serverData: servers,
-    //     gameData: games
-    //   });
-    // },
-    // findServer: (id: UniqueId): Server | undefined => {
-    //   return servers.find(el => el.id === id);
-    // },
-    // games,
-    // // setGames: innerSetGames,
-    // setGames: function(games: Game[]): void {
-    //   innerSetGames(games);
-    //   saveDbInLS({
-    //     serverData: servers,
-    //     gameData: games
-    //   });
-    // },
-    // findGameByServerId(id: UniqueId): Game | undefined {
-    //   return games.find(el => el.serverId === id);
-    // },
     getCharSheet() {
       return {
         Version: CURRENT_VERSION,
@@ -330,21 +338,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       };
     },
     setCharSheet,
-    // setServerDatabase(serverDatabase: ServerDatabase) {
-    //   innerSetServers(serverDatabase.serverData.map(el => ({...el, status: ServerStatus.unknown})));
-    //   innerSetGames(serverDatabase.gameData);
-    // },
     errorDescription,
     setErrorDescription
-    // // user,
-    // // cart,
-    // // // cookies,
-    // // orders,
-    // // updateUser: setUser,
-    // // updateCart: setCart,
-    // // updateOrders: setOrders,
-    // // emptyCart: () => setCart({ products: [] }),
-
   };
 
   return (
