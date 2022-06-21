@@ -610,6 +610,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
+.tw-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tw-px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .tw-pb-0 {
   padding-bottom: 0px;
 }
