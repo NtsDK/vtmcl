@@ -12,8 +12,6 @@ import {
   Virtues 
 } from "./characterDataTypes";
 import { 
-  Log, 
-  Meta, 
   Settings, 
   Version 
 } from "./nonCharacterDataTypes";

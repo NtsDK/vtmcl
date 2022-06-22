@@ -17,6 +17,7 @@ import {
   useCharSheetStorage, 
   useErrorDescription 
 } from '../../../services/storageAdapter';
+import { migrate } from '../../../domainServices';
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {
@@ -40,52 +41,19 @@ export function UploadDatabaseButton(props) {
       // console.log('database2', database2);
       if (!validateCharSheetInJson(database2)) {
         try {
-          // attempts to apply migrator
-          // const db = (database2 as CharacterSheetInJson);
-          // db.gameData = db.gameData.map(el => ({
-          //   id: el.id,
-          //   label: el.label,
-          //   link: el.link,
-          //   orgName: el.orgName,
-          //   orgLogin: el.orgLogin,
-          //   orgPassword: el.orgPassword,
-          //   city: el.city,
-          //   date: el.date,
-          //   mark: Number(el.mark),
-          //   notes: el.notes,
-          //   serverId: el.serverId,
-          //   duration: Number(el.duration)
-          // }));
-          // db.serverData = db.serverData.map(el => ({
-          //   id: el.id,
-          //   label: el.label,
-          //   link: el.link,
-          //   login: el.login,
-          //   password: el.password,
-          // }));
-  
-          // if (!validateCharSheetInJson(db)) {
-          //   setErrorDescription({
-          //     title: 'Ошибка при загрузке базы',
-          //     text: 'См. консоль разработчика'
-          //   });
-          //   console.log('Ошибка при загрузке базы', database2, validateCharSheetInJson.errors);
-          //   return;
-          // }
-          
-          // setServerDatabase(serverDbFromJson(db));
-          setErrorDescription({
-            title: t('errors.error-on-file-loading'),
-            text: t('errors.check-developer-console')
-          });
-          console.log(t('errors.error-on-file-loading'), database2, validateCharSheetInJson.errors);
+          const database3 = migrate(database2);
+          if (!validateCharSheetInJson(database3)) {
+            console.error(t('errors.error-on-file-loading'), database2, JSON.stringify(validateCharSheetInJson.errors, null, '  '));
+            throw new Error('Ошибка в мигрированной версии листа персонажа ' + JSON.stringify(validateCharSheetInJson.errors, null, '  '));
+          }
 
+          setCharSheet(charSheetFromJson(database3));
         } catch (error) {
           setErrorDescription({
             title: t('errors.error-on-file-loading'),
             text: t('errors.check-developer-console')
           });
-          console.log(t('errors.error-on-file-loading'), database2, error);
+          console.error(t('errors.error-on-file-loading'), database2, error);
         }
       } else {
         setCharSheet(charSheetFromJson(database2));
@@ -95,7 +63,7 @@ export function UploadDatabaseButton(props) {
         title: t('errors.error-on-file-loading'),
         text: t('errors.check-developer-console')
       });
-      console.log(t('errors.error-on-file-loading'), error);
+      console.error(t('errors.error-on-file-loading'), error);
     });
   }
 

@@ -1,8 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
 import { CharSheetInJson } from "./types";
 import { 
-  logSchema,
-  metaSchema,
   settingsSchema,
   versionSchema,
 } from "./validateNonCharSheetDataElements";
