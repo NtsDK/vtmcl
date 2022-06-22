@@ -72,7 +72,7 @@ function App() {
           <div className="tw-flex-grow-1 tw-w-full">
             <Switch>
               <Route path="/charsheet" component={CharSheetPage} />
-              <Route path="/instruction" component={InstructionPage} />
+              {/* <Route path="/instruction" component={InstructionPage} /> */}
               {/* <Route path="/log" component={LogPage} /> */}
               <Route path="/about" component={AboutPage} />
               <Route path="/" component={CharSheetPage} />

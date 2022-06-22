@@ -195,7 +195,7 @@ export const ruTranslation = {
     //        "chat":"Чат",
     "logout": "Выход",
     "test": "Тест",
-    "about": "О нас",
+    "about": "О листе персонажа",
     "logViewer": "Логи",
     "l10n": "Русский",
     "dictionary-icon": "ru",

@@ -198,7 +198,7 @@ export const enTranslation: TranslationInfo = {
     //        "chat":"Chat",
     "logout": "Exit",
     "test": "Test",
-    "about": "About",
+    "about": "About character sheet",
     "logViewer": "Logs",
     "l10n": "English",
     "dictionary-icon": "gb",
