@@ -10,6 +10,10 @@ export const ruTranslation = {
     'add-background': 'Добавить дополнение',
     'remove-background': 'Удалить дополнение',
   },
+  'errors': {
+    'error-on-file-loading': 'Ошибка при загрузке листа персонажа',
+    'check-developer-console': 'См. консоль разработчика'
+  },
   "instruction-tab": {
     'actions-n-possibilities': 'Действия и возможности',
     'video': 'Видео',

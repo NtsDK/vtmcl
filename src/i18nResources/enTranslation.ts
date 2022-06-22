@@ -13,6 +13,10 @@ export const enTranslation: TranslationInfo = {
     'add-background': 'Add background',
     'remove-background': 'Remove background',
   },
+  'errors': {
+    'error-on-file-loading': 'Error on file loading',
+    'check-developer-console': 'Check developer console'
+  },
   "instruction-tab": {
     'actions-n-possibilities': 'Actions and possibilities',
     'video': 'Video',

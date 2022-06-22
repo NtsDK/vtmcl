@@ -75,27 +75,27 @@ export function UploadDatabaseButton(props) {
           
           // setServerDatabase(serverDbFromJson(db));
           setErrorDescription({
-            title: 'Ошибка при загрузке базы',
-            text: 'См. консоль разработчика'
+            title: t('errors.error-on-file-loading'),
+            text: t('errors.check-developer-console')
           });
-          console.log('Ошибка при загрузке базы', database2, validateCharSheetInJson.errors);
+          console.log(t('errors.error-on-file-loading'), database2, validateCharSheetInJson.errors);
 
         } catch (error) {
           setErrorDescription({
-            title: 'Ошибка при загрузке базы',
-            text: 'См. консоль разработчика'
+            title: t('errors.error-on-file-loading'),
+            text: t('errors.check-developer-console')
           });
-          console.log('Ошибка при загрузке базы', database2, error);
+          console.log(t('errors.error-on-file-loading'), database2, error);
         }
       } else {
         setCharSheet(charSheetFromJson(database2));
       }
     }).catch(error => {
       setErrorDescription({
-        title: 'Ошибка при загрузке базы',
-        text: 'См. консоль разработчика'
+        title: t('errors.error-on-file-loading'),
+        text: t('errors.check-developer-console')
       });
-      console.log('Ошибка при загрузке базы', error);
+      console.log(t('errors.error-on-file-loading'), error);
     });
   }
 
