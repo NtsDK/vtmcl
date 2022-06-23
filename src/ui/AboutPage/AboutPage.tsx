@@ -14,27 +14,6 @@ export function AboutPage(props: AboutPageProps) {
     <div className="AboutPage">
       <Card>
         <Card.Body>
-          <div>{t('about.about-authors')}</div>
-          <br/>
-          <a href="http://trechkalov.com">{t('about.site-mention')} trechkalov.com</a>
-          <span>{t('about.site-description')}</span>
-          <br/>
-          <br/>
-          <span>{t('about.program-is-free-in-rep')}</span>
-          <a href="https://github.com/NtsDK/vtmcl">{t('about.by-link')}</a>
-          <br/>
-          <br/>
-          <div>{t('about.icons-authors')}</div>
-          <br/>
-          <div>{t('about.versions')}</div>
-          <ul>
-            <li>{t('about.var010')}</li>
-          </ul>
-          <br/>
-          <br/>
-          <br/>
-
-
           <div>
             <div className="tw-mb-8">
               <p>Лист персонажа VtM V20 от NtsDK</p>
