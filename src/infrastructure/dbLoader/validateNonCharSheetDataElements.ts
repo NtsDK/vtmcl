@@ -33,13 +33,13 @@ export const settingsSchema: JSONSchemaType<Settings> = {
   properties: {
     "backgroundColor":       {type: "string"},
     "charsheetBackColor":     {type: "string"},
-    "charsheetBackImage":   {type: "string"},
+    "charsheetBackImage_v2":   {type: "string"},
     "charsheetBackMode":     {type: "string"},
   },
   required: [
     "backgroundColor",
     "charsheetBackColor",
-    "charsheetBackImage",
+    "charsheetBackImage_v2",
     "charsheetBackMode",
   ],
   additionalProperties: false,

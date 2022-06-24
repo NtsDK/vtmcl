@@ -193,7 +193,7 @@ export const ruTranslation = {
     "register": "Регистрация",
     "open-database": "Загрузить лист персонажа из файла",
     "save-database": "Сохранить лист персонажа на диск",
-    "create-database": "Создать новую базу",
+    "create-database": "Создать новый лист персонажа",
     "docs": "Документация",
     "admins": "Администрирование",
     //        "chat":"Чат",

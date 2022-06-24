@@ -13,6 +13,8 @@ import {
   Virtues 
 } from "../domain";
 
+import { defaultBackgroundUrl } from './defaultBackground';
+
 export const initialProfile: Profile = {
   name: "",
   player: "",
@@ -107,6 +109,7 @@ export const initialNotes: Notes = '';
 export const initialSettings: Settings = {
   backgroundColor: "#ababab",
   charsheetBackColor: "#ffffff",
-  charsheetBackImage: "../images/back.png",
+  // charsheetBackImage: "../images/back.png",
+  charsheetBackImage_v2: defaultBackgroundUrl,
   charsheetBackMode: "charsheet-image"
 }

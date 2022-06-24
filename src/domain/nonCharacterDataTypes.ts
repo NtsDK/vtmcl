@@ -19,6 +19,6 @@ export type CharsheetBackMode =
 export interface Settings {
   "backgroundColor": string;
   "charsheetBackColor": string;
-  "charsheetBackImage": string;
+  "charsheetBackImage_v2": string;
   "charsheetBackMode": CharsheetBackMode;
 }

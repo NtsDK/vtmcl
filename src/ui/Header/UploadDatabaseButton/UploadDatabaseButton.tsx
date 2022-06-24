@@ -3,14 +3,10 @@ import './UploadDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { readJsonFile } from '../../../lib/fileUtils';
+import { readTextFile } from '../../../lib/fileUtils';
 import { useStore } from '../../../services/store';
 import { 
-  charSheetFromJson,
-  // ServerDatabaseInJson, 
-  // validateDatabaseSchema, 
-  // serverDbFromJson 
-  validateCharSheetInJson,
+  strToCharSheet,
   
 } from '../../../infrastructure/dbLoader';
 import { 
@@ -37,26 +33,19 @@ export function UploadDatabaseButton(props) {
   const { setCharSheet } = useCharSheetStorage();
 
   function onUploadFileSelected(evt: ChangeEventHandler<HTMLInputElement>) {
-    readJsonFile(evt).then((database2) => {
-      // console.log('database2', database2);
-      if (!validateCharSheetInJson(database2)) {
-        try {
-          const database3 = migrate(database2);
-          if (!validateCharSheetInJson(database3)) {
-            console.error(t('errors.error-on-file-loading'), database2, JSON.stringify(validateCharSheetInJson.errors, null, '  '));
-            throw new Error('Ошибка в мигрированной версии листа персонажа ' + JSON.stringify(validateCharSheetInJson.errors, null, '  '));
-          }
-
-          setCharSheet(charSheetFromJson(database3));
-        } catch (error) {
-          setErrorDescription({
-            title: t('errors.error-on-file-loading'),
-            text: t('errors.check-developer-console')
-          });
-          console.error(t('errors.error-on-file-loading'), database2, error);
+    readTextFile(evt).then((databaseStr) => {
+      try {
+        if(typeof databaseStr !== 'string') {
+          return;
         }
-      } else {
-        setCharSheet(charSheetFromJson(database2));
+
+        setCharSheet(strToCharSheet(databaseStr));
+      } catch (error) {
+        setErrorDescription({
+          title: t('errors.error-on-file-loading'),
+          text: t('errors.check-developer-console')
+        });
+        console.error(t('errors.error-on-file-loading'), databaseStr, error);
       }
     }).catch(error => {
       setErrorDescription({

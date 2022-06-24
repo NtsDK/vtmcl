@@ -1,9 +1,8 @@
 import { LS_KEY } from "../../constants";
 import { CharSheet } from "../../domain/charSheet";
 import { 
-  charSheetFromJson, 
   charSheetToJson, 
-  validateCharSheetInJson 
+  strToCharSheet
 } from "../dbLoader";
 
 export function saveCharSheetInLS(charSheet: CharSheet): void {
@@ -17,12 +16,7 @@ export function getCharSheetFromLS(): CharSheet | null {
     return null;
   }
   try {
-    const dbObj = JSON.parse(str);
-    if (!validateCharSheetInJson(dbObj)) {
-      console.log('Ошибка разбора данных из local storage', dbObj, validateCharSheetInJson.errors);
-      return null;
-    }
-    return charSheetFromJson(dbObj);
+    return strToCharSheet(str);
   } catch(error) {
     console.log('Ошибка разбора данных из local storage 2', str, error);
   }

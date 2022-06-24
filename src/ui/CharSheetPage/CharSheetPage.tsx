@@ -29,10 +29,10 @@ function getBgColor(settings: Settings) {
 function getBgImage(settings: Settings) {
   const {
     charsheetBackMode,
-    charsheetBackImage
+    charsheetBackImage_v2
   } = settings;
   if (charsheetBackMode === 'charsheet-image') {
-    return `url(${charsheetBackImage})`;
+    return `url(${charsheetBackImage_v2})`;
   }
   return 'none';
 }

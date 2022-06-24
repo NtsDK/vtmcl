@@ -98,7 +98,7 @@ export function SettingsSection(props: SettingsSectionProps) {
             <Button 
               style={{backgroundColor: '#007bff'}}
               className="back-image-to-default"
-              onClick={() => setCharsheetBackImage(initialSettings.charsheetBackImage)}
+              onClick={() => setCharsheetBackImage(initialSettings.charsheetBackImage_v2)}
               disabled={settings.charsheetBackMode !== 'charsheet-image'}
             >
               {t('charsheet-tab.to-default-background-image')}

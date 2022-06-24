@@ -20,6 +20,25 @@ import { DateTime } from 'luxon';
 //   window.open('extras/doc/nims.html');
 // };
 
+export const readTextFile = (evt: any) => 
+  new Promise<string | ArrayBuffer | null>((resolve, reject) => {
+    // Retrieve the first (and only!) File from the FileList object
+    const f = evt.target.files[0];
+
+    if (f) {
+      const r = new FileReader();
+      r.onload = function(this: FileReader, e: ProgressEvent<FileReader>) {
+        if(e.target === null) {
+          reject(new Error('File reader target is null'));
+        } else {
+          resolve(e.target.result)
+        }
+      };
+      r.readAsText(f);
+    } else {
+      reject(new Error('utils-base-file-loading-error'));
+    }
+  });
 export const readJsonFile = (evt: any) => new Promise((resolve, reject) => {
   // Retrieve the first (and only!) File from the FileList object
   const f = evt.target.files[0];

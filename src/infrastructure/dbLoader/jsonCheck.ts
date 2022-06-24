@@ -1,5 +1,6 @@
 import { CharSheetInJson } from "./types";
 import { CURRENT_VERSION } from "../../constants";
+import { defaultBackgroundUrl } from "../../services/defaultBackground";
 
 export const m: CharSheetInJson = {
   "Version": CURRENT_VERSION,
@@ -93,7 +94,7 @@ export const m: CharSheetInJson = {
   "Settings": {
     "backgroundColor": "#ababab",
     "charsheetBackColor": "#ffffff",
-    "charsheetBackImage": "../images/back.png",
+    "charsheetBackImage_v2": defaultBackgroundUrl,
     "charsheetBackMode": "charsheet-image"
   }
 }

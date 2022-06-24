@@ -313,8 +313,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setCharsheetBackColor(charsheetBackColor: string) {
       setSettings({...settings, charsheetBackColor});
     },
-    setCharsheetBackImage(charsheetBackImage: string) {
-      setSettings({...settings, charsheetBackImage});
+    setCharsheetBackImage(charsheetBackImage_v2: string) {
+      setSettings({...settings, charsheetBackImage_v2});
     },
     setCharsheetBackMode(charsheetBackMode: CharsheetBackMode) {
       setSettings({...settings, charsheetBackMode});

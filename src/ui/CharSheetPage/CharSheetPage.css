@@ -21,8 +21,5 @@
   /* border-image-source: url('images/border.png'); */
   border-image-source: url('../../../public/images/border.png');
 
-  /* background-color: transparent !important; 
-  background-image: url("../../../public/images/back.png") !important; */
-
   margin: 0 auto;
 }

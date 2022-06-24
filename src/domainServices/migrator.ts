@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import { defaultBackgroundUrl } from '../services/defaultBackground';
 
 export function migrate(charSheetSrc: any): unknown {
   let charSheet = R.clone(charSheetSrc);
@@ -12,6 +13,16 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.merits = Object.entries(charSheet.Charsheet.merits).map(el => el[0]);
     charSheet.Charsheet.flaws = Object.entries(charSheet.Charsheet.flaws).map(el => el[0]);
     charSheet.Version = '0.2.0';
+  }
+  if (charSheet.Version === '0.2.0') {
+    const data = charSheet.Settings.charsheetBackImage;
+    delete charSheet.Settings.charsheetBackImage;
+    if (data === "../images/back.png") {
+      charSheet.Settings.charsheetBackImage_v2 = defaultBackgroundUrl;
+    } else {
+      charSheet.Settings.charsheetBackImage_v2 = data;
+    }
+    charSheet.Version = '0.2.1';
   }
   return charSheet;
 }
