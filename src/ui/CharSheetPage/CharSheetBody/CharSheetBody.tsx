@@ -1,6 +1,8 @@
 import React from 'react';
 import './CharSheetBody.css';
 
+import classnames from "classnames";
+
 import { useTranslation } from 'react-i18next';
 import { ProfileSection } from "../ProfileSection";
 import { AttributeSection } from "../AttributeSection";
@@ -13,6 +15,7 @@ import { useSettings } from '../../../services/storageAdapter';
 import { Settings } from '../../../domain';
 
 interface CharSheetBodyProps {
+  className?: string;
 }
 
 function getBgColor(settings: Settings) {
@@ -41,10 +44,11 @@ export function CharSheetBody(props: CharSheetBodyProps) {
   const { t } = useTranslation();
 
   const { settings } = useSettings();
+  const { className } = props;
 
   return (
     <div 
-      className="CharSheetBody" 
+      className={classnames("CharSheetBody", className)}
       style={{
         backgroundColor: getBgColor(settings),
         backgroundImage: getBgImage(settings),
