@@ -10,8 +10,6 @@ import './App.css';
 
 // import { Settings } from "luxon";
 
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
 import { useTranslation } from 'react-i18next';
 
 // import { defaultLang } from "./i18nResources";
@@ -19,12 +17,10 @@ import { useTranslation } from 'react-i18next';
 // import { Header } from "./ui/Header";
 import { ErrorNotification } from './ui/ErrorNotification';
 import { CharSheetPage } from './ui/CharSheetPage';
-import { InstructionPage } from './ui/InstructionPage';
 import { AboutPage } from './ui/AboutPage';
-import { PageNav } from './ui/PageNav';
-import { ActionList } from './ui/ActionList';
-import { SettingsSection } from './ui/SettingsSection';
+
 import { useSettings } from './services/storageAdapter';
+import { ControlPanel } from './ui/ControlPanel';
 
 function App() {
   const { t } = useTranslation();
@@ -46,28 +42,7 @@ function App() {
             className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200"
             style={{flexBasis: '25rem'}}
           >
-            {/* <Header /> */}
-            <PageNav className='tw-flex-col tw-mb-8'/>
-
-            <Accordion defaultActiveKey="0">
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                  {t('header.actionMenu')}
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
-                  <ActionList />
-                </Accordion.Collapse>
-              </Card>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
-                  {t('charsheet-tab.settings')}
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="1">
-                  <SettingsSection/>
-                </Accordion.Collapse>
-              </Card>
-            </Accordion>
-            
+            <ControlPanel />
           </div>
           <div className="tw-flex-grow-1 tw-w-full">
             <Switch>
