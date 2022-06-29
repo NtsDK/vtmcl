@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDisciplines } from '../../../../services/storageAdapter';
-import { NameNumberSection } from '../NameNumberSection';
+import { NameNumberSection } from '../../generic/NameNumberSection';
 import './DisciplinesSection.css';
 
 import classnames from "classnames";

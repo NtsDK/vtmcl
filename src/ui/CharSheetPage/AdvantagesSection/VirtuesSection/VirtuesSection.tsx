@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { useVirtues } from '../../../../services/storageAdapter';
 import { Virtues } from '../../../../domain';
-import { RangeInput } from '../../RangeInput';
+import { RangeInput } from '../../generic/RangeInput';
 
 interface VirtuesSectionProps {
   className?: string;

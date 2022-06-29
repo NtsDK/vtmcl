@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ProfileSection } from "./ProfileSection";
 import { AttributeSection } from "./AttributeSection";
 import { AbilitiesSection } from "./AbilitiesSection";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "./generic/SectionHeader";
 import { AdvantagesSection } from './AdvantagesSection';
 import { MiscSection } from './MiscSection';
 import { NotesSection } from './NotesSection';

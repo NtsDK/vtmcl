@@ -1,5 +1,5 @@
 import React from 'react';
-import { RangeInput } from '../RangeInput';
+import { RangeInput } from '../generic/RangeInput';
 // import { SectionHeader } from '../SectionHeader';
 import { useTranslation } from 'react-i18next';
 import './AbilitiesSection.css';

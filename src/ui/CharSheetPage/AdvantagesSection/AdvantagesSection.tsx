@@ -1,8 +1,7 @@
 import React from 'react';
-import { Subheader } from '../Subheader';
+import { Subheader } from '../generic/Subheader';
 import './AdvantagesSection.css';
 import { useTranslation } from 'react-i18next';
-import { RangeInput } from '../RangeInput';
 import classnames from "classnames";
 import { VirtuesSection } from './VirtuesSection';
 import { DisciplinesSection } from './DisciplinesSection';

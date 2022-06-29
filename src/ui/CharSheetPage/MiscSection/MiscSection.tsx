@@ -1,10 +1,10 @@
 import React from 'react';
-import { Subheader } from '../Subheader';
+import { Subheader } from '../generic/Subheader';
 import './MiscSection.css';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 import { useStateNHealth } from '../../../services/storageAdapter';
-import { RangeInput } from '../RangeInput';
+import { RangeInput } from '../generic/RangeInput';
 import { HealthSection } from './HealthSection';
 import { MeritsSection } from './MeritsSection';
 import { FlawsSection } from './FlawsSection';

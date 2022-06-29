@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { RangeInput } from '../../RangeInput';
+import { RangeInput } from '../RangeInput';
 import './NameNumberSection.css';
 
 import classnames from "classnames";

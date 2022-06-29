@@ -3,8 +3,7 @@ import './AttributeSection.css';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { SectionHeader } from "../SectionHeader";
-import { RangeInput } from "../RangeInput";
+import { RangeInput } from "../generic/RangeInput";
 import { useAttributes } from '../../../services/storageAdapter';
 
 interface AttributeSectionProps {
