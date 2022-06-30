@@ -182,7 +182,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAttribute(attributeName: keyof Attributes, value: number) {
       setAttributes({
         ...attributes,
-        [attributeName]: applyRange(1, 5, value)
+        [attributeName]: applyRange(0, 5, value)
       });
     },
     abilities,
