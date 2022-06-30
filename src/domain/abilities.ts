@@ -30,3 +30,40 @@ export interface Abilities {
   "science": number;
   "technology": number;
 }
+
+export const talentsArr: (keyof Abilities)[] = [
+  'alertness',
+  'athletics',
+  'awareness',
+  'brawl',
+  'empathy',
+  'expression',
+  'intimidation',
+  'leadership',
+  'streetwise',
+  'subterfuge',
+];
+export const skillsArr: (keyof Abilities)[] = [
+  'animalken',
+  'crafts',
+  'drive',
+  'etiquette',
+  'firearms',
+  'larceny',
+  'melee',
+  'performance',
+  'stealth',
+  'survival',
+];
+export const knowledgesArr: (keyof Abilities)[] = [
+  'academics',
+  'computer',
+  'finance',
+  'investigation',
+  'law',
+  'medicine',
+  'occult',
+  'politics',
+  'science',
+  'technology',
+];

@@ -4,49 +4,12 @@ import { RangeInput } from '../generic/RangeInput';
 import { useTranslation } from 'react-i18next';
 import './AbilitiesSection.css';
 import classnames from "classnames";
-import { Abilities } from '../../../domain';
+import { knowledgesArr, skillsArr, talentsArr } from '../../../domain';
 import { useAbilities } from '../../../services/storageAdapter';
 
 interface AbilitiesSectionProps {
   className?: string;
 }
-
-const talentsArr: (keyof Abilities)[] = [
-  'alertness',
-  'athletics',
-  'awareness',
-  'brawl',
-  'empathy',
-  'expression',
-  'intimidation',
-  'leadership',
-  'streetwise',
-  'subterfuge',
-];
-const skillsArr: (keyof Abilities)[] = [
-  'animalken',
-  'crafts',
-  'drive',
-  'etiquette',
-  'firearms',
-  'larceny',
-  'melee',
-  'performance',
-  'stealth',
-  'survival',
-];
-const knowledgesArr: (keyof Abilities)[] = [
-  'academics',
-  'computer',
-  'finance',
-  'investigation',
-  'law',
-  'medicine',
-  'occult',
-  'politics',
-  'science',
-  'technology',
-];
 
 export function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();

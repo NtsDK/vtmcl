@@ -25,6 +25,16 @@ export interface Attributes {
   "wits": number;
 }
 
+export const physicalAttributesArr: (keyof Attributes)[] = [
+  "strength", 'dexterity', 'stamina'
+];
+export const socialAttributesArr: (keyof Attributes)[] = [
+  "charisma", 'manipulation', 'appearance'
+];
+export const mentalAttributesArr: (keyof Attributes)[] = [
+  "perception", 'intelligence', 'wits'
+];
+
 export interface State {
   "humanity": number;
   "willpower": number;

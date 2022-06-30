@@ -5,19 +5,23 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
 
 import { PageNav } from '../PageNav';
 import { ActionList } from '../ActionList';
 import { SettingsSection } from '../SettingsSection';
 
 interface ControlPanelProps {
+  className?: string;
 }
 
 export function ControlPanel(props: ControlPanelProps) {
   const { t } = useTranslation();
 
+  const { className } = props;
+
   return (
-    <>
+    <div className={classnames("ControlPanel tw-sticky tw-top-0", className)}>
       {/* <Header /> */}
       <PageNav className='tw-flex-col tw-mb-8'/>
 
@@ -39,8 +43,7 @@ export function ControlPanel(props: ControlPanelProps) {
           </Accordion.Collapse>
         </Card>
       </Accordion>
-    </>
-
+    </div>
   );
 }
 

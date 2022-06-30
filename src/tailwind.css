@@ -470,12 +470,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
+.tw-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .tw-top-8 {
   top: 2rem;
 }
 
 .tw-right-8 {
   right: 2rem;
+}
+
+.tw-top-0 {
+  top: 0px;
 }
 
 .tw-m-8 {
@@ -490,16 +499,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.25rem;
 }
 
+.tw-mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.tw-my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.tw-mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.tw-my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .tw-mb-8 {
   margin-bottom: 2rem;
 }
 
 .tw-mb-4 {
   margin-bottom: 1rem;
-}
-
-.tw-mb-3 {
-  margin-bottom: 0.75rem;
 }
 
 .tw-mr-8 {
@@ -514,12 +539,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.tw-mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .tw-mt-2 {
   margin-top: 0.5rem;
 }
 
 .tw-mr-2 {
   margin-right: 0.5rem;
+}
+
+.tw-mr-3 {
+  margin-right: 0.75rem;
 }
 
 .tw-ml-2 {
@@ -536,6 +569,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-mb-0 {
   margin-bottom: 0px;
+}
+
+.tw-ml-4 {
+  margin-left: 1rem;
 }
 
 .tw-inline {
@@ -558,6 +595,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.tw-h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .tw-w-full {
   width: 100%;
 }
@@ -576,6 +619,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-w-8 {
   width: 2rem;
+}
+
+.tw-w-12 {
+  width: 3rem;
+}
+
+.tw-w-14 {
+  width: 3.5rem;
+}
+
+.tw-max-w-xs {
+  max-width: 20rem;
+}
+
+.tw-max-w-sm {
+  max-width: 24rem;
 }
 
 .tw-flex-1 {
@@ -602,8 +661,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-wrap: wrap;
 }
 
+.tw-items-center {
+  align-items: center;
+}
+
+.tw-items-baseline {
+  align-items: baseline;
+}
+
 .tw-justify-center {
   justify-content: center;
+}
+
+.tw-whitespace-normal {
+  white-space: normal;
 }
 
 .tw-border-2 {

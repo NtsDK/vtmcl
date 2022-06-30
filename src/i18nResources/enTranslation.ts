@@ -3,6 +3,29 @@ import { ruTranslation } from "./ruTranslation";
 type TranslationInfo = typeof ruTranslation;
 
 export const enTranslation: TranslationInfo = {
+  "checklist": {
+    'fix': 'Fix',
+    // rules
+    'attribute-dots': 'Dots by attributes {{expected}} (fact\xa0{{value}})',
+    'ability-dots': 'Dots by abilities {{expected}} (fact\xa0{{value}})',
+    'ability-dot-limit': 'Not more {{expected}} dots per ability',
+    'discipline-dots': '{{expected}} discipline dots (fact\xa0{{value}})',
+    'background-dots': '{{expected}} background dots (fact\xa0{{value}})',
+    'virtue-dots': '{{expected}} virtue dots (fact\xa0{{value}})',
+    'humanity-dots': 'Humanity = Conscience + Self Control (fact\xa0{{value}}\xa0=\xa0{{expected}})',
+    'willpower-dots': 'Will power = Courage (fact\xa0{{value}}\xa0=\xa0{{expected}})',
+    'bloodpool-dots': 'Blood pool = roll d10 (fact\xa0{{value}})',
+    // free points
+    'free-point-description': 'Freebie Points: 15. Optionally add merits and flaws (max 7 points)',
+    'free-point-cost': 'Trait Cost',
+    'attribute': 'Attribute',
+    'ability': 'Ability',
+    'discipline': 'Discipline',
+    'background': 'Background',
+    'virtue': 'Virtue',
+    'humanity-path': 'Humanity/Path',
+    'willpower': 'Willpower',
+  },
   "buttons": {
     'add-merit': 'Add merit',
     'remove-merit': 'Remove merit',
@@ -211,7 +234,8 @@ export const enTranslation: TranslationInfo = {
     "dictionary-icon": "gb",
     "lang-ru": "Russian language",
     "lang-en": "English language",
-    "fullcreen-toggle": "Fullscreen mode"
+    "fullcreen-toggle": "Fullscreen mode",
+    'checklist': 'Character creation checklist',
   },
   "common": {
     "to": "to",
