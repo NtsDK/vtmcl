@@ -126,8 +126,8 @@ export const ruTranslation = {
     'backgrounds': 'Дополнения',
     'traits': 'Трайты',
     'virtues': 'Добродетели',
-    'conscience': 'Сознательность',
-    'self_control': 'Самоконтроль',
+    'conscience': 'Сознательность / Убеждённость',
+    'self_control': 'Самоконтроль / Инстинкт',
     'courage': 'Смелость',
 
     'other': 'Прочее',

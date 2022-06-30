@@ -653,6 +653,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-grow: 1;
 }
 
+.tw-grow {
+  flex-grow: 1;
+}
+
 .tw-flex-col {
   flex-direction: column;
 }
@@ -735,6 +739,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-text-center {
   text-align: center;
+}
+
+.tw-text-right {
+  text-align: right;
 }
 
 .tw-text-lg {

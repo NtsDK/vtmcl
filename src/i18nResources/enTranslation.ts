@@ -129,8 +129,8 @@ export const enTranslation: TranslationInfo = {
     'backgrounds': 'Backgrounds',
     'traits': 'Traits',
     'virtues': 'Virtues',
-    'conscience': 'Conscience',
-    'self_control': 'Self control',
+    'conscience': 'Conscience / Conviction',
+    'self_control': 'Self control / Instinct',
     'courage': 'Courage',
 
     'other': 'Other',
@@ -310,9 +310,9 @@ export const enTranslation: TranslationInfo = {
     'bindingNum': 'Binded characters/players',
     // misc
     'notAvailable': 'N/A',
-    'charsheet-image': 'Изображение',
-    'charsheet-none': 'Нет фона',
-    'charsheet-color': 'Цвет',
+    'charsheet-image': 'Image',
+    'charsheet-none': 'No background',
+    'charsheet-color': 'Color',
   },
   "overview": {
     'consistency-problem-detected': "Detected base corruption during consistency check. Please contact developer to fix problems.",

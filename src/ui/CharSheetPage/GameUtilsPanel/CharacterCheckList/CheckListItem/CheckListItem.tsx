@@ -28,8 +28,8 @@ export function CheckListItem(props: CheckListItemProps) {
         checked={checked} 
         className="tw-mr-3 tw-h-fit"
       />
-      <span>{text}</span>
-      <div className='tw-w-14'>
+      <span className="tw-grow">{text}</span>
+      <div className='tw-w-14 tw-text-right'>
         {
           onFix && !checked &&
           <Button 

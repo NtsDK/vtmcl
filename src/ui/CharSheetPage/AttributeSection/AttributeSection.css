@@ -12,6 +12,6 @@
   /* -ms-flex-negative: 0; */
   flex-shrink: 0;
   display: block;
-  word-break: break-all;
+  /* word-break: break-all; */
   font-size: 0.875rem;
 }
