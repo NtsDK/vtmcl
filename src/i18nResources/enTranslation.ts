@@ -35,6 +35,7 @@ export const enTranslation: TranslationInfo = {
     'remove-discipline': 'Remove discipline',
     'add-background': 'Add background',
     'remove-background': 'Remove background',
+    'hide-panel': 'Hide panel'
   },
   'errors': {
     'error-on-file-loading': 'Error on file loading',

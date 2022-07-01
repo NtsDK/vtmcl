@@ -39,8 +39,8 @@ function App() {
       <div className="app">
         <div className="tw-flex">
           <div 
-            className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200"
-            style={{flexBasis: '25rem'}}
+            className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm"
+            // style={{flexBasis: '25rem'}}
           >
             <ControlPanel />
           </div>

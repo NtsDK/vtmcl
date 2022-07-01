@@ -32,6 +32,7 @@ export const ruTranslation = {
     'remove-discipline': 'Удалить дисциплину',
     'add-background': 'Добавить дополнение',
     'remove-background': 'Удалить дополнение',
+    'hide-panel': 'Спрятать панель'
   },
   'errors': {
     'error-on-file-loading': 'Ошибка при загрузке листа персонажа',

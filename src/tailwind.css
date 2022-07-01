@@ -487,6 +487,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 2rem;
 }
 
+.tw-bottom-0 {
+  bottom: 0px;
+}
+
 .tw-m-8 {
   margin: 2rem;
 }
@@ -591,6 +595,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: fit-content;
 }
 
+.tw-h-screen {
+  height: 100vh;
+}
+
+.tw-h-12 {
+  height: 3rem;
+}
+
+.tw-h-16 {
+  height: 4rem;
+}
+
 .tw-w-full {
   width: 100%;
 }
@@ -651,8 +667,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
+.tw-items-baseline {
+  align-items: baseline;
+}
+
+.tw-justify-end {
+  justify-content: flex-end;
+}
+
 .tw-justify-center {
   justify-content: center;
+}
+
+.tw-justify-between {
+  justify-content: space-between;
 }
 
 .tw-border-2 {
