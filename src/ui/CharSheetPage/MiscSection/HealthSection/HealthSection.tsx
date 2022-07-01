@@ -30,16 +30,18 @@ export function HealthSection(props: HealthSectionProps) {
   return (
     <div className="HealthSection">
       {
-        arr.map(([name, sublabel]) => <div className="health-stat tw-flex tw-justify-center tw-mb-1">
-          <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.${name}`)}</label>
-          <button 
-            className='tw-w-5'
-            onClick={() => setHealth(name, (health[name] + 1) % 3)}
-          >
-            <img className="tw-w-full" src={iconMap[health[name]]}/>
-          </button>
-          <span className="health-stat-sublabel tw-text-sm tw-text-center">{sublabel}</span>
-        </div>)
+        arr.map(([name, sublabel]) => 
+          <div key={name} className="health-stat tw-flex tw-justify-center tw-mb-1">
+            <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.${name}`)}</label>
+            <button 
+              className='tw-w-5'
+              onClick={() => setHealth(name, (health[name] + 1) % 3)}
+            >
+              <img className="tw-w-full" src={iconMap[health[name]]} alt=""/>
+            </button>
+            <span className="health-stat-sublabel tw-text-sm tw-text-center">{sublabel}</span>
+          </div>
+        )
       }
     </div>
   );

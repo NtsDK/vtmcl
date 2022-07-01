@@ -21,7 +21,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
       <div className="tw-flex-1">
         {
           talentsArr.map(item => 
-            <div className="stat-container">
+            <div key={item} className="stat-container">
               <label>{t(`charsheet.${item}`)}</label>
               <RangeInput
                 max={5} 
@@ -37,7 +37,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
       <div className="tw-flex-1">
         {
           skillsArr.map(item => 
-            <div className="stat-container">
+            <div key={item} className="stat-container">
               <label>{t(`charsheet.${item}`)}</label>
               <RangeInput
                 max={5} 
@@ -53,7 +53,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
       <div className="tw-flex-1">
         {
           knowledgesArr.map(item => 
-            <div className="stat-container">
+            <div key={item} className="stat-container">
               <label>{t(`charsheet.${item}`)}</label>
               <RangeInput
                 max={5} 
