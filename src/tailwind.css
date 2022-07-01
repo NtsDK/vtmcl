@@ -475,16 +475,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: sticky;
 }
 
+.tw-top-0 {
+  top: 0px;
+}
+
 .tw-top-8 {
   top: 2rem;
 }
 
 .tw-right-8 {
   right: 2rem;
-}
-
-.tw-top-0 {
-  top: 0px;
 }
 
 .tw-m-8 {
@@ -497,16 +497,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-m-1 {
   margin: 0.25rem;
-}
-
-.tw-mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
-.tw-my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .tw-mx-5 {
@@ -551,8 +541,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.5rem;
 }
 
-.tw-mr-3 {
-  margin-right: 0.75rem;
+.tw-ml-4 {
+  margin-left: 1rem;
 }
 
 .tw-ml-2 {
@@ -571,8 +561,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0px;
 }
 
-.tw-ml-4 {
-  margin-left: 1rem;
+.tw-mr-3 {
+  margin-right: 0.75rem;
 }
 
 .tw-inline {
@@ -621,16 +611,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2rem;
 }
 
-.tw-w-12 {
-  width: 3rem;
-}
-
 .tw-w-14 {
   width: 3.5rem;
-}
-
-.tw-max-w-xs {
-  max-width: 20rem;
 }
 
 .tw-max-w-sm {
@@ -669,16 +651,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
-.tw-items-baseline {
-  align-items: baseline;
-}
-
 .tw-justify-center {
   justify-content: center;
-}
-
-.tw-whitespace-normal {
-  white-space: normal;
 }
 
 .tw-border-2 {
