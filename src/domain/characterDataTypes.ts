@@ -13,6 +13,11 @@ export interface Profile {
   "sire": string;
 }
 
+export const profileConfig: (keyof Profile)[][] = [
+  ['name', 'player', 'chronicle', 'age', 'sex'], 
+  ['nature', 'demeanor', 'concept', 'clan', 'generation', 'sire']
+];
+
 export interface Attributes {
   "strength": number;
   "dexterity": number;

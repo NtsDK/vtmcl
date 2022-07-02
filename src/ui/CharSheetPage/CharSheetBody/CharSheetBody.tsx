@@ -2,8 +2,8 @@ import React from 'react';
 import './CharSheetBody.css';
 
 import classnames from "classnames";
-
 import { useTranslation } from 'react-i18next';
+
 import { ProfileSection } from "../ProfileSection";
 import { AttributeSection } from "../AttributeSection";
 import { AbilitiesSection } from "../AbilitiesSection";
@@ -12,7 +12,7 @@ import { AdvantagesSection } from '../AdvantagesSection';
 import { MiscSection } from '../MiscSection';
 import { NotesSection } from '../NotesSection';
 import { useSettings } from '../../../services/storageAdapter';
-import { Settings } from '../../../domain';
+import { profileConfig, Settings } from '../../../domain';
 
 interface CharSheetBodyProps {
   className?: string;
@@ -54,7 +54,8 @@ export function CharSheetBody(props: CharSheetBodyProps) {
         backgroundImage: getBgImage(settings),
       }}
     >
-      <ProfileSection className="tw-mb-3"/>
+      <SectionHeader className="tw-mb-3 tw-sr-only">{t('charsheet.profile')}</SectionHeader>
+      <ProfileSection className="tw-mb-3" profileConfig={profileConfig}/>
       <SectionHeader className="tw-mb-3">{t('charsheet.attributes')}</SectionHeader>
       <AttributeSection className="tw-mb-3"/>
       <SectionHeader className="tw-mb-3">{t('charsheet.abilities')}</SectionHeader>

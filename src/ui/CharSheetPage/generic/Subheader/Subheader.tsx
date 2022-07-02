@@ -11,9 +11,9 @@ export function Subheader(props: PropsWithChildren<SubheaderProps>) {
   const { className } = props;
 
   return (
-    <h2 className={classnames("Subheader tw-text-center", className)}>
+    <h3 className={classnames("Subheader tw-text-center", className)}>
       {children}
-    </h2>
+    </h3>
   );
 }
 

@@ -8,73 +8,48 @@ import { Profile } from '../../../domain';
 
 interface ProfileSectionProps {
   className?: string;
+  profileConfig: (keyof Profile)[][];
 }
 
 export function ProfileSection(props: ProfileSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
+  const { className, profileConfig } = props;
 
   const { profile, setProfileItem } = useProfile();
 
-  const onProfileChange = (prop: keyof Profile ) => (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
+  function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
+    const { value, dataset } = e.currentTarget;
+    const itemName = dataset.itemName as keyof Profile;
     // console.log('onStateChange', prop, value);
-    setProfileItem(prop, value);
+    setProfileItem(itemName, value);
   }
 
   return (
     <div className={classnames("ProfileSection", className)}>
       <div className="custom-panel tw-m-4">
         <div className="columns profile-container tw-flex">
-          <div className='tw-flex-1'>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.name')}</label>
-              <input className='profile-input' value={profile.name} onChange={onProfileChange('name')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.player')}</label>
-              <input className='profile-input' value={profile.player} onChange={onProfileChange('player')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.chronicle')}</label>
-              <input className='profile-input' value={profile.chronicle} onChange={onProfileChange('chronicle')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.age')}</label>
-              <input className='profile-input' value={profile.age} onChange={onProfileChange('age')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.sex')}</label>
-              <input className='profile-input' value={profile.sex} onChange={onProfileChange('sex')}/>
-            </div>
-          </div>
-
-          <div className='tw-flex-1'>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.nature')}</label>
-              <input className='profile-input' value={profile.nature} onChange={onProfileChange('nature')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.demeanor')}</label>
-              <input className='profile-input' value={profile.demeanor} onChange={onProfileChange('demeanor')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.concept')}</label>
-              <input className='profile-input' value={profile.concept} onChange={onProfileChange('concept')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.clan')}</label>
-              <input className='profile-input' value={profile.clan} onChange={onProfileChange('clan')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.generation')}</label>
-              <input className='profile-input' value={profile.generation} onChange={onProfileChange('generation')}/>
-            </div>
-            <div>
-              <label className='tw-w-24'>{t('charsheet.sire')}</label>
-              <input className='profile-input' value={profile.sire} onChange={onProfileChange('sire')}/>
-            </div>
-          </div>
+          {
+            profileConfig.map((subArr, index) => 
+              <div className='tw-flex-1' key={`${index}`}>
+                {
+                  subArr.map(item => 
+                    <div key={item}>
+                      <label className='tw-w-24' htmlFor={`profileItem_${item}`}>
+                        {t(`charsheet.${item}`)}
+                      </label>
+                      <input 
+                        id={`profileItem_${item}`}
+                        className='profile-input'
+                        data-item-name={item}
+                        value={profile[item]} 
+                        onChange={onProfileChange}
+                      />
+                    </div>
+                  )
+                }
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
