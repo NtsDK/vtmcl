@@ -56,12 +56,11 @@ export function NameSection(props: NameSectionProps) {
       }
       <div className='tw-text-center tw-mt-4'>
         <button
-          className='tw-w-8' 
           onClick={addItem}
           aria-label={addItemMsg} 
           title={addItemMsg}
         >
-          <img src="images/add-squared-button.svg"/>
+          <img className="tw-w-8" src="images/add-squared-button.svg" alt=""/>
         </button>
       </div>
     </div>
