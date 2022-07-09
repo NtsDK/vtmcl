@@ -1,5 +1,6 @@
 .CharSheetBody {
-  width: 700px;
+  /* width: 700px; */
+  max-width: 44rem;
   background-position-x: 50%!important;
   background-position-y: 50%!important;
   background-size: 100% 100%!important;
