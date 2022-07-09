@@ -33,13 +33,14 @@ export function ProfileSection(props: ProfileSectionProps) {
               <div className='tw-flex-1' key={`${index}`}>
                 {
                   subArr.map(item => 
-                    <div key={item}>
+                    <div key={item} className='tw-flex'>
                       <label className='tw-w-24' htmlFor={`profileItem_${item}`}>
                         {t(`charsheet.${item}`)}
                       </label>
                       <input 
                         id={`profileItem_${item}`}
-                        className='profile-input'
+                        style={{boxShadow: '0 1px 0 #333333'}}
+                        className='profile-input tw-flex-1 tw-mx-2 tw-bg-transparent tw-border-none '
                         data-item-name={item}
                         value={profile[item]} 
                         onChange={onProfileChange}

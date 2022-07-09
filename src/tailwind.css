@@ -521,6 +521,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .tw-mb-8 {
   margin-bottom: 2rem;
 }
@@ -635,6 +640,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.tw-w-44 {
+  width: 11rem;
+}
+
 .tw-max-w-sm {
   max-width: 24rem;
 }
@@ -687,6 +696,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-style: solid;
 }
 
+.tw-border-none {
+  border-style: none;
+}
+
 .tw-border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
@@ -699,6 +712,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-bg-transparent {
   background-color: transparent;
+}
+
+.tw-bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 .tw-py-3 {

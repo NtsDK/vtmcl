@@ -31,6 +31,20 @@ export function RangeInput(props: RangeInputProps) {
     // onClick(indexNum < value ? indexNum : indexNum + 1);
   }
 
+  // return (
+  //   <button 
+  //     className='tw-w-full tw-bg-slate-300'
+  //     style={{
+  //       background: 'url(images/radio-on-button.svg)',
+  //       backgroundSize: '20%',
+  //       backgroundRepeat: 'space space'
+  //       // backgroundRepeat: 'repeat space'
+  //     }}
+  //   >
+
+  //   </button>
+  // )
+
   return (
     <div className={classNames("RangeInput tw-flex tw-flex-wrap", className)}>
       {
