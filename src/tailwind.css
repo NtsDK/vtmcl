@@ -511,6 +511,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.25rem;
 }
 
+.tw-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .tw-mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -519,11 +524,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.tw-mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .tw-mb-8 {
@@ -638,10 +638,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-w-14 {
   width: 3.5rem;
-}
-
-.tw-w-44 {
-  width: 11rem;
 }
 
 .tw-max-w-sm {
