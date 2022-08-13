@@ -3,6 +3,7 @@ export const header = {
   'charsheetWithName': '{{characterName}}. Лист персонажа VtM V20',
   'emptyName': 'Безымянный персонаж',
   'charsheet': 'Лист персонажа',
+  'aboutCharsheetH1': 'О листе персонажа VtM V20 от NtsDK',
   'instruction': 'Инструкция',
   'actionMenu': 'Меню действий',
   'theme': 'Смена темы',

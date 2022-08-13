@@ -1,8 +1,9 @@
-import React from 'react';
-import './CharSheetBody.css';
-
+import React, { useState, useEffect } from 'react';
+import DocumentTitle from 'react-document-title';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+
+import './CharSheetBody.css';
 
 import { ProfileSection } from "../ProfileSection";
 import { AttributeSection } from "../AttributeSection";
@@ -11,7 +12,7 @@ import { SectionHeader } from "../generic/SectionHeader";
 import { AdvantagesSection } from '../AdvantagesSection';
 import { MiscSection } from '../MiscSection';
 import { NotesSection } from '../NotesSection';
-import { useSettings } from '../../../services/storageAdapter';
+import { useProfile, useSettings } from '../../../services/storageAdapter';
 import { profileConfig, Settings } from '../../../domain';
 
 interface CharSheetBodyProps {
@@ -43,30 +44,46 @@ function getBgImage(settings: Settings) {
 export function CharSheetBody(props: CharSheetBodyProps) {
   const { t } = useTranslation();
 
+  const { profile } = useProfile();
+
+  const [ title, setTitle ] = useState<string>('');
+
+  useEffect(() => {
+    const characterName = profile.name.trim() === ''
+      ? t('header.emptyName')
+      : profile.name;
+    setTitle(t('header.charsheetWithName', {
+      characterName
+    }));
+  }, [t, profile]);
+
   const { settings } = useSettings();
   const { className } = props;
 
   return (
-    <div 
-      className={classnames("CharSheetBody", className)}
-      style={{
-        backgroundColor: getBgColor(settings),
-        backgroundImage: getBgImage(settings),
-      }}
-    >
-      <SectionHeader className="tw-mb-3 tw-sr-only">{t('charsheet.profile')}</SectionHeader>
-      <ProfileSection className="tw-mb-3" profileConfig={profileConfig}/>
-      <SectionHeader className="tw-mb-3">{t('charsheet.attributes')}</SectionHeader>
-      <AttributeSection className="tw-mb-3"/>
-      <SectionHeader className="tw-mb-3">{t('charsheet.abilities')}</SectionHeader>
-      <AbilitiesSection className="tw-mb-3"/>
-      <SectionHeader className="tw-mb-3">{t('charsheet.advantages')}</SectionHeader>
-      <AdvantagesSection className="tw-mb-3"/>
-      <SectionHeader className="tw-mb-3"/>
-      <MiscSection className="tw-mb-3"/>
-      <SectionHeader className="tw-mb-3">{t('charsheet.notes')}</SectionHeader>
-      <NotesSection />
-    </div>
+    <DocumentTitle title={title}>
+      <div 
+        className={classnames("CharSheetBody", className)}
+        style={{
+          backgroundColor: getBgColor(settings),
+          backgroundImage: getBgImage(settings),
+        }}
+      >
+        <h1 className="tw-sr-only">{title}</h1>
+        <SectionHeader className="tw-mb-3 tw-sr-only">{t('charsheet.profile')}</SectionHeader>
+        <ProfileSection className="tw-mb-3" profileConfig={profileConfig}/>
+        <SectionHeader className="tw-mb-3">{t('charsheet.attributes')}</SectionHeader>
+        <AttributeSection className="tw-mb-3"/>
+        <SectionHeader className="tw-mb-3">{t('charsheet.abilities')}</SectionHeader>
+        <AbilitiesSection className="tw-mb-3"/>
+        <SectionHeader className="tw-mb-3">{t('charsheet.advantages')}</SectionHeader>
+        <AdvantagesSection className="tw-mb-3"/>
+        <SectionHeader className="tw-mb-3"/>
+        <MiscSection className="tw-mb-3"/>
+        <SectionHeader className="tw-mb-3">{t('charsheet.notes')}</SectionHeader>
+        <NotesSection />
+      </div>
+    </DocumentTitle>
   );
 }
 
