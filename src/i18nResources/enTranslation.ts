@@ -1,4 +1,5 @@
 import { ruTranslation } from "./ruTranslation";
+import { header } from "./header_en";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -188,56 +189,7 @@ export const enTranslation: TranslationInfo = {
 
     'notes': 'Notes',
   },
-  "header": {
-    'charsheet': 'Character sheet',
-    'instruction': 'Instruction',
-    'actionMenu': 'Action menu',
-    'theme': 'Change theme',
-    'apiCheck': 'API check',
-    'fullScreen': 'Show/Hide toolbar',
-    'refresh': 'Refresh',
-    // 'shop-about': 'About shop',
-    // 'shop-window': 'Shop window',
-    // 'local-asset-profile': 'Local asset profile',
-    // 'global-asset-profile': 'Global asset profile',
-    // 'category-content-management': 'Category content management',
-    // 'shop-profile': 'Shop profile',
-    // 'shop-management': 'Shop management',
-    // 'shop-passwords': 'Shop passwords',
-    // 'asset-profile': 'Asset profile',
-    // "asset-presence": "Asset presence",
-    // "assets": "Assets",
-    // "shops": "Shops",
-    // "shops2": "Shops",
-    // "shop-editor": "Shop editor",
-    // "shop-view": "Shop view",
-    // "shop-binding": "Shop binding",
-    //        "page-title": "AWS Shop",
-    'page-title': 'Character sheet Vampire: the Masquerade',
-
-    //        "overview":"Overview",
-    "enter": "Login",
-    "register": "Register",
-    "open-database": "Load character sheet from file",
-    "save-database": "Save character sheet to file",
-    "create-database": "Create new character sheet",
-    "create-database-modal-title": "Confirm character sheet creation",
-    "create-database-modal-text": "On character sheet creation current character sheet will be deleted.",
-
-    "docs": "Documentation",
-    "admins": "Administrative tools",
-    //        "chat":"Chat",
-    "logout": "Exit",
-    "test": "Test",
-    "about": "About character sheet",
-    "logViewer": "Logs",
-    "l10n": "English",
-    "dictionary-icon": "gb",
-    "lang-ru": "Russian language",
-    "lang-en": "English language",
-    "fullcreen-toggle": "Fullscreen mode",
-    'checklist': 'Character creation checklist',
-  },
+  header,
   "common": {
     "to": "to",
     "ok": "OK",

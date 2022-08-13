@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { 
+  HashRouter as Router, 
+  Switch, 
+  Route 
+} from "react-router-dom";
+import DocumentTitle from 'react-document-title';
+
 import './i18n';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,28 +41,30 @@ function App() {
   }, [settings]);
 
   return (
-    <Router>
-      <div className="app">
-        <div className="tw-flex">
-          <div 
-            className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm"
-            // style={{flexBasis: '25rem'}}
-          >
-            <ControlPanel />
+    <DocumentTitle title={t('header.defaultPageTitle')}>
+      <Router>
+        <div className="app">
+          <div className="tw-flex">
+            <div 
+              className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm"
+              // style={{flexBasis: '25rem'}}
+            >
+              <ControlPanel />
+            </div>
+            <div className="tw-flex-grow-1 tw-w-full">
+              <Switch>
+                <Route path="/charsheet" component={CharSheetPage} />
+                {/* <Route path="/instruction" component={InstructionPage} /> */}
+                {/* <Route path="/log" component={LogPage} /> */}
+                <Route path="/about" component={AboutPage} />
+                <Route path="/" component={CharSheetPage} />
+              </Switch>
+            </div>
           </div>
-          <div className="tw-flex-grow-1 tw-w-full">
-            <Switch>
-              <Route path="/charsheet" component={CharSheetPage} />
-              {/* <Route path="/instruction" component={InstructionPage} /> */}
-              {/* <Route path="/log" component={LogPage} /> */}
-              <Route path="/about" component={AboutPage} />
-              <Route path="/" component={CharSheetPage} />
-            </Switch>
-          </div>
+          <ErrorNotification />
         </div>
-        <ErrorNotification />
-      </div>
-    </Router>
+      </Router>
+    </DocumentTitle>
   );
 }
 
