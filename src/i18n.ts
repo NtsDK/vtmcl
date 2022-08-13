@@ -5,8 +5,14 @@ import { resources, defaultLang } from './i18nResources';
 // for details
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+// const setHtmlLangAttr = (lng: string) => {
+//   console.log(2233);
+//   document.documentElement.setAttribute('lang', lng);
+// };
+// i18n.on('languageChanged', setHtmlLangAttr);
 i18n.on('languageChanged', (lng) => {
   localStorage.setItem('i18nextLng', lng);
+  document.documentElement.setAttribute('lang', lng);
 });
 
 i18n
