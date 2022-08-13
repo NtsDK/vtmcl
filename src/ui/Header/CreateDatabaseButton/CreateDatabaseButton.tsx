@@ -67,7 +67,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
         type="button"
         data-original-title=""
         onClick={() => setShowModal(true)}
-        title={t('header.create-database')}
+        // title={t('header.create-database')}
         className="CreateDatabaseButton tw-py-3 tw-text-lg"
       >
         {t('header.create-database')}

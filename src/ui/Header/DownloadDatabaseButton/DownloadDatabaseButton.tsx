@@ -25,7 +25,7 @@ export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
       type="button"
       data-original-title=""
       onClick={() => downloadDatabaseAsFile()}
-      title={t('header.save-database')}
+      // title={t('header.save-database')}
       className="tw-py-3 tw-text-lg"
     >
       {t('header.save-database')}

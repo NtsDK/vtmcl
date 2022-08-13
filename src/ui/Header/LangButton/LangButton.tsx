@@ -16,9 +16,9 @@ export function LangButton(props: LangButtonProps) {
     <Dropdown.Item
       as="button"
       type="button"
-      data-original-title=""
+      // data-original-title=""
       onClick={() => i18n.changeLanguage(lang)}
-      title={t(`header.lang-${lang}`)}
+      // title={t(`header.lang-${lang}`)}
       className="LangButton tw-py-3 tw-text-lg"
     >
       <img className="tw-w-5 tw-inline tw-leading-5 tw-mr-2" src={`images/${lang}.svg`} alt=""/>

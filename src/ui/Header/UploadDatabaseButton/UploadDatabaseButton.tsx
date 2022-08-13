@@ -61,7 +61,7 @@ export function UploadDatabaseButton(props) {
       as="button"
       type="button"
       data-original-title=""
-      title={t('header.open-database')}
+      // title={t('header.open-database')}
       onClick={uploadDatabaseFile}
       className="tw-py-3 tw-text-lg"
     >
