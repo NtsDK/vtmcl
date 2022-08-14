@@ -2,6 +2,7 @@ import { ruTranslation } from "../ruTranslation";
 import { header } from "./header";
 import { profile } from "./profile";
 import { attributes } from "./attributes";
+import { abilities } from "./abilities";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -59,47 +60,7 @@ export const enTranslation: TranslationInfo = {
   "charsheet": {
     profile,
     attributes,
-
-    'abilities': 'Abilities',
-
-    'talents': 'Talents',
-    'athletics': 'Athletics',
-    'alertness': 'Alertness',
-    'brawl': 'Brawl',
-    'dodge': 'Dodge',
-    'empathy': 'Empathy',
-    'intimidation': 'Intimidation',
-    'leadership': 'Leadership',
-    'streetwise': 'Streetwise',
-    'expression': 'Expression',
-    'subterfuge': 'Subterfuge',
-    'awareness': 'Awareness',
-
-    'skills': 'Skills',
-    'animalken': 'Animalken',
-    'drive': 'Drive',
-    'etiquette': 'Etiquette',
-    'firearms': 'Firearms',
-    'melee': 'Melee',
-    'survival': 'Survival',
-    'crafts': 'Crafts',
-    'security': 'Security',
-    'stealth': 'Stealth',
-    'performance': 'Performance',
-    'larceny': 'Larceny',
-
-    'knowledges': 'Knowledges',
-    'science': 'Science',
-    'occult': 'Occult',
-    'politics': 'Politics',
-    'medicine': 'Medicine',
-    'linguistics': 'Linguistics',
-    'law': 'Law',
-    'investigation': 'Investigation',
-    'finance': 'Finance',
-    'computer': 'Computer',
-    'academics': 'Academics',
-    'technology': 'Technology',
+    abilities,
 
     'advantages': 'Advantages',
     'disciplines': 'Disciplines',

@@ -1,6 +1,7 @@
 import { header } from "./header";
 import { profile } from "./profile";
 import { attributes } from "./attributes";
+import { abilities } from "./abilities";
 
 export const ruTranslation = {
   "checklist": {
@@ -55,49 +56,8 @@ export const ruTranslation = {
   },
   "charsheet": {
     profile,
-
     attributes,
-
-    'abilities': 'Способности',
-
-    'talents': 'Таланты',
-    'athletics': 'Атлетизм',
-    'alertness': 'Бдительность',
-    'brawl': 'Драка',
-    'dodge': 'Уворот',
-    'empathy': 'Эмпатия',
-    'intimidation': 'Запугивание',
-    'leadership': 'Лидерство',
-    'streetwise': 'Знание улиц',
-    'expression': 'Экспрессия',
-    'subterfuge': 'Хитрость',
-    'awareness': 'Осведомлённость',
-
-    'skills': 'Навыки',
-    'animalken': 'Знание зверей',
-    'drive': 'Вождение',
-    'etiquette': 'Этикет',
-    'firearms': 'Огн. оружие',
-    'melee': 'Хол. оружие',
-    'survival': 'Выживание',
-    'crafts': 'Ремёсла',
-    'security': 'Безопасность',
-    'stealth': 'Маскировка',
-    'performance': 'Исполнение',
-    'larceny': 'Воровство',
-
-    'knowledges': 'Познания',
-    'science': 'Наука',
-    'occult': 'Оккультизм',
-    'politics': 'Политика',
-    'medicine': 'Медицина',
-    'linguistics': 'Языки',
-    'law': 'Правоведение',
-    'investigation': 'Расследование',
-    'finance': 'Финансы',
-    'computer': 'Компьютер',
-    'academics': 'Академ. знания',
-    'technology': 'Техника',
+    abilities,
 
     'advantages': 'Преимущества',
     'disciplines': 'Дисциплины',
