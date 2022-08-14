@@ -9,10 +9,10 @@ interface CharSheetPageProps {
 
 export function CharSheetPage(props: CharSheetPageProps) {
   return (
-    <div className="CharSheetPage tw-flex">
+    <main className="CharSheetPage tw-flex">
       <CharSheetBody />
       <GameUtilsPanel />
-    </div>
+    </main>
   );
 }
 

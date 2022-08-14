@@ -58,15 +58,13 @@ export class ErrorBoundry extends Component<ErrorBoundryProps, ErrorBoundryState
           </div>
           <br/>
           <Button 
-            style={{backgroundColor: '#007bff'}}
-            className="tw-mr-8"
+            className="tw-mr-8 custom-btn-bg-color"
             onClick={() => window.location.reload()}
           >
             Принудительная перезагрузка
           </Button>
           <Button 
-            style={{backgroundColor: '#007bff'}}
-            className="tw-mr-8"
+            className="tw-mr-8 custom-btn-bg-color"
             onClick={() => {
               localStorage.removeItem(LS_KEY);
               window.location.reload();
@@ -75,7 +73,7 @@ export class ErrorBoundry extends Component<ErrorBoundryProps, ErrorBoundryState
             Очистка памяти и принудительная перезагрузка
           </Button>
           <Button 
-            style={{backgroundColor: '#007bff'}}
+            className="custom-btn-bg-color"
             onClick={() => str2File(localStorage.getItem(LS_KEY), makeFileName('vtm_broken_charsheet', 'txt', new Date()))}
           >
             Скачать лист персонажа из памяти

@@ -14,7 +14,7 @@ export function AboutPage(props: AboutPageProps) {
 
   return (
     <DocumentTitle title={t('header.about')}>
-      <div className="AboutPage">
+      <main className="AboutPage">
         <Card>
           <Card.Body>
             <div>
@@ -76,7 +76,7 @@ export function AboutPage(props: AboutPageProps) {
             </div>
           </Card.Body>
         </Card>
-      </div>
+      </main>
     </DocumentTitle>
   );
 }

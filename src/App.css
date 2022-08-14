@@ -45,3 +45,9 @@
 body {
   font-family: CentSchbkCyrill,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
+
+.custom-btn-bg-color {
+  background-color: #337ab7;
+}
+/* style={{backgroundColor: '#337ab7'}} */
+/* style={{backgroundColor: '#007bff'}} */

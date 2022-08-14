@@ -3,6 +3,7 @@ import './GameUtilsPanel.css';
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 import { useTranslation } from 'react-i18next';
 
@@ -19,10 +20,14 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
   const { className } = props;
 
   return (
-    <div className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200", className)}>
+    <aside className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 tw-bg-white", className)}>
       <Accordion defaultActiveKey="0" className="tw-sticky tw-top-0">
-        <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="0">
+        <Card className="">
+          <Accordion.Toggle 
+            as={Button} 
+            eventKey="0"
+            className="tw-py-3 tw-text-lg accordion-toggle tw-bg-gray-200"
+          >
             {t('header.checklist')}
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
@@ -30,7 +35,7 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
           </Accordion.Collapse>
         </Card>
       </Accordion>
-    </div>
+    </aside>
   );
 }
 

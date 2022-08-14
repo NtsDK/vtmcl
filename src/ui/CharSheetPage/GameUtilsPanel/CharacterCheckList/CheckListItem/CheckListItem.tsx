@@ -23,7 +23,7 @@ export function CheckListItem(props: CheckListItemProps) {
   const { t } = useTranslation();
 
   return (
-    <div  className={classnames("CheckListItem tw-flex tw-items-center", className)}>
+    <li className={classnames("CheckListItem tw-flex tw-items-center", className)}>
       <CheckListBadge 
         checked={checked} 
         className="tw-mr-3 tw-h-fit"
@@ -33,14 +33,14 @@ export function CheckListItem(props: CheckListItemProps) {
         {
           onFix && !checked &&
           <Button 
-            style={{backgroundColor: '#007bff'}}
+            className="custom-btn-bg-color"
             onClick={onFix}
           >
             {t('checklist.fix')}
           </Button>
         }
       </div>
-    </div>
+    </li>
   );
 }
 
