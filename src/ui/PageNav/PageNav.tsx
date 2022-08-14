@@ -18,7 +18,7 @@ export function PageNav(props: PageNavProps) {
   // from
   // https://stackoverflow.com/questions/35687353/react-bootstrap-link-item-in-a-navitem
   return (
-    <Nav className={classnames("PageNav", className)}>
+    <Nav as="nav" className={classnames("PageNav", className)}>
       <Nav.Link 
         as={NavLink} 
         to='/charsheet' 

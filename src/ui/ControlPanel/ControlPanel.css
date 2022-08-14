@@ -1,0 +1,17 @@
+.accordion-toggle {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  color:rgb(33, 37, 41);
+  text-align: left;
+}
+
+.accordion-toggle:hover {
+  color: #0056b3;
+  background-color: transparent;
+}
+
+.accordion-toggle:focus {
+  color: #0056b3;
+  background-color: transparent;
+}

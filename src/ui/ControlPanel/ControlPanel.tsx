@@ -3,6 +3,7 @@ import './ControlPanel.css';
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 
 import { useTranslation } from 'react-i18next';
@@ -33,20 +34,28 @@ export function ControlPanel(props: ControlPanelProps) {
       { showContent && <PageNav className='tw-flex-col tw-mb-8'/> }
 
       { 
-        showContent && <Accordion defaultActiveKey="0">
-          <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
+        showContent && <Accordion as="aside" defaultActiveKey="0">
+          <Card className="tw-bg-gray-200">
+            <Accordion.Toggle 
+              as={Button} 
+              eventKey="0" 
+              className="tw-py-3 tw-text-lg accordion-toggle"
+            >
               {t('header.actionMenu')}
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
+            <Accordion.Collapse eventKey="0" className="tw-bg-white">
               <ActionList />
             </Accordion.Collapse>
           </Card>
-          <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="1">
+          <Card className="tw-bg-gray-200">
+            <Accordion.Toggle 
+              as={Button} 
+              eventKey="1" 
+              className="tw-py-3 tw-text-lg accordion-toggle"
+            >
               {t('charsheet-tab.settings')}
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="1" className="tw-bg-white">
               <SettingsSection/>
             </Accordion.Collapse>
           </Card>
@@ -56,8 +65,8 @@ export function ControlPanel(props: ControlPanelProps) {
       <Dropdown.Item
         as="button"
         type="button"
-        data-original-title=""
-        title={t('header.open-database')}
+        // data-original-title=""
+        // title={t('header.open-database')}
         onClick={() => setShowContent((prevState) => !prevState)}
         className="tw-py-3 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
       >

@@ -24,7 +24,7 @@ export function FullscreenButton(props: FullscreenButtonProps) {
       as="button"
       type="button"
       onClick={onClick}
-      title={t('header.fullcreen-toggle')}
+      // title={t('header.fullcreen-toggle')}
       className="FullscreenButton tw-py-3 tw-text-lg"
     >
       {t('header.fullcreen-toggle')}
