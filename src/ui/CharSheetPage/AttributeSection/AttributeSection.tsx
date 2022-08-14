@@ -1,19 +1,38 @@
 import React from 'react';
-import './AttributeSection.css';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
+import './AttributeSection.css';
+
 import { RangeInput } from "../generic/RangeInput";
+import { Subheader } from '../generic/Subheader';
 import { useAttributes } from '../../../services/storageAdapter';
 import { 
   physicalAttributesArr,
   socialAttributesArr,
-  mentalAttributesArr
+  mentalAttributesArr,
+  Attributes
 } from '../../../domain';
 
 interface AttributeSectionProps {
   className?: string;
 }
+
+type AttributesConfig = {
+  header: 'physical' | 'social' | 'mental';
+  items: (keyof Attributes)[]
+}[];
+
+const attributesConfig: AttributesConfig = [{
+  header: 'physical',
+  items: physicalAttributesArr
+}, {
+  header: 'social',
+  items: socialAttributesArr
+}, {
+  header: 'mental',
+  items: mentalAttributesArr
+}];
 
 export function AttributeSection(props: AttributeSectionProps) {
   const { t } = useTranslation();
@@ -22,53 +41,26 @@ export function AttributeSection(props: AttributeSectionProps) {
 
   return (
     <div className={classnames("AttributeSection tw-flex", className)}>
-      <div className='tw-flex-1'>
-        {
-          physicalAttributesArr.map(attribute => 
-            <div className="stat-container" key={attribute}>
-              <label>{t(`charsheet.attributes.${attribute}`)}</label>
-              <RangeInput 
-                max={5} 
-                value={attributes[attribute]}
-                onClick={(value: number) => setAttribute(attribute, value)}
-                className="tw-flex-grow"
-              />
-            </div>
-          )
-        }
-      </div>
-
-      <div className='tw-flex-1'>
-        {
-          socialAttributesArr.map(attribute => 
-            <div className="stat-container" key={attribute}>
-              <label>{t(`charsheet.attributes.${attribute}`)}</label>
-              <RangeInput 
-                max={5} 
-                value={attributes[attribute]}
-                onClick={(value: number) => setAttribute(attribute, value)}
-                className="tw-flex-grow"
-              />
-            </div>
-          )
-        }
-      </div>
-
-      <div className='tw-flex-1'>
-        {
-          mentalAttributesArr.map(attribute => 
-            <div className="stat-container" key={attribute}>
-              <label>{t(`charsheet.attributes.${attribute}`)}</label>
-              <RangeInput 
-                max={5} 
-                value={attributes[attribute]}
-                onClick={(value: number) => setAttribute(attribute, value)}
-                className="tw-flex-grow"
-              />
-            </div>
-          )
-        }
-      </div>
+      {
+        attributesConfig.map(({header, items}) => 
+          <div className='tw-flex-1' key={header}>
+            <Subheader>{t(`charsheet.attributes.${header}`)}</Subheader>
+            {
+              items.map(attribute => 
+                <div className="stat-container" key={attribute}>
+                  <label>{t(`charsheet.attributes.${attribute}`)}</label>
+                  <RangeInput 
+                    max={5} 
+                    value={attributes[attribute]}
+                    onClick={(value: number) => setAttribute(attribute, value)}
+                    className="tw-flex-grow"
+                  />
+                </div>
+              )
+            }
+          </div>
+        )
+      }
     </div>
   );
 }
