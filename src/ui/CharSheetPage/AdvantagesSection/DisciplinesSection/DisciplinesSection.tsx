@@ -29,8 +29,8 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
       removeItem={removeDiscipline}
       setItemName={setDisciplineName}
       setItemValue={setDisciplineValue}
-      addItemMsg={t('buttons.add-discipline')}
-      removeItemMsg={t('buttons.remove-discipline')}
+      addItemMsg={t('charsheet.advantages.add-discipline')}
+      removeItemMsg={t('charsheet.advantages.remove-discipline')}
     />
   );
 }

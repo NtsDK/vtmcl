@@ -26,7 +26,7 @@ export function VirtuesSection(props: VirtuesSectionProps) {
       {
         virtuesArr.map(item => 
           <div key={item} className="stat-container">
-            <label>{t(`charsheet.${item}`)}</label>
+            <label>{t(`charsheet.advantages.${item}`)}</label>
             <RangeInput
               max={5} 
               value={virtues[item]}

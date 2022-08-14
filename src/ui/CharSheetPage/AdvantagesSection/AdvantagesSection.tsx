@@ -18,15 +18,15 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   return (
     <div className={classnames("AdvantagesSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.disciplines')}</Subheader>
+        <Subheader>{t('charsheet.advantages.disciplines')}</Subheader>
         <DisciplinesSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.backgrounds')}</Subheader>  
+        <Subheader>{t('charsheet.advantages.backgrounds')}</Subheader>  
         <BackgroundsSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader>{t('charsheet.virtues')}</Subheader>  
+        <Subheader>{t('charsheet.advantages.virtues')}</Subheader>  
         <VirtuesSection/>
       </div>
     </div>

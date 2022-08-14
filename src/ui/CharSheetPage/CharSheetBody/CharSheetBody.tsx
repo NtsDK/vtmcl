@@ -76,7 +76,7 @@ export function CharSheetBody(props: CharSheetBodyProps) {
         <AttributeSection className="tw-mb-3"/>
         <SectionHeader className="tw-mb-3">{t('charsheet.abilities.header')}</SectionHeader>
         <AbilitiesSection className="tw-mb-3"/>
-        <SectionHeader className="tw-mb-3">{t('charsheet.advantages')}</SectionHeader>
+        <SectionHeader className="tw-mb-3">{t('charsheet.advantages.header')}</SectionHeader>
         <AdvantagesSection className="tw-mb-3"/>
         <SectionHeader className="tw-mb-3"/>
         <MiscSection className="tw-mb-3"/>

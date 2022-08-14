@@ -29,8 +29,8 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
       removeItem={removeBackground}
       setItemName={setBackgroundName}
       setItemValue={setBackgroundValue}
-      addItemMsg={t('buttons.add-background')}
-      removeItemMsg={t('buttons.remove-background')}
+      addItemMsg={t('charsheet.advantages.add-background')}
+      removeItemMsg={t('charsheet.advantages.remove-background')}
     />
   );
 }

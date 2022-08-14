@@ -2,6 +2,7 @@ import { header } from "./header";
 import { profile } from "./profile";
 import { attributes } from "./attributes";
 import { abilities } from "./abilities";
+import { advantages } from "./advantages";
 
 export const ruTranslation = {
   "checklist": {
@@ -32,10 +33,6 @@ export const ruTranslation = {
     'remove-merit': 'Удалить достоинство',
     'add-flaw': 'Добавить недостаток',
     'remove-flaw': 'Удалить недостаток',
-    'add-discipline': 'Добавить дисциплину',
-    'remove-discipline': 'Удалить дисциплину',
-    'add-background': 'Добавить дополнение',
-    'remove-background': 'Удалить дополнение',
     'hide-panel': 'Спрятать панель'
   },
   'errors': {
@@ -58,15 +55,7 @@ export const ruTranslation = {
     profile,
     attributes,
     abilities,
-
-    'advantages': 'Преимущества',
-    'disciplines': 'Дисциплины',
-    'backgrounds': 'Дополнения',
-    'traits': 'Трайты',
-    'virtues': 'Добродетели',
-    'conscience': 'Сознательность / Убеждённость',
-    'self_control': 'Самоконтроль / Инстинкт',
-    'courage': 'Смелость',
+    advantages,
 
     'other': 'Прочее',
     'merits': 'Достоинства',
@@ -78,38 +67,6 @@ export const ruTranslation = {
     'health': 'Повреждения',
     'weakness': 'Слабость',
     'experience': 'Опыт',
-
-    //        // disciplines
-    //        'animalism' : 'Анимализм',
-    //        'bardo' : 'Бардо',
-    //        'valeren' : 'Валерен',
-    //        'visceratika' : 'Висцератика',
-    //        'obtenebration' : 'Власть над Тенью',
-    //        'daimoinon' : 'Демонизм',
-    //        'dominate' : 'Доминирование',
-    //        'obfuscate' : 'Затемнение',
-    //        'vicissitude' : 'Изменчивость',
-    //        'kineticism' : 'Кинетицизм',
-    //        'melpominee' : 'Мельпомения',
-    //        'mytherceria' : 'Мистерия',
-    //        'potence' : 'Могущество',
-    //        'nihilistics' : 'Нигилизм',
-    //        'obeah' : 'Обеах',
-    //        'gargoyle flight' : 'Полет Горгулий',
-    //        'dementation' : 'Помешательство',
-    //        'protean' : 'Превращение',
-    //        'presence' : 'Присутствие',
-    //        'auspex' : 'Прорицание',
-    //        'sanguinus' : 'Сангвинус',
-    //        'serpentis' : 'Серпентис',
-    //        'quietus' : 'Смертоносность',
-    //        'mortis' : 'Мортис',
-    //        'fortitude' : 'Стойкость',
-    //        'celerity' : 'Стремительность',
-    //        'thanatosis' : 'Танатозис',
-    //        'temporis' : 'Темпорис',
-    //        'chimerstry' : 'Химерия',
-    //        'spiritus' : 'Шаманство',
 
     // health
     'bruised': 'Синяки',

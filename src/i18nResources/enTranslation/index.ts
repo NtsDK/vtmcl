@@ -3,6 +3,7 @@ import { header } from "./header";
 import { profile } from "./profile";
 import { attributes } from "./attributes";
 import { abilities } from "./abilities";
+import { advantages } from "./advantages";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -35,10 +36,6 @@ export const enTranslation: TranslationInfo = {
     'remove-merit': 'Remove merit',
     'add-flaw': 'Add flaw',
     'remove-flaw': 'Remove flaw',
-    'add-discipline': 'Add discipline',
-    'remove-discipline': 'Remove discipline',
-    'add-background': 'Add background',
-    'remove-background': 'Remove background',
     'hide-panel': 'Hide panel'
   },
   'errors': {
@@ -61,15 +58,7 @@ export const enTranslation: TranslationInfo = {
     profile,
     attributes,
     abilities,
-
-    'advantages': 'Advantages',
-    'disciplines': 'Disciplines',
-    'backgrounds': 'Backgrounds',
-    'traits': 'Traits',
-    'virtues': 'Virtues',
-    'conscience': 'Conscience / Conviction',
-    'self_control': 'Self control / Instinct',
-    'courage': 'Courage',
+    advantages,
 
     'other': 'Other',
     'merits': 'Merits',
@@ -81,38 +70,6 @@ export const enTranslation: TranslationInfo = {
     'health': 'Health',
     'weakness': 'Weakness',
     'experience': 'Experience',
-
-    // // disciplines
-    // 'animalism': 'Animalism',
-    // 'bardo': 'Bardo',
-    // 'valeren': 'Valeren',
-    // 'visceratika': 'Visceratika',
-    // 'obtenebration': 'Obtenebration',
-    // 'daimoinon': 'Daimoinon',
-    // 'dominate': 'Dominate',
-    // 'obfuscate': 'Obfuscate',
-    // 'vicissitude': 'Vicissitude',
-    // 'kineticism': 'Kineticism',
-    // 'melpominee': 'Melpominee',
-    // 'mytherceria': 'Mytherceria',
-    // 'potence': 'Potence',
-    // 'nihilistics': 'Nihilistics',
-    // 'obeah': 'Obeah',
-    // 'gargoyle flight': 'Gargoyle Flight',
-    // 'dementation': 'Dementation',
-    // 'protean': 'Protean',
-    // 'presence': 'Presence',
-    // 'auspex': 'Auspex',
-    // 'sanguinus': 'Sanguinus',
-    // 'serpentis': 'Serpentis',
-    // 'quietus': 'Quietus',
-    // 'mortis': 'Mortis',
-    // 'fortitude': 'Fortitude',
-    // 'celerity': 'Celerity',
-    // 'thanatosis': 'Thanatosis',
-    // 'temporis': 'Temporis',
-    // 'chimerstry': 'Chimerstry',
-    // 'spiritus': 'Spiritus',
 
     // health
     'bruised': 'Bruised',
