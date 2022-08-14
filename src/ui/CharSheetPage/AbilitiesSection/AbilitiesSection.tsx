@@ -1,15 +1,39 @@
 import React from 'react';
-import { RangeInput } from '../generic/RangeInput';
 // import { SectionHeader } from '../SectionHeader';
 import { useTranslation } from 'react-i18next';
-import './AbilitiesSection.css';
 import classnames from "classnames";
-import { knowledgesArr, skillsArr, talentsArr } from '../../../domain';
+
+import { RangeInput } from '../generic/RangeInput';
+import { Subheader } from '../generic/Subheader';
+import { 
+  Abilities, 
+  knowledgesArr, 
+  skillsArr, 
+  talentsArr 
+} from '../../../domain';
 import { useAbilities } from '../../../services/storageAdapter';
+
+import './AbilitiesSection.css';
 
 interface AbilitiesSectionProps {
   className?: string;
 }
+
+type AbilitiesConfig = {
+  header: 'talents' | 'skills' | 'knowledges';
+  items: (keyof Abilities)[]
+}[];
+
+const abilitiesConfig: AbilitiesConfig = [{
+  header: 'talents',
+  items: talentsArr
+}, {
+  header: 'skills',
+  items: skillsArr
+}, {
+  header: 'knowledges',
+  items: knowledgesArr
+}];
 
 export function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();
@@ -18,56 +42,26 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
 
   return (
     <div className={classnames("AbilitiesSection tw-flex", className)}>
-      <div className="tw-flex-1">
-        {
-          talentsArr.map(item => 
-            <div key={item} className="stat-container">
-              <label>{t(`charsheet.abilities.${item}`)}</label>
-              <RangeInput
-                max={5} 
-                value={abilities[item]}
-                onClick={(value: number) => setAbility(item, value)}
-                className="tw-flex-grow"
-              />
-            </div>  
-          )
-        }
-      </div>
-
-      <div className="tw-flex-1">
-        {
-          skillsArr.map(item => 
-            <div key={item} className="stat-container">
-              <label>{t(`charsheet.abilities.${item}`)}</label>
-              <RangeInput
-                max={5} 
-                value={abilities[item]}
-                onClick={(value: number) => setAbility(item, value)}
-                className="tw-flex-grow"
-              />
-            </div>  
-          )
-        }
-      </div>
-
-      <div className="tw-flex-1">
-        {
-          knowledgesArr.map(item => 
-            <div key={item} className="stat-container">
-              <label>{t(`charsheet.abilities.${item}`)}</label>
-              <RangeInput
-                max={5} 
-                value={abilities[item]}
-                onClick={(value: number) => setAbility(item, value)}
-                className="tw-flex-grow"
-              />
-            </div>  
-          )
-        }
-      </div>
+      {
+        abilitiesConfig.map(({header, items}) => 
+          <div className='tw-flex-1' key={header}>
+            <Subheader>{t(`charsheet.abilities.${header}`)}</Subheader>
+            {
+              items.map(ability => 
+                <div className="stat-container" key={ability}>
+                  <label>{t(`charsheet.abilities.${ability}`)}</label>
+                  <RangeInput 
+                    max={5} 
+                    value={abilities[ability]}
+                    onClick={(value: number) => setAbility(ability, value)}
+                    className="tw-flex-grow"
+                  />
+                </div>
+              )
+            }
+          </div>
+        )
+      }
     </div>
   );
 }
-
-
-

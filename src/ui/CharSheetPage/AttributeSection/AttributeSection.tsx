@@ -2,8 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import './AttributeSection.css';
-
 import { RangeInput } from "../generic/RangeInput";
 import { Subheader } from '../generic/Subheader';
 import { useAttributes } from '../../../services/storageAdapter';
@@ -13,6 +11,8 @@ import {
   mentalAttributesArr,
   Attributes
 } from '../../../domain';
+
+import './AttributeSection.css';
 
 interface AttributeSectionProps {
   className?: string;
@@ -64,6 +64,3 @@ export function AttributeSection(props: AttributeSectionProps) {
     </div>
   );
 }
-
-
-
