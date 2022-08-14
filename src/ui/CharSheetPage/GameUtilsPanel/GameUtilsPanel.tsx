@@ -20,9 +20,9 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
   const { className } = props;
 
   return (
-    <aside className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 tw-bg-white", className)}>
+    <aside className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 ", className)}>
       <Accordion defaultActiveKey="0" className="tw-sticky tw-top-0">
-        <Card className="">
+        <Card className="tw-bg-gray-200">
           <Accordion.Toggle 
             as={Button} 
             eventKey="0"
@@ -30,7 +30,7 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
           >
             {t('header.checklist')}
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="0">
+          <Accordion.Collapse eventKey="0" className="tw-bg-white">
             <CharacterCheckList />
           </Accordion.Collapse>
         </Card>
