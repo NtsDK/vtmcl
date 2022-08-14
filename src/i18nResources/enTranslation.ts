@@ -1,5 +1,6 @@
 import { ruTranslation } from "./ruTranslation";
 import { header } from "./header_en";
+import { profile } from "./profile_en";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -55,18 +56,7 @@ export const enTranslation: TranslationInfo = {
     'to-default-background-image': 'Image by default',
   },
   "charsheet": {
-    'profile': 'Profile',
-    'name': 'Name:',
-    'player': 'Player:',
-    'chronicle': 'Chronicle:',
-    'age': 'Age:',
-    'sex': 'Sex:',
-    'nature': 'Nature:',
-    'demeanor': 'Demeanor:',
-    'concept': 'Concept:',
-    'clan': 'Clan:',
-    'generation': 'Generation:',
-    'sire': 'Sire:',
+    profile,
 
     'attributes': 'Attributes',
 

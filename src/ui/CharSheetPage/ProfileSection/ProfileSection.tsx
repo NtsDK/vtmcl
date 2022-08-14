@@ -4,11 +4,11 @@ import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../../services/storageAdapter';
-import { Profile } from '../../../domain';
+import { Profile, ProfileConfig } from '../../../domain';
 
 interface ProfileSectionProps {
   className?: string;
-  profileConfig: (keyof Profile)[][];
+  profileConfig: ProfileConfig;
 }
 
 export function ProfileSection(props: ProfileSectionProps) {
@@ -35,7 +35,7 @@ export function ProfileSection(props: ProfileSectionProps) {
                   subArr.map(item => 
                     <div key={item} className='tw-flex'>
                       <label className='tw-w-24' htmlFor={`profileItem_${item}`}>
-                        {t(`charsheet.${item}`)}
+                        {t(`charsheet.profile.${item}`)}
                       </label>
                       <input 
                         id={`profileItem_${item}`}

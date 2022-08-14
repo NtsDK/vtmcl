@@ -1,4 +1,5 @@
 import { header } from "./header_ru";
+import { profile } from "./profile_ru";
 
 
 export const ruTranslation = {
@@ -53,18 +54,7 @@ export const ruTranslation = {
     'to-default-background-image': 'Изображение по умолчанию',
   },
   "charsheet": {
-    'profile': 'Досье',
-    'name': 'Имя:',
-    'player': 'Игрок:',
-    'chronicle': 'Хроника:',
-    'age': 'Возраст:',
-    'sex': 'Пол:',
-    'nature': 'Натура:',
-    'demeanor': 'Маска:',
-    'concept': 'Концепция:',
-    'clan': 'Клан:',
-    'generation': 'Поколение:',
-    'sire': 'Сир:',
+    profile,
 
     'attributes': 'Атрибуты',
 

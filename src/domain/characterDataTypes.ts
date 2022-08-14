@@ -13,7 +13,9 @@ export interface Profile {
   "sire": string;
 }
 
-export const profileConfig: (keyof Profile)[][] = [
+export type ProfileConfig = (keyof Profile)[][];
+
+export const profileConfig: ProfileConfig = [
   ['name', 'player', 'chronicle', 'age', 'sex'], 
   ['nature', 'demeanor', 'concept', 'clan', 'generation', 'sire']
 ];
