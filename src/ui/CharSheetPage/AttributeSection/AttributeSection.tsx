@@ -5,6 +5,11 @@ import classnames from "classnames";
 
 import { RangeInput } from "../generic/RangeInput";
 import { useAttributes } from '../../../services/storageAdapter';
+import { 
+  physicalAttributesArr,
+  socialAttributesArr,
+  mentalAttributesArr
+} from '../../../domain';
 
 interface AttributeSectionProps {
   className?: string;
@@ -18,93 +23,51 @@ export function AttributeSection(props: AttributeSectionProps) {
   return (
     <div className={classnames("AttributeSection tw-flex", className)}>
       <div className='tw-flex-1'>
-        <div className="stat-container">
-          <label>{t('charsheet.strength')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.strength}
-            onClick={(value: number) => setAttribute('strength', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.dexterity')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.dexterity}
-            onClick={(value: number) => setAttribute('dexterity', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.stamina')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.stamina}
-            onClick={(value: number) => setAttribute('stamina', value)}
-            className="tw-flex-grow"
-          />
-        </div>
+        {
+          physicalAttributesArr.map(attribute => 
+            <div className="stat-container" key={attribute}>
+              <label>{t(`charsheet.attributes.${attribute}`)}</label>
+              <RangeInput 
+                max={5} 
+                value={attributes[attribute]}
+                onClick={(value: number) => setAttribute(attribute, value)}
+                className="tw-flex-grow"
+              />
+            </div>
+          )
+        }
       </div>
 
       <div className='tw-flex-1'>
-        <div className="stat-container">
-          <label>{t('charsheet.charisma')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.charisma}
-            onClick={(value: number) => setAttribute('charisma', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.manipulation')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.manipulation}
-            onClick={(value: number) => setAttribute('manipulation', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.appearance')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.appearance}
-            onClick={(value: number) => setAttribute('appearance', value)}
-            className="tw-flex-grow"
-          />
-        </div>
+        {
+          socialAttributesArr.map(attribute => 
+            <div className="stat-container" key={attribute}>
+              <label>{t(`charsheet.attributes.${attribute}`)}</label>
+              <RangeInput 
+                max={5} 
+                value={attributes[attribute]}
+                onClick={(value: number) => setAttribute(attribute, value)}
+                className="tw-flex-grow"
+              />
+            </div>
+          )
+        }
       </div>
 
       <div className='tw-flex-1'>
-        <div className="stat-container">
-          <label>{t('charsheet.perception')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.perception}
-            onClick={(value: number) => setAttribute('perception', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.intelligence')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.intelligence}
-            onClick={(value: number) => setAttribute('intelligence', value)}
-            className="tw-flex-grow"
-          />
-        </div>
-        <div className="stat-container">
-          <label>{t('charsheet.wits')}</label>
-          <RangeInput 
-            max={5} 
-            value={attributes.wits}
-            onClick={(value: number) => setAttribute('wits', value)}
-            className="tw-flex-grow"
-          />
-        </div>
+        {
+          mentalAttributesArr.map(attribute => 
+            <div className="stat-container" key={attribute}>
+              <label>{t(`charsheet.attributes.${attribute}`)}</label>
+              <RangeInput 
+                max={5} 
+                value={attributes[attribute]}
+                onClick={(value: number) => setAttribute(attribute, value)}
+                className="tw-flex-grow"
+              />
+            </div>
+          )
+        }
       </div>
     </div>
   );

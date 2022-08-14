@@ -1,4 +1,5 @@
 
+// Profile
 export interface Profile {
   "name": string;
   "player": string;
@@ -20,6 +21,7 @@ export const profileConfig: ProfileConfig = [
   ['nature', 'demeanor', 'concept', 'clan', 'generation', 'sire']
 ];
 
+// Attributes
 export interface Attributes {
   "strength": number;
   "dexterity": number;
@@ -42,6 +44,23 @@ export const mentalAttributesArr: (keyof Attributes)[] = [
   "perception", 'intelligence', 'wits'
 ];
 
+// Advantages
+export interface Virtues {
+  "conscience": number;
+  "self_control": number;
+  "courage": number;
+}
+
+export type Disciplines = {
+  name: string, 
+  value: number
+}[];
+export type Backgrounds = {
+  name: string, 
+  value: number
+}[];
+
+// Whole state
 export interface State {
   "humanity": number;
   "willpower": number;
@@ -60,20 +79,6 @@ export interface Health {
   "incapacitated": number;
 }
 
-export interface Virtues {
-  "conscience": number;
-  "self_control": number;
-  "courage": number;
-}
-
-export type Disciplines = {
-  name: string, 
-  value: number
-}[];
-export type Backgrounds = {
-  name: string, 
-  value: number
-}[];
 export type Merits = string[];
 export type Flaws = string[];
 

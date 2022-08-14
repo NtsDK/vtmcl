@@ -1,6 +1,6 @@
-import { header } from "./header_ru";
-import { profile } from "./profile_ru";
-
+import { header } from "./header";
+import { profile } from "./profile";
+import { attributes } from "./attributes";
 
 export const ruTranslation = {
   "checklist": {
@@ -56,22 +56,7 @@ export const ruTranslation = {
   "charsheet": {
     profile,
 
-    'attributes': 'Атрибуты',
-
-    'physical': 'Физические',
-    'strength': 'Сила',
-    'dexterity': 'Ловкость',
-    'stamina': 'Выносливость',
-
-    'social': 'Социальные',
-    'charisma': 'Обаяние',
-    'manipulation': 'Манипулирование',
-    'appearance': 'Внешность',
-
-    'mental': 'Ментальные',
-    'perception': 'Восприятие',
-    'intelligence': 'Интеллект',
-    'wits': 'Сообразительность',
+    attributes,
 
     'abilities': 'Способности',
 

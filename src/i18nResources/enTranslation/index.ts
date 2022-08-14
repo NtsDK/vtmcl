@@ -1,6 +1,7 @@
-import { ruTranslation } from "./ruTranslation";
-import { header } from "./header_en";
-import { profile } from "./profile_en";
+import { ruTranslation } from "../ruTranslation";
+import { header } from "./header";
+import { profile } from "./profile";
+import { attributes } from "./attributes";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -57,23 +58,7 @@ export const enTranslation: TranslationInfo = {
   },
   "charsheet": {
     profile,
-
-    'attributes': 'Attributes',
-
-    'physical': 'Physical',
-    'strength': 'Strength',
-    'dexterity': 'Dexterity',
-    'stamina': 'Stamina',
-
-    'social': 'Social',
-    'charisma': 'Charisma',
-    'manipulation': 'Manipulation',
-    'appearance': 'Appearance',
-
-    'mental': 'Mental',
-    'perception': 'Perception',
-    'intelligence': 'Intelligence',
-    'wits': 'Wits',
+    attributes,
 
     'abilities': 'Abilities',
 

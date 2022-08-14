@@ -72,7 +72,7 @@ export function CharSheetBody(props: CharSheetBodyProps) {
         <h1 className="tw-sr-only">{title}</h1>
         <SectionHeader className="tw-mb-3 tw-sr-only">{t('charsheet.profile.header')}</SectionHeader>
         <ProfileSection className="tw-mb-3" profileConfig={profileConfig}/>
-        <SectionHeader className="tw-mb-3">{t('charsheet.attributes')}</SectionHeader>
+        <SectionHeader className="tw-mb-3">{t('charsheet.attributes.header')}</SectionHeader>
         <AttributeSection className="tw-mb-3"/>
         <SectionHeader className="tw-mb-3">{t('charsheet.abilities')}</SectionHeader>
         <AbilitiesSection className="tw-mb-3"/>
