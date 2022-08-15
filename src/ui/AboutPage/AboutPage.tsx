@@ -13,13 +13,13 @@ export function AboutPage(props: AboutPageProps) {
   const { t } = useTranslation();
 
   return (
-    <DocumentTitle title={t('header.about')}>
+    <DocumentTitle title={t('about.nav-about')}>
       <main className="AboutPage">
         <Card>
           <Card.Body>
             <div>
               <div className="tw-mb-8">
-                <h1>{t('header.aboutCharsheetH1')}</h1>
+                <h1>{t('about.aboutCharsheetH1')}</h1>
                 <p>Версия 0.2.0 от 23.06.2022</p>
                 <p>Проект с открытым исходным кодом под лицензией Apache 2.0</p>
                 <p>В проекте используются иконки с сайта <a href="www.flaticon.com">www.flaticon.com</a> от авторов Freepik, Picol, Nice and Serious.</p>

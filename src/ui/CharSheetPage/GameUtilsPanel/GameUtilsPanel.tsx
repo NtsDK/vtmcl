@@ -28,7 +28,7 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
             eventKey="0"
             className="tw-py-3 tw-text-lg accordion-toggle tw-bg-gray-200"
           >
-            {t('header.checklist')}
+            {t('checklist.header')}
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0" className="tw-bg-white">
             <CharacterCheckList />

@@ -32,7 +32,7 @@ export function HealthSection(props: HealthSectionProps) {
       {
         arr.map(([name, sublabel]) => 
           <div key={name} className="health-stat tw-flex tw-justify-center tw-mb-1">
-            <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.${name}`)}</label>
+            <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.misc.${name}`)}</label>
             <button 
               className='tw-w-5'
               onClick={() => setHealth(name, (health[name] + 1) % 3)}

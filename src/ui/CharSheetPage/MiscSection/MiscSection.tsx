@@ -21,20 +21,20 @@ export function MiscSection(props: MiscSectionProps) {
   return (
     <div className={classnames("MiscSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-2">{t('charsheet.merits')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.misc.merits')}</Subheader>
         <MeritsSection className="tw-mb-4"/>
-        <Subheader className="tw-mb-2">{t('charsheet.flaws')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.misc.flaws')}</Subheader>
         <FlawsSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-2">{t('charsheet.humanity')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.misc.humanity')}</Subheader>
         <RangeInput 
           max={10} 
           value={state.humanity}
           onClick={(value: number) => setState('humanity', value)}
           className=""
         />
-        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.willpower')}</Subheader>
+        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.misc.willpower')}</Subheader>
         <RangeInput 
           max={10} 
           value={state.willpower}
@@ -47,7 +47,7 @@ export function MiscSection(props: MiscSectionProps) {
           onClick={(value: number) => setState('willpower2', value)}
           className=""
         />
-        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.bloodpool')}</Subheader>
+        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.misc.bloodpool')}</Subheader>
         <RangeInput 
           max={20} 
           value={state.bloodpool}
@@ -57,7 +57,7 @@ export function MiscSection(props: MiscSectionProps) {
         />
       </div>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-4">{t('charsheet.health')}</Subheader>
+        <Subheader className="tw-mb-4">{t('charsheet.misc.health')}</Subheader>
         <HealthSection/>
       </div>
     </div>

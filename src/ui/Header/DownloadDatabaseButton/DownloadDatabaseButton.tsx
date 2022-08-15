@@ -28,7 +28,7 @@ export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
       // title={t('header.save-database')}
       className="tw-py-3 tw-text-lg"
     >
-      {t('header.save-database')}
+      {t('actionMenu.save-database')}
     </Dropdown.Item>
   );
 }

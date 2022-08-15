@@ -37,38 +37,38 @@ export function Header(props: HeaderProps) {
                 className="tw-px-3 tw-py-2 tw-text-lg"
                 to={'/charsheet'}
               >
-                {t('header.charsheet')}
+                {t('charsheet.charsheet')}
               </NavLink>
             </Nav.Item>
-            <Nav.Item as="li">
+            {/* <Nav.Item as="li">
               <NavLink
                 className="tw-px-3 tw-py-2 tw-text-lg"
                 to={'/instruction'}
               >
                 {t('header.instruction')}
               </NavLink>
-            </Nav.Item>
-            <Nav.Item as="li">
+            </Nav.Item> */}
+            {/* <Nav.Item as="li">
               <NavLink
                 className="tw-px-3 tw-py-2 tw-text-lg"
                 to={'/log'}
               >
                 {t('header.logViewer')}
               </NavLink>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item as="li">
               <NavLink
                 className="tw-px-3 tw-py-2 tw-text-lg"
                 to={'/about'}
               >
-                {t('header.about')}
+                {t('about.nav-about')}
               </NavLink>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
 
         <Dropdown as={Nav.Item} alignRight>
-          <Dropdown.Toggle as={Nav.Link} className="tw-text-lg">{t('header.actionMenu')}</Dropdown.Toggle>
+          <Dropdown.Toggle as={Nav.Link} className="tw-text-lg">{t('actionMenu.header')}</Dropdown.Toggle>
           <Dropdown.Menu style={{ zIndex: 2000 }}>
             <UploadDatabaseButton />
             <DownloadDatabaseButton />

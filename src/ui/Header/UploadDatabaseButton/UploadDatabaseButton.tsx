@@ -72,7 +72,7 @@ export function UploadDatabaseButton(props) {
         // @ts-ignore
         onChange={onUploadFileSelected}
       />
-      {t('header.open-database')}
+      {t('actionMenu.open-database')}
     </Dropdown.Item>
   );
 }

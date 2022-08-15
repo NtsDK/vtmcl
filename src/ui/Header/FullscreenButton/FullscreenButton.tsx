@@ -27,7 +27,7 @@ export function FullscreenButton(props: FullscreenButtonProps) {
       // title={t('header.fullcreen-toggle')}
       className="FullscreenButton tw-py-3 tw-text-lg"
     >
-      {t('header.fullcreen-toggle')}
+      {t('actionMenu.fullcreen-toggle')}
     </Dropdown.Item>
   );
 }

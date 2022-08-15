@@ -41,7 +41,7 @@ export function ControlPanel(props: ControlPanelProps) {
               eventKey="0" 
               className="tw-py-3 tw-text-lg accordion-toggle"
             >
-              {t('header.actionMenu')}
+              {t('actionMenu.header')}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0" className="tw-bg-white">
               <ActionList />
@@ -53,7 +53,7 @@ export function ControlPanel(props: ControlPanelProps) {
               eventKey="1" 
               className="tw-py-3 tw-text-lg accordion-toggle"
             >
-              {t('charsheet-tab.settings')}
+              {t('visual-settings.header')}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1" className="tw-bg-white">
               <SettingsSection/>

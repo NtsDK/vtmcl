@@ -22,7 +22,7 @@ export function LangButton(props: LangButtonProps) {
       className="LangButton tw-py-3 tw-text-lg"
     >
       <img className="tw-w-5 tw-inline tw-leading-5 tw-mr-2" src={`images/${lang}.svg`} alt=""/>
-      <span className="tw-leading-5">{t(`header.lang-${lang}`)}</span>
+      <span className="tw-leading-5">{t(`actionMenu.lang-${lang}`)}</span>
     </Dropdown.Item>
   );
 }

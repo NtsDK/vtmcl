@@ -70,7 +70,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
         // title={t('header.create-database')}
         className="CreateDatabaseButton tw-py-3 tw-text-lg"
       >
-        {t('header.create-database')}
+        {t('actionMenu.create-database')}
       </Dropdown.Item>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Form
@@ -78,11 +78,11 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
         >
           <Modal.Header closeButton>
             <Modal.Title>
-              {t('header.create-database-modal-title')}
+              {t('actionMenu.create-database-modal-title')}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {t('header.create-database-modal-text')}
+            {t('actionMenu.create-database-modal-text')}
           </Modal.Body>
           <Modal.Footer>
             <Button

@@ -50,9 +50,9 @@ export function CharSheetBody(props: CharSheetBodyProps) {
 
   useEffect(() => {
     const characterName = profile.name.trim() === ''
-      ? t('header.emptyName')
+      ? t('charsheet.emptyName')
       : profile.name;
-    setTitle(t('header.charsheetWithName', {
+    setTitle(t('charsheet.charsheetWithName', {
       characterName
     }));
   }, [t, profile]);
