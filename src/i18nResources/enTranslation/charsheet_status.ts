@@ -1,4 +1,5 @@
 export const status = {
+  'header': 'Status',
   'other': 'Other',
   'merits': 'Merits',
   'flaws': 'Flaws',

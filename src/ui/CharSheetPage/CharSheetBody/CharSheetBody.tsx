@@ -10,7 +10,7 @@ import { AttributeSection } from "../AttributeSection";
 import { AbilitiesSection } from "../AbilitiesSection";
 import { SectionHeader } from "../generic/SectionHeader";
 import { AdvantagesSection } from '../AdvantagesSection';
-import { MiscSection } from '../MiscSection';
+import { StatusSection } from '../StatusSection';
 import { NotesSection } from '../NotesSection';
 import { useProfile, useSettings } from '../../../services/storageAdapter';
 import { profileConfig, Settings } from '../../../domain';
@@ -78,8 +78,8 @@ export function CharSheetBody(props: CharSheetBodyProps) {
         <AbilitiesSection className="tw-mb-3"/>
         <SectionHeader className="tw-mb-3">{t('charsheet.advantages.header')}</SectionHeader>
         <AdvantagesSection className="tw-mb-3"/>
-        <SectionHeader className="tw-mb-3"/>
-        <MiscSection className="tw-mb-3"/>
+        <SectionHeader className="tw-mb-3">{t('charsheet.status.header')}</SectionHeader>
+        <StatusSection className="tw-mb-3"/>
         <SectionHeader className="tw-mb-3">{t('charsheet.notes')}</SectionHeader>
         <NotesSection />
       </div>

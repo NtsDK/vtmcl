@@ -1,6 +1,6 @@
 import React from 'react';
 import { Subheader } from '../generic/Subheader';
-import './MiscSection.css';
+import './StatusSection.css';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 import { useStateNHealth } from '../../../services/storageAdapter';
@@ -10,17 +10,17 @@ import { MeritsSection } from './MeritsSection';
 import { FlawsSection } from './FlawsSection';
 import { RangeInput2 } from '../generic/RangeInput2';
 
-interface MiscSectionProps {
+interface StatusSectionProps {
   className?: string;
 }
 
-export function MiscSection(props: MiscSectionProps) {
+export function StatusSection(props: StatusSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
   const { state, setState } = useStateNHealth();
 
   return (
-    <div className={classnames("MiscSection tw-flex", className)}>
+    <div className={classnames("StatusSection tw-flex", className)}>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2">{t('charsheet.status.merits')}</Subheader>
         <MeritsSection className="tw-mb-4"/>

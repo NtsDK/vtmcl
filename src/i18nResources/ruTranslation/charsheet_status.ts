@@ -1,4 +1,5 @@
 export const status = {
+  'header': 'Статус',
   'other': 'Прочее',
   'merits': 'Достоинства',
   'flaws': 'Недостатки',
