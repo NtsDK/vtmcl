@@ -1,0 +1,10 @@
+.range-input-checkbox {
+  appearance: none;
+  background: url("../../../../../public/images/radio-on-button.svg") no-repeat 50% 50%;
+  background-size: 100% auto;
+  print-color-adjust: exact;
+}
+
+.range-input-checkbox:checked ~ .range-input-checkbox {
+  background-image: url("../../../../../public/images/circumference.svg");
+}

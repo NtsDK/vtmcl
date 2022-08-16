@@ -46,6 +46,7 @@ export function NameSection(props: NameSectionProps) {
             onClick={() => removeItem(index)} 
             aria-label={removeItemMsg} 
             title={removeItemMsg}
+            className="tw-flex"
           >
             <FontAwesomeIcon
               className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"

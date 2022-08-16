@@ -11,6 +11,7 @@ import {
   mentalAttributesArr,
   Attributes
 } from '../../../domain';
+import { RangeInput2 } from '../generic/RangeInput2';
 
 import './AttributeSection.css';
 
@@ -47,10 +48,21 @@ export function AttributeSection(props: AttributeSectionProps) {
             <Subheader>{t(`charsheet.attributes.${header}`)}</Subheader>
             {
               items.map(attribute => 
-                <div className="stat-container" key={attribute}>
-                  <label>{t(`charsheet.attributes.${attribute}`)}</label>
-                  <RangeInput 
+                <div 
+                  role="group" 
+                  className="stat-container" 
+                  key={attribute}
+                  aria-labelledby={`attribute.label.${attribute}`}
+                >
+                  <label 
+                    className='stat-container-label'
+                    id={`attribute.label.${attribute}`}
+                  >
+                    {t(`charsheet.attributes.${attribute}`)}
+                  </label>
+                  <RangeInput2
                     max={5} 
+                    name={`attribute.${attribute}`}
                     value={attributes[attribute]}
                     onClick={(value: number) => setAttribute(attribute, value)}
                     className="tw-flex-grow"

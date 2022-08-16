@@ -14,6 +14,7 @@ import {
 import { useAbilities } from '../../../services/storageAdapter';
 
 import './AbilitiesSection.css';
+import { RangeInput2 } from '../generic/RangeInput2';
 
 interface AbilitiesSectionProps {
   className?: string;
@@ -48,10 +49,21 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
             <Subheader>{t(`charsheet.abilities.${header}`)}</Subheader>
             {
               items.map(ability => 
-                <div className="stat-container" key={ability}>
-                  <label>{t(`charsheet.abilities.${ability}`)}</label>
-                  <RangeInput 
+                <div 
+                  role="group" 
+                  className="stat-container" 
+                  key={ability}
+                  aria-labelledby={`ability.label.${ability}`}
+                >
+                  <label 
+                    className='stat-container-label'
+                    id={`ability.label.${ability}`}
+                  >
+                    {t(`charsheet.abilities.${ability}`)}
+                  </label>
+                  <RangeInput2
                     max={5} 
+                    name={`ability.${ability}`}
                     value={abilities[ability]}
                     onClick={(value: number) => setAbility(ability, value)}
                     className="tw-flex-grow"

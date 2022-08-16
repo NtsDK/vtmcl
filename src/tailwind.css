@@ -616,6 +616,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: fit-content;
 }
 
+.tw-h-6 {
+  height: 1.5rem;
+}
+
+.tw-h-12 {
+  height: 3rem;
+}
+
 .tw-w-full {
   width: 100%;
 }

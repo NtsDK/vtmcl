@@ -3,7 +3,7 @@
   margin: 0.25rem;
 }
 
-.stat-container label {
+.stat-container-label {
   margin-bottom: 0;
   flex-basis: 8rem;
   /* -webkit-box-flex: 0;

@@ -23,6 +23,7 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
 
   return (
     <NameNumberSection
+      sectionItemName="discipline"
       className={classnames("DisciplinesSection", className)}
       addItem={addDiscipline}
       items={disciplines}

@@ -1,7 +1,8 @@
 import React, { MouseEventHandler } from 'react';
 import * as R from 'ramda';
-import './RangeInput.css';
 import classNames from 'classnames';
+
+import './RangeInput.css';
 
 interface RangeInputProps {
   max: number;

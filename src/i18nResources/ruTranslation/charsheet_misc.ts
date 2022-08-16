@@ -5,6 +5,8 @@ export const misc = {
   'state': 'Состояние',
   'humanity': 'Человечность/Путь',
   'willpower': 'Сила воли',
+  'willpower1': 'Сила воли один',
+  'willpower2': 'Сила воли два',
   'bloodpool': 'Запас крови',
   'health': 'Повреждения',
   'weakness': 'Слабость',

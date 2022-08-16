@@ -5,6 +5,8 @@ export const misc = {
   'state': 'State',
   'humanity': 'Humanity/Path',
   'willpower': 'Willpower',
+  'willpower1': 'Willpower one',
+  'willpower2': 'Willpower two',
   'bloodpool': 'Bloodpool',
   'health': 'Health',
   'weakness': 'Weakness',

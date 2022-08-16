@@ -8,6 +8,7 @@ import { RangeInput } from '../generic/RangeInput';
 import { HealthSection } from './HealthSection';
 import { MeritsSection } from './MeritsSection';
 import { FlawsSection } from './FlawsSection';
+import { RangeInput2 } from '../generic/RangeInput2';
 
 interface MiscSectionProps {
   className?: string;
@@ -27,34 +28,58 @@ export function MiscSection(props: MiscSectionProps) {
         <FlawsSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-2">{t('charsheet.misc.humanity')}</Subheader>
-        <RangeInput 
-          max={10} 
-          value={state.humanity}
-          onClick={(value: number) => setState('humanity', value)}
-          className=""
-        />
+        <Subheader 
+          id="humanity.header" 
+          className="tw-mb-2"
+        >
+          {t('charsheet.misc.humanity')}
+        </Subheader>
+        <fieldset aria-label={t('charsheet.misc.humanity')}>
+          <RangeInput2
+            max={10} 
+            name="humanity"
+            value={state.humanity}
+            onClick={(value: number) => setState('humanity', value)}
+            className="tw-h-6"
+          />
+        </fieldset>
+
         <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.misc.willpower')}</Subheader>
-        <RangeInput 
-          max={10} 
-          value={state.willpower}
-          onClick={(value: number) => setState('willpower', value)}
-          className=""
-        />
-        <RangeInput 
-          max={10} 
-          value={state.willpower2}
-          onClick={(value: number) => setState('willpower2', value)}
-          className=""
-        />
-        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.misc.bloodpool')}</Subheader>
-        <RangeInput 
-          max={20} 
-          value={state.bloodpool}
-          onClick={(value: number) => setState('bloodpool', value)}
-          className=""
-          splitEvery={10}
-        />
+        <fieldset aria-label={t('charsheet.misc.willpower1')}>
+          <RangeInput2
+            max={10} 
+            name="willpower"
+            value={state.willpower}
+            onClick={(value: number) => setState('willpower', value)}
+            className="tw-h-6"
+          />
+        </fieldset>
+        <fieldset aria-label={t('charsheet.misc.willpower2')}>
+          <RangeInput2
+            max={10} 
+            name="willpower2"
+            value={state.willpower2}
+            onClick={(value: number) => setState('willpower2', value)}
+            className="tw-h-6"
+          />
+        </fieldset>
+
+        <Subheader 
+          id="bloodpool.header" 
+          className="tw-mb-2 tw-mt-2"
+        >
+          {t('charsheet.misc.bloodpool')}
+        </Subheader>
+        <fieldset aria-label={t('charsheet.misc.bloodpool')}>
+          <RangeInput2
+            max={20} 
+            name="bloodpool"
+            value={state.bloodpool}
+            onClick={(value: number) => setState('bloodpool', value)}
+            className="tw-h-12"
+            splitEvery={10}
+          />
+        </fieldset>
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-4">{t('charsheet.misc.health')}</Subheader>

@@ -23,6 +23,7 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
 
   return (
     <NameNumberSection
+      sectionItemName="background"
       className={classnames("BackgroundsSection", className)}
       addItem={addBackground}
       items={backgrounds}

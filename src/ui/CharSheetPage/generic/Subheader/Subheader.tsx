@@ -3,15 +3,15 @@ import './Subheader.css';
 import classnames from "classnames";
 
 interface SubheaderProps {
+  id?: string;
   className?: string;
 }
 
 export function Subheader(props: PropsWithChildren<SubheaderProps>) {
-  const { children } = props;
-  const { className } = props;
+  const { children, className, id } = props;
 
   return (
-    <h3 className={classnames("Subheader tw-text-center", className)}>
+    <h3 id={id} className={classnames("Subheader tw-text-center", className)}>
       {children}
     </h3>
   );
