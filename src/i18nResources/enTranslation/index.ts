@@ -3,7 +3,7 @@ import { profile } from "./charsheet_profile";
 import { attributes } from "./charsheet_attributes";
 import { abilities } from "./charsheet_abilities";
 import { advantages } from "./charsheet_advantages";
-import { misc } from "./charsheet_misc";
+import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
 
@@ -44,7 +44,7 @@ export const enTranslation: TranslationInfo = {
     attributes,
     abilities,
     advantages,
-    misc,
+    status,
     'notes': 'Notes',
   },
   "common": {

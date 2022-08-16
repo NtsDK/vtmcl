@@ -27,8 +27,8 @@ export function FlawsSection(props: FlawsSectionProps) {
       items={flaws}
       removeItem={removeFlaw}
       setItem={setFlaw}
-      addItemMsg={t('charsheet.misc.add-flaw')}
-      removeItemMsg={t('charsheet.misc.remove-flaw')}
+      addItemMsg={t('charsheet.status.add-flaw')}
+      removeItemMsg={t('charsheet.status.remove-flaw')}
     />
   );
 }

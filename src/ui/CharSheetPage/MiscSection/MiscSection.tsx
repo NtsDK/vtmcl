@@ -22,9 +22,9 @@ export function MiscSection(props: MiscSectionProps) {
   return (
     <div className={classnames("MiscSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-2">{t('charsheet.misc.merits')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.status.merits')}</Subheader>
         <MeritsSection className="tw-mb-4"/>
-        <Subheader className="tw-mb-2">{t('charsheet.misc.flaws')}</Subheader>
+        <Subheader className="tw-mb-2">{t('charsheet.status.flaws')}</Subheader>
         <FlawsSection/>
       </div>
       <div className="tw-flex-1">
@@ -32,9 +32,9 @@ export function MiscSection(props: MiscSectionProps) {
           id="humanity.header" 
           className="tw-mb-2"
         >
-          {t('charsheet.misc.humanity')}
+          {t('charsheet.status.humanity')}
         </Subheader>
-        <fieldset aria-label={t('charsheet.misc.humanity')}>
+        <fieldset aria-label={t('charsheet.status.humanity')}>
           <RangeInput2
             max={10} 
             name="humanity"
@@ -44,8 +44,8 @@ export function MiscSection(props: MiscSectionProps) {
           />
         </fieldset>
 
-        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.misc.willpower')}</Subheader>
-        <fieldset aria-label={t('charsheet.misc.willpower1')}>
+        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.status.willpower')}</Subheader>
+        <fieldset aria-label={t('charsheet.status.willpower1')}>
           <RangeInput2
             max={10} 
             name="willpower"
@@ -54,7 +54,7 @@ export function MiscSection(props: MiscSectionProps) {
             className="tw-h-6"
           />
         </fieldset>
-        <fieldset aria-label={t('charsheet.misc.willpower2')}>
+        <fieldset aria-label={t('charsheet.status.willpower2')}>
           <RangeInput2
             max={10} 
             name="willpower2"
@@ -68,9 +68,9 @@ export function MiscSection(props: MiscSectionProps) {
           id="bloodpool.header" 
           className="tw-mb-2 tw-mt-2"
         >
-          {t('charsheet.misc.bloodpool')}
+          {t('charsheet.status.bloodpool')}
         </Subheader>
-        <fieldset aria-label={t('charsheet.misc.bloodpool')}>
+        <fieldset aria-label={t('charsheet.status.bloodpool')}>
           <RangeInput2
             max={20} 
             name="bloodpool"
@@ -82,7 +82,7 @@ export function MiscSection(props: MiscSectionProps) {
         </fieldset>
       </div>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-4">{t('charsheet.misc.health')}</Subheader>
+        <Subheader className="tw-mb-4">{t('charsheet.status.health')}</Subheader>
         <HealthSection/>
       </div>
     </div>

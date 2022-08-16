@@ -27,8 +27,8 @@ export function MeritsSection(props: MeritsSectionProps) {
       items={merits}
       removeItem={removeMerit}
       setItem={setMerit}
-      addItemMsg={t('charsheet.misc.add-merit')}
-      removeItemMsg={t('charsheet.misc.remove-merit')}
+      addItemMsg={t('charsheet.status.add-merit')}
+      removeItemMsg={t('charsheet.status.remove-merit')}
     />
   );
 }

@@ -1,4 +1,4 @@
-export const misc = {
+export const status = {
   'other': 'Прочее',
   'merits': 'Достоинства',
   'flaws': 'Недостатки',
