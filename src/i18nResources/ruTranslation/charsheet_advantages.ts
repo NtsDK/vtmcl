@@ -1,17 +1,17 @@
 export const advantages = {
   'header': 'Преимущества',
   'disciplines': 'Дисциплины',
-  'backgrounds': 'Дополнения',
+  'backgrounds': 'Факты биографии',
   // 'traits': 'Трайты',
   'virtues': 'Добродетели',
-  'conscience': 'Сознательность / Убеждённость',
-  'self_control': 'Самоконтроль / Инстинкт',
+  'conscience': 'Совесть / Решимость',
+  'self_control': 'Самоконтроль / Инстинкты',
   'courage': 'Смелость',
 
   'add-discipline': 'Добавить дисциплину',
   'remove-discipline': 'Удалить дисциплину',
-  'add-background': 'Добавить дополнение',
-  'remove-background': 'Удалить дополнение',
+  'add-background': 'Добавить факт биографии',
+  'remove-background': 'Удалить факт биографии',
 
   //        // disciplines
   //        'animalism' : 'Анимализм',

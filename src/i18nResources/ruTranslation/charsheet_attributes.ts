@@ -1,5 +1,5 @@
 export const attributes = {
-  'header': 'Атрибуты',
+  'header': 'Характеристики',
 
   'physical': 'Физические',
   'strength': 'Сила',
@@ -8,11 +8,11 @@ export const attributes = {
 
   'social': 'Социальные',
   'charisma': 'Обаяние',
-  'manipulation': 'Манипулирование',
-  'appearance': 'Внешность',
+  'manipulation': 'Манипуляция',
+  'appearance': 'Привлекательность',
 
   'mental': 'Ментальные',
   'perception': 'Восприятие',
   'intelligence': 'Интеллект',
-  'wits': 'Сообразительность',
+  'wits': 'Смекалка',
 }

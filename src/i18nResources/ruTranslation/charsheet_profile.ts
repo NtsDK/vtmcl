@@ -7,7 +7,7 @@ export const profile = {
   'sex': 'Пол:',
   'nature': 'Натура:',
   'demeanor': 'Маска:',
-  'concept': 'Концепция:',
+  'concept': 'Амплуа:',
   'clan': 'Клан:',
   'generation': 'Поколение:',
   'sire': 'Сир:',
