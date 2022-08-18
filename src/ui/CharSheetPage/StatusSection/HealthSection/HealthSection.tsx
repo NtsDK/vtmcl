@@ -21,7 +21,10 @@ const iconMap: Record<number, string> = {
   0: 'images/injure_no.svg',
   1: 'images/injure_wound.svg',
   2: 'images/injure_deadly.svg',
+  3: 'images/injure_aggravated.svg',
 };
+
+const healthIconStateNumber = Object.keys(iconMap).length;
 
 export function HealthSection(props: HealthSectionProps) {
   const { health, setHealth } = useStateNHealth();
@@ -35,7 +38,7 @@ export function HealthSection(props: HealthSectionProps) {
             <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.status.${name}`)}</label>
             <button 
               className='tw-w-5'
-              onClick={() => setHealth(name, (health[name] + 1) % 3)}
+              onClick={() => setHealth(name, (health[name] + 1) % healthIconStateNumber)}
             >
               <img className="tw-w-full" src={iconMap[health[name]]} alt=""/>
             </button>

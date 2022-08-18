@@ -206,7 +206,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setHealth(healthName: keyof Health, value: number) {
       setHealth({
         ...health,
-        [healthName]: applyRange(0, 2, value)
+        [healthName]: applyRange(0, 3, value)
       });
     },
     setState(stateName: keyof State, value: number) {
