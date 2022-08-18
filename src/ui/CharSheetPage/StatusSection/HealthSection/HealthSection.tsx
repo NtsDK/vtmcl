@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Health } from '../../../../domain';
 import { useStateNHealth } from '../../../../services/storageAdapter';
+import { HealthInput } from '../../generic/HealthInput';
 import './HealthSection.css';
 
 interface HealthSectionProps {
@@ -34,15 +35,25 @@ export function HealthSection(props: HealthSectionProps) {
     <div className="HealthSection">
       {
         arr.map(([name, sublabel]) => 
-          <div key={name} className="health-stat tw-flex tw-justify-center tw-mb-1">
-            <label className="health-stat-label tw-text-sm tw-mb-0">{t(`charsheet.status.${name}`)}</label>
-            <button 
-              className='tw-w-5'
-              onClick={() => setHealth(name, (health[name] + 1) % healthIconStateNumber)}
-            >
-              <img className="tw-w-full" src={iconMap[health[name]]} alt=""/>
-            </button>
-            <span className="health-stat-sublabel tw-text-sm tw-text-center">{sublabel}</span>
+          <div 
+            role="group" 
+            key={name} 
+            className="health-stat tw-flex tw-justify-center tw-mb-1"
+            aria-labelledby={`healthLevel.label.${name}`}
+          >
+            <label className="tw-mb-0" id={`healthLevel.label.${name}`}>
+              <span className="health-stat-label tw-text-sm tw-inline-block tw-w-28">
+                {t(`charsheet.status.${name}`)}
+              </span>
+              <span className="health-stat-sublabel tw-text-sm tw-text-center tw-inline-block tw-w-8">
+                {sublabel}
+              </span>
+            </label>
+            <HealthInput
+              name={`healthLevel.${name}`}
+              value={health[name]}
+              onClick={(value) => setHealth(name, value % healthIconStateNumber)}
+            />
           </div>
         )
       }

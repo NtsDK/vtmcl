@@ -36,24 +36,29 @@ export function NameSection(props: NameSectionProps) {
   return (
     <div className={classnames("NameSection", className)}>
       {
-        items.map((name, index) => <div className='tw-flex tw-m-1'>
-          <input
-            className='tw-bg-transparent tw-flex-grow-1 tw-w-full name-number-input tw-text-sm' 
-            value={name} 
-            onChange={onNameChange(index)}
-          />
-          <button 
-            onClick={() => removeItem(index)} 
-            aria-label={removeItemMsg} 
-            title={removeItemMsg}
-            className="tw-flex"
+        items.map((name, index) => 
+          <div 
+            className='tw-flex tw-m-1' 
+            key={`${name}.${index}`}
           >
-            <FontAwesomeIcon
-              className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
-              icon={faXmark}
+            <input
+              className='tw-bg-transparent tw-flex-grow-1 tw-w-full name-number-input tw-text-sm' 
+              value={name} 
+              onChange={onNameChange(index)}
             />
-          </button>
-        </div>)
+            <button 
+              onClick={() => removeItem(index)} 
+              aria-label={removeItemMsg} 
+              title={removeItemMsg}
+              className="tw-flex"
+            >
+              <FontAwesomeIcon
+                className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
+                icon={faXmark}
+              />
+            </button>
+          </div>
+        )
       }
       <div className='tw-text-center tw-mt-4'>
         <button

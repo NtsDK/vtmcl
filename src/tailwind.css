@@ -582,6 +582,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.75rem;
 }
 
+.tw-inline-block {
+  display: inline-block;
+}
+
 .tw-inline {
   display: inline;
 }
@@ -646,6 +650,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-w-14 {
   width: 3.5rem;
+}
+
+.tw-w-32 {
+  width: 8rem;
+}
+
+.tw-w-28 {
+  width: 7rem;
 }
 
 .tw-max-w-sm {

@@ -22,6 +22,11 @@ export const status = {
   'crippled': 'Совсем плох',
   'incapacitated': 'Небоеспособен',
 
+  'no-damage': 'Нет повреждений',
+  'bashing-damage': 'Лёгкие повреждения',
+  'lethal-damage': 'Тяжёлые повреждения',
+  'aggravated-damage': 'Губительные повреждения',
+
   'add-merit': 'Добавить достоинство',
   'remove-merit': 'Удалить достоинство',
   'add-flaw': 'Добавить недостаток',

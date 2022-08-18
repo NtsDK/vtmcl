@@ -22,6 +22,11 @@ export const status = {
   'crippled': 'Crippled',
   'incapacitated': 'Incapacitated',
 
+  'no-damage': 'No damage',
+  'bashing-damage': 'Bashing damage',
+  'lethal-damage': 'Lethal damage',
+  'aggravated-damage': 'Aggravated damage',
+
   'add-merit': 'Add merit',
   'remove-merit': 'Remove merit',
   'add-flaw': 'Add flaw',

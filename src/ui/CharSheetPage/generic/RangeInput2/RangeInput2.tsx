@@ -53,6 +53,7 @@ export function RangeInput2(props: RangeInput2Props) {
               data-index={index}
               data-variant={variant}
               checked={index === value}
+              onChange={() => {}}
             />
           )
         })
