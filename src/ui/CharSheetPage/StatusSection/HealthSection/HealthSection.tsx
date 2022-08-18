@@ -10,11 +10,11 @@ interface HealthSectionProps {
 
 const arr: [keyof Health, string][] = [
   ['bruised', ''],
-  ['hurt', '-1'],
-  ['injured', '-1'],
-  ['wounded', '-2'],
-  ['mauled', '-2'],
-  ['crippled', '-5'],
+  ['hurt', '\u22121'],
+  ['injured', '\u22121'],
+  ['wounded', '\u22122'],
+  ['mauled', '\u22122'],
+  ['crippled', '\u22125'],
   ['incapacitated', ''],
 ];
 
