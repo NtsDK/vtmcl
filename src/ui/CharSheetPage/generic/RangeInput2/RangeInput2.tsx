@@ -11,6 +11,7 @@ interface RangeInput2Props {
   name: string;
   className?: string;
   splitEvery?: number;
+  variant?: 'circle' | 'square';
 }
 
 export function RangeInput2(props: RangeInput2Props) {
@@ -20,7 +21,8 @@ export function RangeInput2(props: RangeInput2Props) {
     onClick, 
     className, 
     name,
-    splitEvery 
+    splitEvery,
+    variant = 'circle'
   } = props;
   let style = {};
   if (splitEvery) {
@@ -49,6 +51,7 @@ export function RangeInput2(props: RangeInput2Props) {
               title={String(index)}
               onClick={onClickWrapper}
               data-index={index}
+              data-variant={variant}
               checked={index === value}
             />
           )

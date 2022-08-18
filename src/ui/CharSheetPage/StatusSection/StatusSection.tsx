@@ -45,7 +45,7 @@ export function StatusSection(props: StatusSectionProps) {
         </fieldset>
 
         <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.status.willpower')}</Subheader>
-        <fieldset aria-label={t('charsheet.status.willpower1')}>
+        <fieldset aria-label={t('charsheet.status.willpower-rating')}>
           <RangeInput2
             max={10} 
             name="willpower"
@@ -54,13 +54,14 @@ export function StatusSection(props: StatusSectionProps) {
             className="tw-h-6"
           />
         </fieldset>
-        <fieldset aria-label={t('charsheet.status.willpower2')}>
+        <fieldset aria-label={t('charsheet.status.willpower-pool')}>
           <RangeInput2
             max={10} 
             name="willpower2"
             value={state.willpower2}
             onClick={(value: number) => setState('willpower2', value)}
             className="tw-h-6"
+            variant='square'
           />
         </fieldset>
 
@@ -78,6 +79,7 @@ export function StatusSection(props: StatusSectionProps) {
             onClick={(value: number) => setState('bloodpool', value)}
             className="tw-h-12"
             splitEvery={10}
+            variant='square'
           />
         </fieldset>
       </div>

@@ -5,6 +5,18 @@
   print-color-adjust: exact;
 }
 
-.range-input-checkbox:checked ~ .range-input-checkbox {
+.range-input-checkbox[data-variant="circle"] {
+  background-image: url("../../../../../public/images/radio-on-button.svg");
+}
+
+.range-input-checkbox:checked ~ .range-input-checkbox[data-variant="circle"] {
   background-image: url("../../../../../public/images/circumference.svg");
+}
+
+.range-input-checkbox[data-variant="square"] {
+  background-image: url("../../../../../public/images/square-filled.svg");
+}
+
+.range-input-checkbox:checked ~ .range-input-checkbox[data-variant="square"] {
+  background-image: url("../../../../../public/images/square-empty.svg");
 }

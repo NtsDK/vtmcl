@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW X6 -->
+
+<svg
+   xml:space="preserve"
+   width="1.424mm"
+   height="1.424mm"
+   version="1.1"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+   viewBox="0 0 142 142"
+   id="svg38"
+   sodipodi:docname="square-filled.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview40"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:document-units="mm"
+   showgrid="false"
+   inkscape:zoom="128"
+   inkscape:cx="2.2460938"
+   inkscape:cy="3.4960938"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Слой_x0020_1" />
+ <defs
+   id="defs24">
+  <style
+   type="text/css"
+   id="style22">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil1 {fill:#1C1B17}
+    .fil2 {fill:#FEFEFE}
+   ]]>
+  </style>
+ </defs>
+ <g
+   id="Слой_x0020_1"
+   inkscape:label="Слой 1">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <rect
+   class="fil0"
+   width="142"
+   height="142"
+   id="rect27"
+   x="0"
+   y="0"
+   style="display:inline"
+   inkscape:label="BackgroundRect" />
+  <rect
+   style="clip-rule:evenodd;opacity:1;fill:#1c1b17;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:0.781377;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   id="rect431"
+   width="132.75623"
+   height="132.72487"
+   x="4.6218872"
+   y="4.6375656"
+   ry="0"
+   inkscape:label="OuterDarkSquare" /><rect
+   style="clip-rule:evenodd;opacity:1;fill:#fefefe;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.68633;stroke-dasharray:none;stroke-opacity:0.781377;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   id="rect1773"
+   width="99.719101"
+   height="99.719101"
+   x="21.14045"
+   y="21.14045"
+   inkscape:label="MiddleWhiteSquare" />
+  
+  
+ <rect
+   style="clip-rule:evenodd;opacity:1;fill:#1c1b17;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.62181;stroke-dasharray:none;stroke-opacity:0.781377;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   id="rect2036-4"
+   width="79.775284"
+   height="79.775284"
+   x="31.112358"
+   y="31.112358"
+   inkscape:label="InnerBlackSquare" /></g>
+</svg>
