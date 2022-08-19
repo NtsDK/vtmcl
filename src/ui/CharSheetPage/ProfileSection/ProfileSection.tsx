@@ -29,20 +29,29 @@ export function ProfileSection(props: ProfileSectionProps) {
       <div className="custom-panel tw-m-4">
         <div className="columns profile-container tw-flex">
           {
-            profileConfig.map((subArr, index) => 
+            profileConfig.map((subArr, index) =>
               <div className='tw-flex-1' key={`${index}`}>
                 {
-                  subArr.map(item => 
+                  subArr.map(item =>
                     <div key={item} className='tw-flex'>
-                      <label className='tw-w-24' htmlFor={`profileItem_${item}`}>
+                      <label
+                        className='tw-mb-0 tw-text-sm'
+                        htmlFor={`profileItem_${item}`}
+                        style={{
+                          'flexGrow': 0.45,
+                          'flexBasis': 0
+                        }}
+                      >
                         {t(`charsheet.profile.${item}`)}
                       </label>
-                      <input 
+                      <input
                         id={`profileItem_${item}`}
                         style={{boxShadow: '0 1px 0 #333333'}}
-                        className='profile-input tw-flex-1 tw-mx-2 tw-bg-transparent tw-border-none '
+                        className='profile-input tw-flex-1 tw-mx-2
+                          tw-bg-transparent tw-border-none hover:tw-outline
+                          hover:tw-outline-1 hover:tw-outline-red-600'
                         data-item-name={item}
-                        value={profile[item]} 
+                        value={profile[item]}
                         onChange={onProfileChange}
                       />
                     </div>

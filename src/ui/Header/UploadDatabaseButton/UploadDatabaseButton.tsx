@@ -1,19 +1,16 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, ChangeEvent } from 'react';
 import './UploadDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
 import { readTextFile } from '../../../lib/fileUtils';
-import { useStore } from '../../../services/store';
-import { 
+import {
   strToCharSheet,
-  
 } from '../../../infrastructure/dbLoader';
-import { 
-  useCharSheetStorage, 
-  useErrorDescription 
+import {
+  useCharSheetStorage,
+  useErrorDescription
 } from '../../../services/storageAdapter';
-import { migrate } from '../../../domainServices';
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {
@@ -24,15 +21,13 @@ function uploadDatabaseFile(evt) {
   }
 }
 
-// @ts-ignore
-export function UploadDatabaseButton(props) {
-  const { onChange } = props;
+export function UploadDatabaseButton() {
   const { t } = useTranslation();
 
   const { setErrorDescription } = useErrorDescription();
   const { setCharSheet } = useCharSheetStorage();
 
-  function onUploadFileSelected(evt: ChangeEventHandler<HTMLInputElement>) {
+  function onUploadFileSelected(evt: ChangeEvent<HTMLInputElement>) {
     readTextFile(evt).then((databaseStr) => {
       try {
         if(typeof databaseStr !== 'string') {
@@ -60,16 +55,15 @@ export function UploadDatabaseButton(props) {
     <Dropdown.Item
       as="button"
       type="button"
-      data-original-title=""
-      // title={t('header.open-database')}
       onClick={uploadDatabaseFile}
       className="tw-py-3 tw-text-lg"
+      id="uploadDatabaseButton"
     >
       <input
         type="file"
         className="tw-hidden"
         tabIndex={-1}
-        // @ts-ignore
+        aria-labelledby="uploadDatabaseButton"
         onChange={onUploadFileSelected}
       />
       {t('actionMenu.open-database')}

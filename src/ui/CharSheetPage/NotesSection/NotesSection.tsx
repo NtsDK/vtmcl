@@ -16,9 +16,11 @@ export function NotesSection(props: NotesSectionProps) {
   const { t } = useTranslation();
 
   return (
-    <div className={classnames("NotesSection", className)}>
-      <textarea 
-        className='tw-w-full tw-h-48 tw-bg-transparent' 
+    <div className={
+      classnames("NotesSection tw-outline-1 tw-outline tw-outline-slate-700", className)
+    }>
+      <textarea
+        className='tw-w-full tw-h-48 tw-bg-transparent'
         value={notes}
         aria-label={t('charsheet.notes')}
         onChange={(e) => setNotes(e.target.value)}
@@ -26,6 +28,3 @@ export function NotesSection(props: NotesSectionProps) {
     </div>
   );
 }
-
-
-

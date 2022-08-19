@@ -1,6 +1,8 @@
 .CharSheetBody {
   /* width: 700px; */
-  max-width: 44rem;
+  width: 44rem;
+  min-height: 58rem;
+  /* max-width: 44rem; */
   background-position-x: 50%!important;
   background-position-y: 50%!important;
   background-size: 100% 100%!important;
@@ -10,7 +12,7 @@
   background-origin: padding-box!important;
   box-sizing: content-box;
   border: 43px solid transparent;
-  padding: 15px;
+  padding: 1rem;
   border-top: 60px solid;
   border-left: 41px solid;
   border-right: 39px solid;
@@ -22,5 +24,16 @@
   /* border-image-source: url('images/border.png'); */
   border-image-source: url('../../../../public/images/border.png');
 
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  break-after: page;
+}
+
+@media print {
+  html {
+    font-size: 22px;
+  }
+  .CharSheetBody {
+    width: 100vw;
+    height: 100vh;
+  }
 }

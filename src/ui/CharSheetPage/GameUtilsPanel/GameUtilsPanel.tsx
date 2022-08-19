@@ -20,7 +20,7 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
   const { className } = props;
 
   return (
-    <aside className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 ", className)}>
+    <aside className={classnames("GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 print:tw-hidden", className)}>
       <Accordion defaultActiveKey="0" className="tw-sticky tw-top-0">
         <Card className="tw-bg-gray-200">
           <Accordion.Toggle 

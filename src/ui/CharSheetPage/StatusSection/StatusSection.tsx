@@ -22,21 +22,25 @@ export function StatusSection(props: StatusSectionProps) {
   return (
     <div className={classnames("StatusSection tw-flex", className)}>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-2">{t('charsheet.status.merits')}</Subheader>
+        <Subheader className="tw-mb-2">
+          {t('charsheet.status.merits')}
+        </Subheader>
         <MeritsSection className="tw-mb-4"/>
-        <Subheader className="tw-mb-2">{t('charsheet.status.flaws')}</Subheader>
+        <Subheader className="tw-mb-2">
+          {t('charsheet.status.flaws')}
+        </Subheader>
         <FlawsSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader 
-          id="humanity.header" 
+        <Subheader
+          id="humanity.header"
           className="tw-mb-2"
         >
           {t('charsheet.status.humanity')}
         </Subheader>
         <fieldset aria-label={t('charsheet.status.humanity')}>
           <RangeInput2
-            max={10} 
+            max={10}
             name="humanity"
             value={state.humanity}
             onClick={(value: number) => setState('humanity', value)}
@@ -44,10 +48,12 @@ export function StatusSection(props: StatusSectionProps) {
           />
         </fieldset>
 
-        <Subheader className="tw-mb-2 tw-mt-2">{t('charsheet.status.willpower')}</Subheader>
+        <Subheader className="tw-mb-2 tw-mt-2">
+          {t('charsheet.status.willpower')}
+        </Subheader>
         <fieldset aria-label={t('charsheet.status.willpower-rating')}>
           <RangeInput2
-            max={10} 
+            max={10}
             name="willpower"
             value={state.willpower}
             onClick={(value: number) => setState('willpower', value)}
@@ -56,7 +62,7 @@ export function StatusSection(props: StatusSectionProps) {
         </fieldset>
         <fieldset aria-label={t('charsheet.status.willpower-pool')}>
           <RangeInput2
-            max={10} 
+            max={10}
             name="willpower2"
             value={state.willpower2}
             onClick={(value: number) => setState('willpower2', value)}
@@ -65,15 +71,15 @@ export function StatusSection(props: StatusSectionProps) {
           />
         </fieldset>
 
-        <Subheader 
-          id="bloodpool.header" 
+        <Subheader
+          id="bloodpool.header"
           className="tw-mb-2 tw-mt-2"
         >
           {t('charsheet.status.bloodpool')}
         </Subheader>
         <fieldset aria-label={t('charsheet.status.bloodpool')}>
           <RangeInput2
-            max={20} 
+            max={20}
             name="bloodpool"
             value={state.bloodpool}
             onClick={(value: number) => setState('bloodpool', value)}
@@ -84,7 +90,9 @@ export function StatusSection(props: StatusSectionProps) {
         </fieldset>
       </div>
       <div className="tw-flex-1">
-        <Subheader className="tw-mb-4">{t('charsheet.status.health')}</Subheader>
+        <Subheader className="tw-mb-2">
+          {t('charsheet.status.health')}
+        </Subheader>
         <HealthSection/>
       </div>
     </div>

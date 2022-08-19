@@ -1,9 +1,9 @@
 import React, { useState, PropsWithChildren, useEffect } from "react";
 import * as R from 'ramda';
 import { useContext } from "react";
-import { 
-//   GameStorageService, 
-//   ServerDatabaseStorageService, 
+import {
+//   GameStorageService,
+//   ServerDatabaseStorageService,
 //   ServerStorageService,
   ErrorDescriptionService,
   AbilitiesService,
@@ -18,7 +18,7 @@ import {
   VirtuesService,
   CharSheetStorageService,
 } from "../application/ports";
-import { 
+import {
   Abilities,
   Attributes,
   Backgrounds,
@@ -27,11 +27,11 @@ import {
   Disciplines,
   ErrorDescription,
   Flaws,
-  Health, 
-  Merits, 
-  Notes, 
-  Profile, 
-  Settings, 
+  Health,
+  Merits,
+  Notes,
+  Profile,
+  Settings,
   State,
   Virtues,
 } from "../domain";
@@ -40,25 +40,25 @@ import {
 // import { Server, ServerStatus } from "../domain/server";
 // import { ServerDatabase } from "../domain/serverDatabase";
 import { getCharSheetFromLS, saveCharSheetInLS } from "../infrastructure/lsDbService";
-import { 
-  initialAbilities, 
-  initialAttributes, 
-  initialBackgrounds, 
-  initialDisciplines, 
-  initialFlaws, 
-  initialHealth, 
-  initialMerits, 
-  initialNotes, 
-  initialProfile, 
-  initialSettings, 
-  initialState, 
-  initialVirtues 
+import {
+  initialAbilities,
+  initialAttributes,
+  initialBackgrounds,
+  initialDisciplines,
+  initialFlaws,
+  initialHealth,
+  initialMerits,
+  initialNotes,
+  initialProfile,
+  initialSettings,
+  initialState,
+  initialVirtues
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
 import { CURRENT_VERSION } from "../constants";
 
-interface StateStore extends 
+interface StateStore extends
   ProfileService,
   AttributesService,
   AbilitiesService,
@@ -96,12 +96,12 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [state, setState] = useState<State>(initialState);
   const [health, setHealth] = useState<Health>(initialHealth);
   const [notes, setNotes] = useState<Notes>(initialNotes);
-  
+
   const [settings, setSettings] = useState<Settings>(initialSettings);
 
   useEffect(() => {
     saveCharSheetInLS(R.clone({
-      profile, 
+      profile,
       attributes,
       abilities,
       disciplines,
@@ -116,7 +116,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       Version: CURRENT_VERSION
     }))
   }, [
-    profile, 
+    profile,
     attributes,
     abilities,
     disciplines,
@@ -134,7 +134,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   // // const [games, setGames] = useState<Game[]>([]);
   // const [games, innerSetGames] = useState<Game[]>(initialGames);
   const [
-    errorDescription, 
+    errorDescription,
     setErrorDescription
   ] = useState<ErrorDescription | null>(null);
 

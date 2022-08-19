@@ -18,7 +18,7 @@ interface NameSectionProps {
 }
 
 export function NameSection(props: NameSectionProps) {
-  const { 
+  const {
     items,
     addItem,
     removeItem,
@@ -36,21 +36,24 @@ export function NameSection(props: NameSectionProps) {
   return (
     <div className={classnames("NameSection", className)}>
       {
-        items.map((name, index) => 
-          <div 
-            className='tw-flex tw-m-1' 
-            key={`${name}.${index}`}
+        items.map((name, index) =>
+          <div
+            className='tw-flex tw-m-1'
+            key={`${index}`}
           >
             <input
-              className='tw-bg-transparent tw-flex-grow-1 tw-w-full name-number-input tw-text-sm' 
-              value={name} 
+              className='tw-bg-transparent tw-flex-grow-1 tw-w-full
+                tw-text-sm print:tw-w-32 tw-outline-1 tw-outline
+                tw-outline-slate-700 hover:tw-outline-red-600
+                print:tw-outline-transparent'
+              value={name}
               onChange={onNameChange(index)}
             />
-            <button 
-              onClick={() => removeItem(index)} 
-              aria-label={removeItemMsg} 
+            <button
+              onClick={() => removeItem(index)}
+              aria-label={removeItemMsg}
               title={removeItemMsg}
-              className="tw-flex"
+              className="tw-flex print:tw-hidden"
             >
               <FontAwesomeIcon
                 className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
@@ -60,10 +63,10 @@ export function NameSection(props: NameSectionProps) {
           </div>
         )
       }
-      <div className='tw-text-center tw-mt-4'>
+      <div className='tw-text-center tw-mt-4 print:tw-hidden'>
         <button
           onClick={addItem}
-          aria-label={addItemMsg} 
+          aria-label={addItemMsg}
           title={addItemMsg}
         >
           <img className="tw-w-8" src="images/add-squared-button.svg" alt=""/>
