@@ -14,11 +14,30 @@ export interface Profile {
   "sire": string;
 }
 
-export type ProfileConfig = (keyof Profile)[][];
+export type ProfileConfigItem = keyof Profile | {
+  name: keyof Profile;
+  dataListId?: string;
+};
 
-export const profileConfig: ProfileConfig = [
-  ['name', 'player', 'chronicle', 'age', 'sex'], 
-  ['nature', 'demeanor', 'concept', 'clan', 'generation', 'sire']
+export type ProfileConfig = ProfileConfigItem[][];
+
+export const profileConfig: ProfileConfig = [[
+    'name',
+    'player',
+    'chronicle',
+    'age',
+    'sex'
+  ], [
+    'nature',
+    'demeanor',
+    'concept',
+    'clan',
+    {
+      name: 'generation',
+      dataListId: 'generation-data-list'
+    },
+    'sire'
+  ]
 ];
 
 // Attributes
@@ -52,11 +71,11 @@ export interface Virtues {
 }
 
 export type Disciplines = {
-  name: string, 
+  name: string,
   value: number
 }[];
 export type Backgrounds = {
-  name: string, 
+  name: string,
   value: number
 }[];
 
