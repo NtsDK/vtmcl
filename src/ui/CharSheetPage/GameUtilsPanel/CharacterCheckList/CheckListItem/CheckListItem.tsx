@@ -14,9 +14,9 @@ interface CheckListItemProps {
 }
 
 export function CheckListItem(props: CheckListItemProps) {
-  const { 
-    checked, 
-    text, 
+  const {
+    checked,
+    text,
     className,
     onFix
   } = props;
@@ -24,15 +24,19 @@ export function CheckListItem(props: CheckListItemProps) {
 
   return (
     <li className={classnames("CheckListItem tw-flex tw-items-center", className)}>
-      <CheckListBadge 
-        checked={checked} 
-        className="tw-mr-3 tw-h-fit"
-      />
-      <span className="tw-grow">{text}</span>
+      <label className={classnames("tw-grow tw-flex", {
+        'tw-line-through': checked
+      })}>
+        <CheckListBadge
+          checked={checked}
+          className="tw-mr-3 tw-h-fit"
+        />
+        <span>{text}</span>
+      </label>
       <div className='tw-w-14 tw-text-right'>
         {
           onFix && !checked &&
-          <Button 
+          <Button
             className="custom-btn-bg-color"
             onClick={onFix}
           >
