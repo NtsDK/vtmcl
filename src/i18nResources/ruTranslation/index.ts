@@ -6,15 +6,13 @@ import { status } from "./charsheet_status";
 import { generation } from "./charsheet_generation";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
+import { about } from "./about";
 
 
 
 
 export const ruTranslation = {
-  "about": {
-    "nav-about": "О листе персонажа",
-    'aboutCharsheetH1': 'О листе персонажа VtM V20 от NtsDK',
-  },
+  about,
   checklist,
   actionMenu,
   "buttons": {

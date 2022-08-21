@@ -20,57 +20,73 @@ export function AboutPage(props: AboutPageProps) {
             <div>
               <div className="tw-mb-8">
                 <h1>{t('about.aboutCharsheetH1')}</h1>
-                <p>Версия 0.2.0 от 23.06.2022</p>
-                <p>Проект с открытым исходным кодом под лицензией Apache 2.0</p>
-                <p>В проекте используются иконки с сайта <a href="www.flaticon.com">www.flaticon.com</a> от авторов Freepik, Picol, Nice and Serious.</p>
-                <p>В проекте используются флаги с сайта <a href="flagicons.lipis.dev">flagicons.lipis.dev</a></p>
+                <p>{t('about.curVersion')}</p>
+                <p>{t('about.license')}</p>
+                <p>{t('about.flaticon-mention')}</p>
+                <p>{t('about.flagicons-mention')}</p>
               </div>
 
               <div className="tw-mb-8">
-                <h2 className="tw-text-lg tw-mb-4">Ссылки</h2>
+                <h2 className="tw-text-lg tw-mb-4">
+                  {t('about.links')}
+                </h2>
                 <ul>
                   <li>
-                    <a href="http://trechkalov.com">Сайт разработчика: trechkalov.com</a>
+                    <a href="http://trechkalov.com">
+                      {t('about.developer-site')}
+                    </a>
                   </li>
                   <li>
-                    <a href="https://vk.com/ntsdk_wod_software">Группа проекта вконтакте</a>
+                    <a href="https://vk.com/ntsdk_wod_software">
+                      {t('about.vk-group')}
+                    </a>
                   </li>
                   <li>
-                    <a href="https://t.me/ntsdk_wod_software">Канал проекта в телеграмме</a>
+                    <a href="https://t.me/ntsdk_wod_software">
+                      {t('about.tg-channel')}
+                    </a>
                   </li>
                   <li>
-                    <a href="https://t.me/ntsdk_wod_software_chat">Чат проекта в телеграмме</a>
+                    <a href="https://t.me/ntsdk_wod_software_chat">
+                      {t('about.tg-chat')}
+                    </a>
                   </li>
                   <li>
-                    <a href="https://github.com/NtsDK/vtmcl">Исходный код проекта</a>
+                    <a href="https://github.com/NtsDK/vtmcl">
+                      {t('about.project-source')}
+                    </a>
                   </li>
                 </ul>
               </div>
 
               <div className="tw-mb-8">
-                <h2 className="tw-text-lg tw-mb-4">История версий</h2>
+                <h2 className="tw-text-lg tw-mb-4">
+                  {t('about.version-history')}
+                </h2>
                 <ul>
                   <li>
-                    Версия 0.2.2 (1 Jul 2022) - Добавлен чеклист создания персонажа. Небольшие изменения интерфейса и исправление багов.
+                    {t('about.version-0.2.2')}
                   </li>
                   <li>
-                    Версия 0.2.1 (24 Jun 2022) - проект переписан с нуля с сохранением обратной совместимости, поддержкой русского и английского языка и оригинального дизайна.
+                    {t('about.version-0.2.1')}
                   </li>
                   <li>
-                    Версия 0.1.0 (7 Nov 2017) - проект 'Лист персонажа Vampire: the Masquerade' интегрирован в проект НИМС. Реализован базовый лист персонажа для VtM 4ой редакции с поддержкой русского и английского языков.
+                    {t('about.version-0.1.0')}
                   </li>
                 </ul>
               </div>
             </div>
 
             <div>
-              <h2 className="tw-text-lg">Участники проекта</h2>
+              <h2 className="tw-text-lg">
+                {t('about.project-members')}
+              </h2>
               <ul>
                 <li>
-                  Тимофей NtsDK Речкалов - разработка
+                  {t('about.ntsdk')}
                 </li>
                 <li>
-                  Павел Синеглазов - дизайн
+                  {t('about.mellon')}
                 </li>
               </ul>
             </div>

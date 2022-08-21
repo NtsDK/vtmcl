@@ -7,14 +7,12 @@ import { status } from "./charsheet_status";
 import { generation } from "./charsheet_generation";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
+import { about } from "./about";
 
 type TranslationInfo = typeof ruTranslation;
 
 export const enTranslation: TranslationInfo = {
-  "about": {
-    "nav-about": "About character sheet",
-    'aboutCharsheetH1': 'About Character Sheet VtM V20 by NtsDK',
-  },
+  about,
   checklist,
   actionMenu,
   "buttons": {
