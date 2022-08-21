@@ -536,6 +536,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .tw-mb-8 {
   margin-bottom: 2rem;
 }

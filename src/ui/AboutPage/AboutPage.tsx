@@ -14,12 +14,12 @@ export function AboutPage(props: AboutPageProps) {
 
   return (
     <DocumentTitle title={t('about.nav-about')}>
-      <main className="AboutPage">
+      <main className="AboutPage tw-mx-auto">
         <Card>
           <Card.Body>
             <div>
               <div className="tw-mb-8">
-                <h1>{t('about.aboutCharsheetH1')}</h1>
+                <h1 className='tw-text-lg tw-mb-4'>{t('about.aboutCharsheetH1')}</h1>
                 <p>{t('about.curVersion')}</p>
                 <p>{t('about.license')}</p>
                 <p>{t('about.flaticon-mention')}</p>
