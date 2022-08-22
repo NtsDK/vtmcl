@@ -65,6 +65,9 @@ export function AboutPage(props: AboutPageProps) {
                 </h2>
                 <ul>
                   <li>
+                    {t('about.version-0.2.3')}
+                  </li>
+                  <li>
                     {t('about.version-0.2.2')}
                   </li>
                   <li>

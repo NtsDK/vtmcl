@@ -18,6 +18,8 @@ interface AccordionToggleProps {
   ariaControls?: string;
 }
 
+// Follows Accordion pattern
+// https://www.aditus.io/patterns/accordion/
 export function AccordionToggle(props: AccordionToggleProps) {
   const currentEventKey = useContext(AccordionContext);
   const { eventKey, title, ariaId, ariaControls } = props;
