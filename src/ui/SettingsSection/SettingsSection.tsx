@@ -48,7 +48,7 @@ export function SettingsSection(props: SettingsSectionProps) {
         </label>
       </div>
       <div className="tw-m-4">
-        <h2 className='tw-text-lg tw-mb-4'>{t('visual-settings.charsheet-background-mode')}</h2>
+        <h3 className='tw-text-lg tw-mb-4'>{t('visual-settings.charsheet-background-mode')}</h3>
         <Form.Check
           type="radio"
           id="charsheet-none"

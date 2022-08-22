@@ -3,7 +3,6 @@ import './ControlPanel.css';
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 
 import { useTranslation } from 'react-i18next';
@@ -17,6 +16,7 @@ import {
 import { PageNav } from '../PageNav';
 import { ActionList } from '../ActionList';
 import { SettingsSection } from '../SettingsSection';
+import { AccordionToggle } from '../AccordionToggle';
 
 interface ControlPanelProps {
   className?: string;
@@ -33,29 +33,39 @@ export function ControlPanel(props: ControlPanelProps) {
       {/* <Header /> */}
       { showContent && <PageNav className='tw-flex-col tw-mb-8'/> }
 
-      { 
+      {
         showContent && <Accordion as="aside" defaultActiveKey="0">
           <Card className="tw-bg-gray-200">
-            <Accordion.Toggle 
-              as={Button} 
-              eventKey="0" 
-              className="tw-py-3 tw-text-lg accordion-toggle"
+            <AccordionToggle
+              ariaId="actionMenu-toggle"
+              eventKey="0"
+              title={t('actionMenu.header')}
+              ariaControls="actionMenu-panel"
+            />
+            <Accordion.Collapse
+              id="actionMenu-panel"
+              eventKey="0"
+              className="tw-bg-white"
+              role="region"
+              aria-labelledby="actionMenu-toggle"
             >
-              {t('actionMenu.header')}
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0" className="tw-bg-white">
               <ActionList />
             </Accordion.Collapse>
           </Card>
           <Card className="tw-bg-gray-200">
-            <Accordion.Toggle 
-              as={Button} 
-              eventKey="1" 
-              className="tw-py-3 tw-text-lg accordion-toggle"
+            <AccordionToggle
+              ariaId="visualSettings-toggle"
+              eventKey="1"
+              title={t('visual-settings.header')}
+              ariaControls="visualSettings-panel"
+            />
+            <Accordion.Collapse
+              id="visualSettings-panel"
+              eventKey="1"
+              className="tw-bg-white"
+              role="region"
+              aria-labelledby="visualSettings-toggle"
             >
-              {t('visual-settings.header')}
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1" className="tw-bg-white">
               <SettingsSection/>
             </Accordion.Collapse>
           </Card>
@@ -65,8 +75,6 @@ export function ControlPanel(props: ControlPanelProps) {
       <Dropdown.Item
         as="button"
         type="button"
-        // data-original-title=""
-        // title={t('header.open-database')}
         onClick={() => setShowContent((prevState) => !prevState)}
         className="tw-py-3 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
       >
