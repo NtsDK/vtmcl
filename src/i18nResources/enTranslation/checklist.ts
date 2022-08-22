@@ -12,6 +12,7 @@ export const checklist = {
   'willpower-dots': 'Will power = Courage (fact\xa0{{value}}\xa0=\xa0{{expected}})',
   'bloodpool-dots': 'Blood pool = roll d10 (fact\xa0{{value}})',
   // free points
+  'free-point-header': 'Free points',
   'free-point-description': 'Freebie Points: 15. Optionally add merits and flaws (max 7 points)',
   'free-point-cost': 'Trait Cost',
   'attribute': 'Attribute',

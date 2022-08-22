@@ -12,6 +12,7 @@ export const checklist = {
   'willpower-dots': 'Сила воли = Смелость (факт\xa0{{value}}\xa0=\xa0{{expected}})',
   'bloodpool-dots': 'Запас крови = бросок d10 (факт\xa0{{value}})',
   // free points
+  'free-point-header': 'Свободные очки',
   'free-point-description': 'Свободные очки: 15. По желанию добавьте достоинства и недостатки (до 7 очков)',
   'free-point-cost': 'Стоимость точки',
   'attribute': 'Характеристика',

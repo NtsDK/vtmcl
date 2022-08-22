@@ -6,20 +6,20 @@ import classnames from "classnames";
 import Button from "react-bootstrap/Button";
 import { useTranslation } from 'react-i18next';
 
-import { 
-  useAbilities, 
-  useAttributes, 
-  useBackgrounds, 
-  useDisciplines, 
-  useStateNHealth, 
-  useVirtues 
+import {
+  useAbilities,
+  useAttributes,
+  useBackgrounds,
+  useDisciplines,
+  useStateNHealth,
+  useVirtues
 } from '../../../../services/storageAdapter';
-import { 
+import {
   Attributes,
   physicalAttributesArr,
   socialAttributesArr,
   mentalAttributesArr,
-  Abilities, 
+  Abilities,
   talentsArr,
   skillsArr,
   knowledgesArr,
@@ -84,7 +84,7 @@ function checkDisciplinesFilled(arr: number[], targetValue: number): CheckNumber
 
 function checkAbilitiesDotLimit(abilities: Abilities): boolean {
   const arr = R.props(
-    [...talentsArr, ...skillsArr, ...knowledgesArr], 
+    [...talentsArr, ...skillsArr, ...knowledgesArr],
     abilities
   ).filter(el => el > ABILITY_LIMIT);
   return arr.length === 0;
@@ -135,81 +135,82 @@ export function CharacterCheckList(props: CharacterCheckListProps) {
   return (
     <div className={classnames("CharacterCheckList tw-max-w-sm", className)}>
       <ul>
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={attributesFilled.checked}
-          text={t('checklist.attribute-dots', { 
+          text={t('checklist.attribute-dots', {
             value: attributesFilled.arr.join('/'),
             expected: EXPECTED_ATTRIBUTE_DOTS.join('/')
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={abilitiesFilled.checked}
-          text={t('checklist.ability-dots', { 
+          text={t('checklist.ability-dots', {
             value: abilitiesFilled.arr.join('/'),
             expected: EXPECTED_ABILITY_DOTS.join('/')
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={abilitiesDotLimitChecked}
-          text={t('checklist.ability-dot-limit', { 
+          text={t('checklist.ability-dot-limit', {
             expected: ABILITY_LIMIT
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={disciplinesFilled.checked}
-          text={t('checklist.discipline-dots', { 
+          text={t('checklist.discipline-dots', {
             value: disciplinesFilled.value,
             expected: EXPECTED_DISCIPLINE_DOTS
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={backgroundsFilled.checked}
-          text={t('checklist.background-dots', { 
+          text={t('checklist.background-dots', {
             value: backgroundsFilled.value,
             expected: EXPECTED_BACKGROUND_DOTS
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={virtuesFilled.checked}
-          text={t('checklist.virtue-dots', { 
+          text={t('checklist.virtue-dots', {
             value: virtuesFilled.value,
             expected: EXPECTED_VIRTUE_DOTS
           })}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={humanityChecked}
-          text={t('checklist.humanity-dots', { 
+          text={t('checklist.humanity-dots', {
             value: state.humanity,
             expected: virtues.conscience + virtues.self_control
           })}
           onFix={() => setState('humanity', virtues.conscience + virtues.self_control)}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={state.willpower === virtues.courage}
-          text={t('checklist.willpower-dots', { 
+          text={t('checklist.willpower-dots', {
             value: state.willpower,
             expected: virtues.courage
           })}
           onFix={() => setState('willpower', virtues.courage)}
         />
-        <CheckListItem 
+        <CheckListItem
           className="tw-mx-5 tw-my-3"
           checked={state.bloodpool > 0 &&  state.bloodpool <= 10}
-          text={t('checklist.bloodpool-dots', { 
+          text={t('checklist.bloodpool-dots', {
             value: state.bloodpool,
           })}
           onFix={() => setState('bloodpool', randomInteger(1,10))}
         />
       </ul>
       <div className='tw-mx-5 tw-my-3 '>
+        <h3 className="tw-text-xl tw-mb-2">{t('checklist.free-point-header')}</h3>
         <p>{t('checklist.free-point-description')}</p>
         <p>{t('checklist.free-point-cost')}</p>
         <ul className="tw-ml-4">
