@@ -1,16 +1,17 @@
-import { 
+import {
   Abilities,
+  AbilitiesExtension,
   Attributes,
-  Backgrounds, 
-  Disciplines, 
-  Flaws, 
-  Health, 
-  Merits, 
-  Notes, 
-  Profile, 
-  Settings, 
-  State, 
-  Virtues 
+  Backgrounds,
+  Disciplines,
+  Flaws,
+  Health,
+  Merits,
+  Notes,
+  Profile,
+  Settings,
+  State,
+  Virtues
 } from "../domain";
 
 import { defaultBackgroundUrl } from './defaultBackground';
@@ -39,6 +40,7 @@ export const initialAttributes: Attributes = {
   "intelligence": 1,
   "wits": 1
 }
+
 export const initialAbilities: Abilities = {
   "alertness": 0,
   "athletics": 0,
@@ -72,6 +74,21 @@ export const initialAbilities: Abilities = {
   "technology": 0
 };
 
+export const initialAbilitiesExtension: AbilitiesExtension = {
+  talentName1: "",
+  talentValue1: 0,
+  talentName2: "",
+  talentValue2: 0,
+  skillName1: "",
+  skillValue1: 0,
+  skillName2: "",
+  skillValue2: 0,
+  knowledgeName1: "",
+  knowledgeValue1: 0,
+  knowledgeName2: "",
+  knowledgeValue2: 0
+};
+
 // advantages
 export const initialDisciplines: Disciplines = [];
 export const initialBackgrounds: Backgrounds = [];
@@ -81,15 +98,24 @@ export const initialVirtues: Virtues = {
   "courage": 1
 };
 
-// 
+// status
 export const initialMerits: Merits = [];
 export const initialFlaws: Flaws = [];
 
 export const initialState: State = {
-  bloodpool: 0,
   humanity: 0,
-  willpower: 0,
-  willpower2: 0,
+  pathName: "",
+  bearingName: "",
+  bearingModifier: "",
+
+  willpowerPool: 0,
+  willpowerRating: 0,
+
+  bloodpool: 0,
+  bloodPerTurn: "",
+
+  weakness: "",
+  experience: ""
 };
 
 export const initialHealth: Health = {

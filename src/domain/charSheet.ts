@@ -1,19 +1,22 @@
-import { Abilities } from "./abilities";
-import { 
-  Attributes, 
-  Backgrounds, 
-  Disciplines, 
-  Flaws, 
-  Health, 
-  Merits, 
-  Notes, 
-  Profile, 
-  State, 
-  Virtues 
+import {
+  Abilities,
+  AbilitiesExtension
+} from "./abilities";
+import {
+  Attributes,
+  Backgrounds,
+  Disciplines,
+  Flaws,
+  Health,
+  Merits,
+  Notes,
+  Profile,
+  State,
+  Virtues
 } from "./characterDataTypes";
-import { 
-  Settings, 
-  Version 
+import {
+  Settings,
+  Version
 } from "./nonCharacterDataTypes";
 
 export interface CharSheet {
@@ -22,6 +25,7 @@ export interface CharSheet {
   profile: Profile;
   attributes: Attributes;
   abilities: Abilities;
+  abilitiesExtension: AbilitiesExtension;
   disciplines: Disciplines;
   backgrounds: Backgrounds;
   virtues: Virtues;

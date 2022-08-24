@@ -10,19 +10,20 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { 
-  initialAbilities, 
-  initialAttributes, 
-  initialBackgrounds, 
-  initialDisciplines, 
-  initialFlaws, 
-  initialHealth, 
-  initialMerits, 
-  initialNotes, 
-  initialProfile, 
-  initialSettings, 
-  initialState, 
-  initialVirtues 
+import {
+  initialAttributes,
+  initialAbilities,
+  initialAbilitiesExtension,
+  initialBackgrounds,
+  initialDisciplines,
+  initialFlaws,
+  initialHealth,
+  initialMerits,
+  initialNotes,
+  initialProfile,
+  initialSettings,
+  initialState,
+  initialVirtues
 } from "../../../services/initialValues";
 import { CURRENT_VERSION } from "../../../constants";
 
@@ -43,13 +44,14 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       profile: initialProfile,
       attributes: initialAttributes,
       abilities: initialAbilities,
+      abilitiesExtension: initialAbilitiesExtension,
       disciplines: initialDisciplines,
-      backgrounds: initialBackgrounds, 
-      virtues: initialVirtues, 
-      merits: initialMerits, 
+      backgrounds: initialBackgrounds,
+      virtues: initialVirtues,
+      merits: initialMerits,
       flaws: initialFlaws,
-      state: initialState, 
-      health: initialHealth, 
+      state: initialState,
+      health: initialHealth,
       notes: initialNotes
     }));
   }
@@ -59,7 +61,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
     setEmptyCharSheet();
     setShowModal(false);
   }
-  
+
   return (
     <>
       <Dropdown.Item

@@ -61,6 +61,20 @@ export const m: CharSheetInJson = {
       "science": 0,
       "technology": 0
     },
+    "abilitiesExtension": {
+      "talentName1": "",
+      "talentValue1": 0,
+      "talentName2": "",
+      "talentValue2": 0,
+      "skillName1": "",
+      "skillValue1": 0,
+      "skillName2": "",
+      "skillValue2": 0,
+      "knowledgeName1": "",
+      "knowledgeValue1": 0,
+      "knowledgeName2": "",
+      "knowledgeValue2": 0,
+    },
     "disciplines": [
       { name: "123", value: 2 }
     ],
@@ -76,9 +90,15 @@ export const m: CharSheetInJson = {
     "flaws": ["sdfsdf"],
     "state": {
       "humanity": 5,
-      "willpower": 7,
+      "pathName": "",
+      "bearingName": "",
+      "bearingModifier": "",
+      "willpowerRating": 7,
+      "willpowerPool": 0,
       "bloodpool": 3,
-      "willpower2": 0
+      "bloodPerTurn": "",
+      "weakness": "",
+      "experience": "",
     },
     "health": {
       "bruised": 0,

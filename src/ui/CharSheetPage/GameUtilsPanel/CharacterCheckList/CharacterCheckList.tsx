@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import './CharacterCheckList.css';
 
 import classnames from "classnames";
-import Button from "react-bootstrap/Button";
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -193,12 +192,12 @@ export function CharacterCheckList(props: CharacterCheckListProps) {
         />
         <CheckListItem
           className="tw-mx-5 tw-my-3"
-          checked={state.willpower === virtues.courage}
+          checked={state.willpowerRating === virtues.courage}
           text={t('checklist.willpower-dots', {
-            value: state.willpower,
+            value: state.willpowerRating,
             expected: virtues.courage
           })}
-          onFix={() => setState('willpower', virtues.courage)}
+          onFix={() => setState('willpowerRating', virtues.courage)}
         />
         <CheckListItem
           className="tw-mx-5 tw-my-3"

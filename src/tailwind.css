@@ -525,11 +525,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0px;
 }
 
-.tw-mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 .tw-mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -540,9 +535,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.tw-my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
+.tw-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .tw-mb-8 {
@@ -551,6 +546,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-mb-4 {
   margin-bottom: 1rem;
+}
+
+.tw-mt-1 {
+  margin-top: 0.25rem;
+}
+
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
+.tw-ml-4 {
+  margin-left: 1rem;
 }
 
 .tw-mb-3 {
@@ -569,20 +576,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
-.tw-mb-0 {
-  margin-bottom: 0px;
-}
-
 .tw-mt-2 {
   margin-top: 0.5rem;
-}
-
-.tw-mr-2 {
-  margin-right: 0.5rem;
-}
-
-.tw-ml-4 {
-  margin-left: 1rem;
 }
 
 .tw-ml-2 {
@@ -593,16 +588,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
+.tw-mb-0 {
+  margin-bottom: 0px;
+}
+
 .tw-mb-1 {
   margin-bottom: 0.25rem;
 }
 
 .tw-mr-3 {
   margin-right: 0.75rem;
-}
-
-.tw-mt-1 {
-  margin-top: 0.25rem;
 }
 
 .tw-inline-block {
@@ -633,16 +628,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 12rem;
 }
 
-.tw-h-6 {
-  height: 1.5rem;
+.tw-h-full {
+  height: 100%;
 }
 
 .tw-h-12 {
   height: 3rem;
 }
 
-.tw-h-full {
-  height: 100%;
+.tw-h-6 {
+  height: 1.5rem;
 }
 
 .tw-h-fit {
@@ -802,14 +797,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
-.tw-text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .tw-text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.tw-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .tw-leading-5 {

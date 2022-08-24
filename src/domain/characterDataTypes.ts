@@ -81,11 +81,20 @@ export type Backgrounds = {
 
 // Whole state
 export interface State {
+  // path
   "humanity": number;
-  "willpower": number;
+  "pathName": string;
+  "bearingName": string;
+  "bearingModifier": string;
+  // willpower
+  "willpowerRating": number;
+  "willpowerPool": number;
+  // bloodpool
   "bloodpool": number;
-  // "health": ;
-  "willpower2": number;
+  "bloodPerTurn": string;
+  // other
+  "weakness": string;
+  "experience": string;
 }
 
 export interface Health {

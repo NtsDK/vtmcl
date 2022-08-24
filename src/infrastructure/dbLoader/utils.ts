@@ -10,6 +10,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
     Charsheet: {
       profile: charSheet.profile,
       abilities: charSheet.abilities,
+      abilitiesExtension: charSheet.abilitiesExtension,
       attributes: charSheet.attributes,
       backgrounds: charSheet.backgrounds,
       disciplines: charSheet.disciplines,
@@ -32,6 +33,7 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     // character
     profile: charSheetInJson.Charsheet.profile,
     abilities: charSheetInJson.Charsheet.abilities,
+    abilitiesExtension: charSheetInJson.Charsheet.abilitiesExtension,
     attributes: charSheetInJson.Charsheet.attributes,
     backgrounds: charSheetInJson.Charsheet.backgrounds,
     disciplines: charSheetInJson.Charsheet.disciplines,

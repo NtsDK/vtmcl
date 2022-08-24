@@ -1,6 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
 import { CharSheetData } from "./types";
-import { 
+import {
   attributesSchema,
   backgroundsSchema,
   disciplinesSchema,
@@ -12,27 +12,32 @@ import {
   healthSchema,
   virtuesSchema,
 } from "./validateCharSheetDataElements";
-import { abilitiesSchema } from "./abilitiesSchema";
+import {
+  abilitiesSchema,
+  abilitiesExtensionSchema,
+} from "./abilitiesSchema";
 
 export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
   type: "object",
   properties: {
-    "profile":       profileSchema,
-    "attributes":     attributesSchema,
-    "abilities":  abilitiesSchema,
-    "disciplines":     disciplinesSchema,
-    "backgrounds":        backgroundsSchema,
-    "virtues":        virtuesSchema,
-    "merits":   meritsSchema,
-    "flaws":    flawsSchema,
-    "state":       stateSchema,
-    "health": healthSchema,
-    "notes": notesSchema,
+    "profile":      profileSchema,
+    "attributes":   attributesSchema,
+    "abilities":    abilitiesSchema,
+    "abilitiesExtension": abilitiesExtensionSchema,
+    "disciplines":  disciplinesSchema,
+    "backgrounds":  backgroundsSchema,
+    "virtues":      virtuesSchema,
+    "merits":       meritsSchema,
+    "flaws":        flawsSchema,
+    "state":        stateSchema,
+    "health":       healthSchema,
+    "notes":        notesSchema,
   },
   required: [
     "profile",
     "attributes",
     "abilities",
+    "abilitiesExtension",
     "disciplines",
     "backgrounds",
     "virtues",

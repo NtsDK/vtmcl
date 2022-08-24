@@ -1,5 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { 
+import {
   Profile,
   // Abilities,
   Attributes,
@@ -117,16 +117,31 @@ export const healthSchema: JSONSchemaType<Health> = {
 export const stateSchema: JSONSchemaType<State> = {
   type: "object",
   properties: {
-    "humanity":   {type: "number"},
-    "willpower": {type: "number"},
-    "bloodpool":      {type: "number"},
-    "willpower2":      {type: "number"},
+    "humanity":         {type: "number"},
+    "pathName":         {type: "string"},
+    "bearingName":      {type: "string"},
+    "bearingModifier":  {type: "string"},
+
+    "willpowerRating":  {type: "number"},
+    "willpowerPool":    {type: "number"},
+
+    "bloodpool":        {type: "number"},
+    "bloodPerTurn":     {type: "string"},
+
+    "weakness":         {type: "string"},
+    "experience":       {type: "string"},
   },
   required: [
     "humanity",
-    "willpower",
+    "pathName",
+    "bearingName",
+    "bearingModifier",
+    "willpowerRating",
+    "willpowerPool",
     "bloodpool",
-    "willpower2",
+    "bloodPerTurn",
+    "weakness",
+    "experience",
   ],
   additionalProperties: false,
 };

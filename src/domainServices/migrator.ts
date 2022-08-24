@@ -24,5 +24,38 @@ export function migrate(charSheetSrc: any): unknown {
     }
     charSheet.Version = '0.2.1';
   }
+  if (charSheet.Version === '0.2.1') {
+    // state structure change
+    charSheet.Charsheet.state.pathName = '';
+    charSheet.Charsheet.state.bearingName = '';
+    charSheet.Charsheet.state.bearingModifier = '';
+
+    charSheet.Charsheet.state.willpowerRating = charSheet.Charsheet.state.willpower;
+    delete charSheet.Charsheet.state.willpower;
+    charSheet.Charsheet.state.willpowerPool = charSheet.Charsheet.state.willpower2;
+    delete charSheet.Charsheet.state.willpower2;
+
+    charSheet.Charsheet.state.bloodPerTurn = '';
+    charSheet.Charsheet.state.weakness = '';
+    charSheet.Charsheet.state.experience = '';
+
+    // add abilitiesExtension
+    charSheet.Charsheet.abilitiesExtension = {
+      "talentName1": "",
+      "talentValue1": 0,
+      "talentName2": "",
+      "talentValue2": 0,
+      "skillName1": "",
+      "skillValue1": 0,
+      "skillName2": "",
+      "skillValue2": 0,
+      "knowledgeName1": "",
+      "knowledgeValue1": 0,
+      "knowledgeName2": "",
+      "knowledgeValue2": 0,
+    };
+
+    charSheet.Version = '0.2.4';
+  }
   return charSheet;
 }

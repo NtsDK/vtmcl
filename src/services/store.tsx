@@ -19,8 +19,9 @@ import {
   CharSheetStorageService,
 } from "../application/ports";
 import {
-  Abilities,
   Attributes,
+  Abilities,
+  AbilitiesExtension,
   Backgrounds,
   CharSheet,
   CharsheetBackMode,
@@ -41,8 +42,9 @@ import {
 // import { ServerDatabase } from "../domain/serverDatabase";
 import { getCharSheetFromLS, saveCharSheetInLS } from "../infrastructure/lsDbService";
 import {
-  initialAbilities,
   initialAttributes,
+  initialAbilities,
+  initialAbilitiesExtension,
   initialBackgrounds,
   initialDisciplines,
   initialFlaws,
@@ -88,6 +90,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [profile, setProfile] = useState<Profile>(initialProfile);
   const [attributes, setAttributes] = useState<Attributes>(initialAttributes);
   const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
+  const [abilitiesExtension, setAbilitiesExtension] = useState<AbilitiesExtension>(initialAbilitiesExtension);
   const [disciplines, setDisciplines] = useState<Disciplines>(initialDisciplines);
   const [backgrounds, setBackgrounds] = useState<Backgrounds>(initialBackgrounds);
   const [virtues, setVirtues] = useState<Virtues>(initialVirtues);
@@ -104,6 +107,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       profile,
       attributes,
       abilities,
+      abilitiesExtension,
       disciplines,
       backgrounds,
       virtues,
@@ -119,6 +123,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     profile,
     attributes,
     abilities,
+    abilitiesExtension,
     disciplines,
     backgrounds,
     virtues,
@@ -327,6 +332,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         profile,
         attributes,
         abilities,
+        abilitiesExtension,
         disciplines,
         backgrounds,
         virtues,

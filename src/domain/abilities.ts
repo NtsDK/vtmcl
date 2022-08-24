@@ -67,3 +67,18 @@ export const knowledgesArr: (keyof Abilities)[] = [
   'technology',
   'law',
 ];
+
+export interface AbilitiesExtension {
+  talentName1: string;
+  talentValue1: number;
+  talentName2: string;
+  talentValue2: number;
+  skillName1: string;
+  skillValue1: number;
+  skillName2: string;
+  skillValue2: number;
+  knowledgeName1: string;
+  knowledgeValue1: number;
+  knowledgeName2: string;
+  knowledgeValue2: number;
+}

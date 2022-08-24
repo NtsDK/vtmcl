@@ -18,18 +18,18 @@ export function WillSection(props: WillSectionProps) {
       <fieldset aria-label={t('charsheet.status.willpower-rating')}>
         <RangeInput2
           max={10}
-          name="willpower"
-          value={state.willpower}
-          onClick={(value: number) => setState('willpower', value)}
+          name="willpowerRating"
+          value={state.willpowerRating}
+          onClick={(value: number) => setState('willpowerRating', value)}
           className="tw-h-6"
         />
       </fieldset>
       <fieldset aria-label={t('charsheet.status.willpower-pool')}>
         <RangeInput2
           max={10}
-          name="willpower2"
-          value={state.willpower2}
-          onClick={(value: number) => setState('willpower2', value)}
+          name="willpowerPool"
+          value={state.willpowerPool}
+          onClick={(value: number) => setState('willpowerPool', value)}
           className="tw-h-6"
           variant='square'
         />
