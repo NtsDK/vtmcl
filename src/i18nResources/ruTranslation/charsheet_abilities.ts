@@ -41,4 +41,8 @@ export const abilities = {
   'law': 'Законы',
 
   // 'linguistics': 'Языки',
+
+  'extension-talent': 'Дополнительный талант {{id}}',
+  'extension-skill': 'Дополнительный навык {{id}}',
+  'extension-knowledge': 'Дополнительное знание {{id}}',
 };

@@ -15,11 +15,11 @@ interface RangeInput2Props {
 }
 
 export function RangeInput2(props: RangeInput2Props) {
-  const { 
-    max, 
-    value, 
-    onClick, 
-    className, 
+  const {
+    max,
+    value,
+    onClick,
+    className,
     name,
     splitEvery,
     variant = 'circle'
@@ -40,7 +40,7 @@ export function RangeInput2(props: RangeInput2Props) {
       {
         R.range(0, max + 1).map(index => {
           return (
-            <input 
+            <input
               className={classNames("range-input-checkbox tw-flex-1", {
                 'tw-sr-only': index === 0
               })}

@@ -39,4 +39,8 @@ export const abilities = {
   'computer': 'Computer',
   'academics': 'Academics',
   'technology': 'Technology',
+
+  'extension-talent': 'Additional talent {{id}}',
+  'extension-skill': 'Additional skill {{id}}',
+  'extension-knowledge': 'Additional knowledge {{id}}',
 };

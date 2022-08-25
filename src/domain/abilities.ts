@@ -82,3 +82,21 @@ export interface AbilitiesExtension {
   knowledgeName2: string;
   knowledgeValue2: number;
 }
+
+export type AbilitiesExtensionName = keyof Pick<AbilitiesExtension,
+  | 'talentName1'
+  | 'talentName2'
+  | 'skillName1'
+  | 'skillName2'
+  | 'knowledgeName1'
+  | 'knowledgeName2'
+>;
+
+export type AbilitiesExtensionValue = keyof Pick<AbilitiesExtension,
+  | 'talentValue1'
+  | 'talentValue2'
+  | 'skillValue1'
+  | 'skillValue2'
+  | 'knowledgeValue1'
+  | 'knowledgeValue2'
+>;

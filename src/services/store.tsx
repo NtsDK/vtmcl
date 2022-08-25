@@ -17,11 +17,14 @@ import {
   BackgroundsService,
   VirtuesService,
   CharSheetStorageService,
+  AbilitiesExtensionService,
 } from "../application/ports";
 import {
   Attributes,
   Abilities,
   AbilitiesExtension,
+  AbilitiesExtensionName,
+  AbilitiesExtensionValue,
   Backgrounds,
   CharSheet,
   CharsheetBackMode,
@@ -64,6 +67,7 @@ interface StateStore extends
   ProfileService,
   AttributesService,
   AbilitiesService,
+  AbilitiesExtensionService,
   DisciplinesService,
   BackgroundsService,
   VirtuesService,
@@ -147,6 +151,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setProfile(cs.profile);
     setAttributes(cs.attributes);
     setAbilities(cs.abilities);
+    setAbilitiesExtension(cs.abilitiesExtension);
     setDisciplines(cs.disciplines);
     setBackgrounds(cs.backgrounds);
     setVirtues(cs.virtues);
@@ -194,6 +199,19 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAbility(abilityName: keyof Abilities, value: number) {
       setAbilities({
         ...abilities,
+        [abilityName]: applyRange(0, 5, value)
+      });
+    },
+    abilitiesExtension,
+    setAbilityExtensionName: function (abilityName: AbilitiesExtensionName, name: string): void {
+      setAbilitiesExtension({
+        ...abilitiesExtension,
+        [abilityName]: name
+      });
+    },
+    setAbilityExtensionValue: function (abilityName: AbilitiesExtensionValue, value: number): void {
+      setAbilitiesExtension({
+        ...abilitiesExtension,
         [abilityName]: applyRange(0, 5, value)
       });
     },
@@ -321,16 +339,16 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
 
     settings,
     setBackgroundColor(backgroundColor: string) {
-      setSettings({...settings, backgroundColor});
+      setSettings({ ...settings, backgroundColor });
     },
     setCharsheetBackColor(charsheetBackColor: string) {
-      setSettings({...settings, charsheetBackColor});
+      setSettings({ ...settings, charsheetBackColor });
     },
     setCharsheetBackImage(charsheetBackImage_v2: string) {
-      setSettings({...settings, charsheetBackImage_v2});
+      setSettings({ ...settings, charsheetBackImage_v2 });
     },
     setCharsheetBackMode(charsheetBackMode: CharsheetBackMode) {
-      setSettings({...settings, charsheetBackMode});
+      setSettings({ ...settings, charsheetBackMode });
     },
 
     getCharSheet() {
@@ -353,7 +371,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     },
     setCharSheet,
     errorDescription,
-    setErrorDescription
+    setErrorDescription,
   };
 
   return (

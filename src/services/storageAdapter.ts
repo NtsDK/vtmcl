@@ -1,4 +1,5 @@
 import {
+  AbilitiesExtensionService,
   AbilitiesService,
   AttributesService,
   BackgroundsService,
@@ -27,6 +28,9 @@ export function useAttributes(): AttributesService {
   return useStore();
 }
 export function useAbilities(): AbilitiesService {
+  return useStore();
+}
+export function useAbilitiesExtension(): AbilitiesExtensionService {
   return useStore();
 }
 export function useVirtues(): VirtuesService {

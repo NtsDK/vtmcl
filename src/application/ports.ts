@@ -5,6 +5,9 @@
 
 import {
   Abilities,
+  AbilitiesExtension,
+  AbilitiesExtensionName,
+  AbilitiesExtensionValue,
   Attributes,
   Backgrounds,
   CharSheet,
@@ -36,6 +39,12 @@ export interface AttributesService {
 export interface AbilitiesService {
   abilities: Abilities;
   setAbility(abilityName: keyof Abilities, value: number): void;
+}
+
+export interface AbilitiesExtensionService {
+  abilitiesExtension: AbilitiesExtension;
+  setAbilityExtensionName(abilityName: AbilitiesExtensionName, name: string): void;
+  setAbilityExtensionValue(abilityName: AbilitiesExtensionValue, value: number): void;
 }
 
 export interface DisciplinesService {
