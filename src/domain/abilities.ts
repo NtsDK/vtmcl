@@ -58,6 +58,7 @@ export const skillsArr: (keyof Abilities)[] = [
 export const knowledgesArr: (keyof Abilities)[] = [
   'academics',
   'science',
+  'law',
   'computer',
   'medicine',
   'occult',
@@ -65,7 +66,6 @@ export const knowledgesArr: (keyof Abilities)[] = [
   'investigation',
   'finance',
   'technology',
-  'law',
 ];
 
 export interface AbilitiesExtension {

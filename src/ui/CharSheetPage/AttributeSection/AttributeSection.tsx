@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { RangeInput } from "../generic/RangeInput";
 import { Subheader } from '../generic/Subheader';
 import { useAttributes } from '../../../services/storageAdapter';
-import { 
+import {
   physicalAttributesArr,
   socialAttributesArr,
   mentalAttributesArr,
@@ -43,25 +43,25 @@ export function AttributeSection(props: AttributeSectionProps) {
   return (
     <div className={classnames("AttributeSection tw-flex", className)}>
       {
-        attributesConfig.map(({header, items}) => 
+        attributesConfig.map(({header, items}) =>
           <div className='tw-flex-1' key={header}>
             <Subheader>{t(`charsheet.attributes.${header}`)}</Subheader>
             {
-              items.map(attribute => 
-                <div 
-                  role="group" 
-                  className="stat-container" 
+              items.map(attribute =>
+                <div
+                  role="group"
+                  className="stat-container"
                   key={attribute}
                   aria-labelledby={`attribute.label.${attribute}`}
                 >
-                  <label 
+                  <label
                     className='stat-container-label'
                     id={`attribute.label.${attribute}`}
                   >
                     {t(`charsheet.attributes.${attribute}`)}
                   </label>
                   <RangeInput2
-                    max={5} 
+                    max={5}
                     name={`attribute.${attribute}`}
                     value={attributes[attribute]}
                     onClick={(value: number) => setAttribute(attribute, value)}

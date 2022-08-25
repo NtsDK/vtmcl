@@ -38,7 +38,7 @@ export const abilities = {
   'investigation': 'Расследование',
   'finance': 'Финансы',
   'technology': 'Электроника',
-  'law': 'Юриспруденция',
+  'law': 'Законы',
 
   // 'linguistics': 'Языки',
 };

@@ -19,8 +19,8 @@ export const status = {
   'injured': 'Ранен',
   'wounded': 'Серьёзно ранен',
   'mauled': 'Тяжело ранен',
-  'crippled': 'Совсем плох',
-  'incapacitated': 'Небоеспособен',
+  'crippled': 'Едва жив',
+  'incapacitated': 'При смерти',
 
   'no-damage': 'Нет повреждений',
   'bashing-damage': 'Лёгкие повреждения',
