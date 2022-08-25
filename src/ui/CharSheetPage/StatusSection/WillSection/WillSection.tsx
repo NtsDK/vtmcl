@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
 
 import { RangeInput2 } from '../../generic/RangeInput2';
 import { useStateNHealth } from '../../../../services/storageAdapter';
@@ -7,14 +8,16 @@ import { useStateNHealth } from '../../../../services/storageAdapter';
 import './WillSection.css';
 
 interface WillSectionProps {
+  className?: string;
 }
 
 export function WillSection(props: WillSectionProps) {
   const { t } = useTranslation();
   const { state, setState } = useStateNHealth();
+  const { className } = props;
 
   return (
-    <div className="WillSection">
+    <div className={classnames("WillSection", className)}>
       <fieldset aria-label={t('charsheet.status.willpower-rating')}>
         <RangeInput2
           max={10}

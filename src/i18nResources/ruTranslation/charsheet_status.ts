@@ -10,7 +10,7 @@ export const status = {
   'willpower-pool': 'Запас воли',
   'bloodpool': 'Запас крови',
   'health': 'Здоровье',
-  'weakness': 'Слабость',
+  'weakness': 'Изъян',
   'experience': 'Опыт',
 
   // health
@@ -31,4 +31,8 @@ export const status = {
   'remove-merit': 'Удалить достоинство',
   'add-flaw': 'Добавить недостаток',
   'remove-flaw': 'Удалить недостаток',
+
+  'bearing': 'Столп',
+  'blood-per-turn': 'Предел траты в ход',
+  'bearing-modifier': 'Модификатор столпа',
 };

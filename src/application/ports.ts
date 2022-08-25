@@ -3,21 +3,21 @@
 // import { Server } from "../domain/server";
 // import { ServerDatabase } from "../domain/serverDatabase";
 
-import { 
-  Abilities, 
-  Attributes, 
-  Backgrounds, 
-  CharSheet, 
-  CharsheetBackMode, 
-  Disciplines, 
-  ErrorDescription, 
-  Flaws, 
-  Health, 
-  Merits, 
-  Notes, 
-  Profile, 
-  Settings, 
-  State, 
+import {
+  Abilities,
+  Attributes,
+  Backgrounds,
+  CharSheet,
+  CharsheetBackMode,
+  Disciplines,
+  ErrorDescription,
+  Flaws,
+  Health,
+  Merits,
+  Notes,
+  Profile,
+  Settings,
+  State,
   Virtues
 } from "../domain";
 
@@ -71,7 +71,7 @@ export interface MeritsNFlawsService {
 
 export interface StateNHealthService {
   state: State;
-  setState(stateName: keyof State, value: number): void;
+  setState<T extends keyof State>(stateName: T, value: State[T]): void;
   health: Health;
   setHealth(healthName: keyof Health, value: number): void;
 }

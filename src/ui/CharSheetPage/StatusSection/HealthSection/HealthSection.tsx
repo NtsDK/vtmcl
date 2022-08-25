@@ -1,11 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
+
 import { Health } from '../../../../domain';
 import { useStateNHealth } from '../../../../services/storageAdapter';
 import { HealthInput } from '../../generic/HealthInput';
+
 import './HealthSection.css';
 
 interface HealthSectionProps {
+  className?: string;
 }
 
 const arr: [keyof Health, string][] = [
@@ -30,14 +34,15 @@ const healthIconStateNumber = Object.keys(iconMap).length;
 export function HealthSection(props: HealthSectionProps) {
   const { health, setHealth } = useStateNHealth();
   const { t } = useTranslation();
+  const { className } = props;
 
   return (
-    <div className="HealthSection">
+    <div className={classnames("HealthSection", className)}>
       {
-        arr.map(([name, sublabel]) => 
-          <div 
-            role="group" 
-            key={name} 
+        arr.map(([name, sublabel]) =>
+          <div
+            role="group"
+            key={name}
             className="health-stat tw-flex tw-justify-center tw-mb-1"
             aria-labelledby={`healthLevel.label.${name}`}
           >

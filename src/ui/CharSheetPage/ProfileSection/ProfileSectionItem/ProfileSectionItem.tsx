@@ -40,7 +40,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
       <input
         id={`profileItem_${itemName}`}
         style={{boxShadow: '0 1px 0 #333333'}}
-        className='profile-input tw-flex-1 tw-mx-2
+        className='tw-flex-1 tw-mx-2
           tw-bg-transparent tw-border-none hover:tw-outline
           hover:tw-outline-1 hover:tw-outline-red-600'
         // data-item-name={item}

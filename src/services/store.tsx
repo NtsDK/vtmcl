@@ -214,11 +214,19 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         [healthName]: applyRange(0, 3, value)
       });
     },
-    setState(stateName: keyof State, value: number) {
-      setState({
-        ...state,
-        [stateName]: applyRange(0, stateName === 'bloodpool' ? 20 : 10, value)
-      });
+
+    setState<T extends keyof State>(stateName: T, value: State[T]) {
+      if (typeof value === 'number') {
+        setState({
+          ...state,
+          [stateName]: applyRange(0, stateName === 'bloodpool' ? 20 : 10, value)
+        });
+      } else {
+        setState({
+          ...state,
+          [stateName]: value
+        });
+      }
     },
 
     notes,
