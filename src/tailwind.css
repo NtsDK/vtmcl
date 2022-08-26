@@ -687,20 +687,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
-.tw-w-4 {
-  width: 1rem;
-}
-
 .tw-max-w-sm {
   max-width: 24rem;
 }
 
 .tw-flex-1 {
   flex: 1 1 0%;
-}
-
-.tw-flex-auto {
-  flex: 1 1 auto;
 }
 
 .tw-flex-shrink-0 {
@@ -717,11 +709,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-grow {
   flex-grow: 1;
-}
-
-.tw-appearance-none {
-  -webkit-appearance: none;
-          appearance: none;
 }
 
 .tw-flex-col {
@@ -742,19 +729,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-justify-center {
   justify-content: center;
-}
-
-.tw-gap-x-4 {
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
-}
-
-.tw-gap-y-4 {
-  row-gap: 1rem;
-}
-
-.tw-gap-y-8 {
-  row-gap: 2rem;
 }
 
 .tw-gap-x-8 {

@@ -1,84 +1,88 @@
+// Format:
+// <en>
+//   <ru>
+
 export const archetypesSource = `Architect
-	Творец
+  Творец
 Autocrat
-	Автократ
+  Автократ
 Bon Vivant
-	Бонвиван
+  Бонвиван
 Bravo
-	Головорез
+  Головорез
 Capitalist
-	Капиталист
+  Капиталист
 Caregiver
-	Опекун
+  Опекун
 Celebrant
-	Подвижник
+  Подвижник
 Chameleon
-	Хамелеон
+  Хамелеон
 Child
-	Ребёнок
+  Ребёнок
 Competitor
-	Победитель
+  Победитель
 Conformist
-	Конформист
+  Конформист
 Conniver
-	Махинатор
+  Махинатор
 Creep Show
-	Фрик
+  Фрик
 Curmudgeon
-	Брюзга
+  Брюзга
 Dabbler
-	Непоседа
+  Непоседа
 Deviant
-	Девиант
+  Девиант
 Director
-	Организатор
+  Организатор
 Enigma
-	Загадка
+  Загадка
 Eye of the Storm
-	Око бури
+  Око бури
 Fanatic
-	Фанатик
+  Фанатик
 Gallant
-	Нарцисс
+  Нарцисс
 Guru
-	Гуру
+  Гуру
 Idealist
-	Идеалист
+  Идеалист
 Judge
-	Судья
+  Судья
 Loner
-	Одиночка
+  Одиночка
 Martyr
-	Мученик
+  Мученик
 Masochist
-	Мазохист
+  Мазохист
 Monster
-	Чудовище
+  Чудовище
 Pedagogue
-	Наставник
+  Наставник
 Penitent
-	Кающийся грешник
+  Кающийся грешник
 Perfectionist
-	Перфекционист
+  Перфекционист
 Rebel
-	Бунтарь
+  Бунтарь
 Rogue
-	Эгоцентрист
+  Эгоцентрист
 Sadist
-	Садист
+  Садист
 Scientist
-	Исследователь
+  Исследователь
 Sociopath
-	Социопат
+  Социопат
 Soldier
-	Солдат
+  Солдат
 Survivor
-	Борец
+  Борец
 Thrill-Seeker
-	Сорвиголова
+  Сорвиголова
 Traditionalist
-	Традиционалист
+  Традиционалист
 Trickster
-	Трикстер
+  Трикстер
 Visionary
-	Визионер`;
+  Визионер`;

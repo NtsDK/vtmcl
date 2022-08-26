@@ -183,10 +183,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const value: StateStore = {
     profile,
     setProfileItem(itemName: keyof Profile, value: string) {
-      setProfile({
-        ...profile,
+      setProfile((prevProfile) => ({
+        ...prevProfile,
         [itemName]: value
-      });
+      }));
     },
     attributes,
     setAttribute(attributeName: keyof Attributes, value: number) {

@@ -17,7 +17,6 @@ import { profileConfig } from '../../domain';
 
 import './CharSheetPage.css';
 import { GameUtilsPanel } from './GameUtilsPanel';
-import { GenerationDataList } from './GenerationDataList';
 
 interface CharSheetPageProps {
 }
@@ -73,7 +72,6 @@ export function CharSheetPage(props: CharSheetPageProps) {
           </CharSheetBody>
         </div>
         <GameUtilsPanel />
-        <GenerationDataList />
       </main>
     </DocumentTitle>
   );

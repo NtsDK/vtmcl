@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useStore } from './services/store';
-import { translateArchetype } from "./i18nResources";
+import {
+  translateArchetype,
+  translateGeneration
+} from "./i18nResources";
 
 export function useCharsheetContentI18n() {
   const { i18n } = useTranslation();
@@ -23,6 +26,12 @@ export function useCharsheetContentI18n() {
       }
       setProfileItem('nature',
         translateArchetype(profile.nature, prevLanguage, lng)
+      );
+      setProfileItem('demeanor',
+        translateArchetype(profile.demeanor, prevLanguage, lng)
+      );
+      setProfileItem('generation',
+        translateGeneration(profile.generation, prevLanguage, lng)
       );
     };
 

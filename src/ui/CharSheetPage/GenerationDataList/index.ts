@@ -1,1 +1,0 @@
-export { GenerationDataList } from './GenerationDataList';

@@ -1,31 +1,26 @@
 import * as R from 'ramda';
 
 import { archetypesSource } from "./archetypesSource";
+import { generateEnRuEntities, generateSequence } from './utils';
 
-const archetypePairsArr = R.splitEvery(2, archetypesSource.split('\n').map(R.trim));
+const sourceArr = [...generateEnRuEntities(generateSequence(2, archetypesSource))]
 
-// @ts-ignore
-export const archetypes_en: string[] = R.pipe(
-  // @ts-ignore
-  R.map(R.nth(0)),
-  // @ts-ignore
-  R.sort((a,b) => a?.localeCompare(b))
-)(archetypePairsArr);
+export const archetypes_en: string[] = R.sort(
+  (a, b) => a.localeCompare(b),
+  R.pluck('en', sourceArr)
+);
 
-// @ts-ignore
-export const archetypes_ru: string[] = R.pipe(
-  // @ts-ignore
-  R.map(R.nth(1)),
-  // @ts-ignore
-  R.sort((a,b) => a?.localeCompare(b))
-)(archetypePairsArr);
+export const archetypes_ru: string[] = R.sort(
+  (a, b) => a.localeCompare(b),
+  R.pluck('ru', sourceArr)
+);
 
-export const index = archetypePairsArr.reduce((acc: {
+const index = sourceArr.reduce((acc: {
   'ru-en': Record<string, string>;
   'en-ru': Record<string, string>;
-}, [enName, ruName]) => {
-  acc['en-ru'][enName] = ruName;
-  acc['ru-en'][ruName] = enName;
+}, { en, ru} ) => {
+  acc['en-ru'][en] = ru;
+  acc['ru-en'][ru] = en;
   return acc;
 }, {
   'ru-en': {},

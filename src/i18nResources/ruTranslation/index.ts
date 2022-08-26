@@ -3,7 +3,6 @@ import { attributes } from "./charsheet_attributes";
 import { abilities } from "./charsheet_abilities";
 import { advantages } from "./charsheet_advantages";
 import { status } from "./charsheet_status";
-import { generation } from "./charsheet_generation";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
@@ -44,7 +43,6 @@ export const ruTranslation = {
     abilities,
     advantages,
     status,
-    generation,
     'notes': 'Заметки',
   },
   "common": {

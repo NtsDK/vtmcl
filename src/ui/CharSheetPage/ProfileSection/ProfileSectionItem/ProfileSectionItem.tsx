@@ -19,7 +19,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
 
   const { profile, setProfileItem } = useProfile();
 
-  const { archetypes } = useResource();
+  const { archetypes, generations } = useResource();
 
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
@@ -50,27 +50,49 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
           hover:tw-outline-1 hover:tw-outline-red-600'
         // data-item-name={item}
         value={profile[itemName]}
-        list={typeof item !== 'string' ? item.dataListId : ''}
+        // list={typeof item !== 'string' ? item.dataListId : ''}
         onChange={onProfileChange}
       />
       {
-        itemName === 'nature' &&
-        <select
-          className='profileItemSelect'
-          value=''
-          onChange={e => setProfileItem(itemName, e.currentTarget.value)}
-        >
-          <option></option>
-          {
-            archetypes.map(el =>
-              <option>
-                {el}
-              </option>
-            )
-          }
-        </select>
+        (itemName === 'nature' || itemName === 'demeanor') &&
+        <SelectButton
+          values={archetypes}
+          onChange={(value: string) => setProfileItem(itemName, value)}
+        />
       }
-
+      {
+        (itemName === 'generation') &&
+        <SelectButton
+          values={generations}
+          onChange={(value: string) => setProfileItem(itemName, value)}
+        />
+      }
     </div>
+  );
+}
+
+interface SelectButtonProps {
+  values: string[];
+  onChange: (value: string) => void;
+}
+
+function SelectButton(props: SelectButtonProps) {
+  const { values, onChange } = props;
+
+  return (
+    <select
+      className='profileItemSelect'
+      value=''
+      onChange={e => onChange(e.currentTarget.value)}
+    >
+      <option></option>
+      {
+        values.map(el =>
+          <option>
+            {el}
+          </option>
+        )
+      }
+    </select>
   );
 }
