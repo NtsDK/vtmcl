@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ProfileConfigItem } from '../../../../domain';
 import { useProfile } from '../../../../services/storageAdapter';
+import { useResource } from '../../../../useResource';
 
 import './ProfileSectionItem.css';
 
@@ -18,6 +19,8 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
 
   const { profile, setProfileItem } = useProfile();
 
+  const { archetypes } = useResource();
+
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
     // const itemName = dataset.itemName as keyof Profile;
@@ -28,11 +31,13 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
   return (
     <div className='ProfileSectionItem tw-flex'>
       <label
-        className='tw-mb-0 tw-text-sm'
+        className='tw-mb-0 tw-text-sm tw-flex-0'
         htmlFor={`profileItem_${itemName}`}
         style={{
-          'flexGrow': 0.45,
-          'flexBasis': 0
+          // 'flexGrow': 0.45,
+          // // 'flexGrow': 0,
+          // 'flexShrink': 0,
+          'flexBasis': '5rem'
         }}
       >
         {t(`charsheet.profile.${itemName}`)}
@@ -48,6 +53,24 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
         list={typeof item !== 'string' ? item.dataListId : ''}
         onChange={onProfileChange}
       />
+      {
+        itemName === 'nature' &&
+        <select
+          className='profileItemSelect'
+          value=''
+          onChange={e => setProfileItem(itemName, e.currentTarget.value)}
+        >
+          <option></option>
+          {
+            archetypes.map(el =>
+              <option>
+                {el}
+              </option>
+            )
+          }
+        </select>
+      }
+
     </div>
   );
 }

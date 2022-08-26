@@ -17,7 +17,7 @@ export function ProfileSection(props: ProfileSectionProps) {
   return (
     <div className={classnames("ProfileSection", className)}>
       <div className="custom-panel tw-m-4">
-        <div className="columns profile-container tw-flex">
+        <div className="columns profile-container tw-flex tw-gap-x-8">
           {
             profileConfig.map((subArr, index) =>
               <div className='tw-flex-1' key={`${index}`}>

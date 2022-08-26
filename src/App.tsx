@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { 
-  HashRouter as Router, 
-  Switch, 
-  Route 
+import {
+  HashRouter as Router,
+  Switch,
+  Route
 } from "react-router-dom";
 import DocumentTitle from 'react-document-title';
 
@@ -27,10 +27,13 @@ import { AboutPage } from './ui/AboutPage';
 
 import { useSettings } from './services/storageAdapter';
 import { ControlPanel } from './ui/ControlPanel';
+import { useCharsheetContentI18n } from './useCharsheetContentI18n';
 
 function App() {
   const { t } = useTranslation();
   const { settings } = useSettings();
+
+  useCharsheetContentI18n();
 
   useEffect(() => {
     document.body.style.backgroundColor = settings.backgroundColor;
@@ -45,7 +48,7 @@ function App() {
       <Router>
         <div className="app">
           <div className="tw-flex">
-            <div 
+            <div
               className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm  print:tw-hidden"
               // style={{flexBasis: '25rem'}}
             >
