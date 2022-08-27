@@ -1,32 +1,6 @@
-import Ajv, { JSONSchemaType } from 'ajv';
 import * as R from 'ramda';
-
-interface EnRuEntity {
-  en: string;
-  ru: string;
-}
-
-const ajv = new Ajv({
-  allErrors: true,
-  // removeAdditional: true,
-  // useDefaults: true
-});
-
-
-export const enRuEntitySchema: JSONSchemaType<EnRuEntity> = {
-  type: "object",
-  properties: {
-    "en":  {type: 'string'},
-    "ru":  {type: 'string'},
-  },
-  required: [
-    "en",
-    "ru",
-  ],
-  additionalProperties: false,
-};
-
-export const validateEnRuEntity = ajv.compile(enRuEntitySchema);
+export * from './EnRuEntity';
+export * from './IdEnRuEntity';
 
 export function* generateSequence(
   rowNumber: number,
@@ -38,18 +12,31 @@ export function* generateSequence(
   }
 }
 
-export function* generateEnRuEntities(
-  gen : Generator<string, void, unknown>
-): Generator<EnRuEntity, void, unknown> {
-  for (let value of gen) {
-    const arr = value.split('\n  ');
-    const el = JSON.parse(`{ "en": "${arr[0]}", "ru": "${arr[1]}"}`);
-    if (!validateEnRuEntity(el)) {
-      console.error('Parse resource error', el,
-        JSON.stringify(validateEnRuEntity.errors, null, '  '));
-      throw new Error('Parse resource error: ' + el + ', ' +
-        JSON.stringify(validateEnRuEntity.errors, null, '  '));
-    }
-    yield el;
+export function makeTranslateFunction(sourceArr: {
+  en: string;
+  ru: string;
+}[]): (str: string, prevLang: string, lang: string) => string {
+  const index = sourceArr.reduce((acc: {
+    'ru-en': Record<string, string>;
+    'en-ru': Record<string, string>;
+  }, { en, ru } ) => {
+    acc['en-ru'][en] = ru;
+    acc['ru-en'][ru] = en;
+    return acc;
+  }, {
+    'ru-en': {},
+    'en-ru': {}
+  });
+
+  return function (
+    str: string,
+    prevLang: string,
+    lang: string
+  ): string {
+    // @ts-ignore
+    const subIndex: Record<string, string> | undefined = index[`${prevLang}-${lang}`];
+    return subIndex?.[str] || str;
   }
 }
+
+export const sortStrArr = R.sort<string>((a, b) => a.localeCompare(b));

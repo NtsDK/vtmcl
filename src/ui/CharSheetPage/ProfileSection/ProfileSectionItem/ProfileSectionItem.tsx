@@ -19,7 +19,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
 
   const { profile, setProfileItem } = useProfile();
 
-  const { archetypes, generations } = useResource();
+  const { archetypes, generations, clanDisplayGroups } = useResource();
 
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
@@ -67,12 +67,27 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
           onChange={(value: string) => setProfileItem(itemName, value)}
         />
       }
+      {
+        (itemName === 'clan') &&
+        <SelectButton
+          values={clanDisplayGroups}
+          onChange={(value: string) => setProfileItem(itemName, value)}
+        />
+      }
     </div>
   );
 }
 
+type SelectButtonItem =
+  | string
+  | {
+      groupName: string;
+      arr: string[];
+    }
+;
+
 interface SelectButtonProps {
-  values: string[];
+  values: SelectButtonItem[];
   onChange: (value: string) => void;
 }
 
@@ -87,11 +102,27 @@ function SelectButton(props: SelectButtonProps) {
     >
       <option></option>
       {
-        values.map(el =>
-          <option>
-            {el}
-          </option>
-        )
+        values.map(el => {
+          if (typeof el === 'string') {
+            return (
+              <option>
+                {el}
+              </option>
+            );
+          } else {
+            return (
+              <optgroup label={el.groupName}>
+                {
+                  el.arr.map(el2 =>
+                    <option>
+                      {el2}
+                    </option>
+                  )
+                }
+              </optgroup>
+            );
+          }
+        })
       }
     </select>
   );

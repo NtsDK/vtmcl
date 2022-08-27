@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useStore } from './services/store';
 import {
   translateArchetype,
-  translateGeneration
+  translateGeneration,
+  translateClan
 } from "./i18nResources";
 
 export function useCharsheetContentI18n() {
@@ -18,7 +19,7 @@ export function useCharsheetContentI18n() {
 
   useEffect(() => {
     const cb = (lng: string) => {
-      console.log('language', prevLanguage, 'new lang', lng);
+      // console.log('language', prevLanguage, 'new lang', lng);
       setPrevLanguage(lng);
       // console.log('languageChanged', lng);
       if (prevLanguage === lng) {
@@ -32,6 +33,9 @@ export function useCharsheetContentI18n() {
       );
       setProfileItem('generation',
         translateGeneration(profile.generation, prevLanguage, lng)
+      );
+      setProfileItem('clan',
+        translateClan(profile.clan, prevLanguage, lng)
       );
     };
 
