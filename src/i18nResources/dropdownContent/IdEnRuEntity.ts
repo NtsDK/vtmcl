@@ -1,7 +1,7 @@
 import Ajv, { JSONSchemaType } from 'ajv';
 import * as R from 'ramda';
 
-interface IdEnRuEntity {
+export interface IdEnRuEntity {
   id: string;
   en: string;
   ru: string;

@@ -5,6 +5,7 @@ import './FlawsSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { useResource } from '../../../../useResource';
 
 interface FlawsSectionProps {
   className?: string;
@@ -20,8 +21,10 @@ export function FlawsSection(props: FlawsSectionProps) {
   const { t } = useTranslation();
   const { className } = props;
 
+  const { flawOptions } = useResource();
+
   return (
-    <NameSection 
+    <NameSection
       className={classnames("FlawsSection", className)}
       addItem={addFlaw}
       items={flaws}
@@ -29,6 +32,7 @@ export function FlawsSection(props: FlawsSectionProps) {
       setItem={setFlaw}
       addItemMsg={t('charsheet.status.add-flaw')}
       removeItemMsg={t('charsheet.status.remove-flaw')}
+      options={flawOptions}
     />
   );
 }

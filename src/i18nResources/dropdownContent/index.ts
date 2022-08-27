@@ -4,3 +4,4 @@ export * from './clans';
 export * from './backgrounds';
 export * from './disciplines';
 export * from './paths';
+export * from './meritsAndFlaws';

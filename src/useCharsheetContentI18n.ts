@@ -9,6 +9,7 @@ import {
   translateBackground,
   translateDiscipline,
   translatePath,
+  translateMeritsAndFlaws
 } from "./i18nResources";
 
 export function useCharsheetContentI18n() {
@@ -22,6 +23,10 @@ export function useCharsheetContentI18n() {
     setDisciplineName,
     state,
     setState,
+    merits,
+    setMerit,
+    flaws,
+    setFlaw,
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
@@ -55,6 +60,12 @@ export function useCharsheetContentI18n() {
       setState('pathName',
         translatePath(state.pathName, prevLanguage, lng)
       );
+      merits.forEach((merit, index) => {
+        setMerit(index, translateMeritsAndFlaws(merit, prevLanguage, lng));
+      });
+      flaws.forEach((flaw, index) => {
+        setFlaw(index, translateMeritsAndFlaws(flaw, prevLanguage, lng));
+      });
     };
 
     i18n.on('languageChanged', cb);
@@ -71,6 +82,10 @@ export function useCharsheetContentI18n() {
     setDisciplineName,
     state,
     setState,
+    merits,
+    setMerit,
+    flaws,
+    setFlaw,
     prevLanguage
   ]);
 }

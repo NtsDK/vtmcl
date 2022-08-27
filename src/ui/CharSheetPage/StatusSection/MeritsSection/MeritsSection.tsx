@@ -5,6 +5,7 @@ import './MeritsSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { useResource } from '../../../../useResource';
 
 interface MeritsSectionProps {
   className?: string;
@@ -20,8 +21,10 @@ export function MeritsSection(props: MeritsSectionProps) {
   const { t } = useTranslation();
   const { className } = props;
 
+  const { meritOptions } = useResource();
+
   return (
-    <NameSection 
+    <NameSection
       className={classnames("MeritsSection", className)}
       addItem={addMerit}
       items={merits}
@@ -29,6 +32,7 @@ export function MeritsSection(props: MeritsSectionProps) {
       setItem={setMerit}
       addItemMsg={t('charsheet.status.add-merit')}
       removeItemMsg={t('charsheet.status.remove-merit')}
+      options={meritOptions}
     />
   );
 }

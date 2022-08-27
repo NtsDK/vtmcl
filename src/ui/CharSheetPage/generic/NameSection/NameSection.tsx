@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
+import { SelectButtonOption } from '../SelectButton/type';
+import { SelectButton } from '../SelectButton';
 
 interface NameSectionProps {
   items: string[];
@@ -15,6 +17,7 @@ interface NameSectionProps {
   addItemMsg: string;
   removeItemMsg: string;
   className?: string;
+  options?: SelectButtonOption[];
 }
 
 export function NameSection(props: NameSectionProps) {
@@ -25,7 +28,8 @@ export function NameSection(props: NameSectionProps) {
     setItem,
     addItemMsg,
     removeItemMsg,
-    className
+    className,
+    options
   } = props;
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +53,14 @@ export function NameSection(props: NameSectionProps) {
               value={name}
               onChange={onNameChange(index)}
             />
+            {
+              options &&
+              <SelectButton
+                options={options}
+                className="tw-mr-2 tw-ml-2 print:tw-hidden"
+                onChange={(value) => setItem(index, value)}
+              />
+            }
             <button
               onClick={() => removeItem(index)}
               aria-label={removeItemMsg}

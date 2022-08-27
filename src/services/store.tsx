@@ -260,7 +260,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setMerits(merits.filter((el, index2) => index2 !== index));
     },
     setMerit(index: number, name: string) {
-      setMerits(merits.map((el, index2) => {
+      setMerits((prevMerits) => prevMerits.map((el, index2) => {
         if (index2 !== index)
           return el;
         return name;
@@ -274,7 +274,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setFlaws(flaws.filter((el, index2) => index2 !== index));
     },
     setFlaw(index: number, name: string) {
-      setFlaws(flaws.map((el, index2) => {
+      setFlaws((prevFlaws) => prevFlaws.map((el, index2) => {
         if (index2 !== index)
           return el;
         return name;

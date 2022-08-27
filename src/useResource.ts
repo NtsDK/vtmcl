@@ -11,7 +11,11 @@ import {
   disciplineDisplayGroups_en,
   disciplineDisplayGroups_ru,
   paths_en,
-  paths_ru
+  paths_ru,
+  flaws_en,
+  flaws_ru,
+  merits_en,
+  merits_ru
 } from "./i18nResources";
 
 export function useResource() {
@@ -26,6 +30,8 @@ export function useResource() {
         backgroundOptions: backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
         pathOptions: paths_ru,
+        flawOptions: flaws_ru,
+        meritOptions: merits_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -34,5 +40,7 @@ export function useResource() {
         backgroundOptions: backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
         pathOptions: paths_en,
+        flawOptions: flaws_en,
+        meritOptions: merits_en,
       }
 }
