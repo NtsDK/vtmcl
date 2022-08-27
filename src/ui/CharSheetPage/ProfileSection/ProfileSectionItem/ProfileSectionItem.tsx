@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ProfileConfigItem } from '../../../../domain';
 import { useProfile } from '../../../../services/storageAdapter';
 import { useResource } from '../../../../useResource';
+import { SelectButton } from '../../generic/SelectButton';
 
 import './ProfileSectionItem.css';
 
@@ -19,7 +20,11 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
 
   const { profile, setProfileItem } = useProfile();
 
-  const { archetypes, generations, clanDisplayGroups } = useResource();
+  const {
+    archetypeOptions,
+    generationOptions,
+    clanOptions
+  } = useResource();
 
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
@@ -56,74 +61,27 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
       {
         (itemName === 'nature' || itemName === 'demeanor') &&
         <SelectButton
-          values={archetypes}
+          className="print:tw-hidden"
+          options={archetypeOptions}
           onChange={(value: string) => setProfileItem(itemName, value)}
         />
       }
       {
         (itemName === 'generation') &&
         <SelectButton
-          values={generations}
+          className="print:tw-hidden"
+          options={generationOptions}
           onChange={(value: string) => setProfileItem(itemName, value)}
         />
       }
       {
         (itemName === 'clan') &&
         <SelectButton
-          values={clanDisplayGroups}
+          className="print:tw-hidden"
+          options={clanOptions}
           onChange={(value: string) => setProfileItem(itemName, value)}
         />
       }
     </div>
-  );
-}
-
-type SelectButtonItem =
-  | string
-  | {
-      groupName: string;
-      arr: string[];
-    }
-;
-
-interface SelectButtonProps {
-  values: SelectButtonItem[];
-  onChange: (value: string) => void;
-}
-
-function SelectButton(props: SelectButtonProps) {
-  const { values, onChange } = props;
-
-  return (
-    <select
-      className='profileItemSelect'
-      value=''
-      onChange={e => onChange(e.currentTarget.value)}
-    >
-      <option></option>
-      {
-        values.map(el => {
-          if (typeof el === 'string') {
-            return (
-              <option>
-                {el}
-              </option>
-            );
-          } else {
-            return (
-              <optgroup label={el.groupName}>
-                {
-                  el.arr.map(el2 =>
-                    <option>
-                      {el2}
-                    </option>
-                  )
-                }
-              </optgroup>
-            );
-          }
-        })
-      }
-    </select>
   );
 }

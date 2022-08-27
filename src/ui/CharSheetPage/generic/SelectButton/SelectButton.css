@@ -1,0 +1,8 @@
+.SelectButton {
+  appearance: none;
+  width: 1.5rem;
+  /* color: transparent; */
+  background: url("../../../../../public/images/chevron-down-solid.svg") no-repeat 50% 50%;
+  background-size: 1rem auto;
+  /* print-color-adjust: exact; */
+}

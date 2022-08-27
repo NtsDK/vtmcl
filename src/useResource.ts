@@ -6,6 +6,8 @@ import {
   generations_ru,
   clanDisplayGroups_en,
   clanDisplayGroups_ru,
+  backgrounds_en,
+  backgrounds_ru,
 } from "./i18nResources";
 
 export function useResource() {
@@ -14,13 +16,15 @@ export function useResource() {
 
   return language === 'ru'
     ? {
-        archetypes: archetypes_ru,
-        generations: generations_ru,
-        clanDisplayGroups: clanDisplayGroups_ru
+        archetypeOptions: archetypes_ru,
+        generationOptions: generations_ru,
+        clanOptions: clanDisplayGroups_ru,
+        backgroundOptions: backgrounds_ru
       }
     : {
-        archetypes: archetypes_en,
-        generations: generations_en,
-        clanDisplayGroups: clanDisplayGroups_en
+        archetypeOptions: archetypes_en,
+        generationOptions: generations_en,
+        clanOptions: clanDisplayGroups_en,
+        backgroundOptions: backgrounds_en
       }
 }

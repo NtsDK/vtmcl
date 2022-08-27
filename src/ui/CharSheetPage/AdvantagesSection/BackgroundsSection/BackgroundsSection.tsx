@@ -5,13 +5,14 @@ import './BackgroundsSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { useResource } from '../../../../useResource';
 
 interface BackgroundsSectionProps {
   className?: string;
 }
 
 export function BackgroundsSection(props: BackgroundsSectionProps) {
-  const { 
+  const {
     backgrounds,
     addBackground,
     setBackgroundName,
@@ -20,6 +21,8 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
   } = useBackgrounds();
   const { t } = useTranslation();
   const { className } = props;
+
+  const { backgroundOptions } = useResource();
 
   return (
     <NameNumberSection
@@ -32,9 +35,7 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
       setItemValue={setBackgroundValue}
       addItemMsg={t('charsheet.advantages.add-background')}
       removeItemMsg={t('charsheet.advantages.remove-background')}
+      options={backgroundOptions}
     />
   );
 }
-
-
-

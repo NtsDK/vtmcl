@@ -317,7 +317,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setBackgrounds(backgrounds.filter((el, index2) => index2 !== index));
     },
     setBackgroundName(index: number, name: string) {
-      setBackgrounds(backgrounds.map((el, index2) => {
+      setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {

@@ -5,14 +5,17 @@ import { useStore } from './services/store';
 import {
   translateArchetype,
   translateGeneration,
-  translateClan
+  translateClan,
+  translateBackground
 } from "./i18nResources";
 
 export function useCharsheetContentI18n() {
   const { i18n } = useTranslation();
   const {
     profile,
-    setProfileItem
+    setProfileItem,
+    backgrounds,
+    setBackgroundName
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
@@ -37,6 +40,9 @@ export function useCharsheetContentI18n() {
       setProfileItem('clan',
         translateClan(profile.clan, prevLanguage, lng)
       );
+      backgrounds.forEach((background, index) => {
+        setBackgroundName(index, translateBackground(background.name, prevLanguage, lng));
+      });
     };
 
     i18n.on('languageChanged', cb);

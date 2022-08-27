@@ -9,6 +9,8 @@ import {
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import { RangeInput2 } from '../RangeInput2';
+import { SelectButtonOption } from '../SelectButton/type';
+import { SelectButton } from '../SelectButton';
 
 interface NameNumberSectionProps {
   items: {
@@ -23,6 +25,7 @@ interface NameNumberSectionProps {
   removeItemMsg: string;
   sectionItemName: string;
   className?: string;
+  options?: SelectButtonOption[];
 }
 
 export function NameNumberSection(props: NameNumberSectionProps) {
@@ -35,7 +38,8 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     addItemMsg,
     removeItemMsg,
     className,
-    sectionItemName
+    sectionItemName,
+    options
   } = props;
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +66,14 @@ export function NameNumberSection(props: NameNumberSectionProps) {
               id={`${sectionItemName}.label.${index}`}
               onChange={onNameChange(index)}
             />
+            {
+              options &&
+              <SelectButton
+                options={options}
+                className="tw-mr-2 print:tw-hidden"
+                onChange={(value) => setItemName(index, value)}
+              />
+            }
             <RangeInput2
               max={5}
               name={`${sectionItemName}.${index}`}
