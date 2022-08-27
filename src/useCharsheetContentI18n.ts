@@ -8,6 +8,7 @@ import {
   translateClan,
   translateBackground,
   translateDiscipline,
+  translatePath,
 } from "./i18nResources";
 
 export function useCharsheetContentI18n() {
@@ -19,6 +20,8 @@ export function useCharsheetContentI18n() {
     setBackgroundName,
     disciplines,
     setDisciplineName,
+    state,
+    setState,
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
@@ -49,6 +52,9 @@ export function useCharsheetContentI18n() {
       disciplines.forEach((discipline, index) => {
         setDisciplineName(index, translateDiscipline(discipline.name, prevLanguage, lng));
       });
+      setState('pathName',
+        translatePath(state.pathName, prevLanguage, lng)
+      );
     };
 
     i18n.on('languageChanged', cb);
@@ -63,6 +69,8 @@ export function useCharsheetContentI18n() {
     setBackgroundName,
     disciplines,
     setDisciplineName,
+    state,
+    setState,
     prevLanguage
   ]);
 }

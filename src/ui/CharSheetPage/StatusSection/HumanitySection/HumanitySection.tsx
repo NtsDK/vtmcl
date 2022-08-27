@@ -6,6 +6,8 @@ import { RangeInput2 } from '../../generic/RangeInput2';
 import { useStateNHealth } from '../../../../services/storageAdapter';
 
 import './HumanitySection.css';
+import { SelectButton } from '../../generic/SelectButton';
+import { useResource } from '../../../../useResource';
 
 interface HumanitySectionProps {
   className?: string;
@@ -16,21 +18,30 @@ export function HumanitySection(props: HumanitySectionProps) {
   const { state, setState } = useStateNHealth();
   const { className } = props;
 
+  const { pathOptions } = useResource();
+
   return (
     <fieldset
       className={classnames("HumanitySection", className)}
       aria-label={t('charsheet.status.humanity')}
     >
-      <input
-        aria-label={t('charsheet.status.humanity')}
-        style={{boxShadow: '0 1px 0 #333333'}}
-        className='tw-flex-1  tw-w-full
-          tw-mb-2 tw-text-center
-          tw-bg-transparent tw-border-none hover:tw-outline
-          hover:tw-outline-1 hover:tw-outline-red-600'
-        value={state.pathName}
-        onChange={(e) => setState('pathName', e.target.value)}
-      />
+      <div className="tw-mb-2 tw-flex">
+        <input
+          aria-label={t('charsheet.status.humanity')}
+          style={{boxShadow: '0 1px 0 #333333'}}
+          className='tw-flex-1
+            tw-text-center
+            tw-bg-transparent tw-border-none hover:tw-outline
+            hover:tw-outline-1 hover:tw-outline-red-600'
+          value={state.pathName}
+          onChange={(e) => setState('pathName', e.target.value)}
+        />
+        <SelectButton
+          options={pathOptions}
+          className="tw-ml-2 print:tw-hidden tw-flex-0"
+          onChange={(value) => setState('pathName', value)}
+        />
+      </div>
       <RangeInput2
         max={10}
         name="humanity"

@@ -16,7 +16,7 @@ const ajv = new Ajv({
   // useDefaults: true
 });
 
-type GroupName =
+type ClanGroupName =
   | 'camarilla-clan'
   | 'sabbat-clan'
   | 'independent-clan'
@@ -33,7 +33,7 @@ interface ClanEntity {
   ru: string;
   ruNickname?: string;
   ruSubClan?: string;
-  groupName: GroupName;
+  groupName: ClanGroupName;
 }
 
 export const clanEntitySchema: JSONSchemaType<ClanEntity> = {
@@ -123,7 +123,7 @@ const groups_ru = R.mapObjIndexed((value) => {
 }, groups);
 
 
-const groupOrder: GroupName[] = [
+const groupOrder: ClanGroupName[] = [
   'camarilla-clan',
   'sabbat-clan',
   'independent-clan',
