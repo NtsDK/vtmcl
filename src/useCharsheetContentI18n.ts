@@ -6,7 +6,8 @@ import {
   translateArchetype,
   translateGeneration,
   translateClan,
-  translateBackground
+  translateBackground,
+  translateDiscipline,
 } from "./i18nResources";
 
 export function useCharsheetContentI18n() {
@@ -15,7 +16,9 @@ export function useCharsheetContentI18n() {
     profile,
     setProfileItem,
     backgrounds,
-    setBackgroundName
+    setBackgroundName,
+    disciplines,
+    setDisciplineName,
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
@@ -43,6 +46,9 @@ export function useCharsheetContentI18n() {
       backgrounds.forEach((background, index) => {
         setBackgroundName(index, translateBackground(background.name, prevLanguage, lng));
       });
+      disciplines.forEach((discipline, index) => {
+        setDisciplineName(index, translateDiscipline(discipline.name, prevLanguage, lng));
+      });
     };
 
     i18n.on('languageChanged', cb);
@@ -53,14 +59,10 @@ export function useCharsheetContentI18n() {
     i18n,
     profile,
     setProfileItem,
+    backgrounds,
+    setBackgroundName,
+    disciplines,
+    setDisciplineName,
     prevLanguage
   ]);
-
-  // console.log('language', language);
-
-  // useEffect(() => {
-    // setProfileItem('nature',
-    //   translateArchetype(profile.nature) ?? profile.nature
-    // );
-  // }, [language]);
 }

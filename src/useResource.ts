@@ -8,6 +8,8 @@ import {
   clanDisplayGroups_ru,
   backgrounds_en,
   backgrounds_ru,
+  disciplineDisplayGroups_en,
+  disciplineDisplayGroups_ru
 } from "./i18nResources";
 
 export function useResource() {
@@ -19,12 +21,14 @@ export function useResource() {
         archetypeOptions: archetypes_ru,
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
-        backgroundOptions: backgrounds_ru
+        backgroundOptions: backgrounds_ru,
+        disciplineOptions: disciplineDisplayGroups_ru,
       }
     : {
         archetypeOptions: archetypes_en,
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
-        backgroundOptions: backgrounds_en
+        backgroundOptions: backgrounds_en,
+        disciplineOptions: disciplineDisplayGroups_en,
       }
 }

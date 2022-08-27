@@ -286,10 +286,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setDisciplines([...disciplines, { name: '', value: 0 }]);
     },
     removeDiscipline(index: number) {
-      setDisciplines(disciplines.filter((el, index2) => index2 !== index));
+      setDisciplines((prevDisciplines) => prevDisciplines.filter((el, index2) => index2 !== index));
     },
     setDisciplineName(index: number, name: string) {
-      setDisciplines(disciplines.map((el, index2) => {
+      setDisciplines((prevDisciplines) => prevDisciplines.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {
@@ -314,7 +314,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setBackgrounds([...backgrounds, { name: '', value: 0 }]);
     },
     removeBackground(index: number) {
-      setBackgrounds(backgrounds.filter((el, index2) => index2 !== index));
+      setBackgrounds((prevBackgrounds) => prevBackgrounds.filter((el, index2) => index2 !== index));
     },
     setBackgroundName(index: number, name: string) {
       setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
@@ -327,7 +327,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       }));
     },
     setBackgroundValue(index: number, value: number) {
-      setBackgrounds(backgrounds.map((el, index2) => {
+      setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {

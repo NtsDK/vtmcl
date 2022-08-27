@@ -5,21 +5,24 @@ import './DisciplinesSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { useResource } from '../../../../useResource';
 
 interface DisciplinesSectionProps {
   className?: string;
 }
 
 export function DisciplinesSection(props: DisciplinesSectionProps) {
-  const { 
+  const {
     disciplines,
     addDiscipline,
     removeDiscipline,
     setDisciplineName,
-    setDisciplineValue 
+    setDisciplineValue
   } = useDisciplines();
   const { t } = useTranslation();
   const { className } = props;
+
+  const { disciplineOptions } = useResource();
 
   return (
     <NameNumberSection
@@ -32,6 +35,7 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
       setItemValue={setDisciplineValue}
       addItemMsg={t('charsheet.advantages.add-discipline')}
       removeItemMsg={t('charsheet.advantages.remove-discipline')}
+      options={disciplineOptions}
     />
   );
 }
