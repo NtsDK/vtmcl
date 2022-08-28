@@ -31,8 +31,13 @@ export const status = {
   'remove-merit': 'Удалить достоинство',
   'add-flaw': 'Добавить недостаток',
   'remove-flaw': 'Удалить недостаток',
+  'select-merit': 'Выбрать достоинство',
+  'select-flaw': 'Выбрать недостаток',
 
   'bearing': 'Столп',
   'blood-per-turn': 'Предел траты в ход',
   'bearing-modifier': 'Модификатор столпа',
+  'select-path': 'Выбрать путь',
+  'merit-label': 'Достоинство {{index}}',
+  'flaw-label': 'Недостаток {{index}}',
 };

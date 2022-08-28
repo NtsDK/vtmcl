@@ -33,6 +33,8 @@ export function FlawsSection(props: FlawsSectionProps) {
       addItemMsg={t('charsheet.status.add-flaw')}
       removeItemMsg={t('charsheet.status.remove-flaw')}
       options={flawOptions}
+      selectOptionMsg={t('charsheet.status.select-flaw')}
+      nameLabel='charsheet.status.flaw-label'
     />
   );
 }

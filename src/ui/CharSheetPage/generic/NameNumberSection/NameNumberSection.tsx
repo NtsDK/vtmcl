@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import classnames from "classnames";
+import { TFuncKey, useTranslation } from 'react-i18next';
 
 import { RangeInput2 } from '../RangeInput2';
 import { SelectButtonOption } from '../SelectButton/type';
@@ -23,6 +24,8 @@ interface NameNumberSectionProps {
   sectionItemName: string;
   className?: string;
   options?: SelectButtonOption[];
+  selectOptionMsg?: string;
+  nameLabel?: TFuncKey;
 }
 
 export function NameNumberSection(props: NameNumberSectionProps) {
@@ -36,8 +39,12 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     removeItemMsg,
     className,
     sectionItemName,
-    options
+    options,
+    selectOptionMsg,
+    nameLabel
   } = props;
+
+  const { t } = useTranslation();
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -63,6 +70,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
                 value={name}
                 id={`${sectionItemName}.label.${index}`}
                 onChange={onNameChange(index)}
+                aria-label={nameLabel ? t(nameLabel, {index: index + 1}) as string : undefined}
               />
               {
                 options &&
@@ -70,6 +78,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
                   options={options}
                   className="print:tw-hidden tw-ml-2"
                   onChange={(value) => setItemName(index, value)}
+                  selectOptionMsg={selectOptionMsg}
                 />
               }
               <RemoveEntityButton

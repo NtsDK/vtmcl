@@ -64,6 +64,9 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
           className="print:tw-hidden"
           options={options}
           onChange={(value: string) => setProfileItem(itemName, value)}
+          selectOptionMsg={t('charsheet.profile.select-label', {
+            title: t(`charsheet.profile.${itemName}`)
+          })}
         />
       }
     </div>

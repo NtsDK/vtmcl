@@ -75,6 +75,7 @@ export function ControlPanel(props: ControlPanelProps) {
       <Dropdown.Item
         as="button"
         type="button"
+        aria-label={t(showContent ? 'buttons.hide-panel' : 'buttons.show-panel')}
         onClick={() => setShowContent((prevState) => !prevState)}
         className="tw-py-3 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
       >

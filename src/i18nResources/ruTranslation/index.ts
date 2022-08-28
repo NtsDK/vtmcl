@@ -15,7 +15,8 @@ export const ruTranslation = {
   checklist,
   actionMenu,
   "buttons": {
-    'hide-panel': 'Спрятать панель'
+    'hide-panel': 'Спрятать панель',
+    'show-panel': 'Показать панель',
   },
   'errors': {
     'error-on-file-loading': 'Ошибка при загрузке листа персонажа',

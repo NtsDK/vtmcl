@@ -36,6 +36,8 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
       addItemMsg={t('charsheet.advantages.add-discipline')}
       removeItemMsg={t('charsheet.advantages.remove-discipline')}
       options={disciplineOptions}
+      selectOptionMsg={t('charsheet.advantages.select-discipline')}
+      nameLabel='charsheet.advantages.discipline-label'
     />
   );
 }

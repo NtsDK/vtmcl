@@ -31,8 +31,13 @@ export const status = {
   'remove-merit': 'Remove merit',
   'add-flaw': 'Add flaw',
   'remove-flaw': 'Remove flaw',
+  'select-merit': 'Select merit',
+  'select-flaw': 'Select flaw',
 
   'bearing': 'Bearing',
   'blood-per-turn': 'Blood Per Turn',
   'bearing-modifier': 'Bearing Modifier',
+  'select-path': 'Select path',
+  'merit-label': 'Merit {{index}}',
+  'flaw-label': 'Flaw {{index}}',
 };

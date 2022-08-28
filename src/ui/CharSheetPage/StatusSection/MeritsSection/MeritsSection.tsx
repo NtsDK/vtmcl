@@ -33,6 +33,8 @@ export function MeritsSection(props: MeritsSectionProps) {
       addItemMsg={t('charsheet.status.add-merit')}
       removeItemMsg={t('charsheet.status.remove-merit')}
       options={meritOptions}
+      selectOptionMsg={t('charsheet.status.select-merit')}
+      nameLabel='charsheet.status.merit-label'
     />
   );
 }

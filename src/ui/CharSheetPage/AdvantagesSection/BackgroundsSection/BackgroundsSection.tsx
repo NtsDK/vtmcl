@@ -36,6 +36,8 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
       addItemMsg={t('charsheet.advantages.add-background')}
       removeItemMsg={t('charsheet.advantages.remove-background')}
       options={backgroundOptions}
+      selectOptionMsg={t('charsheet.advantages.select-background')}
+      nameLabel='charsheet.advantages.background-label'
     />
   );
 }

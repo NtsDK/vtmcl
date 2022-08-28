@@ -40,6 +40,7 @@ export function HumanitySection(props: HumanitySectionProps) {
           options={pathOptions}
           className="tw-ml-2 print:tw-hidden tw-flex-0"
           onChange={(value) => setState('pathName', value)}
+          selectOptionMsg={t('charsheet.status.select-path')}
         />
       </div>
       <RangeInput2

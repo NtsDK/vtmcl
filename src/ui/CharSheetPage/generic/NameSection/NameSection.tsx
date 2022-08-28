@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import classnames from "classnames";
+import { TFuncKey, useTranslation } from 'react-i18next';
 
 import { SelectButtonOption } from '../SelectButton/type';
 import { SelectButton } from '../SelectButton';
@@ -17,6 +18,8 @@ interface NameSectionProps {
   removeItemMsg: string;
   className?: string;
   options?: SelectButtonOption[];
+  selectOptionMsg?: string;
+  nameLabel?: TFuncKey;
 }
 
 export function NameSection(props: NameSectionProps) {
@@ -28,8 +31,12 @@ export function NameSection(props: NameSectionProps) {
     addItemMsg,
     removeItemMsg,
     className,
-    options
+    options,
+    selectOptionMsg,
+    nameLabel
   } = props;
+
+  const { t } = useTranslation();
 
   const onNameChange = (index: number ) => (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -51,6 +58,7 @@ export function NameSection(props: NameSectionProps) {
                 print:tw-outline-transparent'
               value={name}
               onChange={onNameChange(index)}
+              aria-label={nameLabel ? t(nameLabel, {index: index + 1}) as string : undefined}
             />
             {
               options &&
@@ -58,6 +66,7 @@ export function NameSection(props: NameSectionProps) {
                 options={options}
                 className="tw-mr-2 tw-ml-2 print:tw-hidden"
                 onChange={(value) => setItem(index, value)}
+                selectOptionMsg={selectOptionMsg}
               />
             }
             <div>

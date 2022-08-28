@@ -11,4 +11,5 @@ export const profile = {
   'clan': 'Clan:',
   'generation': 'Generation:',
   'sire': 'Sire:',
+  'select-label': 'Select {{title}}'
 };

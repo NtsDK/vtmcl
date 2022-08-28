@@ -15,7 +15,8 @@ export const enTranslation: TranslationInfo = {
   checklist,
   actionMenu,
   "buttons": {
-    'hide-panel': 'Hide panel'
+    'hide-panel': 'Hide panel',
+    'show-panel': 'Show panel'
   },
   'errors': {
     'error-on-file-loading': 'Error on file loading',
