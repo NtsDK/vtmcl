@@ -1,13 +1,12 @@
 import React, { ChangeEvent } from 'react';
-import './NameSection.css';
 import classnames from "classnames";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faXmark
-} from '@fortawesome/free-solid-svg-icons';
 import { SelectButtonOption } from '../SelectButton/type';
 import { SelectButton } from '../SelectButton';
+import { RemoveEntityButton } from '../RemoveEntityButton';
+import { AddEntityButton } from '../AddEntityButton';
+
+import './NameSection.css';
 
 interface NameSectionProps {
   items: string[];
@@ -61,28 +60,21 @@ export function NameSection(props: NameSectionProps) {
                 onChange={(value) => setItem(index, value)}
               />
             }
-            <button
-              onClick={() => removeItem(index)}
-              aria-label={removeItemMsg}
-              title={removeItemMsg}
-              className="tw-flex print:tw-hidden"
-            >
-              <FontAwesomeIcon
-                className="tw-ml-2 tw-mr-2 tw-text-xl tw-text-gray-700"
-                icon={faXmark}
+            <div>
+              <RemoveEntityButton
+                title={removeItemMsg}
+                onClick={() => removeItem(index)}
+                className="tw-flex-0"
               />
-            </button>
+            </div>
           </div>
         )
       }
       <div className='tw-text-center tw-mt-4 print:tw-hidden'>
-        <button
-          onClick={addItem}
-          aria-label={addItemMsg}
+        <AddEntityButton
           title={addItemMsg}
-        >
-          <img className="tw-w-8" src="images/add-squared-button.svg" alt=""/>
-        </button>
+          onClick={addItem}
+        />
       </div>
     </div>
   );

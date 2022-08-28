@@ -54,7 +54,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
   } = useAbilitiesExtension();
 
   return (
-    <div className={classnames("AbilitiesSection tw-flex", className)}>
+    <div className={classnames("AbilitiesSection tw-flex tw-gap-x-4", className)}>
       {
         abilitiesConfig.map(({header, items, extension}) =>
           <div className='tw-flex-1' key={header}>

@@ -24,10 +24,6 @@ export function RangeInput2(props: RangeInput2Props) {
     splitEvery,
     variant = 'circle'
   } = props;
-  let style = {};
-  if (splitEvery) {
-    style = { 'flexBasis': `${100/splitEvery}%`};
-  }
 
   const onClickWrapper: MouseEventHandler<HTMLInputElement> = function (event) {
     const { index } = event.currentTarget.dataset;
@@ -35,29 +31,43 @@ export function RangeInput2(props: RangeInput2Props) {
     onClick(indexNum === value ? indexNum - 1 : indexNum);
   }
 
+  const cellWidth = '1.0rem';
+  const cellHeight = '1.25rem';
+
   return (
-    <div className={classNames("RangeInput2 tw-flex tw-flex-wrap", className)}>
-      {
-        R.range(0, max + 1).map(index => {
-          return (
-            <input
-              className={classNames("range-input-checkbox tw-flex-1", {
-                'tw-sr-only': index === 0
-              })}
-              style={style}
-              key={`${index}`}
-              type='radio'
-              name={name}
-              title={String(index)}
-              onClick={onClickWrapper}
-              data-index={index}
-              data-variant={variant}
-              checked={index === value}
-              onChange={() => {}}
-            />
-          )
-        })
-      }
+    <div
+      className={classNames("RangeInput2 tw-text-center", className)}
+
+    >
+      <div
+        className='tw-h-6'
+        style={{
+          display: 'inline-grid',
+          gridTemplateRows: splitEvery === undefined ? cellHeight : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight})`,
+          gridTemplateColumns: splitEvery === undefined ? `repeat(${max}, ${cellWidth})` : `repeat(${splitEvery}, ${cellWidth})`
+        }}
+      >
+        {
+          R.range(0, max + 1).map(index => {
+            return (
+              <input
+                className={classNames("range-input-checkbox tw-flex-1", {
+                  'tw-sr-only': index === 0
+                })}
+                key={`${index}`}
+                type='radio'
+                name={name}
+                title={String(index)}
+                onClick={onClickWrapper}
+                data-index={index}
+                data-variant={variant}
+                checked={index === value}
+                onChange={() => {}}
+              />
+            )
+          })
+        }
+      </div>
     </div>
   );
 }

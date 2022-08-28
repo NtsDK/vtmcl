@@ -25,27 +25,26 @@ export function VirtuesSection(props: VirtuesSectionProps) {
   return (
     <div className={classnames("VirtuesSection", className)}>
       {
-        virtuesArr.map(item => 
-          <div 
-            role="group" 
-            key={item} 
-            className="stat-container"
+        virtuesArr.map(item =>
+          <div
+            role="group"
+            key={item}
+            className="tw-text-sm tw-text-center"
             aria-labelledby={`virtue.label.${item}`}
           >
-            <label 
-              className='stat-container-label'
+            <label
               id={`virtue.label.${item}`}
             >
               {t(`charsheet.advantages.${item}`)}
             </label>
             <RangeInput2
-              max={5} 
+              max={5}
               name={`virtue.${item}`}
               value={virtues[item]}
               onClick={(value: number) => setVirtue(item, value)}
               className="tw-flex-grow"
             />
-          </div>  
+          </div>
         )
       }
     </div>

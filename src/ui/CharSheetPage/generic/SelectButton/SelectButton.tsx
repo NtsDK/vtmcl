@@ -15,7 +15,7 @@ export function SelectButton(props: SelectButtonProps) {
 
   return (
     <select
-      className={classnames("SelectButton", className)}
+      className={classnames("SelectButton tw-appearance-none tw-w-6", className)}
       value=''
       onChange={e => onChange(e.currentTarget.value)}
     >

@@ -41,7 +41,7 @@ export function AttributeSection(props: AttributeSectionProps) {
   const { className } = props;
 
   return (
-    <div className={classnames("AttributeSection tw-flex", className)}>
+    <div className={classnames("AttributeSection tw-flex tw-gap-x-4", className)}>
       {
         attributesConfig.map(({header, items}) =>
           <div className='tw-flex-1' key={header}>

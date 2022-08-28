@@ -687,6 +687,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.tw-w-4 {
+  width: 1rem;
+}
+
 .tw-max-w-sm {
   max-width: 24rem;
 }
@@ -711,6 +715,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-grow: 1;
 }
 
+.tw-appearance-none {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
 .tw-flex-col {
   flex-direction: column;
 }
@@ -731,9 +740,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.tw-justify-between {
+  justify-content: space-between;
+}
+
 .tw-gap-x-8 {
   -webkit-column-gap: 2rem;
           column-gap: 2rem;
+}
+
+.tw-gap-x-4 {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
 }
 
 .tw-border-2 {

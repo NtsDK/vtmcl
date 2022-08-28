@@ -23,7 +23,7 @@ export function StatusSection(props: StatusSectionProps) {
   const { state, setState } = useStateNHealth();
 
   return (
-    <div className={classnames("StatusSection tw-flex", className)}>
+    <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2">
           {t('charsheet.status.merits')}
