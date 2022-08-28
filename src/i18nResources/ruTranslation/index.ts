@@ -35,8 +35,6 @@ export const ruTranslation = {
     'charsheet-color': 'Цвет',
   },
   "charsheet": {
-    'defaultPageTitle': 'Лист персонажа VtM V20 от NtsDK',
-    'charsheetWithName': '{{characterName}}. Лист персонажа VtM V20',
     'emptyName': 'Безымянный персонаж',
     'charsheet': 'Лист персонажа',
     profile,

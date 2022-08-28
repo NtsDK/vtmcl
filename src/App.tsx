@@ -44,7 +44,7 @@ function App() {
   }, [settings]);
 
   return (
-    <DocumentTitle title={t('charsheet.defaultPageTitle')}>
+    <DocumentTitle title={t('about.defaultPageTitle')}>
       <Router>
         <div className="app">
           <div className="tw-flex">

@@ -25,15 +25,18 @@ export function VirtuesSection(props: VirtuesSectionProps) {
   return (
     <div className={classnames("VirtuesSection", className)}>
       {
-        virtuesArr.map(item =>
+        virtuesArr.map((item, index) =>
           <div
             role="group"
             key={item}
-            className="tw-text-sm tw-text-center"
+            className={classnames("tw-text-sm tw-text-center", {
+              "tw-mb-2": index + 1 !== virtuesArr.length
+            })}
             aria-labelledby={`virtue.label.${item}`}
           >
             <label
               id={`virtue.label.${item}`}
+              className="tw-mb-1"
             >
               {t(`charsheet.advantages.${item}`)}
             </label>

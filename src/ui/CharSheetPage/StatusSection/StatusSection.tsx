@@ -42,12 +42,12 @@ export function StatusSection(props: StatusSectionProps) {
         >
           {t('charsheet.status.humanity')}
         </Subheader>
-        <HumanitySection className="tw-mb-6"/>
+        <HumanitySection className="tw-mb-4"/>
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.willpower')}
         </Subheader>
-        <WillSection className="tw-mb-6"/>
+        <WillSection className="tw-mb-4"/>
 
         <Subheader
           id="bloodpool.header"

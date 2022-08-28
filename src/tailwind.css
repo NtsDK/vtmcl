@@ -641,18 +641,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
-.tw-h-12 {
-  height: 3rem;
-}
-
 .tw-h-6 {
   height: 1.5rem;
+}
+
+.tw-h-12 {
+  height: 3rem;
 }
 
 .tw-h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.tw-h-4 {
+  height: 1rem;
+}
+
+.tw-h-5 {
+  height: 1.25rem;
 }
 
 .tw-w-full {
@@ -671,12 +679,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.25rem;
 }
 
-.tw-w-28 {
-  width: 7rem;
-}
-
 .tw-w-8 {
   width: 2rem;
+}
+
+.tw-w-4 {
+  width: 1rem;
+}
+
+.tw-w-28 {
+  width: 7rem;
 }
 
 .tw-w-32 {
@@ -685,10 +697,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-w-14 {
   width: 3.5rem;
-}
-
-.tw-w-4 {
-  width: 1rem;
 }
 
 .tw-max-w-sm {
@@ -740,18 +748,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
-.tw-justify-between {
-  justify-content: space-between;
+.tw-gap-x-4 {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
 }
 
 .tw-gap-x-8 {
   -webkit-column-gap: 2rem;
           column-gap: 2rem;
-}
-
-.tw-gap-x-4 {
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
 }
 
 .tw-border-2 {
@@ -837,18 +841,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
-.tw-text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .tw-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
+.tw-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .tw-leading-5 {
   line-height: 1.25rem;
+}
+
+.tw-leading-4 {
+  line-height: 1rem;
 }
 
 .tw-text-gray-700 {

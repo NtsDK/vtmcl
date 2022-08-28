@@ -38,11 +38,10 @@ export function RangeInput2(props: RangeInput2Props) {
 
   return (
     <div
-      className={classNames("RangeInput2 tw-text-center", className)}
-
+      className={classNames("RangeInput2 tw-text-center tw-leading-4", className)} //
     >
       <div
-        className='tw-h-6'
+        className=''
         style={{
           display: 'inline-grid',
           gridTemplateRows: splitEvery === undefined ? `${cellHeight}rem` : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight}rem)`,

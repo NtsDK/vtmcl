@@ -56,7 +56,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
       {
         items.map(({name, value}, index) =>
           <div
-            className='tw-m-1'
+            className='tw-mb-3'
             key={`${sectionItemName}.${index}`}
             role="group"
             aria-labelledby={`${sectionItemName}.label.${index}`}

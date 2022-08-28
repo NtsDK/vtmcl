@@ -35,8 +35,6 @@ export const enTranslation: TranslationInfo = {
     'charsheet-color': 'Color',
   },
   "charsheet": {
-    'defaultPageTitle': 'Character Sheet VtM V20 by NtsDK',
-    'charsheetWithName': '{{characterName}}. Character Sheet VtM V20',
     'emptyName': 'Nameless character',
     'charsheet': 'Character Sheet',
     profile,

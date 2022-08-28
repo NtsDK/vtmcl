@@ -32,7 +32,7 @@ export function CharSheetPage(props: CharSheetPageProps) {
     const characterName = profile.name.trim() === ''
       ? t('charsheet.emptyName')
       : profile.name;
-    setTitle(t('charsheet.charsheetWithName', {
+    setTitle(t('about.charsheetWithName', {
       characterName
     }));
   }, [t, profile]);
