@@ -20,11 +20,13 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
 
   const { profile, setProfileItem } = useProfile();
 
-  const {
-    archetypeOptions,
-    generationOptions,
-    clanOptions
-  } = useResource();
+  const resources = useResource();
+
+  const optionsName = typeof item !== 'string' ? item.optionsName : undefined;
+  const options = optionsName !== undefined
+    // @ts-ignore
+    ? resources[optionsName]
+    : undefined;
 
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
@@ -53,32 +55,14 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
         className='tw-flex-1 tw-mx-2
           tw-bg-transparent tw-border-none hover:tw-outline
           hover:tw-outline-1 hover:tw-outline-red-600'
-        // data-item-name={item}
         value={profile[itemName]}
-        // list={typeof item !== 'string' ? item.dataListId : ''}
         onChange={onProfileChange}
       />
       {
-        (itemName === 'nature' || itemName === 'demeanor') &&
+        options &&
         <SelectButton
           className="print:tw-hidden"
-          options={archetypeOptions}
-          onChange={(value: string) => setProfileItem(itemName, value)}
-        />
-      }
-      {
-        (itemName === 'generation') &&
-        <SelectButton
-          className="print:tw-hidden"
-          options={generationOptions}
-          onChange={(value: string) => setProfileItem(itemName, value)}
-        />
-      }
-      {
-        (itemName === 'clan') &&
-        <SelectButton
-          className="print:tw-hidden"
-          options={clanOptions}
+          options={options}
           onChange={(value: string) => setProfileItem(itemName, value)}
         />
       }

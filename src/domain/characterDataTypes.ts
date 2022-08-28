@@ -16,7 +16,7 @@ export interface Profile {
 
 export type ProfileConfigItem = keyof Profile | {
   name: keyof Profile;
-  dataListId?: string;
+  optionsName?: string;
 };
 
 export type ProfileConfig = ProfileConfigItem[][];
@@ -28,13 +28,22 @@ export const profileConfig: ProfileConfig = [[
     'age',
     'sex'
   ], [
-    'nature',
-    'demeanor',
+    {
+      name: 'nature',
+      optionsName: 'archetypeOptions'
+    },
+    {
+      name: 'demeanor',
+      optionsName: 'archetypeOptions'
+    },
     'concept',
-    'clan',
+    {
+      name: 'clan',
+      optionsName: 'clanOptions'
+    },
     {
       name: 'generation',
-      dataListId: 'generation-data-list'
+      optionsName: 'generationOptions'
     },
     'sire'
   ]
