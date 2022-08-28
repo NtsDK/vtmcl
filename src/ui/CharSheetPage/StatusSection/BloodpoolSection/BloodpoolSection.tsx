@@ -26,9 +26,10 @@ export function BloodpoolSection(props: BloodpoolSectionProps) {
         name="bloodpool"
         value={state.bloodpool}
         onClick={(value: number) => setState('bloodpool', value)}
-        className="tw-h-12 tw-mb-1"
+        className="tw-h-12 tw-mb-2"
         splitEvery={10}
         variant='square'
+        multiplier={1.3}
       />
       <div className='tw-text-center tw-text-sm'>
         <label htmlFor='bloodPerTurn.input'>

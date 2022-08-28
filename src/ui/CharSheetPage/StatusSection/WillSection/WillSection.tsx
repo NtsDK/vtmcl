@@ -25,6 +25,7 @@ export function WillSection(props: WillSectionProps) {
           value={state.willpowerRating}
           onClick={(value: number) => setState('willpowerRating', value)}
           className="tw-h-6"
+          multiplier={1.3}
         />
       </fieldset>
       <fieldset aria-label={t('charsheet.status.willpower-pool')}>
@@ -35,6 +36,7 @@ export function WillSection(props: WillSectionProps) {
           onClick={(value: number) => setState('willpowerPool', value)}
           className="tw-h-6"
           variant='square'
+          multiplier={1.3}
         />
       </fieldset>
     </div>

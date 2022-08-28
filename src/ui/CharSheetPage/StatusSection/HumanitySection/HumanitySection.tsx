@@ -48,6 +48,7 @@ export function HumanitySection(props: HumanitySectionProps) {
         value={state.humanity}
         onClick={(value: number) => setState('humanity', value)}
         className="tw-h-6 tw-mb-2"
+        multiplier={1.3}
       />
       <div className='tw-text-center tw-text-sm'>
         <label htmlFor='bearingName.input'>

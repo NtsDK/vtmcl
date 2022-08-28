@@ -12,6 +12,7 @@ interface RangeInput2Props {
   className?: string;
   splitEvery?: number;
   variant?: 'circle' | 'square';
+  multiplier?: number;
 }
 
 export function RangeInput2(props: RangeInput2Props) {
@@ -22,7 +23,8 @@ export function RangeInput2(props: RangeInput2Props) {
     className,
     name,
     splitEvery,
-    variant = 'circle'
+    variant = 'circle',
+    multiplier = 1
   } = props;
 
   const onClickWrapper: MouseEventHandler<HTMLInputElement> = function (event) {
@@ -31,8 +33,8 @@ export function RangeInput2(props: RangeInput2Props) {
     onClick(indexNum === value ? indexNum - 1 : indexNum);
   }
 
-  const cellWidth = '1.0rem';
-  const cellHeight = '1.25rem';
+  const cellWidth = 1.0 * multiplier;
+  const cellHeight = 1.25 * multiplier;
 
   return (
     <div
@@ -43,8 +45,8 @@ export function RangeInput2(props: RangeInput2Props) {
         className='tw-h-6'
         style={{
           display: 'inline-grid',
-          gridTemplateRows: splitEvery === undefined ? cellHeight : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight})`,
-          gridTemplateColumns: splitEvery === undefined ? `repeat(${max}, ${cellWidth})` : `repeat(${splitEvery}, ${cellWidth})`
+          gridTemplateRows: splitEvery === undefined ? `${cellHeight}rem` : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight}rem)`,
+          gridTemplateColumns: splitEvery === undefined ? `repeat(${max}, ${cellWidth}rem)` : `repeat(${splitEvery}, ${cellWidth}rem)`
         }}
       >
         {
