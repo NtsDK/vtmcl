@@ -38,7 +38,7 @@ export function RangeInput2(props: RangeInput2Props) {
 
   return (
     <div
-      className={classNames("RangeInput2 tw-text-center tw-leading-4", className)} //
+      className={classNames("RangeInput2 tw-text-center tw-leading-4 print:tw-leading-3", className)} //
     >
       <div
         className=''

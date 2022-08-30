@@ -16,17 +16,25 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   const { t } = useTranslation();
 
   return (
-    <div className={classnames("AdvantagesSection tw-flex tw-gap-x-4", className)}>
+    <div
+      className={classnames("AdvantagesSection tw-flex tw-gap-x-4", className)}
+    >
       <div className="tw-flex-1">
-        <Subheader className='tw-mb-2'>{t('charsheet.advantages.disciplines')}</Subheader>
+        <Subheader className='tw-mb-2 print:tw-hidden'>
+          {t('charsheet.advantages.disciplines')}
+        </Subheader>
         <DisciplinesSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader className='tw-mb-2'>{t('charsheet.advantages.backgrounds')}</Subheader>
+        <Subheader className='tw-mb-2 print:tw-hidden'>
+          {t('charsheet.advantages.backgrounds')}
+        </Subheader>
         <BackgroundsSection/>
       </div>
       <div className="tw-flex-1">
-        <Subheader className='tw-mb-2'>{t('charsheet.advantages.virtues')}</Subheader>
+        <Subheader className='tw-mb-2 print:tw-hidden'>
+          {t('charsheet.advantages.virtues')}
+        </Subheader>
         <VirtuesSection/>
       </div>
     </div>

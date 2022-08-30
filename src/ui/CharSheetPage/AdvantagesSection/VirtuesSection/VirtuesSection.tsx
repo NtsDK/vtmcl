@@ -29,7 +29,7 @@ export function VirtuesSection(props: VirtuesSectionProps) {
           <div
             role="group"
             key={item}
-            className={classnames("tw-text-sm tw-text-center", {
+            className={classnames("tw-text-sm tw-text-center print:tw-mb-0", {
               "tw-mb-2": index + 1 !== virtuesArr.length
             })}
             aria-labelledby={`virtue.label.${item}`}

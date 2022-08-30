@@ -58,7 +58,9 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
       {
         abilitiesConfig.map(({header, items, extension}) =>
           <div className='tw-flex-1' key={header}>
-            <Subheader>{t(`charsheet.abilities.${header}`)}</Subheader>
+            <Subheader className='print:tw-hidden'>
+              {t(`charsheet.abilities.${header}`)}
+            </Subheader>
             {
               items.map(ability =>
                 <div

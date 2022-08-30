@@ -581,12 +581,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.tw-mt-2 {
+  margin-top: 0.5rem;
+}
+
 .tw-mb-6 {
   margin-bottom: 1.5rem;
 }
 
-.tw-mt-2 {
-  margin-top: 0.5rem;
+.tw-mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .tw-ml-2 {
@@ -599,10 +603,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-mb-0 {
   margin-bottom: 0px;
-}
-
-.tw-mb-1 {
-  margin-bottom: 0.25rem;
 }
 
 .tw-mr-3 {
@@ -653,14 +653,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.tw-h-4 {
-  height: 1rem;
-}
-
-.tw-h-5 {
-  height: 1.25rem;
 }
 
 .tw-w-full {
@@ -859,6 +851,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
+.tw-leading-3 {
+  line-height: .75rem;
+}
+
 .tw-text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -909,12 +905,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0px;
   }
 
+  .print\:tw-mb-0 {
+    margin-bottom: 0px;
+  }
+
   .print\:tw-hidden {
     display: none;
   }
 
   .print\:tw-w-32 {
     width: 8rem;
+  }
+
+  .print\:tw-leading-3 {
+    line-height: .75rem;
   }
 
   .print\:tw-outline-transparent {
