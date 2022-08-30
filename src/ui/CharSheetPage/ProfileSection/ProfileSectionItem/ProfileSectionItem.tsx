@@ -36,7 +36,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
   }
 
   return (
-    <div className='ProfileSectionItem tw-flex'>
+    <div className='ProfileSectionItem tw-flex tw-mb-2 print:tw-mb-0'>
       <label
         className='tw-mb-0 tw-text-sm tw-flex-0'
         htmlFor={`profileItem_${itemName}`}
