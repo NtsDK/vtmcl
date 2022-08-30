@@ -56,7 +56,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
       {
         items.map(({name, value}, index) =>
           <div
-            className='tw-mb-3'
+            className='tw-mb-3 print:tw-mb-1'
             key={`${sectionItemName}.${index}`}
             role="group"
             aria-labelledby={`${sectionItemName}.label.${index}`}
@@ -92,7 +92,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
               name={`${sectionItemName}.${index}`}
               value={value}
               onClick={(value: number) => setItemValue(index, value)}
-              className="tw-flex-grow tw-mt-2"
+              className="tw-flex-grow tw-mt-2 print:tw-mt-1"
             />
           </div>
         )
