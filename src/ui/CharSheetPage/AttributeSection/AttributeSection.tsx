@@ -45,7 +45,9 @@ export function AttributeSection(props: AttributeSectionProps) {
       {
         attributesConfig.map(({header, items}) =>
           <div className='tw-flex-1' key={header}>
-            <Subheader>{t(`charsheet.attributes.${header}`)}</Subheader>
+            <Subheader className='print:tw-hidden'>
+              {t(`charsheet.attributes.${header}`)}
+            </Subheader>
             {
               items.map(attribute =>
                 <div

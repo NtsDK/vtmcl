@@ -50,6 +50,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
         {t(`charsheet.profile.${itemName}`)}
       </label>
       <input
+        size={1}
         id={`profileItem_${itemName}`}
         style={{boxShadow: '0 1px 0 #333333'}}
         className='tw-flex-1 tw-mx-2

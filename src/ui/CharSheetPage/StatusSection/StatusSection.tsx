@@ -42,12 +42,12 @@ export function StatusSection(props: StatusSectionProps) {
         >
           {t('charsheet.status.humanity')}
         </Subheader>
-        <HumanitySection className="tw-mb-4"/>
+        <HumanitySection className="tw-mb-4 print:tw-mb-2"/>
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.willpower')}
         </Subheader>
-        <WillSection className="tw-mb-4"/>
+        <WillSection className="tw-mb-4 print:tw-mb-2"/>
 
         <Subheader
           id="bloodpool.header"
@@ -61,13 +61,13 @@ export function StatusSection(props: StatusSectionProps) {
         <Subheader className="tw-mb-2">
           {t('charsheet.status.health')}
         </Subheader>
-        <HealthSection className="tw-mb-6"/>
+        <HealthSection className="tw-mb-6 print:tw-mb-2"/>
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.weakness')}
         </Subheader>
 
-        <div className='tw-text-center tw-mx-6 tw-mb-6'>
+        <div className='tw-text-center tw-mx-6 tw-mb-6 print:tw-mb-2'>
           <input
             aria-label={t('charsheet.status.weakness')}
             style={{boxShadow: '0 1px 0 #333333'}}

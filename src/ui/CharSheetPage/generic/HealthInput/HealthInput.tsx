@@ -20,7 +20,7 @@ const damageTypes = [
 ] as const;
 
 export function HealthInput(props: HealthInputProps) {
-  const { 
+  const {
     className,
     name,
     value,
@@ -39,7 +39,7 @@ export function HealthInput(props: HealthInputProps) {
       {
         damageTypes.map((damageType, index) => {
           return (
-            <input 
+            <input
               className={classNames("health-input-checkbox tw-w-5", {
                 'tw-sr-only': index !== value
               })}

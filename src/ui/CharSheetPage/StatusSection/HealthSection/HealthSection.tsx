@@ -43,10 +43,13 @@ export function HealthSection(props: HealthSectionProps) {
           <div
             role="group"
             key={name}
-            className="health-stat tw-flex tw-justify-center tw-mb-1"
+            className="health-stat tw-flex tw-justify-center tw-mb-1 print:tw-mb-0"
             aria-labelledby={`healthLevel.label.${name}`}
           >
-            <label className="tw-mb-0" id={`healthLevel.label.${name}`}>
+            <label
+              className="tw-mb-0"
+              id={`healthLevel.label.${name}`}
+            >
               <span className="health-stat-label tw-text-sm tw-inline-block tw-w-28">
                 {t(`charsheet.status.${name}`)}
               </span>
