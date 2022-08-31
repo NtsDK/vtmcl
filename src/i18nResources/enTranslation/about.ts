@@ -15,6 +15,10 @@ export const about = {
   'tg-channel': 'Project channel in Telegram',
   'tg-chat': 'Project chat in Telegram',
   'project-source': 'Project source code',
+  'studio-101': 'Publisher and translator of role-playing games Studio 101, rulebooks on paper in Russian on sale',
+  'rpgbook': 'Webstore stanciya «Rolevaya», e-rulebooks in Russian on sale',
+  'onyxpath': 'Publisher and developer of role-playing games Onyx Path Publishing',
+  'worldofdarkness': 'World of Darkness game universe website',
 
   'version-history': 'Version history',
   'version-0.2.4': 'Version 0.2.4 (28 Aug 2022) - Now character sheet supports all single page features of official and Studio 101 character sheets. Added selects with English translation support.',
@@ -26,4 +30,8 @@ export const about = {
   'project-members': 'Contributors',
   'ntsdk': 'Timofei NtsDK Rechkalov - development',
   'mellon': 'Pavel Mellon Sineglazov - design',
+
+  'legal-information': 'Legal information',
+  'paradox-copyright': 'Text and illustrations, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.',
+  'studio-101-copyright': 'Russian translation © «Studio 101», 2019.',
 };

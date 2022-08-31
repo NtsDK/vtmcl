@@ -609,10 +609,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.75rem;
 }
 
-.tw-block {
-  display: block;
-}
-
 .tw-inline-block {
   display: inline-block;
 }
@@ -695,14 +691,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
-.tw-w-auto {
-  width: auto;
-}
-
-.tw-min-w-0 {
-  min-width: 0px;
-}
-
 .tw-max-w-sm {
   max-width: 24rem;
 }
@@ -725,10 +713,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-grow {
   flex-grow: 1;
-}
-
-.tw-basis-0 {
-  flex-basis: 0px;
 }
 
 .tw-appearance-none {
@@ -759,11 +743,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-gap-x-4 {
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
-}
-
-.tw-gap-x-8 {
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
 }
 
 .tw-border-2 {
@@ -800,11 +779,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.tw-bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .tw-py-3 {
@@ -872,10 +846,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
-.tw-leading-3 {
-  line-height: .75rem;
-}
-
 .tw-text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -926,20 +896,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0px;
   }
 
-  .print\:tw-mb-0 {
-    margin-bottom: 0px;
-  }
-
   .print\:tw-mb-2 {
     margin-bottom: 0.5rem;
   }
 
-  .print\:tw-mt-1 {
-    margin-top: 0.25rem;
+  .print\:tw-mb-0 {
+    margin-bottom: 0px;
   }
 
   .print\:tw-mb-1 {
     margin-bottom: 0.25rem;
+  }
+
+  .print\:tw-mt-1 {
+    margin-top: 0.25rem;
   }
 
   .print\:tw-hidden {
@@ -948,10 +918,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .print\:tw-w-32 {
     width: 8rem;
-  }
-
-  .print\:tw-w-4 {
-    width: 1rem;
   }
 
   .print\:tw-leading-3 {

@@ -56,6 +56,27 @@ export function AboutPage(props: AboutPageProps) {
                       {t('about.project-source')}
                     </a>
                   </li>
+
+                  <li>
+                    <a href="http://studio101.ru">
+                      {t('about.studio-101')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://rpgbook.ru">
+                      {t('about.rpgbook')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://theonyxpath.com/">
+                      {t('about.onyxpath')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.worldofdarkness.com/">
+                      {t('about.worldofdarkness')}
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -83,7 +104,7 @@ export function AboutPage(props: AboutPageProps) {
               </div>
             </div>
 
-            <div>
+            <div className="tw-mb-8">
               <h2 className="tw-text-lg">
                 {t('about.project-members')}
               </h2>
@@ -93,6 +114,20 @@ export function AboutPage(props: AboutPageProps) {
                 </li>
                 <li>
                   {t('about.mellon')}
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="tw-text-lg">
+                {t('about.legal-information')}
+              </h2>
+              <ul>
+                <li>
+                  {t('about.paradox-copyright')}
+                </li>
+                <li>
+                  {t('about.studio-101-copyright')}
                 </li>
               </ul>
             </div>
