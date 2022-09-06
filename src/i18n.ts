@@ -4,6 +4,17 @@ import { resources, defaultLang } from './i18nResources';
 // see https://www.npmjs.com/package/i18next-browser-languagedetector
 // for details
 import LanguageDetector from 'i18next-browser-languagedetector';
+const languageDetector = new LanguageDetector();
+languageDetector.addDetector({
+  name: 'reactSnap',
+
+  lookup(options) {
+    if ( navigator.userAgent === 'ReactSnap' ) {
+      return 'ru';
+    }
+    return undefined;
+  },
+});
 
 // const setHtmlLangAttr = (lng: string) => {
 //   console.log(2233);
@@ -17,7 +28,7 @@ i18n.on('languageChanged', (lng) => {
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
-  .use(LanguageDetector)
+  .use(languageDetector)
   .init({
     resources,
     // lng: lang,
@@ -28,6 +39,19 @@ i18n
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
+    detection: {
+      order: ['reactSnap', 'querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      lookupSessionStorage: 'i18nextLng',
+
+      // cache user language
+      caches: ['localStorage'],
+      excludeCacheFor: ['cimode'],
+      //cookieMinutes: 10,
+      //cookieDomain: 'myDomain'
+    }
   });
 
 export { i18n };
