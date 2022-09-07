@@ -27,7 +27,7 @@ import { AboutPage } from './ui/AboutPage';
 
 import { useSettings } from './services/storageAdapter';
 import { ControlPanel } from './ui/ControlPanel';
-import { useCharsheetContentI18n } from './useCharsheetContentI18n';
+import { useCharsheetContentI18n } from './i18nResources';
 
 function App() {
   const { t } = useTranslation();

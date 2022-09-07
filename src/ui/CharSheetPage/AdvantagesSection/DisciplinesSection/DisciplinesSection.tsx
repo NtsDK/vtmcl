@@ -5,7 +5,7 @@ import './DisciplinesSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../useResource';
+import { useResource } from '../../../../i18nResources';
 
 interface DisciplinesSectionProps {
   className?: string;

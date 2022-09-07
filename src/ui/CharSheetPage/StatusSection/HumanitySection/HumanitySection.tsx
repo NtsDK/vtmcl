@@ -7,7 +7,7 @@ import { useStateNHealth } from '../../../../services/storageAdapter';
 
 import './HumanitySection.css';
 import { SelectButton } from '../../generic/SelectButton';
-import { useResource } from '../../../../useResource';
+import { useResource } from '../../../../i18nResources';
 
 interface HumanitySectionProps {
   className?: string;

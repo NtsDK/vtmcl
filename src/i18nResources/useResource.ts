@@ -16,7 +16,7 @@ import {
   flaws_ru,
   merits_en,
   merits_ru
-} from "./i18nResources";
+} from "./dropdownContent";
 
 export function useResource() {
   const { i18n } = useTranslation();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useStore } from './services/store';
+import { useStore } from '../services/store';
 import {
   translateArchetype,
   translateGeneration,
@@ -10,7 +10,7 @@ import {
   translateDiscipline,
   translatePath,
   translateMeritsAndFlaws
-} from "./i18nResources";
+} from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
   const { i18n } = useTranslation();
