@@ -17,6 +17,7 @@ import { profileConfig } from '../../domain';
 
 import './CharSheetPage.css';
 import { GameUtilsPanel } from './GameUtilsPanel';
+import { PresetSelect } from './PresetSelect';
 
 interface CharSheetPageProps {
 }
@@ -41,12 +42,20 @@ export function CharSheetPage(props: CharSheetPageProps) {
     <DocumentTitle title={title}>
       <main className="CharSheetPage tw-flex">
         <div className='tw-mx-auto tw-my-0 print:tw-m-0'>
-          <CharSheetBody>
+          <CharSheetBody
+            className='tw-relative'
+          >
             <h1 className="tw-sr-only">{title}</h1>
+            <PresetSelect
+              className='tw-absolute tw-top-0 tw-right-0'
+            />
             <SectionHeader className="tw-mb-3 tw-sr-only">
               {t('charsheet.profile.header')}
             </SectionHeader>
-            <ProfileSection className="tw-mb-3" profileConfig={profileConfig}/>
+            <ProfileSection
+              className="tw-mb-3 tw-mt-4"
+              profileConfig={profileConfig}
+            />
             <SectionHeader className="tw-mb-3">
               {t('charsheet.attributes.header')}
             </SectionHeader>

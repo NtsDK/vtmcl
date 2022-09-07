@@ -18,6 +18,7 @@ import {
   Health,
   Merits,
   Notes,
+  Preset,
   Profile,
   Settings,
   State,
@@ -25,6 +26,11 @@ import {
 } from "../domain";
 
 // char sheet
+
+export interface PresetService {
+  preset: Preset;
+  setPreset(preset: Preset): void;
+}
 
 export interface ProfileService {
   profile: Profile;

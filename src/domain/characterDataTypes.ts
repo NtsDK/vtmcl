@@ -4,6 +4,11 @@ export type Preset =
   | 'changeling_v20'
 ;
 
+export const presetList: Preset[] = [
+  'vampire_v20',
+  'changeling_v20'
+];
+
 // Profile
 export interface Profile {
   name: string;

@@ -18,6 +18,7 @@ import {
   VirtuesService,
   CharSheetStorageService,
   AbilitiesExtensionService,
+  PresetService,
 } from "../application/ports";
 import {
   Attributes,
@@ -70,6 +71,7 @@ import {
 import { CURRENT_VERSION } from "../constants";
 
 interface StateStore extends
+  PresetService,
   ProfileService,
   AttributesService,
   AbilitiesService,
@@ -97,7 +99,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
 
   const [initialized, setInitialized] = useState(false);
 
-  const [preset, setPreset] = useState<Preset>(initialPreset);
+  const [preset, setPresetValue] = useState<Preset>(initialPreset);
   const [profile, setProfile] = useState<Profile>(initialProfile);
   const [attributes, setAttributes] = useState<Attributes>(initialAttributes);
   const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
@@ -167,6 +169,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   ] = useState<ErrorDescription | null>(null);
 
   function setCharSheet(cs: CharSheet) {
+    setPresetValue(cs.preset);
     setProfile(cs.profile);
     setAttributes(cs.attributes);
     setAbilities(cs.abilities);
@@ -200,6 +203,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   }
 
   const value: StateStore = {
+    preset,
+    setPreset(preset2: Preset) {
+      setPresetValue(preset2);
+    },
     profile,
     setProfileItem(itemName: keyof Profile, value: string) {
       setProfile((prevProfile) => ({

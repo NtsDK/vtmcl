@@ -8,6 +8,7 @@ import {
   ErrorDescriptionService,
   MeritsNFlawsService,
   NotesService,
+  PresetService,
   ProfileService,
   SettingsService,
   StateNHealthService,
@@ -19,6 +20,9 @@ export function useErrorDescription(): ErrorDescriptionService {
   return useStore();
 }
 export function useCharSheetStorage(): CharSheetStorageService {
+  return useStore();
+}
+export function usePreset(): PresetService {
   return useStore();
 }
 export function useProfile(): ProfileService {

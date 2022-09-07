@@ -482,6 +482,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
+.tw-absolute {
+  position: absolute;
+}
+
+.tw-relative {
+  position: relative;
+}
+
 .tw-sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -497,6 +505,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-right-8 {
   right: 2rem;
+}
+
+.tw-right-0 {
+  right: 0px;
 }
 
 .tw-float-right {
