@@ -37,6 +37,10 @@ export const abilitiesSchema: JSONSchemaType<Abilities> = {
     "politics":       {type: "number"},
     "science":        {type: "number"},
     "technology":     {type: "number"},
+
+    "enigmas":        {type: "number"},
+    "gremayre":       {type: "number"},
+    "kenning":        {type: "number"},
   },
   required: [
     "alertness",
@@ -69,6 +73,10 @@ export const abilitiesSchema: JSONSchemaType<Abilities> = {
     "politics",
     "science",
     "technology",
+
+    "enigmas",
+    "gremayre",
+    "kenning",
   ],
   additionalProperties: false,
 };

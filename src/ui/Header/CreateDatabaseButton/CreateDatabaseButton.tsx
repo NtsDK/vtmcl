@@ -23,7 +23,9 @@ import {
   initialProfile,
   initialSettings,
   initialState,
-  initialVirtues
+  initialVirtues,
+  initialArts,
+  initialRealms
 } from "../../../services/initialValues";
 import { CURRENT_VERSION } from "../../../constants";
 
@@ -52,7 +54,10 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       flaws: initialFlaws,
       state: initialState,
       health: initialHealth,
-      notes: initialNotes
+      notes: initialNotes,
+
+      arts: initialArts,
+      realms: initialRealms,
     }));
   }
 

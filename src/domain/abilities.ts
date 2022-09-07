@@ -29,6 +29,11 @@ export interface Abilities {
   "politics": number;
   "science": number;
   "technology": number;
+
+  // changeling
+  "kenning": number;
+  "enigmas": number;
+  "gremayre": number;
 }
 
 export const talentsArr: (keyof Abilities)[] = [

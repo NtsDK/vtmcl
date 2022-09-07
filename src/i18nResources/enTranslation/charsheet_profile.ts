@@ -11,5 +11,12 @@ export const profile = {
   'clan': 'Clan:',
   'generation': 'Generation:',
   'sire': 'Sire:',
-  'select-label': 'Select {{title}}'
+  'select-label': 'Select {{title}}',
+
+  'court': 'Court:',
+  'legacies': 'Legacies:',
+  'house': 'House:',
+  'seeming': 'Seeming:',
+  'kith': 'Kith:',
+  'motley': 'Motley:',
 };

@@ -3,6 +3,7 @@ import {
   AbilitiesExtension
 } from "./abilities";
 import {
+  Arts,
   Attributes,
   Backgrounds,
   Disciplines,
@@ -11,6 +12,7 @@ import {
   Merits,
   Notes,
   Profile,
+  Realms,
   State,
   Virtues
 } from "./characterDataTypes";
@@ -34,4 +36,7 @@ export interface CharSheet {
   state: State;
   health: Health;
   notes: Notes;
+
+  arts: Arts;
+  realms: Realms;
 }

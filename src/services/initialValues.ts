@@ -1,6 +1,7 @@
 import {
   Abilities,
   AbilitiesExtension,
+  Arts,
   Attributes,
   Backgrounds,
   Disciplines,
@@ -9,6 +10,7 @@ import {
   Merits,
   Notes,
   Profile,
+  Realms,
   Settings,
   State,
   Virtues
@@ -27,7 +29,14 @@ export const initialProfile: Profile = {
   concept: "",
   clan: "",
   generation: "",
-  sire: ""
+  sire: "",
+
+  court: "",
+  house: "",
+  kith: "",
+  legacies: "",
+  motley: "",
+  seeming: "",
 };
 export const initialAttributes: Attributes = {
   "strength": 1,
@@ -71,7 +80,11 @@ export const initialAbilities: Abilities = {
   "occult": 0,
   "politics": 0,
   "science": 0,
-  "technology": 0
+  "technology": 0,
+
+  "enigmas": 0,
+  "gremayre": 0,
+  "kenning": 0
 };
 
 export const initialAbilitiesExtension: AbilitiesExtension = {
@@ -92,10 +105,19 @@ export const initialAbilitiesExtension: AbilitiesExtension = {
 // advantages
 export const initialDisciplines: Disciplines = [];
 export const initialBackgrounds: Backgrounds = [];
+export const initialArts: Arts = [];
 export const initialVirtues: Virtues = {
   "conscience": 1,
   "self_control": 1,
   "courage": 1
+};
+export const initialRealms: Realms = {
+  actor: 0,
+  fae: 0,
+  nature: 0,
+  prop: 0,
+  scene: 0,
+  time: 0,
 };
 
 // status

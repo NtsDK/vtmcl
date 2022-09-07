@@ -12,6 +12,14 @@ export interface Profile {
   "clan": string;
   "generation": string;
   "sire": string;
+
+  // changeling
+  "court": string;
+  "legacies": string;
+  "house": string;
+  "seeming": string;
+  "kith": string;
+  "motley": string;
 }
 
 export type ProfileConfigItem = keyof Profile | {
@@ -87,6 +95,21 @@ export type Backgrounds = {
   name: string,
   value: number
 }[];
+
+// Changeling
+export type Arts = {
+  name: string,
+  value: number
+}[];
+
+export interface Realms {
+  "actor": number;
+  "fae": number;
+  "nature": number;
+  "prop": number;
+  "scene": number;
+  "time": number;
+}
 
 // Whole state
 export interface State {

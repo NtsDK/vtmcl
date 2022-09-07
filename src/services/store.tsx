@@ -38,6 +38,8 @@ import {
   Settings,
   State,
   Virtues,
+  Realms,
+  Arts,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -57,7 +59,9 @@ import {
   initialProfile,
   initialSettings,
   initialState,
-  initialVirtues
+  initialVirtues,
+  initialArts,
+  initialRealms
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
@@ -104,6 +108,9 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [health, setHealth] = useState<Health>(initialHealth);
   const [notes, setNotes] = useState<Notes>(initialNotes);
 
+  const [arts, setArts] = useState<Arts>(initialArts);
+  const [realms, setRealms] = useState<Realms>(initialRealms);
+
   const [settings, setSettings] = useState<Settings>(initialSettings);
 
   useEffect(() => {
@@ -120,6 +127,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       state,
       health,
       notes,
+      arts,
+      realms,
       Settings: settings,
       Version: CURRENT_VERSION
     }))
@@ -137,6 +146,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     health,
     notes,
     settings,
+    arts,
+    realms,
   ]);
 
   // const [servers, innerSetServers] = useState<Server[]>(initialServers);
@@ -366,7 +377,9 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         flaws,
         state,
         health,
-        notes
+        notes,
+        arts,
+        realms,
       };
     },
     setCharSheet,

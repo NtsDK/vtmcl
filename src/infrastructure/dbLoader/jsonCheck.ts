@@ -16,7 +16,14 @@ export const m: CharSheetInJson = {
       "concept": "",
       "clan": "",
       "generation": "",
-      "sire": ""
+      "sire": "",
+
+      court: "",
+      house: "",
+      kith: "",
+      legacies: "",
+      motley: "",
+      seeming: "",
     },
     "attributes": {
       "strength": 3,
@@ -59,7 +66,11 @@ export const m: CharSheetInJson = {
       "occult": 0,
       "politics": 0,
       "science": 0,
-      "technology": 0
+      "technology": 0,
+
+      enigmas: 0,
+      gremayre: 0,
+      kenning: 0,
     },
     "abilitiesExtension": {
       "talentName1": "",
@@ -109,7 +120,18 @@ export const m: CharSheetInJson = {
       "crippled": 0,
       "incapacitated": 0
     },
-    "notes": "sdsdsdf"
+    "notes": "sdsdsdf",
+    arts: [
+      { name: "art", value: 1 }
+    ],
+    realms: {
+      actor: 0,
+      fae: 0,
+      nature: 0,
+      prop: 0,
+      scene: 0,
+      time: 0,
+    }
   },
   "Settings": {
     "backgroundColor": "#ababab",

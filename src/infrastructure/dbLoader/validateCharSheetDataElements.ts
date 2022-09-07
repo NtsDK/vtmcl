@@ -10,7 +10,8 @@ import {
   Health,
   Notes,
   Virtues,
-  State
+  State,
+  Realms
 } from "../../domain";
 
 
@@ -21,17 +22,24 @@ export const notesSchema: JSONSchemaType<Notes> = {
 export const profileSchema: JSONSchemaType<Profile> = {
   type: "object",
   properties: {
-    "name":       {type: "string"},
-    "player":     {type: "string"},
-    "chronicle":  {type: "string"},
-    "nature":     {type: "string"},
-    "age":        {type: "string"},
-    "sex":        {type: "string"},
-    "demeanor":   {type: "string"},
-    "concept":    {type: "string"},
-    "clan":       {type: "string"},
-    "generation": {type: "string"},
-    "sire":       {type: "string"},
+    name:       {type: "string"},
+    player:     {type: "string"},
+    chronicle:  {type: "string"},
+    nature:     {type: "string"},
+    age:        {type: "string"},
+    sex:        {type: "string"},
+    demeanor:   {type: "string"},
+    concept:    {type: "string"},
+    clan:       {type: "string"},
+    generation: {type: "string"},
+    sire:       {type: "string"},
+
+    court:      {type: "string"},
+    house:      {type: "string"},
+    kith:       {type: "string"},
+    legacies:   {type: "string"},
+    motley:     {type: "string"},
+    seeming:    {type: "string"},
   },
   required: [
     "name",
@@ -45,6 +53,13 @@ export const profileSchema: JSONSchemaType<Profile> = {
     "clan",
     "generation",
     "sire",
+
+    "court",
+    "house",
+    "kith",
+    "legacies",
+    "motley",
+    "seeming",
   ],
   additionalProperties: false,
 };
@@ -52,15 +67,15 @@ export const profileSchema: JSONSchemaType<Profile> = {
 export const attributesSchema: JSONSchemaType<Attributes> = {
   type: "object",
   properties: {
-    "strength":       {type: "number"},
-    "dexterity":       {type: "number"},
-    "stamina":       {type: "number"},
-    "charisma":       {type: "number"},
-    "manipulation":       {type: "number"},
-    "appearance":       {type: "number"},
-    "perception":       {type: "number"},
-    "intelligence":       {type: "number"},
-    "wits":       {type: "number"},
+    "strength":     {type: "number"},
+    "dexterity":    {type: "number"},
+    "stamina":      {type: "number"},
+    "charisma":     {type: "number"},
+    "manipulation": {type: "number"},
+    "appearance":   {type: "number"},
+    "perception":   {type: "number"},
+    "intelligence": {type: "number"},
+    "wits":         {type: "number"},
   },
   required: [
     "strength",
@@ -91,16 +106,37 @@ export const virtuesSchema: JSONSchemaType<Virtues> = {
   additionalProperties: false,
 };
 
+export const realmsSchema: JSONSchemaType<Realms> = {
+  type: "object",
+  properties: {
+    actor:  {type: "number"},
+    fae:    {type: "number"},
+    nature: {type: "number"},
+    prop:   {type: "number"},
+    scene:  {type: "number"},
+    time:   {type: "number"},
+  },
+  required: [
+    "actor",
+    "fae",
+    "nature",
+    "prop",
+    "scene",
+    "time",
+  ],
+  additionalProperties: false,
+};
+
 export const healthSchema: JSONSchemaType<Health> = {
   type: "object",
   properties: {
-    "bruised":   {type: "number"},
-    "hurt":   {type: "number"},
-    "injured":   {type: "number"},
-    "wounded":   {type: "number"},
-    "mauled":   {type: "number"},
-    "crippled":   {type: "number"},
-    "incapacitated":   {type: "number"},
+    "bruised":        {type: "number"},
+    "hurt":           {type: "number"},
+    "injured":        {type: "number"},
+    "wounded":        {type: "number"},
+    "mauled":         {type: "number"},
+    "crippled":       {type: "number"},
+    "incapacitated":  {type: "number"},
   },
   required: [
     "bruised",
@@ -160,6 +196,7 @@ const stringNumberArrSchema: JSONSchemaType<Backgrounds & Disciplines> = {
 
 export const disciplinesSchema = stringNumberArrSchema;
 export const backgroundsSchema = stringNumberArrSchema;
+export const artsSchema = stringNumberArrSchema;
 
 const stringArraySchema: JSONSchemaType<Flaws & Merits> = {
   type: "array",

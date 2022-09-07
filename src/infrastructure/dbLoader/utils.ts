@@ -21,7 +21,9 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       state: {
         ...charSheet.state,
       },
-      health: charSheet.health
+      health: charSheet.health,
+      arts: charSheet.arts,
+      realms: charSheet.realms,
     },
   };
 }
@@ -42,6 +44,8 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     notes: charSheetInJson.Charsheet.notes,
     virtues: charSheetInJson.Charsheet.virtues,
     state: charSheetInJson.Charsheet.state,
-    health: charSheetInJson.Charsheet.health
+    health: charSheetInJson.Charsheet.health,
+    arts: charSheetInJson.Charsheet.arts,
+    realms: charSheetInJson.Charsheet.realms,
   };
 }
