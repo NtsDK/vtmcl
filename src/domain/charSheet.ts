@@ -11,6 +11,7 @@ import {
   Health,
   Merits,
   Notes,
+  Preset,
   Profile,
   Realms,
   State,
@@ -24,6 +25,7 @@ import {
 export interface CharSheet {
   Version: Version;
   Settings: Settings;
+  preset: Preset;
   profile: Profile;
   attributes: Attributes;
   abilities: Abilities;
@@ -35,6 +37,7 @@ export interface CharSheet {
   flaws: Flaws;
   state: State;
   health: Health;
+  healthChimerical: Health;
   notes: Notes;
 
   arts: Arts;

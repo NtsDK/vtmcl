@@ -41,21 +41,68 @@ export function migrate(charSheetSrc: any): unknown {
 
     // add abilitiesExtension
     charSheet.Charsheet.abilitiesExtension = {
-      "talentName1": "",
-      "talentValue1": 0,
-      "talentName2": "",
-      "talentValue2": 0,
-      "skillName1": "",
-      "skillValue1": 0,
-      "skillName2": "",
-      "skillValue2": 0,
-      "knowledgeName1": "",
-      "knowledgeValue1": 0,
-      "knowledgeName2": "",
-      "knowledgeValue2": 0,
+      talentName1: "",
+      talentValue1: 0,
+      talentName2: "",
+      talentValue2: 0,
+      skillName1: "",
+      skillValue1: 0,
+      skillName2: "",
+      skillValue2: 0,
+      knowledgeName1: "",
+      knowledgeValue1: 0,
+      knowledgeName2: "",
+      knowledgeValue2: 0,
     };
 
     charSheet.Version = '0.2.4';
+  }
+
+  if (charSheet.Version === '0.2.4') {
+    charSheet.Charsheet.preset = 'vampire_v20';
+
+    charSheet.Charsheet.profile.court = '';
+    charSheet.Charsheet.profile.house = '';
+    charSheet.Charsheet.profile.kith = '';
+    charSheet.Charsheet.profile.legacies = '';
+    charSheet.Charsheet.profile.motley = '';
+    charSheet.Charsheet.profile.seeming = '';
+
+    charSheet.Charsheet.abilities.kenning = 0;
+    charSheet.Charsheet.abilities.enigmas = 0;
+    charSheet.Charsheet.abilities.gremayre = 0;
+
+    charSheet.Charsheet.arts = [];
+    charSheet.Charsheet.realms = {
+      actor: 0,
+      fae: 0,
+      nature: 0,
+      prop: 0,
+      scene: 0,
+      time: 0,
+    };
+
+    charSheet.Charsheet.state.antithesis = '';
+    charSheet.Charsheet.state.thresholds = '';
+    charSheet.Charsheet.state.birthrightsFrailties = '';
+
+    charSheet.Charsheet.state.glamourRating = 0;
+    charSheet.Charsheet.state.glamourPool = 0;
+    charSheet.Charsheet.state.banalityRating = 0;
+    charSheet.Charsheet.state.banalityPool = 0;
+    charSheet.Charsheet.state.nightmare = 0;
+
+    charSheet.Charsheet.healthChimerical = {
+      bruised: 0,
+      hurt: 0,
+      injured: 0,
+      wounded: 0,
+      mauled: 0,
+      crippled: 0,
+      incapacitated: 0
+    };
+
+    charSheet.Version = '0.2.5';
   }
   return charSheet;
 }

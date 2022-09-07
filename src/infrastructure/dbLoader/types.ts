@@ -17,9 +17,11 @@ import {
   AbilitiesExtension,
   Arts,
   Realms,
+  Preset,
 } from "../../domain";
 
 export interface CharSheetData {
+  preset: Preset;
   profile: Profile;
   attributes: Attributes;
   abilities: Abilities;
@@ -31,6 +33,7 @@ export interface CharSheetData {
   flaws: Flaws;
   state: State;
   health: Health;
+  healthChimerical: Health;
   notes: Notes;
   arts: Arts;
   realms: Realms;

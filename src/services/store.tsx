@@ -40,6 +40,7 @@ import {
   Virtues,
   Realms,
   Arts,
+  Preset,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -61,7 +62,8 @@ import {
   initialState,
   initialVirtues,
   initialArts,
-  initialRealms
+  initialRealms,
+  initialPreset
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
@@ -95,6 +97,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
 
   const [initialized, setInitialized] = useState(false);
 
+  const [preset, setPreset] = useState<Preset>(initialPreset);
   const [profile, setProfile] = useState<Profile>(initialProfile);
   const [attributes, setAttributes] = useState<Attributes>(initialAttributes);
   const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
@@ -106,6 +109,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [flaws, setFlaws] = useState<Flaws>(initialFlaws);
   const [state, setState] = useState<State>(initialState);
   const [health, setHealth] = useState<Health>(initialHealth);
+  const [healthChimerical, setHealthChimerical] = useState<Health>(R.clone(initialHealth));
   const [notes, setNotes] = useState<Notes>(initialNotes);
 
   const [arts, setArts] = useState<Arts>(initialArts);
@@ -115,6 +119,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
 
   useEffect(() => {
     saveCharSheetInLS(R.clone({
+      preset,
       profile,
       attributes,
       abilities,
@@ -126,6 +131,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       flaws,
       state,
       health,
+      healthChimerical,
       notes,
       arts,
       realms,
@@ -133,6 +139,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       Version: CURRENT_VERSION
     }))
   }, [
+    preset,
     profile,
     attributes,
     abilities,
@@ -144,6 +151,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     flaws,
     state,
     health,
+    healthChimerical,
     notes,
     settings,
     arts,
@@ -366,6 +374,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       return {
         Version: CURRENT_VERSION,
         Settings: settings,
+        preset,
         profile,
         attributes,
         abilities,
@@ -377,6 +386,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         flaws,
         state,
         health,
+        healthChimerical,
         notes,
         arts,
         realms,

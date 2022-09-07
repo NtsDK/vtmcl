@@ -1,25 +1,30 @@
+// preset
+export type Preset =
+  | 'vampire_v20'
+  | 'changeling_v20'
+;
 
 // Profile
 export interface Profile {
-  "name": string;
-  "player": string;
-  "chronicle": string;
-  "nature": string;
-  "age": string;
-  "sex": string;
-  "demeanor": string;
-  "concept": string;
-  "clan": string;
-  "generation": string;
-  "sire": string;
+  name: string;
+  player: string;
+  chronicle: string;
+  nature: string;
+  age: string;
+  sex: string;
+  demeanor: string;
+  concept: string;
+  clan: string;
+  generation: string;
+  sire: string;
 
   // changeling
-  "court": string;
-  "legacies": string;
-  "house": string;
-  "seeming": string;
-  "kith": string;
-  "motley": string;
+  court: string;
+  legacies: string;
+  house: string;
+  seeming: string;
+  kith: string;
+  motley: string;
 }
 
 export type ProfileConfigItem = keyof Profile | {
@@ -59,15 +64,15 @@ export const profileConfig: ProfileConfig = [[
 
 // Attributes
 export interface Attributes {
-  "strength": number;
-  "dexterity": number;
-  "stamina": number;
-  "charisma": number;
-  "manipulation": number;
-  "appearance": number;
-  "perception": number;
-  "intelligence": number;
-  "wits": number;
+  strength: number;
+  dexterity: number;
+  stamina: number;
+  charisma: number;
+  manipulation: number;
+  appearance: number;
+  perception: number;
+  intelligence: number;
+  wits: number;
 }
 
 export const physicalAttributesArr: (keyof Attributes)[] = [
@@ -82,9 +87,9 @@ export const mentalAttributesArr: (keyof Attributes)[] = [
 
 // Advantages
 export interface Virtues {
-  "conscience": number;
-  "self_control": number;
-  "courage": number;
+  conscience: number;
+  self_control: number;
+  courage: number;
 }
 
 export type Disciplines = {
@@ -103,40 +108,49 @@ export type Arts = {
 }[];
 
 export interface Realms {
-  "actor": number;
-  "fae": number;
-  "nature": number;
-  "prop": number;
-  "scene": number;
-  "time": number;
+  actor: number;
+  fae: number;
+  nature: number;
+  prop: number;
+  scene: number;
+  time: number;
 }
 
 // Whole state
 export interface State {
   // path
-  "humanity": number;
-  "pathName": string;
-  "bearingName": string;
-  "bearingModifier": string;
+  humanity: number;
+  pathName: string;
+  bearingName: string;
+  bearingModifier: string;
   // willpower
-  "willpowerRating": number;
-  "willpowerPool": number;
+  willpowerRating: number;
+  willpowerPool: number;
   // bloodpool
-  "bloodpool": number;
-  "bloodPerTurn": string;
+  bloodpool: number;
+  bloodPerTurn: string;
   // other
-  "weakness": string;
-  "experience": string;
+  weakness: string;
+  experience: string;
+  // changeling
+  antithesis: string;
+  thresholds: string;
+  birthrightsFrailties: string;
+  glamourRating: number;
+  glamourPool: number;
+  banalityRating: number;
+  banalityPool: number;
+  nightmare: number;
 }
 
 export interface Health {
-  "bruised": number;
-  "hurt": number;
-  "injured": number;
-  "wounded": number;
-  "mauled": number;
-  "crippled": number;
-  "incapacitated": number;
+  bruised: number;
+  hurt: number;
+  injured: number;
+  wounded: number;
+  mauled: number;
+  crippled: number;
+  incapacitated: number;
 }
 
 export type Merits = string[];

@@ -8,6 +8,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
     Settings: charSheet.Settings,
     Version: charSheet.Version,
     Charsheet: {
+      preset: charSheet.preset,
       profile: charSheet.profile,
       abilities: charSheet.abilities,
       abilitiesExtension: charSheet.abilitiesExtension,
@@ -22,6 +23,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
         ...charSheet.state,
       },
       health: charSheet.health,
+      healthChimerical: charSheet.healthChimerical,
       arts: charSheet.arts,
       realms: charSheet.realms,
     },
@@ -33,6 +35,7 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     Settings: charSheetInJson.Settings,
     Version: charSheetInJson.Version,
     // character
+    preset: charSheetInJson.Charsheet.preset,
     profile: charSheetInJson.Charsheet.profile,
     abilities: charSheetInJson.Charsheet.abilities,
     abilitiesExtension: charSheetInJson.Charsheet.abilitiesExtension,
@@ -45,6 +48,7 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     virtues: charSheetInJson.Charsheet.virtues,
     state: charSheetInJson.Charsheet.state,
     health: charSheetInJson.Charsheet.health,
+    healthChimerical: charSheetInJson.Charsheet.healthChimerical,
     arts: charSheetInJson.Charsheet.arts,
     realms: charSheetInJson.Charsheet.realms,
   };

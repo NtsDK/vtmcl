@@ -25,7 +25,8 @@ import {
   initialState,
   initialVirtues,
   initialArts,
-  initialRealms
+  initialRealms,
+  initialPreset
 } from "../../../services/initialValues";
 import { CURRENT_VERSION } from "../../../constants";
 
@@ -43,6 +44,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       Version: CURRENT_VERSION,
       Settings: initialSettings,
 
+      preset: initialPreset,
       profile: initialProfile,
       attributes: initialAttributes,
       abilities: initialAbilities,
@@ -54,6 +56,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       flaws: initialFlaws,
       state: initialState,
       health: initialHealth,
+      healthChimerical: R.clone(initialHealth),
       notes: initialNotes,
 
       arts: initialArts,

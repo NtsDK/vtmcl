@@ -9,6 +9,7 @@ import {
   Health,
   Merits,
   Notes,
+  Preset,
   Profile,
   Realms,
   Settings,
@@ -17,6 +18,8 @@ import {
 } from "../domain";
 
 import { defaultBackgroundUrl } from './defaultBackground';
+
+export const initialPreset: Preset = 'vampire_v20';
 
 export const initialProfile: Profile = {
   name: "",
@@ -137,7 +140,17 @@ export const initialState: State = {
   bloodPerTurn: "",
 
   weakness: "",
-  experience: ""
+  experience: "",
+
+  // changeling
+  antithesis: '',
+  thresholds: '',
+  birthrightsFrailties: '',
+  glamourRating: 0,
+  glamourPool: 0,
+  banalityRating: 0,
+  banalityPool: 0,
+  nightmare: 0,
 };
 
 export const initialHealth: Health = {

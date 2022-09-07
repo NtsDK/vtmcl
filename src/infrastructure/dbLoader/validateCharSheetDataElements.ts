@@ -11,12 +11,21 @@ import {
   Notes,
   Virtues,
   State,
-  Realms
+  Realms,
+  Preset
 } from "../../domain";
 
 
 export const notesSchema: JSONSchemaType<Notes> = {
   type: "string",
+};
+
+export const presetSchema: JSONSchemaType<Preset> = {
+  type: "string",
+  enum: [
+    'vampire_v20',
+    'changeling_v20'
+  ]
 };
 
 export const profileSchema: JSONSchemaType<Profile> = {
@@ -153,19 +162,28 @@ export const healthSchema: JSONSchemaType<Health> = {
 export const stateSchema: JSONSchemaType<State> = {
   type: "object",
   properties: {
-    "humanity":         {type: "number"},
-    "pathName":         {type: "string"},
-    "bearingName":      {type: "string"},
-    "bearingModifier":  {type: "string"},
+    humanity:         {type: "number"},
+    pathName:         {type: "string"},
+    bearingName:      {type: "string"},
+    bearingModifier:  {type: "string"},
 
-    "willpowerRating":  {type: "number"},
-    "willpowerPool":    {type: "number"},
+    willpowerRating:  {type: "number"},
+    willpowerPool:    {type: "number"},
 
-    "bloodpool":        {type: "number"},
-    "bloodPerTurn":     {type: "string"},
+    bloodpool:        {type: "number"},
+    bloodPerTurn:     {type: "string"},
 
-    "weakness":         {type: "string"},
-    "experience":       {type: "string"},
+    weakness:         {type: "string"},
+    experience:       {type: "string"},
+
+    antithesis:       {type: "string"},
+    thresholds:       {type: "string"},
+    birthrightsFrailties: {type: "string"},
+    glamourRating:    {type: "number"},
+    glamourPool:      {type: "number"},
+    banalityRating:   {type: "number"},
+    banalityPool:     {type: "number"},
+    nightmare:        {type: "number"},
   },
   required: [
     "humanity",
@@ -178,6 +196,14 @@ export const stateSchema: JSONSchemaType<State> = {
     "bloodPerTurn",
     "weakness",
     "experience",
+    "antithesis",
+    "thresholds",
+    "birthrightsFrailties",
+    "glamourRating",
+    "glamourPool",
+    "banalityRating",
+    "banalityPool",
+    "nightmare",
   ],
   additionalProperties: false,
 };
