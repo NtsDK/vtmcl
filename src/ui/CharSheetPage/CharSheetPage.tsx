@@ -13,7 +13,6 @@ import { StatusSection } from './StatusSection';
 import { NotesSection } from './NotesSection';
 
 import { useProfile } from '../../services/storageAdapter';
-import { profileConfig } from '../../domain';
 
 import './CharSheetPage.css';
 import { GameUtilsPanel } from './GameUtilsPanel';
@@ -54,7 +53,6 @@ export function CharSheetPage(props: CharSheetPageProps) {
             </SectionHeader>
             <ProfileSection
               className="tw-mb-3 tw-mt-4"
-              profileConfig={profileConfig}
             />
             <SectionHeader className="tw-mb-3">
               {t('charsheet.attributes.header')}
