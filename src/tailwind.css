@@ -537,11 +537,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0px;
 }
 
-.tw-mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
 .tw-mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -550,6 +545,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.tw-mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .tw-mx-2 {
@@ -597,6 +597,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.tw-ml-2 {
+  margin-left: 0.5rem;
+}
+
 .tw-mt-2 {
   margin-top: 0.5rem;
 }
@@ -605,20 +609,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
-.tw-mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.tw-ml-2 {
-  margin-left: 0.5rem;
-}
-
 .tw-mb-0 {
   margin-bottom: 0px;
 }
 
 .tw-mr-3 {
   margin-right: 0.75rem;
+}
+
+.tw-mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .tw-inline-block {
@@ -657,14 +657,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.5rem;
 }
 
-.tw-h-12 {
-  height: 3rem;
-}
-
 .tw-h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.tw-h-12 {
+  height: 3rem;
 }
 
 .tw-w-full {
@@ -691,16 +691,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
+.tw-w-14 {
+  width: 3.5rem;
+}
+
 .tw-w-28 {
   width: 7rem;
 }
 
 .tw-w-32 {
   width: 8rem;
-}
-
-.tw-w-14 {
-  width: 3.5rem;
 }
 
 .tw-max-w-sm {
@@ -826,14 +826,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
-.tw-text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .tw-text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.tw-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .tw-leading-4 {
@@ -894,20 +894,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0px;
   }
 
-  .print\:tw-mb-2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .print\:tw-mb-0 {
-    margin-bottom: 0px;
-  }
-
   .print\:tw-mb-1 {
     margin-bottom: 0.25rem;
   }
 
   .print\:tw-mt-1 {
     margin-top: 0.25rem;
+  }
+
+  .print\:tw-mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .print\:tw-mb-0 {
+    margin-bottom: 0px;
   }
 
   .print\:tw-hidden {

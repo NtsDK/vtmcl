@@ -3,20 +3,20 @@ import DocumentTitle from 'react-document-title';
 import { useTranslation } from 'react-i18next';
 
 
-import { CharSheetBody } from './CharSheetBody';
-import { ProfileSection } from "./ProfileSection";
-import { AttributeSection } from "./AttributeSection";
-import { AbilitiesSection } from "./AbilitiesSection";
+import { CharSheetBody } from './primitives/CharSheetBody';
+import { ProfileSection } from "./commonBlocks/ProfileSection";
+import { AttributeSection } from "./commonBlocks/AttributeSection";
+import { AbilitiesSection } from "./commonBlocks/AbilitiesSection";
 import { SectionHeader } from "./primitives/SectionHeader";
-import { AdvantagesSection } from './AdvantagesSection';
-import { StatusSection } from './StatusSection';
-import { NotesSection } from './NotesSection';
+import { AdvantagesSection } from './vampireBlocks/AdvantagesSection';
+import { StatusSection } from './vampireBlocks/StatusSection';
+import { NotesSection } from './commonBlocks/NotesSection';
 
 import { useProfile } from '../../services/storageAdapter';
 
 import './CharSheetPage.css';
 import { GameUtilsPanel } from './GameUtilsPanel';
-import { PresetSelect } from './PresetSelect';
+import { PresetSelect } from './commonBlocks/PresetSelect';
 
 interface CharSheetPageProps {
 }
