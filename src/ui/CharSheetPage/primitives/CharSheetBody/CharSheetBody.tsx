@@ -38,7 +38,7 @@ export function CharSheetBody(props: PropsWithChildren<CharSheetBodyProps>) {
 
   return (
     <div
-      className={classnames("CharSheetBody", className)}
+      className={classnames("CharSheetBody tw-relative", className)}
       style={{
         backgroundColor: getBgColor(settings),
         backgroundImage: getBgImage(settings),
