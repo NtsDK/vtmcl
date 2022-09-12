@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 import classnames from "classnames";
 import { CharacterCheckList } from './CharacterCheckList';
-import { AccordionToggle } from '../../AccordionToggle';
+import { AccordionToggle } from '../../../uiLib/AccordionToggle';
 
 interface GameUtilsPanelProps {
   className?: string;

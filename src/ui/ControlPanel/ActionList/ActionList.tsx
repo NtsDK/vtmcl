@@ -1,11 +1,13 @@
 import React from 'react';
-import './ActionList.css';
 import classnames from "classnames";
-import { UploadDatabaseButton } from '../Header/UploadDatabaseButton';
-import { DownloadDatabaseButton } from '../Header/DownloadDatabaseButton';
-import { CreateDatabaseButton } from '../Header/CreateDatabaseButton';
-import { LangButton } from '../Header/LangButton';
-import { FullscreenButton } from '../Header/FullscreenButton';
+
+import './ActionList.css';
+
+import { UploadDatabaseButton } from './UploadDatabaseButton';
+import { DownloadDatabaseButton } from './DownloadDatabaseButton';
+import { CreateDatabaseButton } from './CreateDatabaseButton';
+import { LangButton } from './LangButton';
+import { FullscreenButton } from './FullscreenButton';
 
 interface ActionListProps {
   className?: string;

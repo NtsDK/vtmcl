@@ -3,14 +3,14 @@ import './UploadDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { readTextFile } from '../../../lib/fileUtils';
+import { readTextFile } from '../../../../lib/fileUtils';
 import {
   strToCharSheet,
-} from '../../../infrastructure/dbLoader';
+} from '../../../../infrastructure/dbLoader';
 import {
   useCharSheetStorage,
   useErrorDescription
-} from '../../../services/storageAdapter';
+} from '../../../../services/storageAdapter';
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {

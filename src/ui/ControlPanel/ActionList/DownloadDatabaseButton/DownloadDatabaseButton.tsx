@@ -3,9 +3,9 @@ import './DownloadDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { json2File, makeFileName } from '../../../lib/fileUtils';
-import { charSheetToJson } from '../../../infrastructure/dbLoader';
-import { useCharSheetStorage } from '../../../services/storageAdapter';
+import { json2File, makeFileName } from '../../../../lib/fileUtils';
+import { charSheetToJson } from '../../../../infrastructure/dbLoader';
+import { useCharSheetStorage } from '../../../../services/storageAdapter';
 
 interface DownloadDatabaseButtonProps {
 };

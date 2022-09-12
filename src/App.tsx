@@ -21,7 +21,7 @@ import { useTranslation } from 'react-i18next';
 // import { defaultLang } from "./i18nResources";
 
 // import { Header } from "./ui/Header";
-import { ErrorNotification } from './ui/ErrorNotification';
+import { ErrorNotification } from './uiLib/ErrorNotification';
 import { CharSheetPage } from './ui/CharSheetPage';
 import { AboutPage } from './ui/AboutPage';
 

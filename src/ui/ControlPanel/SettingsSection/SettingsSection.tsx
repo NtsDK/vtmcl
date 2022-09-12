@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import { useTranslation } from 'react-i18next';
-import { useSettings } from '../../services/storageAdapter';
-import { initialSettings } from '../../services/initialValues';
+import { useSettings } from '../../../services/storageAdapter';
+import { initialSettings } from '../../../services/initialValues';
 
 interface SettingsSectionProps {
 }

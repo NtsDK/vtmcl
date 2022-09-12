@@ -13,10 +13,11 @@ import {
   faChevronLeft, faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 
-import { PageNav } from '../PageNav';
-import { ActionList } from '../ActionList';
-import { SettingsSection } from '../SettingsSection';
-import { AccordionToggle } from '../AccordionToggle';
+import { AccordionToggle } from '../../uiLib/AccordionToggle';
+
+import { PageNav } from './PageNav';
+import { ActionList } from './ActionList';
+import { SettingsSection } from './SettingsSection';
 
 interface ControlPanelProps {
   className?: string;
@@ -30,7 +31,6 @@ export function ControlPanel(props: ControlPanelProps) {
 
   return (
     <div className={classnames("ControlPanel tw-sticky tw-top-0 tw-flex tw-flex-col tw-h-screen", className)}>
-      {/* <Header /> */}
       { showContent && <PageNav className='tw-flex-col tw-mb-8'/> }
 
       {

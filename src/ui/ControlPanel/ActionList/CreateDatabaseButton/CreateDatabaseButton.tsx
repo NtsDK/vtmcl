@@ -4,7 +4,7 @@ import './CreateDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { useCharSheetStorage } from '../../../services/storageAdapter';
+import { useCharSheetStorage } from '../../../../services/storageAdapter';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -27,8 +27,8 @@ import {
   initialArts,
   initialRealms,
   initialPreset
-} from "../../../services/initialValues";
-import { CURRENT_VERSION } from "../../../constants";
+} from "../../../../services/initialValues";
+import { CURRENT_VERSION } from "../../../../constants";
 
 interface CreateDatabaseButtonProps {
 }
