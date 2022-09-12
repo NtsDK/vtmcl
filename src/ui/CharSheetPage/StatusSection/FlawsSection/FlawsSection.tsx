@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMeritsNFlaws } from '../../../../services/storageAdapter';
-import { NameSection } from '../../generic/NameSection';
+import { NameSection } from '../../primitives/NameSection';
 import './FlawsSection.css';
 
 import classnames from "classnames";

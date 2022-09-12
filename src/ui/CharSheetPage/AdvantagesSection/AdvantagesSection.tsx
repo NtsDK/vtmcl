@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subheader } from '../generic/Subheader';
+import { Subheader } from '../primitives/Subheader';
 import './AdvantagesSection.css';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";

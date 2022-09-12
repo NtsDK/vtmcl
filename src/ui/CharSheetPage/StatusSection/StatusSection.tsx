@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { Subheader } from '../generic/Subheader';
+import { Subheader } from '../primitives/Subheader';
 import { useStateNHealth } from '../../../services/storageAdapter';
 
 import './StatusSection.css';

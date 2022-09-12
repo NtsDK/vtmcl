@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { useVirtues } from '../../../../services/storageAdapter';
 import { Virtues } from '../../../../domain';
-import { RangeInput2 } from '../../generic/RangeInput2';
+import { RangeInput2 } from '../../primitives/RangeInput2';
 
 import './VirtuesSection.css';
 

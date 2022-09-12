@@ -1,6 +1,6 @@
 import React from 'react';
 import { useBackgrounds } from '../../../../services/storageAdapter';
-import { NameNumberSection } from '../../generic/NameNumberSection';
+import { NameNumberSection } from '../../primitives/NameNumberSection';
 import './BackgroundsSection.css';
 
 import classnames from "classnames";

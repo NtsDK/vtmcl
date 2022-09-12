@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { RangeInput2 } from '../../generic/RangeInput2';
+import { RangeInput2 } from '../../primitives/RangeInput2';
 import { useStateNHealth } from '../../../../services/storageAdapter';
 
 import './HumanitySection.css';
-import { SelectButton } from '../../generic/SelectButton';
+import { SelectButton } from '../../primitives/SelectButton';
 import { useResource } from '../../../../i18nResources';
 
 interface HumanitySectionProps {

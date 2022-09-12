@@ -3,8 +3,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { RangeInput } from '../generic/RangeInput';
-import { Subheader } from '../generic/Subheader';
+import { RangeInput } from '../primitives/RangeInput';
+import { Subheader } from '../primitives/Subheader';
 import {
   Abilities,
   knowledgesArr,
@@ -17,7 +17,7 @@ import {
 } from '../../../services/storageAdapter';
 
 import './AbilitiesSection.css';
-import { RangeInput2 } from '../generic/RangeInput2';
+import { RangeInput2 } from '../primitives/RangeInput2';
 
 interface AbilitiesSectionProps {
   className?: string;

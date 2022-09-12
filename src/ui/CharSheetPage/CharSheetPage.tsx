@@ -7,7 +7,7 @@ import { CharSheetBody } from './CharSheetBody';
 import { ProfileSection } from "./ProfileSection";
 import { AttributeSection } from "./AttributeSection";
 import { AbilitiesSection } from "./AbilitiesSection";
-import { SectionHeader } from "./generic/SectionHeader";
+import { SectionHeader } from "./primitives/SectionHeader";
 import { AdvantagesSection } from './AdvantagesSection';
 import { StatusSection } from './StatusSection';
 import { NotesSection } from './NotesSection';

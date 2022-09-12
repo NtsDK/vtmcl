@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ProfileConfigItem } from '../../../../domain';
 import { useProfile } from '../../../../services/storageAdapter';
 import { useResource } from '../../../../i18nResources';
-import { SelectButton } from '../../generic/SelectButton';
+import { SelectButton } from '../../primitives/SelectButton';
 
 import './ProfileSectionItem.css';
 
