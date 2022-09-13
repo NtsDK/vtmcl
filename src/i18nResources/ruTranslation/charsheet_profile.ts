@@ -13,10 +13,10 @@ export const profile = {
   'sire': 'Сир:',
   'select-label': 'Выбор {{title}}',
 
-  'court': 'Court:',
-  'legacies': 'Legacies:',
-  'house': 'House:',
-  'seeming': 'Seeming:',
-  'kith': 'Kith:',
-  'motley': 'Motley:',
+  'court': 'Двор:',
+  'legacies': 'Наследие:',
+  'house': 'Дом:',
+  'seeming': 'Видимость:',
+  'kith': 'Кит:',
+  'motley': 'Группа:',
 };

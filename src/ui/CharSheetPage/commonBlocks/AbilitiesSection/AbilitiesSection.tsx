@@ -1,47 +1,20 @@
 import React from 'react';
-// import { SectionHeader } from '../SectionHeader';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { RangeInput } from '../../primitives/RangeInput';
 import { Subheader } from '../../primitives/Subheader';
-import {
-  Abilities,
-  knowledgesArr,
-  skillsArr,
-  talentsArr
-} from '../../../../domain';
 import {
   useAbilities,
   useAbilitiesExtension
 } from '../../../../services/storageAdapter';
+import { RangeInput2 } from '../../primitives/RangeInput2';
+import { usePresetSettings } from '../../../../i18nResources';
 
 import './AbilitiesSection.css';
-import { RangeInput2 } from '../../primitives/RangeInput2';
 
 interface AbilitiesSectionProps {
   className?: string;
 }
-
-type AbilitiesConfig = {
-  header: 'talents' | 'skills' | 'knowledges';
-  items: (keyof Abilities)[];
-  extension: 'talent' | 'skill' | 'knowledge';
-}[];
-
-const abilitiesConfig: AbilitiesConfig = [{
-  header: 'talents',
-  items: talentsArr,
-  extension: 'talent'
-}, {
-  header: 'skills',
-  items: skillsArr,
-  extension: 'skill'
-}, {
-  header: 'knowledges',
-  items: knowledgesArr,
-  extension: 'knowledge'
-}];
 
 export function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();
@@ -52,6 +25,8 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
     setAbilityExtensionName,
     setAbilityExtensionValue
   } = useAbilitiesExtension();
+
+  const { abilitiesConfig } = usePresetSettings();
 
   return (
     <div className={classnames("AbilitiesSection tw-flex tw-gap-x-4", className)}>

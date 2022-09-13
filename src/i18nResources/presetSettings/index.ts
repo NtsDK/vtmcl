@@ -1,33 +1,10 @@
-import { ProfileConfig } from "../../domain";
 import { usePreset } from "../../services/storageAdapter";
-
-export const profileConfig_v20: ProfileConfig = [[
-  'name',
-  'player',
-  'chronicle',
-  'age',
-  'sex'
-], [
-  {
-    name: 'nature',
-    optionsName: 'archetypeOptions'
-  },
-  {
-    name: 'demeanor',
-    optionsName: 'archetypeOptions'
-  },
-  'concept',
-  {
-    name: 'clan',
-    optionsName: 'clanOptions'
-  },
-  {
-    name: 'generation',
-    optionsName: 'generationOptions'
-  },
-  'sire'
-]
-];
+import { attributesConfig } from "./attributesConfig";
+import { changelingAbilitiesConfig } from "./changelingAbilitiesConfig";
+import { changelingProfileConfig } from "./changelingProfileConfig";
+import { vampireAbilitiesConfig } from "./vampireAbilitiesConfig";
+import { vampireProfileConfig } from "./vampireProfileConfig";
+export * from './types';
 
 export function usePresetSettings() {
 
@@ -35,9 +12,13 @@ export function usePresetSettings() {
 
   return preset === 'vampire_v20'
     ? {
-        profileConfig: profileConfig_v20
+        profileConfig: vampireProfileConfig,
+        attributesConfig,
+        abilitiesConfig: vampireAbilitiesConfig,
       }
     : {
-        profileConfig: profileConfig_v20
+        profileConfig: changelingProfileConfig,
+        attributesConfig,
+        abilitiesConfig: changelingAbilitiesConfig,
       }
 }

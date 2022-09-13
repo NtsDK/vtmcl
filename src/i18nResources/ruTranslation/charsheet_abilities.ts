@@ -46,7 +46,7 @@ export const abilities = {
   'extension-skill': 'Дополнительный навык {{id}}',
   'extension-knowledge': 'Дополнительное знание {{id}}',
 
-  'kenning': 'Kenning',
-  'enigmas': 'Enigmas',
-  'gremayre': 'Gremayre',
+  'kenning': 'Кеннинг',
+  'enigmas': 'Загадки',
+  'gremayre': 'Гримеир',
 };

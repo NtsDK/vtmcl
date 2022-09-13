@@ -2,16 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { RangeInput } from "../../primitives/RangeInput";
 import { Subheader } from '../../primitives/Subheader';
 import { useAttributes } from '../../../../services/storageAdapter';
-import {
-  physicalAttributesArr,
-  socialAttributesArr,
-  mentalAttributesArr,
-  Attributes
-} from '../../../../domain';
 import { RangeInput2 } from '../../primitives/RangeInput2';
+import { usePresetSettings } from '../../../../i18nResources';
 
 import './AttributeSection.css';
 
@@ -19,26 +13,12 @@ interface AttributeSectionProps {
   className?: string;
 }
 
-type AttributesConfig = {
-  header: 'physical' | 'social' | 'mental';
-  items: (keyof Attributes)[]
-}[];
-
-const attributesConfig: AttributesConfig = [{
-  header: 'physical',
-  items: physicalAttributesArr
-}, {
-  header: 'social',
-  items: socialAttributesArr
-}, {
-  header: 'mental',
-  items: mentalAttributesArr
-}];
-
 export function AttributeSection(props: AttributeSectionProps) {
   const { t } = useTranslation();
   const { attributes, setAttribute } = useAttributes();
   const { className } = props;
+
+  const { attributesConfig } = usePresetSettings();
 
   return (
     <div className={classnames("AttributeSection tw-flex tw-gap-x-4", className)}>

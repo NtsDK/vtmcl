@@ -36,43 +36,6 @@ export interface Abilities {
   "gremayre": number;
 }
 
-export const talentsArr: (keyof Abilities)[] = [
-  'athletics',
-  'alertness',
-  'brawl',
-  'intimidation',
-  'expression',
-  'leadership',
-  'streetwise',
-  'subterfuge',
-  'awareness',
-  'empathy',
-];
-export const skillsArr: (keyof Abilities)[] = [
-  'drive',
-  'larceny',
-  'survival',
-  'performance',
-  'animalken',
-  'crafts',
-  'stealth',
-  'firearms',
-  'melee',
-  'etiquette',
-];
-export const knowledgesArr: (keyof Abilities)[] = [
-  'academics',
-  'science',
-  'law',
-  'computer',
-  'medicine',
-  'occult',
-  'politics',
-  'investigation',
-  'finance',
-  'technology',
-];
-
 export interface AbilitiesExtension {
   talentName1: string;
   talentValue1: number;

@@ -15,16 +15,15 @@ import {
 } from '../../../../services/storageAdapter';
 import {
   Attributes,
-  physicalAttributesArr,
-  socialAttributesArr,
-  mentalAttributesArr,
   Abilities,
-  talentsArr,
-  skillsArr,
-  knowledgesArr,
 } from '../../../../domain';
 import { CheckListItem } from './CheckListItem';
 import { randomInteger } from '../../../../lib/miscUtils';
+import {
+  AbilitiesConfig,
+  AttributesConfig,
+  usePresetSettings
+} from '../../../../i18nResources';
 
 interface CharacterCheckListProps {
   className?: string;
@@ -47,12 +46,13 @@ const EXPECTED_BACKGROUND_DOTS = 5;
 const EXPECTED_VIRTUE_DOTS = 7;
 const ABILITY_LIMIT = 3;
 
-function checkAttributesFilled(attributes: Attributes): CheckArrResult {
-  const list = R.reverse(R.sort(R.subtract, [
-    R.sum(R.props(physicalAttributesArr, attributes)),
-    R.sum(R.props(socialAttributesArr, attributes)),
-    R.sum(R.props(mentalAttributesArr, attributes)),
-  ]));
+function checkAttributesFilled(
+  attributes: Attributes,
+  attributesConfig: AttributesConfig
+): CheckArrResult {
+  const list = R.reverse(R.sort(R.subtract,
+    attributesConfig.map(el => R.sum(R.props(el.items, attributes)))
+  ));
   // console.log('list', list)
   return {
     checked: R.equals(list, EXPECTED_ATTRIBUTE_DOTS),
@@ -60,12 +60,13 @@ function checkAttributesFilled(attributes: Attributes): CheckArrResult {
   };
 }
 
-function checkAbilitiesFilled(abilities: Abilities): CheckArrResult {
-  const list = R.reverse(R.sort(R.subtract, [
-    R.sum(R.props(talentsArr, abilities)),
-    R.sum(R.props(skillsArr, abilities)),
-    R.sum(R.props(knowledgesArr, abilities)),
-  ]));
+function checkAbilitiesFilled(
+  abilities: Abilities,
+  abilitiesConfig: AbilitiesConfig
+): CheckArrResult {
+  const list = R.reverse(R.sort(R.subtract,
+    abilitiesConfig.map(el => R.sum(R.props(el.items, abilities)))
+  ));
   // console.log('list', list)
   return {
     checked: R.equals(list, EXPECTED_ABILITY_DOTS),
@@ -81,9 +82,12 @@ function checkDisciplinesFilled(arr: number[], targetValue: number): CheckNumber
   };
 }
 
-function checkAbilitiesDotLimit(abilities: Abilities): boolean {
+function checkAbilitiesDotLimit(
+  abilities: Abilities,
+  abilitiesConfig: AbilitiesConfig
+): boolean {
   const arr = R.props(
-    [...talentsArr, ...skillsArr, ...knowledgesArr],
+    R.flatten(R.pluck('items', abilitiesConfig)),
     abilities
   ).filter(el => el > ABILITY_LIMIT);
   return arr.length === 0;
@@ -94,18 +98,19 @@ export function CharacterCheckList(props: CharacterCheckListProps) {
   const { t } = useTranslation();
 
   const { attributes } = useAttributes();
+  const { attributesConfig, abilitiesConfig } = usePresetSettings();
   const [ attributesFilled, setAttributesFilled ] = useState<CheckArrResult>({checked: false, arr: [3,3,3]});
   useEffect(() => {
-    setAttributesFilled(checkAttributesFilled(attributes));
-  }, [attributes]);
+    setAttributesFilled(checkAttributesFilled(attributes, attributesConfig));
+  }, [attributes, attributesConfig]);
 
   const { abilities } = useAbilities();
   const [ abilitiesFilled, setAbilitiesFilled ] = useState<CheckArrResult>({checked: false, arr: [0,0,0]});
   const [ abilitiesDotLimitChecked, setAbilitiesDotLimitChecked ] = useState(false);
   useEffect(() => {
-    setAbilitiesFilled(checkAbilitiesFilled(abilities));
-    setAbilitiesDotLimitChecked(checkAbilitiesDotLimit(abilities));
-  }, [abilities]);
+    setAbilitiesFilled(checkAbilitiesFilled(abilities, abilitiesConfig));
+    setAbilitiesDotLimitChecked(checkAbilitiesDotLimit(abilities, abilitiesConfig));
+  }, [abilities, abilitiesConfig]);
 
   const { disciplines } = useDisciplines();
   const [ disciplinesFilled, setDisciplinesFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
