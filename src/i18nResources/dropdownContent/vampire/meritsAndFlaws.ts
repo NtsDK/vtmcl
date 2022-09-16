@@ -19,7 +19,7 @@ import {
   generateIdEnRuEntities,
   sortStrArr,
   IdEnRuEntity
-} from './utils';
+} from '../utils';
 
 type MeritsAndFlawsGroups =
   | 'physical-merits'

@@ -7,7 +7,7 @@ import {
   generateSequence,
   makeTranslateFunction,
   sortStrArr
-} from './utils';
+} from '../utils';
 
 const ajv = new Ajv({
   allErrors: true,

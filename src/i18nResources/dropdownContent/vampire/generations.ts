@@ -1,7 +1,11 @@
 import * as R from 'ramda';
 
 import { generationsSource } from "./generationsSource";
-import { generateEnRuEntities, generateSequence, makeTranslateFunction } from './utils';
+import {
+  generateEnRuEntities,
+  generateSequence,
+  makeTranslateFunction
+} from '../utils';
 
 const sourceArr = [...generateEnRuEntities(generateSequence(2, generationsSource))];
 

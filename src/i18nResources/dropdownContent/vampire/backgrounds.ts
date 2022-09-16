@@ -6,7 +6,7 @@ import {
   generateSequence,
   makeTranslateFunction,
   sortStrArr
-} from './utils';
+} from '../utils';
 
 const sourceArr = [...generateEnRuEntities(generateSequence(2, backgroundsSource))];
 
