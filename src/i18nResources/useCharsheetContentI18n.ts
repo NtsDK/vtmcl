@@ -9,7 +9,10 @@ import {
   translateBackground,
   translateDiscipline,
   translatePath,
-  translateMeritsAndFlaws
+  translateMeritsAndFlaws,
+  translateCourt,
+  translateSeeming,
+  translateHouse
 } from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
@@ -39,6 +42,7 @@ export function useCharsheetContentI18n() {
       if (prevLanguage === lng) {
         return;
       }
+      // vampire
       setProfileItem('nature',
         translateArchetype(profile.nature, prevLanguage, lng)
       );
@@ -51,6 +55,18 @@ export function useCharsheetContentI18n() {
       setProfileItem('clan',
         translateClan(profile.clan, prevLanguage, lng)
       );
+      // changeling
+      setProfileItem('court',
+        translateCourt(profile.court, prevLanguage, lng)
+      );
+      setProfileItem('seeming',
+        translateSeeming(profile.seeming, prevLanguage, lng)
+      );
+      setProfileItem('house',
+        translateHouse(profile.house, prevLanguage, lng)
+      );
+
+      // vampire
       backgrounds.forEach((background, index) => {
         setBackgroundName(index, translateBackground(background.name, prevLanguage, lng));
       });

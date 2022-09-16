@@ -15,7 +15,14 @@ import {
   flaws_en,
   flaws_ru,
   merits_en,
-  merits_ru
+  merits_ru,
+
+  courts_en,
+  courts_ru,
+  houseDisplayGroups_en,
+  houseDisplayGroups_ru,
+  seemings_en,
+  seemings_ru
 } from "./dropdownContent";
 
 export function useResource() {
@@ -32,6 +39,9 @@ export function useResource() {
         pathOptions: paths_ru,
         flawOptions: flaws_ru,
         meritOptions: merits_ru,
+        courtOptions: courts_ru,
+        houseOptions: houseDisplayGroups_ru,
+        seemingOptions: seemings_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -42,5 +52,8 @@ export function useResource() {
         pathOptions: paths_en,
         flawOptions: flaws_en,
         meritOptions: merits_en,
+        courtOptions: courts_en,
+        houseOptions: houseDisplayGroups_en,
+        seemingOptions: seemings_en,
       }
 }

@@ -4,10 +4,19 @@ export const changelingProfileConfig: ProfileConfig = [[
   'name',
   'player',
   'chronicle',
-  'court',
+  {
+    name: 'court',
+    optionsName: 'courtOptions'
+  },
   'legacies',
-  'house',
-  'seeming',
+  {
+    name: 'house',
+    optionsName: 'houseOptions'
+  },
+  {
+    name: 'seeming',
+    optionsName: 'seemingOptions'
+  },
   'kith',
   'motley',
 ]];

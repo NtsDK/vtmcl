@@ -16,7 +16,7 @@ export const profile = {
   'court': 'Двор:',
   'legacies': 'Наследие:',
   'house': 'Дом:',
-  'seeming': 'Видимость:',
+  'seeming': 'Обличье:',
   'kith': 'Кит:',
   'motley': 'Группа:',
 };
