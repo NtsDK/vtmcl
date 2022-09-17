@@ -1,6 +1,7 @@
 import {
   AbilitiesExtensionService,
   AbilitiesService,
+  ArtsService,
   AttributesService,
   BackgroundsService,
   CharSheetStorageService,
@@ -10,6 +11,7 @@ import {
   NotesService,
   PresetService,
   ProfileService,
+  RealmsService,
   SettingsService,
   StateNHealthService,
   VirtuesService,
@@ -56,5 +58,13 @@ export function useNotes(): NotesService {
   return useStore();
 }
 export function useSettings(): SettingsService {
+  return useStore();
+}
+
+
+export function useRealms(): RealmsService {
+  return useStore();
+}
+export function useArts(): ArtsService {
   return useStore();
 }

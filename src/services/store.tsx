@@ -19,6 +19,8 @@ import {
   CharSheetStorageService,
   AbilitiesExtensionService,
   PresetService,
+  RealmsService,
+  ArtsService,
 } from "../application/ports";
 import {
   Attributes,
@@ -84,7 +86,9 @@ interface StateStore extends
   NotesService,
   SettingsService,
   CharSheetStorageService,
-  ErrorDescriptionService
+  ErrorDescriptionService,
+  RealmsService,
+  ArtsService
 {
 }
 
@@ -177,6 +181,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setDisciplines(cs.disciplines);
     setBackgrounds(cs.backgrounds);
     setVirtues(cs.virtues);
+    setArts(cs.arts);
+    setRealms(cs.realms);
     setMerits(cs.merits);
     setFlaws(cs.flaws);
     setState(cs.state);
@@ -246,6 +252,14 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       setVirtues({
         ...virtues,
         [virtueName]: applyRange(1, 5, value)
+      });
+    },
+
+    realms,
+    setRealm(realmName: keyof Realms, value: number) {
+      setRealms({
+        ...realms,
+        [realmName]: applyRange(1, 5, value)
       });
     },
 
@@ -326,6 +340,34 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     },
     setDisciplineValue(index: number, value: number) {
       setDisciplines(disciplines.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          value
+        };
+      }));
+    },
+
+    arts,
+    addArt() {
+      setArts([...arts, { name: '', value: 0 }]);
+    },
+    removeArt(index: number) {
+      setArts((prevArts) => prevArts.filter((el, index2) => index2 !== index));
+    },
+    setArtName(index: number, name: string) {
+      setArts((prevArts) => prevArts.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          name
+        };
+      }));
+    },
+    setArtValue(index: number, value: number) {
+      setArts(arts.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {

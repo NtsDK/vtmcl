@@ -609,16 +609,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
+.tw-mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .tw-mb-0 {
   margin-bottom: 0px;
 }
 
 .tw-mr-3 {
   margin-right: 0.75rem;
-}
-
-.tw-mb-1 {
-  margin-bottom: 0.25rem;
 }
 
 .tw-inline-block {
@@ -691,12 +691,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
-.tw-w-14 {
-  width: 3.5rem;
-}
-
 .tw-w-28 {
   width: 7rem;
+}
+
+.tw-w-14 {
+  width: 3.5rem;
 }
 
 .tw-w-32 {
@@ -811,6 +811,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.tw-text-left {
+  text-align: left;
 }
 
 .tw-text-center {

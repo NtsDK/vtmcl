@@ -8,6 +8,7 @@ import {
   AbilitiesExtension,
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
+  Arts,
   Attributes,
   Backgrounds,
   CharSheet,
@@ -20,6 +21,7 @@ import {
   Notes,
   Preset,
   Profile,
+  Realms,
   Settings,
   State,
   Virtues
@@ -60,6 +62,7 @@ export interface DisciplinesService {
   setDisciplineValue(index: number, value: number): void;
   removeDiscipline(index: number): void;
 }
+
 export interface BackgroundsService {
   backgrounds: Backgrounds;
   addBackground(): void;
@@ -71,6 +74,18 @@ export interface BackgroundsService {
 export interface VirtuesService {
   virtues: Virtues;
   setVirtue(virtueName: keyof Virtues, value: number): void;
+}
+
+export interface RealmsService {
+  realms: Realms;
+  setRealm(realmName: keyof Realms, value: number): void;
+}
+export interface ArtsService {
+  arts: Arts;
+  addArt(): void;
+  setArtName(index: number, name: string): void;
+  setArtValue(index: number, value: number): void;
+  removeArt(index: number): void;
 }
 
 export interface MeritsNFlawsService {
