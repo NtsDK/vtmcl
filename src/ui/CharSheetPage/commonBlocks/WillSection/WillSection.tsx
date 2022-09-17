@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { RangeInput2 } from '../../../primitives/RangeInput2';
-import { useStateNHealth } from '../../../../../services/storageAdapter';
+import { RangeInput2 } from '../../primitives/RangeInput2';
+import { useStateNHealth } from '../../../../services/storageAdapter';
 
 import './WillSection.css';
 

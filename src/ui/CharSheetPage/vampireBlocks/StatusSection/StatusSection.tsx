@@ -10,7 +10,7 @@ import { HealthSection } from './HealthSection';
 import { MeritsSection } from './MeritsSection';
 import { FlawsSection } from './FlawsSection';
 import { HumanitySection } from './HumanitySection';
-import { WillSection } from './WillSection';
+import { WillSection } from '../../commonBlocks/WillSection';
 import { BloodpoolSection } from './BloodpoolSection';
 import { ExperienceSection } from '../../commonBlocks/ExperienceSection';
 import { WeaknessSection } from './WeaknessSection';
@@ -22,7 +22,6 @@ interface StatusSectionProps {
 export function StatusSection(props: StatusSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
 
   return (
     <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
