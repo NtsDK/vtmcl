@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AdvantagesSection } from '../changelingBlocks/AdvantagesSection';
+import { StatusSection } from '../changelingBlocks/StatusSection';
 import { NotesSection } from '../commonBlocks/NotesSection';
 import { CommonPageStart } from '../CommonPageStart';
 import { CharSheetBody } from '../primitives/CharSheetBody';
@@ -22,10 +23,10 @@ export function ChangelingCharSheet(props: ChangelingCharSheetProps) {
           {t('charsheet.advantages.header')}
         </SectionHeader>
         <AdvantagesSection className="tw-mb-3"/>
-        {/* <SectionHeader className="tw-mb-3">
+        <SectionHeader className="tw-mb-3">
           {t('charsheet.status.header')}
         </SectionHeader>
-        <StatusSection className="tw-mb-3"/> */}
+        <StatusSection className="tw-mb-3"/>
       </CharSheetBody>
       <CharSheetBody>
         <SectionHeader className="tw-mb-3">
