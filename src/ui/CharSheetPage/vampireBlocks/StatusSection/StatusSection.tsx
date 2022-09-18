@@ -6,7 +6,7 @@ import { Subheader } from '../../primitives/Subheader';
 import { useStateNHealth } from '../../../../services/storageAdapter';
 
 import './StatusSection.css';
-import { HealthSection } from './HealthSection';
+import { HealthSection } from '../../commonBlocks/HealthSection';
 import { MeritsSection } from './MeritsSection';
 import { FlawsSection } from './FlawsSection';
 import { HumanitySection } from './HumanitySection';

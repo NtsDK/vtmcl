@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { Health } from '../../../../../domain';
-import { useStateNHealth } from '../../../../../services/storageAdapter';
-import { HealthInput } from '../../../primitives/HealthInput';
+import { Health } from '../../../../domain';
+import { useStateNHealth } from '../../../../services/storageAdapter';
+import { HealthInput } from '../../primitives/HealthInput';
 
 import './HealthSection.css';
 
