@@ -1,11 +1,12 @@
 import React from 'react';
-import { useMeritsNFlaws } from '../../../../../services/storageAdapter';
-import { NameSection } from '../../../primitives/NameSection';
-import './FlawsSection.css';
-
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../../i18nResources';
+
+import { useMeritsNFlaws } from '../../../../services/storageAdapter';
+import { NameSection } from '../../primitives/NameSection';
+import { useResource } from '../../../../i18nResources';
+
+import './FlawsSection.css';
 
 interface FlawsSectionProps {
   className?: string;

@@ -3,17 +3,16 @@ import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { Subheader } from '../../primitives/Subheader';
-import { useStateNHealth } from '../../../../services/storageAdapter';
-
-import './StatusSection.css';
 import { HealthSection } from '../../commonBlocks/HealthSection';
-import { MeritsSection } from './MeritsSection';
-import { FlawsSection } from './FlawsSection';
-import { HumanitySection } from './HumanitySection';
 import { WillSection } from '../../commonBlocks/WillSection';
-import { BloodpoolSection } from './BloodpoolSection';
 import { ExperienceSection } from '../../commonBlocks/ExperienceSection';
+import { MeritsSection } from '../../commonBlocks/MeritsSection';
+import { FlawsSection } from '../../commonBlocks/FlawsSection';
+
+import { HumanitySection } from './HumanitySection';
+import { BloodpoolSection } from './BloodpoolSection';
 import { WeaknessSection } from './WeaknessSection';
+import './StatusSection.css';
 
 interface StatusSectionProps {
   className?: string;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { useMeritsNFlaws } from '../../../../../services/storageAdapter';
-import { NameSection } from '../../../primitives/NameSection';
-import './MeritsSection.css';
-
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../../i18nResources';
+
+import { useMeritsNFlaws } from '../../../../services/storageAdapter';
+import { NameSection } from '../../primitives/NameSection';
+import { useResource } from '../../../../i18nResources';
+
+import './MeritsSection.css';
 
 interface MeritsSectionProps {
   className?: string;

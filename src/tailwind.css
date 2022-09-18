@@ -736,6 +736,10 @@ Ensure the default browser behavior of the `hidden` attribute.
           appearance: none;
 }
 
+.tw-flex-row {
+  flex-direction: row;
+}
+
 .tw-flex-col {
   flex-direction: column;
 }
