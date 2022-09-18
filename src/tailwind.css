@@ -703,6 +703,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 8rem;
 }
 
+.tw-w-36 {
+  width: 9rem;
+}
+
 .tw-max-w-sm {
   max-width: 24rem;
 }

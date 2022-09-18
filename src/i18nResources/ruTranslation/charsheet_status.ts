@@ -18,6 +18,10 @@ export const status = {
   'antithesis': 'Антитезис',
   'thresholds': 'Порог Музы/Опустошения',
   'birthrightsFrailties': 'Права/Слабости крови',
+  'health-real-short': 'Р',
+  'health-real-long': 'Реальное',
+  'health-chimerical-short': 'Х',
+  'health-chimerical-long': 'Химерическое',
 
   // health
   'bruised': 'Помят',

@@ -21,7 +21,7 @@ export function ThresholdsSection(props: ThresholdsSectionProps) {
       value={state.thresholds}
       setValue={(value) => setState('thresholds', value)}
       className={className}
-      rows={5}
+      rows={3}
     />
   );
 }

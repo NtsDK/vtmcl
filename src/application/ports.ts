@@ -104,6 +104,8 @@ export interface StateNHealthService {
   setState<T extends keyof State>(stateName: T, value: State[T]): void;
   health: Health;
   setHealth(healthName: keyof Health, value: number): void;
+  healthChimerical: Health;
+  setHealthChimerical(healthName: keyof Health, value: number): void;
 }
 
 export interface NotesService {

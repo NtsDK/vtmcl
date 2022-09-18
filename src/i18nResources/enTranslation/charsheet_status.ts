@@ -27,6 +27,10 @@ export const status = {
   'mauled': 'Mauled',
   'crippled': 'Crippled',
   'incapacitated': 'Incapacitated',
+  'health-real-short': 'R',
+  'health-real-long': 'Real',
+  'health-chimerical-short': 'C',
+  'health-chimerical-long': 'Chimerical',
 
   'no-damage': 'No damage',
   'bashing-damage': 'Bashing damage',

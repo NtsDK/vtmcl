@@ -13,6 +13,7 @@ import { NightmareSection } from './NightmareSection';
 import { AntitesisSection } from './AntitesisSection';
 import { BirthrightsFrailtiesSection } from './BirthrightsFrailtiesSection';
 import { ThresholdsSection } from './ThresholdsSection';
+import { HealthSection } from '../../commonBlocks/HealthSection';
 
 interface StatusSectionProps {
   className?: string;
@@ -65,7 +66,10 @@ export function StatusSection(props: StatusSectionProps) {
         <Subheader className="tw-mb-2">
           {t('charsheet.status.health')}
         </Subheader>
-        {/* <HealthSection className="tw-mb-6 print:tw-mb-2"/> */}
+        <HealthSection
+          variant='changeling'
+          className="tw-mb-6 print:tw-mb-2"
+        />
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.thresholds')}

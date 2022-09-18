@@ -187,6 +187,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setFlaws(cs.flaws);
     setState(cs.state);
     setHealth(cs.health);
+    setHealthChimerical(cs.healthChimerical);
     setNotes(cs.notes);
 
     setSettings(cs.Settings);
@@ -269,6 +270,13 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setHealth(healthName: keyof Health, value: number) {
       setHealth({
         ...health,
+        [healthName]: applyRange(0, 3, value)
+      });
+    },
+    healthChimerical,
+    setHealthChimerical(healthName: keyof Health, value: number) {
+      setHealthChimerical({
+        ...healthChimerical,
         [healthName]: applyRange(0, 3, value)
       });
     },

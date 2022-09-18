@@ -9,6 +9,7 @@ import { HealthInput } from '../../primitives/HealthInput';
 import './HealthSection.css';
 
 interface HealthSectionProps {
+  variant?: 'common' | 'changeling';
   className?: string;
 }
 
@@ -32,12 +33,38 @@ const iconMap: Record<number, string> = {
 const healthIconStateNumber = Object.keys(iconMap).length;
 
 export function HealthSection(props: HealthSectionProps) {
-  const { health, setHealth } = useStateNHealth();
+  const {
+    health,
+    setHealth,
+    healthChimerical,
+    setHealthChimerical
+  } = useStateNHealth();
   const { t } = useTranslation();
-  const { className } = props;
+  const {
+    className,
+    variant = 'common'
+  } = props;
 
   return (
     <div className={classnames("HealthSection", className)}>
+      {
+        variant === 'changeling' &&
+        <div className='tw-flex tw-justify-center'>
+          <div className='tw-w-36'></div>
+          <div
+            className='tw-w-5 tw-text-center'
+            title={t('charsheet.status.health-real-long')}
+          >
+            {t('charsheet.status.health-real-short')}
+          </div>
+          <div
+            className='tw-w-5 tw-text-center'
+            title={t('charsheet.status.health-chimerical-long')}
+          >
+            {t('charsheet.status.health-chimerical-short')}
+          </div>
+        </div>
+      }
       {
         arr.map(([name, sublabel]) =>
           <div
@@ -62,6 +89,14 @@ export function HealthSection(props: HealthSectionProps) {
               value={health[name]}
               onClick={(value) => setHealth(name, value % healthIconStateNumber)}
             />
+            {
+              variant === 'changeling' &&
+              <HealthInput
+                name={`healthLevel.chimerical.${name}`}
+                value={healthChimerical[name]}
+                onClick={(value) => setHealthChimerical(name, value % healthIconStateNumber)}
+              />
+            }
           </div>
         )
       }
