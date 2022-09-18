@@ -12,7 +12,8 @@ import {
   translateMeritsAndFlaws,
   translateCourt,
   translateSeeming,
-  translateHouse
+  translateHouse,
+  translateKith
 } from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
@@ -64,6 +65,9 @@ export function useCharsheetContentI18n() {
       );
       setProfileItem('house',
         translateHouse(profile.house, prevLanguage, lng)
+      );
+      setProfileItem('kith',
+        translateKith(profile.kith, prevLanguage, lng)
       );
 
       // vampire

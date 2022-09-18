@@ -22,7 +22,9 @@ import {
   houseDisplayGroups_en,
   houseDisplayGroups_ru,
   seemings_en,
-  seemings_ru
+  seemings_ru,
+  kiths_en,
+  kiths_ru,
 } from "./dropdownContent";
 
 export function useResource() {
@@ -42,6 +44,7 @@ export function useResource() {
         courtOptions: courts_ru,
         houseOptions: houseDisplayGroups_ru,
         seemingOptions: seemings_ru,
+        kithOptions: kiths_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -55,5 +58,6 @@ export function useResource() {
         courtOptions: courts_en,
         houseOptions: houseDisplayGroups_en,
         seemingOptions: seemings_en,
+        kithOptions: kiths_en,
       }
 }

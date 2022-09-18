@@ -17,6 +17,9 @@ export const changelingProfileConfig: ProfileConfig = [[
     name: 'seeming',
     optionsName: 'seemingOptions'
   },
-  'kith',
+  {
+    name: 'kith',
+    optionsName: 'kithOptions'
+  },
   'motley',
 ]];
