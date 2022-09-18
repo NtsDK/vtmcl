@@ -10,6 +10,9 @@ import { WillSection } from '../../commonBlocks/WillSection';
 import { GlamourSection } from './GlamourSection';
 import { BanalitySection } from './BanalitySection';
 import { NightmareSection } from './NightmareSection';
+import { AntitesisSection } from './AntitesisSection';
+import { BirthrightsFrailtiesSection } from './BirthrightsFrailtiesSection';
+import { ThresholdsSection } from './ThresholdsSection';
 
 interface StatusSectionProps {
   className?: string;
@@ -22,15 +25,15 @@ export function StatusSection(props: StatusSectionProps) {
   return (
     <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
       <div className="tw-flex-1">
-        {/* <Subheader className="tw-mb-2">
-          {t('charsheet.status.merits')}
+        <Subheader className="tw-mb-2">
+          {t('charsheet.status.birthrightsFrailties')}
         </Subheader>
-        <MeritsSection className="tw-mb-4"/>
+        <BirthrightsFrailtiesSection className="tw-mb-4 print:tw-mb-2"/>
 
         <Subheader className="tw-mb-2">
-          {t('charsheet.status.flaws')}
+          {t('charsheet.status.antithesis')}
         </Subheader>
-        <FlawsSection/> */}
+        <AntitesisSection className="tw-mb-4 print:tw-mb-2"/>
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.experience')}
@@ -63,6 +66,11 @@ export function StatusSection(props: StatusSectionProps) {
           {t('charsheet.status.health')}
         </Subheader>
         {/* <HealthSection className="tw-mb-6 print:tw-mb-2"/> */}
+
+        <Subheader className="tw-mb-2">
+          {t('charsheet.status.thresholds')}
+        </Subheader>
+        <ThresholdsSection />
       </div>
     </div>
   );

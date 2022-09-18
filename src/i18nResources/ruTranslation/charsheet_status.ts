@@ -15,6 +15,9 @@ export const status = {
   'weakness': 'Изъян',
   'experience': 'Опыт',
   'nightmare': 'Кошмар',
+  'antithesis': 'Антитезис',
+  'thresholds': 'Порог Музы/Опустошения',
+  'birthrightsFrailties': 'Права/Слабости крови',
 
   // health
   'bruised': 'Помят',

@@ -15,6 +15,9 @@ export const status = {
   'weakness': 'Weakness',
   'experience': 'Experience',
   'nightmare': 'Nightmare',
+  'antithesis': 'Antithesis',
+  'thresholds': 'Ravaging/Musing Threshold',
+  'birthrightsFrailties': 'Birthright/Frailty',
 
   // health
   'bruised': 'Bruised',
