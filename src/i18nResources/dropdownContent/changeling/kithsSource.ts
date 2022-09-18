@@ -36,9 +36,9 @@ Satyrs
   Сатиры
 Selkies
   Шелки
-Arcadian Sidhe
+Sidhe (Arcadian)
   Ши Аркадии
-Autumn Sidhe
+Sidhe (Autumn)
   Ши Осени
 Sluagh
   Слуаги
