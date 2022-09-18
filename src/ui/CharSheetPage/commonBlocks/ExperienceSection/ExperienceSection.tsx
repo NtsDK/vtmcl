@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
 
 import { useStateNHealth } from '../../../../services/storageAdapter';
 import { LineSection } from '../../primitives/LineSection';
@@ -20,7 +21,7 @@ export function ExperienceSection(props: ExperienceSectionProps) {
       ariaLabel={t('charsheet.status.experience')}
       value={state.experience}
       setValue={(value) => setState('experience', value)}
-      className={className}
+      className={classnames('tw-text-center', className)}
     />
   );
 }

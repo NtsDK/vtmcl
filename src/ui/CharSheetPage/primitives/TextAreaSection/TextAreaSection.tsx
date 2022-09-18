@@ -21,16 +21,15 @@ export function TextAreaSection(props: TextAreaSectionProps) {
   } = props;
 
   return (
-    <div className={classnames("TextAreaSection tw-text-center tw-mx-6", className)}>
+    <>
       {
         rows === 1 &&
           <input
           aria-label={ariaLabel}
           style={{boxShadow: '0 1px 0 #333333'}}
-          className='tw-flex-1
-            tw-w-full tw-text-center
-            tw-bg-transparent tw-border-none hover:tw-outline
-            hover:tw-outline-1 hover:tw-outline-red-600'
+          className={classnames(`tw-flex-1 tw-w-full tw-bg-transparent
+            tw-border-none hover:tw-outline hover:tw-outline-1
+            hover:tw-outline-red-600`, className)}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -41,14 +40,13 @@ export function TextAreaSection(props: TextAreaSectionProps) {
           rows={rows}
           aria-label={ariaLabel}
           style={{boxShadow: '0 1px 0 #333333'}}
-          className='tw-flex-1
-            tw-w-full tw-text-center
-            tw-bg-transparent tw-border-none hover:tw-outline
-            hover:tw-outline-1 hover:tw-outline-red-600'
+          className={classnames(`tw-flex-1 tw-w-full tw-bg-transparent
+            tw-border-none hover:tw-outline hover:tw-outline-1
+            hover:tw-outline-red-600`, className)}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
       }
-    </div>
+    </>
   );
 }

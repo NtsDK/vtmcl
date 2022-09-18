@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
 
 import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { TextAreaSection } from '../../../primitives/TextAreaSection';
@@ -20,7 +21,7 @@ export function ThresholdsSection(props: ThresholdsSectionProps) {
       ariaLabel={t('charsheet.status.thresholds')}
       value={state.thresholds}
       setValue={(value) => setState('thresholds', value)}
-      className={className}
+      className={classnames('tw-text-center', className)}
       rows={3}
     />
   );

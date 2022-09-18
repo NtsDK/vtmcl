@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import classnames from "classnames";
+
 import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { LineSection } from '../../../primitives/LineSection';
 
@@ -19,7 +21,7 @@ export function WeaknessSection(props: WeaknessSectionProps) {
       ariaLabel={t('charsheet.status.weakness')}
       value={state.weakness}
       setValue={(value) => setState('weakness', value)}
-      className={className}
+      className={classnames('tw-text-center', className)}
     />
   );
 }
