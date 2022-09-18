@@ -5,9 +5,10 @@ import classnames from "classnames";
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 import { useStateNHealth } from '../../../../../services/storageAdapter';
 
-import './HumanitySection.css';
 import { SelectButton } from '../../../primitives/SelectButton';
 import { useResource } from '../../../../../i18nResources';
+
+import './HumanitySection.css';
 
 interface HumanitySectionProps {
   className?: string;

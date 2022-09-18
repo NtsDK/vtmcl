@@ -9,6 +9,7 @@ import { ExperienceSection } from '../../commonBlocks/ExperienceSection';
 import { WillSection } from '../../commonBlocks/WillSection';
 import { GlamourSection } from './GlamourSection';
 import { BanalitySection } from './BanalitySection';
+import { NightmareSection } from './NightmareSection';
 
 interface StatusSectionProps {
   className?: string;
@@ -46,6 +47,11 @@ export function StatusSection(props: StatusSectionProps) {
           {t('charsheet.status.willpower')}
         </Subheader>
         <WillSection className="tw-mb-4 print:tw-mb-2"/>
+
+        <Subheader className="tw-mb-2 tw-mt-2">
+          {t('charsheet.status.nightmare')}
+        </Subheader>
+        <NightmareSection className="tw-mb-4 print:tw-mb-2"/>
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.banality')}

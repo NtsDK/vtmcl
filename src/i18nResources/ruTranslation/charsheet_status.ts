@@ -14,6 +14,7 @@ export const status = {
   'health': 'Здоровье',
   'weakness': 'Изъян',
   'experience': 'Опыт',
+  'nightmare': 'Кошмар',
 
   // health
   'bruised': 'Помят',
