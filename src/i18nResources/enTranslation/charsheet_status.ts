@@ -5,9 +5,11 @@ export const status = {
   'flaws': 'Flaws',
   'state': 'State',
   'humanity': 'Humanity/Path',
+
   'willpower': 'Willpower',
   'willpower-rating': 'Willpower rating',
   'willpower-pool': 'Willpower pool',
+
   'bloodpool': 'Bloodpool',
   'health': 'Health',
   'weakness': 'Weakness',
@@ -40,4 +42,12 @@ export const status = {
   'select-path': 'Select path',
   'merit-label': 'Merit {{index}}',
   'flaw-label': 'Flaw {{index}}',
+
+  'glamour': 'Glamour',
+  'glamour-rating': 'Glamour rating',
+  'glamour-pool': 'Glamour pool',
+
+  'banality': 'Banality',
+  'banality-rating': 'Banality rating',
+  'banality-pool': 'Banality pool',
 };

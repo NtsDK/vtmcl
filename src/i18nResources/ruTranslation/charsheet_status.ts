@@ -5,9 +5,11 @@ export const status = {
   'flaws': 'Недостатки',
   'state': 'Состояние',
   'humanity': 'Человечность/Путь',
+
   'willpower': 'Воля',
   'willpower-rating': 'Значение воли',
   'willpower-pool': 'Запас воли',
+
   'bloodpool': 'Запас крови',
   'health': 'Здоровье',
   'weakness': 'Изъян',
@@ -40,4 +42,12 @@ export const status = {
   'select-path': 'Выбрать путь',
   'merit-label': 'Достоинство {{index}}',
   'flaw-label': 'Недостаток {{index}}',
+
+  'glamour': 'Глэмор',
+  'glamour-rating': 'Значение глэмора',
+  'glamour-pool': 'Запас глэмора',
+
+  'banality': 'Банальность',
+  'banality-rating': 'Значение банальности',
+  'banality-pool': 'Запас банальности',
 };
