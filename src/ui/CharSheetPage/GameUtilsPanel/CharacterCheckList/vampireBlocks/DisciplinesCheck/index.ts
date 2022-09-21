@@ -1,0 +1,1 @@
+export { DisciplinesCheck } from './DisciplinesCheck';

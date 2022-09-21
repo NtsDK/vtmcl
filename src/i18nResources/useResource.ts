@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { usePreset } from '../services/storageAdapter';
 import {
   archetypes_en,
   archetypes_ru,
@@ -16,6 +17,8 @@ import {
   flaws_ru,
   merits_en,
   merits_ru,
+  freePoints_en as v20_freePoints_en,
+  freePoints_ru as v20_freePoints_ru,
 
   courts_en,
   courts_ru,
@@ -32,6 +35,7 @@ import {
 export function useResource() {
   const { i18n } = useTranslation();
   const { language } = i18n;
+  const { preset } = usePreset();
 
   return language === 'ru'
     ? {
@@ -48,6 +52,10 @@ export function useResource() {
         seemingOptions: seemings_ru,
         kithOptions: kiths_ru,
         legacyOptions: legacies_ru,
+        freePoints: preset === 'vampire_v20'
+          ? v20_freePoints_ru
+          : [],
+
       }
     : {
         archetypeOptions: archetypes_en,
@@ -63,5 +71,8 @@ export function useResource() {
         seemingOptions: seemings_en,
         kithOptions: kiths_en,
         legacyOptions: legacies_en,
+        freePoints: preset === 'vampire_v20'
+          ? v20_freePoints_en
+          : [],
       }
 }

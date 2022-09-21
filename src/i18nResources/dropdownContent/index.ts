@@ -5,6 +5,7 @@ export * from './vampire/backgrounds';
 export * from './vampire/disciplines';
 export * from './vampire/paths';
 export * from './vampire/meritsAndFlaws';
+export * from './vampire/freePoints';
 
 export * from './changeling/courts';
 export * from './changeling/seemings';

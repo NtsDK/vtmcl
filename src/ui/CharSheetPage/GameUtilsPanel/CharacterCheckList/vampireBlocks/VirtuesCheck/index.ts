@@ -1,0 +1,1 @@
+export { VirtuesCheck } from './VirtuesCheck';

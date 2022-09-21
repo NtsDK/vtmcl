@@ -15,11 +15,4 @@ export const checklist = {
   'free-point-header': 'Free points',
   'free-point-description': 'Freebie Points: 15. Optionally add merits and flaws (max 7 points)',
   'free-point-cost': 'Trait Cost',
-  'attribute': 'Attribute',
-  'ability': 'Ability',
-  'discipline': 'Discipline',
-  'background': 'Background',
-  'virtue': 'Virtue',
-  'humanity-path': 'Humanity/Path',
-  'willpower': 'Willpower',
 };

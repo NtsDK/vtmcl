@@ -1,0 +1,1 @@
+export { FreePoints } from './FreePoints';

@@ -15,11 +15,4 @@ export const checklist = {
   'free-point-header': 'Свободные очки',
   'free-point-description': 'Свободные очки: 15. По желанию добавьте достоинства и недостатки (до 7 очков)',
   'free-point-cost': 'Стоимость точки',
-  'attribute': 'Характеристика',
-  'ability': 'Способность',
-  'discipline': 'Дисциплина',
-  'background': 'Факт биографии',
-  'virtue': 'Добродетель',
-  'humanity-path': 'Человечность/Путь',
-  'willpower': 'Сила воли',
 };
