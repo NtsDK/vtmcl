@@ -38,7 +38,7 @@ Fatalist
 Fool
   Глупец
 Grotesque
-  Глупец
+  Насмешник
 Knave
   Искуситель
 Outlaw
