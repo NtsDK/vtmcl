@@ -17,7 +17,7 @@ function checkAttributesFilled(
   attributesConfig: AttributesConfig
 ): CheckArrResult {
   const list = R.reverse(R.sort(R.subtract,
-    attributesConfig.map(el => R.sum(R.props(el.items, attributes)))
+    attributesConfig.map(el => R.sum(R.props(el.items, attributes).map(el => el > 0 ? el - 1 : 0)))
   ));
   // console.log('list', list)
   return {
