@@ -23,7 +23,7 @@ export function ArtsSection(props: ArtsSectionProps) {
   const { t } = useTranslation();
   const { className } = props;
 
-  // const { disciplineOptions } = useResource();
+  const { artOptions } = useResource();
 
   return (
     <NameNumberSection
@@ -36,7 +36,7 @@ export function ArtsSection(props: ArtsSectionProps) {
       setItemValue={setArtValue}
       addItemMsg={t('charsheet.advantages.add-art')}
       removeItemMsg={t('charsheet.advantages.remove-art')}
-      // options={disciplineOptions}
+      options={artOptions}
       selectOptionMsg={t('charsheet.advantages.select-art')}
       nameLabel='charsheet.advantages.art-label'
     />

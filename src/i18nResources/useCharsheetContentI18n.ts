@@ -14,7 +14,8 @@ import {
   translateSeeming,
   translateHouse,
   translateKith,
-  translateLegacy
+  translateLegacy,
+  translateArt,
 } from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
@@ -32,6 +33,8 @@ export function useCharsheetContentI18n() {
     setMerit,
     flaws,
     setFlaw,
+    arts,
+    setArtName
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
@@ -85,13 +88,18 @@ export function useCharsheetContentI18n() {
         setDisciplineName(index, translateDiscipline(discipline.name, prevLanguage, lng));
       });
       setState('pathName',
-        translatePath(state.pathName, prevLanguage, lng)
+      translatePath(state.pathName, prevLanguage, lng)
       );
       merits.forEach((merit, index) => {
         setMerit(index, translateMeritsAndFlaws(merit, prevLanguage, lng));
       });
       flaws.forEach((flaw, index) => {
         setFlaw(index, translateMeritsAndFlaws(flaw, prevLanguage, lng));
+      });
+
+      // changeling
+      arts.forEach((art, index) => {
+        setArtName(index, translateArt(art.name, prevLanguage, lng));
       });
     };
 

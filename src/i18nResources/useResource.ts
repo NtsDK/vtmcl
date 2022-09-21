@@ -31,7 +31,9 @@ import {
   legacies_en,
   legacies_ru,
   c20_freePoints_en,
-  c20_freePoints_ru
+  c20_freePoints_ru,
+  arts_en,
+  arts_ru
 } from "./dropdownContent";
 
 export function useResource() {
@@ -57,7 +59,7 @@ export function useResource() {
         freePoints: preset === 'vampire_v20'
           ? v20_freePoints_ru
           : c20_freePoints_ru,
-
+        artOptions: arts_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -76,5 +78,6 @@ export function useResource() {
         freePoints: preset === 'vampire_v20'
           ? v20_freePoints_en
           : c20_freePoints_en,
+        artOptions: arts_en,
       }
 }
