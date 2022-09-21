@@ -17,8 +17,8 @@ import {
   flaws_ru,
   merits_en,
   merits_ru,
-  freePoints_en as v20_freePoints_en,
-  freePoints_ru as v20_freePoints_ru,
+  v20_freePoints_en,
+  v20_freePoints_ru,
 
   courts_en,
   courts_ru,
@@ -29,7 +29,9 @@ import {
   kiths_en,
   kiths_ru,
   legacies_en,
-  legacies_ru
+  legacies_ru,
+  c20_freePoints_en,
+  c20_freePoints_ru
 } from "./dropdownContent";
 
 export function useResource() {
@@ -54,7 +56,7 @@ export function useResource() {
         legacyOptions: legacies_ru,
         freePoints: preset === 'vampire_v20'
           ? v20_freePoints_ru
-          : [],
+          : c20_freePoints_ru,
 
       }
     : {
@@ -73,6 +75,6 @@ export function useResource() {
         legacyOptions: legacies_en,
         freePoints: preset === 'vampire_v20'
           ? v20_freePoints_en
-          : [],
+          : c20_freePoints_en,
       }
 }
