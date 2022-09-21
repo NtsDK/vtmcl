@@ -6,6 +6,7 @@ import './CharacterCheckList.css';
 import { FreePoints } from './FreePoints';
 import { usePreset } from '../../../../services/storageAdapter';
 import { VampireCheckList } from './VampireCheckList';
+import { ChangelingCheckList } from './ChangelingCheckList';
 
 interface CharacterCheckListProps {
   className?: string;
@@ -21,6 +22,10 @@ export function CharacterCheckList(props: CharacterCheckListProps) {
       {
         preset === 'vampire_v20' &&
         <VampireCheckList />
+      }
+      {
+        preset === 'changeling_v20' &&
+        <ChangelingCheckList />
       }
       <FreePoints />
     </div>

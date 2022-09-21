@@ -15,4 +15,10 @@ export const checklist = {
   'free-point-header': 'Free points',
   'free-point-description': 'Freebie Points: 15. Optionally add merits and flaws (max 7 points)',
   'free-point-cost': 'Trait Cost',
+  // changeling
+  'art-dots': '{{expected}} art dots (fact\xa0{{value}})',
+  'realm-dots': '{{expected}} realm dots (fact\xa0{{value}})',
+  'c20-willpower-dots': 'Will power = 4 (fact\xa0{{value}}\xa0=\xa0{{expected}})',
+  'glamour-dots': 'Glamour = 4 (fact\xa0{{value}}\xa0=\xa0{{expected}})',
+  'banality-dots': 'Banality = 3 (fact\xa0{{value}}\xa0=\xa0{{expected}})',
 };

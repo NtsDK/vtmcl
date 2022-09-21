@@ -1,0 +1,1 @@
+export { BanalityCheck } from './BanalityCheck';

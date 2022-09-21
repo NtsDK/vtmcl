@@ -15,4 +15,10 @@ export const checklist = {
   'free-point-header': 'Свободные очки',
   'free-point-description': 'Свободные очки: 15. По желанию добавьте достоинства и недостатки (до 7 очков)',
   'free-point-cost': 'Стоимость точки',
+  // changeling
+  'art-dots': '{{expected}} точки в искусствах (факт\xa0{{value}})',
+  'realm-dots': '{{expected}} точки в королевствах (факт\xa0{{value}})',
+  'c20-willpower-dots': 'Сила воли = 4 (факт\xa0{{value}}\xa0=\xa0{{expected}})',
+  'glamour-dots': 'Глэмор = 4 (факт\xa0{{value}}\xa0=\xa0{{expected}})',
+  'banality-dots': 'Банальность = 3 (факт\xa0{{value}}\xa0=\xa0{{expected}})',
 };
