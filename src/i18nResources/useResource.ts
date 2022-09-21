@@ -25,6 +25,8 @@ import {
   seemings_ru,
   kiths_en,
   kiths_ru,
+  legacies_en,
+  legacies_ru
 } from "./dropdownContent";
 
 export function useResource() {
@@ -45,6 +47,7 @@ export function useResource() {
         houseOptions: houseDisplayGroups_ru,
         seemingOptions: seemings_ru,
         kithOptions: kiths_ru,
+        legacyOptions: legacies_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -59,5 +62,6 @@ export function useResource() {
         houseOptions: houseDisplayGroups_en,
         seemingOptions: seemings_en,
         kithOptions: kiths_en,
+        legacyOptions: legacies_en,
       }
 }

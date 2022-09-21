@@ -25,7 +25,8 @@ export interface Profile {
 
   // changeling
   court: string;
-  legacies: string;
+  primaryLegacy: string;
+  secondaryLegacy: string;
   house: string;
   seeming: string;
   kith: string;

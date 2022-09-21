@@ -13,7 +13,8 @@ import {
   translateCourt,
   translateSeeming,
   translateHouse,
-  translateKith
+  translateKith,
+  translateLegacy
 } from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
@@ -68,6 +69,12 @@ export function useCharsheetContentI18n() {
       );
       setProfileItem('kith',
         translateKith(profile.kith, prevLanguage, lng)
+      );
+      setProfileItem('primaryLegacy',
+        translateLegacy(profile.primaryLegacy, prevLanguage, lng)
+      );
+      setProfileItem('secondaryLegacy',
+        translateLegacy(profile.secondaryLegacy, prevLanguage, lng)
       );
 
       // vampire

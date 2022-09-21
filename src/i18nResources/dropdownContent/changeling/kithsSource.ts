@@ -27,7 +27,7 @@ Oba
 Piskies
   Пикси
 Pooka
-  Пука
+  Паки
 Redcaps
   Красные шапки
 River hags
@@ -37,9 +37,9 @@ Satyrs
 Selkies
   Шелки
 Sidhe (Arcadian)
-  Ши Аркадии
+  Аркадианские Ши
 Sidhe (Autumn)
-  Ши Осени
+  Осенние Ши
 Sluagh
   Слуаги
 Swan maidens
@@ -47,7 +47,7 @@ Swan maidens
 Trolls
   Тролли
 Wichtel
-  Гномы
+  Вихтелы
 Wolpertinger
   Вольпертингер`;
 
@@ -56,39 +56,39 @@ export const thallainSource = `Aithu
 Beasties
   Звери
 Bodachs
-  Бодахи
+  Бодачи
 Boggarts
   Боггарты
 Bogies
-  Буги
+  Бука
 Ghasts
-  Вурдалаки
+  Гасты
 Goblins
   Гоблины
 Huaka‘i po
-  Хуакай по
+  Хуака-и по
 Kelpies
   Келпи
 Lurks
-  Лурки
+  Скрытые
 Mandragoras
   Мандрагоры
 Murdhuacha (or Merrow)
   Мерроу
 Nasties
-  Насти
+  Мерзости
 Night Hags
-  Ночные ведьмы
+  Ночные Карги
 Ogres
   Огры
 Sevartal
   Севарталы
 Skinwalkers
-  Скинвокеры
+  Ходящие-в-шкурах
 Spriggans
-  Спригган
+  Спригганы
 Weeping Wights
-  Плачущие Уайты`;
+  Плачущие Твари`;
 
 export const nunnehiSource = `Canotili
   Канотили

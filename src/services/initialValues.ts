@@ -37,7 +37,8 @@ export const initialProfile: Profile = {
   court: "",
   house: "",
   kith: "",
-  legacies: "",
+  primaryLegacy: "",
+  secondaryLegacy: "",
   motley: "",
   seeming: "",
 };

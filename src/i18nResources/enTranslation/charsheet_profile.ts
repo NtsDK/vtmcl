@@ -14,7 +14,8 @@ export const profile = {
   'select-label': 'Select {{title}}',
 
   'court': 'Court:',
-  'legacies': 'Legacies:',
+  'primaryLegacy': 'Prim Legacy:',
+  'secondaryLegacy': 'Sec Legacy:',
   'house': 'House:',
   'seeming': 'Seeming:',
   'kith': 'Kith:',

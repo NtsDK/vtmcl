@@ -14,7 +14,8 @@ export const profile = {
   'select-label': 'Выбор {{title}}',
 
   'court': 'Двор:',
-  'legacies': 'Наследие:',
+  'primaryLegacy': 'Перв. наследие:',
+  'secondaryLegacy': 'Втор. наследие:',
   'house': 'Дом:',
   'seeming': 'Обличье:',
   'kith': 'Кит:',

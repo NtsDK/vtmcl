@@ -8,7 +8,14 @@ export const changelingProfileConfig: ProfileConfig = [[
     name: 'court',
     optionsName: 'courtOptions'
   },
-  'legacies',
+  {
+    name: 'primaryLegacy',
+    optionsName: 'legacyOptions'
+  },
+  {
+    name: 'secondaryLegacy',
+    optionsName: 'legacyOptions'
+  },
   {
     name: 'house',
     optionsName: 'houseOptions'

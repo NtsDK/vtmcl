@@ -43,7 +43,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
           // 'flexGrow': 0.45,
           // // 'flexGrow': 0,
           // 'flexShrink': 0,
-          'flexBasis': '5rem'
+          'flexBasis': '7rem'
         }}
       >
         {t(`charsheet.profile.${itemName}`)}

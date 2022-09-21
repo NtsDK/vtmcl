@@ -64,7 +64,8 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.profile.court = '';
     charSheet.Charsheet.profile.house = '';
     charSheet.Charsheet.profile.kith = '';
-    charSheet.Charsheet.profile.legacies = '';
+    charSheet.Charsheet.profile.primaryLegacy = '';
+    charSheet.Charsheet.profile.secondaryLegacy = '';
     charSheet.Charsheet.profile.motley = '';
     charSheet.Charsheet.profile.seeming = '';
 
