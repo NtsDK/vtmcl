@@ -49,8 +49,12 @@ export function useResource() {
         backgroundOptions: backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
         pathOptions: paths_ru,
-        flawOptions: flaws_ru,
-        meritOptions: merits_ru,
+        flawOptions: preset === 'vampire_v20'
+          ? flaws_ru
+          : [],
+        meritOptions:  preset === 'vampire_v20'
+          ? merits_ru
+          : [],
         courtOptions: courts_ru,
         houseOptions: houseDisplayGroups_ru,
         seemingOptions: seemings_ru,
@@ -68,8 +72,12 @@ export function useResource() {
         backgroundOptions: backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
         pathOptions: paths_en,
-        flawOptions: flaws_en,
-        meritOptions: merits_en,
+        flawOptions: preset === 'vampire_v20'
+          ? flaws_en
+          : [],
+        meritOptions:  preset === 'vampire_v20'
+          ? merits_en
+          : [],
         courtOptions: courts_en,
         houseOptions: houseDisplayGroups_en,
         seemingOptions: seemings_en,
