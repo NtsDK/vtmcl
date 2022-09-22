@@ -51,10 +51,10 @@ export const legacies_en = [{
 
 export const legacies_ru = [{
   groupName: groupNames['seelie'].ru,
-  arr: sortStrArr(R.pluck('ru', unseelieArr))
+  arr: sortStrArr(R.pluck('ru', seelieArr))
 }, {
   groupName: groupNames['unseelie'].ru,
-  arr: sortStrArr(R.pluck('ru', nightmareArr))
+  arr: sortStrArr(R.pluck('ru', unseelieArr))
 }, {
   groupName: groupNames['nightmare'].ru,
   arr: sortStrArr(R.pluck('ru', nightmareArr))
