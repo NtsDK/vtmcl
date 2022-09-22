@@ -7,8 +7,8 @@ import {
   generations_ru,
   clanDisplayGroups_en,
   clanDisplayGroups_ru,
-  backgrounds_en,
-  backgrounds_ru,
+  v20_backgrounds_en,
+  v20_backgrounds_ru,
   disciplineDisplayGroups_en,
   disciplineDisplayGroups_ru,
   paths_en,
@@ -33,7 +33,9 @@ import {
   c20_freePoints_en,
   c20_freePoints_ru,
   arts_en,
-  arts_ru
+  arts_ru,
+  c20_backgrounds_en,
+  c20_backgrounds_ru,
 } from "./dropdownContent";
 
 export function useResource() {
@@ -46,7 +48,9 @@ export function useResource() {
         archetypeOptions: archetypes_ru,
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
-        backgroundOptions: backgrounds_ru,
+        backgroundOptions: preset === 'vampire_v20'
+          ? v20_backgrounds_ru
+          : c20_backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
         pathOptions: paths_ru,
         flawOptions: preset === 'vampire_v20'
@@ -69,7 +73,9 @@ export function useResource() {
         archetypeOptions: archetypes_en,
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
-        backgroundOptions: backgrounds_en,
+        backgroundOptions: preset === 'vampire_v20'
+          ? v20_backgrounds_en
+          : c20_backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
         pathOptions: paths_en,
         flawOptions: preset === 'vampire_v20'

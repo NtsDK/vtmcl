@@ -10,8 +10,8 @@ import {
 
 const sourceArr = [...generateEnRuEntities(generateSequence(2, backgroundsSource))];
 
-export const v20_backgrounds_en: string[] = sortStrArr(R.pluck('en', sourceArr));
+export const c20_backgrounds_en: string[] = sortStrArr(R.pluck('en', sourceArr));
 
-export const v20_backgrounds_ru: string[] = sortStrArr(R.pluck('ru', sourceArr));
+export const c20_backgrounds_ru: string[] = sortStrArr(R.pluck('ru', sourceArr));
 
-export const v20_translateBackground = makeTranslateFunction(sourceArr);
+export const c20_translateBackground = makeTranslateFunction(sourceArr);

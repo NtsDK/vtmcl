@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePreset } from '../services/storageAdapter';
 
 import { useStore } from '../services/store';
 import {
   translateArchetype,
   translateGeneration,
   translateClan,
-  translateBackground,
+  v20_translateBackground,
+  c20_translateBackground,
   translateDiscipline,
   translatePath,
   translateMeritsAndFlaws,
@@ -38,6 +40,13 @@ export function useCharsheetContentI18n() {
   } = useStore();
 
   const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
+
+  const { preset } = usePreset();
+
+  const translateBackground = preset === 'vampire_v20'
+    ? v20_translateBackground
+    : c20_translateBackground
+  ;
 
   useEffect(() => {
     const cb = (lng: string) => {
@@ -121,6 +130,9 @@ export function useCharsheetContentI18n() {
     setMerit,
     flaws,
     setFlaw,
-    prevLanguage
+    prevLanguage,
+    arts,
+    setArtName,
+    translateBackground
   ]);
 }
