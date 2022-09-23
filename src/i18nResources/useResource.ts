@@ -13,10 +13,10 @@ import {
   disciplineDisplayGroups_ru,
   paths_en,
   paths_ru,
-  flaws_en,
-  flaws_ru,
-  merits_en,
-  merits_ru,
+  v20_flaws_en,
+  v20_flaws_ru,
+  v20_merits_en,
+  v20_merits_ru,
   v20_freePoints_en,
   v20_freePoints_ru,
 
@@ -36,6 +36,10 @@ import {
   arts_ru,
   c20_backgrounds_en,
   c20_backgrounds_ru,
+  c20_flaws_en,
+  c20_flaws_ru,
+  c20_merits_en,
+  c20_merits_ru,
 } from "./dropdownContent";
 
 export function useResource() {
@@ -54,11 +58,11 @@ export function useResource() {
         disciplineOptions: disciplineDisplayGroups_ru,
         pathOptions: paths_ru,
         flawOptions: preset === 'vampire_v20'
-          ? flaws_ru
-          : [],
+          ? v20_flaws_ru
+          : c20_flaws_ru,
         meritOptions:  preset === 'vampire_v20'
-          ? merits_ru
-          : [],
+          ? v20_merits_ru
+          : c20_merits_ru,
         courtOptions: courts_ru,
         houseOptions: houseDisplayGroups_ru,
         seemingOptions: seemings_ru,
@@ -79,11 +83,11 @@ export function useResource() {
         disciplineOptions: disciplineDisplayGroups_en,
         pathOptions: paths_en,
         flawOptions: preset === 'vampire_v20'
-          ? flaws_en
-          : [],
+          ? v20_flaws_en
+          : c20_flaws_en,
         meritOptions:  preset === 'vampire_v20'
-          ? merits_en
-          : [],
+          ? v20_merits_en
+          : c20_merits_en,
         courtOptions: courts_en,
         houseOptions: houseDisplayGroups_en,
         seemingOptions: seemings_en,

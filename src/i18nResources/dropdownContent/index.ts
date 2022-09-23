@@ -15,3 +15,4 @@ export * from './changeling/legacies';
 export * from './changeling/freePoints';
 export * from './changeling/arts';
 export * from './changeling/backgrounds';
+export * from './changeling/meritsAndFlaws';

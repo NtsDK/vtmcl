@@ -52,14 +52,14 @@ const allMeritsAndFlaws = [
   ...supernaturalMeritsArr,
 ];
 
-export const translateMeritsAndFlaws = makeTranslateFunction(allMeritsAndFlaws);
+export const v20_translateMeritsAndFlaws = makeTranslateFunction(allMeritsAndFlaws);
 
 
 const meritsAndFlawsGroupsArr = [...generateIdEnRuEntities(generateSequence(3, meritsAndFlawsGroupsSource))];
 
 const groupNames = R.indexBy(R.prop('id'), meritsAndFlawsGroupsArr) as Record<MeritsAndFlawsGroups, IdEnRuEntity>;
 
-export const merits_en = [{
+export const v20_merits_en = [{
   groupName: groupNames['physical-merits'].en,
   arr: sortStrArr(R.pluck('en', physicalMeritsArr))
 }, {
@@ -73,7 +73,7 @@ export const merits_en = [{
   arr: sortStrArr(R.pluck('en', supernaturalMeritsArr))
 }];
 
-export const merits_ru = [{
+export const v20_merits_ru = [{
   groupName: groupNames['physical-merits'].ru,
   arr: sortStrArr(R.pluck('ru', physicalMeritsArr))
 }, {
@@ -87,7 +87,7 @@ export const merits_ru = [{
   arr: sortStrArr(R.pluck('ru', supernaturalMeritsArr))
 }];
 
-export const flaws_en = [{
+export const v20_flaws_en = [{
   groupName: groupNames['physical-flaws'].en,
   arr: sortStrArr(R.pluck('en', physicalFlawsArr))
 }, {
@@ -101,7 +101,7 @@ export const flaws_en = [{
   arr: sortStrArr(R.pluck('en', supernaturalFlawsArr))
 }];
 
-export const flaws_ru = [{
+export const v20_flaws_ru = [{
   groupName: groupNames['physical-flaws'].ru,
   arr: sortStrArr(R.pluck('ru', physicalFlawsArr))
 }, {

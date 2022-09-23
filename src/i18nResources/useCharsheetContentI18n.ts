@@ -11,7 +11,8 @@ import {
   c20_translateBackground,
   translateDiscipline,
   translatePath,
-  translateMeritsAndFlaws,
+  v20_translateMeritsAndFlaws,
+  c20_translateMeritsAndFlaws,
   translateCourt,
   translateSeeming,
   translateHouse,
@@ -46,6 +47,11 @@ export function useCharsheetContentI18n() {
   const translateBackground = preset === 'vampire_v20'
     ? v20_translateBackground
     : c20_translateBackground
+  ;
+
+  const translateMeritsAndFlaws = preset === 'vampire_v20'
+    ? v20_translateMeritsAndFlaws
+    : c20_translateMeritsAndFlaws
   ;
 
   useEffect(() => {
@@ -133,6 +139,7 @@ export function useCharsheetContentI18n() {
     prevLanguage,
     arts,
     setArtName,
-    translateBackground
+    translateBackground,
+    translateMeritsAndFlaws,
   ]);
 }
