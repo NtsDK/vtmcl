@@ -2,7 +2,7 @@ export const about = {
   'defaultPageTitle': 'Character Sheet VtM V20 by NtsDK. v0.2.4',
   'charsheetWithName': '{{characterName}}. Character Sheet VtM V20. v0.2.4',
 
-  "nav-about": "About character sheet",
+  "header": "About character sheet",
   'aboutCharsheetH1': 'About Character Sheet VtM V20 by NtsDK',
   'curVersion': 'Version 0.2.4, 28 August 2022',
   'license': 'Source code is open under Apache 2 license.',

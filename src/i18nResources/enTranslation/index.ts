@@ -7,6 +7,7 @@ import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
+import { instruction } from "./instruction";
 
 type TranslationInfo = typeof ruTranslation;
 
@@ -14,6 +15,7 @@ export const enTranslation: TranslationInfo = {
   about,
   checklist,
   actionMenu,
+  instruction,
   "buttons": {
     'hide-panel': 'Hide panel',
     'show-panel': 'Show panel'
@@ -81,15 +83,5 @@ export const enTranslation: TranslationInfo = {
   //   "user": "User",
   //   "action": "Action",
   //   "params": "Parameters",
-  // },
-  // 'about': {
-  //   "about-authors": "Program 'Character sheet Vampire: the Masquerade' is written by Timofey Rechkalov (NtsDK) by Pavel Sineglazov request. Design: Pavel Sineglazov. Coding: Timofey Rechkalov.",
-  //   "site-mention": "Author\'s site: ",
-  //   "site-description": "You can find other programs on author's site.",
-  //   "program-is-free-in-rep": "Source code is open under Apache 2 license",
-  //   "by-link": "in repository",
-  //   "icons-authors": "Authors of used icons from www.flaticon.com: Freepik, Picol, Nice and Serious. Flags used from flag-icon-css.lip.is.",
-  //   "versions": "Version story",
-  //   "var010": "Version 0.1.0 (7 Nov 2017) - project 'Character sheet Vampire: the Masquerade' merged in NIMS project. Implemented basic character sheet for VtM 4th edition with English and Russian support.",
   // },
 };

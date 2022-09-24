@@ -6,6 +6,7 @@ import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
+import { instruction } from "./instruction";
 
 
 
@@ -14,6 +15,7 @@ export const ruTranslation = {
   about,
   checklist,
   actionMenu,
+  instruction,
   "buttons": {
     'hide-panel': 'Спрятать панель',
     'show-panel': 'Показать панель',
@@ -81,16 +83,6 @@ export const ruTranslation = {
   //   "user": "Пользователь",
   //   "action": "Действие",
   //   "params": "Параметры",
-  // },
-  // 'about': {
-  //   "about-authors": "Программа 'Лист персонажа Vampire: the Masquerade' разработана Тимофеем Речкаловым (NtsDK) по просьбе Павла Синеглазова. Дизайн: Павел Синеглазов. Реализация: Тимофей Речкалов.",
-  //   "site-mention": "Сайт автора: ",
-  //   "site-description": "На сайте вы можете ознакомиться с другими программами автора.",
-  //   "program-is-free-in-rep": "Исходный код доступен под лицензией Apache 2",
-  //   "by-link": "в репозитории",
-  //   "icons-authors": "Авторы используемых иконок с сайта www.flaticon.com: Freepik, Picol, Nice and Serious. Флаги взяты с flag-icon-css.lip.is.",
-  //   "versions": "История версий",
-  //   "var010": "Версия 0.1.0 (7 Nov 2017) - проект 'Лист персонажа Vampire: the Masquerade' интегрирован в проект НИМС. Реализован базовый лист персонажа для VtM 4ой редакции с поддержкой русского и английского языков.",
   // },
 };
 

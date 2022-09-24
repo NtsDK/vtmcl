@@ -3,6 +3,9 @@ import DocumentTitle from 'react-document-title';
 import Card from 'react-bootstrap/Card';
 import { useTranslation } from 'react-i18next';
 
+import { ExternalLink } from "../../uiLib/ExternalLink";
+import { UnorderedList } from "../../uiLib/UnorderedList";
+
 import './AboutPage.css';
 
 
@@ -13,8 +16,13 @@ export function AboutPage(props: AboutPageProps) {
   const { t } = useTranslation();
 
   return (
-    <DocumentTitle title={t('about.nav-about')}>
-      <main className="AboutPage tw-mx-auto">
+    <DocumentTitle title={t('about.header')}>
+      <main
+        className="AboutPage tw-mx-auto"
+        style={{
+          width: '45rem'
+        }}
+      >
         <Card>
           <Card.Body>
             <div>
@@ -30,61 +38,61 @@ export function AboutPage(props: AboutPageProps) {
                 <h2 className="tw-text-lg tw-mb-4">
                   {t('about.links')}
                 </h2>
-                <ul>
+                <UnorderedList>
                   <li>
-                    <a href="http://trechkalov.com">
+                    <ExternalLink href="http://trechkalov.com">
                       {t('about.developer-site')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://vk.com/ntsdk_wod_software">
+                    <ExternalLink href="https://vk.com/ntsdk_wod_software">
                       {t('about.vk-group')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://t.me/ntsdk_wod_software">
+                    <ExternalLink href="https://t.me/ntsdk_wod_software">
                       {t('about.tg-channel')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://t.me/ntsdk_wod_software_chat">
+                    <ExternalLink href="https://t.me/ntsdk_wod_software_chat">
                       {t('about.tg-chat')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://github.com/NtsDK/vtmcl">
+                    <ExternalLink href="https://github.com/NtsDK/vtmcl">
                       {t('about.project-source')}
-                    </a>
+                    </ExternalLink>
                   </li>
 
                   <li>
-                    <a href="http://studio101.ru">
+                    <ExternalLink href="http://studio101.ru">
                       {t('about.studio-101')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://rpgbook.ru">
+                    <ExternalLink href="https://rpgbook.ru">
                       {t('about.rpgbook')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="http://theonyxpath.com/">
+                    <ExternalLink href="http://theonyxpath.com/">
                       {t('about.onyxpath')}
-                    </a>
+                    </ExternalLink>
                   </li>
                   <li>
-                    <a href="https://www.worldofdarkness.com/">
+                    <ExternalLink href="https://www.worldofdarkness.com/">
                       {t('about.worldofdarkness')}
-                    </a>
+                    </ExternalLink>
                   </li>
-                </ul>
+                </UnorderedList>
               </div>
 
               <div className="tw-mb-8">
                 <h2 className="tw-text-lg tw-mb-4">
                   {t('about.version-history')}
                 </h2>
-                <ul>
+                <UnorderedList>
                   <li>
                     {t('about.version-0.2.4')}
                   </li>
@@ -100,7 +108,7 @@ export function AboutPage(props: AboutPageProps) {
                   <li>
                     {t('about.version-0.1.0')}
                   </li>
-                </ul>
+                </UnorderedList>
               </div>
             </div>
 
@@ -108,28 +116,28 @@ export function AboutPage(props: AboutPageProps) {
               <h2 className="tw-text-lg">
                 {t('about.project-members')}
               </h2>
-              <ul>
+              <UnorderedList>
                 <li>
                   {t('about.ntsdk')}
                 </li>
                 <li>
                   {t('about.mellon')}
                 </li>
-              </ul>
+              </UnorderedList>
             </div>
 
             <div>
               <h2 className="tw-text-lg">
                 {t('about.legal-information')}
               </h2>
-              <ul>
+              <UnorderedList>
                 <li>
                   {t('about.paradox-copyright')}
                 </li>
                 <li>
                   {t('about.studio-101-copyright')}
                 </li>
-              </ul>
+              </UnorderedList>
             </div>
           </Card.Body>
         </Card>

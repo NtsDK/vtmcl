@@ -28,6 +28,7 @@ import { AboutPage } from './ui/AboutPage';
 import { useSettings } from './services/storageAdapter';
 import { ControlPanel } from './ui/ControlPanel';
 import { useCharsheetContentI18n } from './i18nResources';
+import { InstructionPage } from './ui/InstructionPage';
 
 function App() {
   const { t } = useTranslation();
@@ -57,7 +58,7 @@ function App() {
             <div className="tw-flex-grow-1 tw-w-full">
               <Switch>
                 <Route path="/charsheet" component={CharSheetPage} />
-                {/* <Route path="/instruction" component={InstructionPage} /> */}
+                <Route path="/instruction" component={InstructionPage} />
                 {/* <Route path="/log" component={LogPage} /> */}
                 <Route path="/about" component={AboutPage} />
                 <Route path="/" component={CharSheetPage} />

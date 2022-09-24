@@ -2,7 +2,7 @@ export const about = {
   'defaultPageTitle': 'Лист персонажа VtM V20 от NtsDK. v0.2.4',
   'charsheetWithName': '{{characterName}}. Лист персонажа VtM V20. v0.2.4',
 
-  "nav-about": "О листе персонажа",
+  "header": "О листе персонажа",
   'aboutCharsheetH1': 'О листе персонажа VtM V20 от NtsDK',
   'curVersion': 'Версия 0.2.4 от 28 августа 2022',
   'license': 'Проект с открытым исходным кодом под лицензией Apache 2.0',

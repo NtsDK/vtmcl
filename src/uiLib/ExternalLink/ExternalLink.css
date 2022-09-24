@@ -1,0 +1,8 @@
+/* based on https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links */
+
+a.ExternalLink {
+  text-decoration: underline;
+}
+a.ExternalLink:link           { color: rgb(0, 0, 238) }  /* unvisited links       */
+a.ExternalLink:visited        { color: rgb(85, 26, 139) }  /* visited links         */
+a.ExternalLink:active         { color: red }  /* active links */

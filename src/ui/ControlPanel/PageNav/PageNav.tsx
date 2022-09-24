@@ -26,13 +26,19 @@ export function PageNav(props: PageNavProps) {
       >
         {t('charsheet.charsheet')}
       </Nav.Link>
-      {/* <Nav.Link as={NavLink} to='/instruction' className="tw-px-5 tw-py-3">{t('header.instruction')}</Nav.Link> */}
+      <Nav.Link
+        as={NavLink}
+        to='/instruction'
+        className="tw-px-5 tw-py-3"
+      >
+        {t('instruction.header')}
+      </Nav.Link>
       <Nav.Link
         as={NavLink}
         to='/about'
         className="tw-px-5 tw-py-3"
       >
-        {t('about.nav-about')}
+        {t('about.header')}
       </Nav.Link>
     </Nav>
   );
