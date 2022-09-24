@@ -21,6 +21,7 @@ export function PresetSelect(props: PresetSelectProps) {
       className={classnames("PresetSelect", className)}
       value={preset}
       onChange={e => setPreset(e.currentTarget.value as Preset)}
+      aria-label={t('charsheet.type-select')}
     >
       {
         presetList.map(item =>

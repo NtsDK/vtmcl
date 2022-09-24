@@ -32,6 +32,7 @@ import {
 export interface PresetService {
   preset: Preset;
   setPreset(preset: Preset): void;
+  getPresetDisplayName: () => string;
 }
 
 export interface ProfileService {

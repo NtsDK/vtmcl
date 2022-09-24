@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import { useTranslation } from 'react-i18next';
 
-import { useProfile } from '../../../services/storageAdapter';
+import { usePreset, useProfile } from '../../../services/storageAdapter';
 import { AbilitiesSection } from '../commonBlocks/AbilitiesSection';
 import { AttributeSection } from '../commonBlocks/AttributeSection';
 import { PresetSelect } from '../commonBlocks/PresetSelect';
@@ -18,6 +18,7 @@ export function CommonPageStart(props: CommonPageStartProps) {
   const { t } = useTranslation();
 
   const { profile } = useProfile();
+  const { getPresetDisplayName } = usePreset();
 
   const [ title, setTitle ] = useState<string>('');
 
@@ -26,9 +27,10 @@ export function CommonPageStart(props: CommonPageStartProps) {
       ? t('charsheet.emptyName')
       : profile.name;
     setTitle(t('about.charsheetWithName', {
-      characterName
+      characterName,
+      type: getPresetDisplayName()
     }));
-  }, [t, profile]);
+  }, [t, profile, getPresetDisplayName]);
 
   return (
     <DocumentTitle title={title}>

@@ -1,9 +1,9 @@
 export const about = {
-  'defaultPageTitle': 'Character Sheet VtM V20 by NtsDK. v0.2.4',
-  'charsheetWithName': '{{characterName}}. Character Sheet VtM V20. v0.2.4',
+  'defaultPageTitle': 'Character Sheet {{type}} by NtsDK. v0.2.4',
+  'charsheetWithName': '{{characterName}}. Character Sheet {{type}}. v0.2.4',
 
   "header": "About character sheet",
-  'aboutCharsheetH1': 'About Character Sheet VtM V20 by NtsDK',
+  'aboutCharsheetH1': 'About Character Sheet {{type}} by NtsDK',
   'curVersion': 'Version 0.2.4, 28 August 2022',
   'license': 'Source code is open under Apache 2 license.',
   'flaticon-mention': 'Project uses icons from www.flaticon.com, authors Freepik, Picol, Nice and Serious.',

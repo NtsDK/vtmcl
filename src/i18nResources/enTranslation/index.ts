@@ -39,6 +39,7 @@ export const enTranslation: TranslationInfo = {
   "charsheet": {
     'emptyName': 'Nameless character',
     'charsheet': 'Character Sheet',
+    'type-select': 'Character sheet type',
     preset: {
       vampire_v20: 'Vampire: The Masquerade. V20',
       changeling_v20: 'Changeling: The Dreaming. V20',

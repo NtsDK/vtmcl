@@ -214,6 +214,9 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setPreset(preset2: Preset) {
       setPresetValue(preset2);
     },
+    getPresetDisplayName() {
+      return preset === 'vampire_v20' ? 'VtM V20' : 'CtD V20'
+    },
     profile,
     setProfileItem(itemName: keyof Profile, value: string) {
       setProfile((prevProfile) => ({

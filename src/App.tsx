@@ -25,7 +25,7 @@ import { ErrorNotification } from './uiLib/ErrorNotification';
 import { CharSheetPage } from './ui/CharSheetPage';
 import { AboutPage } from './ui/AboutPage';
 
-import { useSettings } from './services/storageAdapter';
+import { usePreset, useSettings } from './services/storageAdapter';
 import { ControlPanel } from './ui/ControlPanel';
 import { useCharsheetContentI18n } from './i18nResources';
 import { InstructionPage } from './ui/InstructionPage';
@@ -33,6 +33,7 @@ import { InstructionPage } from './ui/InstructionPage';
 function App() {
   const { t } = useTranslation();
   const { settings } = useSettings();
+  const { getPresetDisplayName } = usePreset();
 
   useCharsheetContentI18n();
 
@@ -45,7 +46,9 @@ function App() {
   }, [settings]);
 
   return (
-    <DocumentTitle title={t('about.defaultPageTitle')}>
+    <DocumentTitle title={t('about.defaultPageTitle', {
+      type: getPresetDisplayName()
+    })}>
       <Router>
         <div className="app">
           <div className="tw-flex">

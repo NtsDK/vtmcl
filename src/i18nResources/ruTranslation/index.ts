@@ -39,6 +39,7 @@ export const ruTranslation = {
   "charsheet": {
     'emptyName': 'Безымянный персонаж',
     'charsheet': 'Лист персонажа',
+    'type-select': 'Тип листа персонажа',
     preset: {
       vampire_v20: 'Вампиры: Маскарад. V20',
       changeling_v20: 'Подменыши: Грёза. V20',
