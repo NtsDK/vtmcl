@@ -12,6 +12,30 @@ export function InstructionRu(props: InstructionRuProps) {
     <div className="InstructionRu">
       <div className="tw-mb-8">
         <h1 className='tw-text-lg tw-mb-4'>Демонстрация работы с листом персонажа</h1>
+
+        <iframe
+          className="tw-mx-auto tw-mb-8"
+          src="https://vk.com/video_ext.php?oid=3305695&id=456239345&hash=33fbd8c2e64848ce&hd=2"
+          width="640"
+          height="360"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
+          frameBorder="0"
+          allowFullScreen
+          title="VK video player"
+        ></iframe>
+
+
+        <div className='tw-mb-4'>Зеркало на youtube</div>
+        <iframe
+          className="tw-mx-auto"
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/1VADY2S84yk"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className="tw-mb-8">
         <h2 className='tw-text-lg tw-mb-4'>Что это за веб-страница?</h2>

@@ -12,6 +12,17 @@ export function InstructionEn(props: InstructionEnProps) {
     <div className="InstructionEn">
       <div className="tw-mb-8">
         <h1 className='tw-text-lg tw-mb-4'>Character sheet demo</h1>
+
+        <iframe
+          className="tw-mx-auto"
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/jRclWn96MR0"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className="tw-mb-8">
         <h2 className='tw-text-lg tw-mb-4'>What is this page about?</h2>
