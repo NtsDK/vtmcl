@@ -1,0 +1,1 @@
+export { InstructionRu } from './InstructionRu';
