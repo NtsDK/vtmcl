@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import { useTranslation } from 'react-i18next';
+import { CURRENT_VERSION } from '../../../constants';
 
 import { usePreset, useProfile } from '../../../services/storageAdapter';
 import { AbilitiesSection } from '../commonBlocks/AbilitiesSection';
@@ -28,7 +29,8 @@ export function CommonPageStart(props: CommonPageStartProps) {
       : profile.name;
     setTitle(t('about.charsheetWithName', {
       characterName,
-      type: getPresetDisplayName()
+      type: getPresetDisplayName(),
+      version: CURRENT_VERSION
     }));
   }, [t, profile, getPresetDisplayName]);
 

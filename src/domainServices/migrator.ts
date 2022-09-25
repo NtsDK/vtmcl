@@ -105,5 +105,8 @@ export function migrate(charSheetSrc: any): unknown {
 
     charSheet.Version = '0.2.5';
   }
+  if (charSheet.Version === '0.2.5') {
+    charSheet.Version = '0.3.0';
+  }
   return charSheet;
 }

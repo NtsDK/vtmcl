@@ -1,10 +1,10 @@
 export const about = {
-  'defaultPageTitle': 'Лист персонажа {{type}} от NtsDK. v0.2.4',
-  'charsheetWithName': '{{characterName}}. Лист персонажа {{type}}. v0.2.4',
+  'defaultPageTitle': 'Лист персонажа {{type}} от NtsDK. v{{version}}',
+  'charsheetWithName': '{{characterName}}. Лист персонажа {{type}}. v{{version}}',
 
   "header": "О листе персонажа",
   'aboutCharsheetH1': 'Об электронном листе персонажа от NtsDK',
-  'curVersion': 'Версия 0.2.4 от 28 августа 2022',
+  'curVersion': 'Версия {{version}} от 28 августа 2022',
   'license': 'Проект с открытым исходным кодом под лицензией Apache 2.0',
   'flaticon-mention': 'В проекте используются иконки с сайта www.flaticon.com от авторов Freepik, Picol, Nice и Serious.',
   'flagicons-mention': 'В проекте используются флаги с сайта flagicons.lipis.dev.',

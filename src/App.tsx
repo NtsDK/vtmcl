@@ -29,6 +29,7 @@ import { usePreset, useSettings } from './services/storageAdapter';
 import { ControlPanel } from './ui/ControlPanel';
 import { useCharsheetContentI18n } from './i18nResources';
 import { InstructionPage } from './ui/InstructionPage';
+import { CURRENT_VERSION } from './constants';
 
 function App() {
   const { t } = useTranslation();
@@ -47,7 +48,8 @@ function App() {
 
   return (
     <DocumentTitle title={t('about.defaultPageTitle', {
-      type: getPresetDisplayName()
+      type: getPresetDisplayName(),
+      version: CURRENT_VERSION
     })}>
       <Router>
         <div className="app">
