@@ -10,11 +10,13 @@ export const about = {
   'flagicons-mention': 'Project uses flag icons from flagicons.lipis.dev.',
 
   'links': 'Links',
+  'charsheet-archive': 'Character sheet archive for offline mode',
   'developer-site': 'Developer website',
   'vk-group': 'Project group in Vkontakte',
   'tg-channel': 'Project channel in Telegram',
   'tg-chat': 'Project chat in Telegram',
   'project-source': 'Project source code',
+
   'studio-101': 'Publisher and translator of role-playing games Studio 101, rulebooks on paper in Russian on sale',
   'rpgbook': 'Webstore stanciya «Rolevaya», e-rulebooks in Russian on sale',
   'onyxpath': 'Publisher and developer of role-playing games Onyx Path Publishing',

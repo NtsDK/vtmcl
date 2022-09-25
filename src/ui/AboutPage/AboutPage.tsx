@@ -43,6 +43,11 @@ export function AboutPage(props: AboutPageProps) {
                 </h2>
                 <UnorderedList>
                   <li>
+                    <ExternalLink href="http://trechkalov.com/archives/wod_character_sheet_ru_en_0.3.0.zip">
+                      {t('about.charsheet-archive')}
+                    </ExternalLink>
+                  </li>
+                  <li>
                     <ExternalLink href="http://trechkalov.com">
                       {t('about.developer-site')}
                     </ExternalLink>

@@ -43,6 +43,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -71,6 +72,7 @@
   },
   "devDependencies": {
     "@types/react-document-title": "^2.0.5",
-    "react-snap": "^1.23.0"
+    "react-snap": "^1.23.0",
+    "source-map-explorer": "^2.5.2"
   }
 }
