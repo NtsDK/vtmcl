@@ -4,7 +4,7 @@ export const about = {
 
   "header": "About character sheet",
   'aboutCharsheetH1': 'About Character Sheet {{type}} by NtsDK',
-  'curVersion': 'Version {{version}}, 28 August 2022',
+  'curVersion': 'Version {{version}}, 25 September 2022',
   'license': 'Source code is open under Apache 2 license.',
   'flaticon-mention': 'Project uses icons from www.flaticon.com, authors Freepik, Picol, Nice and Serious.',
   'flagicons-mention': 'Project uses flag icons from flagicons.lipis.dev.',
@@ -21,6 +21,7 @@ export const about = {
   'worldofdarkness': 'World of Darkness game universe website',
 
   'version-history': 'Version history',
+  'version-0.3.0': 'Version 0.3.0 (25 Sep 2022) - Add support of Changeling: The Dreaming. Added instruction page. Fixed checklist bug with incorrect calculating of attribute dots.',
   'version-0.2.4': 'Version 0.2.4 (28 Aug 2022) - Now character sheet supports all single page features of official and Studio 101 character sheets. Added selects with English translation support.',
   'version-0.2.3': 'Version 0.2.3 (22 Aug 2022) - Reworked UI for better keyboard accessibility. Made all names consistent with Studio 101 Russian translation. Fixed will and blood pool icons. Added aggravated damade. Added generation selection list. Improved PDF printing from browser.',
   'version-0.2.2': 'Version 0.2.2 (1 Jul 2022) - Added character creation checklist. Minor UI updates and bug fixes.',
@@ -30,6 +31,8 @@ export const about = {
   'project-members': 'Contributors',
   'ntsdk': 'Timofei NtsDK Rechkalov - development',
   'mellon': 'Pavel Mellon Sineglazov - design',
+  'myshlaevski': 'Anastasiya Myshlaevskaya - changeling consultant',
+  'contributor-vk-group': 'VK group',
 
   'legal-information': 'Legal information',
   'paradox-copyright': 'Text and illustrations, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.',

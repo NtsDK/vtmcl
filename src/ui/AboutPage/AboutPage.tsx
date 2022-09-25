@@ -97,6 +97,9 @@ export function AboutPage(props: AboutPageProps) {
                 </h2>
                 <UnorderedList>
                   <li>
+                    {t('about.version-0.3.0')}
+                  </li>
+                  <li>
                     {t('about.version-0.2.4')}
                   </li>
                   <li>
@@ -125,6 +128,13 @@ export function AboutPage(props: AboutPageProps) {
                 </li>
                 <li>
                   {t('about.mellon')}
+                </li>
+                <li>
+                  {t('about.myshlaevski')}
+                  &nbsp;
+                  <ExternalLink href='https://vk.com/dreamyfish'>
+                    {t('about.contributor-vk-group')}
+                  </ExternalLink>
                 </li>
               </UnorderedList>
             </div>
