@@ -21,7 +21,7 @@ export function VirtuesCheck(props: VirtuesCheckProps) {
   const { virtues } = useVirtues();
   const [ virtuesFilled, setVirtuesFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
   useEffect(() => {
-    setVirtuesFilled(checkArrSumFilled(R.values(virtues), EXPECTED_VIRTUE_DOTS));
+    setVirtuesFilled(checkArrSumFilled([...R.values(virtues), -3], EXPECTED_VIRTUE_DOTS));
   }, [virtues]);
 
   return (
