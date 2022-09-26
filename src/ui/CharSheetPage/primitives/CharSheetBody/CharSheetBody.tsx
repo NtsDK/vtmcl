@@ -5,12 +5,13 @@ import './CharSheetBody.css';
 
 import { useSettings } from '../../../../services/storageAdapter';
 import { Settings } from '../../../../domain';
+import { envInfo } from '../../../../lib/envUtils';
 
 interface CharSheetBodyProps {
   className?: string;
 }
 
-function getBgColor(settings: Settings) {
+function getBgColor(settings: Settings): string {
   const {
     charsheetBackMode,
     charsheetBackColor,
@@ -21,7 +22,10 @@ function getBgColor(settings: Settings) {
   return 'transparent';
 }
 
-function getBgImage(settings: Settings) {
+function getBgImage(settings: Settings): string {
+  if(envInfo().isArtificialBrowser) {
+    return 'none';
+  }
   const {
     charsheetBackMode,
     charsheetBackImage_v2

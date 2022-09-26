@@ -4,12 +4,13 @@ import { resources, defaultLang } from './i18nResources';
 // see https://www.npmjs.com/package/i18next-browser-languagedetector
 // for details
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { envInfo } from './lib/envUtils';
 const languageDetector = new LanguageDetector();
 languageDetector.addDetector({
   name: 'reactSnap',
 
   lookup(options) {
-    if ( navigator.userAgent === 'ReactSnap' ) {
+    if ( envInfo().isArtificialBrowser ) {
       return 'ru';
     }
     return undefined;
