@@ -15,8 +15,8 @@ export const advantages = {
 
   // 'traits': 'Трайты',
   'virtues': 'Добродетели',
-  'conscience': 'Совесть / Решимость',
-  'self_control': 'Самоконтроль / Инстинкты',
+  'conscience': 'Совесть/Решимость',
+  'self_control': 'Самоконтроль/Инстинкты',
   'courage': 'Смелость',
 
   'arts': 'Искусства',

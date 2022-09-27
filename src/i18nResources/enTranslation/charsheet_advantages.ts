@@ -15,8 +15,8 @@ export const advantages = {
 
   // 'traits': 'Traits',
   'virtues': 'Virtues',
-  'conscience': 'Conscience / Conviction',
-  'self_control': 'Self control / Instinct',
+  'conscience': 'Conscience/Conviction',
+  'self_control': 'Self control/Instinct',
   'courage': 'Courage',
 
   'arts': 'Arts',
