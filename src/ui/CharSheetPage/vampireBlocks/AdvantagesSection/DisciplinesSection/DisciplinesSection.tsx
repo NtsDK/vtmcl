@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDisciplines } from '../../../../../services/storageAdapter';
+import { useDisciplines, useLimits } from '../../../../../services/storageAdapter';
 import { NameNumberSection } from '../../../primitives/NameNumberSection';
 import './DisciplinesSection.css';
 
@@ -23,6 +23,7 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
   const { className } = props;
 
   const { disciplineOptions } = useResource();
+  const { limits } = useLimits();
 
   return (
     <NameNumberSection
@@ -38,6 +39,7 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
       options={disciplineOptions}
       selectOptionMsg={t('charsheet.advantages.select-discipline')}
       nameLabel='charsheet.advantages.discipline-label'
+      max={limits.parameterLimit}
     />
   );
 }

@@ -7,6 +7,7 @@ import {
   CharSheetStorageService,
   DisciplinesService,
   ErrorDescriptionService,
+  LimitService,
   MeritsNFlawsService,
   NotesService,
   PresetService,
@@ -66,5 +67,9 @@ export function useRealms(): RealmsService {
   return useStore();
 }
 export function useArts(): ArtsService {
+  return useStore();
+}
+
+export function useLimits(): LimitService {
   return useStore();
 }

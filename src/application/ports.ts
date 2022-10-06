@@ -17,6 +17,7 @@ import {
   ErrorDescription,
   Flaws,
   Health,
+  Limits,
   Merits,
   Notes,
   Preset,
@@ -122,6 +123,10 @@ export interface SettingsService {
   setCharsheetBackColor(charsheetBackColor: string): void;
   setCharsheetBackImage(charsheetBackImage: string): void;
   setCharsheetBackMode(charsheetBackMode: CharsheetBackMode): void;
+}
+
+export interface LimitService {
+  limits: Limits;
 }
 
 // export interface GameStorageService {

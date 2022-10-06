@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { Subheader } from '../../primitives/Subheader';
-import { useAttributes } from '../../../../services/storageAdapter';
+import { useAttributes, useLimits } from '../../../../services/storageAdapter';
 import { RangeInput2 } from '../../primitives/RangeInput2';
 import { usePresetSettings } from '../../../../i18nResources';
 
@@ -16,6 +16,7 @@ interface AttributeSectionProps {
 export function AttributeSection(props: AttributeSectionProps) {
   const { t } = useTranslation();
   const { attributes, setAttribute } = useAttributes();
+  const { limits } = useLimits();
   const { className } = props;
 
   const { attributesConfig } = usePresetSettings();
@@ -43,7 +44,7 @@ export function AttributeSection(props: AttributeSectionProps) {
                     {t(`charsheet.attributes.${attribute}`)}
                   </label>
                   <RangeInput2
-                    max={5}
+                    max={limits.parameterLimit}
                     name={`attribute.${attribute}`}
                     value={attributes[attribute]}
                     onClick={(value: number) => setAttribute(attribute, value)}

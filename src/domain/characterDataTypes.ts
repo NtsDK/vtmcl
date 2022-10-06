@@ -4,6 +4,12 @@ export type Preset =
   | 'changeling_v20'
 ;
 
+export interface Limits {
+  parameterLimit: number;
+  bloodPerTurnLimit: number;
+  bloodpool: number;
+}
+
 export const presetList: Preset[] = [
   'vampire_v20',
   'changeling_v20'

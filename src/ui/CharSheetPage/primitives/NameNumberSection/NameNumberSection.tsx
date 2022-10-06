@@ -22,6 +22,7 @@ interface NameNumberSectionProps {
   addItemMsg: string;
   removeItemMsg: string;
   sectionItemName: string;
+  max: number;
   className?: string;
   options?: SelectButtonOption[];
   selectOptionMsg?: string;
@@ -41,7 +42,8 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     sectionItemName,
     options,
     selectOptionMsg,
-    nameLabel
+    nameLabel,
+    max
   } = props;
 
   const { t } = useTranslation();
@@ -88,7 +90,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
               />
             </div>
             <RangeInput2
-              max={5}
+              max={max}
               name={`${sectionItemName}.${index}`}
               value={value}
               onClick={(value: number) => setItemValue(index, value)}

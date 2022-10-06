@@ -1,5 +1,5 @@
 import React from 'react';
-import { useBackgrounds } from '../../../../services/storageAdapter';
+import { useBackgrounds, useLimits } from '../../../../services/storageAdapter';
 import { NameNumberSection } from '../../primitives/NameNumberSection';
 import './BackgroundsSection.css';
 
@@ -23,6 +23,7 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
   const { className } = props;
 
   const { backgroundOptions } = useResource();
+  const { limits } = useLimits();
 
   return (
     <NameNumberSection
@@ -38,6 +39,7 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
       options={backgroundOptions}
       selectOptionMsg={t('charsheet.advantages.select-background')}
       nameLabel='charsheet.advantages.background-label'
+      max={limits.parameterLimit}
     />
   );
 }

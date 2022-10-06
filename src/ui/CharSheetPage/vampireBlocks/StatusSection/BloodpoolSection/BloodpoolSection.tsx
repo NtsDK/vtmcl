@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { RangeInput2 } from '../../../primitives/RangeInput2';
-import { useStateNHealth } from '../../../../../services/storageAdapter';
+import { useLimits, useStateNHealth } from '../../../../../services/storageAdapter';
 
 import './BloodpoolSection.css';
 
@@ -15,6 +15,7 @@ export function BloodpoolSection(props: BloodpoolSectionProps) {
   const { t } = useTranslation();
   const { state, setState } = useStateNHealth();
   const { className } = props;
+  const { limits } = useLimits();
 
   return (
     <fieldset
@@ -22,11 +23,11 @@ export function BloodpoolSection(props: BloodpoolSectionProps) {
       aria-label={t('charsheet.status.bloodpool')}
     >
       <RangeInput2
-        max={20}
+        max={limits.bloodpool}
         name="bloodpool"
         value={state.bloodpool}
         onClick={(value: number) => setState('bloodpool', value)}
-        className="tw-h-12 tw-mb-2"
+        className="tw-mb-2"
         splitEvery={10}
         variant='square'
         multiplier={1.3}

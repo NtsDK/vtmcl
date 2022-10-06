@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 
-import { useArts } from '../../../../../services/storageAdapter';
+import { useArts, useLimits } from '../../../../../services/storageAdapter';
 import { NameNumberSection } from '../../../primitives/NameNumberSection';
 import { useResource } from '../../../../../i18nResources';
 
@@ -24,6 +24,7 @@ export function ArtsSection(props: ArtsSectionProps) {
   const { className } = props;
 
   const { artOptions } = useResource();
+  const { limits } = useLimits();
 
   return (
     <NameNumberSection
@@ -39,6 +40,7 @@ export function ArtsSection(props: ArtsSectionProps) {
       options={artOptions}
       selectOptionMsg={t('charsheet.advantages.select-art')}
       nameLabel='charsheet.advantages.art-label'
+      max={limits.parameterLimit}
     />
   );
 }

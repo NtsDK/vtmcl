@@ -5,7 +5,8 @@ import classnames from "classnames";
 import { Subheader } from '../../primitives/Subheader';
 import {
   useAbilities,
-  useAbilitiesExtension
+  useAbilitiesExtension,
+  useLimits
 } from '../../../../services/storageAdapter';
 import { RangeInput2 } from '../../primitives/RangeInput2';
 import { usePresetSettings } from '../../../../i18nResources';
@@ -20,6 +21,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();
   const { className } = props;
   const { abilities, setAbility } = useAbilities();
+  const { limits } = useLimits();
   const {
     abilitiesExtension,
     setAbilityExtensionName,
@@ -51,7 +53,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                     {t(`charsheet.abilities.${ability}`)}
                   </label>
                   <RangeInput2
-                    max={5}
+                    max={limits.parameterLimit}
                     name={`ability.${ability}`}
                     value={abilities[ability]}
                     onClick={(value: number) => setAbility(ability, value)}
@@ -75,7 +77,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                 onChange={(e) => setAbilityExtensionName(`${extension}Name1`, e.target.value)}
               />
               <RangeInput2
-                max={5}
+                max={limits.parameterLimit}
                 name={`ability.${extension}.1`}
                 value={abilitiesExtension[`${extension}Value1`]}
                 onClick={(value: number) => setAbilityExtensionValue(`${extension}Value1`, value)}
@@ -97,7 +99,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                 onChange={(e) => setAbilityExtensionName(`${extension}Name2`, e.target.value)}
               />
               <RangeInput2
-                max={5}
+                max={limits.parameterLimit}
                 name={`ability.${extension}.2`}
                 value={abilitiesExtension[`${extension}Value2`]}
                 onClick={(value: number) => setAbilityExtensionValue(`${extension}Value2`, value)}

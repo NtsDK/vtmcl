@@ -21,6 +21,7 @@ import {
   PresetService,
   RealmsService,
   ArtsService,
+  LimitService,
 } from "../application/ports";
 import {
   Attributes,
@@ -44,6 +45,7 @@ import {
   Realms,
   Arts,
   Preset,
+  Limits,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -71,6 +73,7 @@ import {
 // import { initialGames, initialServers } from "./initialGames";
 
 import { CURRENT_VERSION } from "../constants";
+import { defaultLimits, getLimits } from "../i18nResources/getLimits";
 
 interface StateStore extends
   PresetService,
@@ -88,7 +91,8 @@ interface StateStore extends
   CharSheetStorageService,
   ErrorDescriptionService,
   RealmsService,
-  ArtsService
+  ArtsService,
+  LimitService
 {
 }
 
@@ -122,6 +126,20 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [realms, setRealms] = useState<Realms>(initialRealms);
 
   const [settings, setSettings] = useState<Settings>(initialSettings);
+
+  const [limits, setLimits] = useState<Limits>(defaultLimits);
+
+  useEffect(() => {
+    const limits = getLimits( preset === 'vampire_v20'
+      ? { type: preset, generation: profile.generation }
+      : { type: preset }
+    );
+    setLimits(limits);
+    setState((prevState) => ({
+      ...prevState,
+      bloodPerTurn: String(limits.bloodPerTurnLimit)
+    }));
+  }, [preset, profile.generation]);
 
   useEffect(() => {
     saveCharSheetInLS(R.clone({
@@ -228,14 +246,14 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAttribute(attributeName: keyof Attributes, value: number) {
       setAttributes({
         ...attributes,
-        [attributeName]: applyRange(0, 5, value)
+        [attributeName]: applyRange(0, limits.parameterLimit, value)
       });
     },
     abilities,
     setAbility(abilityName: keyof Abilities, value: number) {
       setAbilities({
         ...abilities,
-        [abilityName]: applyRange(0, 5, value)
+        [abilityName]: applyRange(0, limits.parameterLimit, value)
       });
     },
     abilitiesExtension,
@@ -248,7 +266,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAbilityExtensionValue: function (abilityName: AbilitiesExtensionValue, value: number): void {
       setAbilitiesExtension({
         ...abilitiesExtension,
-        [abilityName]: applyRange(0, 5, value)
+        [abilityName]: applyRange(0, limits.parameterLimit, value)
       });
     },
     virtues,
@@ -288,7 +306,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       if (typeof value === 'number') {
         setState(prevState => ({
           ...prevState,
-          [stateName]: applyRange(0, stateName === 'bloodpool' ? 20 : 10, value)
+          [stateName]: applyRange(0, stateName === 'bloodpool' ? limits.bloodpool : 10, value)
         }));
       } else {
         setState(prevState => ({
@@ -355,7 +373,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
           return el;
         return {
           ...el,
-          value
+          value: applyRange(0, limits.parameterLimit, value)
         };
       }));
     },
@@ -383,7 +401,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
           return el;
         return {
           ...el,
-          value
+          value: applyRange(0, limits.parameterLimit, value)
         };
       }));
     },
@@ -411,7 +429,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
           return el;
         return {
           ...el,
-          value
+          value: applyRange(0, limits.parameterLimit, value)
         };
       }));
     },
@@ -429,6 +447,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setCharsheetBackMode(charsheetBackMode: CharsheetBackMode) {
       setSettings({ ...settings, charsheetBackMode });
     },
+    limits,
 
     getCharSheet() {
       return {
