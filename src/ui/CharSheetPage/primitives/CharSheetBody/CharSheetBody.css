@@ -1,6 +1,6 @@
 .CharSheetBody {
   /* width: 700px; */
-  width: 44rem;
+  min-width: 44rem;
   /* width: 50rem; */
   min-height: 58rem;
   /* max-width: 44rem; */
@@ -34,7 +34,7 @@
     font-size: 22px;
   }
   .CharSheetBody {
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
   }
 }

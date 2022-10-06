@@ -48,7 +48,7 @@ export function AttributeSection(props: AttributeSectionProps) {
                     name={`attribute.${attribute}`}
                     value={attributes[attribute]}
                     onClick={(value: number) => setAttribute(attribute, value)}
-                    className="tw-flex-grow"
+                    className="tw-ml-4"
                   />
                 </div>
               )

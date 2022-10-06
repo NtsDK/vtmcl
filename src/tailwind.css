@@ -648,10 +648,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.5rem;
 }
 
-.tw-h-12 {
-  height: 3rem;
-}
-
 .tw-h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;

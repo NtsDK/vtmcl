@@ -57,7 +57,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                     name={`ability.${ability}`}
                     value={abilities[ability]}
                     onClick={(value: number) => setAbility(ability, value)}
-                    className="tw-flex-grow"
+                    className="tw-ml-4"
                   />
                 </div>
               )
@@ -81,7 +81,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                 name={`ability.${extension}.1`}
                 value={abilitiesExtension[`${extension}Value1`]}
                 onClick={(value: number) => setAbilityExtensionValue(`${extension}Value1`, value)}
-                className="tw-flex-grow"
+                className="tw-ml-4"
               />
             </div>
             <div
@@ -103,7 +103,7 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
                 name={`ability.${extension}.2`}
                 value={abilitiesExtension[`${extension}Value2`]}
                 onClick={(value: number) => setAbilityExtensionValue(`${extension}Value2`, value)}
-                className="tw-flex-grow"
+                className="tw-ml-4"
               />
             </div>
           </div>
