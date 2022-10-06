@@ -588,16 +588,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.tw-mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .tw-mt-4 {
   margin-top: 1rem;
 }
 
 .tw-mt-2 {
   margin-top: 0.5rem;
-}
-
-.tw-mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .tw-mb-1 {
