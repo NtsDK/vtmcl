@@ -124,3 +124,5 @@ export type Merits = string[];
 export type Flaws = string[];
 
 export type Notes = string;
+export type CharHistory = string;
+export type Goals = string;

@@ -2,7 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AdvantagesSection } from '../changelingBlocks/AdvantagesSection';
 import { StatusSection } from '../changelingBlocks/StatusSection';
+import { CharHistorySection } from '../commonBlocks/CharHistorySection';
 import { FlawsSection } from '../commonBlocks/FlawsSection';
+import { GoalsSection } from '../commonBlocks/GoalsSection';
 import { MeritsSection } from '../commonBlocks/MeritsSection';
 import { NotesSection } from '../commonBlocks/NotesSection';
 import { CommonPageStart } from '../CommonPageStart';
@@ -47,6 +49,17 @@ export function ChangelingCharSheet(props: ChangelingCharSheetProps) {
             <FlawsSection/>
           </div>
         </div>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.charHistory')}
+        </SectionHeader>
+        <CharHistorySection className="tw-mb-6"/>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.goals')}
+        </SectionHeader>
+        <GoalsSection className="tw-mb-6"/>
+
         <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
         </SectionHeader>

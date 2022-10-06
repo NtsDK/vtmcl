@@ -50,6 +50,8 @@ export const enTranslation: TranslationInfo = {
     advantages,
     status,
     'notes': 'Notes',
+    'goals': 'Goals',
+    'charHistory': 'History',
   },
   "common": {
     "to": "to",

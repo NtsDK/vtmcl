@@ -18,6 +18,8 @@ import {
   Arts,
   Realms,
   Preset,
+  CharHistory,
+  Goals,
 } from "../../domain";
 
 export interface CharSheetData {
@@ -35,6 +37,8 @@ export interface CharSheetData {
   health: Health;
   healthChimerical: Health;
   notes: Notes;
+  charHistory: CharHistory;
+  goals: Goals;
   arts: Arts;
   realms: Realms;
 }

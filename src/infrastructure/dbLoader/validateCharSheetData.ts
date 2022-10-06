@@ -14,6 +14,8 @@ import {
   artsSchema,
   realmsSchema,
   presetSchema,
+  charHistorySchema,
+  goalsSchema,
 } from "./validateCharSheetDataElements";
 import {
   abilitiesSchema,
@@ -37,6 +39,8 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     health:       healthSchema,
     healthChimerical: healthSchema,
     notes:        notesSchema,
+    charHistory:  charHistorySchema,
+    goals:        goalsSchema,
     arts:         artsSchema,
     realms:       realmsSchema,
   },
@@ -55,6 +59,8 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "health",
     "healthChimerical",
     "notes",
+    "charHistory",
+    "goals",
     "arts",
     "realms",
   ],

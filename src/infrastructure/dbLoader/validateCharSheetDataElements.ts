@@ -19,6 +19,8 @@ import {
 export const notesSchema: JSONSchemaType<Notes> = {
   type: "string",
 };
+export const charHistorySchema = notesSchema;
+export const goalsSchema = notesSchema;
 
 export const presetSchema: JSONSchemaType<Preset> = {
   type: "string",

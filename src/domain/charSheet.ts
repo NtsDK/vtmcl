@@ -6,8 +6,10 @@ import {
   Arts,
   Attributes,
   Backgrounds,
+  CharHistory,
   Disciplines,
   Flaws,
+  Goals,
   Health,
   Merits,
   Notes,
@@ -39,6 +41,8 @@ export interface CharSheet {
   health: Health;
   healthChimerical: Health;
   notes: Notes;
+  charHistory: CharHistory;
+  goals: Goals;
 
   arts: Arts;
   realms: Realms;

@@ -22,6 +22,7 @@ import {
   RealmsService,
   ArtsService,
   LimitService,
+  HistoryService,
 } from "../application/ports";
 import {
   Attributes,
@@ -46,6 +47,8 @@ import {
   Arts,
   Preset,
   Limits,
+  CharHistory,
+  Goals,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -68,7 +71,9 @@ import {
   initialVirtues,
   initialArts,
   initialRealms,
-  initialPreset
+  initialPreset,
+  initialCharHistory,
+  initialGoals
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
@@ -92,7 +97,8 @@ interface StateStore extends
   ErrorDescriptionService,
   RealmsService,
   ArtsService,
-  LimitService
+  LimitService,
+  HistoryService
 {
 }
 
@@ -121,6 +127,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [health, setHealth] = useState<Health>(initialHealth);
   const [healthChimerical, setHealthChimerical] = useState<Health>(R.clone(initialHealth));
   const [notes, setNotes] = useState<Notes>(initialNotes);
+  const [charHistory, setCharHistory] = useState<CharHistory>(initialCharHistory);
+  const [goals, setGoals] = useState<Goals>(initialGoals);
 
   const [arts, setArts] = useState<Arts>(initialArts);
   const [realms, setRealms] = useState<Realms>(initialRealms);
@@ -157,6 +165,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       health,
       healthChimerical,
       notes,
+      charHistory,
+      goals,
       arts,
       realms,
       Settings: settings,
@@ -177,6 +187,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     health,
     healthChimerical,
     notes,
+    charHistory,
+    goals,
     settings,
     arts,
     realms,
@@ -207,6 +219,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setHealth(cs.health);
     setHealthChimerical(cs.healthChimerical);
     setNotes(cs.notes);
+    setCharHistory(cs.charHistory);
+    setGoals(cs.goals);
 
     setSettings(cs.Settings);
   }
@@ -319,6 +333,14 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     notes,
     setNotes: function (notes: Notes): void {
       setNotes(notes);
+    },
+    charHistory,
+    setCharHistory: function (charHistory: CharHistory): void {
+      setCharHistory(charHistory);
+    },
+    goals,
+    setGoals: function (goals: Goals): void {
+      setGoals(goals);
     },
 
     merits,
@@ -467,6 +489,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         health,
         healthChimerical,
         notes,
+        charHistory,
+        goals,
         arts,
         realms,
       };

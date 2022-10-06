@@ -4,8 +4,10 @@ import {
   Arts,
   Attributes,
   Backgrounds,
+  CharHistory,
   Disciplines,
   Flaws,
+  Goals,
   Health,
   Merits,
   Notes,
@@ -165,6 +167,8 @@ export const initialHealth: Health = {
 };
 
 export const initialNotes: Notes = '';
+export const initialCharHistory: CharHistory = '';
+export const initialGoals: Goals = '';
 
 
 // no character data

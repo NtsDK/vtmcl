@@ -11,11 +11,13 @@ import {
   Arts,
   Attributes,
   Backgrounds,
+  CharHistory,
   CharSheet,
   CharsheetBackMode,
   Disciplines,
   ErrorDescription,
   Flaws,
+  Goals,
   Health,
   Limits,
   Merits,
@@ -113,6 +115,13 @@ export interface StateNHealthService {
 export interface NotesService {
   notes: Notes;
   setNotes(notes: Notes): void;
+}
+
+export interface HistoryService {
+  charHistory: CharHistory;
+  setCharHistory(charHistory: CharHistory): void;
+  goals: Goals;
+  setGoals(goals: Goals): void;
 }
 
 // non char sheet

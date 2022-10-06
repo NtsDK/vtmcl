@@ -141,7 +141,9 @@ export const m: CharSheetInJson = {
       crippled: 0,
       incapacitated: 0
     },
-    notes: "sdsdsdf",
+    notes: "notes sdsdsdf",
+    charHistory: "charHistory sdsdsdf",
+    goals: "goals sdsdsdf",
     arts: [
       { name: "art", value: 1 }
     ],

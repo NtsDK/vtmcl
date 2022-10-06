@@ -18,6 +18,8 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       flaws: charSheet.flaws,
       merits: charSheet.merits,
       notes: charSheet.notes,
+      charHistory: charSheet.charHistory,
+      goals: charSheet.goals,
       virtues: charSheet.virtues,
       state: {
         ...charSheet.state,
@@ -45,6 +47,8 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     flaws: charSheetInJson.Charsheet.flaws,
     merits: charSheetInJson.Charsheet.merits,
     notes: charSheetInJson.Charsheet.notes,
+    goals: charSheetInJson.Charsheet.goals,
+    charHistory: charSheetInJson.Charsheet.charHistory,
     virtues: charSheetInJson.Charsheet.virtues,
     state: charSheetInJson.Charsheet.state,
     health: charSheetInJson.Charsheet.health,

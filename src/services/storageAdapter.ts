@@ -7,6 +7,7 @@ import {
   CharSheetStorageService,
   DisciplinesService,
   ErrorDescriptionService,
+  HistoryService,
   LimitService,
   MeritsNFlawsService,
   NotesService,
@@ -71,5 +72,8 @@ export function useArts(): ArtsService {
 }
 
 export function useLimits(): LimitService {
+  return useStore();
+}
+export function useCharHistory(): HistoryService {
   return useStore();
 }

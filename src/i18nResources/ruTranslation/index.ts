@@ -50,6 +50,8 @@ export const ruTranslation = {
     advantages,
     status,
     'notes': 'Заметки',
+    'goals': 'Цели',
+    'charHistory': 'История',
   },
   "common": {
     "to": "в",
