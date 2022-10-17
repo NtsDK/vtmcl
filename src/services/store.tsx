@@ -23,6 +23,7 @@ import {
   ArtsService,
   LimitService,
   HistoryService,
+  DisciplinePathsService,
 } from "../application/ports";
 import {
   Attributes,
@@ -49,6 +50,8 @@ import {
   Limits,
   CharHistory,
   Goals,
+  Rituals,
+  DisciplinePaths,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -73,7 +76,9 @@ import {
   initialRealms,
   initialPreset,
   initialCharHistory,
-  initialGoals
+  initialGoals,
+  initialDisciplinePaths,
+  initialRituals
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
@@ -87,6 +92,7 @@ interface StateStore extends
   AbilitiesService,
   AbilitiesExtensionService,
   DisciplinesService,
+  DisciplinePathsService,
   BackgroundsService,
   VirtuesService,
   MeritsNFlawsService,
@@ -119,6 +125,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
   const [abilitiesExtension, setAbilitiesExtension] = useState<AbilitiesExtension>(initialAbilitiesExtension);
   const [disciplines, setDisciplines] = useState<Disciplines>(initialDisciplines);
+  const [disciplinePaths, setDisciplinePaths] = useState<DisciplinePaths>(initialDisciplinePaths);
+  const [rituals, setRituals] = useState<Rituals>(initialRituals);
   const [backgrounds, setBackgrounds] = useState<Backgrounds>(initialBackgrounds);
   const [virtues, setVirtues] = useState<Virtues>(initialVirtues);
   const [merits, setMerits] = useState<Merits>(initialMerits);
@@ -157,6 +165,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       abilities,
       abilitiesExtension,
       disciplines,
+      disciplinePaths,
+      rituals,
       backgrounds,
       virtues,
       merits,
@@ -179,6 +189,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     abilities,
     abilitiesExtension,
     disciplines,
+    disciplinePaths,
+    rituals,
     backgrounds,
     virtues,
     merits,
@@ -209,6 +221,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAbilities(cs.abilities);
     setAbilitiesExtension(cs.abilitiesExtension);
     setDisciplines(cs.disciplines);
+    setDisciplinePaths(cs.disciplinePaths);
+    setRituals(cs.rituals);
     setBackgrounds(cs.backgrounds);
     setVirtues(cs.virtues);
     setArts(cs.arts);
@@ -390,7 +404,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       }));
     },
     setDisciplineValue(index: number, value: number) {
-      setDisciplines(disciplines.map((el, index2) => {
+      setDisciplines((prevDisciplines) => prevDisciplines.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {
@@ -399,6 +413,34 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         };
       }));
     },
+    disciplinePaths,
+    addDisciplinePath() {
+      setDisciplinePaths([...disciplinePaths, { name: '', value: 0 }]);
+    },
+    removeDisciplinePath(index: number) {
+      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.filter((el, index2) => index2 !== index));
+    },
+    setDisciplinePathName(index: number, name: string) {
+      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          name
+        };
+      }));
+    },
+    setDisciplinePathValue(index: number, value: number) {
+      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          value: applyRange(0, limits.parameterLimit, value)
+        };
+      }));
+    },
+    // rituals,
 
     arts,
     addArt() {
@@ -481,6 +523,8 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         abilities,
         abilitiesExtension,
         disciplines,
+        disciplinePaths,
+        rituals,
         backgrounds,
         virtues,
         merits,

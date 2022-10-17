@@ -20,6 +20,8 @@ import {
   Preset,
   CharHistory,
   Goals,
+  DisciplinePaths,
+  Rituals,
 } from "../../domain";
 
 export interface CharSheetData {
@@ -29,6 +31,8 @@ export interface CharSheetData {
   abilities: Abilities;
   abilitiesExtension: AbilitiesExtension;
   disciplines: Disciplines;
+  disciplinePaths: DisciplinePaths;
+  rituals: Rituals;
   backgrounds: Backgrounds;
   virtues: Virtues;
   merits: Merits;

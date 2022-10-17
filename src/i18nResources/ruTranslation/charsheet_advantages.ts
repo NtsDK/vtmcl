@@ -7,6 +7,12 @@ export const advantages = {
   'select-discipline': 'Выбрать дисциплину',
   'discipline-label': 'Дисциплина {{index}}',
 
+  'discipline-paths': 'Пути дисциплин',
+  'add-discipline-path': 'Добавить путь дисциплины',
+  'remove-discipline-path': 'Удалить путь дисциплины',
+  'select-discipline-path': 'Выбрать путь дисциплины',
+  'discipline-path-label': 'Путь дисциплины {{index}}',
+
   'backgrounds': 'Факты биографии',
   'add-background': 'Добавить факт биографии',
   'remove-background': 'Удалить факт биографии',

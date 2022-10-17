@@ -14,6 +14,7 @@ import {
   CharHistory,
   CharSheet,
   CharsheetBackMode,
+  DisciplinePaths,
   Disciplines,
   ErrorDescription,
   Flaws,
@@ -25,6 +26,7 @@ import {
   Preset,
   Profile,
   Realms,
+  Rituals,
   Settings,
   State,
   Virtues
@@ -65,6 +67,22 @@ export interface DisciplinesService {
   setDisciplineName(index: number, name: string): void;
   setDisciplineValue(index: number, value: number): void;
   removeDiscipline(index: number): void;
+}
+
+export interface DisciplinePathsService {
+  disciplinePaths: DisciplinePaths;
+  addDisciplinePath(): void;
+  setDisciplinePathName(index: number, name: string): void;
+  setDisciplinePathValue(index: number, value: number): void;
+  removeDisciplinePath(index: number): void;
+}
+
+export interface RitualsService {
+  rituals: Rituals;
+  addRitual(): void;
+  setRitualName(index: number, name: string): void;
+  setRitualLevel(index: number, level: string): void;
+  removeRitual(index: number): void;
 }
 
 export interface BackgroundsService {

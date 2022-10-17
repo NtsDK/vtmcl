@@ -5,6 +5,7 @@ import {
   Attributes,
   Backgrounds,
   CharHistory,
+  DisciplinePaths,
   Disciplines,
   Flaws,
   Goals,
@@ -14,6 +15,7 @@ import {
   Preset,
   Profile,
   Realms,
+  Rituals,
   Settings,
   State,
   Virtues
@@ -110,6 +112,8 @@ export const initialAbilitiesExtension: AbilitiesExtension = {
 
 // advantages
 export const initialDisciplines: Disciplines = [];
+export const initialDisciplinePaths: DisciplinePaths = [];
+export const initialRituals: Rituals = [];
 export const initialBackgrounds: Backgrounds = [];
 export const initialArts: Arts = [];
 export const initialVirtues: Virtues = {

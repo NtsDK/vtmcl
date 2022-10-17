@@ -63,6 +63,14 @@ export type Disciplines = {
   name: string,
   value: number
 }[];
+export type DisciplinePaths = {
+  name: string,
+  value: number
+}[];
+export type Rituals = {
+  name: string,
+  level: string
+}[];
 export type Backgrounds = {
   name: string,
   value: number

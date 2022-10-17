@@ -5,6 +5,7 @@ import {
   AttributesService,
   BackgroundsService,
   CharSheetStorageService,
+  DisciplinePathsService,
   DisciplinesService,
   ErrorDescriptionService,
   HistoryService,
@@ -45,6 +46,9 @@ export function useVirtues(): VirtuesService {
   return useStore();
 }
 export function useDisciplines(): DisciplinesService {
+  return useStore();
+}
+export function useDisciplinePaths(): DisciplinePathsService {
   return useStore();
 }
 export function useBackgrounds(): BackgroundsService {

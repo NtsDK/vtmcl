@@ -9,6 +9,7 @@ import { CommonPageStart } from '../CommonPageStart';
 import { CharSheetBody } from '../primitives/CharSheetBody';
 import { SectionHeader } from '../primitives/SectionHeader';
 import { AdvantagesSection } from '../vampireBlocks/AdvantagesSection';
+import { DisciplinePathsSection } from '../vampireBlocks/DisciplinePathsSection';
 import { StatusSection } from '../vampireBlocks/StatusSection';
 
 interface VampireCharSheetProps {
@@ -45,6 +46,11 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
           {t('charsheet.notes')}
         </SectionHeader>
         <NotesSection/>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.advantages.discipline-paths')}
+        </SectionHeader>
+        <DisciplinePathsSection/>
       </CharSheetBody>
     </>
   );

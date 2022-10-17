@@ -12,7 +12,10 @@ import {
   Virtues,
   State,
   Realms,
-  Preset
+  Preset,
+  Rituals,
+  DisciplinePaths,
+  Arts
 } from "../../domain";
 
 
@@ -212,7 +215,7 @@ export const stateSchema: JSONSchemaType<State> = {
   additionalProperties: false,
 };
 
-const stringNumberArrSchema: JSONSchemaType<Backgrounds & Disciplines> = {
+const stringNumberArrSchema: JSONSchemaType<Backgrounds & Disciplines & DisciplinePaths & Arts> = {
   type: "array",
   items: {
     type: 'object',
@@ -226,7 +229,20 @@ const stringNumberArrSchema: JSONSchemaType<Backgrounds & Disciplines> = {
 
 export const disciplinesSchema = stringNumberArrSchema;
 export const backgroundsSchema = stringNumberArrSchema;
+export const disciplinePathsSchema = stringNumberArrSchema;
 export const artsSchema = stringNumberArrSchema;
+
+export const ritualsSchema: JSONSchemaType<Rituals> = {
+  type: "array",
+  items: {
+    type: 'object',
+    properties: {
+      name: { type: 'string'},
+      level: { type: 'string'},
+    },
+    required: ['name', 'level']
+  },
+};
 
 const stringArraySchema: JSONSchemaType<Flaws & Merits> = {
   type: "array",

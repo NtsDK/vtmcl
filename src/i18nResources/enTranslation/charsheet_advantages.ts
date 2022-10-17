@@ -4,8 +4,14 @@ export const advantages = {
   'disciplines': 'Disciplines',
   'add-discipline': 'Add discipline',
   'remove-discipline': 'Remove discipline',
-  'select-discipline': 'Select  discipline',
+  'select-discipline': 'Select discipline',
   'discipline-label': 'Discipline {{index}}',
+
+  'discipline-paths': 'Paths',
+  'add-discipline-path': 'Add discipline path',
+  'remove-discipline-path': 'Remove discipline path',
+  'select-discipline-path': 'Select discipline path',
+  'discipline-path-label': 'Discipline path {{index}}',
 
   'backgrounds': 'Backgrounds',
   'add-background': 'Add background',

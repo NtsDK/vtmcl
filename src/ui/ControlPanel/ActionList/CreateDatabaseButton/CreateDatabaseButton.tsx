@@ -28,7 +28,9 @@ import {
   initialRealms,
   initialPreset,
   initialGoals,
-  initialCharHistory
+  initialCharHistory,
+  initialDisciplinePaths,
+  initialRituals
 } from "../../../../services/initialValues";
 import { CURRENT_VERSION } from "../../../../constants";
 
@@ -52,6 +54,8 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       abilities: initialAbilities,
       abilitiesExtension: initialAbilitiesExtension,
       disciplines: initialDisciplines,
+      disciplinePaths: initialDisciplinePaths,
+      rituals: initialRituals,
       backgrounds: initialBackgrounds,
       virtues: initialVirtues,
       merits: initialMerits,

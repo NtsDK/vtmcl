@@ -16,6 +16,8 @@ import {
   presetSchema,
   charHistorySchema,
   goalsSchema,
+  disciplinePathsSchema,
+  ritualsSchema,
 } from "./validateCharSheetDataElements";
 import {
   abilitiesSchema,
@@ -31,6 +33,8 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     abilities:    abilitiesSchema,
     abilitiesExtension: abilitiesExtensionSchema,
     disciplines:  disciplinesSchema,
+    disciplinePaths: disciplinePathsSchema,
+    rituals:      ritualsSchema,
     backgrounds:  backgroundsSchema,
     virtues:      virtuesSchema,
     merits:       meritsSchema,
@@ -51,6 +55,8 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "abilities",
     "abilitiesExtension",
     "disciplines",
+    "disciplinePaths",
+    "rituals",
     "backgrounds",
     "virtues",
     "merits",

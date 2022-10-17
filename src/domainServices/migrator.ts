@@ -111,6 +111,8 @@ export function migrate(charSheetSrc: any): unknown {
   if (charSheet.Version === '0.3.0') {
     charSheet.Charsheet.charHistory = '';
     charSheet.Charsheet.goals = '';
+    charSheet.Charsheet.disciplinePaths = [];
+    charSheet.Charsheet.rituals = [];
     charSheet.Version = '0.3.1';
   }
   return charSheet;

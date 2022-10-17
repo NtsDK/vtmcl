@@ -91,6 +91,8 @@ export const m: CharSheetInJson = {
     disciplines: [
       { name: "123", value: 2 }
     ],
+    disciplinePaths: [],
+    rituals: [],
     backgrounds: [
       { name: "2342", value: 0 }
     ],

@@ -7,6 +7,7 @@ import {
   Attributes,
   Backgrounds,
   CharHistory,
+  DisciplinePaths,
   Disciplines,
   Flaws,
   Goals,
@@ -16,6 +17,7 @@ import {
   Preset,
   Profile,
   Realms,
+  Rituals,
   State,
   Virtues
 } from "./characterDataTypes";
@@ -33,6 +35,8 @@ export interface CharSheet {
   abilities: Abilities;
   abilitiesExtension: AbilitiesExtension;
   disciplines: Disciplines;
+  disciplinePaths: DisciplinePaths;
+  rituals: Rituals;
   backgrounds: Backgrounds;
   virtues: Virtues;
   merits: Merits;
