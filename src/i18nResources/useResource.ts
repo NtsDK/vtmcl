@@ -11,6 +11,8 @@ import {
   v20_backgrounds_ru,
   disciplineDisplayGroups_en,
   disciplineDisplayGroups_ru,
+  disciplinePathDisplayGroups_en,
+  disciplinePathDisplayGroups_ru,
   paths_en,
   paths_ru,
   v20_flaws_en,
@@ -56,6 +58,7 @@ export function useResource() {
           ? v20_backgrounds_ru
           : c20_backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
+        disciplinePathOptions: disciplinePathDisplayGroups_ru,
         pathOptions: paths_ru,
         flawOptions: preset === 'vampire_v20'
           ? v20_flaws_ru
@@ -81,6 +84,7 @@ export function useResource() {
           ? v20_backgrounds_en
           : c20_backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
+        disciplinePathOptions: disciplinePathDisplayGroups_en,
         pathOptions: paths_en,
         flawOptions: preset === 'vampire_v20'
           ? v20_flaws_en

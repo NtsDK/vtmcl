@@ -21,7 +21,7 @@ export function DisciplinePathsSection(props: DisciplinePathsSectionProps) {
   const { t } = useTranslation();
   const { className } = props;
 
-  // const { disciplineOptions } = useResource();
+  const { disciplinePathOptions } = useResource();
   const { limits } = useLimits();
 
   return (
@@ -35,7 +35,7 @@ export function DisciplinePathsSection(props: DisciplinePathsSectionProps) {
       setItemValue={setDisciplinePathValue}
       addItemMsg={t('charsheet.advantages.add-discipline-path')}
       removeItemMsg={t('charsheet.advantages.remove-discipline-path')}
-      // options={disciplineOptions}
+      options={disciplinePathOptions}
       selectOptionMsg={t('charsheet.advantages.select-discipline-path')}
       nameLabel='charsheet.advantages.discipline-path-label'
       max={limits.parameterLimit}

@@ -10,6 +10,7 @@ import {
   v20_translateBackground,
   c20_translateBackground,
   translateDiscipline,
+  translateDisciplinePath,
   translatePath,
   v20_translateMeritsAndFlaws,
   c20_translateMeritsAndFlaws,
@@ -30,6 +31,8 @@ export function useCharsheetContentI18n() {
     setBackgroundName,
     disciplines,
     setDisciplineName,
+    disciplinePaths,
+    setDisciplinePathName,
     state,
     setState,
     merits,
@@ -102,8 +105,11 @@ export function useCharsheetContentI18n() {
       disciplines.forEach((discipline, index) => {
         setDisciplineName(index, translateDiscipline(discipline.name, prevLanguage, lng));
       });
+      disciplinePaths.forEach((disciplinePath, index) => {
+        setDisciplinePathName(index, translateDisciplinePath(disciplinePath.name, prevLanguage, lng));
+      });
       setState('pathName',
-      translatePath(state.pathName, prevLanguage, lng)
+        translatePath(state.pathName, prevLanguage, lng)
       );
       merits.forEach((merit, index) => {
         setMerit(index, translateMeritsAndFlaws(merit, prevLanguage, lng));
@@ -130,6 +136,8 @@ export function useCharsheetContentI18n() {
     setBackgroundName,
     disciplines,
     setDisciplineName,
+    disciplinePaths,
+    setDisciplinePathName,
     state,
     setState,
     merits,
