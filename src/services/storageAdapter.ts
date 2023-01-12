@@ -15,6 +15,7 @@ import {
   PresetService,
   ProfileService,
   RealmsService,
+  RitualsService,
   SettingsService,
   StateNHealthService,
   VirtuesService,
@@ -49,6 +50,9 @@ export function useDisciplines(): DisciplinesService {
   return useStore();
 }
 export function useDisciplinePaths(): DisciplinePathsService {
+  return useStore();
+}
+export function useRituals(): RitualsService {
   return useStore();
 }
 export function useBackgrounds(): BackgroundsService {

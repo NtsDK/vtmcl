@@ -136,3 +136,16 @@ export const ritualDisplayGroups_ru = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].ru,
   arr: groups_ru[groupName]
 }));
+
+export const ritualValueOptions = [
+  '',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+];

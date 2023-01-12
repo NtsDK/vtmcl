@@ -2,32 +2,32 @@ import React, { ChangeEvent } from 'react';
 import classnames from "classnames";
 import { TFuncKey, useTranslation } from 'react-i18next';
 
-import { RangeInput2 } from '../RangeInput2';
 import { SelectButtonOption } from '../SelectButton/type';
 import { SelectButton } from '../SelectButton';
 import { RemoveEntityButton } from '../RemoveEntityButton';
 import { AddEntityButton } from '../AddEntityButton';
 
-interface NameNumberSectionProps {
+interface NameStringSectionProps {
   items: {
     name: string;
-    value: number;
+    level: string;
   }[];
   addItem: () => void;
   removeItem: (index: number) => void;
   setItemName: (index: number, name: string) => void;
-  setItemValue: (index: number, value: number) => void;
+  setItemValue: (index: number, value: string) => void;
   addItemMsg: string;
   removeItemMsg: string;
   sectionItemName: string;
-  max: number;
+  // max: number;
   className?: string;
   options?: SelectButtonOption[];
+  valueOptions?: SelectButtonOption[];
   selectOptionMsg?: string;
   nameLabel?: TFuncKey;
 }
 
-export function NameNumberSection(props: NameNumberSectionProps) {
+export function NameStringSection(props: NameStringSectionProps) {
   const {
     items,
     addItem,
@@ -39,9 +39,10 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     className,
     sectionItemName,
     options,
+    valueOptions,
     selectOptionMsg,
     nameLabel,
-    max
+    // max
   } = props;
 
   const { t } = useTranslation();
@@ -52,9 +53,9 @@ export function NameNumberSection(props: NameNumberSectionProps) {
   }
 
   return (
-    <div className={classnames("NameNumberSection", className)}>
+    <div className={classnames("NameStringSection", className)}>
       {
-        items.map(({name, value}, index) =>
+        items.map(({name, level}, index) =>
           <div
             className='tw-mb-3 print:tw-mb-1'
             key={`${sectionItemName}.${index}`}
@@ -81,19 +82,31 @@ export function NameNumberSection(props: NameNumberSectionProps) {
                   selectOptionMsg={selectOptionMsg}
                 />
               }
+              <input
+                className='tw-bg-transparent tw-flex-0 tw-w-6 tw-text-sm
+                  tw-outline-1 tw-outline
+                  tw-outline-slate-700 hover:tw-outline-red-600
+                  print:tw-outline-transparent tw-ml-2'
+                value={level}
+                id={`${sectionItemName}.level.${index}`}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setItemValue(index, e.target.value)}
+                aria-label={nameLabel ? t(nameLabel, {index: index + 1}) as string : undefined}
+              />
+              {
+                valueOptions &&
+                <SelectButton
+                  options={valueOptions}
+                  className="print:tw-hidden tw-ml-2"
+                  onChange={(value) => setItemValue(index, value)}
+                  selectOptionMsg={selectOptionMsg}
+                />
+              }
               <RemoveEntityButton
                 className='tw-ml-2'
                 title={removeItemMsg}
                 onClick={() => removeItem(index)}
               />
             </div>
-            <RangeInput2
-              max={max}
-              name={`${sectionItemName}.${index}`}
-              value={value}
-              onClick={(value: number) => setItemValue(index, value)}
-              className="tw-flex-grow tw-mt-2 print:tw-mt-1"
-            />
           </div>
         )
       }

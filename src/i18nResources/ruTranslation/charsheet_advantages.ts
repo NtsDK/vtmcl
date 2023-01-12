@@ -13,6 +13,12 @@ export const advantages = {
   'select-discipline-path': 'Выбрать путь дисциплины',
   'discipline-path-label': 'Путь дисциплины {{index}}',
 
+  'rituals': 'Ритуалы',
+  'add-ritual': 'Добавить ритуал',
+  'remove-ritual': 'Удалить ритуал',
+  'select-ritual': 'Выбрать ритуал',
+  'ritual-label': 'Ритуал {{index}}',
+
   'backgrounds': 'Факты биографии',
   'add-background': 'Добавить факт биографии',
   'remove-background': 'Удалить факт биографии',

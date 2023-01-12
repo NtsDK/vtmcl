@@ -8,8 +8,10 @@ import { NotesSection } from '../commonBlocks/NotesSection';
 import { CommonPageStart } from '../CommonPageStart';
 import { CharSheetBody } from '../primitives/CharSheetBody';
 import { SectionHeader } from '../primitives/SectionHeader';
+import { Subheader } from '../primitives/Subheader';
 import { AdvantagesSection } from '../vampireBlocks/AdvantagesSection';
 import { DisciplinePathsSection } from '../vampireBlocks/DisciplinePathsSection';
+import { RitualsSection } from '../vampireBlocks/RitualsSection';
 import { StatusSection } from '../vampireBlocks/StatusSection';
 
 interface VampireCharSheetProps {
@@ -42,15 +44,26 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         </SectionHeader>
         <GoalsSection className="tw-mb-6"/>
 
+        <div className="tw-flex tw-gap-x-4 tw-mb-6">
+          <div className="tw-flex-1">
+            <Subheader className="tw-mb-3">
+              {t('charsheet.advantages.rituals')}
+            </Subheader>
+            <RitualsSection/>
+          </div>
+
+          <div className="tw-flex-1">
+            <Subheader className="tw-mb-3">
+              {t('charsheet.advantages.discipline-paths')}
+            </Subheader>
+            <DisciplinePathsSection/>
+          </div>
+        </div>
+
         <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
         </SectionHeader>
         <NotesSection/>
-
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.advantages.discipline-paths')}
-        </SectionHeader>
-        <DisciplinePathsSection/>
       </CharSheetBody>
     </>
   );

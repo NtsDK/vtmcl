@@ -13,6 +13,12 @@ export const advantages = {
   'select-discipline-path': 'Select discipline path',
   'discipline-path-label': 'Discipline path {{index}}',
 
+  'rituals': 'Rituals',
+  'add-ritual': 'Add ritual',
+  'remove-ritual': 'Remove ritual',
+  'select-ritual': 'Select ritual',
+  'ritual-label': 'Ritual {{index}}',
+
   'backgrounds': 'Backgrounds',
   'add-background': 'Add background',
   'remove-background': 'Remove background',

@@ -23,6 +23,7 @@ import {
   v20_freePoints_ru,
   ritualDisplayGroups_en,
   ritualDisplayGroups_ru,
+  ritualValueOptions,
 
   courts_en,
   courts_ru,
@@ -78,6 +79,7 @@ export function useResource() {
           : c20_freePoints_ru,
         artOptions: arts_ru,
         ritualOptions: ritualDisplayGroups_ru,
+        ritualValueOptions,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -105,5 +107,6 @@ export function useResource() {
           : c20_freePoints_en,
         artOptions: arts_en,
         ritualOptions: ritualDisplayGroups_en,
+        ritualValueOptions,
       }
 }
