@@ -20,6 +20,7 @@ import {
   translateKith,
   translateLegacy,
   translateArt,
+  translateRitual,
 } from "./dropdownContent";
 
 export function useCharsheetContentI18n() {
@@ -33,6 +34,8 @@ export function useCharsheetContentI18n() {
     setDisciplineName,
     disciplinePaths,
     setDisciplinePathName,
+    rituals,
+    setRitualName,
     state,
     setState,
     merits,
@@ -108,6 +111,9 @@ export function useCharsheetContentI18n() {
       disciplinePaths.forEach((disciplinePath, index) => {
         setDisciplinePathName(index, translateDisciplinePath(disciplinePath.name, prevLanguage, lng));
       });
+      rituals.forEach((ritual, index) => {
+        setRitualName(index, translateRitual(ritual.name, prevLanguage, lng));
+      });
       setState('pathName',
         translatePath(state.pathName, prevLanguage, lng)
       );
@@ -138,6 +144,8 @@ export function useCharsheetContentI18n() {
     setDisciplineName,
     disciplinePaths,
     setDisciplinePathName,
+    rituals,
+    setRitualName,
     state,
     setState,
     merits,

@@ -24,6 +24,7 @@ import {
   LimitService,
   HistoryService,
   DisciplinePathsService,
+  RitualsService,
 } from "../application/ports";
 import {
   Attributes,
@@ -93,6 +94,7 @@ interface StateStore extends
   AbilitiesExtensionService,
   DisciplinesService,
   DisciplinePathsService,
+  RitualsService,
   BackgroundsService,
   VirtuesService,
   MeritsNFlawsService,
@@ -440,7 +442,33 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         };
       }));
     },
-    // rituals,
+    rituals,
+    addRitual() {
+      setRituals([...rituals, { name: '', level: '' }]);
+    },
+    setRitualName(index: number, name: string) {
+      setRituals((prevRituals) => prevRituals.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          name
+        };
+      }));
+    },
+    setRitualLevel(index: number, level: string) {
+      setRituals((prevRituals) => prevRituals.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          level
+        };
+      }));
+    },
+    removeRitual(index: number) {
+      setRituals((prevRituals) => prevRituals.filter((el, index2) => index2 !== index));
+    },
 
     arts,
     addArt() {

@@ -7,6 +7,7 @@ export * from './vampire/disciplinePaths';
 export * from './vampire/paths';
 export * from './vampire/meritsAndFlaws';
 export * from './vampire/freePoints';
+export * from './vampire/rituals';
 
 export * from './changeling/courts';
 export * from './changeling/seemings';
