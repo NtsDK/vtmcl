@@ -22,6 +22,11 @@ import {
   Goals,
   DisciplinePaths,
   Rituals,
+  AlliesAndContacts,
+  AppearanceDescription,
+  CharacterImage,
+  OtherTraits,
+  Possessions,
 } from "../../domain";
 
 export interface CharSheetData {
@@ -43,6 +48,11 @@ export interface CharSheetData {
   notes: Notes;
   charHistory: CharHistory;
   goals: Goals;
+  otherTraits: OtherTraits;
+  appearanceDescription: AppearanceDescription;
+  characterImage: CharacterImage;
+  alliesAndContacts: AlliesAndContacts;
+  possessions: Possessions;
   arts: Arts;
   realms: Realms;
 }

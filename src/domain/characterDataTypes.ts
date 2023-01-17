@@ -59,22 +59,19 @@ export interface Virtues {
   courage: number;
 }
 
-export type Disciplines = {
+type NameStringArray = {
   name: string,
   value: number
 }[];
-export type DisciplinePaths = {
-  name: string,
-  value: number
-}[];
+
+export type Disciplines = NameStringArray;
+export type DisciplinePaths = NameStringArray;
 export type Rituals = {
   name: string,
   level: string
 }[];
-export type Backgrounds = {
-  name: string,
-  value: number
-}[];
+export type Backgrounds = NameStringArray;
+export type OtherTraits = NameStringArray;
 
 // Changeling
 export type Arts = {
@@ -134,3 +131,7 @@ export type Flaws = string[];
 export type Notes = string;
 export type CharHistory = string;
 export type Goals = string;
+export type AppearanceDescription = string;
+export type CharacterImage = string;
+export type AlliesAndContacts = string;
+export type Possessions = string;

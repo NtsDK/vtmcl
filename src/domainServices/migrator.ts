@@ -111,9 +111,14 @@ export function migrate(charSheetSrc: any): unknown {
   if (charSheet.Version === '0.3.0') {
     charSheet.Charsheet.charHistory = '';
     charSheet.Charsheet.goals = '';
+    charSheet.Charsheet.appearanceDescription = '';
+    charSheet.Charsheet.characterImage = '';
+    charSheet.Charsheet.alliesAndContacts = '';
+    charSheet.Charsheet.possessions = '';
     charSheet.Charsheet.disciplinePaths = [];
     charSheet.Charsheet.rituals = [];
-    charSheet.Version = '0.3.1';
+    charSheet.Charsheet.otherTraits = [];
+    charSheet.Version = '0.4.0';
   }
   return charSheet;
 }

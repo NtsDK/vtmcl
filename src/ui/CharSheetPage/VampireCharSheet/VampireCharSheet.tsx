@@ -61,6 +61,22 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         </div>
 
         <SectionHeader className="tw-mb-3">
+          {t('charsheet.appearanceDescription')}
+        </SectionHeader>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.alliesAndContacts')}
+        </SectionHeader>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.possessions')}
+        </SectionHeader>
+
+        <SectionHeader className="tw-mb-3">
+          {t('charsheet.otherTraits')}
+        </SectionHeader>
+
+        <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
         </SectionHeader>
         <NotesSection/>

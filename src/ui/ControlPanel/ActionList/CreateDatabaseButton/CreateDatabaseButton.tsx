@@ -30,7 +30,12 @@ import {
   initialGoals,
   initialCharHistory,
   initialDisciplinePaths,
-  initialRituals
+  initialRituals,
+  initialOtherTraits,
+  initialAlliesAndContacts,
+  initialAppearanceDescription,
+  initialCharacterImage,
+  initialPossessions
 } from "../../../../services/initialValues";
 import { CURRENT_VERSION } from "../../../../constants";
 
@@ -55,6 +60,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       abilitiesExtension: initialAbilitiesExtension,
       disciplines: initialDisciplines,
       disciplinePaths: initialDisciplinePaths,
+      otherTraits: initialOtherTraits,
       rituals: initialRituals,
       backgrounds: initialBackgrounds,
       virtues: initialVirtues,
@@ -66,6 +72,10 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
       notes: initialNotes,
       charHistory: initialCharHistory,
       goals: initialGoals,
+      appearanceDescription: initialAppearanceDescription,
+      characterImage: initialCharacterImage,
+      alliesAndContacts: initialAlliesAndContacts,
+      possessions: initialPossessions,
 
       arts: initialArts,
       realms: initialRealms,

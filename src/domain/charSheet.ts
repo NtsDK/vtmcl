@@ -3,9 +3,12 @@ import {
   AbilitiesExtension
 } from "./abilities";
 import {
+  AlliesAndContacts,
+  AppearanceDescription,
   Arts,
   Attributes,
   Backgrounds,
+  CharacterImage,
   CharHistory,
   DisciplinePaths,
   Disciplines,
@@ -14,6 +17,8 @@ import {
   Health,
   Merits,
   Notes,
+  OtherTraits,
+  Possessions,
   Preset,
   Profile,
   Realms,
@@ -47,6 +52,11 @@ export interface CharSheet {
   notes: Notes;
   charHistory: CharHistory;
   goals: Goals;
+  otherTraits: OtherTraits;
+  appearanceDescription: AppearanceDescription;
+  characterImage: CharacterImage;
+  alliesAndContacts: AlliesAndContacts;
+  possessions: Possessions;
 
   arts: Arts;
   realms: Realms;

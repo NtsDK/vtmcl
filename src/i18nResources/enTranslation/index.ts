@@ -52,6 +52,10 @@ export const enTranslation: TranslationInfo = {
     'notes': 'Notes',
     'goals': 'Goals',
     'charHistory': 'History',
+    'appearanceDescription': 'Appearance Description',
+    'otherTraits': 'Other Traits',
+    'alliesAndContacts': 'Allies and Contacts',
+    'possessions': 'Possessions',
   },
   "common": {
     "to": "to",

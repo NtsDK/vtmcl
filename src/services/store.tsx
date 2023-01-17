@@ -53,6 +53,11 @@ import {
   Goals,
   Rituals,
   DisciplinePaths,
+  OtherTraits,
+  AlliesAndContacts,
+  AppearanceDescription,
+  CharacterImage,
+  Possessions,
 } from "../domain";
 // import { ErrorDescription } from "../domain/errorDescription";
 // import { Game } from "../domain/game";
@@ -79,7 +84,12 @@ import {
   initialCharHistory,
   initialGoals,
   initialDisciplinePaths,
-  initialRituals
+  initialRituals,
+  initialOtherTraits,
+  initialAppearanceDescription,
+  initialCharacterImage,
+  initialAlliesAndContacts,
+  initialPossessions
 } from "./initialValues";
 // import { initialGames, initialServers } from "./initialGames";
 
@@ -128,6 +138,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [abilitiesExtension, setAbilitiesExtension] = useState<AbilitiesExtension>(initialAbilitiesExtension);
   const [disciplines, setDisciplines] = useState<Disciplines>(initialDisciplines);
   const [disciplinePaths, setDisciplinePaths] = useState<DisciplinePaths>(initialDisciplinePaths);
+  const [otherTraits, setOtherTraits] = useState<OtherTraits>(initialOtherTraits);
   const [rituals, setRituals] = useState<Rituals>(initialRituals);
   const [backgrounds, setBackgrounds] = useState<Backgrounds>(initialBackgrounds);
   const [virtues, setVirtues] = useState<Virtues>(initialVirtues);
@@ -139,6 +150,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [notes, setNotes] = useState<Notes>(initialNotes);
   const [charHistory, setCharHistory] = useState<CharHistory>(initialCharHistory);
   const [goals, setGoals] = useState<Goals>(initialGoals);
+  const [appearanceDescription, setAppearanceDescription] = useState<AppearanceDescription>(initialAppearanceDescription);
+  const [characterImage, setCharacterImage] = useState<CharacterImage>(initialCharacterImage);
+  const [alliesAndContacts, setAlliesAndContacts] = useState<AlliesAndContacts>(initialAlliesAndContacts);
+  const [possessions, setPossessions] = useState<Possessions>(initialPossessions);
 
   const [arts, setArts] = useState<Arts>(initialArts);
   const [realms, setRealms] = useState<Realms>(initialRealms);
@@ -168,6 +183,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       abilitiesExtension,
       disciplines,
       disciplinePaths,
+      otherTraits,
       rituals,
       backgrounds,
       virtues,
@@ -179,6 +195,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
       notes,
       charHistory,
       goals,
+      appearanceDescription,
+      characterImage,
+      alliesAndContacts,
+      possessions,
       arts,
       realms,
       Settings: settings,
@@ -192,6 +212,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     abilitiesExtension,
     disciplines,
     disciplinePaths,
+    otherTraits,
     rituals,
     backgrounds,
     virtues,
@@ -203,6 +224,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     notes,
     charHistory,
     goals,
+    appearanceDescription,
+    characterImage,
+    alliesAndContacts,
+    possessions,
     settings,
     arts,
     realms,
@@ -237,6 +262,11 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setNotes(cs.notes);
     setCharHistory(cs.charHistory);
     setGoals(cs.goals);
+    setOtherTraits(cs.otherTraits);
+    setAppearanceDescription(cs.appearanceDescription);
+    setCharacterImage(cs.characterImage);
+    setAlliesAndContacts(cs.alliesAndContacts);
+    setPossessions(cs.possessions);
 
     setSettings(cs.Settings);
   }
@@ -552,6 +582,7 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         abilitiesExtension,
         disciplines,
         disciplinePaths,
+        otherTraits,
         rituals,
         backgrounds,
         virtues,
@@ -563,6 +594,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
         notes,
         charHistory,
         goals,
+        appearanceDescription,
+        characterImage,
+        alliesAndContacts,
+        possessions,
         arts,
         realms,
       };

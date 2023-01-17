@@ -30,6 +30,11 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       healthChimerical: charSheet.healthChimerical,
       arts: charSheet.arts,
       realms: charSheet.realms,
+      otherTraits: charSheet.otherTraits,
+      appearanceDescription: charSheet.appearanceDescription,
+      characterImage: charSheet.characterImage,
+      alliesAndContacts: charSheet.alliesAndContacts,
+      possessions: charSheet.possessions,
     },
   };
 }
@@ -59,5 +64,10 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     healthChimerical: charSheetInJson.Charsheet.healthChimerical,
     arts: charSheetInJson.Charsheet.arts,
     realms: charSheetInJson.Charsheet.realms,
+    otherTraits: charSheetInJson.Charsheet.otherTraits,
+    appearanceDescription: charSheetInJson.Charsheet.appearanceDescription,
+    characterImage: charSheetInJson.Charsheet.characterImage,
+    alliesAndContacts: charSheetInJson.Charsheet.alliesAndContacts,
+    possessions: charSheetInJson.Charsheet.possessions,
   };
 }

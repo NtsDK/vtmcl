@@ -92,6 +92,7 @@ export const m: CharSheetInJson = {
       { name: "123", value: 2 }
     ],
     disciplinePaths: [],
+    otherTraits: [],
     rituals: [],
     backgrounds: [
       { name: "2342", value: 0 }
@@ -146,6 +147,10 @@ export const m: CharSheetInJson = {
     notes: "notes sdsdsdf",
     charHistory: "charHistory sdsdsdf",
     goals: "goals sdsdsdf",
+    appearanceDescription: "appearanceDescription sdsdsdf",
+    characterImage: "characterImage sdsdsdf",
+    alliesAndContacts: "alliesAndContacts sdsdsdf",
+    possessions: "possessions sdsdsdf",
     arts: [
       { name: "art", value: 1 }
     ],

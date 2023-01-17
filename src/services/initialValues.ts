@@ -1,9 +1,12 @@
 import {
   Abilities,
   AbilitiesExtension,
+  AlliesAndContacts,
+  AppearanceDescription,
   Arts,
   Attributes,
   Backgrounds,
+  CharacterImage,
   CharHistory,
   DisciplinePaths,
   Disciplines,
@@ -12,6 +15,8 @@ import {
   Health,
   Merits,
   Notes,
+  OtherTraits,
+  Possessions,
   Preset,
   Profile,
   Realms,
@@ -115,6 +120,7 @@ export const initialDisciplines: Disciplines = [];
 export const initialDisciplinePaths: DisciplinePaths = [];
 export const initialRituals: Rituals = [];
 export const initialBackgrounds: Backgrounds = [];
+export const initialOtherTraits: OtherTraits = [];
 export const initialArts: Arts = [];
 export const initialVirtues: Virtues = {
   "conscience": 1,
@@ -173,6 +179,10 @@ export const initialHealth: Health = {
 export const initialNotes: Notes = '';
 export const initialCharHistory: CharHistory = '';
 export const initialGoals: Goals = '';
+export const initialAppearanceDescription: AppearanceDescription = '';
+export const initialCharacterImage: CharacterImage = '';
+export const initialAlliesAndContacts: AlliesAndContacts = '';
+export const initialPossessions: Possessions = '';
 
 
 // no character data

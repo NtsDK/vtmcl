@@ -52,6 +52,10 @@ export const ruTranslation = {
     'notes': 'Заметки',
     'goals': 'Цели',
     'charHistory': 'История',
+    'appearanceDescription': 'Описание внешности',
+    'otherTraits': 'Другие параметры',
+    'alliesAndContacts': 'Союзники и контакты',
+    'possessions': 'Имущество и снаряжение',
   },
   "common": {
     "to": "в",

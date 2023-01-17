@@ -24,6 +24,10 @@ export const notesSchema: JSONSchemaType<Notes> = {
 };
 export const charHistorySchema = notesSchema;
 export const goalsSchema = notesSchema;
+export const appearanceDescriptionSchema = notesSchema;
+export const characterImageSchema = notesSchema;
+export const alliesAndContactsSchema = notesSchema;
+export const possessionsSchema = notesSchema;
 
 export const presetSchema: JSONSchemaType<Preset> = {
   type: "string",
@@ -231,6 +235,7 @@ export const disciplinesSchema = stringNumberArrSchema;
 export const backgroundsSchema = stringNumberArrSchema;
 export const disciplinePathsSchema = stringNumberArrSchema;
 export const artsSchema = stringNumberArrSchema;
+export const otherTraitsSchema = stringNumberArrSchema;
 
 export const ritualsSchema: JSONSchemaType<Rituals> = {
   type: "array",
