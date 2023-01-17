@@ -8,6 +8,7 @@ import {
   AbilitiesExtension,
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
+  AlliesAndContacts,
   Arts,
   Attributes,
   Backgrounds,
@@ -23,6 +24,7 @@ import {
   Limits,
   Merits,
   Notes,
+  Possessions,
   Preset,
   Profile,
   Realms,
@@ -133,6 +135,16 @@ export interface StateNHealthService {
 export interface NotesService {
   notes: Notes;
   setNotes(notes: Notes): void;
+}
+
+export interface AlliesAndContactsService {
+  alliesAndContacts: AlliesAndContacts;
+  setAlliesAndContacts(alliesAndContacts: AlliesAndContacts): void;
+}
+
+export interface PossessionsService {
+  possessions: Possessions;
+  setPossessions(possessions: Possessions): void;
 }
 
 export interface HistoryService {

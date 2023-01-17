@@ -1,6 +1,7 @@
 import {
   AbilitiesExtensionService,
   AbilitiesService,
+  AlliesAndContactsService,
   ArtsService,
   AttributesService,
   BackgroundsService,
@@ -12,6 +13,7 @@ import {
   LimitService,
   MeritsNFlawsService,
   NotesService,
+  PossessionsService,
   PresetService,
   ProfileService,
   RealmsService,
@@ -65,6 +67,12 @@ export function useMeritsNFlaws(): MeritsNFlawsService {
   return useStore();
 }
 export function useNotes(): NotesService {
+  return useStore();
+}
+export function useAlliesAndContacts(): AlliesAndContactsService {
+  return useStore();
+}
+export function usePossessions(): PossessionsService {
   return useStore();
 }
 export function useSettings(): SettingsService {

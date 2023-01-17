@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { AlliesAndContactsSection } from '../commonBlocks/AlliesAndContactsSection';
 import { CharHistorySection } from '../commonBlocks/CharHistorySection';
 import { GoalsSection } from '../commonBlocks/GoalsSection';
 
 import { NotesSection } from '../commonBlocks/NotesSection';
+import { PossessionsSection } from '../commonBlocks/PossessionsSection';
 import { CommonPageStart } from '../CommonPageStart';
 import { CharSheetBody } from '../primitives/CharSheetBody';
 import { SectionHeader } from '../primitives/SectionHeader';
@@ -67,10 +69,12 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         <SectionHeader className="tw-mb-3">
           {t('charsheet.alliesAndContacts')}
         </SectionHeader>
+        <AlliesAndContactsSection/>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.possessions')}
         </SectionHeader>
+        <PossessionsSection/>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.otherTraits')}
