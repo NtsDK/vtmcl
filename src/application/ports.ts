@@ -25,6 +25,7 @@ import {
   Limits,
   Merits,
   Notes,
+  OtherTraits,
   Possessions,
   Preset,
   Profile,
@@ -94,6 +95,14 @@ export interface BackgroundsService {
   setBackgroundName(index: number, name: string): void;
   setBackgroundValue(index: number, value: number): void;
   removeBackground(index: number): void;
+}
+
+export interface OtherTraitsService {
+  otherTraits: OtherTraits;
+  addOtherTrait(): void;
+  setOtherTraitName(index: number, name: string): void;
+  setOtherTraitValue(index: number, value: number): void;
+  removeOtherTrait(index: number): void;
 }
 
 export interface VirtuesService {

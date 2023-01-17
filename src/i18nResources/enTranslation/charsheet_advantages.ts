@@ -25,6 +25,12 @@ export const advantages = {
   'select-background': 'Select background',
   'background-label': 'Background {{index}}',
 
+  'otherTraits': 'Other Traits',
+  'add-otherTrait': 'Add other trait',
+  'remove-otherTrait': 'Remove other trait',
+  'select-otherTrait': 'Select other trait',
+  'otherTrait-label': 'Other Trait {{index}}',
+
   // 'traits': 'Traits',
   'virtues': 'Virtues',
   'conscience': 'Conscience/Conviction',

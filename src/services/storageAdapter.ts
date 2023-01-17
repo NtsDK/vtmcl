@@ -14,6 +14,7 @@ import {
   LimitService,
   MeritsNFlawsService,
   NotesService,
+  OtherTraitsService,
   PossessionsService,
   PresetService,
   ProfileService,
@@ -77,6 +78,9 @@ export function usePossessions(): PossessionsService {
   return useStore();
 }
 export function useAppearance(): AppearanceService {
+  return useStore();
+}
+export function useOtherTraits(): OtherTraitsService {
   return useStore();
 }
 export function useSettings(): SettingsService {

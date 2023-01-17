@@ -25,6 +25,12 @@ export const advantages = {
   'select-background': 'Выбрать факт биографии',
   'background-label': 'Факт биографии {{index}}',
 
+  'otherTraits': 'Другие параметры',
+  'add-otherTrait': 'Добавить другой параметр',
+  'remove-otherTrait': 'Удалить другой параметр',
+  'select-otherTrait': 'Выбрать другой параметр',
+  'otherTrait-label': 'Другой параметр {{index}}',
+
   // 'traits': 'Трайты',
   'virtues': 'Добродетели',
   'conscience': 'Совесть/Решимость',

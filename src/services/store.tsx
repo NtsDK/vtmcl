@@ -28,6 +28,7 @@ import {
   AlliesAndContactsService,
   PossessionsService,
   AppearanceService,
+  OtherTraitsService,
 } from "../application/ports";
 import {
   Attributes,
@@ -122,7 +123,8 @@ interface StateStore extends
   HistoryService,
   AlliesAndContactsService,
   PossessionsService,
-  AppearanceService
+  AppearanceService,
+  OtherTraitsService
 {
 }
 
@@ -565,6 +567,34 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     },
     setBackgroundValue(index: number, value: number) {
       setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          value: applyRange(0, limits.parameterLimit, value)
+        };
+      }));
+    },
+
+    otherTraits,
+    addOtherTrait() {
+      setOtherTraits([...otherTraits, { name: '', value: 0 }]);
+    },
+    removeOtherTrait(index: number) {
+      setOtherTraits((prevOtherTraits) => prevOtherTraits.filter((el, index2) => index2 !== index));
+    },
+    setOtherTraitName(index: number, name: string) {
+      setOtherTraits((prevOtherTraits) => prevOtherTraits.map((el, index2) => {
+        if (index2 !== index)
+          return el;
+        return {
+          ...el,
+          name
+        };
+      }));
+    },
+    setOtherTraitValue(index: number, value: number) {
+      setOtherTraits((prevOtherTraits) => prevOtherTraits.map((el, index2) => {
         if (index2 !== index)
           return el;
         return {

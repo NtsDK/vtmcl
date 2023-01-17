@@ -1,7 +1,6 @@
 import React from 'react';
 import { useBackgrounds, useLimits } from '../../../../services/storageAdapter';
 import { NameNumberSection } from '../../primitives/NameNumberSection';
-import './BackgroundsSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';

@@ -7,6 +7,7 @@ import { CharHistorySection } from '../commonBlocks/CharHistorySection';
 import { GoalsSection } from '../commonBlocks/GoalsSection';
 
 import { NotesSection } from '../commonBlocks/NotesSection';
+import { OtherTraitsSection } from '../commonBlocks/OtherTraitsSection';
 import { PossessionsSection } from '../commonBlocks/PossessionsSection';
 import { CommonPageStart } from '../CommonPageStart';
 import { CharSheetBody } from '../primitives/CharSheetBody';
@@ -79,8 +80,9 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         <PossessionsSection/>
 
         <SectionHeader className="tw-mb-3">
-          {t('charsheet.otherTraits')}
+          {t('charsheet.advantages.otherTraits')}
         </SectionHeader>
+        <OtherTraitsSection/>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
