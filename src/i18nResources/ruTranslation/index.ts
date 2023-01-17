@@ -53,6 +53,8 @@ export const ruTranslation = {
     'goals': 'Цели',
     'charHistory': 'История',
     'appearanceDescription': 'Описание внешности',
+    'characterImage': 'Изображение персонажа',
+    'uploadCharacterImage': 'Загрузить изображение персонажа',
     'alliesAndContacts': 'Союзники и контакты',
     'possessions': 'Имущество и снаряжение',
   },

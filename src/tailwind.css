@@ -654,6 +654,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: fit-content;
 }
 
+.tw-max-h-40 {
+  max-height: 10rem;
+}
+
+.tw-max-h-64 {
+  max-height: 16rem;
+}
+
 .tw-w-full {
   width: 100%;
 }
@@ -769,6 +777,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
+.tw-border-transparent {
+  border-color: transparent;
+}
+
 .tw-bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -806,6 +818,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.tw-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tw-px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .tw-text-left {
@@ -848,6 +870,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.tw-text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
 .tw-line-through {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
@@ -874,6 +901,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-outline-slate-700 {
   outline-color: #334155;
+}
+
+.hover\:tw-border-transparent:hover {
+  border-color: transparent;
+}
+
+.hover\:tw-bg-transparent:hover {
+  background-color: transparent;
+}
+
+.hover\:tw-text-slate-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
 .hover\:tw-outline:hover {

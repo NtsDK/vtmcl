@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AlliesAndContactsSection } from '../commonBlocks/AlliesAndContactsSection';
 import { AppearanceDescriptionSection } from '../commonBlocks/AppearanceDescriptionSection';
+import { CharacterImageSection } from '../commonBlocks/CharacterImageSection';
 import { CharHistorySection } from '../commonBlocks/CharHistorySection';
 import { GoalsSection } from '../commonBlocks/GoalsSection';
 
@@ -61,16 +62,16 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
 
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
-            <Subheader className="tw-mb-3">
+            <SectionHeader className="tw-mb-3">
               {t('charsheet.advantages.rituals')}
-            </Subheader>
+            </SectionHeader>
             <RitualsSection/>
           </div>
 
           <div className="tw-flex-1">
-            <Subheader className="tw-mb-3">
+            <SectionHeader className="tw-mb-3">
               {t('charsheet.advantages.discipline-paths')}
-            </Subheader>
+            </SectionHeader>
             <DisciplinePathsSection/>
           </div>
         </div>
@@ -97,6 +98,7 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         </SectionHeader>
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
+            <CharacterImageSection/>
           </div>
 
           <div className="tw-flex-1" style={{flexGrow: 2}}>
