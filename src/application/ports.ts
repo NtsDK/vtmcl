@@ -13,6 +13,7 @@ import {
   Arts,
   Attributes,
   Backgrounds,
+  CharacterImage,
   CharHistory,
   CharSheet,
   CharsheetBackMode,
@@ -150,6 +151,8 @@ export interface NotesService {
 export interface AppearanceService {
   appearanceDescription: AppearanceDescription;
   setAppearanceDescription(appearanceDescription: AppearanceDescription): void;
+  characterImage: CharacterImage;
+  setCharacterImage(characterImage: CharacterImage): void;
 }
 
 export interface AlliesAndContactsService {

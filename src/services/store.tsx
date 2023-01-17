@@ -400,6 +400,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setAppearanceDescription(appearanceDescription: AppearanceDescription): void {
       setAppearanceDescription(appearanceDescription);
     },
+    characterImage,
+    setCharacterImage(characterImage: CharacterImage): void {
+      setCharacterImage(characterImage);
+    },
     charHistory,
     setCharHistory: function (charHistory: CharHistory): void {
       setCharHistory(charHistory);
