@@ -38,15 +38,26 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         <StatusSection className="tw-mb-3"/>
       </CharSheetBody>
       <CharSheetBody>
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.charHistory')}
-        </SectionHeader>
-        <CharHistorySection className="tw-mb-6"/>
+        <div className="tw-flex tw-gap-x-4 tw-mb-6">
+          <div className="tw-flex-1">
+            <SectionHeader className="tw-mb-3">
+              {t('charsheet.advantages.otherTraits')}
+            </SectionHeader>
+            <OtherTraitsSection/>
+          </div>
 
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.goals')}
-        </SectionHeader>
-        <GoalsSection className="tw-mb-6"/>
+          <div className="tw-flex-1" style={{flexGrow: 2}}>
+            <SectionHeader className="tw-mb-3">
+              {t('charsheet.charHistory')}
+            </SectionHeader>
+            <CharHistorySection className="tw-mb-6"/>
+
+            <SectionHeader className="tw-mb-3">
+              {t('charsheet.goals')}
+            </SectionHeader>
+            <GoalsSection className="tw-mb-6"/>
+          </div>
+        </div>
 
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
@@ -64,25 +75,28 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
           </div>
         </div>
 
+
+        <div className="tw-flex tw-gap-x-4 tw-mb-6">
+          <div className="tw-flex-1">
+            <SectionHeader className="tw-mb-3">
+              {t('charsheet.alliesAndContacts')}
+            </SectionHeader>
+            <AlliesAndContactsSection/>
+          </div>
+
+          <div className="tw-flex-1">
+            <SectionHeader className="tw-mb-3">
+              {t('charsheet.possessions')}
+            </SectionHeader>
+            <PossessionsSection/>
+          </div>
+        </div>
+      </CharSheetBody>
+      <CharSheetBody>
         <SectionHeader className="tw-mb-3">
           {t('charsheet.appearanceDescription')}
         </SectionHeader>
         <AppearanceDescriptionSection/>
-
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.alliesAndContacts')}
-        </SectionHeader>
-        <AlliesAndContactsSection/>
-
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.possessions')}
-        </SectionHeader>
-        <PossessionsSection/>
-
-        <SectionHeader className="tw-mb-3">
-          {t('charsheet.advantages.otherTraits')}
-        </SectionHeader>
-        <OtherTraitsSection/>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
