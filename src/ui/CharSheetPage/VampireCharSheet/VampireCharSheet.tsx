@@ -75,7 +75,6 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
           </div>
         </div>
 
-
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
             <SectionHeader className="tw-mb-3">
@@ -96,7 +95,14 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         <SectionHeader className="tw-mb-3">
           {t('charsheet.appearanceDescription')}
         </SectionHeader>
-        <AppearanceDescriptionSection/>
+        <div className="tw-flex tw-gap-x-4 tw-mb-6">
+          <div className="tw-flex-1">
+          </div>
+
+          <div className="tw-flex-1" style={{flexGrow: 2}}>
+            <AppearanceDescriptionSection/>
+          </div>
+        </div>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.notes')}
