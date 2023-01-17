@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { AlliesAndContactsSection } from '../commonBlocks/AlliesAndContactsSection';
+import { AppearanceDescriptionSection } from '../commonBlocks/AppearanceDescriptionSection';
 import { CharHistorySection } from '../commonBlocks/CharHistorySection';
 import { GoalsSection } from '../commonBlocks/GoalsSection';
 
@@ -65,6 +66,7 @@ export function VampireCharSheet(props: VampireCharSheetProps) {
         <SectionHeader className="tw-mb-3">
           {t('charsheet.appearanceDescription')}
         </SectionHeader>
+        <AppearanceDescriptionSection/>
 
         <SectionHeader className="tw-mb-3">
           {t('charsheet.alliesAndContacts')}

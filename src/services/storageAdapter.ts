@@ -2,6 +2,7 @@ import {
   AbilitiesExtensionService,
   AbilitiesService,
   AlliesAndContactsService,
+  AppearanceService,
   ArtsService,
   AttributesService,
   BackgroundsService,
@@ -73,6 +74,9 @@ export function useAlliesAndContacts(): AlliesAndContactsService {
   return useStore();
 }
 export function usePossessions(): PossessionsService {
+  return useStore();
+}
+export function useAppearance(): AppearanceService {
   return useStore();
 }
 export function useSettings(): SettingsService {

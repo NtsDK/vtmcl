@@ -27,6 +27,7 @@ import {
   RitualsService,
   AlliesAndContactsService,
   PossessionsService,
+  AppearanceService,
 } from "../application/ports";
 import {
   Attributes,
@@ -120,7 +121,8 @@ interface StateStore extends
   LimitService,
   HistoryService,
   AlliesAndContactsService,
-  PossessionsService
+  PossessionsService,
+  AppearanceService
 {
 }
 
@@ -391,6 +393,10 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     possessions,
     setPossessions(possessions: Possessions): void {
       setPossessions(possessions);
+    },
+    appearanceDescription,
+    setAppearanceDescription(appearanceDescription: AppearanceDescription): void {
+      setAppearanceDescription(appearanceDescription);
     },
     charHistory,
     setCharHistory: function (charHistory: CharHistory): void {

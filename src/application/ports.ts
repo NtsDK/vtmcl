@@ -9,6 +9,7 @@ import {
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
   AlliesAndContacts,
+  AppearanceDescription,
   Arts,
   Attributes,
   Backgrounds,
@@ -135,6 +136,11 @@ export interface StateNHealthService {
 export interface NotesService {
   notes: Notes;
   setNotes(notes: Notes): void;
+}
+
+export interface AppearanceService {
+  appearanceDescription: AppearanceDescription;
+  setAppearanceDescription(appearanceDescription: AppearanceDescription): void;
 }
 
 export interface AlliesAndContactsService {
