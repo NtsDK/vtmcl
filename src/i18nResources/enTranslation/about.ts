@@ -2,7 +2,7 @@ export const about = {
   'defaultPageTitle': 'Character Sheet {{type}} by NtsDK. v{{version}}',
   'charsheetWithName': '{{characterName}}. Character Sheet {{type}}. v{{version}}',
 
-  "header": "About character sheet",
+  "header": "About Character Sheet",
   'aboutCharsheetH1': 'About Character Sheet {{type}} by NtsDK',
   'curVersion': 'Version {{version}}, 18 January 2023',
   'license': 'Source code is open under Apache 2 license.',
@@ -23,7 +23,7 @@ export const about = {
   'worldofdarkness': 'World of Darkness game universe website',
 
   'version-history': 'Version history',
-  'version-0.4.0': 'Версия 0.4.0 (18 Jan 2023) - Add new fields: rituals and discipline paths, other traits, history, goals, allies and contacts, possessions, appearance description and character image.',
+  'version-0.4.0': 'Version 0.4.0 (18 Jan 2023) - Add new fields: rituals and discipline paths, other traits, history, goals, allies and contacts, possessions, appearance description and character image. Added max point calculation, bloodpool size and blood per turn dependency from vampire generation.',
   'version-0.3.0': 'Version 0.3.0 (25 Sep 2022) - Add support of Changeling: The Dreaming. Added instruction page. Fixed checklist bug with incorrect calculating of attribute dots.',
   'version-0.2.4': 'Version 0.2.4 (28 Aug 2022) - Now character sheet supports all single page features of official and Studio 101 character sheets. Added selects with English translation support.',
   'version-0.2.3': 'Version 0.2.3 (22 Aug 2022) - Reworked UI for better keyboard accessibility. Made all names consistent with Studio 101 Russian translation. Fixed will and blood pool icons. Added aggravated damade. Added generation selection list. Improved PDF printing from browser.',
