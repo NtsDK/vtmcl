@@ -654,10 +654,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: fit-content;
 }
 
-.tw-max-h-40 {
-  max-height: 10rem;
-}
-
 .tw-max-h-64 {
   max-height: 16rem;
 }
@@ -820,11 +816,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1rem;
 }
 
-.tw-px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .tw-px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -865,14 +856,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
-.tw-text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
 .tw-text-slate-700 {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+.tw-text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .tw-line-through {
@@ -901,10 +892,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-outline-slate-700 {
   outline-color: #334155;
-}
-
-.hover\:tw-border-transparent:hover {
-  border-color: transparent;
 }
 
 .hover\:tw-bg-transparent:hover {

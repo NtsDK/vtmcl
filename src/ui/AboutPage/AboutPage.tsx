@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { ExternalLink } from "../../uiLib/ExternalLink";
 import { UnorderedList } from "../../uiLib/UnorderedList";
 
-import './AboutPage.css';
 import { CURRENT_VERSION } from '../../constants';
 
 
@@ -43,7 +42,7 @@ export function AboutPage(props: AboutPageProps) {
                 </h2>
                 <UnorderedList>
                   <li>
-                    <ExternalLink href="https://trechkalov.com/archives/wod_character_sheet_ru_en_0.3.0.zip">
+                    <ExternalLink href="https://trechkalov.com/archives/wod_character_sheet_ru_en_0.4.0.zip">
                       {t('about.charsheet-archive')}
                     </ExternalLink>
                   </li>
@@ -101,6 +100,9 @@ export function AboutPage(props: AboutPageProps) {
                   {t('about.version-history')}
                 </h2>
                 <UnorderedList>
+                  <li>
+                    {t('about.version-0.4.0')}
+                  </li>
                   <li>
                     {t('about.version-0.3.0')}
                   </li>
