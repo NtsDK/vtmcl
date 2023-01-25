@@ -5,12 +5,11 @@ import classnames from 'classnames';
 
 import { useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkBanality, EXPECTED_BANALITY_DOTS } from '../../../../../../domainServices';
 
 interface BanalityCheckProps {
   className?: string;
 }
-
-const EXPECTED_BANALITY_DOTS = 3;
 
 export function BanalityCheck(props: BanalityCheckProps) {
   const { className } = props;
@@ -21,7 +20,7 @@ export function BanalityCheck(props: BanalityCheckProps) {
   return (
     <CheckListItem
       className={classnames("BanalityCheck", className)}
-      checked={state.banalityRating === EXPECTED_BANALITY_DOTS}
+      checked={checkBanality(state)}
       text={t('checklist.banality-dots', {
         value: state.banalityRating,
         expected: EXPECTED_BANALITY_DOTS

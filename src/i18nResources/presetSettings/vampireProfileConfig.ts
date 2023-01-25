@@ -1,4 +1,4 @@
-import { ProfileConfig } from "./types";
+import { ProfileConfig } from "../../domain";
 
 export const vampireProfileConfig: ProfileConfig = [[
   'name',

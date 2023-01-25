@@ -7,6 +7,7 @@ import './BloodpoolCheck.css';
 import { randomInteger } from '../../../../../../lib/miscUtils';
 import { useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkBloodpool, INITIAL_BLOODPOOL_MAX_LIMIT } from '../../../../../../domainServices';
 
 interface BloodpoolCheckProps {
   className?: string;
@@ -21,11 +22,11 @@ export function BloodpoolCheck(props: BloodpoolCheckProps) {
   return (
     <CheckListItem
       className={classnames("BloodpoolCheck", className)}
-      checked={state.bloodpool > 0 &&  state.bloodpool <= 10}
+      checked={checkBloodpool(state)}
       text={t('checklist.bloodpool-dots', {
         value: state.bloodpool,
       })}
-      onFix={() => setState('bloodpool', randomInteger(1,10))}
+      onFix={() => setState('bloodpool', randomInteger(1,INITIAL_BLOODPOOL_MAX_LIMIT))}
     />
   );
 }

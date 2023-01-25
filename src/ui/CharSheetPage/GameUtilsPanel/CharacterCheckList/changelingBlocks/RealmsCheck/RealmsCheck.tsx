@@ -6,9 +6,11 @@ import classnames from 'classnames';
 
 import { useRealms } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-import { CheckNumberResult, checkArrSumFilled } from '../../type';
-
-const EXPECTED_REALM_DOTS = 5;
+import {
+  CheckNumberResult,
+  checkRealms,
+  EXPECTED_REALM_DOTS
+} from '../../../../../../domainServices';
 
 interface RealmsCheckProps {
   className?: string;
@@ -22,7 +24,7 @@ export function RealmsCheck(props: RealmsCheckProps) {
 
   const [ realmsFilled, setRealmsFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
   useEffect(() => {
-    setRealmsFilled(checkArrSumFilled(R.values(realms), EXPECTED_REALM_DOTS));
+    setRealmsFilled(checkRealms(realms));
   }, [realms]);
 
   return (

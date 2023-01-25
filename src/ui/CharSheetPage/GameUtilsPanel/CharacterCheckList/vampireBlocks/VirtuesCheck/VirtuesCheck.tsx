@@ -6,9 +6,11 @@ import classnames from 'classnames';
 import './VirtuesCheck.css';
 import { useVirtues } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-import { CheckNumberResult, checkArrSumFilled } from '../../type';
-
-const EXPECTED_VIRTUE_DOTS = 7;
+import {
+  CheckNumberResult,
+  checkVirtues,
+  EXPECTED_VIRTUE_DOTS
+} from '../../../../../../domainServices';
 
 interface VirtuesCheckProps {
   className?: string;
@@ -21,7 +23,7 @@ export function VirtuesCheck(props: VirtuesCheckProps) {
   const { virtues } = useVirtues();
   const [ virtuesFilled, setVirtuesFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
   useEffect(() => {
-    setVirtuesFilled(checkArrSumFilled([...R.values(virtues), -3], EXPECTED_VIRTUE_DOTS));
+    setVirtuesFilled(checkVirtues(virtues));
   }, [virtues]);
 
   return (

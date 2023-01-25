@@ -5,12 +5,11 @@ import classnames from 'classnames';
 
 import { useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkChangelingWillpower, EXPECTED_WILLPOWER_DOTS } from '../../../../../../domainServices';
 
 interface WillpowerCheckProps {
   className?: string;
 }
-
-const EXPECTED_WILLPOWER_DOTS = 4;
 
 export function WillpowerCheck(props: WillpowerCheckProps) {
   const { className } = props;
@@ -21,7 +20,7 @@ export function WillpowerCheck(props: WillpowerCheckProps) {
   return (
     <CheckListItem
       className={classnames("WillpowerCheck", className)}
-      checked={state.willpowerRating === EXPECTED_WILLPOWER_DOTS}
+      checked={checkChangelingWillpower(state)}
       text={t('checklist.c20-willpower-dots', {
         value: state.willpowerRating,
         expected: EXPECTED_WILLPOWER_DOTS

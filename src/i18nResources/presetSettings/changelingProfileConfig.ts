@@ -1,4 +1,4 @@
-import { ProfileConfig } from "./types";
+import { ProfileConfig } from "../../domain";
 
 export const changelingProfileConfig: ProfileConfig = [[
   'name',

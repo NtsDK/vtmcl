@@ -1,5 +1,4 @@
-import { Abilities } from "../../domain";
-import { AbilitiesConfig } from "./types";
+import { Abilities, AbilitiesConfig } from "../../domain";
 
 export const talentsArr: (keyof Abilities)[] = [
   'athletics',

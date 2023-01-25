@@ -1,12 +1,12 @@
+import { PresetSettings } from "../../domain";
 import { usePreset } from "../../services/storageAdapter";
 import { attributesConfig } from "./attributesConfig";
 import { changelingAbilitiesConfig } from "./changelingAbilitiesConfig";
 import { changelingProfileConfig } from "./changelingProfileConfig";
 import { vampireAbilitiesConfig } from "./vampireAbilitiesConfig";
 import { vampireProfileConfig } from "./vampireProfileConfig";
-export * from './types';
 
-export function usePresetSettings() {
+export function usePresetSettings(): PresetSettings {
 
   const { preset } = usePreset();
 

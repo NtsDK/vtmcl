@@ -19,7 +19,6 @@ import {
   Notes,
   OtherTraits,
   Possessions,
-  Preset,
   Profile,
   Realms,
   Rituals,
@@ -30,6 +29,7 @@ import {
   Settings,
   Version
 } from "./nonCharacterDataTypes";
+import { Preset } from "./presets";
 
 export interface CharSheet {
   Version: Version;

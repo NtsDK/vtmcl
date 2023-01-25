@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import './HumanityCheck.css';
 import { useVirtues, useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkHumanity } from '../../../../../../domainServices';
 
 interface HumanityCheckProps {
   className?: string;
@@ -20,7 +21,7 @@ export function HumanityCheck(props: HumanityCheckProps) {
   const { state, setState } = useStateNHealth();
   const [ humanityChecked, setHumanityChecked ] = useState(false);
   useEffect(() => {
-    setHumanityChecked(state.humanity === (virtues.conscience + virtues.self_control));
+    setHumanityChecked(checkHumanity(state, virtues));
   }, [state, virtues]);
 
   return (

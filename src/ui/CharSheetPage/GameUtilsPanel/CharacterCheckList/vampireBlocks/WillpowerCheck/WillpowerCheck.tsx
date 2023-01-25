@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import './WillpowerCheck.css';
 import { useVirtues, useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkVampireWillpower } from '../../../../../../domainServices';
 
 interface WillpowerCheckProps {
   className?: string;
@@ -22,7 +23,7 @@ export function WillpowerCheck(props: WillpowerCheckProps) {
   return (
     <CheckListItem
       className={classnames("WillpowerCheck", className)}
-      checked={state.willpowerRating === virtues.courage}
+      checked={checkVampireWillpower(state, virtues)}
       text={t('checklist.willpower-dots', {
         value: state.willpowerRating,
         expected: virtues.courage

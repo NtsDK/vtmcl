@@ -5,23 +5,13 @@ import classnames from "classnames";
 
 
 import './AbilitiesDotLimitCheck.css';
-import { Abilities } from '../../../../../../domain';
-import { AbilitiesConfig, usePresetSettings } from '../../../../../../i18nResources';
+import { usePresetSettings } from '../../../../../../i18nResources';
 import { useAbilities } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-
-const ABILITY_LIMIT = 3;
-
-function checkAbilitiesDotLimit(
-  abilities: Abilities,
-  abilitiesConfig: AbilitiesConfig
-): boolean {
-  const arr = R.props(
-    R.flatten(R.pluck('items', abilitiesConfig)),
-    abilities
-  ).filter(el => el > ABILITY_LIMIT);
-  return arr.length === 0;
-}
+import {
+  ABILITY_LIMIT,
+  checkAbilitiesDotLimit
+} from '../../../../../../domainServices';
 
 interface AbilitiesDotLimitCheckProps {
   className?: string;

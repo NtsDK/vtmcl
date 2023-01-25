@@ -6,9 +6,11 @@ import classnames from 'classnames';
 import './BackgroundsCheck.css';
 import { useBackgrounds } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-import { CheckNumberResult, checkArrSumFilled } from '../../type';
-
-const EXPECTED_BACKGROUND_DOTS = 5;
+import {
+  checkBackgrounds,
+  CheckNumberResult,
+  EXPECTED_BACKGROUND_DOTS
+} from '../../../../../../domainServices';
 
 interface BackgroundsCheckProps {
   className?: string;
@@ -21,7 +23,7 @@ export function BackgroundsCheck(props: BackgroundsCheckProps) {
   const { backgrounds } = useBackgrounds();
   const [ backgroundsFilled, setBackgroundsFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
   useEffect(() => {
-    setBackgroundsFilled(checkArrSumFilled(R.pluck('value', backgrounds), EXPECTED_BACKGROUND_DOTS));
+    setBackgroundsFilled(checkBackgrounds(backgrounds));
   }, [backgrounds]);
 
   return (

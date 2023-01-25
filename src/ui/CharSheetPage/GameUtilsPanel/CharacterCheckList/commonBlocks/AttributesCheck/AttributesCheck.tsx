@@ -4,27 +4,14 @@ import * as R from 'ramda';
 import classnames from "classnames";
 
 import './AttributesCheck.css';
-import { AttributesConfig, usePresetSettings } from '../../../../../../i18nResources';
+import { usePresetSettings } from '../../../../../../i18nResources';
 import { useAttributes } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-import { CheckArrResult } from '../../type';
-import { Attributes } from '../../../../../../domain';
-
-const EXPECTED_ATTRIBUTE_DOTS = [7,5,3];
-
-function checkAttributesFilled(
-  attributes: Attributes,
-  attributesConfig: AttributesConfig
-): CheckArrResult {
-  const list = R.reverse(R.sort(R.subtract,
-    attributesConfig.map(el => R.sum(R.props(el.items, attributes).map(el => el > 0 ? el - 1 : 0)))
-  ));
-  // console.log('list', list)
-  return {
-    checked: R.equals(list, EXPECTED_ATTRIBUTE_DOTS),
-    arr: list
-  };
-}
+import {
+  CheckArrResult,
+  checkAttributesFilled,
+  EXPECTED_ATTRIBUTE_DOTS
+} from '../../../../../../domainServices';
 
 interface AttributesCheckProps {
   className?: string;

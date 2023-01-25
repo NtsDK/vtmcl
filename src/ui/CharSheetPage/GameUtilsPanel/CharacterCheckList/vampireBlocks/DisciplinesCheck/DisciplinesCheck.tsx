@@ -7,9 +7,11 @@ import classnames from 'classnames';
 import './DisciplinesCheck.css';
 import { useDisciplines } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
-import { CheckNumberResult, checkArrSumFilled } from '../../type';
-
-const EXPECTED_DISCIPLINE_DOTS = 3;
+import {
+  checkDisciplines,
+  CheckNumberResult,
+  EXPECTED_DISCIPLINE_DOTS
+} from '../../../../../../domainServices';
 
 interface DisciplinesCheckProps {
   className?: string;
@@ -22,7 +24,7 @@ export function DisciplinesCheck(props: DisciplinesCheckProps) {
   const { disciplines } = useDisciplines();
   const [ disciplinesFilled, setDisciplinesFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
   useEffect(() => {
-    setDisciplinesFilled(checkArrSumFilled(R.pluck('value', disciplines), EXPECTED_DISCIPLINE_DOTS));
+    setDisciplinesFilled(checkDisciplines(disciplines));
   }, [disciplines]);
 
   return (

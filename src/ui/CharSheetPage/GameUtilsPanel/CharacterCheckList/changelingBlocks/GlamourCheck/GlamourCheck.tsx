@@ -5,12 +5,11 @@ import classnames from 'classnames';
 
 import { useStateNHealth } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
+import { checkGlamour, EXPECTED_GLAMOUR_DOTS } from '../../../../../../domainServices';
 
 interface GlamourCheckProps {
   className?: string;
 }
-
-const EXPECTED_GLAMOUR_DOTS = 4;
 
 export function GlamourCheck(props: GlamourCheckProps) {
   const { className } = props;
@@ -21,7 +20,7 @@ export function GlamourCheck(props: GlamourCheckProps) {
   return (
     <CheckListItem
       className={classnames("GlamourCheck", className)}
-      checked={state.glamourRating === EXPECTED_GLAMOUR_DOTS}
+      checked={checkGlamour(state)}
       text={t('checklist.glamour-dots', {
         value: state.glamourRating,
         expected: EXPECTED_GLAMOUR_DOTS

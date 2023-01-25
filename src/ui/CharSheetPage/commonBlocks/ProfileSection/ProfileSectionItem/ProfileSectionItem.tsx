@@ -2,8 +2,9 @@ import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useProfile } from '../../../../../services/storageAdapter';
-import { ProfileConfigItem, useResource } from '../../../../../i18nResources';
+import { useResource } from '../../../../../i18nResources';
 import { SelectButton } from '../../../primitives/SelectButton';
+import { ProfileConfigItem } from '../../../../../domain';
 
 import './ProfileSectionItem.css';
 
