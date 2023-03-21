@@ -31,16 +31,16 @@ export function SelectButton(props: SelectButtonProps) {
         options.map(option => {
           if (typeof option === 'string') {
             return (
-              <option>
+              <option key={option}>
                 {option}
               </option>
             );
           } else {
             return (
-              <optgroup label={option.groupName}>
+              <optgroup key={option.groupName} label={option.groupName}>
                 {
                   option.arr.map(el2 =>
-                    <option>
+                    <option key={el2}>
                       {el2}
                     </option>
                   )
