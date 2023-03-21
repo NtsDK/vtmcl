@@ -11,33 +11,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 import {
-  initialAttributes,
-  initialAbilities,
-  initialAbilitiesExtension,
-  initialBackgrounds,
-  initialDisciplines,
-  initialFlaws,
-  initialHealth,
-  initialMerits,
-  initialNotes,
-  initialProfile,
-  initialSettings,
-  initialState,
-  initialVirtues,
-  initialArts,
-  initialRealms,
-  initialPreset,
-  initialGoals,
-  initialCharHistory,
-  initialDisciplinePaths,
-  initialRituals,
-  initialOtherTraits,
-  initialAlliesAndContacts,
-  initialAppearanceDescription,
-  initialCharacterImage,
-  initialPossessions
+  initialCharSheet
 } from "../../../../services/initialValues";
-import { CURRENT_VERSION } from "../../../../constants";
 
 interface CreateDatabaseButtonProps {
 }
@@ -49,37 +24,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
   const { setCharSheet } = useCharSheetStorage();
 
   function setEmptyCharSheet() {
-    setCharSheet(R.clone({
-      Version: CURRENT_VERSION,
-      Settings: initialSettings,
-
-      preset: initialPreset,
-      profile: initialProfile,
-      attributes: initialAttributes,
-      abilities: initialAbilities,
-      abilitiesExtension: initialAbilitiesExtension,
-      disciplines: initialDisciplines,
-      disciplinePaths: initialDisciplinePaths,
-      otherTraits: initialOtherTraits,
-      rituals: initialRituals,
-      backgrounds: initialBackgrounds,
-      virtues: initialVirtues,
-      merits: initialMerits,
-      flaws: initialFlaws,
-      state: initialState,
-      health: initialHealth,
-      healthChimerical: R.clone(initialHealth),
-      notes: initialNotes,
-      charHistory: initialCharHistory,
-      goals: initialGoals,
-      appearanceDescription: initialAppearanceDescription,
-      characterImage: initialCharacterImage,
-      alliesAndContacts: initialAlliesAndContacts,
-      possessions: initialPossessions,
-
-      arts: initialArts,
-      realms: initialRealms,
-    }));
+    setCharSheet(R.clone(initialCharSheet));
   }
 
   function onSubmit (e: FormEvent<HTMLFormElement>) {

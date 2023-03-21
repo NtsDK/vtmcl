@@ -5,7 +5,7 @@ import { CharSheetInJson } from "./types";
 
 export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
   return {
-    Settings: charSheet.Settings,
+    Settings: charSheet.settings,
     Version: charSheet.Version,
     Charsheet: {
       preset: charSheet.preset,
@@ -41,7 +41,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
 
 export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
   return {
-    Settings: charSheetInJson.Settings,
+    settings: charSheetInJson.Settings,
     Version: charSheetInJson.Version,
     // character
     preset: charSheetInJson.Charsheet.preset,

@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+
+import { CURRENT_VERSION } from "../constants";
 import {
   Abilities,
   AbilitiesExtension,
@@ -8,6 +11,7 @@ import {
   Backgrounds,
   CharacterImage,
   CharHistory,
+  CharSheet,
   DisciplinePaths,
   Disciplines,
   Flaws,
@@ -192,4 +196,36 @@ export const initialSettings: Settings = {
   // charsheetBackImage: "../images/back.png",
   charsheetBackImage_v2: defaultBackgroundUrl,
   charsheetBackMode: "charsheet-image"
+}
+
+export const initialCharSheet: CharSheet = {
+  Version: CURRENT_VERSION,
+  settings: initialSettings,
+
+  preset: initialPreset,
+  profile: initialProfile,
+  attributes: initialAttributes,
+  abilities: initialAbilities,
+  abilitiesExtension: initialAbilitiesExtension,
+  disciplines: initialDisciplines,
+  disciplinePaths: initialDisciplinePaths,
+  rituals: initialRituals,
+  backgrounds: initialBackgrounds,
+  virtues: initialVirtues,
+  merits: initialMerits,
+  flaws: initialFlaws,
+  state: initialState,
+  health: initialHealth,
+  healthChimerical: R.clone(initialHealth),
+  notes: initialNotes,
+  charHistory: initialCharHistory,
+  goals: initialGoals,
+  otherTraits: initialOtherTraits,
+  appearanceDescription: initialAppearanceDescription,
+  characterImage: initialCharacterImage,
+  alliesAndContacts: initialAlliesAndContacts,
+  possessions: initialPossessions,
+
+  arts: initialArts,
+  realms: initialRealms,
 }

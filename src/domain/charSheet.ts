@@ -33,7 +33,7 @@ import { Preset } from "./presets";
 
 export interface CharSheet {
   Version: Version;
-  Settings: Settings;
+  settings: Settings;
   preset: Preset;
   profile: Profile;
   attributes: Attributes;

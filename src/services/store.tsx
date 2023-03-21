@@ -1,10 +1,7 @@
-import React, { useState, PropsWithChildren, useEffect } from "react";
+import React, { useState, PropsWithChildren, useEffect, useReducer } from "react";
 import * as R from 'ramda';
 import { useContext } from "react";
 import {
-//   GameStorageService,
-//   ServerDatabaseStorageService,
-//   ServerStorageService,
   ErrorDescriptionService,
   AbilitiesService,
   AttributesService,
@@ -33,72 +30,34 @@ import {
 import {
   Attributes,
   Abilities,
-  AbilitiesExtension,
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
-  Backgrounds,
   CharSheet,
   CharsheetBackMode,
-  Disciplines,
   ErrorDescription,
-  Flaws,
   Health,
-  Merits,
   Notes,
   Profile,
-  Settings,
   State,
   Virtues,
   Realms,
-  Arts,
   Preset,
   Limits,
   CharHistory,
   Goals,
-  Rituals,
-  DisciplinePaths,
-  OtherTraits,
   AlliesAndContacts,
   AppearanceDescription,
   CharacterImage,
   Possessions,
 } from "../domain";
-// import { ErrorDescription } from "../domain/errorDescription";
-// import { Game } from "../domain/game";
-// import { Server, ServerStatus } from "../domain/server";
-// import { ServerDatabase } from "../domain/serverDatabase";
 import { getCharSheetFromLS, saveCharSheetInLS } from "../infrastructure/lsDbService";
 import {
-  initialAttributes,
-  initialAbilities,
-  initialAbilitiesExtension,
-  initialBackgrounds,
-  initialDisciplines,
-  initialFlaws,
-  initialHealth,
-  initialMerits,
-  initialNotes,
-  initialProfile,
-  initialSettings,
-  initialState,
-  initialVirtues,
-  initialArts,
-  initialRealms,
-  initialPreset,
-  initialCharHistory,
-  initialGoals,
-  initialDisciplinePaths,
-  initialRituals,
-  initialOtherTraits,
-  initialAppearanceDescription,
-  initialCharacterImage,
-  initialAlliesAndContacts,
-  initialPossessions
+  initialCharSheet
 } from "./initialValues";
-// import { initialGames, initialServers } from "./initialGames";
 
-import { CURRENT_VERSION } from "../constants";
 import { defaultLimits, getLimits } from "../i18nResources/getLimits";
+import { commonActions } from "./commonActions";
+import { CompositeReducer } from "./CompositeReducer";
 
 interface StateStore extends
   PresetService,
@@ -135,148 +94,32 @@ export const useStore = () => useContext(StoreContext);
 interface ProviderProps {
 }
 
+const reducer = new CompositeReducer<CharSheet>().assign(commonActions);
+
 export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children }) => {
 
   const [initialized, setInitialized] = useState(false);
 
-  const [preset, setPresetValue] = useState<Preset>(initialPreset);
-  const [profile, setProfile] = useState<Profile>(initialProfile);
-  const [attributes, setAttributes] = useState<Attributes>(initialAttributes);
-  const [abilities, setAbilities] = useState<Abilities>(initialAbilities);
-  const [abilitiesExtension, setAbilitiesExtension] = useState<AbilitiesExtension>(initialAbilitiesExtension);
-  const [disciplines, setDisciplines] = useState<Disciplines>(initialDisciplines);
-  const [disciplinePaths, setDisciplinePaths] = useState<DisciplinePaths>(initialDisciplinePaths);
-  const [otherTraits, setOtherTraits] = useState<OtherTraits>(initialOtherTraits);
-  const [rituals, setRituals] = useState<Rituals>(initialRituals);
-  const [backgrounds, setBackgrounds] = useState<Backgrounds>(initialBackgrounds);
-  const [virtues, setVirtues] = useState<Virtues>(initialVirtues);
-  const [merits, setMerits] = useState<Merits>(initialMerits);
-  const [flaws, setFlaws] = useState<Flaws>(initialFlaws);
-  const [state, setState] = useState<State>(initialState);
-  const [health, setHealth] = useState<Health>(initialHealth);
-  const [healthChimerical, setHealthChimerical] = useState<Health>(R.clone(initialHealth));
-  const [notes, setNotes] = useState<Notes>(initialNotes);
-  const [charHistory, setCharHistory] = useState<CharHistory>(initialCharHistory);
-  const [goals, setGoals] = useState<Goals>(initialGoals);
-  const [appearanceDescription, setAppearanceDescription] = useState<AppearanceDescription>(initialAppearanceDescription);
-  const [characterImage, setCharacterImage] = useState<CharacterImage>(initialCharacterImage);
-  const [alliesAndContacts, setAlliesAndContacts] = useState<AlliesAndContacts>(initialAlliesAndContacts);
-  const [possessions, setPossessions] = useState<Possessions>(initialPossessions);
-
-  const [arts, setArts] = useState<Arts>(initialArts);
-  const [realms, setRealms] = useState<Realms>(initialRealms);
-
-  const [settings, setSettings] = useState<Settings>(initialSettings);
-
+  const [charSheet, dispatch] = useReducer(reducer.reduce, initialCharSheet);
   const [limits, setLimits] = useState<Limits>(defaultLimits);
 
   useEffect(() => {
-    const limits = getLimits( preset === 'vampire_v20'
-      ? { type: preset, generation: profile.generation }
-      : { type: preset }
-    );
+    const limits = getLimits(charSheet);
     setLimits(limits);
-    setState((prevState) => ({
-      ...prevState,
-      bloodPerTurn: String(limits.bloodPerTurnLimit)
-    }));
-  }, [preset, profile.generation]);
+    dispatch({type: 'setState', props: ['bloodPerTurn', String(limits.bloodPerTurnLimit)]});
+  }, [charSheet.preset, charSheet.profile.generation]);
 
   useEffect(() => {
-    saveCharSheetInLS(R.clone({
-      preset,
-      profile,
-      attributes,
-      abilities,
-      abilitiesExtension,
-      disciplines,
-      disciplinePaths,
-      otherTraits,
-      rituals,
-      backgrounds,
-      virtues,
-      merits,
-      flaws,
-      state,
-      health,
-      healthChimerical,
-      notes,
-      charHistory,
-      goals,
-      appearanceDescription,
-      characterImage,
-      alliesAndContacts,
-      possessions,
-      arts,
-      realms,
-      Settings: settings,
-      Version: CURRENT_VERSION
-    }))
-  }, [
-    preset,
-    profile,
-    attributes,
-    abilities,
-    abilitiesExtension,
-    disciplines,
-    disciplinePaths,
-    otherTraits,
-    rituals,
-    backgrounds,
-    virtues,
-    merits,
-    flaws,
-    state,
-    health,
-    healthChimerical,
-    notes,
-    charHistory,
-    goals,
-    appearanceDescription,
-    characterImage,
-    alliesAndContacts,
-    possessions,
-    settings,
-    arts,
-    realms,
-  ]);
+    saveCharSheetInLS(charSheet);
+  }, [charSheet]);
 
-  // const [servers, innerSetServers] = useState<Server[]>(initialServers);
-  // // const [games, setGames] = useState<Game[]>([]);
-  // const [games, innerSetGames] = useState<Game[]>(initialGames);
   const [
     errorDescription,
     setErrorDescription
   ] = useState<ErrorDescription | null>(null);
 
   function setCharSheet(cs: CharSheet) {
-    setPresetValue(cs.preset);
-    setProfile(cs.profile);
-    setAttributes(cs.attributes);
-    setAbilities(cs.abilities);
-    setAbilitiesExtension(cs.abilitiesExtension);
-    setDisciplines(cs.disciplines);
-    setDisciplinePaths(cs.disciplinePaths);
-    setRituals(cs.rituals);
-    setBackgrounds(cs.backgrounds);
-    setVirtues(cs.virtues);
-    setArts(cs.arts);
-    setRealms(cs.realms);
-    setMerits(cs.merits);
-    setFlaws(cs.flaws);
-    setState(cs.state);
-    setHealth(cs.health);
-    setHealthChimerical(cs.healthChimerical);
-    setNotes(cs.notes);
-    setCharHistory(cs.charHistory);
-    setGoals(cs.goals);
-    setOtherTraits(cs.otherTraits);
-    setAppearanceDescription(cs.appearanceDescription);
-    setCharacterImage(cs.characterImage);
-    setAlliesAndContacts(cs.alliesAndContacts);
-    setPossessions(cs.possessions);
-
-    setSettings(cs.Settings);
+    dispatch({ type: 'setCharSheet',  props: [cs]});
   }
 
   if (!initialized) {
@@ -287,372 +130,182 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     }
   }
 
-  function applyRange(min: number, max: number, value: number) {
-    return value < min
-      ? min
-      : value > max
-        ? max
-        : value;
-  }
-
   const value: StateStore = {
-    preset,
+    ...charSheet,
     setPreset(preset2: Preset) {
-      setPresetValue(preset2);
+      dispatch({type: 'setPresetValue', props: [preset2]});
     },
     getPresetDisplayName() {
-      return preset === 'vampire_v20' ? 'VtM V20' : 'CtD V20'
+      return charSheet.preset === 'vampire_v20' ? 'VtM V20' : 'CtD V20'
     },
-    profile,
     setProfileItem(itemName: keyof Profile, value: string) {
-      setProfile((prevProfile) => ({
-        ...prevProfile,
-        [itemName]: value
-      }));
+      dispatch({type: 'setProfileItem', props: [itemName, value]});
     },
-    attributes,
     setAttribute(attributeName: keyof Attributes, value: number) {
-      setAttributes({
-        ...attributes,
-        [attributeName]: applyRange(0, limits.parameterLimit, value)
-      });
+      dispatch({type: 'setAttribute', props: [attributeName, value]});
     },
-    abilities,
     setAbility(abilityName: keyof Abilities, value: number) {
-      setAbilities({
-        ...abilities,
-        [abilityName]: applyRange(0, limits.parameterLimit, value)
-      });
+      dispatch({type: 'setAbility', props: [abilityName, value]});
     },
-    abilitiesExtension,
     setAbilityExtensionName: function (abilityName: AbilitiesExtensionName, name: string): void {
-      setAbilitiesExtension({
-        ...abilitiesExtension,
-        [abilityName]: name
-      });
+      dispatch({type: 'setAbilityExtensionName', props: [abilityName, name]});
     },
     setAbilityExtensionValue: function (abilityName: AbilitiesExtensionValue, value: number): void {
-      setAbilitiesExtension({
-        ...abilitiesExtension,
-        [abilityName]: applyRange(0, limits.parameterLimit, value)
-      });
+      dispatch({type: 'setAbilityExtensionValue', props: [abilityName, value]});
     },
-    virtues,
     setVirtue(virtueName: keyof Virtues, value: number) {
-      setVirtues({
-        ...virtues,
-        [virtueName]: applyRange(1, 5, value)
-      });
+      dispatch({type: 'setVirtue', props: [virtueName, value]});
     },
 
-    realms,
     setRealm(realmName: keyof Realms, value: number) {
-      setRealms({
-        ...realms,
-        [realmName]: applyRange(1, 5, value)
-      });
+      dispatch({type: 'setRealm', props: [realmName, value]});
     },
 
 
-    health,
-    state,
     setHealth(healthName: keyof Health, value: number) {
-      setHealth({
-        ...health,
-        [healthName]: applyRange(0, 3, value)
-      });
+      dispatch({type: 'setHealth', props: [healthName, value]});
     },
-    healthChimerical,
     setHealthChimerical(healthName: keyof Health, value: number) {
-      setHealthChimerical({
-        ...healthChimerical,
-        [healthName]: applyRange(0, 3, value)
-      });
+      dispatch({type: 'setHealthChimerical', props: [healthName, value]});
     },
 
     setState<T extends keyof State>(stateName: T, value: State[T]) {
-      if (typeof value === 'number') {
-        setState(prevState => ({
-          ...prevState,
-          [stateName]: applyRange(0, stateName === 'bloodpool' ? limits.bloodpool : 10, value)
-        }));
-      } else {
-        setState(prevState => ({
-          ...prevState,
-          [stateName]: value
-        }));
-      }
+      dispatch({type: 'setState', props: [stateName, value]});
     },
 
-    notes,
     setNotes: function (notes: Notes): void {
-      setNotes(notes);
+      dispatch({type: 'setStringItem', props: ['notes', notes]});
     },
-    alliesAndContacts,
     setAlliesAndContacts(alliesAndContacts: AlliesAndContacts): void {
-      setAlliesAndContacts(alliesAndContacts);
+      dispatch({type: 'setStringItem', props: ['alliesAndContacts', alliesAndContacts]});
     },
-    possessions,
     setPossessions(possessions: Possessions): void {
-      setPossessions(possessions);
+      dispatch({type: 'setStringItem', props: ['possessions', possessions]});
     },
-    appearanceDescription,
     setAppearanceDescription(appearanceDescription: AppearanceDescription): void {
-      setAppearanceDescription(appearanceDescription);
+      dispatch({type: 'setStringItem', props: ['appearanceDescription', appearanceDescription]});
     },
-    characterImage,
     setCharacterImage(characterImage: CharacterImage): void {
-      setCharacterImage(characterImage);
+      dispatch({type: 'setStringItem', props: ['characterImage', characterImage]});
     },
-    charHistory,
     setCharHistory: function (charHistory: CharHistory): void {
-      setCharHistory(charHistory);
+      dispatch({type: 'setStringItem', props: ['charHistory', charHistory]});
     },
-    goals,
     setGoals: function (goals: Goals): void {
-      setGoals(goals);
+      dispatch({type: 'setStringItem', props: ['goals', goals]});
     },
 
-    merits,
     addMerit() {
-      setMerits([...merits, '']);
+      dispatch({type: 'addMerit', props: []});
     },
     removeMerit(index: number) {
-      setMerits(merits.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeMerit', props: [index]});
     },
     setMerit(index: number, name: string) {
-      setMerits((prevMerits) => prevMerits.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return name;
-      }));
+      dispatch({type: 'setMerit', props: [index, name]});
     },
-    flaws,
     addFlaw() {
-      setFlaws([...flaws, '']);
+      dispatch({type: 'addFlaw', props: []});
     },
     removeFlaw(index: number) {
-      setFlaws(flaws.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeFlaw', props: [index]});
     },
     setFlaw(index: number, name: string) {
-      setFlaws((prevFlaws) => prevFlaws.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return name;
-      }));
+      dispatch({type: 'setFlaw', props: [index, name]});
     },
 
-    disciplines,
     addDiscipline() {
-      setDisciplines([...disciplines, { name: '', value: 0 }]);
+      dispatch({type: 'addDiscipline', props: []});
     },
     removeDiscipline(index: number) {
-      setDisciplines((prevDisciplines) => prevDisciplines.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeDiscipline', props: [index]});
     },
     setDisciplineName(index: number, name: string) {
-      setDisciplines((prevDisciplines) => prevDisciplines.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
+      dispatch({type: 'setDisciplineName', props: [index, name]});
     },
     setDisciplineValue(index: number, value: number) {
-      setDisciplines((prevDisciplines) => prevDisciplines.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      }));
+      dispatch({type: 'setDisciplineValue', props: [index, value]});
     },
-    disciplinePaths,
     addDisciplinePath() {
-      setDisciplinePaths([...disciplinePaths, { name: '', value: 0 }]);
+      dispatch({type: 'addDisciplinePath', props: []});
     },
     removeDisciplinePath(index: number) {
-      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeDisciplinePath', props: [index]});
     },
     setDisciplinePathName(index: number, name: string) {
-      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
+      dispatch({type: 'setDisciplinePathName', props: [index, name]});
     },
     setDisciplinePathValue(index: number, value: number) {
-      setDisciplinePaths((prevDisciplinePaths) => prevDisciplinePaths.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      }));
+      dispatch({type: 'setDisciplinePathValue', props: [index, value]});
     },
-    rituals,
     addRitual() {
-      setRituals([...rituals, { name: '', level: '' }]);
-    },
-    setRitualName(index: number, name: string) {
-      setRituals((prevRituals) => prevRituals.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
-    },
-    setRitualLevel(index: number, level: string) {
-      setRituals((prevRituals) => prevRituals.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          level
-        };
-      }));
+      dispatch({type: 'addRitual', props: []});
     },
     removeRitual(index: number) {
-      setRituals((prevRituals) => prevRituals.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeRitual', props: [index]});
+    },
+    setRitualName(index: number, name: string) {
+      dispatch({type: 'setRitualName', props: [index, name]});
+    },
+    setRitualLevel(index: number, level: string) {
+      dispatch({type: 'setRitualLevel', props: [index, level]});
     },
 
-    arts,
     addArt() {
-      setArts([...arts, { name: '', value: 0 }]);
+      dispatch({type: 'addArt', props: []});
     },
     removeArt(index: number) {
-      setArts((prevArts) => prevArts.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeArt', props: [index]});
     },
     setArtName(index: number, name: string) {
-      setArts((prevArts) => prevArts.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
+      dispatch({type: 'setArtName', props: [index, name]});
     },
     setArtValue(index: number, value: number) {
-      setArts(arts.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      }));
+      dispatch({type: 'setArtValue', props: [index, value]});
     },
 
-    backgrounds,
     addBackground() {
-      setBackgrounds([...backgrounds, { name: '', value: 0 }]);
+      dispatch({type: 'addBackground', props: []});
     },
     removeBackground(index: number) {
-      setBackgrounds((prevBackgrounds) => prevBackgrounds.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeBackground', props: [index]});
     },
     setBackgroundName(index: number, name: string) {
-      setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
+      dispatch({type: 'setBackgroundName', props: [index, name]});
     },
     setBackgroundValue(index: number, value: number) {
-      setBackgrounds((prevBackgrounds) => prevBackgrounds.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      }));
+      dispatch({type: 'setBackgroundValue', props: [index, value]});
     },
 
-    otherTraits,
     addOtherTrait() {
-      setOtherTraits([...otherTraits, { name: '', value: 0 }]);
+      dispatch({type: 'addOtherTrait', props: []});
     },
     removeOtherTrait(index: number) {
-      setOtherTraits((prevOtherTraits) => prevOtherTraits.filter((el, index2) => index2 !== index));
+      dispatch({type: 'removeOtherTrait', props: [index]});
     },
     setOtherTraitName(index: number, name: string) {
-      setOtherTraits((prevOtherTraits) => prevOtherTraits.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      }));
+      dispatch({type: 'setOtherTraitName', props: [index, name]});
     },
     setOtherTraitValue(index: number, value: number) {
-      setOtherTraits((prevOtherTraits) => prevOtherTraits.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      }));
+      dispatch({type: 'setOtherTraitValue', props: [index, value]});
     },
 
-    settings,
     setBackgroundColor(backgroundColor: string) {
-      setSettings({ ...settings, backgroundColor });
+      dispatch({type: 'setBackgroundColor', props: [backgroundColor]});
     },
     setCharsheetBackColor(charsheetBackColor: string) {
-      setSettings({ ...settings, charsheetBackColor });
+      dispatch({type: 'setCharsheetBackColor', props: [charsheetBackColor]});
     },
     setCharsheetBackImage(charsheetBackImage_v2: string) {
-      setSettings({ ...settings, charsheetBackImage_v2 });
+      dispatch({type: 'setCharsheetBackImage', props: [charsheetBackImage_v2]});
     },
     setCharsheetBackMode(charsheetBackMode: CharsheetBackMode) {
-      setSettings({ ...settings, charsheetBackMode });
+      dispatch({type: 'setCharsheetBackMode', props: [charsheetBackMode]});
     },
     limits,
 
-    getCharSheet() {
-      return {
-        Version: CURRENT_VERSION,
-        Settings: settings,
-        preset,
-        profile,
-        attributes,
-        abilities,
-        abilitiesExtension,
-        disciplines,
-        disciplinePaths,
-        otherTraits,
-        rituals,
-        backgrounds,
-        virtues,
-        merits,
-        flaws,
-        state,
-        health,
-        healthChimerical,
-        notes,
-        charHistory,
-        goals,
-        appearanceDescription,
-        characterImage,
-        alliesAndContacts,
-        possessions,
-        arts,
-        realms,
-      };
+    getCharSheet(): CharSheet {
+      return R.clone(charSheet);
     },
     setCharSheet,
     errorDescription,

@@ -1,13 +1,9 @@
 import {
+  CharSheet,
   Limits
 } from "../domain";
 
-type LimitArgs = {
-  type: 'vampire_v20',
-  generation: string
-} | {
-  type: 'changeling_v20'
-};
+type LimitArgs = Pick<CharSheet, 'preset' | 'profile'>;
 
 export const defaultLimits: Limits = {
   parameterLimit: 5,
@@ -23,8 +19,8 @@ export const maxDefaultLimits: Limits = {
 export function getLimits(
   limitArgs: LimitArgs
 ): Limits {
-  if ( limitArgs.type === 'vampire_v20' ) {
-    const { generation } = limitArgs;
+  if ( limitArgs.preset === 'vampire_v20' ) {
+    const { generation } = limitArgs.profile;
     const str = generation.replace(/\D/g, '');
     if (str !== '') {
       const generationNumber = Number(str);
