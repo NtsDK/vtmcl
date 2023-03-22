@@ -56,7 +56,10 @@ import {
 } from "./initialValues";
 
 import { defaultLimits, getLimits } from "../i18nResources/getLimits";
-import { commonActions } from "./commonActions";
+import { charSheetMetaActions } from "./actions_charSheetMeta";
+import { commonPartActions } from "./actions_commonParts";
+import { vtmPartActions } from "./actions_vtmParts";
+import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
 
 interface StateStore extends
@@ -94,7 +97,12 @@ export const useStore = () => useContext(StoreContext);
 interface ProviderProps {
 }
 
-const reducer = new CompositeReducer<CharSheet>().assign(commonActions);
+const reducer = new CompositeReducer<CharSheet>()
+  .assign(charSheetMetaActions)
+  .assign(commonPartActions)
+  .assign(vtmPartActions)
+  .assign(ctdPartActions)
+;
 
 export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children }) => {
 
