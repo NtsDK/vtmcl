@@ -1,64 +1,45 @@
+import * as R from 'ramda';
 import { CharSheet, Health, Realms } from "../domain";
 import { getLimits } from "../i18nResources/getLimits";
-import { applyRange } from "./typesAndUtils";
+import { applyRange, mutateObj } from "./typesAndUtils";
 
 export const ctdPartActions = {
   setRealm(state: CharSheet, [realmName, value]: [keyof Realms, number]): CharSheet {
-    return {
-      ...state,
-      realms: {
-        ...state.realms,
-        [realmName]: applyRange(1, 5, value)
-      }
-    };
+    return mutateObj(state, 'realms',
+      mutateObj(state.realms, realmName, value)
+    );
   },
   setHealthChimerical(state: CharSheet, [healthName, value]: [keyof Health, number]): CharSheet {
-    return {
-      ...state,
-      healthChimerical: {
-        ...state.healthChimerical,
-        [healthName]: applyRange(0, 3, value)
-      }
-    };
+    return mutateObj(state, 'healthChimerical',
+      mutateObj(state.healthChimerical, healthName, applyRange(0, 3, value))
+    );
   },
 
   addArt(state: CharSheet): CharSheet {
-    return {
-      ...state,
-      arts: [...state.arts, { name: '', value: 0 }]
-    };
+    return mutateObj(state, 'arts',
+      R.append({ name: '', value: 0 }, state.arts)
+    );
   },
   removeArt(state: CharSheet, [index]: [number]): CharSheet {
-    return {
-      ...state,
-      arts: state.arts.filter((el, index2) => index2 !== index)
-    };
+    return mutateObj(state, 'arts',
+      R.remove(index, 1, state.arts)
+    );
   },
   setArtName(state: CharSheet, [index, name]: [number, string]): CharSheet {
-    return {
-      ...state,
-      arts: state.arts.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          name
-        };
-      })
-    };
+    return mutateObj(state, 'arts',
+      R.update(index, {
+        ...state.arts[index],
+        name
+      }, state.arts)
+    );
   },
   setArtValue(state: CharSheet, [index, value]: [number, number]): CharSheet {
     const limits = getLimits(state);
-    return {
-      ...state,
-      arts: state.arts.map((el, index2) => {
-        if (index2 !== index)
-          return el;
-        return {
-          ...el,
-          value: applyRange(0, limits.parameterLimit, value)
-        };
-      })
-    };
+    return mutateObj(state, 'arts',
+      R.update(index, {
+        ...state.arts[index],
+        value: applyRange(0, limits.parameterLimit, value)
+      }, state.arts)
+    );
   },
 }
