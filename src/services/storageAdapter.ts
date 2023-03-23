@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import {
   AbilitiesExtensionService,
   AbilitiesService,
@@ -42,10 +43,17 @@ export function useAttributes(): AttributesService {
   return useStore();
 }
 export function useAbilities(): AbilitiesService {
-  return useStore();
+  return R.pick([
+    'abilities',
+    'setAbility'
+  ], useStore());
 }
 export function useAbilitiesExtension(): AbilitiesExtensionService {
-  return useStore();
+  return R.pick([
+    'abilitiesExtension',
+    'setAbilityExtensionName',
+    'setAbilityExtensionValue',
+  ], useStore());
 }
 export function useVirtues(): VirtuesService {
   return useStore();
@@ -96,7 +104,9 @@ export function useArts(): ArtsService {
 }
 
 export function useLimits(): LimitService {
-  return useStore();
+  return R.pick([
+    'limits',
+  ], useStore());
 }
 export function useCharHistory(): HistoryService {
   return useStore();

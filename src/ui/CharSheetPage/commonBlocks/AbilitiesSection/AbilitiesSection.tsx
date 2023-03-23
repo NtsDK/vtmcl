@@ -1,34 +1,33 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { Subheader } from '../../primitives/Subheader';
-import {
-  useAbilities,
-  useAbilitiesExtension,
-  useLimits
-} from '../../../../services/storageAdapter';
 import { RangeInput2 } from '../../primitives/RangeInput2';
-import { usePresetSettings } from '../../../../i18nResources';
 
 import './AbilitiesSection.css';
+import {
+  AbilitiesExtensionService, AbilitiesService } from '../../../../application/ports';
+import { AbilitiesConfig, Limits, PresetSettings } from '../../../../domain';
 
-interface AbilitiesSectionProps {
+interface AbilitiesSectionProps extends AbilitiesService, AbilitiesExtensionService {
+  limits: Limits;
+  abilitiesConfig: AbilitiesConfig;
   className?: string;
 }
 
-export function AbilitiesSection(props: AbilitiesSectionProps) {
+export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { abilities, setAbility } = useAbilities();
-  const { limits } = useLimits();
   const {
-    abilitiesExtension,
-    setAbilityExtensionName,
-    setAbilityExtensionValue
-  } = useAbilitiesExtension();
-
-  const { abilitiesConfig } = usePresetSettings();
+    className,
+      abilities,
+      setAbility,
+      limits,
+      abilitiesExtension,
+      setAbilityExtensionName,
+      setAbilityExtensionValue,
+      abilitiesConfig
+  } = props;
 
   return (
     <div className={classnames("AbilitiesSection tw-flex tw-gap-x-4", className)}>
@@ -111,4 +110,4 @@ export function AbilitiesSection(props: AbilitiesSectionProps) {
       }
     </div>
   );
-}
+});
