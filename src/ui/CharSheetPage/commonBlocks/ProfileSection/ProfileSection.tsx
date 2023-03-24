@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 import * as R from 'ramda';
 
 import './ProfileSection.css';
 import { ProfileSectionItem } from './ProfileSectionItem';
-import { usePresetSettings } from '../../../../i18nResources';
+import { Resources } from '../../../../i18nResources';
+import { ProfileService } from '../../../../application/ports';
+import { ProfileConfig } from '../../../../domain';
 
-interface ProfileSectionProps {
+interface ProfileSectionProps extends ProfileService {
+  profileConfig: ProfileConfig;
+  resources: Resources;
   className?: string;
 }
 
-export function ProfileSection(props: ProfileSectionProps) {
-  const { className } = props;
-
-  const { profileConfig } = usePresetSettings();
+export const ProfileSection = memo(function ProfileSection(props: ProfileSectionProps) {
+  const {
+    className,
+    profileConfig,
+    profile,
+    setProfileItem,
+    resources
+  } = props;
 
   const itemCount = R.sum(profileConfig.map(el => el.length));
 
@@ -32,14 +40,27 @@ export function ProfileSection(props: ProfileSectionProps) {
     >
       {
         profileConfig.map((subArr, index) =>
-          subArr.map(item =>
-            <ProfileSectionItem
-              item={item}
-              key={typeof item === 'string' ? item : item.name}
-            />
-          )
+          subArr.map(item => {
+            if (typeof item === 'string') {
+              return <ProfileSectionItem
+                key={item}
+                itemName={item}
+                value={profile[item]}
+                setProfileItem={setProfileItem}
+              />
+            } else {
+              return <ProfileSectionItem
+                key={item.name}
+                itemName={item.name}
+                value={profile[item.name]}
+                setProfileItem={setProfileItem}
+                // @ts-ignore
+                options={item.optionsName && resources[item.optionsName]}
+              />
+            }
+          })
         )
       }
     </div>
   );
-}
+});

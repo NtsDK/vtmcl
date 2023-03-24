@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import { useTranslation } from 'react-i18next';
 import { CURRENT_VERSION } from '../../../constants';
-import { usePresetSettings } from '../../../i18nResources';
+import { usePresetSettings, useResource } from '../../../i18nResources';
 
-import { useAbilities, useAbilitiesExtension, useLimits, usePreset, useProfile } from '../../../services/storageAdapter';
+import {
+  useAbilities,
+  useAbilitiesExtension,
+  useAttributes,
+  useLimits,
+  usePreset,
+  useProfile
+} from '../../../services/storageAdapter';
 import { AbilitiesSection } from '../commonBlocks/AbilitiesSection';
 import { AttributeSection } from '../commonBlocks/AttributeSection';
 import { PresetSelect } from '../commonBlocks/PresetSelect';
@@ -19,26 +26,28 @@ interface CommonPageStartProps {
 export function CommonPageStart(props: CommonPageStartProps) {
   const { t } = useTranslation();
 
-  const { profile } = useProfile();
+  const profileService = useProfile();
   const { getPresetDisplayName } = usePreset();
 
   const [ title, setTitle ] = useState<string>('');
 
   useEffect(() => {
-    const characterName = profile.name.trim() === ''
+    const characterName = profileService.profile.name.trim() === ''
       ? t('charsheet.emptyName')
-      : profile.name;
+      : profileService.profile.name;
     setTitle(t('about.charsheetWithName', {
       characterName,
       type: getPresetDisplayName(),
       version: CURRENT_VERSION
     }));
-  }, [t, profile, getPresetDisplayName]);
+  }, [t, profileService.profile, getPresetDisplayName]);
 
   const abilitiesService = useAbilities();
+  const attributesService = useAttributes();
   const { limits } = useLimits();
   const abilitiesExtensionService = useAbilitiesExtension();
   const presetSettings = usePresetSettings();
+  const resources = useResource();
 
   return (
     <>
@@ -52,12 +61,20 @@ export function CommonPageStart(props: CommonPageStartProps) {
         {t('charsheet.profile.header')}
       </SectionHeader>
       <ProfileSection
+        {...profileService}
+        resources={resources}
+        profileConfig={presetSettings.profileConfig}
         className="tw-mb-3 tw-mt-4"
       />
       <SectionHeader className="tw-mb-3">
         {t('charsheet.attributes.header')}
       </SectionHeader>
-      <AttributeSection className="tw-mb-3"/>
+      <AttributeSection
+        className="tw-mb-3"
+        {...attributesService}
+        attributesConfig={presetSettings.attributesConfig}
+        limits={limits}
+      />
       <SectionHeader className="tw-mb-3">
         {t('charsheet.abilities.header')}
       </SectionHeader>

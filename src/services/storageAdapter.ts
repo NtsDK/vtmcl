@@ -37,10 +37,16 @@ export function usePreset(): PresetService {
   return useStore();
 }
 export function useProfile(): ProfileService {
-  return useStore();
+  return R.pick([
+    'profile',
+    'setProfileItem'
+  ], useStore());
 }
 export function useAttributes(): AttributesService {
-  return useStore();
+  return R.pick([
+    'attributes',
+    'setAttribute'
+  ], useStore());
 }
 export function useAbilities(): AbilitiesService {
   return R.pick([

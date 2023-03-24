@@ -1,32 +1,26 @@
 import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useProfile } from '../../../../../services/storageAdapter';
-import { useResource } from '../../../../../i18nResources';
 import { SelectButton } from '../../../primitives/SelectButton';
-import { ProfileConfigItem } from '../../../../../domain';
+import { Profile } from '../../../../../domain';
 
 import './ProfileSectionItem.css';
 
 interface ProfileSectionItemProps {
-  item: ProfileConfigItem;
+  itemName: keyof Profile;
+  value: string;
+  setProfileItem(itemName: keyof Profile, value: string): void;
+  options?: string[];
 }
 
 export function ProfileSectionItem(props: ProfileSectionItemProps) {
-  const { item } = props;
+  const {
+    itemName,
+    options,
+    value,
+    setProfileItem
+  } = props;
   const { t } = useTranslation();
-
-  const itemName = typeof item === 'string' ? item : item.name;
-
-  const { profile, setProfileItem } = useProfile();
-
-  const resources = useResource();
-
-  const optionsName = typeof item !== 'string' ? item.optionsName : undefined;
-  const options = optionsName !== undefined
-    // @ts-ignore
-    ? resources[optionsName]
-    : undefined;
 
   function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
     const { value, dataset } = e.currentTarget;
@@ -56,7 +50,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
         className='tw-flex-1 tw-mx-2
           tw-bg-transparent tw-border-none hover:tw-outline
           hover:tw-outline-1 hover:tw-outline-red-600'
-        value={profile[itemName]}
+        value={value}
         onChange={onProfileChange}
       />
       {

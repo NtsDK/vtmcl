@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { Subheader } from '../../primitives/Subheader';
-import { useAttributes, useLimits } from '../../../../services/storageAdapter';
 import { RangeInput2 } from '../../primitives/RangeInput2';
-import { usePresetSettings } from '../../../../i18nResources';
 
 import './AttributeSection.css';
+import { AttributesService } from '../../../../application/ports';
+import { AttributesConfig, Limits } from '../../../../domain';
 
-interface AttributeSectionProps {
+interface AttributeSectionProps extends AttributesService {
+  limits: Limits;
+  attributesConfig: AttributesConfig;
   className?: string;
 }
 
-export function AttributeSection(props: AttributeSectionProps) {
+export const AttributeSection = memo(function AttributeSection(props: AttributeSectionProps) {
   const { t } = useTranslation();
-  const { attributes, setAttribute } = useAttributes();
-  const { limits } = useLimits();
-  const { className } = props;
-
-  const { attributesConfig } = usePresetSettings();
+  const {
+    className,
+    attributes,
+    setAttribute,
+    limits,
+    attributesConfig
+  } = props;
 
   return (
     <div className={classnames("AttributeSection tw-flex tw-gap-x-4", className)}>
@@ -58,4 +62,4 @@ export function AttributeSection(props: AttributeSectionProps) {
       }
     </div>
   );
-}
+});
