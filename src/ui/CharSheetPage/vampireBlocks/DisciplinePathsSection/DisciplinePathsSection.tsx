@@ -1,28 +1,30 @@
-import React from 'react';
-import { useDisciplinePaths, useLimits } from '../../../../services/storageAdapter';
+import React, { memo } from 'react';
 import { NameNumberSection } from '../../primitives/NameNumberSection';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../i18nResources';
+import { OptionGroup } from '../../../../i18nResources';
+import { DisciplinePathsService } from '../../../../application/ports';
+import { Limits } from '../../../../domain';
 
-interface DisciplinePathsSectionProps {
+interface DisciplinePathsSectionProps extends DisciplinePathsService {
+  disciplinePathOptions: OptionGroup[]
+  limits: Limits;
   className?: string;
 }
 
-export function DisciplinePathsSection(props: DisciplinePathsSectionProps) {
+export const DisciplinePathsSection = memo(function DisciplinePathsSection(props: DisciplinePathsSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
+    disciplinePathOptions,
+    limits,
     disciplinePaths,
     addDisciplinePath,
     removeDisciplinePath,
     setDisciplinePathName,
     setDisciplinePathValue
-  } = useDisciplinePaths();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { disciplinePathOptions } = useResource();
-  const { limits } = useLimits();
+  } = props;
 
   return (
     <NameNumberSection
@@ -41,4 +43,4 @@ export function DisciplinePathsSection(props: DisciplinePathsSectionProps) {
       max={limits.parameterLimit}
     />
   );
-}
+});

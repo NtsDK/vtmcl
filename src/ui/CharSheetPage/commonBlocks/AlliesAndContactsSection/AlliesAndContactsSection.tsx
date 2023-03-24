@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { useAlliesAndContacts } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { AlliesAndContactsService } from '../../../../application/ports';
 
-interface AlliesAndContactsSectionProps {
+interface AlliesAndContactsSectionProps extends AlliesAndContactsService {
   className?: string;
 }
 
-export function AlliesAndContactsSection(props: AlliesAndContactsSectionProps) {
-  const { className } = props;
-  const { alliesAndContacts, setAlliesAndContacts } = useAlliesAndContacts();
+export const AlliesAndContactsSection = memo(function AlliesAndContactsSection(props: AlliesAndContactsSectionProps) {
+  const { className, alliesAndContacts, setAlliesAndContacts } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function AlliesAndContactsSection(props: AlliesAndContactsSectionProps) {
       rows={8}
     />
   );
-}
+});

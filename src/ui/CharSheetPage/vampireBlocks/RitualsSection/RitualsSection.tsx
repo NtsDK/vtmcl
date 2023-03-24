@@ -1,28 +1,30 @@
-import React from 'react';
-import { useRituals, useLimits } from '../../../../services/storageAdapter';
+import React, { memo } from 'react';
 // import { NameNumberSection } from '../../primitives/NameNumberSection';
 import { NameStringSection } from '../../primitives/NameStringSection';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../i18nResources';
+import { OptionGroup, useResource } from '../../../../i18nResources';
+import { RitualsService } from '../../../../application/ports';
 
-interface RitualsSectionProps {
+interface RitualsSectionProps extends RitualsService {
+  ritualOptions: OptionGroup[];
+  ritualValueOptions: string[];
   className?: string;
 }
 
-export function RitualsSection(props: RitualsSectionProps) {
+export const RitualsSection = memo(function RitualsSection(props: RitualsSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
+    ritualOptions,
+    ritualValueOptions,
     rituals,
     addRitual,
     removeRitual,
     setRitualLevel,
     setRitualName
-  } = useRituals();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { ritualOptions, ritualValueOptions } = useResource();
+  } = props;
 
   return (
     <NameStringSection
@@ -41,4 +43,4 @@ export function RitualsSection(props: RitualsSectionProps) {
       nameLabel='charsheet.advantages.ritual-label'
     />
   );
-}
+});

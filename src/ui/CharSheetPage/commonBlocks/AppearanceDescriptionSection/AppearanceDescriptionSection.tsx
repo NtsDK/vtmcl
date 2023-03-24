@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { useAppearance } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { AppearanceService } from '../../../../application/ports';
 
-interface AppearanceDescriptionSectionProps {
+interface AppearanceDescriptionSectionProps extends AppearanceService {
   className?: string;
 }
 
-export function AppearanceDescriptionSection(props: AppearanceDescriptionSectionProps) {
-  const { className } = props;
-  const { appearanceDescription, setAppearanceDescription } = useAppearance();
+export const AppearanceDescriptionSection = memo(function AppearanceDescriptionSection(props: AppearanceDescriptionSectionProps) {
+  const { className, appearanceDescription, setAppearanceDescription } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function AppearanceDescriptionSection(props: AppearanceDescriptionSection
       rows={8}
     />
   );
-}
+});

@@ -1,26 +1,27 @@
-import React from 'react';
-import { useOtherTraits, useLimits } from '../../../../services/storageAdapter';
+import React, { memo } from 'react';
 import { NameNumberSection } from '../../primitives/NameNumberSection';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
+import { OtherTraitsService } from '../../../../application/ports';
+import { Limits } from '../../../../domain';
 
-interface OtherTraitsSectionProps {
+interface OtherTraitsSectionProps extends OtherTraitsService {
+  limits: Limits;
   className?: string;
 }
 
-export function OtherTraitsSection(props: OtherTraitsSectionProps) {
+export const OtherTraitsSection = memo(function OtherTraitsSection(props: OtherTraitsSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
+    limits,
     otherTraits,
     addOtherTrait,
     removeOtherTrait,
     setOtherTraitName,
     setOtherTraitValue
-  } = useOtherTraits();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { limits } = useLimits();
+  } = props;
 
   return (
     <NameNumberSection
@@ -38,4 +39,4 @@ export function OtherTraitsSection(props: OtherTraitsSectionProps) {
       max={limits.parameterLimit}
     />
   );
-}
+});

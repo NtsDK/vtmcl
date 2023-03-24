@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { usePossessions } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { PossessionsService } from '../../../../application/ports';
 
-interface PossessionsSectionProps {
+interface PossessionsSectionProps extends PossessionsService {
   className?: string;
 }
 
-export function PossessionsSection(props: PossessionsSectionProps) {
-  const { className } = props;
-  const { possessions, setPossessions } = usePossessions();
+export const PossessionsSection = memo(function PossessionsSection(props: PossessionsSectionProps) {
+  const { className, possessions, setPossessions } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function PossessionsSection(props: PossessionsSectionProps) {
       rows={8}
     />
   );
-}
+});

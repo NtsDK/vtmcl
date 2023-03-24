@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { useNotes } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { NotesService } from '../../../../application/ports';
 
-interface NotesSectionProps {
+interface NotesSectionProps extends NotesService {
   className?: string;
 }
 
-export function NotesSection(props: NotesSectionProps) {
-  const { className } = props;
-  const { notes, setNotes } = useNotes();
+export const NotesSection = memo(function NotesSection(props: NotesSectionProps) {
+  const { className, notes, setNotes } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function NotesSection(props: NotesSectionProps) {
       rows={8}
     />
   );
-}
+});

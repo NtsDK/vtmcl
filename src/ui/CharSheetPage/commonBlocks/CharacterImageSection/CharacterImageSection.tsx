@@ -1,10 +1,9 @@
-import React, { ChangeEventHandler, ChangeEvent } from 'react';
+import React, { ChangeEventHandler, ChangeEvent, memo } from 'react';
 import Button from "react-bootstrap/Button";
 import { useTranslation } from 'react-i18next';
+import { AppearanceService } from '../../../../application/ports';
 
-import { useAppearance } from '../../../../services/storageAdapter';
-
-interface CharacterImageSectionProps {
+interface CharacterImageSectionProps extends AppearanceService {
 }
 
 // @ts-ignore
@@ -16,11 +15,11 @@ function uploadDatabaseFile(evt) {
   }
 }
 
-export function CharacterImageSection(props: CharacterImageSectionProps) {
+export const CharacterImageSection = memo(function CharacterImageSection(props: CharacterImageSectionProps) {
   const {
     characterImage,
     setCharacterImage
-  } = useAppearance();
+  } = props;
   const { t } = useTranslation();
 
   function readImage(event: ChangeEvent<HTMLInputElement>) {
@@ -66,4 +65,4 @@ export function CharacterImageSection(props: CharacterImageSectionProps) {
       </Button>
     </div>
   );
-}
+});

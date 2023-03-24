@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { useCharHistory } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { HistoryService } from '../../../../application/ports';
 
-interface GoalsSectionProps {
+interface GoalsSectionProps extends HistoryService {
   className?: string;
 }
 
-export function GoalsSection(props: GoalsSectionProps) {
-  const { className } = props;
-  const { goals, setGoals } = useCharHistory();
+export const GoalsSection = memo(function GoalsSection(props: GoalsSectionProps) {
+  const { className, goals, setGoals } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function GoalsSection(props: GoalsSectionProps) {
       rows={3}
     />
   );
-}
+});

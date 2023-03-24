@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 
 import { useTranslation } from 'react-i18next';
 
-import { useCharHistory } from '../../../../services/storageAdapter';
 import { TextAreaSection } from '../../primitives/TextAreaSection';
+import { HistoryService } from '../../../../application/ports';
 
-interface CharHistorySectionProps {
+interface CharHistorySectionProps extends HistoryService {
   className?: string;
 }
 
-export function CharHistorySection(props: CharHistorySectionProps) {
-  const { className } = props;
-  const { charHistory, setCharHistory } = useCharHistory();
+export const CharHistorySection = memo(function CharHistorySection(props: CharHistorySectionProps) {
+  const { className, charHistory, setCharHistory } = props;
   const { t } = useTranslation();
 
   return (
@@ -24,4 +23,4 @@ export function CharHistorySection(props: CharHistorySectionProps) {
       rows={6}
     />
   );
-}
+});
