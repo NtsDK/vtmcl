@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useVirtues } from '../../../../../services/storageAdapter';
 import { Virtues } from '../../../../../domain';
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 
 import './VirtuesSection.css';
+import { VirtuesService } from '../../../../../application/ports';
 
-interface VirtuesSectionProps {
+interface VirtuesSectionProps extends VirtuesService {
   className?: string;
 }
 
@@ -18,10 +18,9 @@ const virtuesArr: (keyof Virtues)[] = [
   'courage'
 ];
 
-export function VirtuesSection(props: VirtuesSectionProps) {
-  const { className } = props;
+export const VirtuesSection = memo(function VirtuesSection(props: VirtuesSectionProps) {
+  const { className, setVirtue, virtues } = props;
   const { t } = useTranslation();
-  const { setVirtue, virtues } = useVirtues();
 
   return (
     <div className={classnames("VirtuesSection", className)}>
@@ -53,7 +52,7 @@ export function VirtuesSection(props: VirtuesSectionProps) {
       }
     </div>
   );
-}
+});
 
 
 

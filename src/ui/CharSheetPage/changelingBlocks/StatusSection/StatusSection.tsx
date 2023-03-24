@@ -14,6 +14,8 @@ import { AntitesisSection } from './AntitesisSection';
 import { BirthrightsFrailtiesSection } from './BirthrightsFrailtiesSection';
 import { ThresholdsSection } from './ThresholdsSection';
 import { HealthSection } from '../../commonBlocks/HealthSection';
+import { useLimits, useMeritsNFlaws, useStateNHealth } from '../../../../services/storageAdapter';
+import { useResource } from '../../../../i18nResources';
 
 interface StatusSectionProps {
   className?: string;
@@ -22,6 +24,11 @@ interface StatusSectionProps {
 export function StatusSection(props: StatusSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
+
+  const meritsNFlawsService = useMeritsNFlaws();
+  const { meritOptions, flawOptions, pathOptions } = useResource();
+  const stateNHealthService = useStateNHealth();
+  const { limits } = useLimits();
 
   return (
     <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
@@ -39,7 +46,9 @@ export function StatusSection(props: StatusSectionProps) {
         <Subheader className="tw-mb-2">
           {t('charsheet.status.experience')}
         </Subheader>
-        <ExperienceSection />
+        <ExperienceSection
+          {...stateNHealthService}
+        />
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2 tw-mt-2">
@@ -50,7 +59,10 @@ export function StatusSection(props: StatusSectionProps) {
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.willpower')}
         </Subheader>
-        <WillSection className="tw-mb-4 print:tw-mb-2"/>
+        <WillSection
+          className="tw-mb-4 print:tw-mb-2"
+          {...stateNHealthService}
+        />
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.nightmare')}
@@ -69,6 +81,7 @@ export function StatusSection(props: StatusSectionProps) {
         <HealthSection
           variant='changeling'
           className="tw-mb-6 print:tw-mb-2"
+          {...stateNHealthService}
         />
 
         <Subheader className="tw-mb-2">

@@ -1,29 +1,29 @@
-import React from 'react';
-import { useDisciplines, useLimits } from '../../../../../services/storageAdapter';
+import React, { memo } from 'react';
 import { NameNumberSection } from '../../../primitives/NameNumberSection';
 import './DisciplinesSection.css';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useResource } from '../../../../../i18nResources';
+import { OptionGroup, useResource } from '../../../../../i18nResources';
+import { DisciplinesService, LimitService } from '../../../../../application/ports';
 
-interface DisciplinesSectionProps {
+interface DisciplinesSectionProps extends DisciplinesService, LimitService {
+  disciplineOptions: OptionGroup[];
   className?: string;
 }
 
-export function DisciplinesSection(props: DisciplinesSectionProps) {
+export const DisciplinesSection = memo(function DisciplinesSection(props: DisciplinesSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
     disciplines,
     addDiscipline,
     removeDiscipline,
     setDisciplineName,
-    setDisciplineValue
-  } = useDisciplines();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { disciplineOptions } = useResource();
-  const { limits } = useLimits();
+    setDisciplineValue,
+    disciplineOptions,
+    limits
+  } = props;
 
   return (
     <NameNumberSection
@@ -42,4 +42,4 @@ export function DisciplinesSection(props: DisciplinesSectionProps) {
       max={limits.parameterLimit}
     />
   );
-}
+});

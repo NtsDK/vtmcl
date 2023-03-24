@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { RangeInput2 } from '../../../primitives/RangeInput2';
-import { useLimits, useStateNHealth } from '../../../../../services/storageAdapter';
 
 import './BloodpoolSection.css';
+import { StateNHealthService } from '../../../../../application/ports';
+import { Limits } from '../../../../../domain';
 
-interface BloodpoolSectionProps {
+interface BloodpoolSectionProps extends StateNHealthService {
+  limits: Limits;
   className?: string;
 }
 
-export function BloodpoolSection(props: BloodpoolSectionProps) {
+export const BloodpoolSection = memo(function BloodpoolSection(props: BloodpoolSectionProps) {
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
-  const { className } = props;
-  const { limits } = useLimits();
+  const {
+    className,
+    limits,
+    state,
+    setState
+  } = props;
 
   return (
     <fieldset
@@ -50,4 +55,4 @@ export function BloodpoolSection(props: BloodpoolSectionProps) {
       </div>
     </fieldset>
   );
-}
+});

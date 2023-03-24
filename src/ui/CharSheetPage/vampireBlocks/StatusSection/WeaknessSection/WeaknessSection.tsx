@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { LineSection } from '../../../primitives/LineSection';
 
 import './WeaknessSection.css';
+import { StateNHealthService } from '../../../../../application/ports';
 
-interface WeaknessSectionProps {
+interface WeaknessSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function WeaknessSection(props: WeaknessSectionProps) {
+export const WeaknessSection = memo(function WeaknessSection(props: WeaknessSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { state, setState } = useStateNHealth();
+  const { className, state, setState } = props;
 
   return (
     <LineSection
@@ -24,4 +23,4 @@ export function WeaknessSection(props: WeaknessSectionProps) {
       className={classnames('tw-text-center', className)}
     />
   );
-}
+});

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
@@ -7,8 +7,9 @@ import { useStateNHealth } from '../../../../services/storageAdapter';
 import { HealthInput } from '../../primitives/HealthInput';
 
 import './HealthSection.css';
+import { StateNHealthService } from '../../../../application/ports';
 
-interface HealthSectionProps {
+interface HealthSectionProps extends StateNHealthService {
   variant?: 'common' | 'changeling';
   className?: string;
 }
@@ -32,17 +33,15 @@ const iconMap: Record<number, string> = {
 
 const healthIconStateNumber = Object.keys(iconMap).length;
 
-export function HealthSection(props: HealthSectionProps) {
+export const HealthSection = memo(function HealthSection(props: HealthSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
+    variant = 'common',
     health,
     setHealth,
     healthChimerical,
     setHealthChimerical
-  } = useStateNHealth();
-  const { t } = useTranslation();
-  const {
-    className,
-    variant = 'common'
   } = props;
 
   return (
@@ -102,4 +101,4 @@ export function HealthSection(props: HealthSectionProps) {
       }
     </div>
   );
-}
+});

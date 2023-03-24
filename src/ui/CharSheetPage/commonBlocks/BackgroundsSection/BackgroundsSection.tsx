@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useBackgrounds, useLimits } from '../../../../services/storageAdapter';
 import { NameNumberSection } from '../../primitives/NameNumberSection';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 import { useResource } from '../../../../i18nResources';
+import { BackgroundsService, LimitService } from '../../../../application/ports';
 
-interface BackgroundsSectionProps {
+interface BackgroundsSectionProps extends BackgroundsService, LimitService {
+  backgroundOptions: string[];
   className?: string;
 }
 
-export function BackgroundsSection(props: BackgroundsSectionProps) {
+export const BackgroundsSection = memo(function BackgroundsSection(props: BackgroundsSectionProps) {
+  const { t } = useTranslation();
   const {
     backgrounds,
     addBackground,
     setBackgroundName,
     setBackgroundValue,
     removeBackground,
-  } = useBackgrounds();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { backgroundOptions } = useResource();
-  const { limits } = useLimits();
+    className,
+    backgroundOptions,
+    limits
+  } = props;
 
   return (
     <NameNumberSection
@@ -41,4 +42,4 @@ export function BackgroundsSection(props: BackgroundsSectionProps) {
       max={limits.parameterLimit}
     />
   );
-}
+});

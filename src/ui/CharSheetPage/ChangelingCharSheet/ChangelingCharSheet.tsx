@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useResource } from '../../../i18nResources';
+import { useLimits, useMeritsNFlaws, useStateNHealth } from '../../../services/storageAdapter';
 import { AdvantagesSection } from '../changelingBlocks/AdvantagesSection';
 import { StatusSection } from '../changelingBlocks/StatusSection';
 import { AlliesAndContactsSection } from '../commonBlocks/AlliesAndContactsSection';
@@ -25,6 +27,11 @@ interface ChangelingCharSheetProps {
 export function ChangelingCharSheet(props: ChangelingCharSheetProps) {
   const { t } = useTranslation();
 
+  const meritsNFlawsService = useMeritsNFlaws();
+  const { meritOptions, flawOptions, pathOptions } = useResource();
+  const stateNHealthService = useStateNHealth();
+  const { limits } = useLimits();
+
   return (
     <>
       <CharSheetBody>
@@ -44,14 +51,21 @@ export function ChangelingCharSheet(props: ChangelingCharSheetProps) {
             <Subheader className="tw-mb-2">
               {t('charsheet.status.merits')}
             </Subheader>
-            <MeritsSection className="tw-mb-4"/>
+            <MeritsSection
+              className="tw-mb-4"
+              {...meritsNFlawsService}
+              meritOptions={meritOptions}
+            />
           </div>
 
           <div className='tw-flex-1'>
             <Subheader className="tw-mb-2">
               {t('charsheet.status.flaws')}
             </Subheader>
-            <FlawsSection/>
+            <FlawsSection
+              {...meritsNFlawsService}
+              flawOptions={flawOptions}
+            />
           </div>
         </div>
 

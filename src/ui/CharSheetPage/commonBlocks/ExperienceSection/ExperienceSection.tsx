@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { useStateNHealth } from '../../../../services/storageAdapter';
 import { LineSection } from '../../primitives/LineSection';
 
 import './ExperienceSection.css';
+import { StateNHealthService } from '../../../../application/ports';
 
-interface ExperienceSectionProps {
+interface ExperienceSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function ExperienceSection(props: ExperienceSectionProps) {
+export const ExperienceSection = memo(function ExperienceSection(props: ExperienceSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { state, setState } = useStateNHealth();
+  const { className, state, setState } = props;
 
   return (
     <LineSection
@@ -24,4 +23,4 @@ export function ExperienceSection(props: ExperienceSectionProps) {
       className={classnames('tw-text-center', className)}
     />
   );
-}
+});

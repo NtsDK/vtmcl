@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { RangeInput2 } from '../../../primitives/RangeInput2';
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 
 import { SelectButton } from '../../../primitives/SelectButton';
-import { useResource } from '../../../../../i18nResources';
 
 import './HumanitySection.css';
+import { StateNHealthService } from '../../../../../application/ports';
 
-interface HumanitySectionProps {
+interface HumanitySectionProps extends StateNHealthService {
+  pathOptions: string[];
   className?: string;
 }
 
-export function HumanitySection(props: HumanitySectionProps) {
+export const HumanitySection = memo(function HumanitySection(props: HumanitySectionProps) {
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
-  const { className } = props;
-
-  const { pathOptions } = useResource();
+  const {
+    state,
+    setState,
+    className,
+    pathOptions
+  } = props;
 
   return (
     <fieldset
@@ -81,4 +83,4 @@ export function HumanitySection(props: HumanitySectionProps) {
       </div>
     </fieldset>
   );
-}
+});

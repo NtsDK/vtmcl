@@ -40,7 +40,11 @@ export function useCharSheetStorage(): CharSheetStorageService {
   ], useStore());
 }
 export function usePreset(): PresetService {
-  return useStore();
+  return R.pick([
+    'preset',
+    'setPreset',
+    'getPresetDisplayName',
+  ], useStore());
 }
 export function useProfile(): ProfileService {
   return R.pick([
@@ -68,51 +72,130 @@ export function useAbilitiesExtension(): AbilitiesExtensionService {
   ], useStore());
 }
 export function useVirtues(): VirtuesService {
-  return useStore();
+  return R.pick([
+    'virtues',
+    'setVirtue'
+  ], useStore());
 }
+
 export function useDisciplines(): DisciplinesService {
-  return useStore();
+  return R.pick([
+    'disciplines',
+    'addDiscipline',
+    'removeDiscipline',
+    'setDisciplineName',
+    'setDisciplineValue',
+  ], useStore());
 }
 export function useDisciplinePaths(): DisciplinePathsService {
-  return useStore();
+  return R.pick([
+    'disciplinePaths',
+    'addDisciplinePath',
+    'removeDisciplinePath',
+    'setDisciplinePathName',
+    'setDisciplinePathValue',
+  ], useStore());
 }
 export function useRituals(): RitualsService {
-  return useStore();
+  return R.pick([
+    'rituals',
+    'addRitual',
+    'setRitualName',
+    'setRitualLevel',
+    'removeRitual',
+  ], useStore());
 }
 export function useBackgrounds(): BackgroundsService {
-  return useStore();
+  return R.pick([
+    'backgrounds',
+    'addBackground',
+    'setBackgroundName',
+    'setBackgroundValue',
+    'removeBackground',
+  ], useStore());
 }
 export function useStateNHealth(): StateNHealthService {
-  return useStore();
+  return R.pick([
+    'state',
+    'setState',
+    'health',
+    'setHealth',
+    'healthChimerical',
+    'setHealthChimerical',
+  ], useStore());
 }
 export function useMeritsNFlaws(): MeritsNFlawsService {
-  return useStore();
+  return R.pick([
+    'merits',
+    'addMerit',
+    'setMerit',
+    'removeMerit',
+    'flaws',
+    'addFlaw',
+    'setFlaw',
+    'removeFlaw',
+  ], useStore());
 }
 export function useNotes(): NotesService {
-  return useStore();
+  return R.pick([
+    'notes',
+    'setNotes',
+  ], useStore());
 }
 export function useAlliesAndContacts(): AlliesAndContactsService {
-  return useStore();
+  return R.pick([
+    'alliesAndContacts',
+    'setAlliesAndContacts',
+  ], useStore());
 }
 export function usePossessions(): PossessionsService {
-  return useStore();
+  return R.pick([
+    'possessions',
+    'setPossessions',
+  ], useStore());
 }
 export function useAppearance(): AppearanceService {
-  return useStore();
+  return R.pick([
+    'appearanceDescription',
+    'setAppearanceDescription',
+    'characterImage',
+    'setCharacterImage',
+  ], useStore());
 }
 export function useOtherTraits(): OtherTraitsService {
-  return useStore();
+  return R.pick([
+    'otherTraits',
+    'addOtherTrait',
+    'setOtherTraitName',
+    'setOtherTraitValue',
+    'removeOtherTrait',
+  ], useStore());
 }
 export function useSettings(): SettingsService {
-  return useStore();
+  return R.pick([
+    'settings',
+    'setBackgroundColor',
+    'setCharsheetBackColor',
+    'setCharsheetBackImage',
+    'setCharsheetBackMode',
+  ], useStore());
 }
 
 
 export function useRealms(): RealmsService {
-  return useStore();
+  return R.pick([
+    'realms',
+    'setRealm',
+  ], useStore());
 }
 export function useArts(): ArtsService {
-  return useStore();
+  return R.pick([
+    'arts',
+    'addArt',
+    'setArtName',
+    'setArtValue',
+    'removeArt',
+  ], useStore());
 }
 
 export function useLimits(): LimitService {
@@ -121,5 +204,10 @@ export function useLimits(): LimitService {
   ], useStore());
 }
 export function useCharHistory(): HistoryService {
-  return useStore();
+  return R.pick([
+    'charHistory',
+    'setCharHistory',
+    'goals',
+    'setGoals',
+  ], useStore());
 }

@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 
-import { useMeritsNFlaws } from '../../../../services/storageAdapter';
 import { NameSection } from '../../primitives/NameSection';
-import { useResource } from '../../../../i18nResources';
+import { OptionGroup, useResource } from '../../../../i18nResources';
 
 import './MeritsSection.css';
+import { MeritsNFlawsService } from '../../../../application/ports';
 
-interface MeritsSectionProps {
+interface MeritsSectionProps extends MeritsNFlawsService {
+  meritOptions: OptionGroup[];
   className?: string;
 }
 
-export function MeritsSection(props: MeritsSectionProps) {
+export const MeritsSection = memo(function MeritsSection(props: MeritsSectionProps) {
+  const { t } = useTranslation();
   const {
     merits,
     addMerit,
     removeMerit,
     setMerit,
-  } = useMeritsNFlaws();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { meritOptions } = useResource();
+    meritOptions,
+    className
+  } = props;
 
   return (
     <NameSection
@@ -38,7 +38,4 @@ export function MeritsSection(props: MeritsSectionProps) {
       nameLabel='charsheet.status.merit-label'
     />
   );
-}
-
-
-
+});

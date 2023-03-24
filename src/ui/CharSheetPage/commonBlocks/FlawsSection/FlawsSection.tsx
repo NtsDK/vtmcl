@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 
-import { useMeritsNFlaws } from '../../../../services/storageAdapter';
 import { NameSection } from '../../primitives/NameSection';
-import { useResource } from '../../../../i18nResources';
+import { OptionGroup, useResource } from '../../../../i18nResources';
 
 import './FlawsSection.css';
+import { MeritsNFlawsService } from '../../../../application/ports';
 
-interface FlawsSectionProps {
+interface FlawsSectionProps extends MeritsNFlawsService {
+  flawOptions: OptionGroup[];
   className?: string;
 }
 
-export function FlawsSection(props: FlawsSectionProps) {
+export const FlawsSection = memo(function FlawsSection(props: FlawsSectionProps) {
+  const { t } = useTranslation();
   const {
     flaws,
     addFlaw,
     removeFlaw,
-    setFlaw
-  } = useMeritsNFlaws();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { flawOptions } = useResource();
+    setFlaw,
+    flawOptions,
+    className
+  } = props;
 
   return (
     <NameSection
@@ -38,7 +38,4 @@ export function FlawsSection(props: FlawsSectionProps) {
       nameLabel='charsheet.status.flaw-label'
     />
   );
-}
-
-
-
+});
