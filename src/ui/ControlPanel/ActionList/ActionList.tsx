@@ -8,6 +8,10 @@ import { DownloadDatabaseButton } from './DownloadDatabaseButton';
 import { CreateDatabaseButton } from './CreateDatabaseButton';
 import { LangButton } from './LangButton';
 import { FullscreenButton } from './FullscreenButton';
+import {
+  useCharSheetStorage,
+  useErrorDescription
+} from '../../../services/storageAdapter';
 
 interface ActionListProps {
   className?: string;
@@ -16,11 +20,21 @@ interface ActionListProps {
 export function ActionList(props: ActionListProps) {
   const { className } = props;
 
+  const errorDescriptionService = useErrorDescription();
+  const charSheetStorageService = useCharSheetStorage();
+
   return (
     <div className={classnames("ActionList", className)}>
-      <UploadDatabaseButton />
-      <DownloadDatabaseButton />
-      <CreateDatabaseButton />
+      <UploadDatabaseButton
+        {...errorDescriptionService}
+        {...charSheetStorageService}
+      />
+      <DownloadDatabaseButton
+        {...charSheetStorageService}
+      />
+      <CreateDatabaseButton
+        {...charSheetStorageService}
+      />
       <LangButton lang='ru'/>
       <LangButton lang='en'/>
       <FullscreenButton/>

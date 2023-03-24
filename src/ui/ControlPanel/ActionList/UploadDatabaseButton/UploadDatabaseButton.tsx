@@ -7,10 +7,7 @@ import { readTextFile } from '../../../../lib/fileUtils';
 import {
   strToCharSheet,
 } from '../../../../infrastructure/dbLoader';
-import {
-  useCharSheetStorage,
-  useErrorDescription
-} from '../../../../services/storageAdapter';
+import { CharSheetStorageService, ErrorDescriptionService } from '../../../../application/ports';
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {
@@ -21,11 +18,13 @@ function uploadDatabaseFile(evt) {
   }
 }
 
-export function UploadDatabaseButton() {
+interface UploadDatabaseButtonProps extends ErrorDescriptionService, CharSheetStorageService {
+}
+
+export function UploadDatabaseButton(props: UploadDatabaseButtonProps) {
   const { t } = useTranslation();
 
-  const { setErrorDescription } = useErrorDescription();
-  const { setCharSheet } = useCharSheetStorage();
+  const { setErrorDescription, setCharSheet } = props;
 
   function onUploadFileSelected(evt: ChangeEvent<HTMLInputElement>) {
     readTextFile(evt).then((databaseStr) => {

@@ -28,10 +28,16 @@ import {
 import { useStore } from "./store";
 
 export function useErrorDescription(): ErrorDescriptionService {
-  return useStore();
+  return R.pick([
+    'errorDescription',
+    'setErrorDescription'
+  ], useStore());
 }
 export function useCharSheetStorage(): CharSheetStorageService {
-  return useStore();
+  return R.pick([
+    'setCharSheet',
+    'getCharSheet'
+  ], useStore());
 }
 export function usePreset(): PresetService {
   return useStore();

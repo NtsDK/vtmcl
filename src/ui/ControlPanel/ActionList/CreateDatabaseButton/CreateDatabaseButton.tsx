@@ -4,7 +4,6 @@ import './CreateDatabaseButton.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { useCharSheetStorage } from '../../../../services/storageAdapter';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -13,15 +12,16 @@ import Form from 'react-bootstrap/Form';
 import {
   initialCharSheet
 } from "../../../../services/initialValues";
+import { CharSheetStorageService } from '../../../../application/ports';
 
-interface CreateDatabaseButtonProps {
+interface CreateDatabaseButtonProps extends CharSheetStorageService {
 }
 
 export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
   const { t } = useTranslation();
   const [ showModal, setShowModal ] = useState(false);
 
-  const { setCharSheet } = useCharSheetStorage();
+  const { setCharSheet } = props;
 
   function setEmptyCharSheet() {
     setCharSheet(R.clone(initialCharSheet));
