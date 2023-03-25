@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SelectButton } from '../../../primitives/SelectButton';
@@ -6,28 +6,32 @@ import { Profile } from '../../../../../domain';
 
 import './ProfileSectionItem.css';
 
-interface ProfileSectionItemProps {
+interface ProfileSectionItemProps<DataContext> {
   itemName: keyof Profile;
   value: string;
-  setProfileItem(itemName: keyof Profile, value: string): void;
+  dataContext: DataContext;
+  setValue(value: string, dataContext: DataContext): void;
   options?: string[];
 }
 
-export function ProfileSectionItem(props: ProfileSectionItemProps) {
+export const ProfileSectionItem = memo(function ProfileSectionItem<DataContext>(props: ProfileSectionItemProps<DataContext>) {
   const {
     itemName,
     options,
     value,
-    setProfileItem
+    dataContext,
+    setValue
   } = props;
   const { t } = useTranslation();
 
-  function onProfileChange (e: ChangeEvent<HTMLInputElement>) {
-    const { value, dataset } = e.currentTarget;
-    // const itemName = dataset.itemName as keyof Profile;
-    // console.log('onStateChange', prop, value);
-    setProfileItem(itemName, value);
-  }
+  const onProfileChange = useCallback(function onProfileChange(e: ChangeEvent<HTMLInputElement>) {
+    const { value } = e.currentTarget;
+    setValue(value, dataContext);
+  }, [setValue, dataContext]);
+
+  const onSelectChange = useCallback(function onSelectChange(value: string) {
+    setValue(value, dataContext);
+  }, [setValue, dataContext]);
 
   return (
     <div className='ProfileSectionItem tw-flex tw-mb-2 print:tw-mb-0'>
@@ -58,7 +62,7 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
         <SelectButton
           className="print:tw-hidden"
           options={options}
-          onChange={(value: string) => setProfileItem(itemName, value)}
+          onChange={onSelectChange}
           selectOptionMsg={t('charsheet.profile.select-label', {
             title: t(`charsheet.profile.${itemName}`)
           })}
@@ -66,4 +70,4 @@ export function ProfileSectionItem(props: ProfileSectionItemProps) {
       }
     </div>
   );
-}
+});

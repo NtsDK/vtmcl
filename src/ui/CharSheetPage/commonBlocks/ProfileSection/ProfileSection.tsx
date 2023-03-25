@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import classnames from "classnames";
 import * as R from 'ramda';
 
@@ -6,7 +6,7 @@ import './ProfileSection.css';
 import { ProfileSectionItem } from './ProfileSectionItem';
 import { Resources } from '../../../../i18nResources';
 import { ProfileService } from '../../../../application/ports';
-import { ProfileConfig } from '../../../../domain';
+import { Profile, ProfileConfig } from '../../../../domain';
 
 interface ProfileSectionProps extends ProfileService {
   profileConfig: ProfileConfig;
@@ -24,6 +24,10 @@ export const ProfileSection = memo(function ProfileSection(props: ProfileSection
   } = props;
 
   const itemCount = R.sum(profileConfig.map(el => el.length));
+
+  const setValue = useCallback(function setValue(value: string, itemName: keyof Profile) {
+    setProfileItem(itemName, value);
+  }, [setProfileItem]);
 
   return (
     <div
@@ -46,14 +50,16 @@ export const ProfileSection = memo(function ProfileSection(props: ProfileSection
                 key={item}
                 itemName={item}
                 value={profile[item]}
-                setProfileItem={setProfileItem}
+                setValue={setValue}
+                dataContext={item}
               />
             } else {
               return <ProfileSectionItem
                 key={item.name}
                 itemName={item.name}
                 value={profile[item.name]}
-                setProfileItem={setProfileItem}
+                setValue={setValue}
+                dataContext={item.name}
                 // @ts-ignore
                 options={item.optionsName && resources[item.optionsName]}
               />
