@@ -5,9 +5,9 @@ import classnames from "classnames";
 import { LineSection } from '../../../primitives/LineSection';
 
 import './WeaknessSection.css';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 
-interface WeaknessSectionProps extends StateNHealthService {
+interface WeaknessSectionProps extends StatusService {
   className?: string;
 }
 

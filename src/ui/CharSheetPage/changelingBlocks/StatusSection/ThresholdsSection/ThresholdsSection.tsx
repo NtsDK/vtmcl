@@ -5,9 +5,9 @@ import classnames from "classnames";
 import { TextAreaSection } from '../../../primitives/TextAreaSection';
 
 import './ThresholdsSection.css';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 
-interface ThresholdsSectionProps extends StateNHealthService {
+interface ThresholdsSectionProps extends StatusService {
   className?: string;
 }
 

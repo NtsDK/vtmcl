@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 
 import { LineSection } from '../../../primitives/LineSection';
 
 import './AntitesisSection.css';
 
-interface AntitesisSectionProps extends StateNHealthService {
+interface AntitesisSectionProps extends StatusService {
   className?: string;
 }
 

@@ -5,9 +5,9 @@ import classnames from "classnames";
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 
 import './NightmareSection.css';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 
-interface NightmareSectionProps extends StateNHealthService {
+interface NightmareSectionProps extends StatusService {
   className?: string;
 }
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
 
 import './WillpowerCheck.css';
-import { useVirtues, useStateNHealth } from '../../../../../../services/storageAdapter';
+import { useVirtues, useStatus } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import { checkVampireWillpower } from '../../../../../../domainServices';
 
@@ -18,7 +18,7 @@ export function WillpowerCheck(props: WillpowerCheckProps) {
 
   const { virtues } = useVirtues();
 
-  const { state, setState } = useStateNHealth();
+  const { state, setState } = useStatus();
 
   return (
     <CheckListItem

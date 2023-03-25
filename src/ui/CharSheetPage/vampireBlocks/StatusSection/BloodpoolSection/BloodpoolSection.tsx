@@ -5,10 +5,10 @@ import classnames from "classnames";
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 
 import './BloodpoolSection.css';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 import { Limits } from '../../../../../domain';
 
-interface BloodpoolSectionProps extends StateNHealthService {
+interface BloodpoolSectionProps extends StatusService {
   limits: Limits;
   className?: string;
 }

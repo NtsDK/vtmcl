@@ -14,7 +14,7 @@ import { AntitesisSection } from './AntitesisSection';
 import { BirthrightsFrailtiesSection } from './BirthrightsFrailtiesSection';
 import { ThresholdsSection } from './ThresholdsSection';
 import { HealthSection } from '../../commonBlocks/HealthSection';
-import { useStateNHealth } from '../../../../services/storageAdapter';
+import { useStatus, useHealth } from '../../../../services/storageAdapter';
 
 interface StatusSectionProps {
   className?: string;
@@ -24,7 +24,8 @@ export function StatusSection(props: StatusSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
 
-  const stateNHealthService = useStateNHealth();
+  const statusService = useStatus();
+  const healthService = useHealth();
 
   return (
     <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
@@ -34,7 +35,7 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <BirthrightsFrailtiesSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2">
@@ -42,14 +43,14 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <AntitesisSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.experience')}
         </Subheader>
         <ExperienceSection
-          {...stateNHealthService}
+          {...statusService}
         />
       </div>
       <div className="tw-flex-1">
@@ -58,7 +59,7 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <GlamourSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2 tw-mt-2">
@@ -66,7 +67,7 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <WillSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2 tw-mt-2">
@@ -74,14 +75,14 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <NightmareSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t('charsheet.status.banality')}
         </Subheader>
         <BanalitySection
-          {...stateNHealthService}
+          {...statusService}
         />
       </div>
       <div className="tw-flex-1">
@@ -91,14 +92,14 @@ export function StatusSection(props: StatusSectionProps) {
         <HealthSection
           variant='changeling'
           className="tw-mb-6 print:tw-mb-2"
-          {...stateNHealthService}
+          {...healthService}
         />
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.thresholds')}
         </Subheader>
         <ThresholdsSection
-          {...stateNHealthService}
+          {...statusService}
         />
       </div>
     </div>

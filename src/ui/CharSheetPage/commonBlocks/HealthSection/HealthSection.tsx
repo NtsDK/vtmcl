@@ -3,13 +3,12 @@ import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
 import { Health } from '../../../../domain';
-import { useStateNHealth } from '../../../../services/storageAdapter';
 import { HealthInput } from '../../primitives/HealthInput';
 
 import './HealthSection.css';
-import { StateNHealthService } from '../../../../application/ports';
+import { HealthService } from '../../../../application/ports';
 
-interface HealthSectionProps extends StateNHealthService {
+interface HealthSectionProps extends HealthService {
   variant?: 'common' | 'changeling';
   className?: string;
 }

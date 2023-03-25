@@ -22,7 +22,8 @@ import {
   RealmsService,
   RitualsService,
   SettingsService,
-  StateNHealthService,
+  StatusService,
+  HealthService,
   VirtuesService,
 } from "../application/ports";
 import { useStore } from "./store";
@@ -114,14 +115,18 @@ export function useBackgrounds(): BackgroundsService {
     'removeBackground',
   ], useStore());
 }
-export function useStateNHealth(): StateNHealthService {
+export function useHealth(): HealthService {
   return R.pick([
-    'state',
-    'setState',
     'health',
     'setHealth',
     'healthChimerical',
     'setHealthChimerical',
+  ], useStore());
+}
+export function useStatus(): StatusService {
+  return R.pick([
+    'state',
+    'setState',
   ], useStore());
 }
 export function useMeritsNFlaws(): MeritsNFlawsService {

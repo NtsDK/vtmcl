@@ -134,13 +134,16 @@ export interface MeritsNFlawsService {
   removeFlaw(index: number): void;
 }
 
-export interface StateNHealthService {
-  state: State;
-  setState<T extends keyof State>(stateName: T, value: State[T]): void;
+export interface HealthService {
   health: Health;
   setHealth(healthName: keyof Health, value: number): void;
   healthChimerical: Health;
   setHealthChimerical(healthName: keyof Health, value: number): void;
+}
+
+export interface StatusService {
+  state: State;
+  setState<T extends keyof State>(stateName: T, value: State[T]): void;
 }
 
 export interface NotesService {

@@ -13,7 +13,12 @@ import { HumanitySection } from './HumanitySection';
 import { BloodpoolSection } from './BloodpoolSection';
 import { WeaknessSection } from './WeaknessSection';
 import './StatusSection.css';
-import { useLimits, useMeritsNFlaws, useStateNHealth } from '../../../../services/storageAdapter';
+import {
+  useLimits,
+  useMeritsNFlaws,
+  useStatus,
+  useHealth
+} from '../../../../services/storageAdapter';
 import { useResource } from '../../../../i18nResources';
 
 interface StatusSectionProps {
@@ -26,7 +31,8 @@ export function StatusSection(props: StatusSectionProps) {
 
   const meritsNFlawsService = useMeritsNFlaws();
   const { meritOptions, flawOptions, pathOptions } = useResource();
-  const stateNHealthService = useStateNHealth();
+  const statusService = useStatus();
+  const healthService = useHealth();
   const { limits } = useLimits();
 
   return (
@@ -59,7 +65,7 @@ export function StatusSection(props: StatusSectionProps) {
         <HumanitySection
           className="tw-mb-4 print:tw-mb-2"
           pathOptions={pathOptions}
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2 tw-mt-2">
@@ -67,7 +73,7 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <WillSection
           className="tw-mb-4 print:tw-mb-2"
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader
@@ -77,7 +83,7 @@ export function StatusSection(props: StatusSectionProps) {
           {t('charsheet.status.bloodpool')}
         </Subheader>
         <BloodpoolSection
-          {...stateNHealthService}
+          {...statusService}
           limits={limits}
         />
       </div>
@@ -87,7 +93,7 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <HealthSection
           className="tw-mb-6 print:tw-mb-2"
-          {...stateNHealthService}
+          {...healthService}
         />
 
         <Subheader className="tw-mb-2">
@@ -95,14 +101,14 @@ export function StatusSection(props: StatusSectionProps) {
         </Subheader>
         <WeaknessSection
           className='tw-mb-6 print:tw-mb-2'
-          {...stateNHealthService}
+          {...statusService}
         />
 
         <Subheader className="tw-mb-2">
           {t('charsheet.status.experience')}
         </Subheader>
         <ExperienceSection
-          {...stateNHealthService}
+          {...statusService}
         />
       </div>
     </div>

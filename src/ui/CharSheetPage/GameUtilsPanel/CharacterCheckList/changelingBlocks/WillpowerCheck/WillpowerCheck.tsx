@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
 
-import { useStateNHealth } from '../../../../../../services/storageAdapter';
+import { useStatus } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import { checkChangelingWillpower, EXPECTED_WILLPOWER_DOTS } from '../../../../../../domainServices';
 
@@ -15,7 +15,7 @@ export function WillpowerCheck(props: WillpowerCheckProps) {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { state, setState } = useStateNHealth();
+  const { state, setState } = useStatus();
 
   return (
     <CheckListItem

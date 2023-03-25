@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import classnames from 'classnames';
 
 import './HumanityCheck.css';
-import { useVirtues, useStateNHealth } from '../../../../../../services/storageAdapter';
+import { useVirtues, useStatus } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import { checkHumanity } from '../../../../../../domainServices';
 
@@ -18,7 +18,7 @@ export function HumanityCheck(props: HumanityCheckProps) {
 
   const { virtues } = useVirtues();
 
-  const { state, setState } = useStateNHealth();
+  const { state, setState } = useStatus();
   const humanityChecked = useMemo(() => {
     return checkHumanity(state, virtues);
   }, [state, virtues])

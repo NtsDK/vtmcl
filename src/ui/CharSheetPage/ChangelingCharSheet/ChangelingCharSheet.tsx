@@ -1,7 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useResource } from '../../../i18nResources';
-import { useAlliesAndContacts, useAppearance, useCharHistory, useDisciplinePaths, useLimits, useMeritsNFlaws, useNotes, useOtherTraits, usePossessions, useRituals, useStateNHealth } from '../../../services/storageAdapter';
+import {
+  useAlliesAndContacts,
+  useAppearance,
+  useCharHistory,
+  useLimits,
+  useMeritsNFlaws,
+  useNotes,
+  useOtherTraits,
+  usePossessions,
+} from '../../../services/storageAdapter';
 import { AdvantagesSection } from '../changelingBlocks/AdvantagesSection';
 import { StatusSection } from '../changelingBlocks/StatusSection';
 import { AlliesAndContactsSection } from '../commonBlocks/AlliesAndContactsSection';

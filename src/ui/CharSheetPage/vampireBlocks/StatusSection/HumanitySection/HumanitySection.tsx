@@ -7,9 +7,9 @@ import { RangeInput2 } from '../../../primitives/RangeInput2';
 import { SelectButton } from '../../../primitives/SelectButton';
 
 import './HumanitySection.css';
-import { StateNHealthService } from '../../../../../application/ports';
+import { StatusService } from '../../../../../application/ports';
 
-interface HumanitySectionProps extends StateNHealthService {
+interface HumanitySectionProps extends StatusService {
   pathOptions: string[];
   className?: string;
 }
