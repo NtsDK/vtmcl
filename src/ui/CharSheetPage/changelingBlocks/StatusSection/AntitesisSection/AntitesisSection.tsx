@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { StateNHealthService } from '../../../../../application/ports';
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { LineSection } from '../../../primitives/LineSection';
 
 import './AntitesisSection.css';
 
-interface AntitesisSectionProps {
+interface AntitesisSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function AntitesisSection(props: AntitesisSectionProps) {
+export const AntitesisSection = memo(function AntitesisSection(props: AntitesisSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { state, setState } = useStateNHealth();
+  const { className, state, setState } = props;
 
   return (
     <LineSection
@@ -23,4 +22,4 @@ export function AntitesisSection(props: AntitesisSectionProps) {
       className={className}
     />
   );
-}
+});

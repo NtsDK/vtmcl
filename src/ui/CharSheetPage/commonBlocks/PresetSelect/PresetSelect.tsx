@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 
 import './PresetSelect.css';
 import { Preset, presetList } from '../../../../domain';
-import { usePreset } from '../../../../services/storageAdapter';
+import { PresetService } from '../../../../application/ports';
 
-interface PresetSelectProps {
+interface PresetSelectProps extends PresetService {
   className?: string;
 }
 
-export function PresetSelect(props: PresetSelectProps) {
-  const { className } = props;
+export const PresetSelect = memo(function PresetSelect(props: PresetSelectProps) {
+  const { className, preset, setPreset } = props;
   const { t } = useTranslation();
-
-  const { preset, setPreset } = usePreset();
 
   return (
     <select
@@ -32,4 +30,4 @@ export function PresetSelect(props: PresetSelectProps) {
       }
     </select>
   );
-}
+});

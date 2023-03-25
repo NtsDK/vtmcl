@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
@@ -9,7 +9,6 @@ import { useDisciplines } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import {
   checkDisciplines,
-  CheckNumberResult,
   EXPECTED_DISCIPLINE_DOTS
 } from '../../../../../../domainServices';
 
@@ -22,9 +21,8 @@ export function DisciplinesCheck(props: DisciplinesCheckProps) {
   const { t } = useTranslation();
 
   const { disciplines } = useDisciplines();
-  const [ disciplinesFilled, setDisciplinesFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
-  useEffect(() => {
-    setDisciplinesFilled(checkDisciplines(disciplines));
+  const disciplinesFilled = useMemo(() => {
+    return checkDisciplines(disciplines);
   }, [disciplines]);
 
   return (

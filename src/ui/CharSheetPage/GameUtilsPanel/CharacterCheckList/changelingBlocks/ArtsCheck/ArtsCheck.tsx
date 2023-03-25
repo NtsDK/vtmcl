@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
@@ -7,7 +7,6 @@ import { useArts } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import {
   checkArts,
-  CheckNumberResult,
   EXPECTED_ART_DOTS
 } from '../../../../../../domainServices';
 
@@ -20,9 +19,8 @@ export function ArtsCheck(props: ArtsCheckProps) {
   const { t } = useTranslation();
 
   const { arts } = useArts();
-  const [ artsFilled, setArtsFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
-  useEffect(() => {
-    setArtsFilled(checkArts(arts));
+  const artsFilled = useMemo(() => {
+    return checkArts(arts);
   }, [arts]);
 
   return (

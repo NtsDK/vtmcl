@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from "classnames";
@@ -24,9 +24,8 @@ export function AbilitiesDotLimitCheck(props: AbilitiesDotLimitCheckProps) {
   const { abilitiesConfig } = usePresetSettings();
 
   const { abilities } = useAbilities();
-  const [ abilitiesDotLimitChecked, setAbilitiesDotLimitChecked ] = useState(false);
-  useEffect(() => {
-    setAbilitiesDotLimitChecked(checkAbilitiesDotLimit(abilities, abilitiesConfig));
+  const abilitiesDotLimitChecked = useMemo(() => {
+    return checkAbilitiesDotLimit(abilities, abilitiesConfig);
   }, [abilities, abilitiesConfig]);
 
   return (

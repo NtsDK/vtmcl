@@ -6,7 +6,12 @@ import classnames from "classnames";
 import { RealmsSection } from './RealmsSection';
 import { ArtsSection } from './ArtsSection';
 import { BackgroundsSection } from '../../commonBlocks/BackgroundsSection';
-import { useBackgrounds, useLimits } from '../../../../services/storageAdapter';
+import {
+  useArts,
+  useBackgrounds,
+  useLimits,
+  useRealms
+} from '../../../../services/storageAdapter';
 import { useResource } from '../../../../i18nResources';
 
 interface AdvantagesSectionProps {
@@ -22,6 +27,10 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   } = useResource();
   const { limits } = useLimits();
   const backgroundsService = useBackgrounds();
+  const artsService = useArts();
+  const realmsService = useRealms();
+
+  const { artOptions } = useResource();
 
   return (
     <div
@@ -41,13 +50,19 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
         <Subheader className='tw-mb-2 print:tw-hidden'>
           {t('charsheet.advantages.arts')}
         </Subheader>
-        <ArtsSection/>
+        <ArtsSection
+          limits={limits}
+          artOptions={artOptions}
+          {...artsService}
+        />
       </div>
       <div className="tw-flex-1">
         <Subheader className='tw-mb-2 print:tw-hidden'>
           {t('charsheet.advantages.realms')}
         </Subheader>
-        <RealmsSection/>
+        <RealmsSection
+          {...realmsService}
+        />
       </div>
     </div>
   );

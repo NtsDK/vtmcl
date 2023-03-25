@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from "classnames";
@@ -9,7 +9,6 @@ import { useAbilities } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import {
   checkAbilitiesFilled,
-  CheckArrResult,
   EXPECTED_ABILITY_DOTS
 } from '../../../../../../domainServices';
 
@@ -24,9 +23,8 @@ export function AbilitiesCheck(props: AbilitiesCheckProps) {
   const { abilitiesConfig } = usePresetSettings();
 
   const { abilities } = useAbilities();
-  const [ abilitiesFilled, setAbilitiesFilled ] = useState<CheckArrResult>({checked: false, arr: [0,0,0]});
-  useEffect(() => {
-    setAbilitiesFilled(checkAbilitiesFilled(abilities, abilitiesConfig));
+  const abilitiesFilled = useMemo(() => {
+    return checkAbilitiesFilled(abilities, abilitiesConfig);
   }, [abilities, abilitiesConfig]);
 
   return (

@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { StateNHealthService } from '../../../../../application/ports';
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { TextAreaSection } from '../../../primitives/TextAreaSection';
 
 import './BirthrightsFrailtiesSection.css';
 
-interface BirthrightsFrailtiesSectionProps {
+interface BirthrightsFrailtiesSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function BirthrightsFrailtiesSection(props: BirthrightsFrailtiesSectionProps) {
+export const BirthrightsFrailtiesSection = memo(function BirthrightsFrailtiesSection(
+  props: BirthrightsFrailtiesSectionProps
+) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { state, setState } = useStateNHealth();
+  const { className, state, setState } = props;
 
   return (
     <TextAreaSection
@@ -24,4 +25,4 @@ export function BirthrightsFrailtiesSection(props: BirthrightsFrailtiesSectionPr
       rows={7}
     />
   );
-}
+});

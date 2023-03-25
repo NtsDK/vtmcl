@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import DocumentTitle from 'react-document-title';
 import { useTranslation } from 'react-i18next';
 import { CURRENT_VERSION } from '../../../constants';
@@ -29,18 +29,16 @@ export function CommonPageStart(props: CommonPageStartProps) {
   const profileService = useProfile();
   const { getPresetDisplayName } = usePreset();
 
-  const [ title, setTitle ] = useState<string>('');
-
-  useEffect(() => {
+  const title = useMemo(() => {
     const characterName = profileService.profile.name.trim() === ''
       ? t('charsheet.emptyName')
       : profileService.profile.name;
-    setTitle(t('about.charsheetWithName', {
+    return t('about.charsheetWithName', {
       characterName,
       type: getPresetDisplayName(),
       version: CURRENT_VERSION
-    }));
-  }, [t, profileService.profile, getPresetDisplayName]);
+    });
+  }, [t, profileService.profile, getPresetDisplayName])
 
   const abilitiesService = useAbilities();
   const attributesService = useAttributes();
@@ -48,6 +46,7 @@ export function CommonPageStart(props: CommonPageStartProps) {
   const abilitiesExtensionService = useAbilitiesExtension();
   const presetSettings = usePresetSettings();
   const resources = useResource();
+  const presetService = usePreset();
 
   return (
     <>
@@ -56,6 +55,7 @@ export function CommonPageStart(props: CommonPageStartProps) {
       </DocumentTitle>
       <PresetSelect
         className='tw-absolute tw-top-0 tw-right-0'
+        {...presetService}
       />
       <SectionHeader className="tw-mb-3 tw-sr-only">
         {t('charsheet.profile.header')}

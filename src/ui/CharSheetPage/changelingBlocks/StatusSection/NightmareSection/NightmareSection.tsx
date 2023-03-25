@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 
 import './NightmareSection.css';
+import { StateNHealthService } from '../../../../../application/ports';
 
-interface NightmareSectionProps {
+interface NightmareSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function NightmareSection(props: NightmareSectionProps) {
+export const NightmareSection = memo(function NightmareSection(props: NightmareSectionProps) {
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
-  const { className } = props;
+  const { className, state, setState } = props;
 
   return (
     <fieldset
@@ -32,4 +31,4 @@ export function NightmareSection(props: NightmareSectionProps) {
       />
     </fieldset>
   );
-}
+});

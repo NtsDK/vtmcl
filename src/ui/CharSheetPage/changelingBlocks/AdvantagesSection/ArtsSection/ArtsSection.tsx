@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
 
-import { useArts, useLimits } from '../../../../../services/storageAdapter';
 import { NameNumberSection } from '../../../primitives/NameNumberSection';
-import { useResource } from '../../../../../i18nResources';
 
 import './ArtsSection.css';
+import { ArtsService } from '../../../../../application/ports';
+import { Limits } from '../../../../../domain';
 
-interface ArtsSectionProps {
+interface ArtsSectionProps extends ArtsService {
+  artOptions: string[];
+  limits: Limits;
   className?: string;
 }
 
-export function ArtsSection(props: ArtsSectionProps) {
+export const ArtsSection = memo(function ArtsSection(props: ArtsSectionProps) {
+  const { t } = useTranslation();
   const {
+    className,
+    artOptions,
+    limits,
     arts,
     addArt,
     removeArt,
     setArtName,
     setArtValue
-  } = useArts();
-  const { t } = useTranslation();
-  const { className } = props;
-
-  const { artOptions } = useResource();
-  const { limits } = useLimits();
+  } = props;
 
   return (
     <NameNumberSection
@@ -43,4 +44,4 @@ export function ArtsSection(props: ArtsSectionProps) {
       max={limits.parameterLimit}
     />
   );
-}
+});

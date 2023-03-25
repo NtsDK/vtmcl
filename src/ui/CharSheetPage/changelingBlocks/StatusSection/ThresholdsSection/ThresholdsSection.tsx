@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { TextAreaSection } from '../../../primitives/TextAreaSection';
 
 import './ThresholdsSection.css';
+import { StateNHealthService } from '../../../../../application/ports';
 
-interface ThresholdsSectionProps {
+interface ThresholdsSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function ThresholdsSection(props: ThresholdsSectionProps) {
+export const ThresholdsSection = memo(function ThresholdsSection(props: ThresholdsSectionProps) {
   const { t } = useTranslation();
-  const { className } = props;
-  const { state, setState } = useStateNHealth();
+  const { className, state, setState } = props;
 
   return (
     <TextAreaSection
@@ -25,4 +24,4 @@ export function ThresholdsSection(props: ThresholdsSectionProps) {
       rows={3}
     />
   );
-}
+});

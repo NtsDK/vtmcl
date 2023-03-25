@@ -48,7 +48,6 @@ import {
   Virtues,
   Realms,
   Preset,
-  Limits,
   CharHistory,
   Goals,
   AlliesAndContacts,
@@ -61,7 +60,7 @@ import {
   initialCharSheet
 } from "./initialValues";
 
-import { defaultLimits, getLimits } from "../i18nResources/getLimits";
+import { getLimits } from "../i18nResources/getLimits";
 import { charSheetMetaActions } from "./actions_charSheetMeta";
 import { commonPartActions } from "./actions_commonParts";
 import { vtmPartActions } from "./actions_vtmParts";
@@ -115,13 +114,14 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
   const [initialized, setInitialized] = useState(false);
 
   const [charSheet, dispatch] = useReducer(reducer.reduce, initialCharSheet);
-  const [limits, setLimits] = useState<Limits>(defaultLimits);
+
+  const limits = useMemo(() => {
+    return getLimits(charSheet);
+  }, [charSheet.preset, charSheet.profile.generation])
 
   useEffect(() => {
-    const limits = getLimits(charSheet);
-    setLimits(limits);
     dispatch({type: 'setState', props: ['bloodPerTurn', String(limits.bloodPerTurnLimit)]});
-  }, [charSheet.preset, charSheet.profile.generation]);
+  }, [limits.bloodPerTurnLimit]);
 
   useEffect(() => {
     saveCharSheetInLS(charSheet);
@@ -132,20 +132,11 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     setErrorDescription
   ] = useState<ErrorDescription | null>(null);
 
-  function setCharSheet(cs: CharSheet) {
-    dispatch({ type: 'setCharSheet',  props: [cs]});
-  }
-
-  if (!initialized) {
-    setInitialized(true);
-    const cs = getCharSheetFromLS();
-    if (cs !== null) {
-      setCharSheet(cs);
-    }
-  }
-
   const functions = useMemo(() => {
     return {
+      setCharSheet(cs: CharSheet) {
+        dispatch({ type: 'setCharSheet',  props: [cs]});
+      },
       setPreset(preset2: Preset) {
         dispatch({type: 'setPresetValue', props: [preset2]});
       },
@@ -316,6 +307,14 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     }
   }, [dispatch]);
 
+  if (!initialized) {
+    setInitialized(true);
+    const cs = getCharSheetFromLS();
+    if (cs !== null) {
+      functions.setCharSheet(cs);
+    }
+  }
+
   const value: StateStore = {
     ...charSheet,
     ...functions,
@@ -328,7 +327,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({ children 
     getCharSheet(): CharSheet {
       return R.clone(charSheet);
     },
-    setCharSheet,
     errorDescription,
     setErrorDescription,
   };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from "classnames";
@@ -8,7 +8,6 @@ import { usePresetSettings } from '../../../../../../i18nResources';
 import { useAttributes } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import {
-  CheckArrResult,
   checkAttributesFilled,
   EXPECTED_ATTRIBUTE_DOTS
 } from '../../../../../../domainServices';
@@ -23,9 +22,8 @@ export function AttributesCheck(props: AttributesCheckProps) {
 
   const { attributes } = useAttributes();
   const { attributesConfig } = usePresetSettings();
-  const [ attributesFilled, setAttributesFilled ] = useState<CheckArrResult>({checked: false, arr: [3,3,3]});
-  useEffect(() => {
-    setAttributesFilled(checkAttributesFilled(attributes, attributesConfig));
+  const attributesFilled = useMemo(() => {
+    return checkAttributesFilled(attributes, attributesConfig);
   }, [attributes, attributesConfig]);
 
   return (

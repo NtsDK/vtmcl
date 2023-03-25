@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { StateNHealthService } from '../../../../../application/ports';
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { RatingPoolSection } from '../../../primitives/RatingPoolSection';
 
 import './GlamourSection.css';
 
-interface GlamourSectionProps {
+interface GlamourSectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function GlamourSection(props: GlamourSectionProps) {
+export const GlamourSection = memo(function GlamourSection(props: GlamourSectionProps) {
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
-  const { className } = props;
+  const { className, state, setState } = props;
 
   return (
     <RatingPoolSection
@@ -27,4 +26,4 @@ export function GlamourSection(props: GlamourSectionProps) {
       className={className}
     />
   );
-}
+});

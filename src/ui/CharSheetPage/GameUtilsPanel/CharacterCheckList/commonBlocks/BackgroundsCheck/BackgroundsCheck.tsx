@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
@@ -8,7 +8,6 @@ import { useBackgrounds } from '../../../../../../services/storageAdapter';
 import { CheckListItem } from '../../primitives/CheckListItem';
 import {
   checkBackgrounds,
-  CheckNumberResult,
   EXPECTED_BACKGROUND_DOTS
 } from '../../../../../../domainServices';
 
@@ -21,9 +20,8 @@ export function BackgroundsCheck(props: BackgroundsCheckProps) {
   const { t } = useTranslation();
 
   const { backgrounds } = useBackgrounds();
-  const [ backgroundsFilled, setBackgroundsFilled ] = useState<CheckNumberResult>({checked: false, value: 0});
-  useEffect(() => {
-    setBackgroundsFilled(checkBackgrounds(backgrounds));
+  const backgroundsFilled = useMemo(() => {
+    return checkBackgrounds(backgrounds);
   }, [backgrounds]);
 
   return (

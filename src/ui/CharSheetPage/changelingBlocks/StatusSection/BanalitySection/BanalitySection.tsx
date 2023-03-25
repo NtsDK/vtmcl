@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { StateNHealthService } from '../../../../../application/ports';
 
-import { useStateNHealth } from '../../../../../services/storageAdapter';
 import { RatingPoolSection } from '../../../primitives/RatingPoolSection';
 
 import './BanalitySection.css';
 
-interface BanalitySectionProps {
+interface BanalitySectionProps extends StateNHealthService {
   className?: string;
 }
 
-export function BanalitySection(props: BanalitySectionProps) {
+export const BanalitySection = memo(function BanalitySection(props: BanalitySectionProps) {
   const { t } = useTranslation();
-  const { state, setState } = useStateNHealth();
-  const { className } = props;
+  const { className, state, setState } = props;
 
   return (
     <RatingPoolSection
@@ -27,4 +26,4 @@ export function BanalitySection(props: BanalitySectionProps) {
       className={className}
     />
   );
-}
+});

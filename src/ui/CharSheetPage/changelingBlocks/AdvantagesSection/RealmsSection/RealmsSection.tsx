@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
-import { useRealms } from '../../../../../services/storageAdapter';
 import { Realms } from '../../../../../domain';
 import { RangeInput2 } from '../../../primitives/RangeInput2';
 
 import './RealmsSection.css';
+import { RealmsService } from '../../../../../application/ports';
 
-interface RealmsSectionProps {
+interface RealmsSectionProps extends RealmsService {
   className?: string;
 }
 
@@ -21,10 +21,9 @@ const realmsArr: (keyof Realms)[] = [
   'time',
 ];
 
-export function RealmsSection(props: RealmsSectionProps) {
-  const { className } = props;
+export const RealmsSection = memo(function RealmsSection(props: RealmsSectionProps) {
+  const { className, realms, setRealm } = props;
   const { t } = useTranslation();
-  const { realms, setRealm } = useRealms();
 
   return (
     <div className={classnames("RealmsSection", className)}>
@@ -56,4 +55,4 @@ export function RealmsSection(props: RealmsSectionProps) {
       }
     </div>
   );
-}
+});

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as R from 'ramda';
 import classnames from 'classnames';
@@ -19,10 +19,9 @@ export function HumanityCheck(props: HumanityCheckProps) {
   const { virtues } = useVirtues();
 
   const { state, setState } = useStateNHealth();
-  const [ humanityChecked, setHumanityChecked ] = useState(false);
-  useEffect(() => {
-    setHumanityChecked(checkHumanity(state, virtues));
-  }, [state, virtues]);
+  const humanityChecked = useMemo(() => {
+    return checkHumanity(state, virtues);
+  }, [state, virtues])
 
   return (
     <CheckListItem
