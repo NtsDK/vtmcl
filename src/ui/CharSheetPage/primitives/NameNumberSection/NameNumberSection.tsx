@@ -91,6 +91,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
               max={max}
               name={`${sectionItemName}.${index}`}
               value={value}
+              dataContext={index}
               onClick={(value: number) => setItemValue(index, value)}
               className="tw-flex-grow tw-mt-2 print:tw-mt-1"
             />

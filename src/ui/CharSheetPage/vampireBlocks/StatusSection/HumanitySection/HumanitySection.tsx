@@ -50,6 +50,7 @@ export const HumanitySection = memo(function HumanitySection(props: HumanitySect
         max={10}
         name="humanity"
         value={state.humanity}
+        dataContext={'humanity'}
         onClick={(value: number) => setState('humanity', value)}
         className="tw-h-6 tw-mb-2"
         multiplier={1.3}

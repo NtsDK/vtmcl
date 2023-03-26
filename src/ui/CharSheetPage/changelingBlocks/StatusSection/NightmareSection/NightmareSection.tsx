@@ -25,6 +25,7 @@ export const NightmareSection = memo(function NightmareSection(props: NightmareS
         name="nightmare"
         variant='square'
         value={state.nightmare}
+        dataContext={'nightmare'}
         onClick={(value: number) => setState('nightmare', value)}
         className="tw-h-6 tw-mb-2"
         multiplier={1.3}

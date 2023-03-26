@@ -1,13 +1,14 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, useMemo, useCallback, memo } from 'react';
 import * as R from 'ramda';
 import classNames from 'classnames';
 
 import './RangeInput2.css';
 
-interface RangeInput2Props {
+interface RangeInput2Props<DataContext> {
   max: number;
   value: number;
-  onClick: (value: number) => void;
+  dataContext: DataContext;
+  onClick(value: number, dataContext: DataContext): void;
   name: string;
   className?: string;
   splitEvery?: number;
@@ -15,10 +16,11 @@ interface RangeInput2Props {
   multiplier?: number;
 }
 
-export function RangeInput2(props: RangeInput2Props) {
+export const RangeInput2 = memo(function RangeInput2<DataContext>(props: RangeInput2Props<DataContext>) {
   const {
     max,
     value,
+    dataContext,
     onClick,
     className,
     name,
@@ -27,14 +29,23 @@ export function RangeInput2(props: RangeInput2Props) {
     multiplier = 1
   } = props;
 
-  const onClickWrapper: MouseEventHandler<HTMLInputElement> = function (event) {
+  const onClickWrapper = useCallback(function (event: React.MouseEvent<HTMLInputElement, MouseEvent>) {
     const { index } = event.currentTarget.dataset;
     const indexNum = Number(index);
-    onClick(indexNum === value ? indexNum - 1 : indexNum);
-  }
+    onClick(indexNum === value ? indexNum - 1 : indexNum, dataContext);
+  }, [value, onClick, dataContext]);
 
-  const cellWidth = 1.0 * multiplier;
-  const cellHeight = 1.25 * multiplier;
+  const style = useMemo(() => {
+    const cellWidth = 1.0 * multiplier;
+    const cellHeight = 1.25 * multiplier;
+    return {
+      display: 'inline-grid',
+      gridTemplateRows: splitEvery === undefined ? `${cellHeight}rem` : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight}rem)`,
+      gridTemplateColumns: splitEvery === undefined ? `repeat(${max}, ${cellWidth}rem)` : `repeat(${splitEvery}, ${cellWidth}rem)`
+    }
+  }, [splitEvery, max, multiplier]);
+
+  const onChange = useCallback(() => {}, []);
 
   return (
     <div
@@ -42,11 +53,7 @@ export function RangeInput2(props: RangeInput2Props) {
     >
       <div
         className=''
-        style={{
-          display: 'inline-grid',
-          gridTemplateRows: splitEvery === undefined ? `${cellHeight}rem` : `repeat(${Math.ceil(max/splitEvery)}, ${cellHeight}rem)`,
-          gridTemplateColumns: splitEvery === undefined ? `repeat(${max}, ${cellWidth}rem)` : `repeat(${splitEvery}, ${cellWidth}rem)`
-        }}
+        style={style}
       >
         {
           R.range(0, max + 1).map(index => {
@@ -63,7 +70,7 @@ export function RangeInput2(props: RangeInput2Props) {
                 data-index={index}
                 data-variant={variant}
                 checked={index === value}
-                onChange={() => {}}
+                onChange={onChange}
               />
             )
           })
@@ -71,7 +78,4 @@ export function RangeInput2(props: RangeInput2Props) {
       </div>
     </div>
   );
-}
-
-
-
+});

@@ -37,6 +37,7 @@ export function RatingPoolSection(props: RatingPoolSectionProps) {
           max={10}
           name={`${name}Rating`}
           value={rating}
+          dataContext={'rating'}
           onClick={(value: number) => setRating(value)}
           className="tw-h-6"
           multiplier={1.3}
@@ -47,6 +48,7 @@ export function RatingPoolSection(props: RatingPoolSectionProps) {
           max={10}
           name={`${name}Pool`}
           value={pool}
+          dataContext={'pool'}
           onClick={(value: number) => setPool(value)}
           className="tw-h-6"
           variant='square'

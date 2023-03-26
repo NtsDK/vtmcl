@@ -47,6 +47,7 @@ export const RealmsSection = memo(function RealmsSection(props: RealmsSectionPro
               max={5}
               name={`realm.${item}`}
               value={realms[item]}
+              dataContext={item}
               onClick={(value: number) => setRealm(item, value)}
               className="tw-flex-grow"
             />

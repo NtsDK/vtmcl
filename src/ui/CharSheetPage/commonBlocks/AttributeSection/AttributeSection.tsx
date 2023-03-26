@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
@@ -7,7 +7,7 @@ import { RangeInput2 } from '../../primitives/RangeInput2';
 
 import './AttributeSection.css';
 import { AttributesService } from '../../../../application/ports';
-import { AttributesConfig, Limits } from '../../../../domain';
+import { Attributes, AttributesConfig, Limits } from '../../../../domain';
 
 interface AttributeSectionProps extends AttributesService {
   limits: Limits;
@@ -24,6 +24,13 @@ export const AttributeSection = memo(function AttributeSection(props: AttributeS
     limits,
     attributesConfig
   } = props;
+
+  const setValue = useCallback(function setValue(
+    value: number,
+    attribute: keyof Attributes
+  ) {
+    setAttribute(attribute, value);
+  }, [setAttribute]);
 
   return (
     <div className={classnames("AttributeSection tw-flex tw-gap-x-4", className)}>
@@ -51,7 +58,8 @@ export const AttributeSection = memo(function AttributeSection(props: AttributeS
                     max={limits.parameterLimit}
                     name={`attribute.${attribute}`}
                     value={attributes[attribute]}
-                    onClick={(value: number) => setAttribute(attribute, value)}
+                    dataContext={attribute}
+                    onClick={setValue}
                     className="tw-ml-4"
                   />
                 </div>

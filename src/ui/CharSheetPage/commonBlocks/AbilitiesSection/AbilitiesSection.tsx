@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from "classnames";
 
@@ -8,7 +8,7 @@ import { RangeInput2 } from '../../primitives/RangeInput2';
 import './AbilitiesSection.css';
 import {
   AbilitiesExtensionService, AbilitiesService } from '../../../../application/ports';
-import { AbilitiesConfig, Limits, PresetSettings } from '../../../../domain';
+import { Abilities, AbilitiesConfig, AbilitiesExtensionValue, Limits, PresetSettings } from '../../../../domain';
 
 interface AbilitiesSectionProps extends AbilitiesService, AbilitiesExtensionService {
   limits: Limits;
@@ -28,6 +28,27 @@ export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesS
       setAbilityExtensionValue,
       abilitiesConfig
   } = props;
+
+  const setValue = useCallback(function setValue(
+    value: number,
+    ability: keyof Abilities
+  ) {
+    setAbility(ability, value)
+  }, [setAbility]);
+
+  const setExtensionValue = useCallback(function setExtensionValue(
+    value: number,
+    abilityName: AbilitiesExtensionValue
+  ) {
+    setAbilityExtensionValue(abilityName, value)
+  }, [setAbilityExtensionValue]);
+
+  // const setExtensionName = useCallback(function setExtensionName(
+  //   value: number,
+  //   abilityName: AbilitiesExtensionValue
+  // ) {
+  //   setAbilityExtensionValue(abilityName, value)
+  // }, [setAbilityExtensionValue]);
 
   return (
     <div className={classnames("AbilitiesSection tw-flex tw-gap-x-4", className)}>
@@ -55,7 +76,8 @@ export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesS
                     max={limits.parameterLimit}
                     name={`ability.${ability}`}
                     value={abilities[ability]}
-                    onClick={(value: number) => setAbility(ability, value)}
+                    dataContext={ability}
+                    onClick={setValue}
                     className="tw-ml-4"
                   />
                 </div>
@@ -79,7 +101,8 @@ export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesS
                 max={limits.parameterLimit}
                 name={`ability.${extension}.1`}
                 value={abilitiesExtension[`${extension}Value1`]}
-                onClick={(value: number) => setAbilityExtensionValue(`${extension}Value1`, value)}
+                dataContext={`${extension}Value1`}
+                onClick={setExtensionValue}
                 className="tw-ml-4"
               />
             </div>
@@ -101,7 +124,8 @@ export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesS
                 max={limits.parameterLimit}
                 name={`ability.${extension}.2`}
                 value={abilitiesExtension[`${extension}Value2`]}
-                onClick={(value: number) => setAbilityExtensionValue(`${extension}Value2`, value)}
+                dataContext={`${extension}Value2`}
+                onClick={setExtensionValue}
                 className="tw-ml-4"
               />
             </div>

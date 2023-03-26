@@ -31,6 +31,7 @@ export const BloodpoolSection = memo(function BloodpoolSection(props: BloodpoolS
         max={limits.bloodpool}
         name="bloodpool"
         value={state.bloodpool}
+        dataContext={'bloodpool'}
         onClick={(value: number) => setState('bloodpool', value)}
         className="tw-mb-2"
         splitEvery={10}

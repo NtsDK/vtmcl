@@ -44,6 +44,7 @@ export const VirtuesSection = memo(function VirtuesSection(props: VirtuesSection
               max={5}
               name={`virtue.${item}`}
               value={virtues[item]}
+              dataContext={item}
               onClick={(value: number) => setVirtue(item, value)}
               className="tw-flex-grow"
             />
