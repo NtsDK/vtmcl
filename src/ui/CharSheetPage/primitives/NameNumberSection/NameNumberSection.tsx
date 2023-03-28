@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useCallback } from 'react';
 import classnames from "classnames";
 import { TFuncKey, useTranslation } from 'react-i18next';
 
@@ -51,6 +51,13 @@ export function NameNumberSection(props: NameNumberSectionProps) {
     setItemName(index, value);
   }
 
+  const setValue = useCallback(function setValue(
+    value: number,
+    index: number
+  ) {
+    setItemValue(index, value)
+  }, [setItemValue]);
+
   return (
     <div className={classnames("NameNumberSection", className)}>
       {
@@ -92,7 +99,7 @@ export function NameNumberSection(props: NameNumberSectionProps) {
               name={`${sectionItemName}.${index}`}
               value={value}
               dataContext={index}
-              onClick={(value: number) => setItemValue(index, value)}
+              onClick={setValue}
               className="tw-flex-grow tw-mt-2 print:tw-mt-1"
             />
           </div>

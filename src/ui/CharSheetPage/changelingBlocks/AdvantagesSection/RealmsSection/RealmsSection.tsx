@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 
 import classnames from "classnames";
 import { useTranslation } from 'react-i18next';
@@ -25,6 +25,13 @@ export const RealmsSection = memo(function RealmsSection(props: RealmsSectionPro
   const { className, realms, setRealm } = props;
   const { t } = useTranslation();
 
+  const setValue = useCallback(function setValue(
+    value: number,
+    realmName: keyof Realms
+  ) {
+    setRealm(realmName, value);
+  }, [setRealm]);
+
   return (
     <div className={classnames("RealmsSection", className)}>
       {
@@ -48,7 +55,7 @@ export const RealmsSection = memo(function RealmsSection(props: RealmsSectionPro
               name={`realm.${item}`}
               value={realms[item]}
               dataContext={item}
-              onClick={(value: number) => setRealm(item, value)}
+              onClick={setValue}
               className="tw-flex-grow"
             />
           </div>

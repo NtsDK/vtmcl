@@ -43,13 +43,6 @@ export const AbilitiesSection = memo(function AbilitiesSection(props: AbilitiesS
     setAbilityExtensionValue(abilityName, value)
   }, [setAbilityExtensionValue]);
 
-  // const setExtensionName = useCallback(function setExtensionName(
-  //   value: number,
-  //   abilityName: AbilitiesExtensionValue
-  // ) {
-  //   setAbilityExtensionValue(abilityName, value)
-  // }, [setAbilityExtensionValue]);
-
   return (
     <div className={classnames("AbilitiesSection tw-flex tw-gap-x-4", className)}>
       {
