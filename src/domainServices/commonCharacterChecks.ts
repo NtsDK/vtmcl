@@ -53,11 +53,23 @@ export function checkAbilitiesDotLimit(
   abilitiesExtension: AbilitiesExtension,
   abilityLimit: number
 ): boolean {
-  const arr = R.props(
+  const isValid = R.props(
     R.flatten(R.pluck("items", abilitiesConfig)),
     abilities
-  ).filter((el) => el > abilityLimit);
-  return arr.length === 0;
+  ).every((el) => el <= abilityLimit);
+  const isValidExtra = R.props(
+    [
+      "talentValue1",
+      "talentValue2",
+      "skillValue1",
+      "skillValue2",
+      "knowledgeValue1",
+      "knowledgeValue2",
+    ],
+    abilitiesExtension
+  ).every((el) => el <= abilityLimit);
+
+  return isValid && isValidExtra;
 }
 
 export function checkAttributesFilled(

@@ -1,5 +1,10 @@
 import * as R from "ramda";
-import { checkAbilitiesFilled, EXPECTED_ABILITY_DOTS } from "../domainServices";
+import {
+  checkAbilitiesFilled,
+  EXPECTED_ABILITY_DOTS,
+  checkAbilitiesDotLimit,
+  ABILITY_LIMIT,
+} from "../domainServices";
 import { vampireAbilitiesConfig } from "../i18nResources/presetSettings/vampireAbilitiesConfig";
 import {
   initialAbilities,
@@ -100,15 +105,77 @@ describe("Common character checks", () => {
     });
   });
 
-  // checkAbilitiesDotLimit
+  // checkAbilitiesDotLimit,
+  // ABILITY_LIMIT,
 
-  // it('Main abilities >3 - non valid', () => {
-  //   const abilities = R.clone(initialAbilities);
-  //   abilities.academics = 5;
-  //   expect(checkAbilitiesFilled(abilities, vampireAbilitiesConfig))
-  //     .toStrictEqual({
-  //       "arr": [5, 0, 0],
-  //       "checked": false
-  //     });
-  // });
+  it("Default abilities and extra abilities are less than ABILITY_LIMIT - valid", () => {
+    const abilities = R.clone(initialAbilities);
+    const abilitiesExtension = R.clone(initialAbilitiesExtension);
+    expect(
+      checkAbilitiesDotLimit(
+        abilities,
+        vampireAbilitiesConfig,
+        abilitiesExtension,
+        ABILITY_LIMIT
+      )
+    ).toStrictEqual(true);
+  });
+
+  it("Main abilities are less or equal to ABILITY_LIMIT - valid", () => {
+    const abilities = R.clone(initialAbilities);
+    abilities.academics = 1;
+    abilities.alertness = 2;
+    abilities.animalken = 3;
+    const abilitiesExtension = R.clone(initialAbilitiesExtension);
+    expect(
+      checkAbilitiesDotLimit(
+        abilities,
+        vampireAbilitiesConfig,
+        abilitiesExtension,
+        ABILITY_LIMIT
+      )
+    ).toStrictEqual(true);
+  });
+  it("Main ability is greater than ABILITY_LIMIT - invalid", () => {
+    const abilities = R.clone(initialAbilities);
+    abilities.academics = 4;
+    const abilitiesExtension = R.clone(initialAbilitiesExtension);
+    expect(
+      checkAbilitiesDotLimit(
+        abilities,
+        vampireAbilitiesConfig,
+        abilitiesExtension,
+        ABILITY_LIMIT
+      )
+    ).toStrictEqual(false);
+  });
+
+  it("Extra abilities are less or equal to ABILITY_LIMIT - valid", () => {
+    const abilities = R.clone(initialAbilities);
+    const abilitiesExtension = R.clone(initialAbilitiesExtension);
+    abilitiesExtension.knowledgeValue1 = 1;
+    abilitiesExtension.knowledgeValue2 = 2;
+    abilitiesExtension.skillValue1 = 3;
+    expect(
+      checkAbilitiesDotLimit(
+        abilities,
+        vampireAbilitiesConfig,
+        abilitiesExtension,
+        ABILITY_LIMIT
+      )
+    ).toStrictEqual(true);
+  });
+  it("Extra ability is bigger than ABILITY_LIMIT - invalid", () => {
+    const abilities = R.clone(initialAbilities);
+    const abilitiesExtension = R.clone(initialAbilitiesExtension);
+    abilitiesExtension.knowledgeValue1 = 4;
+    expect(
+      checkAbilitiesDotLimit(
+        abilities,
+        vampireAbilitiesConfig,
+        abilitiesExtension,
+        ABILITY_LIMIT
+      )
+    ).toStrictEqual(false);
+  });
 });
