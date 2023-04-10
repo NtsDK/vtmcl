@@ -18,6 +18,26 @@ export const ABILITY_LIMIT = 3;
 export const EXPECTED_ATTRIBUTE_DOTS = [7, 5, 3] as const;
 export const EXPECTED_BACKGROUND_DOTS = 5;
 
+export function checkAttributesFilled(
+  attributes: Attributes,
+  attributesConfig: AttributesConfig,
+  expectedAttributeDots: readonly number[]
+): CheckArrResult {
+  const list = R.reverse(
+    R.sort(
+      R.subtract,
+      attributesConfig.map((el) =>
+        R.sum(R.props(el.items, attributes).map((el) => (el > 0 ? el - 1 : 0)))
+      )
+    )
+  );
+  // console.log('list', list)
+  return {
+    checked: R.equals(list, expectedAttributeDots),
+    arr: list,
+  };
+}
+
 /** Sums of abilities by groups are less than specified limits. */
 export function checkAbilitiesFilled(
   abilities: Abilities,
@@ -70,26 +90,6 @@ export function checkAbilitiesDotLimit(
   ).every((el) => el <= abilityLimit);
 
   return isValid && isValidExtra;
-}
-
-export function checkAttributesFilled(
-  attributes: Attributes,
-  attributesConfig: AttributesConfig,
-  expectedAttributeDots: readonly number[]
-): CheckArrResult {
-  const list = R.reverse(
-    R.sort(
-      R.subtract,
-      attributesConfig.map((el) =>
-        R.sum(R.props(el.items, attributes).map((el) => (el > 0 ? el - 1 : 0)))
-      )
-    )
-  );
-  // console.log('list', list)
-  return {
-    checked: R.equals(list, expectedAttributeDots),
-    arr: list,
-  };
 }
 
 export function checkBackgrounds(

@@ -6,6 +6,8 @@ import {
   ABILITY_LIMIT,
   checkAttributesFilled,
   EXPECTED_ATTRIBUTE_DOTS,
+  checkBackgrounds,
+  EXPECTED_BACKGROUND_DOTS,
 } from "../domainServices";
 import { attributesConfig } from "../i18nResources/presetSettings/attributesConfig";
 import { vampireAbilitiesConfig } from "../i18nResources/presetSettings/vampireAbilitiesConfig";
@@ -13,6 +15,7 @@ import {
   initialAbilities,
   initialAbilitiesExtension,
   initialAttributes,
+  initialBackgrounds,
 } from "../services/initialValues";
 
 describe("Common character checks", () => {
@@ -257,6 +260,74 @@ describe("Common character checks", () => {
           ABILITY_LIMIT
         )
       ).toStrictEqual(false);
+    });
+  });
+  describe("checkBackgrounds", () => {
+    it("Empty backgrounds - invalid", () => {
+      const backgrounds = R.clone(initialBackgrounds);
+      expect(
+        checkBackgrounds(backgrounds, EXPECTED_BACKGROUND_DOTS)
+      ).toStrictEqual({
+        checked: false,
+        value: 0,
+      });
+    });
+    it("Couple backgrounds with ones - invalid", () => {
+      const backgrounds = R.clone(initialBackgrounds);
+      backgrounds.push(
+        {
+          name: "2233",
+          value: 1,
+        },
+        {
+          name: "223322",
+          value: 1,
+        }
+      );
+      expect(
+        checkBackgrounds(backgrounds, EXPECTED_BACKGROUND_DOTS)
+      ).toStrictEqual({
+        checked: false,
+        value: 2,
+      });
+    });
+    it("Correctly filled backgrounds - valid", () => {
+      const backgrounds = R.clone(initialBackgrounds);
+      backgrounds.push(
+        {
+          name: "2233",
+          value: 3,
+        },
+        {
+          name: "223322",
+          value: 2,
+        }
+      );
+      expect(
+        checkBackgrounds(backgrounds, EXPECTED_BACKGROUND_DOTS)
+      ).toStrictEqual({
+        checked: true,
+        value: 5,
+      });
+    });
+    it("Overflow filled backgrounds - invalid", () => {
+      const backgrounds = R.clone(initialBackgrounds);
+      backgrounds.push(
+        {
+          name: "2233",
+          value: 3,
+        },
+        {
+          name: "223322",
+          value: 3,
+        }
+      );
+      expect(
+        checkBackgrounds(backgrounds, EXPECTED_BACKGROUND_DOTS)
+      ).toStrictEqual({
+        checked: false,
+        value: 6,
+      });
     });
   });
 });
