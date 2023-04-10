@@ -1,5 +1,6 @@
 import * as R from "ramda";
 import {
+  checkBloodpool,
   checkDisciplines,
   checkHumanity,
   checkVampireWillpower,
@@ -12,6 +13,27 @@ import {
 } from "../services/initialValues";
 
 describe("Vampire character checks", () => {
+  describe("checkBloodpool", () => {
+    it("bloodpool = 0 - invalid", () => {
+      const state = R.clone(initialState);
+      expect(checkBloodpool(state)).toStrictEqual(false);
+    });
+    it("bloodpool = 1 - valid", () => {
+      const state = R.clone(initialState);
+      state.bloodpool = 1;
+      expect(checkBloodpool(state)).toStrictEqual(true);
+    });
+    it("bloodpool = 10 - valid", () => {
+      const state = R.clone(initialState);
+      state.bloodpool = 10;
+      expect(checkBloodpool(state)).toStrictEqual(true);
+    });
+    it("bloodpool = 12 - invalid", () => {
+      const state = R.clone(initialState);
+      state.bloodpool = 12;
+      expect(checkBloodpool(state)).toStrictEqual(false);
+    });
+  });
   describe("checkVampireWillpower", () => {
     it("Initial courage and zero willpower - invalid", () => {
       const state = R.clone(initialState);
