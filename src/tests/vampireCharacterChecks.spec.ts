@@ -2,6 +2,7 @@ import * as R from "ramda";
 import {
   checkDisciplines,
   checkHumanity,
+  checkVampireWillpower,
   checkVirtues,
 } from "../domainServices";
 import {
@@ -11,6 +12,32 @@ import {
 } from "../services/initialValues";
 
 describe("Vampire character checks", () => {
+  describe("checkVampireWillpower", () => {
+    it("Initial courage and zero willpower - invalid", () => {
+      const state = R.clone(initialState);
+      const virtues = R.clone(initialVirtues);
+      expect(checkVampireWillpower(state, virtues)).toStrictEqual(false);
+    });
+    it("Initial courage and willpower = 1 - valid", () => {
+      const state = R.clone(initialState);
+      state.willpowerRating = 1;
+      const virtues = R.clone(initialVirtues);
+      expect(checkVampireWillpower(state, virtues)).toStrictEqual(true);
+    });
+    it("Initial courage and willpower = 3 - invalid", () => {
+      const state = R.clone(initialState);
+      state.willpowerRating = 3;
+      const virtues = R.clone(initialVirtues);
+      expect(checkVampireWillpower(state, virtues)).toStrictEqual(false);
+    });
+    it("courage = 3 and willpower = 3 - valid", () => {
+      const state = R.clone(initialState);
+      state.willpowerRating = 3;
+      const virtues = R.clone(initialVirtues);
+      virtues.courage = 3;
+      expect(checkVampireWillpower(state, virtues)).toStrictEqual(true);
+    });
+  });
   describe("checkVirtues", () => {
     it("Initial virtues and zero humanity - invalid", () => {
       const state = R.clone(initialState);
