@@ -1,8 +1,45 @@
 import * as R from "ramda";
-import { checkDisciplines } from "../domainServices";
-import { initialDisciplines } from "../services/initialValues";
+import { checkDisciplines, checkVirtues } from "../domainServices";
+import { initialDisciplines, initialVirtues } from "../services/initialValues";
 
 describe("Vampire character checks", () => {
+  describe("checkVirtues", () => {
+    it("Virtues zero - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 0,
+        checked: false,
+      });
+    });
+    it("Virtues not enough - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 3,
+        checked: false,
+      });
+    });
+    it("Virtues enough - valid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      virtues.courage = 4;
+      virtues.self_control = 2;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 7,
+        checked: true,
+      });
+    });
+    it("Virtues too many - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      virtues.courage = 4;
+      virtues.self_control = 4;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 9,
+        checked: false,
+      });
+    });
+  });
   describe("checkDisciplines", () => {
     it("Disciplines zero - invalid", () => {
       const disciplines = R.clone(initialDisciplines);
