@@ -1,9 +1,44 @@
 import * as R from "ramda";
-import { checkDisciplines, checkVirtues } from "../domainServices";
-import { initialDisciplines, initialVirtues } from "../services/initialValues";
+import {
+  checkDisciplines,
+  checkHumanity,
+  checkVirtues,
+} from "../domainServices";
+import {
+  initialDisciplines,
+  initialState,
+  initialVirtues,
+} from "../services/initialValues";
 
 describe("Vampire character checks", () => {
   describe("checkVirtues", () => {
+    it("Initial virtues and zero humanity - invalid", () => {
+      const state = R.clone(initialState);
+      const virtues = R.clone(initialVirtues);
+      expect(checkHumanity(state, virtues)).toStrictEqual(false);
+    });
+    it("Initial virtues and humanity 2 - valid", () => {
+      const state = R.clone(initialState);
+      state.humanity = 2;
+      const virtues = R.clone(initialVirtues);
+      expect(checkHumanity(state, virtues)).toStrictEqual(true);
+    });
+    it("Initial virtues and non zero humanity - invalid", () => {
+      const state = R.clone(initialState);
+      state.humanity = 5;
+      const virtues = R.clone(initialVirtues);
+      expect(checkHumanity(state, virtues)).toStrictEqual(false);
+    });
+    it("Extended virtues and non zero humanity - invalid", () => {
+      const state = R.clone(initialState);
+      state.humanity = 5;
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 3;
+      virtues.self_control = 2;
+      expect(checkHumanity(state, virtues)).toStrictEqual(true);
+    });
+  });
+  describe("checkHumanity", () => {
     it("Virtues zero - invalid", () => {
       const virtues = R.clone(initialVirtues);
       expect(checkVirtues(virtues)).toStrictEqual({
