@@ -1,0 +1,1 @@
+export { FreePointsPanel } from './FreePointsPanel';

@@ -1,0 +1,1 @@
+export { VampireFreePoints } from './VampireFreePoints';

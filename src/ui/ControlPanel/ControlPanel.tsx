@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-import './ControlPanel.css';
+import React, { useState } from "react";
+import "./ControlPanel.css";
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Dropdown from "react-bootstrap/Dropdown";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft, faChevronRight
-} from '@fortawesome/free-solid-svg-icons';
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
-import { AccordionToggle } from '../../uiLib/AccordionToggle';
+import { AccordionToggle } from "../../uiLib/AccordionToggle";
 
-import { PageNav } from './PageNav';
-import { ActionList } from './ActionList';
-import { SettingsSection } from './SettingsSection';
+import { PageNav } from "./PageNav";
+import { ActionList } from "./ActionList";
+import { SettingsSection } from "./SettingsSection";
 
 interface ControlPanelProps {
   className?: string;
@@ -30,16 +31,21 @@ export function ControlPanel(props: ControlPanelProps) {
   const { className } = props;
 
   return (
-    <div className={classnames("ControlPanel tw-sticky tw-top-0 tw-flex tw-flex-col tw-h-screen", className)}>
-      { showContent && <PageNav className='tw-flex-col tw-mb-8'/> }
+    <div
+      className={classnames(
+        "ControlPanel tw-sticky tw-top-0 tw-flex tw-flex-col tw-h-screen",
+        className
+      )}
+    >
+      {showContent && <PageNav className="tw-flex-col tw-mb-8" />}
 
-      {
-        showContent && <Accordion as="aside" defaultActiveKey="0">
+      {showContent && (
+        <Accordion as="aside" defaultActiveKey="0">
           <Card className="tw-bg-gray-200">
             <AccordionToggle
               ariaId="actionMenu-toggle"
               eventKey="0"
-              title={t('actionMenu.header')}
+              title={t("actionMenu.header")}
               ariaControls="actionMenu-panel"
             />
             <Accordion.Collapse
@@ -56,7 +62,7 @@ export function ControlPanel(props: ControlPanelProps) {
             <AccordionToggle
               ariaId="visualSettings-toggle"
               eventKey="1"
-              title={t('visual-settings.header')}
+              title={t("visual-settings.header")}
               ariaControls="visualSettings-panel"
             />
             <Accordion.Collapse
@@ -66,27 +72,26 @@ export function ControlPanel(props: ControlPanelProps) {
               role="region"
               aria-labelledby="visualSettings-toggle"
             >
-              <SettingsSection/>
+              <SettingsSection />
             </Accordion.Collapse>
           </Card>
         </Accordion>
-      }
+      )}
       <div className="tw-flex-1"></div>
       <Dropdown.Item
         as="button"
         type="button"
-        aria-label={t(showContent ? 'buttons.hide-panel' : 'buttons.show-panel')}
+        aria-label={t(
+          showContent ? "buttons.hide-panel" : "buttons.show-panel"
+        )}
         onClick={() => setShowContent((prevState) => !prevState)}
         className="tw-py-3 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
       >
-        { showContent && <span className='tw-mr-4'>{t('buttons.hide-panel')}</span> }
-        <FontAwesomeIcon
-          icon={showContent ? faChevronLeft : faChevronRight}
-        />
+        {showContent && (
+          <span className="tw-mr-4">{t("buttons.hide-panel")}</span>
+        )}
+        <FontAwesomeIcon icon={showContent ? faChevronLeft : faChevronRight} />
       </Dropdown.Item>
     </div>
   );
 }
-
-
-

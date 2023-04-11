@@ -4,71 +4,70 @@ import { abilities } from "./charsheet_abilities";
 import { advantages } from "./charsheet_advantages";
 import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
+import { freePoints } from "./freePoints";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
 import { instruction } from "./instruction";
 
-
-
-
 export const ruTranslation = {
   about,
   checklist,
+  freePoints,
   actionMenu,
   instruction,
-  "buttons": {
-    'hide-panel': 'Спрятать панель',
-    'show-panel': 'Показать панель',
+  buttons: {
+    "hide-panel": "Спрятать панель",
+    "show-panel": "Показать панель",
   },
-  'errors': {
-    'error-on-file-loading': 'Ошибка при загрузке листа персонажа',
-    'check-developer-console': 'См. консоль разработчика'
+  errors: {
+    "error-on-file-loading": "Ошибка при загрузке листа персонажа",
+    "check-developer-console": "См. консоль разработчика",
   },
   "visual-settings": {
-    'header': 'Настройки внешнего вида',
-    'background-color': 'Цвет фона',
-    'charsheet-background-mode': 'Фон листа персонажа',
-    'charsheet-background-color': 'Цвет фона листа персонажа',
-    'charsheet-background-image': 'Изображение фона листа персонажа',
-    'to-default-background-image': 'Изображение по умолчанию',
+    header: "Настройки внешнего вида",
+    "background-color": "Цвет фона",
+    "charsheet-background-mode": "Фон листа персонажа",
+    "charsheet-background-color": "Цвет фона листа персонажа",
+    "charsheet-background-image": "Изображение фона листа персонажа",
+    "to-default-background-image": "Изображение по умолчанию",
 
-    'charsheet-image': 'Изображение',
-    'charsheet-none': 'Нет фона',
-    'charsheet-color': 'Цвет',
+    "charsheet-image": "Изображение",
+    "charsheet-none": "Нет фона",
+    "charsheet-color": "Цвет",
   },
-  "charsheet": {
-    'emptyName': 'Безымянный персонаж',
-    'charsheet': 'Лист персонажа',
-    'type-select': 'Тип листа персонажа',
+  charsheet: {
+    emptyName: "Безымянный персонаж",
+    charsheet: "Лист персонажа",
+    "type-select": "Тип листа персонажа",
     preset: {
-      vampire_v20: 'Вампиры: Маскарад. V20',
-      changeling_v20: 'Подменыши: Грёза. V20',
+      vampire_v20: "Вампиры: Маскарад. V20",
+      changeling_v20: "Подменыши: Грёза. V20",
     },
     profile,
     attributes,
     abilities,
     advantages,
     status,
-    'notes': 'Заметки',
-    'goals': 'Цели',
-    'charHistory': 'История',
-    'appearanceDescription': 'Описание внешности',
-    'characterImage': 'Изображение персонажа',
-    'uploadCharacterImage': 'Загрузить изображение персонажа',
-    'alliesAndContacts': 'Союзники и контакты',
-    'possessions': 'Имущество и снаряжение',
+    notes: "Заметки",
+    goals: "Цели",
+    charHistory: "История",
+    appearanceDescription: "Описание внешности",
+    characterImage: "Изображение персонажа",
+    uploadCharacterImage: "Загрузить изображение персонажа",
+    alliesAndContacts: "Союзники и контакты",
+    possessions: "Имущество и снаряжение",
   },
-  "common": {
-    "to": "в",
-    "ok": "ОК",
-    "cancel": "Отмена",
-    "confirm": "Подтвердить",
-    "add": "Добавить",
-    "create": "Создать",
-    "rename": "Переименовать",
-    "remove": "Удалить",
-    "replace": "Заменить",
-    "on": "на",
+  common: {
+    to: "в",
+    ok: "ОК",
+    cancel: "Отмена",
+    confirm: "Подтвердить",
+    add: "Добавить",
+    create: "Создать",
+    rename: "Переименовать",
+    remove: "Удалить",
+    replace: "Заменить",
+    on: "на",
     "set-item-before": "Перед '{0}'",
     "set-item-as-last": "В конец",
   },
@@ -93,4 +92,3 @@ export const ruTranslation = {
   //   "params": "Параметры",
   // },
 };
-
