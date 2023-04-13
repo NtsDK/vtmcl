@@ -16,7 +16,7 @@ export function FreePointsPanel(props: FreePointsPanelProps) {
 
   return (
     <div className={classnames("FreePointsPanel tw-max-w-sm", className)}>
-      <FreePoints />
+      {/* <FreePoints /> */}
       {preset === "vampire_v20" && <VampireFreePoints />}
       {preset === "changeling_v20" && <FreePoints />}
     </div>

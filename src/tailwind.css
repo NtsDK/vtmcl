@@ -552,6 +552,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.tw-mx-12 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.tw-mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
 .tw-mb-8 {
   margin-bottom: 2rem;
 }
@@ -614,6 +629,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-mr-3 {
   margin-right: 0.75rem;
+}
+
+.tw-block {
+  display: block;
 }
 
 .tw-inline-block {
@@ -698,6 +717,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.tw-w-60 {
+  width: 15rem;
+}
+
+.tw-w-52 {
+  width: 13rem;
+}
+
+.tw-w-24 {
+  width: 6rem;
+}
+
 .tw-max-w-sm {
   max-width: 24rem;
 }
@@ -751,6 +782,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.tw-justify-between {
+  justify-content: space-between;
+}
+
+.tw-justify-around {
+  justify-content: space-around;
+}
+
 .tw-gap-x-4 {
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
@@ -758,6 +797,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-border-2 {
   border-width: 2px;
+}
+
+.tw-border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .tw-border-solid {
@@ -913,6 +956,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:tw-outline-red-600:hover {
   outline-color: #dc2626;
+}
+
+.disabled\:tw-cursor-not-allowed:disabled {
+  cursor: not-allowed;
 }
 
 @media print {
