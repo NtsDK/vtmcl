@@ -552,21 +552,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.tw-mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.tw-mx-12 {
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
-
-.tw-mx-16 {
-  margin-left: 4rem;
-  margin-right: 4rem;
-}
-
 .tw-mb-8 {
   margin-bottom: 2rem;
 }
@@ -709,24 +694,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
+.tw-w-52 {
+  width: 13rem;
+}
+
 .tw-w-32 {
   width: 8rem;
 }
 
 .tw-w-14 {
   width: 3.5rem;
-}
-
-.tw-w-60 {
-  width: 15rem;
-}
-
-.tw-w-52 {
-  width: 13rem;
-}
-
-.tw-w-24 {
-  width: 6rem;
 }
 
 .tw-max-w-sm {
@@ -780,10 +757,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-justify-center {
   justify-content: center;
-}
-
-.tw-justify-between {
-  justify-content: space-between;
 }
 
 .tw-justify-around {

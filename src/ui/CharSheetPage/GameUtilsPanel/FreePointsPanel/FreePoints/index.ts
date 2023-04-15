@@ -1,1 +1,0 @@
-export { FreePoints } from './FreePoints';
