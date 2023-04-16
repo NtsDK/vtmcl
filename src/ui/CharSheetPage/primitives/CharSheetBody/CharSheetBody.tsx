@@ -1,39 +1,33 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from "react";
 import classnames from "classnames";
 
-import './CharSheetBody.css';
+import "./CharSheetBody.css";
 
-import { useSettings } from '../../../../services/storageAdapter';
-import { Settings } from '../../../../domain';
-import { envInfo } from '../../../../lib/envUtils';
+import { useSettings } from "../../../../services/storageAdapter";
+import { Settings } from "../../../../domain";
+import { envInfo } from "../../../../lib/envUtils";
 
 interface CharSheetBodyProps {
   className?: string;
 }
 
 function getBgColor(settings: Settings): string {
-  const {
-    charsheetBackMode,
-    charsheetBackColor,
-  } = settings;
-  if (charsheetBackMode === 'charsheet-color') {
+  const { charsheetBackMode, charsheetBackColor } = settings;
+  if (charsheetBackMode === "charsheet-color") {
     return charsheetBackColor;
   }
-  return 'transparent';
+  return "transparent";
 }
 
 function getBgImage(settings: Settings): string {
-  if(envInfo().isArtificialBrowser) {
-    return 'none';
-  }
-  const {
-    charsheetBackMode,
-    charsheetBackImage_v2
-  } = settings;
-  if (charsheetBackMode === 'charsheet-image') {
+  // if(envInfo().isArtificialBrowser) {
+  //   return 'none';
+  // }
+  const { charsheetBackMode, charsheetBackImage_v2 } = settings;
+  if (charsheetBackMode === "charsheet-image") {
     return `url(${charsheetBackImage_v2})`;
   }
-  return 'none';
+  return "none";
 }
 
 export function CharSheetBody(props: PropsWithChildren<CharSheetBodyProps>) {
@@ -52,6 +46,3 @@ export function CharSheetBody(props: PropsWithChildren<CharSheetBodyProps>) {
     </div>
   );
 }
-
-
-
