@@ -46,27 +46,27 @@ i18n
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
-    detection: {
-      order: [
-        "reactSnap",
-        "querystring",
-        "cookie",
-        "localStorage",
-        "sessionStorage",
-        "navigator",
-        "htmlTag",
-      ],
-      lookupQuerystring: "lng",
-      lookupCookie: "i18next",
-      lookupLocalStorage: "i18nextLng",
-      lookupSessionStorage: "i18nextLng",
+    // detection: {
+    //   order: [
+    //     "reactSnap",
+    //     "querystring",
+    //     "cookie",
+    //     "localStorage",
+    //     "sessionStorage",
+    //     "navigator",
+    //     "htmlTag",
+    //   ],
+    //   lookupQuerystring: "lng",
+    //   lookupCookie: "i18next",
+    //   lookupLocalStorage: "i18nextLng",
+    //   lookupSessionStorage: "i18nextLng",
 
-      // cache user language
-      caches: ["localStorage"],
-      excludeCacheFor: ["cimode"],
-      //cookieMinutes: 10,
-      //cookieDomain: 'myDomain'
-    },
+    //   // cache user language
+    //   caches: ["localStorage"],
+    //   excludeCacheFor: ["cimode"],
+    //   //cookieMinutes: 10,
+    //   //cookieDomain: 'myDomain'
+    // },
   });
 
 export { i18n };
