@@ -53,4 +53,14 @@ export const about = {
   "paradox-copyright":
     "Текст и иллюстрации, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.",
   "studio-101-copyright": "Перевод ©ООО «Студия 101», 2019.",
+
+  // supported-features
+  "supported-features": "Поддерживаемые фичи",
+  "char-sheet-type": "Тип листа персонажа",
+  "basic-support": "Базовая функциональность",
+  "dropdown-lists": "Выпадающие списки",
+  "creation-checklist": "Чеклист создания персонажа",
+  "freebie-points": "Свободные очки",
+  vtm: "Вампиры: Маскарад",
+  ctd: "Подменыши: Грёза",
 };

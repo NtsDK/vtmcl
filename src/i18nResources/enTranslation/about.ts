@@ -53,4 +53,14 @@ export const about = {
   "paradox-copyright":
     "Text and illustrations, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.",
   "studio-101-copyright": "Russian translation © «Studio 101», 2019.",
+
+  // supported-features
+  "supported-features": "Supported features",
+  "char-sheet-type": "Charsheet type",
+  "basic-support": "Basic support",
+  "dropdown-lists": "Dropdown lists",
+  "creation-checklist": "Creation checklist",
+  "freebie-points": "Freebie points",
+  vtm: "Vampire: The Masquerade",
+  ctd: "Changeling: The Dreaming",
 };
