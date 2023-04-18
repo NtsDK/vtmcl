@@ -1,13 +1,10 @@
 import React from "react";
-import { ChangelingCharSheet } from "../../charSheets/ChangelingCharSheet";
-import { VampireCharSheet } from "../../charSheets/VampireCharSheet";
+import { CtDCharSheet, VtMCharSheet } from "../../charSheets";
 import { Preset } from "../../domain";
 import { usePreset } from "../../services/storageAdapter";
-// import { ChangelingCharSheet } from "./ChangelingCharSheet";
 
 import "./CharSheetPage.css";
 import { GameUtilsPanel } from "./GameUtilsPanel";
-// import { VampireCharSheet } from "./VampireCharSheet";
 
 interface CharSheetPageProps {}
 
@@ -27,8 +24,8 @@ export function CharSheetPage(props: CharSheetPageProps) {
 function getCharSheet(preset: Preset): (props: {}) => JSX.Element {
   switch (preset) {
     case "vampire_v20":
-      return VampireCharSheet;
+      return VtMCharSheet;
     case "changeling_v20":
-      return ChangelingCharSheet;
+      return CtDCharSheet;
   }
 }

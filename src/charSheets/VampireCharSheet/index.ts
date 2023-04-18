@@ -1,1 +1,0 @@
-export { VampireCharSheet } from './VampireCharSheet';

@@ -584,6 +584,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.tw-mt-4 {
+  margin-top: 1rem;
+}
+
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -592,8 +596,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
-.tw-mt-4 {
-  margin-top: 1rem;
+.tw-ml-2 {
+  margin-left: 0.5rem;
 }
 
 .tw-mt-2 {
@@ -606,10 +610,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-mb-0 {
   margin-bottom: 0px;
-}
-
-.tw-ml-2 {
-  margin-left: 0.5rem;
 }
 
 .tw-mr-3 {
@@ -670,24 +670,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 24rem;
 }
 
-.tw-w-6 {
-  width: 1.5rem;
-}
-
-.tw-w-36 {
-  width: 9rem;
+.tw-w-8 {
+  width: 2rem;
 }
 
 .tw-w-5 {
   width: 1.25rem;
 }
 
-.tw-w-28 {
-  width: 7rem;
+.tw-w-6 {
+  width: 1.5rem;
 }
 
-.tw-w-8 {
-  width: 2rem;
+.tw-w-4 {
+  width: 1rem;
+}
+
+.tw-w-36 {
+  width: 9rem;
+}
+
+.tw-w-28 {
+  width: 7rem;
 }
 
 .tw-w-52 {
@@ -696,10 +700,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tw-w-32 {
   width: 8rem;
-}
-
-.tw-w-4 {
-  width: 1rem;
 }
 
 .tw-w-14 {
@@ -872,14 +872,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
-.tw-text-slate-700 {
-  --tw-text-opacity: 1;
-  color: rgb(51 65 85 / var(--tw-text-opacity));
-}
-
 .tw-text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
 .tw-line-through {
@@ -940,20 +940,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0px;
   }
 
-  .print\:tw-mb-2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .print\:tw-mb-0 {
-    margin-bottom: 0px;
-  }
-
   .print\:tw-mb-1 {
     margin-bottom: 0.25rem;
   }
 
   .print\:tw-mt-1 {
     margin-top: 0.25rem;
+  }
+
+  .print\:tw-mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .print\:tw-mb-2 {
+    margin-bottom: 0.5rem;
   }
 
   .print\:tw-hidden {
