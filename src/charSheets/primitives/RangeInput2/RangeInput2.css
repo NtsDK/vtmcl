@@ -1,0 +1,22 @@
+.RangeInput2 .range-input-checkbox {
+  appearance: none;
+  background: url("../../../../public/images/radio-on-button.svg") no-repeat 50% 50%;
+  background-size: 100% auto;
+  print-color-adjust: exact;
+}
+
+.RangeInput2 .range-input-checkbox[data-variant="circle"] {
+  background-image: url("../../../../public/images/radio-on-button.svg");
+}
+
+.RangeInput2 .range-input-checkbox:checked ~ .range-input-checkbox[data-variant="circle"] {
+  background-image: url("../../../../public/images/circumference.svg");
+}
+
+.RangeInput2 .range-input-checkbox[data-variant="square"] {
+  background-image: url("../../../../public/images/square-filled.svg");
+}
+
+.RangeInput2 .range-input-checkbox:checked ~ .range-input-checkbox[data-variant="square"] {
+  background-image: url("../../../../public/images/square-empty.svg");
+}

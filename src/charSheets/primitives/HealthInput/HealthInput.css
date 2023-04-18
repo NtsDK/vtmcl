@@ -1,0 +1,22 @@
+.HealthInput .health-input-checkbox {
+  appearance: none;
+  background: url("../../../../public/images/injure_no.svg") no-repeat 50% 50%;
+  background-size: 100% auto;
+  print-color-adjust: exact;
+}
+
+.HealthInput .health-input-checkbox[data-damage-type="no-damage"] {
+  background-image: url("../../../../public/images/injure_no.svg");
+}
+
+.HealthInput .health-input-checkbox[data-damage-type="bashing-damage"] {
+  background-image: url("../../../../public/images/injure_wound.svg");
+}
+
+.HealthInput .health-input-checkbox[data-damage-type="lethal-damage"] {
+  background-image: url("../../../../public/images/injure_deadly.svg");
+}
+
+.HealthInput .health-input-checkbox[data-damage-type="aggravated-damage"] {
+  background-image: url("../../../../public/images/injure_aggravated.svg");
+}
