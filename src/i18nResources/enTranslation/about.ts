@@ -28,6 +28,8 @@ export const about = {
   worldofdarkness: "World of Darkness game universe website",
 
   "version-history": "Version history",
+  "version-0.4.1":
+    "Version 0.4.1 (20 Apr 2023) - Add freebie points panel. Improved data utilities and improved performance.",
   "version-0.4.0":
     "Version 0.4.0 (18 Jan 2023) - Add new fields: rituals and discipline paths, other traits, history, goals, allies and contacts, possessions, appearance description and character image. Added max point calculation, bloodpool size and blood per turn dependency from vampire generation.",
   "version-0.3.0":

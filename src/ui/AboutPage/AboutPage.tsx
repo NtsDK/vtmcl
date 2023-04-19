@@ -44,7 +44,9 @@ export function AboutPage(props: AboutPageProps) {
                 <h2 className="tw-text-lg tw-mb-4">{t("about.links")}</h2>
                 <UnorderedList>
                   <li>
-                    <ExternalLink href="https://trechkalov.com/archives/wod_character_sheet_ru_en_0.4.0.zip">
+                    <ExternalLink
+                      href={`https://trechkalov.com/archives/wod_character_sheet_ru_en_${CURRENT_VERSION}.zip`}
+                    >
                       {t("about.charsheet-archive")}
                     </ExternalLink>
                   </li>
@@ -149,6 +151,7 @@ export function AboutPage(props: AboutPageProps) {
                   {t("about.version-history")}
                 </h2>
                 <UnorderedList>
+                  <li>{t("about.version-0.4.1")}</li>
                   <li>{t("about.version-0.4.0")}</li>
                   <li>{t("about.version-0.3.0")}</li>
                   <li>{t("about.version-0.2.4")}</li>
