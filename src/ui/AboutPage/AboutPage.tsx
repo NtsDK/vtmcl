@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { ExternalLink } from "../../uiLib/ExternalLink";
 import { UnorderedList } from "../../uiLib/UnorderedList";
 import { CURRENT_VERSION } from "../../constants";
-import { CheckListBadge } from "../CharSheetPage/GameUtilsPanel/CharacterCheckList/primitives/CheckListBadge";
+import { CheckListBadge } from "../../charSheets/commons";
 
 interface AboutPageProps {}
 

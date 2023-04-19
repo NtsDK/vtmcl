@@ -1,2 +1,2 @@
-export { VtMCharSheet } from "./vtm";
-export { CtDCharSheet } from "./ctd";
+export { VtMCharSheet, VtMCheckList } from "./vtm";
+export { CtDCharSheet, CtDCheckList } from "./ctd";

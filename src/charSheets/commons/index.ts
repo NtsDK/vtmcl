@@ -29,3 +29,10 @@ export { SelectButton } from "./primitives/SelectButton";
 export { NameStringSection } from "./primitives/NameStringSection";
 export { NameNumberSection } from "./primitives/NameNumberSection";
 export { TextAreaSection } from "./primitives/TextAreaSection";
+// checklist
+export { CheckListBadge } from "./checkListPrimitives/CheckListBadge";
+export { CheckListItem } from "./checkListPrimitives/CheckListItem";
+export { AbilitiesCheck } from "./checkListCommons/AbilitiesCheck";
+export { AbilitiesDotLimitCheck } from "./checkListCommons/AbilitiesDotLimitCheck";
+export { AttributesCheck } from "./checkListCommons/AttributesCheck";
+export { BackgroundsCheck } from "./checkListCommons/BackgroundsCheck";

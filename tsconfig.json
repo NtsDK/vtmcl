@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "target": "ES2015",
     "lib": [
       "dom",
@@ -20,10 +20,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "downlevelIteration": true,
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "downlevelIteration": true
+    // "paths": {
+    //   "@/*": ["src/*"]
+    // }
   },
   "include": [
     "src"

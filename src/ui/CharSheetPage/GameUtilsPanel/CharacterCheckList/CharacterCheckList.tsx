@@ -4,22 +4,23 @@ import classnames from "classnames";
 
 import "./CharacterCheckList.css";
 import { usePreset } from "../../../../services/storageAdapter";
-import { VampireCheckList } from "./VampireCheckList";
-import { ChangelingCheckList } from "./ChangelingCheckList";
+import { CtDCheckList, VtMCheckList } from "../../../../charSheets";
 
 interface CharacterCheckListProps {
   className?: string;
 }
 
-export function CharacterCheckList(props: CharacterCheckListProps) {
+export function CharacterCheckList(
+  props: CharacterCheckListProps
+): JSX.Element {
   const { className } = props;
 
   const { preset } = usePreset();
 
   return (
     <div className={classnames("CharacterCheckList tw-max-w-sm", className)}>
-      {preset === "vampire_v20" && <VampireCheckList />}
-      {preset === "changeling_v20" && <ChangelingCheckList />}
+      {preset === "vampire_v20" && <VtMCheckList />}
+      {preset === "changeling_v20" && <CtDCheckList />}
     </div>
   );
 }

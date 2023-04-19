@@ -1,0 +1,28 @@
+input.CheckListBadge {
+  appearance: none;
+  background: rgb(220, 53, 69) ;
+  width: 0.75rem;
+  height: 0.75rem;
+  display: inline-block;
+  padding: 0.2rem 0.3rem;
+  box-sizing: content-box;
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+input.CheckListBadge::after {
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  mask: url("../../../../../public/images/circle-xmark-solid.svg");
+  display: block;
+  background-color: white;
+}
+
+input.CheckListBadge:checked::after {
+  mask: url("../../../../../public/images/circle-check-solid.svg");
+}
+
+input.CheckListBadge:checked {
+  background: rgb(40, 167, 69);
+}
