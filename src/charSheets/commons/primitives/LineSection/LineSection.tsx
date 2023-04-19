@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import './LineSection.css';
-import { TextAreaSection } from '../TextAreaSection';
+import "./LineSection.css";
+import { TextAreaSection } from "../TextAreaSection";
 
 interface LineSectionProps {
   className?: string;
@@ -11,12 +11,7 @@ interface LineSectionProps {
 }
 
 export function LineSection(props: LineSectionProps) {
-  const {
-    className,
-    ariaLabel,
-    setValue,
-    value
-  } = props;
+  const { className, ariaLabel, setValue, value } = props;
 
   return (
     <TextAreaSection

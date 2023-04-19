@@ -1,1 +1,1 @@
-export { NotesSection } from './NotesSection';
+export { NotesSection } from "./NotesSection";

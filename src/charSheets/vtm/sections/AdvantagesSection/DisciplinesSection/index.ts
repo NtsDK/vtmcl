@@ -1,1 +1,1 @@
-export { DisciplinesSection } from './DisciplinesSection';
+export { DisciplinesSection } from "./DisciplinesSection";

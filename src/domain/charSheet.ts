@@ -1,7 +1,4 @@
-import {
-  Abilities,
-  AbilitiesExtension
-} from "./abilities";
+import { Abilities, AbilitiesExtension } from "./abilities";
 import {
   AlliesAndContacts,
   AppearanceDescription,
@@ -23,12 +20,9 @@ import {
   Realms,
   Rituals,
   State,
-  Virtues
+  Virtues,
 } from "./characterDataTypes";
-import {
-  Settings,
-  Version
-} from "./nonCharacterDataTypes";
+import { Settings, Version } from "./nonCharacterDataTypes";
 import { Preset } from "./presets";
 
 export interface CharSheet {

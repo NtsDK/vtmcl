@@ -9,28 +9,44 @@ export const charSheetMetaActions = {
   },
 
   setPresetValue(state: CharSheet, [preset]: [Preset]): CharSheet {
-    return mutateObj(state, 'preset', preset);
+    return mutateObj(state, "preset", preset);
   },
 
   setBackgroundColor(state: CharSheet, [backgroundColor]: [string]): CharSheet {
-    return mutateObj(state, 'settings',
-      mutateObj(state.settings, 'backgroundColor', backgroundColor)
+    return mutateObj(
+      state,
+      "settings",
+      mutateObj(state.settings, "backgroundColor", backgroundColor)
     );
   },
-  setCharsheetBackColor(state: CharSheet, [charsheetBackColor]: [string]): CharSheet {
-    return mutateObj(state, 'settings',
-      mutateObj(state.settings, 'charsheetBackColor', charsheetBackColor)
+  setCharsheetBackColor(
+    state: CharSheet,
+    [charsheetBackColor]: [string]
+  ): CharSheet {
+    return mutateObj(
+      state,
+      "settings",
+      mutateObj(state.settings, "charsheetBackColor", charsheetBackColor)
     );
   },
-  setCharsheetBackImage(state: CharSheet, [charsheetBackImage_v2]: [string]): CharSheet {
-    return mutateObj(state, 'settings',
-      mutateObj(state.settings, 'charsheetBackImage_v2', charsheetBackImage_v2)
+  setCharsheetBackImage(
+    state: CharSheet,
+    [charsheetBackImage_v2]: [string]
+  ): CharSheet {
+    return mutateObj(
+      state,
+      "settings",
+      mutateObj(state.settings, "charsheetBackImage_v2", charsheetBackImage_v2)
     );
   },
-  setCharsheetBackMode(state: CharSheet, [charsheetBackMode]: [CharsheetBackMode]): CharSheet {
-    return mutateObj(state, 'settings',
-      mutateObj(state.settings, 'charsheetBackMode', charsheetBackMode)
+  setCharsheetBackMode(
+    state: CharSheet,
+    [charsheetBackMode]: [CharsheetBackMode]
+  ): CharSheet {
+    return mutateObj(
+      state,
+      "settings",
+      mutateObj(state.settings, "charsheetBackMode", charsheetBackMode)
     );
   },
-
-}
+};

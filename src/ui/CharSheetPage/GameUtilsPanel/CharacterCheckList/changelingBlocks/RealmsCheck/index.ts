@@ -1,1 +1,1 @@
-export { RealmsCheck } from './RealmsCheck';
+export { RealmsCheck } from "./RealmsCheck";

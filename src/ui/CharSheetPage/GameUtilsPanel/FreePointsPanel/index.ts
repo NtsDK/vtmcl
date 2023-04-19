@@ -1,1 +1,1 @@
-export { FreePointsPanel } from './FreePointsPanel';
+export { FreePointsPanel } from "./FreePointsPanel";

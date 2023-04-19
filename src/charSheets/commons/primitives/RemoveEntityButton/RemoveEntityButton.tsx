@@ -1,12 +1,9 @@
-import React from 'react';
+import React from "react";
 import classnames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faXmark
-} from '@fortawesome/free-solid-svg-icons';
-
-import './RemoveEntityButton.css';
+import "./RemoveEntityButton.css";
 
 interface RemoveEntityButtonProps {
   title: string;
@@ -19,8 +16,10 @@ export function RemoveEntityButton(props: RemoveEntityButtonProps) {
 
   return (
     <button
-      className={classnames("RemoveEntityButton tw-flex print:tw-hidden tw-w-6 tw-h-6 tw-justify-center tw-items-center"
-        , className)}
+      className={classnames(
+        "RemoveEntityButton tw-flex print:tw-hidden tw-w-6 tw-h-6 tw-justify-center tw-items-center",
+        className
+      )}
       onClick={onClick}
       aria-label={title}
       title={title}

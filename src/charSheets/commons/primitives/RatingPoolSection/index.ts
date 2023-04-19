@@ -1,1 +1,1 @@
-export { RatingPoolSection } from './RatingPoolSection';
+export { RatingPoolSection } from "./RatingPoolSection";

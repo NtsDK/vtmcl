@@ -1,1 +1,1 @@
-export { RemoveEntityButton } from './RemoveEntityButton';
+export { RemoveEntityButton } from "./RemoveEntityButton";

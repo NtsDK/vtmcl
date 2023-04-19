@@ -1,1 +1,1 @@
-export { PossessionsSection } from './PossessionsSection';
+export { PossessionsSection } from "./PossessionsSection";

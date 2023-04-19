@@ -1,1 +1,1 @@
-export { InstructionEn } from './InstructionEn';
+export { InstructionEn } from "./InstructionEn";

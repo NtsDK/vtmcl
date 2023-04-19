@@ -1,1 +1,1 @@
-export { GameUtilsPanel } from './GameUtilsPanel';
+export { GameUtilsPanel } from "./GameUtilsPanel";

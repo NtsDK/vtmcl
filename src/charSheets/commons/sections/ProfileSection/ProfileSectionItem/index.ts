@@ -1,1 +1,1 @@
-export { ProfileSectionItem } from './ProfileSectionItem';
+export { ProfileSectionItem } from "./ProfileSectionItem";

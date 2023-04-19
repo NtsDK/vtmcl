@@ -1,1 +1,1 @@
-export { BackgroundsCheck } from './BackgroundsCheck';
+export { BackgroundsCheck } from "./BackgroundsCheck";

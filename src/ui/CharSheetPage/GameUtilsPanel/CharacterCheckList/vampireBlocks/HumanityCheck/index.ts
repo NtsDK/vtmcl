@@ -1,1 +1,1 @@
-export { HumanityCheck } from './HumanityCheck';
+export { HumanityCheck } from "./HumanityCheck";

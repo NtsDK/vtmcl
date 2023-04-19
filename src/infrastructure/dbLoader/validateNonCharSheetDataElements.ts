@@ -1,9 +1,9 @@
 import { JSONSchemaType } from "ajv";
-import { 
+import {
   // Meta,
   // Log,
   Version,
-  Settings
+  Settings,
 } from "../../domain";
 import { CURRENT_VERSION } from "../../constants";
 
@@ -25,16 +25,16 @@ import { CURRENT_VERSION } from "../../constants";
 export const versionSchema: JSONSchemaType<Version> = {
   // type: "string",
   type: "string",
-  pattern: CURRENT_VERSION
+  pattern: CURRENT_VERSION,
 };
 
 export const settingsSchema: JSONSchemaType<Settings> = {
   type: "object",
   properties: {
-    "backgroundColor":       {type: "string"},
-    "charsheetBackColor":     {type: "string"},
-    "charsheetBackImage_v2":   {type: "string"},
-    "charsheetBackMode":     {type: "string"},
+    backgroundColor: { type: "string" },
+    charsheetBackColor: { type: "string" },
+    charsheetBackImage_v2: { type: "string" },
+    charsheetBackMode: { type: "string" },
   },
   required: [
     "backgroundColor",

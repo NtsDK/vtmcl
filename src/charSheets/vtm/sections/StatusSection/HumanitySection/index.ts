@@ -1,1 +1,1 @@
-export { HumanitySection } from './HumanitySection';
+export { HumanitySection } from "./HumanitySection";

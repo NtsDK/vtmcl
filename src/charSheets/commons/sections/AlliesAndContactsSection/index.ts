@@ -1,1 +1,1 @@
-export { AlliesAndContactsSection } from './AlliesAndContactsSection';
+export { AlliesAndContactsSection } from "./AlliesAndContactsSection";

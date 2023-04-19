@@ -1,1 +1,1 @@
-export { AddEntityButton } from './AddEntityButton';
+export { AddEntityButton } from "./AddEntityButton";

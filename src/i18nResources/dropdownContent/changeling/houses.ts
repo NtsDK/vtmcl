@@ -1,5 +1,5 @@
-import Ajv, { JSONSchemaType } from 'ajv';
-import * as R from 'ramda';
+import Ajv, { JSONSchemaType } from "ajv";
+import * as R from "ramda";
 
 import { housesSource, houseGroupsSource } from "./housesSource";
 
@@ -7,8 +7,8 @@ import {
   generateIdEnRuEntities,
   generateSequence,
   makeTranslateFunction,
-  sortStrArr
-} from '../utils';
+  sortStrArr,
+} from "../utils";
 
 const ajv = new Ajv({
   allErrors: true,
@@ -16,10 +16,7 @@ const ajv = new Ajv({
   // useDefaults: true
 });
 
-type HouseGroupName =
-  | 'seelie'
-  | 'unseelie'
-;
+type HouseGroupName = "seelie" | "unseelie";
 
 interface HouseEntity {
   en: string;
@@ -30,47 +27,47 @@ interface HouseEntity {
 export const houseEntitySchema: JSONSchemaType<HouseEntity> = {
   type: "object",
   properties: {
-    "en":  {type: 'string'},
-    "ru":  {type: 'string'},
-    "groupName":  {
-      type: 'string',
-      enum: [
-        'seelie',
-        'unseelie',
-      ]
+    en: { type: "string" },
+    ru: { type: "string" },
+    groupName: {
+      type: "string",
+      enum: ["seelie", "unseelie"],
     },
   },
-  required: [
-    "en",
-    "ru",
-    "groupName"
-  ],
+  required: ["en", "ru", "groupName"],
   additionalProperties: false,
 };
 
 export const validateHouseEntity = ajv.compile(houseEntitySchema);
 
 export function* generateHouseEntities(
-  gen : Generator<string, void, unknown>
+  gen: Generator<string, void, unknown>
 ): Generator<HouseEntity, void, unknown> {
   for (let value of gen) {
-    const [enLine, ruLine, groupLine] = value.split('\n');
+    const [enLine, ruLine, groupLine] = value.split("\n");
     const groupSeparators = /[[\]]/g;
-    const groupName = groupLine.split(groupSeparators)
-      .map(R.trim).filter(el => el !== '')
-    ;
-
+    const groupName = groupLine
+      .split(groupSeparators)
+      .map(R.trim)
+      .filter((el) => el !== "");
     const el = {
       en: enLine.trim(),
       ru: ruLine.trim(),
-      groupName: groupName[0]
+      groupName: groupName[0],
     };
 
     if (!validateHouseEntity(el)) {
-      console.error('Parse resource error', el,
-        JSON.stringify(validateHouseEntity.errors, null, '  '));
-      throw new Error('Parse resource error: ' + el + ', ' +
-        JSON.stringify(validateHouseEntity.errors, null, '  '));
+      console.error(
+        "Parse resource error",
+        el,
+        JSON.stringify(validateHouseEntity.errors, null, "  ")
+      );
+      throw new Error(
+        "Parse resource error: " +
+          el +
+          ", " +
+          JSON.stringify(validateHouseEntity.errors, null, "  ")
+      );
     }
     yield el;
   }
@@ -80,38 +77,35 @@ const sourceArr = [...generateHouseEntities(generateSequence(3, housesSource))];
 
 export const translateHouse = makeTranslateFunction(sourceArr);
 
-const groups = R.groupBy(R.prop('groupName'), sourceArr);
+const groups = R.groupBy(R.prop("groupName"), sourceArr);
 
 // console.log('clan', sourceArr);
 // console.log('groups', groups);
 
 const groups_en = R.mapObjIndexed((value) => {
-  return sortStrArr(R.pluck('en', value));
+  return sortStrArr(R.pluck("en", value));
 }, groups);
 
 const groups_ru = R.mapObjIndexed((value) => {
-  return sortStrArr(R.pluck('ru', value));
+  return sortStrArr(R.pluck("ru", value));
 }, groups);
 
+const groupOrder: HouseGroupName[] = ["seelie", "unseelie"];
 
-const groupOrder: HouseGroupName[] = [
-  'seelie',
-  'unseelie',
+const houseGroupsArr = [
+  ...generateIdEnRuEntities(generateSequence(3, houseGroupsSource)),
 ];
 
-const houseGroupsArr = [...generateIdEnRuEntities(generateSequence(3, houseGroupsSource))];
-
-
-const groupIndex = R.indexBy(R.prop('id'), houseGroupsArr);
+const groupIndex = R.indexBy(R.prop("id"), houseGroupsArr);
 
 export const houseDisplayGroups_en = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].en,
-  arr: groups_en[groupName]
+  arr: groups_en[groupName],
 }));
 
 export const houseDisplayGroups_ru = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].ru,
-  arr: groups_ru[groupName]
+  arr: groups_ru[groupName],
 }));
 
 // console.log('displayGroups_en', displayGroups_en);

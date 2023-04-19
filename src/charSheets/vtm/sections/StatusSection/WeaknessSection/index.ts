@@ -1,1 +1,1 @@
-export { WeaknessSection } from './WeaknessSection';
+export { WeaknessSection } from "./WeaknessSection";

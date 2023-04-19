@@ -26,18 +26,7 @@ import {
   PossessionsSection,
   SectionHeader,
 } from "../commons";
-// import { AlliesAndContactsSection } from "../commonBlocks/AlliesAndContactsSection";
-// import { AppearanceDescriptionSection } from "../commonBlocks/AppearanceDescriptionSection";
-// import { CharacterImageSection } from "../commonBlocks/CharacterImageSection";
-// import { CharHistorySection } from "../commonBlocks/CharHistorySection";
-// import { GoalsSection } from "../commonBlocks/GoalsSection";
 
-// import { NotesSection } from "../commonBlocks/NotesSection";
-// import { OtherTraitsSection } from "../commonBlocks/OtherTraitsSection";
-// import { PossessionsSection } from "../commonBlocks/PossessionsSection";
-// import { CommonPageStart } from "../CommonPageStart";
-// import { CharSheetBody } from "../primitives/CharSheetBody";
-// import { SectionHeader } from "../primitives/SectionHeader";
 import { AdvantagesSection } from "./sections/AdvantagesSection";
 import { DisciplinePathsSection } from "./sections/DisciplinePathsSection";
 import { RitualsSection } from "./sections/RitualsSection";

@@ -1,1 +1,1 @@
-export { OtherTraitsSection } from './OtherTraitsSection';
+export { OtherTraitsSection } from "./OtherTraitsSection";

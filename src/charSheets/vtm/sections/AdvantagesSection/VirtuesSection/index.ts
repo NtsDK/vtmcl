@@ -1,1 +1,1 @@
-export { VirtuesSection } from './VirtuesSection';
+export { VirtuesSection } from "./VirtuesSection";

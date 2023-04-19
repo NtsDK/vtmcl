@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 // import reportWebVitals from './reportWebVitals';
 import { Provider } from "./services/store";
-import { ErrorBoundry } from './uiLib/ErrorBoundry';
+import { ErrorBoundry } from "./uiLib/ErrorBoundry";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById('root') as HTMLElement
@@ -24,13 +24,12 @@ import { ErrorBoundry } from './uiLib/ErrorBoundry';
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
-
 // import { hydrate, render } from "react-dom";
 
 const rootElement = document.getElementById("root");
 if (rootElement?.hasChildNodes()) {
   ReactDOM.hydrateRoot(
-    document.getElementById('root') as HTMLElement,
+    document.getElementById("root") as HTMLElement,
     <Provider>
       <React.StrictMode>
         <ErrorBoundry>
@@ -41,7 +40,7 @@ if (rootElement?.hasChildNodes()) {
   );
 } else {
   const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
+    document.getElementById("root") as HTMLElement
   );
   root.render(
     <Provider>

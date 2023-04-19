@@ -7,6 +7,6 @@
 
 export function envInfo() {
   return {
-    isArtificialBrowser: navigator.userAgent === 'ReactSnap'
-  }
+    isArtificialBrowser: navigator.userAgent === "ReactSnap",
+  };
 }

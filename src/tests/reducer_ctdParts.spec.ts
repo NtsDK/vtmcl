@@ -1,83 +1,80 @@
-import * as R from 'ramda';
+import * as R from "ramda";
 import { CharSheet } from "../domain";
-import { ctdPartActions } from '../services/actions_ctdParts';
+import { ctdPartActions } from "../services/actions_ctdParts";
 import { CompositeReducer } from "../services/CompositeReducer";
 import { initialCharSheet } from "../services/initialValues";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(ctdPartActions);
 
-describe('ctdPartActions', () => {
-
-  it('setRealm', () => {
+describe("ctdPartActions", () => {
+  it("setRealm", () => {
     expect(initialCharSheet.realms.nature).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'setRealm',
-      props: ['nature', 4]
+      type: "setRealm",
+      props: ["nature", 4],
     });
     expect(charSheet.realms.nature).toBe(4);
   });
 
-  it('setHealthChimerical', () => {
+  it("setHealthChimerical", () => {
     expect(initialCharSheet.healthChimerical.bruised).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'setHealthChimerical',
-      props: ['bruised', 1]
+      type: "setHealthChimerical",
+      props: ["bruised", 1],
     });
     expect(charSheet.healthChimerical.bruised).toBe(1);
   });
-  it('setHealthChimerical overflow', () => {
+  it("setHealthChimerical overflow", () => {
     expect(initialCharSheet.healthChimerical.bruised).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'setHealthChimerical',
-      props: ['bruised', 4]
+      type: "setHealthChimerical",
+      props: ["bruised", 4],
     });
     expect(charSheet.healthChimerical.bruised).toBe(3);
   });
 
-
-  it('addArt', () => {
+  it("addArt", () => {
     expect(initialCharSheet.arts.length).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'addArt',
-      props: []
+      type: "addArt",
+      props: [],
     });
     expect(charSheet.arts.length).toBe(1);
   });
-  it('removeArt', () => {
+  it("removeArt", () => {
     expect(initialCharSheet.arts.length).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'addArt',
-      props: []
+      type: "addArt",
+      props: [],
     });
     const charSheet2 = reduce(charSheet, {
-      type: 'removeArt',
-      props: [0]
+      type: "removeArt",
+      props: [0],
     });
     expect(charSheet2.arts.length).toBe(0);
   });
-  it('setArtName', () => {
+  it("setArtName", () => {
     expect(initialCharSheet.arts.length).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'addArt',
-      props: []
+      type: "addArt",
+      props: [],
     });
     const charSheet2 = reduce(charSheet, {
-      type: 'setArtName',
-      props: [0, 'art1']
+      type: "setArtName",
+      props: [0, "art1"],
     });
-    expect(charSheet2.arts).toEqual([{name: 'art1', value: 0}]);
+    expect(charSheet2.arts).toEqual([{ name: "art1", value: 0 }]);
   });
-  it('setArtValue', () => {
+  it("setArtValue", () => {
     expect(initialCharSheet.arts.length).toBe(0);
     const charSheet = reduce(initialCharSheet, {
-      type: 'addArt',
-      props: []
+      type: "addArt",
+      props: [],
     });
     const charSheet2 = reduce(charSheet, {
-      type: 'setArtValue',
-      props: [0, 3]
+      type: "setArtValue",
+      props: [0, 3],
     });
-    expect(charSheet2.arts).toEqual([{name: '', value: 3}]);
+    expect(charSheet2.arts).toEqual([{ name: "", value: 3 }]);
   });
-
 });

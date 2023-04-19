@@ -1,1 +1,1 @@
-export { VampireCheckList } from './VampireCheckList';
+export { VampireCheckList } from "./VampireCheckList";

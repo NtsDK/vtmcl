@@ -1,1 +1,1 @@
-export { AbilitiesCheck } from './AbilitiesCheck';
+export { AbilitiesCheck } from "./AbilitiesCheck";

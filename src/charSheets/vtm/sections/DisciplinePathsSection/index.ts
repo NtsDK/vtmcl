@@ -1,1 +1,1 @@
-export { DisciplinePathsSection } from './DisciplinePathsSection';
+export { DisciplinePathsSection } from "./DisciplinePathsSection";

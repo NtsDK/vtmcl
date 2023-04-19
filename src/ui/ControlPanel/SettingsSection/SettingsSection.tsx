@@ -1,33 +1,30 @@
-import React, { ChangeEvent } from 'react';
-import './SettingsSection.css';
+import React, { ChangeEvent } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { useTranslation } from "react-i18next";
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { useSettings } from "../../../services/storageAdapter";
+import { initialSettings } from "../../../services/initialValues";
 
-import { useTranslation } from 'react-i18next';
-import { useSettings } from '../../../services/storageAdapter';
-import { initialSettings } from '../../../services/initialValues';
+interface SettingsSectionProps {}
 
-interface SettingsSectionProps {
-}
-
-export function SettingsSection(props: SettingsSectionProps) {
+export function SettingsSection(props: SettingsSectionProps): JSX.Element {
   const { t } = useTranslation();
   const {
     settings,
     setBackgroundColor,
     setCharsheetBackMode,
     setCharsheetBackColor,
-    setCharsheetBackImage
+    setCharsheetBackImage,
   } = useSettings();
 
-  function readImage(event: ChangeEvent<HTMLInputElement>) {
+  function readImage(event: ChangeEvent<HTMLInputElement>): void {
     const reader = new FileReader();
     reader.onload = (readerEvent) => {
-        const imageData = readerEvent.target?.result;
-        if (typeof imageData === 'string') {
-          setCharsheetBackImage(imageData);
-        }
+      const imageData = readerEvent.target?.result;
+      if (typeof imageData === "string") {
+        setCharsheetBackImage(imageData);
+      }
     };
     if (event.target.files && event.target.files[0]) {
       reader.readAsDataURL(event.target.files[0]);
@@ -38,7 +35,9 @@ export function SettingsSection(props: SettingsSectionProps) {
     <div className="SettingsSection">
       <div className="tw-m-4">
         <label className="tw-mr-4">
-          <span className='tw-mr-4'>{t('visual-settings.background-color')}</span>
+          <span className="tw-mr-4">
+            {t("visual-settings.background-color")}
+          </span>
           <input
             type="color"
             className="background-color-input"
@@ -48,36 +47,38 @@ export function SettingsSection(props: SettingsSectionProps) {
         </label>
       </div>
       <div className="tw-m-4">
-        <h3 className='tw-text-lg tw-mb-4'>{t('visual-settings.charsheet-background-mode')}</h3>
+        <h3 className="tw-text-lg tw-mb-4">
+          {t("visual-settings.charsheet-background-mode")}
+        </h3>
         <Form.Check
           type="radio"
           id="charsheet-none"
           name="charsheet-back-mode"
           className="tw-mb-4"
-          label={t('visual-settings.charsheet-none')}
-          checked={settings.charsheetBackMode === 'charsheet-none'}
-          onChange={(e) => setCharsheetBackMode('charsheet-none')}
+          label={t("visual-settings.charsheet-none")}
+          checked={settings.charsheetBackMode === "charsheet-none"}
+          onChange={(e) => setCharsheetBackMode("charsheet-none")}
         />
         <Form.Check
           type="radio"
           id="charsheet-color"
           name="charsheet-back-mode"
           className="tw-mb-2"
-          label={t('visual-settings.charsheet-color')}
-          checked={settings.charsheetBackMode === 'charsheet-color'}
-          onChange={(e) => setCharsheetBackMode('charsheet-color')}
+          label={t("visual-settings.charsheet-color")}
+          checked={settings.charsheetBackMode === "charsheet-color"}
+          onChange={(e) => setCharsheetBackMode("charsheet-color")}
         />
         <fieldset className="tw-border-2 tw-border-solid tw-border-gray-600 tw-px-6 tw-py-4 tw-mb-4">
           <label className="tw-mr-4">
-            <span className='tw-mr-4'>
-              {t('visual-settings.charsheet-background-color')}
+            <span className="tw-mr-4">
+              {t("visual-settings.charsheet-background-color")}
             </span>
             <input
               type="color"
               className="charsheet-background-color-input"
               value={settings.charsheetBackColor}
               onChange={(e) => setCharsheetBackColor(e.target.value)}
-              disabled={settings.charsheetBackMode !== 'charsheet-color'}
+              disabled={settings.charsheetBackMode !== "charsheet-color"}
             />
           </label>
         </fieldset>
@@ -86,31 +87,33 @@ export function SettingsSection(props: SettingsSectionProps) {
           id="charsheet-image"
           name="charsheet-back-mode"
           className="tw-mb-2"
-          label={t('visual-settings.charsheet-image')}
-          checked={settings.charsheetBackMode === 'charsheet-image'}
-          onChange={(e) => setCharsheetBackMode('charsheet-image')}
+          label={t("visual-settings.charsheet-image")}
+          checked={settings.charsheetBackMode === "charsheet-image"}
+          onChange={(e) => setCharsheetBackMode("charsheet-image")}
         />
         <fieldset className="tw-border-2 tw-border-solid tw-border-gray-600 tw-px-6 tw-py-4">
           <div className="tw-mb-8">
             <label>
-              <span className='tw-mr-4'>
-                {t('visual-settings.charsheet-background-image')}
+              <span className="tw-mr-4">
+                {t("visual-settings.charsheet-background-image")}
               </span>
               <input
                 type="file"
                 className="charsheet-background-image-input"
                 onChange={readImage}
-                disabled={settings.charsheetBackMode !== 'charsheet-image'}
+                disabled={settings.charsheetBackMode !== "charsheet-image"}
               />
             </label>
           </div>
           <div>
             <Button
               className="back-image-to-default custom-btn-bg-color"
-              onClick={() => setCharsheetBackImage(initialSettings.charsheetBackImage_v2)}
-              disabled={settings.charsheetBackMode !== 'charsheet-image'}
+              onClick={() =>
+                setCharsheetBackImage(initialSettings.charsheetBackImage_v2)
+              }
+              disabled={settings.charsheetBackMode !== "charsheet-image"}
             >
-              {t('visual-settings.to-default-background-image')}
+              {t("visual-settings.to-default-background-image")}
             </Button>
           </div>
         </fieldset>
@@ -118,6 +121,3 @@ export function SettingsSection(props: SettingsSectionProps) {
     </div>
   );
 }
-
-
-

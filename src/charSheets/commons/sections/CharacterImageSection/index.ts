@@ -1,1 +1,1 @@
-export { CharacterImageSection } from './CharacterImageSection';
+export { CharacterImageSection } from "./CharacterImageSection";

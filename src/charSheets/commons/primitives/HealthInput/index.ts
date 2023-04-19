@@ -1,1 +1,1 @@
-export { HealthInput } from './HealthInput';
+export { HealthInput } from "./HealthInput";

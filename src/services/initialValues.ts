@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from "ramda";
 
 import { CURRENT_VERSION } from "../constants";
 import {
@@ -27,12 +27,12 @@ import {
   Rituals,
   Settings,
   State,
-  Virtues
+  Virtues,
 } from "../domain";
 
-import { defaultBackgroundUrl } from './defaultBackground';
+import { defaultBackgroundUrl } from "./defaultBackground";
 
-export const initialPreset: Preset = 'vampire_v20';
+export const initialPreset: Preset = "vampire_v20";
 
 export const initialProfile: Profile = {
   name: "",
@@ -56,52 +56,52 @@ export const initialProfile: Profile = {
   seeming: "",
 };
 export const initialAttributes: Attributes = {
-  "strength": 1,
-  "dexterity": 1,
-  "stamina": 1,
-  "charisma": 1,
-  "manipulation": 1,
-  "appearance": 1,
-  "perception": 1,
-  "intelligence": 1,
-  "wits": 1
-}
+  strength: 1,
+  dexterity: 1,
+  stamina: 1,
+  charisma: 1,
+  manipulation: 1,
+  appearance: 1,
+  perception: 1,
+  intelligence: 1,
+  wits: 1,
+};
 
 export const initialAbilities: Abilities = {
-  "alertness": 0,
-  "athletics": 0,
-  "brawl": 0,
-  "empathy": 0,
-  "expression": 0,
-  "intimidation": 0,
-  "leadership": 0,
-  "streetwise": 0,
-  "subterfuge": 0,
-  "awareness": 0,
-  "animalken": 0,
-  "crafts": 0,
-  "drive": 0,
-  "etiquette": 0,
-  "firearms": 0,
-  "melee": 0,
-  "performance": 0,
-  "stealth": 0,
-  "survival": 0,
-  "larceny": 0,
-  "academics": 0,
-  "computer": 0,
-  "finance": 0,
-  "investigation": 0,
-  "law": 0,
-  "medicine": 0,
-  "occult": 0,
-  "politics": 0,
-  "science": 0,
-  "technology": 0,
+  alertness: 0,
+  athletics: 0,
+  brawl: 0,
+  empathy: 0,
+  expression: 0,
+  intimidation: 0,
+  leadership: 0,
+  streetwise: 0,
+  subterfuge: 0,
+  awareness: 0,
+  animalken: 0,
+  crafts: 0,
+  drive: 0,
+  etiquette: 0,
+  firearms: 0,
+  melee: 0,
+  performance: 0,
+  stealth: 0,
+  survival: 0,
+  larceny: 0,
+  academics: 0,
+  computer: 0,
+  finance: 0,
+  investigation: 0,
+  law: 0,
+  medicine: 0,
+  occult: 0,
+  politics: 0,
+  science: 0,
+  technology: 0,
 
-  "enigmas": 0,
-  "gremayre": 0,
-  "kenning": 0
+  enigmas: 0,
+  gremayre: 0,
+  kenning: 0,
 };
 
 export const initialAbilitiesExtension: AbilitiesExtension = {
@@ -116,7 +116,7 @@ export const initialAbilitiesExtension: AbilitiesExtension = {
   knowledgeName1: "",
   knowledgeValue1: 0,
   knowledgeName2: "",
-  knowledgeValue2: 0
+  knowledgeValue2: 0,
 };
 
 // advantages
@@ -127,9 +127,9 @@ export const initialBackgrounds: Backgrounds = [];
 export const initialOtherTraits: OtherTraits = [];
 export const initialArts: Arts = [];
 export const initialVirtues: Virtues = {
-  "conscience": 1,
-  "self_control": 1,
-  "courage": 1
+  conscience: 1,
+  self_control: 1,
+  courage: 1,
 };
 export const initialRealms: Realms = {
   actor: 0,
@@ -160,9 +160,9 @@ export const initialState: State = {
   experience: "",
 
   // changeling
-  antithesis: '',
-  thresholds: '',
-  birthrightsFrailties: '',
+  antithesis: "",
+  thresholds: "",
+  birthrightsFrailties: "",
   glamourRating: 0,
   glamourPool: 0,
   banalityRating: 0,
@@ -177,17 +177,16 @@ export const initialHealth: Health = {
   wounded: 0,
   mauled: 0,
   crippled: 0,
-  incapacitated: 0
+  incapacitated: 0,
 };
 
-export const initialNotes: Notes = '';
-export const initialCharHistory: CharHistory = '';
-export const initialGoals: Goals = '';
-export const initialAppearanceDescription: AppearanceDescription = '';
-export const initialCharacterImage: CharacterImage = '';
-export const initialAlliesAndContacts: AlliesAndContacts = '';
-export const initialPossessions: Possessions = '';
-
+export const initialNotes: Notes = "";
+export const initialCharHistory: CharHistory = "";
+export const initialGoals: Goals = "";
+export const initialAppearanceDescription: AppearanceDescription = "";
+export const initialCharacterImage: CharacterImage = "";
+export const initialAlliesAndContacts: AlliesAndContacts = "";
+export const initialPossessions: Possessions = "";
 
 // no character data
 export const initialSettings: Settings = {
@@ -195,8 +194,8 @@ export const initialSettings: Settings = {
   charsheetBackColor: "#ffffff",
   // charsheetBackImage: "../images/back.png",
   charsheetBackImage_v2: defaultBackgroundUrl,
-  charsheetBackMode: "charsheet-image"
-}
+  charsheetBackMode: "charsheet-image",
+};
 
 export const initialCharSheet: CharSheet = {
   Version: CURRENT_VERSION,
@@ -228,4 +227,4 @@ export const initialCharSheet: CharSheet = {
 
   arts: initialArts,
   realms: initialRealms,
-}
+};

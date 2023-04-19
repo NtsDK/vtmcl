@@ -1,1 +1,1 @@
-export { BanalitySection } from './BanalitySection';
+export { BanalitySection } from "./BanalitySection";

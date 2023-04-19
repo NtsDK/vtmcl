@@ -1,1 +1,1 @@
-export { BackgroundsSection } from './BackgroundsSection';
+export { BackgroundsSection } from "./BackgroundsSection";

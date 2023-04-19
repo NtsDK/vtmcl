@@ -1,1 +1,1 @@
-export { HealthSection } from './HealthSection';
+export { HealthSection } from "./HealthSection";

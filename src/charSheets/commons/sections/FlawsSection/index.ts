@@ -1,1 +1,1 @@
-export { FlawsSection } from './FlawsSection';
+export { FlawsSection } from "./FlawsSection";

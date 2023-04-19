@@ -1,1 +1,1 @@
-export { WillpowerCheck } from './WillpowerCheck';
+export { WillpowerCheck } from "./WillpowerCheck";

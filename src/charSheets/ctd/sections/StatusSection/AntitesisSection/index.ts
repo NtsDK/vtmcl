@@ -1,1 +1,1 @@
-export { AntitesisSection } from './AntitesisSection';
+export { AntitesisSection } from "./AntitesisSection";

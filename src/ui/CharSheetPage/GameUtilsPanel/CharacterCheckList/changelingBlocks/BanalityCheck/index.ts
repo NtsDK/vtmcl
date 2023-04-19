@@ -1,1 +1,1 @@
-export { BanalityCheck } from './BanalityCheck';
+export { BanalityCheck } from "./BanalityCheck";

@@ -1,1 +1,1 @@
-export { MeritsSection } from './MeritsSection';
+export { MeritsSection } from "./MeritsSection";

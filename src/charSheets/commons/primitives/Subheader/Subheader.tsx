@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
-import './Subheader.css';
+import React, { PropsWithChildren } from "react";
+import "./Subheader.css";
 import classnames from "classnames";
 
 interface SubheaderProps {
@@ -16,6 +16,3 @@ export function Subheader(props: PropsWithChildren<SubheaderProps>) {
     </h3>
   );
 }
-
-
-

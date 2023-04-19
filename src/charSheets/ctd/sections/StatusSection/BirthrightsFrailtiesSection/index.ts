@@ -1,1 +1,1 @@
-export { BirthrightsFrailtiesSection } from './BirthrightsFrailtiesSection';
+export { BirthrightsFrailtiesSection } from "./BirthrightsFrailtiesSection";

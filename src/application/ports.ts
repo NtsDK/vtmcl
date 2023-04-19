@@ -1,8 +1,3 @@
-// import { ErrorDescription } from "../domain/errorDescription";
-// import { Game } from "../domain/game";
-// import { Server } from "../domain/server";
-// import { ServerDatabase } from "../domain/serverDatabase";
-
 import {
   Abilities,
   AbilitiesExtension,
@@ -34,7 +29,7 @@ import {
   Rituals,
   Settings,
   State,
-  Virtues
+  Virtues,
 } from "../domain";
 
 // char sheet
@@ -62,8 +57,14 @@ export interface AbilitiesService {
 
 export interface AbilitiesExtensionService {
   abilitiesExtension: AbilitiesExtension;
-  setAbilityExtensionName(abilityName: AbilitiesExtensionName, name: string): void;
-  setAbilityExtensionValue(abilityName: AbilitiesExtensionValue, value: number): void;
+  setAbilityExtensionName(
+    abilityName: AbilitiesExtensionName,
+    name: string
+  ): void;
+  setAbilityExtensionValue(
+    abilityName: AbilitiesExtensionValue,
+    value: number
+  ): void;
 }
 
 export interface DisciplinesService {

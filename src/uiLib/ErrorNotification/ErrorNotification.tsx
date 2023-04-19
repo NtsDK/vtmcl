@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './ErrorNotification.css';
+import React from "react";
+import Alert from "react-bootstrap/Alert";
 
-import Alert from 'react-bootstrap/Alert';
-import { useErrorDescription } from '../../services/storageAdapter';
+import { useErrorDescription } from "../../services/storageAdapter";
 
-interface ErrorNotificationProps {
-}
+interface ErrorNotificationProps {}
 
-export function ErrorNotification(props: ErrorNotificationProps) {
+export function ErrorNotification(
+  props: ErrorNotificationProps
+): JSX.Element | null {
   const { errorDescription, setErrorDescription } = useErrorDescription();
 
   if (errorDescription === null) {
@@ -15,17 +15,15 @@ export function ErrorNotification(props: ErrorNotificationProps) {
   }
 
   return (
-    <Alert 
-      className="ErrorNotification tw-w-96 tw-fixed tw-top-8 tw-right-8 tw-shadow-lg tw-shadow-black" 
-      variant="danger" 
-      style={{zIndex: 2000}}
-      onClose={() => setErrorDescription(null)} 
+    <Alert
+      className="ErrorNotification tw-w-96 tw-fixed tw-top-8 tw-right-8 tw-shadow-lg tw-shadow-black"
+      variant="danger"
+      style={{ zIndex: 2000 }}
+      onClose={() => setErrorDescription(null)}
       dismissible
     >
       <Alert.Heading>{errorDescription.title}</Alert.Heading>
-      <p>
-        {errorDescription.text}
-      </p>
+      <p>{errorDescription.text}</p>
     </Alert>
   );
 }

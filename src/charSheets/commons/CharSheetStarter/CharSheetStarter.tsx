@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import DocumentTitle from "react-document-title";
 import { useTranslation } from "react-i18next";
+
 import { CURRENT_VERSION } from "../../../constants";
 import { usePresetSettings, useResource } from "../../../i18nResources";
-
 import {
   useAbilities,
   useAbilitiesExtension,
@@ -20,7 +20,7 @@ import { SectionHeader } from "../primitives/SectionHeader";
 
 interface CharSheetStarterProps {}
 
-export function CharSheetStarter(props: CharSheetStarterProps) {
+export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
   const { t } = useTranslation();
 
   const profileService = useProfile();

@@ -1,23 +1,24 @@
-import React from 'react';
+import React from "react";
 import classnames from "classnames";
 
-import './ActionList.css';
+import "./ActionList.css";
 
-import { UploadDatabaseButton } from './UploadDatabaseButton';
-import { DownloadDatabaseButton } from './DownloadDatabaseButton';
-import { CreateDatabaseButton } from './CreateDatabaseButton';
-import { LangButton } from './LangButton';
-import { FullscreenButton } from './FullscreenButton';
 import {
   useCharSheetStorage,
-  useErrorDescription
-} from '../../../services/storageAdapter';
+  useErrorDescription,
+} from "../../../services/storageAdapter";
+
+import { UploadDatabaseButton } from "./UploadDatabaseButton";
+import { DownloadDatabaseButton } from "./DownloadDatabaseButton";
+import { CreateDatabaseButton } from "./CreateDatabaseButton";
+import { LangButton } from "./LangButton";
+import { FullscreenButton } from "./FullscreenButton";
 
 interface ActionListProps {
   className?: string;
 }
 
-export function ActionList(props: ActionListProps) {
+export function ActionList(props: ActionListProps): JSX.Element {
   const { className } = props;
 
   const errorDescriptionService = useErrorDescription();
@@ -29,18 +30,11 @@ export function ActionList(props: ActionListProps) {
         {...errorDescriptionService}
         {...charSheetStorageService}
       />
-      <DownloadDatabaseButton
-        {...charSheetStorageService}
-      />
-      <CreateDatabaseButton
-        {...charSheetStorageService}
-      />
-      <LangButton lang='ru'/>
-      <LangButton lang='en'/>
-      <FullscreenButton/>
+      <DownloadDatabaseButton {...charSheetStorageService} />
+      <CreateDatabaseButton {...charSheetStorageService} />
+      <LangButton lang="ru" />
+      <LangButton lang="en" />
+      <FullscreenButton />
     </div>
   );
 }
-
-
-

@@ -1,14 +1,14 @@
 import React from "react";
+
 import { CtDCharSheet, VtMCharSheet } from "../../charSheets";
 import { Preset } from "../../domain";
 import { usePreset } from "../../services/storageAdapter";
 
-import "./CharSheetPage.css";
 import { GameUtilsPanel } from "./GameUtilsPanel";
 
 interface CharSheetPageProps {}
 
-export function CharSheetPage(props: CharSheetPageProps) {
+export function CharSheetPage(props: CharSheetPageProps): JSX.Element {
   const { preset } = usePreset();
 
   return (
