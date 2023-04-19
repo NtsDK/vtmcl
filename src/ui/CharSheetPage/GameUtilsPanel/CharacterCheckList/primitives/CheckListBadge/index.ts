@@ -1,1 +1,1 @@
-export { CheckListBadge } from './CheckListBadge';
+export { CheckListBadge } from "./CheckListBadge";

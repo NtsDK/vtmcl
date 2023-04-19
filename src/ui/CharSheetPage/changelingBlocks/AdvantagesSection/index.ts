@@ -1,1 +1,0 @@
-export { AdvantagesSection } from './AdvantagesSection';

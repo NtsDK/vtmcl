@@ -1,1 +1,0 @@
-export { ThresholdsSection } from './ThresholdsSection';

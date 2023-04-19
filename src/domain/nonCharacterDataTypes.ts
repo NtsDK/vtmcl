@@ -10,15 +10,14 @@
 
 export type Version = string;
 
-export type CharsheetBackMode = 
+export type CharsheetBackMode =
   | "charsheet-image"
   | "charsheet-none"
-  | "charsheet-color"
-;
+  | "charsheet-color";
 
 export interface Settings {
-  "backgroundColor": string;
-  "charsheetBackColor": string;
-  "charsheetBackImage_v2": string;
-  "charsheetBackMode": CharsheetBackMode;
+  backgroundColor: string;
+  charsheetBackColor: string;
+  charsheetBackImage_v2: string;
+  charsheetBackMode: CharsheetBackMode;
 }

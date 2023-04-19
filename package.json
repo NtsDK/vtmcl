@@ -10,7 +10,10 @@
     "eject": "react-scripts eject",
     "build-tailwind": "npx tailwindcss ./tailwind.css -o ./src/tailwind.css -w",
     "postbuild": "react-snap",
-    "check-build": "http-server ./build"
+    "check-build": "http-server ./build",
+    "lint": "eslint --fix",
+    "format": "prettier --write ./src/**/*.{ts,tsx}",
+    "lf": "npm run lint && npm run format"
   },
   "eslintConfig": {
     "extends": [
@@ -72,7 +75,13 @@
   },
   "devDependencies": {
     "@types/react-document-title": "^2.0.5",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.8.7",
+    "prettier-eslint": "^15.0.1",
+    "prettier-eslint-cli": "^7.1.0",
     "react-snap": "^1.23.0",
     "source-map-explorer": "^2.5.2"
   }

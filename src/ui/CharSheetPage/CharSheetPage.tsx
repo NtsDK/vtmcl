@@ -1,33 +1,31 @@
-import React from 'react';
-import { Preset } from '../../domain';
-import { usePreset } from '../../services/storageAdapter';
-import { ChangelingCharSheet } from './ChangelingCharSheet';
+import React from "react";
 
-import './CharSheetPage.css';
-import { GameUtilsPanel } from './GameUtilsPanel';
-import { VampireCharSheet } from './VampireCharSheet';
+import { CtDCharSheet, VtMCharSheet } from "../../charSheets";
+import { Preset } from "../../domain";
+import { usePreset } from "../../services/storageAdapter";
 
-interface CharSheetPageProps {
-}
+import { GameUtilsPanel } from "./GameUtilsPanel";
 
-export function CharSheetPage(props: CharSheetPageProps) {
+interface CharSheetPageProps {}
+
+export function CharSheetPage(props: CharSheetPageProps): JSX.Element {
   const { preset } = usePreset();
 
   return (
     <main className="CharSheetPage tw-flex">
-      <div className='tw-mx-auto tw-my-0 print:tw-m-0'>
-        {getCharSheet(preset)}
+      <div className="tw-mx-auto tw-my-0 print:tw-m-0">
+        {getCharSheet(preset)({})}
       </div>
       <GameUtilsPanel />
     </main>
   );
 }
 
-function getCharSheet(preset: Preset): JSX.Element {
-  switch(preset) {
-    case 'vampire_v20':
-      return <VampireCharSheet />;
-    case 'changeling_v20':
-      return <ChangelingCharSheet />;
-    }
+function getCharSheet(preset: Preset): (props: {}) => JSX.Element {
+  switch (preset) {
+    case "vampire_v20":
+      return VtMCharSheet;
+    case "changeling_v20":
+      return CtDCharSheet;
+  }
 }

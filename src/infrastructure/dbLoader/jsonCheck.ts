@@ -5,7 +5,7 @@ import { defaultBackgroundUrl } from "../../services/defaultBackground";
 export const m: CharSheetInJson = {
   Version: CURRENT_VERSION,
   Charsheet: {
-    preset: 'vampire_v20',
+    preset: "vampire_v20",
     profile: {
       name: "123",
       player: "",
@@ -36,7 +36,7 @@ export const m: CharSheetInJson = {
       appearance: 1,
       perception: 3,
       intelligence: 1,
-      wits: 1
+      wits: 1,
     },
     abilities: {
       alertness: 3,
@@ -88,19 +88,15 @@ export const m: CharSheetInJson = {
       knowledgeName2: "",
       knowledgeValue2: 0,
     },
-    disciplines: [
-      { name: "123", value: 2 }
-    ],
+    disciplines: [{ name: "123", value: 2 }],
     disciplinePaths: [],
     otherTraits: [],
     rituals: [],
-    backgrounds: [
-      { name: "2342", value: 0 }
-    ],
+    backgrounds: [{ name: "2342", value: 0 }],
     virtues: {
       conscience: 1,
       self_control: 4,
-      courage: 1
+      courage: 1,
     },
     merits: ["324"],
     flaws: ["sdfsdf"],
@@ -117,9 +113,9 @@ export const m: CharSheetInJson = {
       experience: "",
 
       // changeling
-      antithesis: '',
-      thresholds: '',
-      birthrightsFrailties: '',
+      antithesis: "",
+      thresholds: "",
+      birthrightsFrailties: "",
       glamourRating: 0,
       glamourPool: 0,
       banalityRating: 0,
@@ -133,7 +129,7 @@ export const m: CharSheetInJson = {
       wounded: 1,
       mauled: 0,
       crippled: 0,
-      incapacitated: 0
+      incapacitated: 0,
     },
     healthChimerical: {
       bruised: 0,
@@ -142,7 +138,7 @@ export const m: CharSheetInJson = {
       wounded: 1,
       mauled: 0,
       crippled: 0,
-      incapacitated: 0
+      incapacitated: 0,
     },
     notes: "notes sdsdsdf",
     charHistory: "charHistory sdsdsdf",
@@ -151,9 +147,7 @@ export const m: CharSheetInJson = {
     characterImage: "characterImage sdsdsdf",
     alliesAndContacts: "alliesAndContacts sdsdsdf",
     possessions: "possessions sdsdsdf",
-    arts: [
-      { name: "art", value: 1 }
-    ],
+    arts: [{ name: "art", value: 1 }],
     realms: {
       actor: 0,
       fae: 0,
@@ -161,12 +155,12 @@ export const m: CharSheetInJson = {
       prop: 0,
       scene: 0,
       time: 0,
-    }
+    },
   },
   Settings: {
     backgroundColor: "#ababab",
     charsheetBackColor: "#ffffff",
     charsheetBackImage_v2: defaultBackgroundUrl,
-    charsheetBackMode: "charsheet-image"
-  }
-}
+    charsheetBackMode: "charsheet-image",
+  },
+};

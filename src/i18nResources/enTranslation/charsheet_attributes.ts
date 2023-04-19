@@ -1,18 +1,18 @@
 export const attributes = {
-  'header': 'Attributes',
+  header: "Attributes",
 
-  'physical': 'Physical',
-  'strength': 'Strength',
-  'dexterity': 'Dexterity',
-  'stamina': 'Stamina',
+  physical: "Physical",
+  strength: "Strength",
+  dexterity: "Dexterity",
+  stamina: "Stamina",
 
-  'social': 'Social',
-  'charisma': 'Charisma',
-  'manipulation': 'Manipulation',
-  'appearance': 'Appearance',
+  social: "Social",
+  charisma: "Charisma",
+  manipulation: "Manipulation",
+  appearance: "Appearance",
 
-  'mental': 'Mental',
-  'perception': 'Perception',
-  'intelligence': 'Intelligence',
-  'wits': 'Wits',
+  mental: "Mental",
+  perception: "Perception",
+  intelligence: "Intelligence",
+  wits: "Wits",
 };

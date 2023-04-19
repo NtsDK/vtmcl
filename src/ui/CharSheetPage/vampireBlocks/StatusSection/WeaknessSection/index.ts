@@ -1,1 +1,0 @@
-export { WeaknessSection } from './WeaknessSection';

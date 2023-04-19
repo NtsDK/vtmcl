@@ -1,1 +1,0 @@
-export { DisciplinesSection } from './DisciplinesSection';

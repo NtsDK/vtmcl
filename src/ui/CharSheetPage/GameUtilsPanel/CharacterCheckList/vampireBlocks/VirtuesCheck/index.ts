@@ -1,1 +1,1 @@
-export { VirtuesCheck } from './VirtuesCheck';
+export { VirtuesCheck } from "./VirtuesCheck";

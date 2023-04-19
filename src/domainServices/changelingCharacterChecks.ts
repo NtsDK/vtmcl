@@ -1,6 +1,6 @@
-import * as R from 'ramda';
-import { Arts, Realms, State } from '../domain/characterDataTypes';
-import { checkArrSumFilled, CheckNumberResult } from './characterCheckGeneric';
+import * as R from "ramda";
+import { Arts, Realms, State } from "../domain/characterDataTypes";
+import { checkArrSumFilled, CheckNumberResult } from "./characterCheckGeneric";
 
 export const EXPECTED_ART_DOTS = 3;
 export const EXPECTED_BANALITY_DOTS = 3;
@@ -9,7 +9,7 @@ export const EXPECTED_REALM_DOTS = 5;
 export const EXPECTED_WILLPOWER_DOTS = 4;
 
 export function checkArts(arts: Arts): CheckNumberResult {
-  return checkArrSumFilled(R.pluck('value', arts), EXPECTED_ART_DOTS);
+  return checkArrSumFilled(R.pluck("value", arts), EXPECTED_ART_DOTS);
 }
 
 export function checkBanality(state: State): boolean {

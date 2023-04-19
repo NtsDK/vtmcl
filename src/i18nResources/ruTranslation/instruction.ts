@@ -1,3 +1,3 @@
 export const instruction = {
-  'header': 'Инструкция'
+  header: "Инструкция",
 };

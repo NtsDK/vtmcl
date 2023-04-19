@@ -1,1 +1,0 @@
-export { ProfileSectionItem } from './ProfileSectionItem';

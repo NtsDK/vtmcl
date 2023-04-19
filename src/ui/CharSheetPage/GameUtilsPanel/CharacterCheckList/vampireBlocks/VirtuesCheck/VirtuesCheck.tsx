@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import * as R from 'ramda';
-import classnames from 'classnames';
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import * as R from "ramda";
+import classnames from "classnames";
 
-import './VirtuesCheck.css';
-import { useVirtues } from '../../../../../../services/storageAdapter';
-import { CheckListItem } from '../../primitives/CheckListItem';
+import "./VirtuesCheck.css";
+import { useVirtues } from "../../../../../../services/storageAdapter";
+import { CheckListItem } from "../../primitives/CheckListItem";
 import {
   checkVirtues,
-  EXPECTED_VIRTUE_DOTS
-} from '../../../../../../domainServices';
+  EXPECTED_VIRTUE_DOTS,
+} from "../../../../../../domainServices";
 
 interface VirtuesCheckProps {
   className?: string;
@@ -26,9 +26,9 @@ export function VirtuesCheck(props: VirtuesCheckProps) {
     <CheckListItem
       className={classnames("VirtuesCheck", className)}
       checked={virtuesFilled.checked}
-      text={t('checklist.virtue-dots', {
+      text={t("checklist.virtue-dots", {
         value: virtuesFilled.value,
-        expected: EXPECTED_VIRTUE_DOTS
+        expected: EXPECTED_VIRTUE_DOTS,
       })}
     />
   );

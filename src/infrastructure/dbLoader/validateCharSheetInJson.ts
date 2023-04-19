@@ -1,6 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
 import { CharSheetInJson } from "./types";
-import { 
+import {
   settingsSchema,
   versionSchema,
 } from "./validateNonCharSheetDataElements";
@@ -12,21 +12,15 @@ const ajv = new Ajv({
   // useDefaults: true
 });
 
-
 export const charSheetInJsonSchema: JSONSchemaType<CharSheetInJson> = {
   type: "object",
   properties: {
-    "Version":    versionSchema,
-    "Charsheet":  charSheetDataSchema,
-    "Settings":   settingsSchema,
+    Version: versionSchema,
+    Charsheet: charSheetDataSchema,
+    Settings: settingsSchema,
   },
-  required: [
-    "Version",
-    "Charsheet",
-    "Settings",
-  ],
+  required: ["Version", "Charsheet", "Settings"],
   additionalProperties: false,
 };
-
 
 export const validateCharSheetInJson = ajv.compile(charSheetInJsonSchema);

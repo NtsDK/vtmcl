@@ -1,1 +1,0 @@
-export { AbilitiesSection } from './AbilitiesSection';

@@ -1,0 +1,1 @@
+export { ArtsSection } from "./ArtsSection";

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import classnames from "classnames";
 
-import './CheckListBadge.css';
+import "./CheckListBadge.css";
 
 interface CheckListBadgeProps {
   checked: boolean;

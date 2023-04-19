@@ -43,23 +43,23 @@ export interface Virtues {
 }
 
 type NameStringArray = {
-  name: string,
-  value: number
+  name: string;
+  value: number;
 }[];
 
 export type Disciplines = NameStringArray;
 export type DisciplinePaths = NameStringArray;
 export type Rituals = {
-  name: string,
-  level: string
+  name: string;
+  level: string;
 }[];
 export type Backgrounds = NameStringArray;
 export type OtherTraits = NameStringArray;
 
 // Changeling
 export type Arts = {
-  name: string,
-  value: number
+  name: string;
+  value: number;
 }[];
 
 export interface Realms {

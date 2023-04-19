@@ -1,1 +1,1 @@
-export { AttributesCheck } from './AttributesCheck';
+export { AttributesCheck } from "./AttributesCheck";

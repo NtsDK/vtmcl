@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import "./ControlPanel.css";
-
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Dropdown from "react-bootstrap/Dropdown";
-
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -19,12 +15,13 @@ import { AccordionToggle } from "../../uiLib/AccordionToggle";
 import { PageNav } from "./PageNav";
 import { ActionList } from "./ActionList";
 import { SettingsSection } from "./SettingsSection";
+import "./ControlPanel.css";
 
 interface ControlPanelProps {
   className?: string;
 }
 
-export function ControlPanel(props: ControlPanelProps) {
+export function ControlPanel(props: ControlPanelProps): JSX.Element {
   const { t } = useTranslation();
   const [showContent, setShowContent] = useState(true);
 

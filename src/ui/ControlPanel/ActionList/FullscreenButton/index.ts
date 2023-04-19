@@ -1,1 +1,1 @@
-export { FullscreenButton } from './FullscreenButton';
+export { FullscreenButton } from "./FullscreenButton";

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import './ErrorBoundry.css';
+import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 
-import Button from 'react-bootstrap/Button';
-import { LS_KEY } from '../../constants';
-import { str2File, makeFileName } from '../../lib/fileUtils';
+import { LS_KEY } from "../../constants";
+import { str2File, makeFileName } from "../../lib/fileUtils";
 
 interface ErrorBoundryProps {
   children: React.ReactNode;
@@ -14,7 +13,10 @@ interface ErrorBoundryState {
   startTimeMillis: number;
 }
 
-export class ErrorBoundry extends Component<ErrorBoundryProps, ErrorBoundryState> {
+export class ErrorBoundry extends Component<
+  ErrorBoundryProps,
+  ErrorBoundryState
+> {
   reloadTimeoutId: NodeJS.Timeout | undefined;
   secondsIntevalId: NodeJS.Timer | undefined;
 
@@ -23,47 +25,56 @@ export class ErrorBoundry extends Component<ErrorBoundryProps, ErrorBoundryState
     this.state = {
       hasError: false,
       seconds: 0,
-      startTimeMillis: 0
+      startTimeMillis: 0,
     };
   }
 
-  componentDidCatch = () => {
+  componentDidCatch(): void {
     this.setState({
       hasError: true,
-      startTimeMillis: Date.now()
+      startTimeMillis: Date.now(),
     });
     this.reloadTimeoutId = setTimeout(() => window.location.reload(), 30000);
     this.secondsIntevalId = setInterval(() => {
-      this.setState(prevState => ({
-        seconds : Math.round(((Date.now() - prevState.startTimeMillis) / 1000))
-      }))
+      this.setState((prevState) => ({
+        seconds: Math.round((Date.now() - prevState.startTimeMillis) / 1000),
+      }));
     }, 100);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     clearTimeout(this.reloadTimeoutId);
     clearInterval(this.secondsIntevalId);
   }
 
-  render() {
+  render(): JSX.Element | React.ReactNode {
     // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       return (
         <div className="tw-m-8">
           <div>
-            <p>Поймана ошибка, страница перезагрузится автоматически через 30 секунд (прошло {this.state.seconds} секунд).</p>
-            <p>Если после перезагрузки страница снова падает с ошибкой, значит проблема с листом персонажа, хранящимся в памяти браузера.</p>
+            <p>
+              Поймана ошибка, страница перезагрузится автоматически через 30
+              секунд (прошло {this.state.seconds} секунд).
+            </p>
+            <p>
+              Если после перезагрузки страница снова падает с ошибкой, значит
+              проблема с листом персонажа, хранящимся в памяти браузера.
+            </p>
             <p>Попробуйте сделать перезагрузку с очисткой памяти.</p>
-            <p>Чтобы не потерять данные можно скачать лист персонажа и попытаться его исправить вручную.</p>
+            <p>
+              Чтобы не потерять данные можно скачать лист персонажа и попытаться
+              его исправить вручную.
+            </p>
           </div>
-          <br/>
-          <Button 
+          <br />
+          <Button
             className="tw-mr-8 custom-btn-bg-color"
             onClick={() => window.location.reload()}
           >
             Принудительная перезагрузка
           </Button>
-          <Button 
+          <Button
             className="tw-mr-8 custom-btn-bg-color"
             onClick={() => {
               localStorage.removeItem(LS_KEY);
@@ -72,9 +83,14 @@ export class ErrorBoundry extends Component<ErrorBoundryProps, ErrorBoundryState
           >
             Очистка памяти и принудительная перезагрузка
           </Button>
-          <Button 
+          <Button
             className="custom-btn-bg-color"
-            onClick={() => str2File(localStorage.getItem(LS_KEY), makeFileName('vtm_broken_charsheet', 'txt', new Date()))}
+            onClick={() =>
+              str2File(
+                localStorage.getItem(LS_KEY),
+                makeFileName("vtm_broken_charsheet", "txt", new Date())
+              )
+            }
           >
             Скачать лист персонажа из памяти
           </Button>

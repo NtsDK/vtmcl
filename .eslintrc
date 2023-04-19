@@ -1,0 +1,39 @@
+{
+  "plugins": ["prettier", "@typescript-eslint", "import"],
+  "extends": [ "react-app", "prettier", "plugin:import/recommended", "plugin:import/typescript"], 
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        // "alwaysTryTypes": true
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"],
+      }
+    }
+  },
+  "rules": {
+    "import/order": [
+      "warn",
+      {
+        "pathGroups": [{
+          "pattern": "@/**",
+          "group": "internal",
+          "position": "after"
+        }],
+        "groups": [
+          "builtin", "external", "internal", "parent", "sibling","index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }]
+  }
+}

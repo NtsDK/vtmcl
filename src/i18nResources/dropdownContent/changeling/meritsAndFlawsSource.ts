@@ -121,8 +121,6 @@ Jack-of-all-traDes (5pt)
 Because I think I can (6pt)
   Потому что я могу (6 пунктов)`;
 
-
-
 export const mentalFlawsSource = `Impatient (1pt)
   Нетерпеливость (1 пункт)
 Nightmares (1pt)
@@ -151,7 +149,6 @@ Weak-Willed (3pt)
   Слабоволие (3 пункта)
 Guilt-Wracked (4pt)
   Угрызения совести (4 пункта)`;
-
 
 export const socialMeritsSource = `Benevolent Patron (1pt)
   Доброжелательный покровитель (1 пункт)
@@ -200,7 +197,6 @@ Soul of the Muse (4pt)
 Trusty Companion (4pt)
   Надёжный компаньон (4 пункта)`;
 
-
 export const socialFlawsSource = `Dangerous mentor (1pt)
   Опасный ментор (1 пункт)
 Dark Secret (1pt)
@@ -241,7 +237,6 @@ Hunted (5pt)
   Мишень (5 пункта)
 On Probation (4pt)
   На испытательном сроке (4 пункта)`;
-
 
 export const supernaturalMeritsSource = `Faerie Eternity (1pt)
   Бессмертие фейри (1 пункт)

@@ -1,5 +1,5 @@
-import * as R from 'ramda';
-import { CharSheet } from '../../domain/charSheet';
+import * as R from "ramda";
+import { CharSheet } from "../../domain/charSheet";
 
 import { CharSheetInJson } from "./types";
 

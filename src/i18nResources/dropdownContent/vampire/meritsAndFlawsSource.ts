@@ -166,7 +166,6 @@ Guilt-Wracked (4pt)
 Flashbacks (6pt)
   Мучительные воспоминания (6 пунктов)`;
 
-
 export const socialMeritsSource = `Elysium Regular (1pt)
   Завсегдатай Элизиума (1 пункт)
 Former Ghoul (1pt)
@@ -221,7 +220,6 @@ Clan Friendship (4pt)
   Друг клана (4 пункта)
 Primogen/Bishop Friendship (4pt)
   Друг Примогена/Епископа (4 пункта)`;
-
 
 export const socialFlawsSource = `Botched Presentation (1pt)
   Сорванный дебют (1 пункт)
@@ -301,7 +299,6 @@ Laughingstock (5pt)
   Посмешище (5 пунктов)
 Red List (7pt)
   Красный Список (7 пунктов)`;
-
 
 export const supernaturalMeritsSource = `Deceptive Aura (1pt)
   Обманчивая аура (1 пункт)

@@ -1,6 +1,6 @@
-import * as R from 'ramda';
-import { Disciplines, State, Virtues } from '../domain';
-import { checkArrSumFilled, CheckNumberResult } from './characterCheckGeneric';
+import * as R from "ramda";
+import { Disciplines, State, Virtues } from "../domain";
+import { checkArrSumFilled, CheckNumberResult } from "./characterCheckGeneric";
 
 export const EXPECTED_VIRTUE_DOTS = 7;
 export const EXPECTED_DISCIPLINE_DOTS = 3;
@@ -11,7 +11,7 @@ export function checkVirtues(virtues: Virtues): CheckNumberResult {
 }
 
 export function checkHumanity(state: State, virtues: Virtues): boolean {
-  return state.humanity === (virtues.conscience + virtues.self_control);
+  return state.humanity === virtues.conscience + virtues.self_control;
 }
 
 export function checkVampireWillpower(state: State, virtues: Virtues): boolean {
@@ -19,9 +19,12 @@ export function checkVampireWillpower(state: State, virtues: Virtues): boolean {
 }
 
 export function checkDisciplines(disciplines: Disciplines): CheckNumberResult {
-  return checkArrSumFilled(R.pluck('value', disciplines), EXPECTED_DISCIPLINE_DOTS);
+  return checkArrSumFilled(
+    R.pluck("value", disciplines),
+    EXPECTED_DISCIPLINE_DOTS
+  );
 }
 
 export function checkBloodpool(state: State): boolean {
-  return state.bloodpool > 0 &&  state.bloodpool <= INITIAL_BLOODPOOL_MAX_LIMIT;
+  return state.bloodpool > 0 && state.bloodpool <= INITIAL_BLOODPOOL_MAX_LIMIT;
 }

@@ -1,1 +1,1 @@
-export { GlamourCheck } from './GlamourCheck';
+export { GlamourCheck } from "./GlamourCheck";

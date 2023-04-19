@@ -1,17 +1,17 @@
 import { ruTranslation } from "./ruTranslation";
 import { enTranslation } from "./enTranslation";
 
-export * from './useResource';
-export * from './presetSettings';
-export * from './useCharsheetContentI18n';
+export * from "./useResource";
+export * from "./presetSettings";
+export * from "./useCharsheetContentI18n";
 
-export const defaultLang = 'ru';
+export const defaultLang = "ru";
 
 export const resources = {
   ru: {
-    translation: ruTranslation
+    translation: ruTranslation,
   },
   en: {
-    translation: enTranslation
-  }
+    translation: enTranslation,
+  },
 };

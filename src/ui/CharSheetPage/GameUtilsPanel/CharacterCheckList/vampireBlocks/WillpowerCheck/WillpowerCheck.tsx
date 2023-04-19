@@ -1,12 +1,15 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import * as R from 'ramda';
-import classnames from 'classnames';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import * as R from "ramda";
+import classnames from "classnames";
 
-import './WillpowerCheck.css';
-import { useVirtues, useStatus } from '../../../../../../services/storageAdapter';
-import { CheckListItem } from '../../primitives/CheckListItem';
-import { checkVampireWillpower } from '../../../../../../domainServices';
+import "./WillpowerCheck.css";
+import {
+  useVirtues,
+  useStatus,
+} from "../../../../../../services/storageAdapter";
+import { CheckListItem } from "../../primitives/CheckListItem";
+import { checkVampireWillpower } from "../../../../../../domainServices";
 
 interface WillpowerCheckProps {
   className?: string;
@@ -24,11 +27,11 @@ export function WillpowerCheck(props: WillpowerCheckProps) {
     <CheckListItem
       className={classnames("WillpowerCheck", className)}
       checked={checkVampireWillpower(state, virtues)}
-      text={t('checklist.willpower-dots', {
+      text={t("checklist.willpower-dots", {
         value: state.willpowerRating,
-        expected: virtues.courage
+        expected: virtues.courage,
       })}
-      onFix={() => setState('willpowerRating', virtues.courage)}
+      onFix={() => setState("willpowerRating", virtues.courage)}
     />
   );
 }

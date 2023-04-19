@@ -1,25 +1,22 @@
-import React, { FormEvent, useState } from 'react';
-import * as R from 'ramda';
-import './CreateDatabaseButton.css';
+import React, { FormEvent, useState } from "react";
+import * as R from "ramda";
+import "./CreateDatabaseButton.css";
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import { useTranslation } from 'react-i18next';
+import Dropdown from "react-bootstrap/Dropdown";
+import { useTranslation } from "react-i18next";
 
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-import {
-  initialCharSheet
-} from "../../../../services/initialValues";
-import { CharSheetStorageService } from '../../../../application/ports';
+import { initialCharSheet } from "../../../../services/initialValues";
+import { CharSheetStorageService } from "../../../../application/ports";
 
-interface CreateDatabaseButtonProps extends CharSheetStorageService {
-}
+interface CreateDatabaseButtonProps extends CharSheetStorageService {}
 
 export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
   const { t } = useTranslation();
-  const [ showModal, setShowModal ] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const { setCharSheet } = props;
 
@@ -27,7 +24,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
     setCharSheet(R.clone(initialCharSheet));
   }
 
-  function onSubmit (e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setEmptyCharSheet();
     setShowModal(false);
@@ -43,30 +40,25 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
         // title={t('header.create-database')}
         className="CreateDatabaseButton tw-py-3 tw-text-lg"
       >
-        {t('actionMenu.create-database')}
+        {t("actionMenu.create-database")}
       </Dropdown.Item>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Form
-          onSubmit={onSubmit}
-        >
+        <Form onSubmit={onSubmit}>
           <Modal.Header closeButton>
             <Modal.Title>
-              {t('actionMenu.create-database-modal-title')}
+              {t("actionMenu.create-database-modal-title")}
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            {t('actionMenu.create-database-modal-text')}
-          </Modal.Body>
+          <Modal.Body>{t("actionMenu.create-database-modal-text")}</Modal.Body>
           <Modal.Footer>
             <Button
               variant="outline-secondary"
               onClick={() => setShowModal(false)}
-            >{t('common.cancel')}
+            >
+              {t("common.cancel")}
             </Button>
-            <Button
-              variant="outline-primary"
-              type="submit"
-            >{t('common.confirm')}
+            <Button variant="outline-primary" type="submit">
+              {t("common.confirm")}
             </Button>
           </Modal.Footer>
         </Form>
@@ -74,6 +66,3 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
     </>
   );
 }
-
-
-

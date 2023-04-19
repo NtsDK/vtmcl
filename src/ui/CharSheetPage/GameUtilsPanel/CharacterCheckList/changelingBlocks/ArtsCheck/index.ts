@@ -1,1 +1,1 @@
-export { ArtsCheck } from './ArtsCheck';
+export { ArtsCheck } from "./ArtsCheck";

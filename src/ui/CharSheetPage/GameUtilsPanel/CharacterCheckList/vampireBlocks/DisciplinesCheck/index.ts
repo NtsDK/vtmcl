@@ -1,1 +1,1 @@
-export { DisciplinesCheck } from './DisciplinesCheck';
+export { DisciplinesCheck } from "./DisciplinesCheck";

@@ -1,1 +1,0 @@
-export { AppearanceDescriptionSection } from './AppearanceDescriptionSection';

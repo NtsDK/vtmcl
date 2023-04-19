@@ -1,4 +1,4 @@
-import Ajv, { JSONSchemaType } from 'ajv';
+import Ajv, { JSONSchemaType } from "ajv";
 
 interface EnRuEntity {
   en: string;
@@ -14,29 +14,33 @@ const ajv = new Ajv({
 export const enRuEntitySchema: JSONSchemaType<EnRuEntity> = {
   type: "object",
   properties: {
-    "en":  {type: 'string'},
-    "ru":  {type: 'string'},
+    en: { type: "string" },
+    ru: { type: "string" },
   },
-  required: [
-    "en",
-    "ru",
-  ],
+  required: ["en", "ru"],
   additionalProperties: false,
 };
 
 export const validateEnRuEntity = ajv.compile(enRuEntitySchema);
 
 export function* generateEnRuEntities(
-  gen : Generator<string, void, unknown>
+  gen: Generator<string, void, unknown>
 ): Generator<EnRuEntity, void, unknown> {
   for (let value of gen) {
-    const arr = value.split('\n  ');
+    const arr = value.split("\n  ");
     const el = JSON.parse(`{ "en": "${arr[0]}", "ru": "${arr[1]}"}`);
     if (!validateEnRuEntity(el)) {
-      console.error('Parse resource error', el,
-        JSON.stringify(validateEnRuEntity.errors, null, '  '));
-      throw new Error('Parse resource error: ' + el + ', ' +
-        JSON.stringify(validateEnRuEntity.errors, null, '  '));
+      console.error(
+        "Parse resource error",
+        el,
+        JSON.stringify(validateEnRuEntity.errors, null, "  ")
+      );
+      throw new Error(
+        "Parse resource error: " +
+          el +
+          ", " +
+          JSON.stringify(validateEnRuEntity.errors, null, "  ")
+      );
     }
     yield el;
   }

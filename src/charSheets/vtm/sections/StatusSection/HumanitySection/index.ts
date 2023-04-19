@@ -1,0 +1,1 @@
+export { HumanitySection } from "./HumanitySection";

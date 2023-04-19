@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { usePreset } from '../services/storageAdapter';
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { usePreset } from "../services/storageAdapter";
 
-import { useStore } from '../services/store';
+import { useStore } from "../services/store";
 import {
   translateArchetype,
   translateGeneration,
@@ -43,23 +43,21 @@ export function useCharsheetContentI18n() {
     flaws,
     setFlaw,
     arts,
-    setArtName
+    setArtName,
   } = useStore();
 
-  const [ prevLanguage, setPrevLanguage ] = useState(i18n.language);
+  const [prevLanguage, setPrevLanguage] = useState(i18n.language);
 
   const { preset } = usePreset();
 
-  const translateBackground = preset === 'vampire_v20'
-    ? v20_translateBackground
-    : c20_translateBackground
-  ;
-
-  const translateMeritsAndFlaws = preset === 'vampire_v20'
-    ? v20_translateMeritsAndFlaws
-    : c20_translateMeritsAndFlaws
-  ;
-
+  const translateBackground =
+    preset === "vampire_v20"
+      ? v20_translateBackground
+      : c20_translateBackground;
+  const translateMeritsAndFlaws =
+    preset === "vampire_v20"
+      ? v20_translateMeritsAndFlaws
+      : c20_translateMeritsAndFlaws;
   useEffect(() => {
     const cb = (lng: string) => {
       // console.log('language', prevLanguage, 'new lang', lng);
@@ -69,54 +67,59 @@ export function useCharsheetContentI18n() {
         return;
       }
       // vampire
-      setProfileItem('nature',
+      setProfileItem(
+        "nature",
         translateArchetype(profile.nature, prevLanguage, lng)
       );
-      setProfileItem('demeanor',
+      setProfileItem(
+        "demeanor",
         translateArchetype(profile.demeanor, prevLanguage, lng)
       );
-      setProfileItem('generation',
+      setProfileItem(
+        "generation",
         translateGeneration(profile.generation, prevLanguage, lng)
       );
-      setProfileItem('clan',
-        translateClan(profile.clan, prevLanguage, lng)
-      );
+      setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
       // changeling
-      setProfileItem('court',
-        translateCourt(profile.court, prevLanguage, lng)
-      );
-      setProfileItem('seeming',
+      setProfileItem("court", translateCourt(profile.court, prevLanguage, lng));
+      setProfileItem(
+        "seeming",
         translateSeeming(profile.seeming, prevLanguage, lng)
       );
-      setProfileItem('house',
-        translateHouse(profile.house, prevLanguage, lng)
-      );
-      setProfileItem('kith',
-        translateKith(profile.kith, prevLanguage, lng)
-      );
-      setProfileItem('primaryLegacy',
+      setProfileItem("house", translateHouse(profile.house, prevLanguage, lng));
+      setProfileItem("kith", translateKith(profile.kith, prevLanguage, lng));
+      setProfileItem(
+        "primaryLegacy",
         translateLegacy(profile.primaryLegacy, prevLanguage, lng)
       );
-      setProfileItem('secondaryLegacy',
+      setProfileItem(
+        "secondaryLegacy",
         translateLegacy(profile.secondaryLegacy, prevLanguage, lng)
       );
 
       // vampire
       backgrounds.forEach((background, index) => {
-        setBackgroundName(index, translateBackground(background.name, prevLanguage, lng));
+        setBackgroundName(
+          index,
+          translateBackground(background.name, prevLanguage, lng)
+        );
       });
       disciplines.forEach((discipline, index) => {
-        setDisciplineName(index, translateDiscipline(discipline.name, prevLanguage, lng));
+        setDisciplineName(
+          index,
+          translateDiscipline(discipline.name, prevLanguage, lng)
+        );
       });
       disciplinePaths.forEach((disciplinePath, index) => {
-        setDisciplinePathName(index, translateDisciplinePath(disciplinePath.name, prevLanguage, lng));
+        setDisciplinePathName(
+          index,
+          translateDisciplinePath(disciplinePath.name, prevLanguage, lng)
+        );
       });
       rituals.forEach((ritual, index) => {
         setRitualName(index, translateRitual(ritual.name, prevLanguage, lng));
       });
-      setState('pathName',
-        translatePath(state.pathName, prevLanguage, lng)
-      );
+      setState("pathName", translatePath(state.pathName, prevLanguage, lng));
       merits.forEach((merit, index) => {
         setMerit(index, translateMeritsAndFlaws(merit, prevLanguage, lng));
       });
@@ -130,9 +133,9 @@ export function useCharsheetContentI18n() {
       });
     };
 
-    i18n.on('languageChanged', cb);
+    i18n.on("languageChanged", cb);
     return () => {
-      i18n.off('languageChanged', cb);
+      i18n.off("languageChanged", cb);
     };
   }, [
     i18n,

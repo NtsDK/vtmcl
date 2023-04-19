@@ -1,0 +1,1 @@
+export { BanalitySection } from "./BanalitySection";

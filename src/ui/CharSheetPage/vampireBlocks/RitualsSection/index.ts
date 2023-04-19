@@ -1,1 +1,0 @@
-export { RitualsSection } from './RitualsSection';

@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { usePreset } from '../services/storageAdapter';
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { usePreset } from "../services/storageAdapter";
 import {
   archetypes_en,
   archetypes_ru,
@@ -25,7 +25,6 @@ import {
   ritualDisplayGroups_en,
   ritualDisplayGroups_ru,
   ritualValueOptions,
-
   courts_en,
   courts_ru,
   houseDisplayGroups_en,
@@ -51,7 +50,7 @@ import {
 export type OptionGroup = {
   groupName: string;
   arr: string[];
-}
+};
 
 export type Resources = {
   archetypeOptions: string[];
@@ -80,31 +79,26 @@ export function useResource(): Resources {
   const { preset } = usePreset();
 
   return useMemo(() => {
-    return language === 'ru'
+    return language === "ru"
       ? {
           archetypeOptions: archetypes_ru,
           generationOptions: generations_ru,
           clanOptions: clanDisplayGroups_ru,
-          backgroundOptions: preset === 'vampire_v20'
-            ? v20_backgrounds_ru
-            : c20_backgrounds_ru,
+          backgroundOptions:
+            preset === "vampire_v20" ? v20_backgrounds_ru : c20_backgrounds_ru,
           disciplineOptions: disciplineDisplayGroups_ru,
           disciplinePathOptions: disciplinePathDisplayGroups_ru,
           pathOptions: paths_ru,
-          flawOptions: preset === 'vampire_v20'
-            ? v20_flaws_ru
-            : c20_flaws_ru,
-          meritOptions:  preset === 'vampire_v20'
-            ? v20_merits_ru
-            : c20_merits_ru,
+          flawOptions: preset === "vampire_v20" ? v20_flaws_ru : c20_flaws_ru,
+          meritOptions:
+            preset === "vampire_v20" ? v20_merits_ru : c20_merits_ru,
           courtOptions: courts_ru,
           houseOptions: houseDisplayGroups_ru,
           seemingOptions: seemings_ru,
           kithOptions: kiths_ru,
           legacyOptions: legacies_ru,
-          freePoints: preset === 'vampire_v20'
-            ? v20_freePoints_ru
-            : c20_freePoints_ru,
+          freePoints:
+            preset === "vampire_v20" ? v20_freePoints_ru : c20_freePoints_ru,
           artOptions: arts_ru,
           ritualOptions: ritualDisplayGroups_ru,
           ritualValueOptions,
@@ -113,29 +107,24 @@ export function useResource(): Resources {
           archetypeOptions: archetypes_en,
           generationOptions: generations_en,
           clanOptions: clanDisplayGroups_en,
-          backgroundOptions: preset === 'vampire_v20'
-            ? v20_backgrounds_en
-            : c20_backgrounds_en,
+          backgroundOptions:
+            preset === "vampire_v20" ? v20_backgrounds_en : c20_backgrounds_en,
           disciplineOptions: disciplineDisplayGroups_en,
           disciplinePathOptions: disciplinePathDisplayGroups_en,
           pathOptions: paths_en,
-          flawOptions: preset === 'vampire_v20'
-            ? v20_flaws_en
-            : c20_flaws_en,
-          meritOptions:  preset === 'vampire_v20'
-            ? v20_merits_en
-            : c20_merits_en,
+          flawOptions: preset === "vampire_v20" ? v20_flaws_en : c20_flaws_en,
+          meritOptions:
+            preset === "vampire_v20" ? v20_merits_en : c20_merits_en,
           courtOptions: courts_en,
           houseOptions: houseDisplayGroups_en,
           seemingOptions: seemings_en,
           kithOptions: kiths_en,
           legacyOptions: legacies_en,
-          freePoints: preset === 'vampire_v20'
-            ? v20_freePoints_en
-            : c20_freePoints_en,
+          freePoints:
+            preset === "vampire_v20" ? v20_freePoints_en : c20_freePoints_en,
           artOptions: arts_en,
           ritualOptions: ritualDisplayGroups_en,
           ritualValueOptions,
-        }
+        };
   }, [language, preset]);
 }

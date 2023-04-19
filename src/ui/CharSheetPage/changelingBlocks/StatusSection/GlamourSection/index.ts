@@ -1,1 +1,0 @@
-export { GlamourSection } from './GlamourSection';

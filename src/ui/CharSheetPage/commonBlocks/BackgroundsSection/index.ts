@@ -1,1 +1,0 @@
-export { BackgroundsSection } from './BackgroundsSection';

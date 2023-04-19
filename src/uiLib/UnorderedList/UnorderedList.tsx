@@ -1,16 +1,13 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from "react";
 
-import './UnorderedList.css';
+import "./UnorderedList.css";
 
-interface UnorderedListProps {
-}
+interface UnorderedListProps {}
 
-export function UnorderedList(props: PropsWithChildren<UnorderedListProps>) {
+export function UnorderedList(
+  props: PropsWithChildren<UnorderedListProps>
+): JSX.Element {
   const { children } = props;
 
-  return (
-    <ul className="UnorderedList">
-      {children}
-    </ul>
-  );
+  return <ul className="UnorderedList">{children}</ul>;
 }

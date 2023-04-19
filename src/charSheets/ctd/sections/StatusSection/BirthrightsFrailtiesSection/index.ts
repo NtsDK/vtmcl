@@ -1,0 +1,1 @@
+export { BirthrightsFrailtiesSection } from "./BirthrightsFrailtiesSection";

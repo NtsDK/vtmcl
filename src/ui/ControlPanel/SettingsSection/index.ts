@@ -1,1 +1,1 @@
-export { SettingsSection } from './SettingsSection';
+export { SettingsSection } from "./SettingsSection";

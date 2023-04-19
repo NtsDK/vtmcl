@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import './DownloadDatabaseButton.css';
+import React, { Component } from "react";
+import "./DownloadDatabaseButton.css";
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import { useTranslation } from 'react-i18next';
-import { json2File, makeFileName } from '../../../../lib/fileUtils';
-import { charSheetToJson } from '../../../../infrastructure/dbLoader';
-import { CharSheetStorageService } from '../../../../application/ports';
+import Dropdown from "react-bootstrap/Dropdown";
+import { useTranslation } from "react-i18next";
+import { json2File, makeFileName } from "../../../../lib/fileUtils";
+import { charSheetToJson } from "../../../../infrastructure/dbLoader";
+import { CharSheetStorageService } from "../../../../application/ports";
 
-interface DownloadDatabaseButtonProps extends CharSheetStorageService {
-};
+interface DownloadDatabaseButtonProps extends CharSheetStorageService {}
 
 export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
   const { t } = useTranslation();
@@ -16,7 +15,14 @@ export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
 
   function downloadDatabaseAsFile() {
     const charSheet = getCharSheet();
-    json2File(charSheetToJson(charSheet), makeFileName('vtm_charsheet_' + charSheet.profile.name, 'json', new Date()));
+    json2File(
+      charSheetToJson(charSheet),
+      makeFileName(
+        "vtm_charsheet_" + charSheet.profile.name,
+        "json",
+        new Date()
+      )
+    );
   }
 
   return (
@@ -28,9 +34,7 @@ export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
       // title={t('header.save-database')}
       className="tw-py-3 tw-text-lg"
     >
-      {t('actionMenu.save-database')}
+      {t("actionMenu.save-database")}
     </Dropdown.Item>
   );
 }
-
-

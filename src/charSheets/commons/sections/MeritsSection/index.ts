@@ -1,0 +1,1 @@
+export { MeritsSection } from "./MeritsSection";

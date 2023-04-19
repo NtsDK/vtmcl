@@ -1,37 +1,33 @@
-import React, { useEffect } from 'react';
-import {
-  HashRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import DocumentTitle from 'react-document-title';
+import React, { useEffect } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+// eslint-disable-next-line import/order
+import DocumentTitle from "react-document-title";
 
-import './i18n';
+import "./i18n";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './tailwind.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./tailwind.css";
 
 // import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 // import { Settings } from "luxon";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // import { defaultLang } from "./i18nResources";
 
 // import { Header } from "./ui/Header";
-import { ErrorNotification } from './uiLib/ErrorNotification';
-import { CharSheetPage } from './ui/CharSheetPage';
-import { AboutPage } from './ui/AboutPage';
+import { ErrorNotification } from "./uiLib/ErrorNotification";
+import { CharSheetPage } from "./ui/CharSheetPage";
+import { AboutPage } from "./ui/AboutPage";
+import { usePreset, useSettings } from "./services/storageAdapter";
+import { ControlPanel } from "./ui/ControlPanel";
+import { useCharsheetContentI18n } from "./i18nResources";
+import { InstructionPage } from "./ui/InstructionPage";
+import { CURRENT_VERSION } from "./constants";
 
-import { usePreset, useSettings } from './services/storageAdapter';
-import { ControlPanel } from './ui/ControlPanel';
-import { useCharsheetContentI18n } from './i18nResources';
-import { InstructionPage } from './ui/InstructionPage';
-import { CURRENT_VERSION } from './constants';
-
-function App() {
+function App(): JSX.Element {
   const { t } = useTranslation();
   const { settings } = useSettings();
   const { getPresetDisplayName } = usePreset();
@@ -47,10 +43,12 @@ function App() {
   }, [settings]);
 
   return (
-    <DocumentTitle title={t('about.defaultPageTitle', {
-      type: getPresetDisplayName(),
-      version: CURRENT_VERSION
-    })}>
+    <DocumentTitle
+      title={t("about.defaultPageTitle", {
+        type: getPresetDisplayName(),
+        version: CURRENT_VERSION,
+      })}
+    >
       <Router>
         <div className="app">
           <div className="tw-flex">
