@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-import { AbilitiesConfig, AttributesConfig, CharSheet } from "../../domain";
+import { AbilitiesConfig, AttributesConfig, CharSheet } from "../../../domain";
 
 export function willpowerRating(charSheet: CharSheet): number {
   return charSheet.state.willpowerRating;

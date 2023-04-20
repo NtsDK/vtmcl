@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { usePresetSettings } from "../../../../i18nResources";
+import { usePresetSettings } from "../../..";
 import {
   useAbilities,
   useAbilitiesExtension,

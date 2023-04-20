@@ -1,4 +1,4 @@
-import { Abilities, AbilitiesConfig } from "../../domain";
+import { Abilities, AbilitiesConfig } from "../../../domain";
 
 export const talentsArr: (keyof Abilities)[] = [
   "athletics",
@@ -37,7 +37,7 @@ export const knowledgesArr: (keyof Abilities)[] = [
   "technology",
 ];
 
-export const changelingAbilitiesConfig: AbilitiesConfig = [
+export const abilitiesConfig: AbilitiesConfig = [
   {
     header: "talents",
     items: talentsArr,

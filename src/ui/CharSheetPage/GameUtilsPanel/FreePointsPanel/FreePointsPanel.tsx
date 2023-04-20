@@ -2,11 +2,11 @@ import React, { useMemo, useState } from "react";
 import classnames from "classnames";
 import Button from "react-bootstrap/Button";
 import * as R from "ramda";
+import { useTranslation } from "react-i18next";
 
 import { useCharSheetStorage } from "../../../../services/storageAdapter";
 import { CharSheet, FreePointItem } from "../../../../domain";
-import { useTranslation } from "react-i18next";
-import { usePresetSettings } from "../../../../i18nResources";
+import { usePresetSettings } from "../../../../charSheets";
 
 interface FreePointsPanelProps {
   className?: string;

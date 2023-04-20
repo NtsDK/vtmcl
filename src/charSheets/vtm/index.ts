@@ -1,4 +1,21 @@
 import { CheckList } from "./checkListUi";
-export { VtMCharSheet } from "./VtMCharSheet";
+import {
+  abilitiesConfig,
+  knowledgesArr,
+  skillsArr,
+  talentsArr,
+} from "./presetSettings/abilitiesConfig";
+import { freePointsConfig } from "./presetSettings/freePoints";
+import { profileConfig } from "./presetSettings/profileConfig";
+import { CharSheet } from "./CharSheet";
 
-export const VtMCheckList = CheckList;
+export const VtM = {
+  abilitiesConfig,
+  knowledgesArr,
+  skillsArr,
+  talentsArr,
+  freePointsConfig,
+  profileConfig,
+  CheckList,
+  CharSheet,
+};

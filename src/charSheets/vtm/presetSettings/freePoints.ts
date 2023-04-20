@@ -1,15 +1,15 @@
 import * as R from "ramda";
 
-import { CharSheet, FreePointItem } from "../../domain";
-import { attributesConfig } from "./attributesConfig";
+import { CharSheet, FreePointItem } from "../../../domain";
 import {
-  sumAbilities,
   sumAttributes,
+  attributesConfig,
+  sumAbilities,
   sumBackgrounds,
   willpowerRating,
-} from "./freePointCommons";
+} from "../../commons";
 
-import { vampireAbilitiesConfig } from "./vampireAbilitiesConfig";
+import { abilitiesConfig } from "./abilitiesConfig";
 
 function humanity(charSheet: CharSheet): number {
   return charSheet.state.humanity;
@@ -22,7 +22,7 @@ function sumDisciplines(charSheet: CharSheet): number {
   return R.sum(R.pluck("value", charSheet.disciplines));
 }
 
-export const vampireFreePointsConfig: FreePointItem[] = [
+export const freePointsConfig: FreePointItem[] = [
   {
     name: "attribute",
     extractor: sumAttributes(attributesConfig),
@@ -30,7 +30,7 @@ export const vampireFreePointsConfig: FreePointItem[] = [
   },
   {
     name: "ability",
-    extractor: sumAbilities(vampireAbilitiesConfig),
+    extractor: sumAbilities(abilitiesConfig),
     multiplier: 2,
   },
   {

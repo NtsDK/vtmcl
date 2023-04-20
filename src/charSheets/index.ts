@@ -1,7 +1,9 @@
 import { usePreset } from "../services/storageAdapter";
+import { PresetSettings } from "../domain";
 
-import { VtMCharSheet, VtMCheckList } from "./vtm";
-import { CtDCharSheet, CtDCheckList } from "./ctd";
+import { VtM } from "./vtm";
+import { CtD } from "./ctd";
+import { attributesConfig } from "./commons";
 
 type PresetInfo = {
   CharSheet(props: {}): JSX.Element;
@@ -14,15 +16,33 @@ export function usePresetInfo(): PresetInfo {
   switch (preset) {
     case "changeling_v20": {
       return {
-        CharSheet: VtMCharSheet,
-        CheckList: VtMCheckList,
+        CharSheet: VtM.CharSheet,
+        CheckList: VtM.CheckList,
       };
     }
     case "vampire_v20": {
       return {
-        CharSheet: CtDCharSheet,
-        CheckList: CtDCheckList,
+        CharSheet: CtD.CharSheet,
+        CheckList: CtD.CheckList,
       };
     }
   }
+}
+
+export function usePresetSettings(): PresetSettings {
+  const { preset } = usePreset();
+
+  return preset === "vampire_v20"
+    ? {
+        profileConfig: VtM.profileConfig,
+        attributesConfig,
+        abilitiesConfig: VtM.abilitiesConfig,
+        freePointsConfig: VtM.freePointsConfig,
+      }
+    : {
+        profileConfig: CtD.profileConfig,
+        attributesConfig,
+        abilitiesConfig: CtD.abilitiesConfig,
+        freePointsConfig: CtD.freePointsConfig,
+      };
 }

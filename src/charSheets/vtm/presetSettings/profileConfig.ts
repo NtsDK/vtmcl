@@ -1,6 +1,6 @@
-import { ProfileConfig } from "../../domain";
+import { ProfileConfig } from "../../../domain";
 
-export const vampireProfileConfig: ProfileConfig = [
+export const profileConfig: ProfileConfig = [
   ["name", "player", "chronicle", "age", "sex"],
   [
     {

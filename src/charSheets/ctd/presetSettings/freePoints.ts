@@ -1,15 +1,15 @@
 import * as R from "ramda";
 
-import { CharSheet, FreePointItem } from "../../domain";
-import { attributesConfig } from "./attributesConfig";
+import { CharSheet, FreePointItem } from "../../../domain";
 import {
-  sumAbilities,
   sumAttributes,
+  attributesConfig,
+  sumAbilities,
   sumBackgrounds,
   willpowerRating,
-} from "./freePointCommons";
+} from "../../commons";
 
-import { changelingAbilitiesConfig } from "./changelingAbilitiesConfig";
+import { abilitiesConfig } from "./abilitiesConfig";
 
 function glamour(charSheet: CharSheet): number {
   return charSheet.state.glamourRating;
@@ -21,7 +21,7 @@ function sumRealms(charSheet: CharSheet): number {
   return R.sum(R.values(charSheet.realms));
 }
 
-export const changelingFreePointsConfig: FreePointItem[] = [
+export const freePointsConfig: FreePointItem[] = [
   {
     name: "attribute",
     extractor: sumAttributes(attributesConfig),
@@ -29,7 +29,7 @@ export const changelingFreePointsConfig: FreePointItem[] = [
   },
   {
     name: "ability",
-    extractor: sumAbilities(changelingAbilitiesConfig),
+    extractor: sumAbilities(abilitiesConfig),
     multiplier: 2,
   },
   {

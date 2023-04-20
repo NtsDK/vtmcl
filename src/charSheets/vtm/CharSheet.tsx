@@ -32,9 +32,9 @@ import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
 import { RitualsSection } from "./uiSections/RitualsSection";
 import { StatusSection } from "./uiSections/StatusSection";
 
-interface VtMCharSheetProps {}
+interface CharSheetProps {}
 
-export function VtMCharSheet(props: VtMCharSheetProps): JSX.Element {
+export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const otherTraitsService = useOtherTraits();

@@ -41,3 +41,6 @@ export type {
   CheckNumberResult,
 } from "./checkListLogic/characterCheckGeneric";
 export { checkArrSumFilled } from "./checkListLogic/characterCheckGeneric";
+// presetSettings
+export * from "./presetSettings/attributesConfig";
+export * from "./presetSettings/freePointCommons";

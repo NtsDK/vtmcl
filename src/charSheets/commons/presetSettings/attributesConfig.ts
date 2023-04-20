@@ -1,4 +1,4 @@
-import { Attributes, AttributesConfig } from "../../domain";
+import { Attributes, AttributesConfig } from "../../../domain";
 
 export const physicalAttributesArr: (keyof Attributes)[] = [
   "strength",

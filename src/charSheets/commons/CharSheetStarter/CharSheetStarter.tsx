@@ -3,7 +3,7 @@ import DocumentTitle from "react-document-title";
 import { useTranslation } from "react-i18next";
 
 import { CURRENT_VERSION } from "../../../constants";
-import { usePresetSettings, useResource } from "../../../i18nResources";
+import { useResource } from "../../../i18nResources";
 import {
   useAbilities,
   useAbilitiesExtension,
@@ -17,6 +17,7 @@ import { AttributeSection } from "../uiSections/AttributeSection";
 import { PresetSelect } from "../uiSections/PresetSelect";
 import { ProfileSection } from "../uiSections/ProfileSection";
 import { SectionHeader } from "../uiPrimitives/SectionHeader";
+import { usePresetSettings } from "../..";
 
 interface CharSheetStarterProps {}
 

@@ -32,9 +32,9 @@ import {
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { StatusSection } from "./uiSections/StatusSection";
 
-interface CtDCharSheetProps {}
+interface CharSheetProps {}
 
-export function CtDCharSheet(props: CtDCharSheetProps): JSX.Element {
+export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
