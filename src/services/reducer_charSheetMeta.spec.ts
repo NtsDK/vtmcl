@@ -1,9 +1,9 @@
 import * as R from "ramda";
 import { CharSheet } from "../domain";
-import { charSheetMetaActions } from "../services/actions_charSheetMeta";
-import { CompositeReducer } from "../services/CompositeReducer";
-import { defaultBackgroundUrl } from "../services/defaultBackground";
-import { initialCharSheet } from "../services/initialValues";
+import { charSheetMetaActions } from "./actions_charSheetMeta";
+import { CompositeReducer } from "./CompositeReducer";
+import { defaultBackgroundUrl } from "./defaultBackground";
+import { initialCharSheet } from "./initialValues";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(
   charSheetMetaActions

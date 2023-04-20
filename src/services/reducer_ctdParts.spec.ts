@@ -1,8 +1,8 @@
 import * as R from "ramda";
 import { CharSheet } from "../domain";
-import { ctdPartActions } from "../services/actions_ctdParts";
-import { CompositeReducer } from "../services/CompositeReducer";
-import { initialCharSheet } from "../services/initialValues";
+import { ctdPartActions } from "./actions_ctdParts";
+import { CompositeReducer } from "./CompositeReducer";
+import { initialCharSheet } from "./initialValues";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(ctdPartActions);
 

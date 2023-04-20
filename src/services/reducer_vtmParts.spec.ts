@@ -1,8 +1,8 @@
 import * as R from "ramda";
 import { CharSheet } from "../domain";
-import { vtmPartActions } from "../services/actions_vtmParts";
-import { CompositeReducer } from "../services/CompositeReducer";
-import { initialCharSheet } from "../services/initialValues";
+import { vtmPartActions } from "./actions_vtmParts";
+import { CompositeReducer } from "./CompositeReducer";
+import { initialCharSheet } from "./initialValues";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(vtmPartActions);
 

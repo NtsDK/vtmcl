@@ -1,9 +1,9 @@
 import * as R from "ramda";
 import { CharSheet } from "../domain";
-import { commonPartActions } from "../services/actions_commonParts";
-import { CompositeReducer } from "../services/CompositeReducer";
-import { initialCharSheet } from "../services/initialValues";
-import { StringValueNames } from "../services/typesAndUtils";
+import { commonPartActions } from "./actions_commonParts";
+import { CompositeReducer } from "./CompositeReducer";
+import { initialCharSheet } from "./initialValues";
+import { StringValueNames } from "./typesAndUtils";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(commonPartActions);
 
