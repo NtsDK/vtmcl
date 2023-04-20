@@ -2,10 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import { HumanitySection } from "./HumanitySection";
-import { BloodpoolSection } from "./BloodpoolSection";
-import { WeaknessSection } from "./WeaknessSection";
-import "./StatusSection.css";
 import {
   useLimits,
   useMeritsNFlaws,
@@ -18,9 +14,13 @@ import {
   FlawsSection,
   HealthSection,
   MeritsSection,
-  Subheader,
   WillSection,
-} from "../../../commons";
+} from "../../../commons/uiSections";
+import { Subheader } from "../../../commons/uiPrimitives";
+
+import { HumanitySection } from "./HumanitySection";
+import { BloodpoolSection } from "./BloodpoolSection";
+import { WeaknessSection } from "./WeaknessSection";
 
 interface StatusSectionProps {
   className?: string;

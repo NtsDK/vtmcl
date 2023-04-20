@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./WeaknessSection.css";
 import { StatusService } from "../../../../../application/ports";
-import { LineSection } from "../../../../commons";
+import { LineSection } from "../../../../commons/uiPrimitives";
 
 interface WeaknessSectionProps extends StatusService {
   className?: string;

@@ -2,20 +2,20 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import "./StatusSection.css";
+import { useStatus, useHealth } from "../../../../services/storageAdapter";
+import {
+  ExperienceSection,
+  WillSection,
+  HealthSection,
+} from "../../../commons/uiSections";
+import { Subheader } from "../../../commons/uiPrimitives";
+
 import { GlamourSection } from "./GlamourSection";
 import { BanalitySection } from "./BanalitySection";
 import { NightmareSection } from "./NightmareSection";
 import { AntitesisSection } from "./AntitesisSection";
 import { BirthrightsFrailtiesSection } from "./BirthrightsFrailtiesSection";
 import { ThresholdsSection } from "./ThresholdsSection";
-import { useStatus, useHealth } from "../../../../services/storageAdapter";
-import {
-  Subheader,
-  ExperienceSection,
-  WillSection,
-  HealthSection,
-} from "../../../commons";
 
 interface StatusSectionProps {
   className?: string;

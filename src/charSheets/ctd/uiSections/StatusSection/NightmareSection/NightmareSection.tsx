@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./NightmareSection.css";
 import { StatusService } from "../../../../../application/ports";
-import { RangeInput2 } from "../../../../commons";
+import { RangeInput2 } from "../../../../commons/uiPrimitives";
 
 interface NightmareSectionProps extends StatusService {
   className?: string;

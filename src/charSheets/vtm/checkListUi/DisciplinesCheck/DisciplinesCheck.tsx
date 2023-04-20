@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { useDisciplines } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons";
+import { CheckListItem } from "../../../commons/checkList";
 import {
   checkDisciplines,
   EXPECTED_DISCIPLINE_DOTS,

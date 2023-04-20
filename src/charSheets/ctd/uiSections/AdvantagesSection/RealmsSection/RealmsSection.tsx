@@ -6,7 +6,7 @@ import { Realms } from "../../../../../domain";
 
 import "./RealmsSection.css";
 import { RealmsService } from "../../../../../application/ports";
-import { RangeInput2 } from "../../../../commons";
+import { RangeInput2 } from "../../../../commons/uiPrimitives";
 
 interface RealmsSectionProps extends RealmsService {
   className?: string;

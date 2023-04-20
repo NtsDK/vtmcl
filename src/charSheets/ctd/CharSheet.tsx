@@ -16,6 +16,8 @@ import {
   CharSheetBody,
   SectionHeader,
   Subheader,
+} from "../commons/uiPrimitives";
+import {
   MeritsSection,
   FlawsSection,
   OtherTraitsSection,
@@ -26,8 +28,8 @@ import {
   CharacterImageSection,
   AppearanceDescriptionSection,
   NotesSection,
-  CharSheetStarter,
-} from "../commons";
+} from "../commons/uiSections";
+import { CharSheetStarter } from "../commons/uiSections/CharSheetStarter";
 
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { StatusSection } from "./uiSections/StatusSection";

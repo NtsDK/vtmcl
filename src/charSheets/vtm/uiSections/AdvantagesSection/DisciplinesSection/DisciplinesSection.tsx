@@ -8,7 +8,7 @@ import {
   DisciplinesService,
   LimitService,
 } from "../../../../../application/ports";
-import { NameNumberSection } from "../../../../commons";
+import { NameNumberSection } from "../../../../commons/uiPrimitives";
 
 interface DisciplinesSectionProps extends DisciplinesService, LimitService {
   disciplineOptions: OptionGroup[];

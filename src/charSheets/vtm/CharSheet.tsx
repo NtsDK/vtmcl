@@ -13,19 +13,18 @@ import {
   usePossessions,
   useRituals,
 } from "../../services/storageAdapter";
+import { CharSheetBody, SectionHeader } from "../commons/uiPrimitives";
 import {
   AlliesAndContactsSection,
   AppearanceDescriptionSection,
   CharacterImageSection,
   CharHistorySection,
-  CharSheetBody,
   CharSheetStarter,
   GoalsSection,
   NotesSection,
   OtherTraitsSection,
   PossessionsSection,
-  SectionHeader,
-} from "../commons";
+} from "../commons/uiSections";
 
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";

@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { useVirtues, useStatus } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons";
+import { CheckListItem } from "../../../commons/checkList";
 import { checkHumanity } from "../../checkListLogic/vampireCharacterChecks";
 
 interface HumanityCheckProps {

@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import { OptionGroup, useResource } from "../../../../i18nResources";
 import { RitualsService } from "../../../../application/ports";
-import { NameStringSection } from "../../../commons";
+import { NameStringSection } from "../../../commons/uiPrimitives";
 
 interface RitualsSectionProps extends RitualsService {
   ritualOptions: OptionGroup[];

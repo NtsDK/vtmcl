@@ -3,7 +3,7 @@ import { PresetSettings } from "../domain";
 
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
-import { attributesConfig } from "./commons";
+import { attributesConfig } from "./commons/presetSettings";
 
 type PresetInfo = {
   CharSheet(props: {}): JSX.Element;

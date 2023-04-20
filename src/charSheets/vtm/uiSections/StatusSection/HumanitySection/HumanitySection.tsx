@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./HumanitySection.css";
 import { StatusService } from "../../../../../application/ports";
-import { RangeInput2, SelectButton } from "../../../../commons";
+import { RangeInput2, SelectButton } from "../../../../commons/uiPrimitives";
 
 interface HumanitySectionProps extends StatusService {
   pathOptions: string[];

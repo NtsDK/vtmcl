@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { StatusService } from "../../../../../application/ports";
-import { TextAreaSection } from "../../../../commons";
+import { TextAreaSection } from "../../../../commons/uiPrimitives";
 
 import "./BirthrightsFrailtiesSection.css";
 

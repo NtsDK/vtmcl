@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { useArts } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons";
+import { CheckListItem } from "../../../commons/checkList";
 import {
   checkArts,
   EXPECTED_ART_DOTS,

@@ -5,7 +5,7 @@ import {
   AbilitiesDotLimitCheck,
   AttributesCheck,
   BackgroundsCheck,
-} from "../../commons";
+} from "../../commons/checkList";
 
 import { BloodpoolCheck } from "./BloodpoolCheck";
 import { DisciplinesCheck } from "./DisciplinesCheck";

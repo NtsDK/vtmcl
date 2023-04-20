@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import DocumentTitle from "react-document-title";
 import { useTranslation } from "react-i18next";
 
-import { CURRENT_VERSION } from "../../../constants";
-import { useResource } from "../../../i18nResources";
+import { CURRENT_VERSION } from "../../../../constants";
+import { useResource } from "../../../../i18nResources";
 import {
   useAbilities,
   useAbilitiesExtension,
@@ -11,13 +11,13 @@ import {
   useLimits,
   usePreset,
   useProfile,
-} from "../../../services/storageAdapter";
-import { AbilitiesSection } from "../uiSections/AbilitiesSection";
-import { AttributeSection } from "../uiSections/AttributeSection";
-import { PresetSelect } from "../uiSections/PresetSelect";
-import { ProfileSection } from "../uiSections/ProfileSection";
-import { SectionHeader } from "../uiPrimitives/SectionHeader";
-import { usePresetSettings } from "../..";
+} from "../../../../services/storageAdapter";
+import { AbilitiesSection } from "../AbilitiesSection";
+import { AttributeSection } from "../AttributeSection";
+import { PresetSelect } from "../PresetSelect";
+import { ProfileSection } from "../ProfileSection";
+import { SectionHeader } from "../../uiPrimitives/SectionHeader";
+import { usePresetSettings } from "../../..";
 
 interface CharSheetStarterProps {}
 

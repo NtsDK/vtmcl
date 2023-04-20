@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { useStatus } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons";
+import { CheckListItem } from "../../../commons/checkList";
 import {
   checkGlamour,
   EXPECTED_GLAMOUR_DOTS,

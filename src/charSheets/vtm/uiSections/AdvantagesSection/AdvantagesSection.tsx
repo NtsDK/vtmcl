@@ -11,7 +11,8 @@ import {
   useLimits,
   useVirtues,
 } from "../../../../services/storageAdapter";
-import { BackgroundsSection, Subheader } from "../../../commons";
+import { Subheader } from "../../../commons/uiPrimitives";
+import { BackgroundsSection } from "../../../commons/uiSections";
 
 interface AdvantagesSectionProps {
   className?: string;

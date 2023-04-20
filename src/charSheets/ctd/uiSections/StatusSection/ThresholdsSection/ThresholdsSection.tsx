@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./ThresholdsSection.css";
 import { StatusService } from "../../../../../application/ports";
-import { TextAreaSection } from "../../../../commons";
+import { TextAreaSection } from "../../../../commons/uiPrimitives";
 
 interface ThresholdsSectionProps extends StatusService {
   className?: string;

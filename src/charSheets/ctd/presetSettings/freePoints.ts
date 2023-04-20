@@ -7,7 +7,7 @@ import {
   sumAbilities,
   sumBackgrounds,
   willpowerRating,
-} from "../../commons";
+} from "../../commons/presetSettings";
 
 import { abilitiesConfig } from "./abilitiesConfig";
 

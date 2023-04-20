@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./ArtsSection.css";
 import { ArtsService } from "../../../../../application/ports";
 import { Limits } from "../../../../../domain";
-import { NameNumberSection } from "../../../../commons";
+import { NameNumberSection } from "../../../../commons/uiPrimitives";
 
 interface ArtsSectionProps extends ArtsService {
   artOptions: string[];

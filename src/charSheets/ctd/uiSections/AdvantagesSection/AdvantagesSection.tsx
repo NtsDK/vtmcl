@@ -11,7 +11,8 @@ import {
   useRealms,
 } from "../../../../services/storageAdapter";
 import { useResource } from "../../../../i18nResources";
-import { Subheader, BackgroundsSection } from "../../../commons";
+import { Subheader } from "../../../commons/uiPrimitives";
+import { BackgroundsSection } from "../../../commons/uiSections";
 
 interface AdvantagesSectionProps {
   className?: string;

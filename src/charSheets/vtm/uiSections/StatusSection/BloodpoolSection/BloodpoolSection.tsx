@@ -5,7 +5,7 @@ import classnames from "classnames";
 import "./BloodpoolSection.css";
 import { StatusService } from "../../../../../application/ports";
 import { Limits } from "../../../../../domain";
-import { RangeInput2 } from "../../../../commons";
+import { RangeInput2 } from "../../../../commons/uiPrimitives";
 
 interface BloodpoolSectionProps extends StatusService {
   limits: Limits;

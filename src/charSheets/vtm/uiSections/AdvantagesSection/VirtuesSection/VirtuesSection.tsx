@@ -6,7 +6,7 @@ import { Virtues } from "../../../../../domain";
 
 import "./VirtuesSection.css";
 import { VirtuesService } from "../../../../../application/ports";
-import { RangeInput2 } from "../../../../commons";
+import { RangeInput2 } from "../../../../commons/uiPrimitives";
 
 interface VirtuesSectionProps extends VirtuesService {
   className?: string;

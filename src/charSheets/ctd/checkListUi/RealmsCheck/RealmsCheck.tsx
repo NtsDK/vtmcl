@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { useRealms } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons";
+import { CheckListItem } from "../../../commons/checkList";
 import {
   checkRealms,
   EXPECTED_REALM_DOTS,
