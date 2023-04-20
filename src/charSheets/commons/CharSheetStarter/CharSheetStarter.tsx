@@ -12,11 +12,11 @@ import {
   usePreset,
   useProfile,
 } from "../../../services/storageAdapter";
-import { AbilitiesSection } from "../sections/AbilitiesSection";
-import { AttributeSection } from "../sections/AttributeSection";
-import { PresetSelect } from "../sections/PresetSelect";
-import { ProfileSection } from "../sections/ProfileSection";
-import { SectionHeader } from "../primitives/SectionHeader";
+import { AbilitiesSection } from "../uiSections/AbilitiesSection";
+import { AttributeSection } from "../uiSections/AttributeSection";
+import { PresetSelect } from "../uiSections/PresetSelect";
+import { ProfileSection } from "../uiSections/ProfileSection";
+import { SectionHeader } from "../uiPrimitives/SectionHeader";
 
 interface CharSheetStarterProps {}
 

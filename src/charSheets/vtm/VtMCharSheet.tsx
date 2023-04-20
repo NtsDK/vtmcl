@@ -1,6 +1,6 @@
 import React from "react";
-
 import { useTranslation } from "react-i18next";
+
 import { useResource } from "../../i18nResources";
 import {
   useAlliesAndContacts,
@@ -27,14 +27,14 @@ import {
   SectionHeader,
 } from "../commons";
 
-import { AdvantagesSection } from "./sections/AdvantagesSection";
-import { DisciplinePathsSection } from "./sections/DisciplinePathsSection";
-import { RitualsSection } from "./sections/RitualsSection";
-import { StatusSection } from "./sections/StatusSection";
+import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
+import { RitualsSection } from "./uiSections/RitualsSection";
+import { StatusSection } from "./uiSections/StatusSection";
 
 interface VtMCharSheetProps {}
 
-export function VtMCharSheet(props: VtMCharSheetProps) {
+export function VtMCharSheet(props: VtMCharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const otherTraitsService = useOtherTraits();

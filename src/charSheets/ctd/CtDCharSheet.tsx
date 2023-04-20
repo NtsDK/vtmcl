@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+
 import { useResource } from "../../i18nResources";
 import {
   useAlliesAndContacts,
@@ -27,12 +28,13 @@ import {
   NotesSection,
   CharSheetStarter,
 } from "../commons";
-import { AdvantagesSection } from "./sections/AdvantagesSection";
-import { StatusSection } from "./sections/StatusSection";
+
+import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+import { StatusSection } from "./uiSections/StatusSection";
 
 interface CtDCharSheetProps {}
 
-export function CtDCharSheet(props: CtDCharSheetProps) {
+export function CtDCharSheet(props: CtDCharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();

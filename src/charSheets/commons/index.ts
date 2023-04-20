@@ -1,38 +1,43 @@
 export { CharSheetStarter } from "./CharSheetStarter";
 // sections
-export { AbilitiesSection } from "./sections/AbilitiesSection";
-export { AlliesAndContactsSection } from "./sections/AlliesAndContactsSection";
-export { AppearanceDescriptionSection } from "./sections/AppearanceDescriptionSection";
-export { AttributeSection } from "./sections/AttributeSection";
-export { BackgroundsSection } from "./sections/BackgroundsSection";
-export { CharacterImageSection } from "./sections/CharacterImageSection";
-export { CharHistorySection } from "./sections/CharHistorySection";
-export { ExperienceSection } from "./sections/ExperienceSection";
-export { FlawsSection } from "./sections/FlawsSection";
-export { GoalsSection } from "./sections/GoalsSection";
-export { HealthSection } from "./sections/HealthSection";
-export { MeritsSection } from "./sections/MeritsSection";
-export { NotesSection } from "./sections/NotesSection";
-export { OtherTraitsSection } from "./sections/OtherTraitsSection";
-export { PossessionsSection } from "./sections/PossessionsSection";
-export { PresetSelect } from "./sections/PresetSelect";
-export { ProfileSection } from "./sections/ProfileSection";
-export { WillSection } from "./sections/WillSection";
+export { AbilitiesSection } from "./uiSections/AbilitiesSection";
+export { AlliesAndContactsSection } from "./uiSections/AlliesAndContactsSection";
+export { AppearanceDescriptionSection } from "./uiSections/AppearanceDescriptionSection";
+export { AttributeSection } from "./uiSections/AttributeSection";
+export { BackgroundsSection } from "./uiSections/BackgroundsSection";
+export { CharacterImageSection } from "./uiSections/CharacterImageSection";
+export { CharHistorySection } from "./uiSections/CharHistorySection";
+export { ExperienceSection } from "./uiSections/ExperienceSection";
+export { FlawsSection } from "./uiSections/FlawsSection";
+export { GoalsSection } from "./uiSections/GoalsSection";
+export { HealthSection } from "./uiSections/HealthSection";
+export { MeritsSection } from "./uiSections/MeritsSection";
+export { NotesSection } from "./uiSections/NotesSection";
+export { OtherTraitsSection } from "./uiSections/OtherTraitsSection";
+export { PossessionsSection } from "./uiSections/PossessionsSection";
+export { PresetSelect } from "./uiSections/PresetSelect";
+export { ProfileSection } from "./uiSections/ProfileSection";
+export { WillSection } from "./uiSections/WillSection";
 // primitives
-export { CharSheetBody } from "./primitives/CharSheetBody";
-export { SectionHeader } from "./primitives/SectionHeader";
-export { LineSection } from "./primitives/LineSection";
-export { RatingPoolSection } from "./primitives/RatingPoolSection";
-export { Subheader } from "./primitives/Subheader";
-export { RangeInput2 } from "./primitives/RangeInput2";
-export { SelectButton } from "./primitives/SelectButton";
-export { NameStringSection } from "./primitives/NameStringSection";
-export { NameNumberSection } from "./primitives/NameNumberSection";
-export { TextAreaSection } from "./primitives/TextAreaSection";
+export { CharSheetBody } from "./uiPrimitives/CharSheetBody";
+export { SectionHeader } from "./uiPrimitives/SectionHeader";
+export { LineSection } from "./uiPrimitives/LineSection";
+export { RatingPoolSection } from "./uiPrimitives/RatingPoolSection";
+export { Subheader } from "./uiPrimitives/Subheader";
+export { RangeInput2 } from "./uiPrimitives/RangeInput2";
+export { SelectButton } from "./uiPrimitives/SelectButton";
+export { NameStringSection } from "./uiPrimitives/NameStringSection";
+export { NameNumberSection } from "./uiPrimitives/NameNumberSection";
+export { TextAreaSection } from "./uiPrimitives/TextAreaSection";
 // checklist
-export { CheckListBadge } from "./checkListPrimitives/CheckListBadge";
-export { CheckListItem } from "./checkListPrimitives/CheckListItem";
-export { AbilitiesCheck } from "./checkListCommons/AbilitiesCheck";
-export { AbilitiesDotLimitCheck } from "./checkListCommons/AbilitiesDotLimitCheck";
-export { AttributesCheck } from "./checkListCommons/AttributesCheck";
-export { BackgroundsCheck } from "./checkListCommons/BackgroundsCheck";
+export { CheckListBadge } from "./checkListUiPrimitives/CheckListBadge";
+export { CheckListItem } from "./checkListUiPrimitives/CheckListItem";
+export { AbilitiesCheck } from "./checkListUiCommons/AbilitiesCheck";
+export { AbilitiesDotLimitCheck } from "./checkListUiCommons/AbilitiesDotLimitCheck";
+export { AttributesCheck } from "./checkListUiCommons/AttributesCheck";
+export { BackgroundsCheck } from "./checkListUiCommons/BackgroundsCheck";
+export type {
+  CheckArrResult,
+  CheckNumberResult,
+} from "./checkListLogic/characterCheckGeneric";
+export { checkArrSumFilled } from "./checkListLogic/characterCheckGeneric";
