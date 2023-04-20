@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as R from "ramda";
 import classnames from "classnames";
 
 import "./CharacterCheckList.css";
-import { usePreset } from "../../../../services/storageAdapter";
-import { CtDCheckList, VtMCheckList } from "../../../../charSheets";
+import { usePresetInfo } from "../../../../charSheets";
 
 interface CharacterCheckListProps {
   className?: string;
@@ -14,13 +13,11 @@ export function CharacterCheckList(
   props: CharacterCheckListProps
 ): JSX.Element {
   const { className } = props;
-
-  const { preset } = usePreset();
+  const { CheckList } = usePresetInfo();
 
   return (
     <div className={classnames("CharacterCheckList tw-max-w-sm", className)}>
-      {preset === "vampire_v20" && <VtMCheckList />}
-      {preset === "changeling_v20" && <CtDCheckList />}
+      <CheckList />
     </div>
   );
 }
