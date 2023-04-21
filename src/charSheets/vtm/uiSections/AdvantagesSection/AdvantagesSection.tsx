@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { VirtuesSection } from "./VirtuesSection";
 import { DisciplinesSection } from "./DisciplinesSection";
-import { useResource } from "../../../../i18nResources";
+// import { useResource, useVtMResource } from "../../../../i18nResources";
 import {
   useBackgrounds,
   useDisciplines,
@@ -13,6 +13,7 @@ import {
 } from "../../../../services/storageAdapter";
 import { Subheader } from "../../../commons/uiPrimitives";
 import { BackgroundsSection } from "../../../commons/uiSections";
+import { useVtMResource } from "../../dropdownContent";
 
 interface AdvantagesSectionProps {
   className?: string;
@@ -22,7 +23,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { disciplineOptions, backgroundOptions } = useResource();
+  const { backgroundOptions, disciplineOptions } = useVtMResource();
   const { limits } = useLimits();
   const disciplinesService = useDisciplines();
   const backgroundsService = useBackgrounds();

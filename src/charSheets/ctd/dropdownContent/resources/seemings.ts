@@ -5,7 +5,7 @@ import {
   generateEnRuEntities,
   generateSequence,
   makeTranslateFunction,
-} from "../utils";
+} from "../../../commons/dropdownContent";
 
 const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, seemingsSource)),

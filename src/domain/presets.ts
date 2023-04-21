@@ -54,9 +54,23 @@ export type FreePointItem = {
   multiplier: number;
 };
 
+export type OptionGroup = {
+  groupName: string;
+  arr: string[];
+};
+
+export interface CommonResources {
+  backgroundOptions: string[];
+  flawOptions: OptionGroup[];
+  meritOptions: OptionGroup[];
+}
+
+export type Resources = Record<string, string[] | OptionGroup[]>;
+
 export interface PresetSettings {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
   freePointsConfig: FreePointItem[];
+  resources: Resources;
 }

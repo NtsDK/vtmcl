@@ -3,10 +3,10 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { NameSection } from "../../uiPrimitives/NameSection";
-import { OptionGroup, useResource } from "../../../../i18nResources";
 
 import "./MeritsSection.css";
 import { MeritsNFlawsService } from "../../../../application/ports";
+import { OptionGroup } from "../../../../domain";
 
 interface MeritsSectionProps extends MeritsNFlawsService {
   meritOptions: OptionGroup[];

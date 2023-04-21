@@ -1,14 +1,13 @@
 import React, { memo } from "react";
-import "./DisciplinesSection.css";
-
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { OptionGroup, useResource } from "../../../../../i18nResources";
+
 import {
   DisciplinesService,
   LimitService,
 } from "../../../../../application/ports";
 import { NameNumberSection } from "../../../../commons/uiPrimitives";
+import { OptionGroup } from "../../../../../domain";
 
 interface DisciplinesSectionProps extends DisciplinesService, LimitService {
   disciplineOptions: OptionGroup[];

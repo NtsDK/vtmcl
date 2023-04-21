@@ -8,7 +8,6 @@ import {
   useStatus,
   useHealth,
 } from "../../../../services/storageAdapter";
-import { useResource } from "../../../../i18nResources";
 import {
   ExperienceSection,
   FlawsSection,
@@ -17,6 +16,7 @@ import {
   WillSection,
 } from "../../../commons/uiSections";
 import { Subheader } from "../../../commons/uiPrimitives";
+import { useVtMResource } from "../../dropdownContent";
 
 import { HumanitySection } from "./HumanitySection";
 import { BloodpoolSection } from "./BloodpoolSection";
@@ -31,7 +31,7 @@ export function StatusSection(props: StatusSectionProps) {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
-  const { meritOptions, flawOptions, pathOptions } = useResource();
+  const { meritOptions, flawOptions, pathOptions } = useVtMResource();
   const statusService = useStatus();
   const healthService = useHealth();
   const { limits } = useLimits();

@@ -3,7 +3,11 @@ import * as R from "ramda";
 
 import { pathsSource } from "./pathsSource";
 
-import { generateSequence, makeTranslateFunction, sortStrArr } from "../utils";
+import {
+  generateSequence,
+  makeTranslateFunction,
+  sortStrArr,
+} from "../../../commons/dropdownContent";
 
 const ajv = new Ajv({
   allErrors: true,

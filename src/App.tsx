@@ -23,7 +23,6 @@ import { CharSheetPage } from "./ui/CharSheetPage";
 import { AboutPage } from "./ui/AboutPage";
 import { usePreset, useSettings } from "./services/storageAdapter";
 import { ControlPanel } from "./ui/ControlPanel";
-import { useCharsheetContentI18n } from "./i18nResources";
 import { InstructionPage } from "./ui/InstructionPage";
 import { CURRENT_VERSION } from "./constants";
 
@@ -31,8 +30,6 @@ function App(): JSX.Element {
   const { t } = useTranslation();
   const { settings } = useSettings();
   const { getPresetDisplayName } = usePreset();
-
-  useCharsheetContentI18n();
 
   useEffect(() => {
     document.body.style.backgroundColor = settings.backgroundColor;

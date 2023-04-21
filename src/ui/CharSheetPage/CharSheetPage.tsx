@@ -1,6 +1,6 @@
 import React from "react";
 
-import { usePresetInfo } from "../../charSheets";
+import { usePresetInfo, useCharsheetContentI18n } from "../../charSheets";
 
 import { GameUtilsPanel } from "./GameUtilsPanel";
 
@@ -8,6 +8,8 @@ interface CharSheetPageProps {}
 
 export function CharSheetPage(props: CharSheetPageProps): JSX.Element {
   const { CharSheet } = usePresetInfo();
+
+  useCharsheetContentI18n();
 
   return (
     <main className="CharSheetPage tw-flex">

@@ -1,6 +1,4 @@
 import * as R from "ramda";
-export * from "./EnRuEntity";
-export * from "./IdEnRuEntity";
 
 export function* generateSequence(
   rowNumber: number,

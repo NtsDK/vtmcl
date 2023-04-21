@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { useResource } from "../../i18nResources";
 import {
   useAlliesAndContacts,
   useAppearance,
@@ -25,6 +24,7 @@ import {
   OtherTraitsSection,
   PossessionsSection,
 } from "../commons/uiSections";
+import { useVtMResource } from "./dropdownContent";
 
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
@@ -48,7 +48,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const ritualsService = useRituals();
 
   const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
-    useResource();
+    useVtMResource();
 
   return (
     <>

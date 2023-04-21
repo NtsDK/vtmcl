@@ -10,9 +10,9 @@ import {
   useLimits,
   useRealms,
 } from "../../../../services/storageAdapter";
-import { useResource } from "../../../../i18nResources";
 import { Subheader } from "../../../commons/uiPrimitives";
 import { BackgroundsSection } from "../../../commons/uiSections";
+import { useCtDResource } from "../../dropdownContent";
 
 interface AdvantagesSectionProps {
   className?: string;
@@ -22,13 +22,12 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { backgroundOptions } = useResource();
   const { limits } = useLimits();
   const backgroundsService = useBackgrounds();
   const artsService = useArts();
   const realmsService = useRealms();
 
-  const { artOptions } = useResource();
+  const { artOptions, backgroundOptions } = useCtDResource();
 
   return (
     <div

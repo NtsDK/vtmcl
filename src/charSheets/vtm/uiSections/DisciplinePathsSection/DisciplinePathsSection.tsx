@@ -1,10 +1,9 @@
 import React, { memo } from "react";
-
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { OptionGroup } from "../../../../i18nResources";
+
 import { DisciplinePathsService } from "../../../../application/ports";
-import { Limits } from "../../../../domain";
+import { Limits, OptionGroup } from "../../../../domain";
 import { NameNumberSection } from "../../../commons/uiPrimitives";
 
 interface DisciplinePathsSectionProps extends DisciplinePathsService {

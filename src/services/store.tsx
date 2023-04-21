@@ -69,7 +69,7 @@ import { vtmPartActions } from "./actions_vtmParts";
 import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
 
-interface StateStore
+export interface StateStore
   extends PresetService,
     ProfileService,
     AttributesService,

@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { useResource } from "../../i18nResources";
 import {
   useAlliesAndContacts,
   useAppearance,
@@ -31,6 +30,7 @@ import {
 } from "../commons/uiSections";
 import { CharSheetStarter } from "../commons/uiSections/CharSheetStarter";
 
+import { useCtDResource } from "./dropdownContent";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { StatusSection } from "./uiSections/StatusSection";
 
@@ -40,7 +40,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
-  const { meritOptions, flawOptions } = useResource();
+  const { meritOptions, flawOptions } = useCtDResource();
   const { limits } = useLimits();
 
   const otherTraitsService = useOtherTraits();

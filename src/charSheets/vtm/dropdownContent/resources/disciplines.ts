@@ -8,7 +8,7 @@ import {
   generateSequence,
   makeTranslateFunction,
   sortStrArr,
-} from "../utils";
+} from "../../../commons/dropdownContent";
 
 const ajv = new Ajv({
   allErrors: true,

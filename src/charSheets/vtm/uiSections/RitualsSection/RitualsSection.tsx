@@ -1,10 +1,10 @@
 import React, { memo } from "react";
-
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { OptionGroup, useResource } from "../../../../i18nResources";
+
 import { RitualsService } from "../../../../application/ports";
 import { NameStringSection } from "../../../commons/uiPrimitives";
+import { OptionGroup } from "../../../../domain";
 
 interface RitualsSectionProps extends RitualsService {
   ritualOptions: OptionGroup[];

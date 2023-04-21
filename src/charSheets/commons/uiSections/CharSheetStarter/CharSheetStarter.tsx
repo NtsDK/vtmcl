@@ -3,7 +3,7 @@ import DocumentTitle from "react-document-title";
 import { useTranslation } from "react-i18next";
 
 import { CURRENT_VERSION } from "../../../../constants";
-import { useResource } from "../../../../i18nResources";
+// import { useResource } from "../../../../i18nResources";
 import {
   useAbilities,
   useAbilitiesExtension,
@@ -46,7 +46,7 @@ export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
   const { limits } = useLimits();
   const abilitiesExtensionService = useAbilitiesExtension();
   const presetSettings = usePresetSettings();
-  const resources = useResource();
+  // const resources = useResource();
   const presetService = usePreset();
 
   return (
@@ -63,7 +63,7 @@ export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
       </SectionHeader>
       <ProfileSection
         {...profileService}
-        resources={resources}
+        resources={presetSettings.resources}
         profileConfig={presetSettings.profileConfig}
         className="tw-mb-3 tw-mt-4"
       />

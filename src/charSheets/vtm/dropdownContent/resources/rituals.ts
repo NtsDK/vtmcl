@@ -1,14 +1,20 @@
 import Ajv, { JSONSchemaType } from "ajv";
 import * as R from "ramda";
-
-import { ritualsSource, ritualGroupsSource } from "./ritualsSource";
-
 import {
-  generateIdEnRuEntities,
   generateSequence,
   makeTranslateFunction,
   sortStrArr,
-} from "../utils";
+  generateIdEnRuEntities,
+} from "../../../commons/dropdownContent";
+
+import { ritualsSource, ritualGroupsSource } from "./ritualsSource";
+
+// import {
+//   generateIdEnRuEntities,
+//   generateSequence,
+//   makeTranslateFunction,
+//   sortStrArr,
+// } from "../utils";
 
 const ajv = new Ajv({
   allErrors: true,
