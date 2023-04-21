@@ -68,6 +68,7 @@ export interface CommonResources {
 export type Resources = Record<string, string[] | OptionGroup[]>;
 
 export interface PresetSettings {
+  displayName: string;
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;

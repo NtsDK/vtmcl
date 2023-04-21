@@ -37,7 +37,7 @@ export function useCharSheetStorage(): CharSheetStorageService {
   return R.pick(["setCharSheet", "getCharSheet"], useStore());
 }
 export function usePreset(): PresetService {
-  return R.pick(["preset", "setPreset", "getPresetDisplayName"], useStore());
+  return R.pick(["preset", "setPreset"], useStore());
 }
 export function useProfile(): ProfileService {
   return R.pick(["profile", "setProfileItem"], useStore());

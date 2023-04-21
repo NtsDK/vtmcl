@@ -352,9 +352,6 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({
   const value: StateStore = {
     ...charSheet,
     ...functions,
-    getPresetDisplayName() {
-      return charSheet.preset === "vampire_v20" ? "VtM V20" : "CtD V20";
-    },
 
     limits,
 

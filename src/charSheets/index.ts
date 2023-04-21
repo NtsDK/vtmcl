@@ -70,6 +70,7 @@ export function usePresetSettings(): PresetSettings {
 
   return preset === "vampire_v20"
     ? {
+        displayName: "VtM V20",
         profileConfig: VtM.profileConfig,
         attributesConfig,
         abilitiesConfig: VtM.abilitiesConfig,
@@ -77,6 +78,7 @@ export function usePresetSettings(): PresetSettings {
         resources: vtmResource as unknown as PresetSettings["resources"],
       }
     : {
+        displayName: "CtD V20",
         profileConfig: CtD.profileConfig,
         attributesConfig,
         abilitiesConfig: CtD.abilitiesConfig,

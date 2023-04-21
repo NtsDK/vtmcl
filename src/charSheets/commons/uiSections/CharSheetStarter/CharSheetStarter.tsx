@@ -25,29 +25,27 @@ export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
   const { t } = useTranslation();
 
   const profileService = useProfile();
-  const { getPresetDisplayName } = usePreset();
+  const presetSettings = usePresetSettings();
+  const presetService = usePreset();
 
   const title = useMemo(() => {
     if (profileService.profile.name.trim() === "") {
       return t("about.charsheetWithoutName", {
-        type: getPresetDisplayName(),
+        type: presetSettings.displayName,
         version: CURRENT_VERSION,
       });
     }
     return t("about.charsheetWithName", {
       characterName: profileService.profile.name,
-      type: getPresetDisplayName(),
+      type: presetSettings.displayName,
       version: CURRENT_VERSION,
     });
-  }, [t, profileService.profile, getPresetDisplayName]);
+  }, [t, profileService.profile, presetSettings.displayName]);
 
   const abilitiesService = useAbilities();
   const attributesService = useAttributes();
   const { limits } = useLimits();
   const abilitiesExtensionService = useAbilitiesExtension();
-  const presetSettings = usePresetSettings();
-  // const resources = useResource();
-  const presetService = usePreset();
 
   return (
     <>

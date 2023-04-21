@@ -21,15 +21,16 @@ import { useTranslation } from "react-i18next";
 import { ErrorNotification } from "./uiLib/ErrorNotification";
 import { CharSheetPage } from "./ui/CharSheetPage";
 import { AboutPage } from "./ui/AboutPage";
-import { usePreset, useSettings } from "./services/storageAdapter";
+import { useSettings } from "./services/storageAdapter";
 import { ControlPanel } from "./ui/ControlPanel";
 import { InstructionPage } from "./ui/InstructionPage";
 import { CURRENT_VERSION } from "./constants";
+import { usePresetSettings } from "./charSheets";
 
 function App(): JSX.Element {
   const { t } = useTranslation();
   const { settings } = useSettings();
-  const { getPresetDisplayName } = usePreset();
+  const { displayName } = usePresetSettings();
 
   useEffect(() => {
     document.body.style.backgroundColor = settings.backgroundColor;
@@ -42,7 +43,7 @@ function App(): JSX.Element {
   return (
     <DocumentTitle
       title={t("about.defaultPageTitle", {
-        type: getPresetDisplayName(),
+        type: displayName,
         version: CURRENT_VERSION,
       })}
     >
