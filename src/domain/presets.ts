@@ -1,5 +1,5 @@
-import { Abilities } from "./abilities";
-import { Attributes, Profile } from "./characterDataTypes";
+import { AttributesConfig } from "../charSheets/commons/domain";
+import { Abilities, Profile } from "./characterDataTypes";
 import { CharSheet } from "./charSheet";
 
 // preset
@@ -21,11 +21,6 @@ export type ProfileConfigItem =
     };
 
 export type ProfileConfig = ProfileConfigItem[][];
-
-export type AttributesConfig = {
-  header: "physical" | "social" | "mental";
-  items: (keyof Attributes)[];
-}[];
 
 export type AbilitiesConfig = {
   header: "talents" | "skills" | "knowledges";

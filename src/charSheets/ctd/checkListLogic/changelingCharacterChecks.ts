@@ -1,7 +1,8 @@
 import * as R from "ramda";
 
-import { Arts, Realms, State } from "../../../domain/characterDataTypes";
+import { State } from "../../../domain/characterDataTypes";
 import { CheckNumberResult, checkArrSumFilled } from "../../commons/checkList";
+import { Arts, Realms } from "../domain";
 
 export const EXPECTED_ART_DOTS = 3;
 export const EXPECTED_BANALITY_DOTS = 3;

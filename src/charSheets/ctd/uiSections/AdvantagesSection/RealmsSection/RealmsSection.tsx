@@ -2,7 +2,7 @@ import React, { memo, useCallback } from "react";
 
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { Realms } from "../../../../../domain";
+import { Realms } from "../../../domain";
 
 import "./RealmsSection.css";
 import { RealmsService } from "../../../../../application/ports";

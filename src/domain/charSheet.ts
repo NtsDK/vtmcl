@@ -1,16 +1,11 @@
-import { AbilitiesExtension } from "../charSheets/commons/domain";
-
-import { Abilities } from "./abilities";
 import {
+  AbilitiesExtension,
   AlliesAndContacts,
   AppearanceDescription,
-  Arts,
   Attributes,
   Backgrounds,
   CharacterImage,
   CharHistory,
-  DisciplinePaths,
-  Disciplines,
   Flaws,
   Goals,
   Health,
@@ -18,12 +13,16 @@ import {
   Notes,
   OtherTraits,
   Possessions,
-  Profile,
-  Realms,
+} from "../charSheets/commons/domain";
+import { Arts, Realms } from "../charSheets/ctd/domain";
+import {
+  Disciplines,
+  DisciplinePaths,
   Rituals,
-  State,
   Virtues,
-} from "./characterDataTypes";
+} from "../charSheets/vtm/domain";
+
+import { Profile, State, Abilities } from "./characterDataTypes";
 import { Settings, Version } from "./nonCharacterDataTypes";
 import { Preset } from "./presets";
 

@@ -1,4 +1,11 @@
 import * as R from "ramda";
+import { Arts, Realms } from "../charSheets/ctd/domain";
+import {
+  DisciplinePaths,
+  Disciplines,
+  Rituals,
+  Virtues,
+} from "../charSheets/vtm/domain";
 
 import { CURRENT_VERSION } from "../constants";
 import {
@@ -6,14 +13,11 @@ import {
   AbilitiesExtension,
   AlliesAndContacts,
   AppearanceDescription,
-  Arts,
   Attributes,
   Backgrounds,
   CharacterImage,
   CharHistory,
   CharSheet,
-  DisciplinePaths,
-  Disciplines,
   Flaws,
   Goals,
   Health,
@@ -23,11 +27,8 @@ import {
   Possessions,
   Preset,
   Profile,
-  Realms,
-  Rituals,
   Settings,
   State,
-  Virtues,
 } from "../domain";
 
 import { defaultBackgroundUrl } from "./defaultBackground";

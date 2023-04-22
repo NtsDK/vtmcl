@@ -1,5 +1,6 @@
 import * as R from "ramda";
-import { CharSheet, Health, Realms } from "../domain";
+import { Realms } from "../charSheets/ctd/domain";
+import { CharSheet, Health } from "../domain";
 import { getLimits } from "../i18nResources/getLimits";
 import { applyRange, mutateObj } from "./typesAndUtils";
 

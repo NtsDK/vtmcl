@@ -46,8 +46,6 @@ import {
   Notes,
   Profile,
   State,
-  Virtues,
-  Realms,
   Preset,
   CharHistory,
   Goals,
@@ -68,6 +66,8 @@ import { commonPartActions } from "./actions_commonParts";
 import { vtmPartActions } from "./actions_vtmParts";
 import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
+import { Virtues } from "../charSheets/vtm/domain";
+import { Realms } from "../charSheets/ctd/domain";
 
 export interface StateStore
   extends PresetService,

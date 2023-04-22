@@ -2,11 +2,11 @@ import React, { memo } from "react";
 
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { Virtues } from "../../../../../domain";
 
 import "./VirtuesSection.css";
 import { VirtuesService } from "../../../../../application/ports";
 import { RangeInput2 } from "../../../../commons/uiPrimitives";
+import { Virtues } from "../../../domain";
 
 interface VirtuesSectionProps extends VirtuesService {
   className?: string;

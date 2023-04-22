@@ -1,5 +1,6 @@
 import * as R from "ramda";
-import { CharSheet, Virtues } from "../domain";
+import { Virtues } from "../charSheets/vtm/domain";
+import { CharSheet } from "../domain";
 import { getLimits } from "../i18nResources/getLimits";
 import { applyRange, mutateObj } from "./typesAndUtils";
 

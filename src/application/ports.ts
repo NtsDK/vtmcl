@@ -1,3 +1,10 @@
+import { Arts, Realms } from "../charSheets/ctd/domain";
+import {
+  Disciplines,
+  DisciplinePaths,
+  Rituals,
+  Virtues,
+} from "../charSheets/vtm/domain";
 import {
   Abilities,
   AbilitiesExtension,
@@ -5,15 +12,12 @@ import {
   AbilitiesExtensionValue,
   AlliesAndContacts,
   AppearanceDescription,
-  Arts,
   Attributes,
   Backgrounds,
   CharacterImage,
   CharHistory,
   CharSheet,
   CharsheetBackMode,
-  DisciplinePaths,
-  Disciplines,
   ErrorDescription,
   Flaws,
   Goals,
@@ -25,11 +29,8 @@ import {
   Possessions,
   Preset,
   Profile,
-  Realms,
-  Rituals,
   Settings,
   State,
-  Virtues,
 } from "../domain";
 
 // char sheet
