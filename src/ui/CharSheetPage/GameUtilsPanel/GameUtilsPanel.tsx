@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { CharacterCheckList } from "./CharacterCheckList";
 import { AccordionToggle } from "../../../uiLib/AccordionToggle";
-import { FreePointsPanel } from "./FreePointsPanel";
+import { FreebiePointsPanel } from "./FreebiePointsPanel";
 
 interface GameUtilsPanelProps {
   className?: string;
@@ -48,19 +48,19 @@ export function GameUtilsPanel(props: GameUtilsPanelProps) {
         </Card>
         <Card className="tw-bg-gray-200">
           <AccordionToggle
-            ariaId="free-points-toggle"
+            ariaId="freebie-points-toggle"
             eventKey="1"
-            title={t("freePoints.header")}
-            ariaControls="free-points-panel"
+            title={t("freebiePoints.header")}
+            ariaControls="freebie-points-panel"
           />
           <Accordion.Collapse
-            id="free-points-panel"
+            id="freebie-points-panel"
             eventKey="1"
             className="tw-bg-white"
             role="region"
-            aria-labelledby="free-points-toggle"
+            aria-labelledby="freebie-points-toggle"
           >
-            <FreePointsPanel />
+            <FreebiePointsPanel />
           </Accordion.Collapse>
         </Card>
       </Accordion>

@@ -1,2 +1,2 @@
 export * from "./attributesConfig";
-export * from "./freePointCommons";
+export * from "./freebiePointCommons";

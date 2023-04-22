@@ -28,7 +28,7 @@ export type AbilitiesConfig = {
   extension: "talent" | "skill" | "knowledge";
 }[];
 
-type FreePointName =
+type FreebiePointName =
   // common
   | "attribute"
   | "ability"
@@ -43,8 +43,8 @@ type FreePointName =
   | "realm"
   | "glamour";
 
-export type FreePointItem = {
-  name: FreePointName;
+export type FreebiePointItem = {
+  name: FreebiePointName;
   extractor: (charSheet: CharSheet) => number;
   multiplier: number;
 };
@@ -67,6 +67,6 @@ export interface PresetSettings {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
-  freePointsConfig: FreePointItem[];
+  freebiePointsConfig: FreebiePointItem[];
   resources: Resources;
 }

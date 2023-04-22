@@ -1,1 +1,0 @@
-export { FreePointsPanel } from "./FreePointsPanel";

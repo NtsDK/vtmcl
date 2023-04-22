@@ -74,7 +74,7 @@ export function usePresetSettings(): PresetSettings {
         profileConfig: VtM.profileConfig,
         attributesConfig,
         abilitiesConfig: VtM.abilitiesConfig,
-        freePointsConfig: VtM.freePointsConfig,
+        freebiePointsConfig: VtM.freebiePointsConfig,
         resources: vtmResource as unknown as PresetSettings["resources"],
       }
     : {
@@ -82,7 +82,7 @@ export function usePresetSettings(): PresetSettings {
         profileConfig: CtD.profileConfig,
         attributesConfig,
         abilitiesConfig: CtD.abilitiesConfig,
-        freePointsConfig: CtD.freePointsConfig,
+        freebiePointsConfig: CtD.freebiePointsConfig,
         resources: ctdResource as unknown as PresetSettings["resources"],
       };
 }

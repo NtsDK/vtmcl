@@ -1,11 +1,11 @@
-export const freePoints = {
+export const freebiePoints = {
   header: "Free points",
   description: "Optionally add merits and flaws (max 7 points)",
   cost: "Trait Cost",
 
-  beginFreePointAssignment: "Start free point assignment",
+  beginFreebiePointAssignment: "Start free point assignment",
 
-  freePoints: "Free points",
+  freebiePoints: "Free points",
   merits: "Merits",
   flaws: "Flaws",
   sum: "Sum",

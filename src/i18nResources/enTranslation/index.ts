@@ -5,7 +5,7 @@ import { abilities } from "./charsheet_abilities";
 import { advantages } from "./charsheet_advantages";
 import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
-import { freePoints } from "./freePoints";
+import { freebiePoints } from "./freebiePoints";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
 import { instruction } from "./instruction";
@@ -15,7 +15,7 @@ type TranslationInfo = typeof ruTranslation;
 export const enTranslation: TranslationInfo = {
   about,
   checklist,
-  freePoints,
+  freebiePoints,
   actionMenu,
   instruction,
   buttons: {

@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-import { CharSheet, FreePointItem } from "../../../domain";
+import { CharSheet, FreebiePointItem } from "../../../domain";
 import {
   sumAttributes,
   attributesConfig,
@@ -11,17 +11,18 @@ import {
 
 import { abilitiesConfig } from "./abilitiesConfig";
 
-function glamour(charSheet: CharSheet): number {
-  return charSheet.state.glamourRating;
+function humanity(charSheet: CharSheet): number {
+  return charSheet.state.humanity;
 }
-function sumArts(charSheet: CharSheet): number {
-  return R.sum(R.pluck("value", charSheet.arts));
-}
-function sumRealms(charSheet: CharSheet): number {
-  return R.sum(R.values(charSheet.realms));
+function sumVirtues(charSheet: CharSheet): number {
+  return R.sum(R.values(charSheet.virtues));
 }
 
-export const freePointsConfig: FreePointItem[] = [
+function sumDisciplines(charSheet: CharSheet): number {
+  return R.sum(R.pluck("value", charSheet.disciplines));
+}
+
+export const freebiePointsConfig: FreebiePointItem[] = [
   {
     name: "attribute",
     extractor: sumAttributes(attributesConfig),
@@ -33,24 +34,24 @@ export const freePointsConfig: FreePointItem[] = [
     multiplier: 2,
   },
   {
+    name: "discipline",
+    extractor: sumDisciplines,
+    multiplier: 7,
+  },
+  {
     name: "background",
     extractor: sumBackgrounds,
     multiplier: 1,
   },
   {
-    name: "art",
-    extractor: sumArts,
-    multiplier: 5,
-  },
-  {
-    name: "realm",
-    extractor: sumRealms,
+    name: "virtue",
+    extractor: sumVirtues,
     multiplier: 2,
   },
   {
-    name: "glamour",
-    extractor: glamour,
-    multiplier: 3,
+    name: "humanity",
+    extractor: humanity,
+    multiplier: 2,
   },
   {
     name: "willpower",

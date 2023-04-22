@@ -1,0 +1,1 @@
+export { FreebiePointsPanel } from "./FreebiePointsPanel";

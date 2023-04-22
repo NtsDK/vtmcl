@@ -4,7 +4,7 @@ import { abilities } from "./charsheet_abilities";
 import { advantages } from "./charsheet_advantages";
 import { status } from "./charsheet_status";
 import { checklist } from "./checklist";
-import { freePoints } from "./freePoints";
+import { freebiePoints } from "./freebiePoints";
 import { actionMenu } from "./actionMenu";
 import { about } from "./about";
 import { instruction } from "./instruction";
@@ -12,7 +12,7 @@ import { instruction } from "./instruction";
 export const ruTranslation = {
   about,
   checklist,
-  freePoints,
+  freebiePoints,
   actionMenu,
   instruction,
   buttons: {

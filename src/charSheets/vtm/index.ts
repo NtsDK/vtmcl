@@ -5,7 +5,7 @@ import {
   skillsArr,
   talentsArr,
 } from "./presetSettings/abilitiesConfig";
-import { freePointsConfig } from "./presetSettings/freePoints";
+import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
 import { CharSheet } from "./CharSheet";
 import { useVtMResource } from "./dropdownContent";
@@ -16,7 +16,7 @@ export const VtM = {
   knowledgesArr,
   skillsArr,
   talentsArr,
-  freePointsConfig,
+  freebiePointsConfig,
   profileConfig,
   CheckList,
   CharSheet,

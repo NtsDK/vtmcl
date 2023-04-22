@@ -5,24 +5,24 @@ import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 
 import { useCharSheetStorage } from "../../../../services/storageAdapter";
-import { CharSheet, FreePointItem } from "../../../../domain";
+import { CharSheet, FreebiePointItem } from "../../../../domain";
 import { usePresetSettings } from "../../../../charSheets";
 
-interface FreePointsPanelProps {
+interface FreebiePointsPanelProps {
   className?: string;
 }
 
-type FilledFreePointItem = {
-  name: FreePointItem["name"];
+type FilledFreebiePointItem = {
+  name: FreebiePointItem["name"];
   multiplier: number;
   diff: number;
 };
 
-type FreePointStats = {
-  freePoints: number;
+type FreebiePointStats = {
+  freebiePoints: number;
   meritsSum: number;
   flawsSum: number;
-  filledFreePoint: FilledFreePointItem[];
+  filledFreebiePoint: FilledFreebiePointItem[];
 };
 
 function strToNumber(str: string): number {
@@ -34,46 +34,46 @@ function formatNumber(num: number): string {
   return num === 0 ? "0" : num > 0 ? `+${num}` : String(num);
 }
 
-export function FreePointsPanel(props: FreePointsPanelProps) {
+export function FreebiePointsPanel(props: FreebiePointsPanelProps) {
   const { className } = props;
   const { t } = useTranslation();
 
   const { getCharSheet, setCharSheet } = useCharSheetStorage();
-  const { freePointsConfig } = usePresetSettings();
+  const { freebiePointsConfig } = usePresetSettings();
 
   const [prevCharSheet, setPrevCharSheet] = useState<CharSheet | undefined>(
     undefined
   );
 
-  const freePointsStatus = useMemo<FreePointStats>(() => {
+  const freebiePointsStatus = useMemo<FreebiePointStats>(() => {
     if (prevCharSheet === undefined) {
       return {
-        freePoints: 15,
+        freebiePoints: 15,
         flawsSum: 0,
         meritsSum: 0,
-        filledFreePoint: [],
+        filledFreebiePoint: [],
       };
     }
     const charSheet = getCharSheet();
 
-    const arr: FilledFreePointItem[] = freePointsConfig.map((el) => ({
+    const arr: FilledFreebiePointItem[] = freebiePointsConfig.map((el) => ({
       name: el.name,
       multiplier: el.multiplier,
       diff: el.extractor(prevCharSheet) - el.extractor(charSheet),
     }));
 
     return {
-      freePoints: 15,
+      freebiePoints: 15,
       flawsSum: R.sum(charSheet.flaws.map(strToNumber)),
       meritsSum: R.sum(charSheet.merits.map(strToNumber)),
-      filledFreePoint: arr,
+      filledFreebiePoint: arr,
     };
-  }, [prevCharSheet, freePointsConfig, getCharSheet]);
+  }, [prevCharSheet, freebiePointsConfig, getCharSheet]);
 
   return (
     <div
       className={classnames(
-        "FreePointsPanel tw-max-w-sm tw-mx-5 tw-my-3",
+        "FreebiePointsPanel tw-max-w-sm tw-mx-5 tw-my-3",
         className
       )}
     >
@@ -82,39 +82,39 @@ export function FreePointsPanel(props: FreePointsPanelProps) {
         onClick={() => setPrevCharSheet(getCharSheet())}
         disabled={prevCharSheet !== undefined}
       >
-        {t("freePoints.beginFreePointAssignment")}
+        {t("freebiePoints.beginFreebiePointAssignment")}
       </Button>
       {prevCharSheet && (
         <div>
-          <p className="tw-mb-4">{t("freePoints.description")}</p>
+          <p className="tw-mb-4">{t("freebiePoints.description")}</p>
           <div className="tw-w-52 tw-mx-auto tw-mb-4">
             <div>
-              {t("freePoints.freePoints")}
+              {t("freebiePoints.freebiePoints")}
               <span className="tw-float-right">
-                {formatNumber(freePointsStatus.freePoints)}
+                {formatNumber(freebiePointsStatus.freebiePoints)}
               </span>
             </div>
             <div>
-              {t("freePoints.merits")}
+              {t("freebiePoints.merits")}
               <span className="tw-float-right">
-                {formatNumber(-freePointsStatus.meritsSum)}
+                {formatNumber(-freebiePointsStatus.meritsSum)}
               </span>
             </div>
             <div>
-              {t("freePoints.flaws")}
+              {t("freebiePoints.flaws")}
               <span className="tw-float-right">
-                {formatNumber(freePointsStatus.flawsSum)}
+                {formatNumber(freebiePointsStatus.flawsSum)}
               </span>
             </div>
 
             <div className="tw-my-3 tw-border-b-2 tw-border-gray-600 tw-border-solid" />
 
             <ul className="">
-              {freePointsStatus.filledFreePoint.map((el) => (
+              {freebiePointsStatus.filledFreebiePoint.map((el) => (
                 <li key={el.name}>
                   <span>
                     {
-                      t(`freePoints.${el.name}`, {
+                      t(`freebiePoints.${el.name}`, {
                         cost: el.multiplier,
                       }) as string
                     }
@@ -129,17 +129,17 @@ export function FreePointsPanel(props: FreePointsPanelProps) {
             <div className="tw-my-3 tw-border-b-2 tw-border-gray-600 tw-border-solid" />
 
             <div>
-              {t("freePoints.sum")}
+              {t("freebiePoints.sum")}
               <span className="tw-float-right">
                 {formatNumber(
                   R.sum(
-                    freePointsStatus.filledFreePoint.map(
+                    freebiePointsStatus.filledFreebiePoint.map(
                       (el) => el.diff * el.multiplier
                     )
                   ) +
-                    freePointsStatus.freePoints +
-                    freePointsStatus.meritsSum -
-                    freePointsStatus.flawsSum
+                    freebiePointsStatus.freebiePoints +
+                    freebiePointsStatus.meritsSum -
+                    freebiePointsStatus.flawsSum
                 )}
               </span>
             </div>

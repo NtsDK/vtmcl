@@ -1,11 +1,11 @@
-export const freePoints = {
+export const freebiePoints = {
   header: "Свободные очки",
   description:
     "По желанию добавьте достоинства (без ограничений) и недостатки (не более чем на 7 пунктов)",
   cost: "Стоимость пунктов",
-  beginFreePointAssignment: "Начать распределение свободных очков",
+  beginFreebiePointAssignment: "Начать распределение свободных очков",
 
-  freePoints: "Свободные очки",
+  freebiePoints: "Свободные очки",
   merits: "Достоинства",
   flaws: "Недостатки",
   sum: "Сумма",
