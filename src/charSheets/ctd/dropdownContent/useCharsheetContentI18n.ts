@@ -1,4 +1,4 @@
-import { StateStore } from "../../../services/store";
+import { StateStore } from "../../../charSheets/root/services/store";
 
 import { translateArt } from "./resources/arts";
 import { c20_translateBackground } from "./resources/backgrounds";

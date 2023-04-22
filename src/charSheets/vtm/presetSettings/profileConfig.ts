@@ -1,4 +1,4 @@
-import { ProfileConfig } from "../../../domain";
+import { ProfileConfig } from "../../../charSheets/root/domain";
 
 export const profileConfig: ProfileConfig = [
   ["name", "player", "chronicle", "age", "sex"],

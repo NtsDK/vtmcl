@@ -14,7 +14,7 @@ import {
   generateIdEnRuEntities,
   sortStrArr,
   IdEnRuEntity,
-} from "../../../commons/dropdownContent";
+} from "../../../generic/dropdownContent";
 
 type LegacyGroups = "seelie" | "unseelie" | "nightmare";
 

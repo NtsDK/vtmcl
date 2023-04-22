@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import {
   DisciplinesService,
   LimitService,
-} from "../../../../../application/ports";
-import { NameNumberSection } from "../../../../commons/uiPrimitives";
-import { OptionGroup } from "../../../../../domain";
+} from "../../../../../charSheets/root/application/ports";
+import { NameNumberSection } from "../../../../generic/uiPrimitives";
+import { OptionGroup } from "../../../../../charSheets/root/domain";
 
 interface DisciplinesSectionProps extends DisciplinesService, LimitService {
   disciplineOptions: OptionGroup[];

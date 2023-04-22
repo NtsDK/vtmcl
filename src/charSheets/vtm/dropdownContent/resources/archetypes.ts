@@ -6,7 +6,7 @@ import {
   generateSequence,
   makeTranslateFunction,
   sortStrArr,
-} from "../../../commons/dropdownContent";
+} from "../../../generic/dropdownContent";
 
 const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, archetypesSource)),

@@ -21,7 +21,7 @@ import { useTranslation } from "react-i18next";
 import { ErrorNotification } from "./uiLib/ErrorNotification";
 import { CharSheetPage } from "./ui/CharSheetPage";
 import { AboutPage } from "./ui/AboutPage";
-import { useSettings } from "./services/storageAdapter";
+import { useSettings } from "./charSheets/root/services/storageAdapter";
 import { ControlPanel } from "./ui/ControlPanel";
 import { InstructionPage } from "./ui/InstructionPage";
 import { CURRENT_VERSION } from "./constants";

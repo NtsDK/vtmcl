@@ -1,13 +1,13 @@
 import * as R from "ramda";
 
-import { CharSheet, FreebiePointItem } from "../../../domain";
+import { CharSheet, FreebiePointItem } from "../../root/domain";
 import {
   sumAttributes,
   attributesConfig,
   sumAbilities,
   sumBackgrounds,
   willpowerRating,
-} from "../../commons/presetSettings";
+} from "../../generic/presetSettings";
 
 import { abilitiesConfig } from "./abilitiesConfig";
 

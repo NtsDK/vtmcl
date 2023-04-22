@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { CommonResources, OptionGroup } from "../../../domain";
+import { CommonResources, OptionGroup } from "../../../charSheets/root/domain";
 
 import { archetypes_ru, archetypes_en } from "./resources/archetypes";
 import {

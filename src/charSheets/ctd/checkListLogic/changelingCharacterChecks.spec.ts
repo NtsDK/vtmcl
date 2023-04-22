@@ -4,7 +4,7 @@ import {
   initialArts,
   initialRealms,
   initialState,
-} from "../../../services/initialValues";
+} from "../../../charSheets/root/services/initialValues";
 
 import {
   checkChangelingWillpower,

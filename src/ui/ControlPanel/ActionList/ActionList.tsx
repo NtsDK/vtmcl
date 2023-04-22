@@ -6,7 +6,7 @@ import "./ActionList.css";
 import {
   useCharSheetStorage,
   useErrorDescription,
-} from "../../../services/storageAdapter";
+} from "../../../charSheets/root/services/storageAdapter";
 
 import { UploadDatabaseButton } from "./UploadDatabaseButton";
 import { DownloadDatabaseButton } from "./DownloadDatabaseButton";

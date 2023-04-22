@@ -9,9 +9,9 @@ import {
   useBackgrounds,
   useLimits,
   useRealms,
-} from "../../../../services/storageAdapter";
-import { Subheader } from "../../../commons/uiPrimitives";
-import { BackgroundsSection } from "../../../commons/uiSections";
+} from "../../../../charSheets/root/services/storageAdapter";
+import { Subheader } from "../../../generic/uiPrimitives";
+import { BackgroundsSection } from "../../../generic/uiSections";
 import { useCtDResource } from "../../dropdownContent";
 
 interface AdvantagesSectionProps {

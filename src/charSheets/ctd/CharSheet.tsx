@@ -10,12 +10,12 @@ import {
   useNotes,
   useOtherTraits,
   usePossessions,
-} from "../../services/storageAdapter";
+} from "../../charSheets/root/services/storageAdapter";
 import {
   CharSheetBody,
   SectionHeader,
   Subheader,
-} from "../commons/uiPrimitives";
+} from "../generic/uiPrimitives";
 import {
   MeritsSection,
   FlawsSection,
@@ -27,8 +27,8 @@ import {
   CharacterImageSection,
   AppearanceDescriptionSection,
   NotesSection,
-} from "../commons/uiSections";
-import { CharSheetStarter } from "../commons/uiSections/CharSheetStarter";
+} from "../generic/uiSections";
+import { CharSheetStarter } from "../generic/uiSections/CharSheetStarter";
 
 import { useCtDResource } from "./dropdownContent";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";

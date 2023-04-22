@@ -4,7 +4,7 @@ import {
   initialDisciplines,
   initialState,
   initialVirtues,
-} from "../../../services/initialValues";
+} from "../../../charSheets/root/services/initialValues";
 
 import {
   checkBloodpool,

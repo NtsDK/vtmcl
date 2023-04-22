@@ -1,4 +1,4 @@
-import { Abilities, AbilitiesConfig } from "../../../domain";
+import { Abilities, AbilitiesConfig } from "../../root/domain";
 import { CtDAbilities } from "../domain";
 
 type AbilitiesT = keyof Abilities & keyof CtDAbilities;

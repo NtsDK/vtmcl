@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import "./ThresholdsSection.css";
-import { StatusService } from "../../../../../application/ports";
-import { TextAreaSection } from "../../../../commons/uiPrimitives";
+import { StatusService } from "../../../../../charSheets/root/application/ports";
+import { TextAreaSection } from "../../../../generic/uiPrimitives";
 
 interface ThresholdsSectionProps extends StatusService {
   className?: string;

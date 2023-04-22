@@ -2,13 +2,16 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import { useStatus, useHealth } from "../../../../services/storageAdapter";
+import {
+  useStatus,
+  useHealth,
+} from "../../../../charSheets/root/services/storageAdapter";
 import {
   ExperienceSection,
   WillSection,
   HealthSection,
-} from "../../../commons/uiSections";
-import { Subheader } from "../../../commons/uiPrimitives";
+} from "../../../generic/uiSections";
+import { Subheader } from "../../../generic/uiPrimitives";
 
 import { GlamourSection } from "./GlamourSection";
 import { BanalitySection } from "./BanalitySection";

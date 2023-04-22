@@ -9,8 +9,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import { initialCharSheet } from "../../../../services/initialValues";
-import { CharSheetStorageService } from "../../../../application/ports";
+import { initialCharSheet } from "../../../../charSheets/root/services/initialValues";
+import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
 
 interface CreateDatabaseButtonProps extends CharSheetStorageService {}
 

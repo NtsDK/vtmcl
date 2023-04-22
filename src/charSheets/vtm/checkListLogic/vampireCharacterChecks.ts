@@ -1,7 +1,7 @@
 import * as R from "ramda";
 
-import { CheckNumberResult, checkArrSumFilled } from "../../commons/checkList";
-import { State } from "../../../domain";
+import { CheckNumberResult, checkArrSumFilled } from "../../generic/checkList";
+import { State } from "../../../charSheets/root/domain";
 import { Virtues, Disciplines } from "../domain";
 
 export const EXPECTED_VIRTUE_DOTS = 7;

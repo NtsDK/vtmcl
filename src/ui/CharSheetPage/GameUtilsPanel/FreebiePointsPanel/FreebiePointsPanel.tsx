@@ -4,8 +4,11 @@ import Button from "react-bootstrap/Button";
 import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 
-import { useCharSheetStorage } from "../../../../services/storageAdapter";
-import { CharSheet, FreebiePointItem } from "../../../../domain";
+import { useCharSheetStorage } from "../../../../charSheets/root/services/storageAdapter";
+import {
+  CharSheet,
+  FreebiePointItem,
+} from "../../../../charSheets/root/domain";
 import { usePresetSettings } from "../../../../charSheets";
 
 interface FreebiePointsPanelProps {

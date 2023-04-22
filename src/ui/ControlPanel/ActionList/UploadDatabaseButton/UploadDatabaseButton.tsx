@@ -4,11 +4,11 @@ import "./UploadDatabaseButton.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
 import { readTextFile } from "../../../../lib/fileUtils";
-import { strToCharSheet } from "../../../../infrastructure/dbLoader";
+import { strToCharSheet } from "../../../../charSheets/root/infrastructure/dbLoader";
 import {
   CharSheetStorageService,
   ErrorDescriptionService,
-} from "../../../../application/ports";
+} from "../../../../charSheets/root/application/ports";
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {

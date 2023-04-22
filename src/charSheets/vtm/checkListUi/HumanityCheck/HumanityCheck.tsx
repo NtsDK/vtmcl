@@ -3,8 +3,11 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useVirtues, useStatus } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons/checkList";
+import {
+  useVirtues,
+  useStatus,
+} from "../../../../charSheets/root/services/storageAdapter";
+import { CheckListItem } from "../../../generic/checkList";
 import { checkHumanity } from "../../checkListLogic/vampireCharacterChecks";
 
 interface HumanityCheckProps {

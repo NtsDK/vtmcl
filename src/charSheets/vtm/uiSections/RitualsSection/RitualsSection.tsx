@@ -2,9 +2,9 @@ import React, { memo } from "react";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { RitualsService } from "../../../../application/ports";
-import { NameStringSection } from "../../../commons/uiPrimitives";
-import { OptionGroup } from "../../../../domain";
+import { RitualsService } from "../../../../charSheets/root/application/ports";
+import { NameStringSection } from "../../../generic/uiPrimitives";
+import { OptionGroup } from "../../../../charSheets/root/domain";
 
 interface RitualsSectionProps extends RitualsService {
   ritualOptions: OptionGroup[];

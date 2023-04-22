@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { Realms } from "../../../domain";
 
 import "./RealmsSection.css";
-import { RealmsService } from "../../../../../application/ports";
-import { RangeInput2 } from "../../../../commons/uiPrimitives";
+import { RealmsService } from "../../../../../charSheets/root/application/ports";
+import { RangeInput2 } from "../../../../generic/uiPrimitives";
 
 interface RealmsSectionProps extends RealmsService {
   className?: string;

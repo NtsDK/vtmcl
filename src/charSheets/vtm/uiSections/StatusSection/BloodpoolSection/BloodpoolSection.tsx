@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import "./BloodpoolSection.css";
-import { StatusService } from "../../../../../application/ports";
-import { Limits } from "../../../../../domain";
-import { RangeInput2 } from "../../../../commons/uiPrimitives";
+import { StatusService } from "../../../../../charSheets/root/application/ports";
+import { Limits } from "../../../../../charSheets/root/domain";
+import { RangeInput2 } from "../../../../generic/uiPrimitives";
 
 interface BloodpoolSectionProps extends StatusService {
   limits: Limits;

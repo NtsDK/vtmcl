@@ -1,7 +1,7 @@
 import * as R from "ramda";
 
-import { State } from "../../../domain";
-import { CheckNumberResult, checkArrSumFilled } from "../../commons/checkList";
+import { State } from "../../root/domain";
+import { CheckNumberResult, checkArrSumFilled } from "../../generic/checkList";
 import { Arts, Realms } from "../domain";
 
 export const EXPECTED_ART_DOTS = 3;

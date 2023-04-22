@@ -4,8 +4,8 @@ import "./DownloadDatabaseButton.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
 import { json2File, makeFileName } from "../../../../lib/fileUtils";
-import { charSheetToJson } from "../../../../infrastructure/dbLoader";
-import { CharSheetStorageService } from "../../../../application/ports";
+import { charSheetToJson } from "../../../../charSheets/root/infrastructure/dbLoader";
+import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
 
 interface DownloadDatabaseButtonProps extends CharSheetStorageService {}
 

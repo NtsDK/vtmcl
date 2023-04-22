@@ -4,7 +4,7 @@ import {
   AbilitiesCheck,
   AttributesCheck,
   BackgroundsCheck,
-} from "../../commons/checkList";
+} from "../../generic/checkList";
 
 import { ArtsCheck } from "./ArtsCheck";
 import { BanalityCheck } from "./BanalityCheck";

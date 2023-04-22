@@ -1,4 +1,4 @@
-import { NameStringArray } from "../../commons/domain";
+import { NameStringArray } from "../../generic/domain";
 
 export interface VtMProfile {
   nature: string;

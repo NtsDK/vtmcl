@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { StatusService } from "../../../../../application/ports";
-import { LineSection } from "../../../../commons/uiPrimitives";
+import { StatusService } from "../../../../../charSheets/root/application/ports";
+import { LineSection } from "../../../../generic/uiPrimitives";
 
 import "./AntitesisSection.css";
 

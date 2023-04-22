@@ -1,4 +1,4 @@
-import { Abilities, AbilitiesConfig } from "../../../domain";
+import { Abilities, AbilitiesConfig } from "../../../charSheets/root/domain";
 import { VtMAbilities } from "../domain";
 
 type AbilitiesT = keyof Abilities & keyof VtMAbilities;

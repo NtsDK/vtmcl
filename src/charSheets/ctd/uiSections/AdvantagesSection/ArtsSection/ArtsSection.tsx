@@ -3,9 +3,9 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import "./ArtsSection.css";
-import { ArtsService } from "../../../../../application/ports";
-import { Limits } from "../../../../../domain";
-import { NameNumberSection } from "../../../../commons/uiPrimitives";
+import { ArtsService } from "../../../../../charSheets/root/application/ports";
+import { Limits } from "../../../../root/domain";
+import { NameNumberSection } from "../../../../generic/uiPrimitives";
 
 interface ArtsSectionProps extends ArtsService {
   artOptions: string[];

@@ -7,15 +7,15 @@ import {
   useMeritsNFlaws,
   useStatus,
   useHealth,
-} from "../../../../services/storageAdapter";
+} from "../../../../charSheets/root/services/storageAdapter";
 import {
   ExperienceSection,
   FlawsSection,
   HealthSection,
   MeritsSection,
   WillSection,
-} from "../../../commons/uiSections";
-import { Subheader } from "../../../commons/uiPrimitives";
+} from "../../../generic/uiSections";
+import { Subheader } from "../../../generic/uiPrimitives";
 import { useVtMResource } from "../../dropdownContent";
 
 import { HumanitySection } from "./HumanitySection";

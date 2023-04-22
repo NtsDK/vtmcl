@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useVirtues } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons/checkList";
+import { useVirtues } from "../../../../charSheets/root/services/storageAdapter";
+import { CheckListItem } from "../../../generic/checkList";
 import {
   checkVirtues,
   EXPECTED_VIRTUE_DOTS,

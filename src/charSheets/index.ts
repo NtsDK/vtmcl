@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { usePreset } from "../services/storageAdapter";
-import { PresetSettings } from "../domain";
-import { useStore } from "../services/store";
+import { usePreset } from "../charSheets/root/services/storageAdapter";
+// import { PresetSettings } from "../domain";
+import { useStore } from "../charSheets/root/services/store";
 
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
-import { attributesConfig } from "./commons/presetSettings";
+import { attributesConfig } from "./generic/presetSettings";
+import { PresetSettings } from "./root/domain";
 
 type PresetInfo = {
   CharSheet(props: {}): JSX.Element;

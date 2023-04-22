@@ -11,8 +11,8 @@ import {
   useOtherTraits,
   usePossessions,
   useRituals,
-} from "../../services/storageAdapter";
-import { CharSheetBody, SectionHeader } from "../commons/uiPrimitives";
+} from "../../charSheets/root/services/storageAdapter";
+import { CharSheetBody, SectionHeader } from "../generic/uiPrimitives";
 import {
   AlliesAndContactsSection,
   AppearanceDescriptionSection,
@@ -23,7 +23,7 @@ import {
   NotesSection,
   OtherTraitsSection,
   PossessionsSection,
-} from "../commons/uiSections";
+} from "../generic/uiSections";
 import { useVtMResource } from "./dropdownContent";
 
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";

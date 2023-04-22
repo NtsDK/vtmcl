@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useStatus } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons/checkList";
+import { useStatus } from "../../../../charSheets/root/services/storageAdapter";
+import { CheckListItem } from "../../../generic/checkList";
 import {
   checkBanality,
   EXPECTED_BANALITY_DOTS,

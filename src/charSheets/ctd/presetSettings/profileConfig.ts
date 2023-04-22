@@ -1,4 +1,4 @@
-import { ProfileConfig } from "../../../domain";
+import { ProfileConfig } from "../../root/domain";
 
 export const profileConfig: ProfileConfig = [
   [

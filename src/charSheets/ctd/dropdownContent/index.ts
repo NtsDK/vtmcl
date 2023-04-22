@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { CommonResources, OptionGroup } from "../../../domain";
+import { CommonResources, OptionGroup } from "../../root/domain";
 import { arts_ru, arts_en } from "./resources/arts";
 import {
   c20_backgrounds_ru,

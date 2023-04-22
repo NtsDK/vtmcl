@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import "./HumanitySection.css";
-import { StatusService } from "../../../../../application/ports";
-import { RangeInput2, SelectButton } from "../../../../commons/uiPrimitives";
+import { StatusService } from "../../../../../charSheets/root/application/ports";
+import { RangeInput2, SelectButton } from "../../../../generic/uiPrimitives";
 
 interface HumanitySectionProps extends StatusService {
   pathOptions: string[];

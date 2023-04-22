@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useDisciplines } from "../../../../services/storageAdapter";
-import { CheckListItem } from "../../../commons/checkList";
+import { useDisciplines } from "../../../../charSheets/root/services/storageAdapter";
+import { CheckListItem } from "../../../generic/checkList";
 import {
   checkDisciplines,
   EXPECTED_DISCIPLINE_DOTS,

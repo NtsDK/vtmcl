@@ -5,7 +5,7 @@ import {
   makeTranslateFunction,
   sortStrArr,
   generateIdEnRuEntities,
-} from "../../../commons/dropdownContent";
+} from "../../../generic/dropdownContent";
 
 import { ritualsSource, ritualGroupsSource } from "./ritualsSource";
 

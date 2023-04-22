@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 // import reportWebVitals from './reportWebVitals';
-import { Provider } from "./services/store";
+import { Provider } from "./charSheets/root/services/store";
 import { ErrorBoundry } from "./uiLib/ErrorBoundry";
 
 // const root = ReactDOM.createRoot(
