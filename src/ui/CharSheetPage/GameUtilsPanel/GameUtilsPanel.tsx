@@ -4,12 +4,12 @@ import "./GameUtilsPanel.css";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
 import { useTranslation } from "react-i18next";
-
 import classnames from "classnames";
-import { CharacterCheckList } from "./CharacterCheckList";
+
 import { AccordionToggle } from "../../../uiLib/AccordionToggle";
+
+import { CharacterCheckList } from "./CharacterCheckList";
 import { FreebiePointsPanel } from "./FreebiePointsPanel";
 
 interface GameUtilsPanelProps {

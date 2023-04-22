@@ -23,8 +23,7 @@ import {
   Virtues,
 } from "../charSheets/vtm/domain";
 
-import { Profile, State, Abilities } from "./characterDataTypes";
-import { Preset } from "./presets";
+import { Profile, State, Abilities, Preset } from "./combinedDataTypes";
 
 export interface CharSheet {
   Version: Version;

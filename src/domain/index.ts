@@ -1,4 +1,4 @@
-export * from "./characterDataTypes";
+export * from "./combinedDataTypes";
 export * from "./charSheet";
 export * from "./presets";
 

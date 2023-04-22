@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-import { State } from "../../../domain/characterDataTypes";
+import { State } from "../../../domain";
 import { CheckNumberResult, checkArrSumFilled } from "../../commons/checkList";
 import { Arts, Realms } from "../domain";
 

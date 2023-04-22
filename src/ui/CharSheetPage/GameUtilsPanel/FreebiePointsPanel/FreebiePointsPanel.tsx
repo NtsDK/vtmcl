@@ -34,7 +34,9 @@ function formatNumber(num: number): string {
   return num === 0 ? "0" : num > 0 ? `+${num}` : String(num);
 }
 
-export function FreebiePointsPanel(props: FreebiePointsPanelProps) {
+export function FreebiePointsPanel(
+  props: FreebiePointsPanelProps
+): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 

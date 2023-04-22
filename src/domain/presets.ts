@@ -1,9 +1,14 @@
 import { AttributesConfig } from "../charSheets/commons/domain";
-import { Abilities, Profile } from "./characterDataTypes";
+
 import { CharSheet } from "./charSheet";
+import {
+  Abilities,
+  FreebiePointName,
+  Preset,
+  Profile,
+} from "./combinedDataTypes";
 
 // preset
-export type Preset = "vampire_v20" | "changeling_v20";
 
 export interface Limits {
   parameterLimit: number;
@@ -27,21 +32,6 @@ export type AbilitiesConfig = {
   items: (keyof Abilities)[];
   extension: "talent" | "skill" | "knowledge";
 }[];
-
-type FreebiePointName =
-  // common
-  | "attribute"
-  | "ability"
-  | "background"
-  | "willpower"
-  // vampire
-  | "discipline"
-  | "virtue"
-  | "humanity"
-  // changeling
-  | "art"
-  | "realm"
-  | "glamour";
 
 export type FreebiePointItem = {
   name: FreebiePointName;
