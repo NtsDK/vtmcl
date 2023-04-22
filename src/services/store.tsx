@@ -40,8 +40,6 @@ import {
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
   CharSheet,
-  CharsheetBackMode,
-  ErrorDescription,
   Health,
   Notes,
   Profile,
@@ -68,6 +66,7 @@ import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
 import { Virtues } from "../charSheets/vtm/domain";
 import { Realms } from "../charSheets/ctd/domain";
+import { CharsheetBackMode, ErrorDescription } from "../charSheets/meta/domain";
 
 export interface StateStore
   extends PresetService,

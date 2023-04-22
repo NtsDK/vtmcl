@@ -1,5 +1,10 @@
 import { Arts, Realms } from "../charSheets/ctd/domain";
 import {
+  CharsheetBackMode,
+  ErrorDescription,
+  Settings,
+} from "../charSheets/meta/domain";
+import {
   Disciplines,
   DisciplinePaths,
   Rituals,
@@ -17,8 +22,6 @@ import {
   CharacterImage,
   CharHistory,
   CharSheet,
-  CharsheetBackMode,
-  ErrorDescription,
   Flaws,
   Goals,
   Health,
@@ -29,7 +32,6 @@ import {
   Possessions,
   Preset,
   Profile,
-  Settings,
   State,
 } from "../domain";
 
@@ -189,23 +191,6 @@ export interface SettingsService {
 export interface LimitService {
   limits: Limits;
 }
-
-// export interface GameStorageService {
-//   games: Game[];
-//   setGames(games: Game[]): void;
-//   findGameByServerId(id: UniqueId): Game | undefined;
-// }
-
-// export interface ServerStorageService {
-//   servers: Server[];
-//   setServers(servers: Server[]): void;
-//   findServer(id: UniqueId): Server | undefined;
-// }
-
-// export interface ServerDatabaseStorageService {
-//   setServerDatabase(serverDatabase: ServerDatabase): void;
-//   getServerDatabase(): ServerDatabase;
-// }
 
 export interface CharSheetStorageService {
   setCharSheet(charSheet: CharSheet): void;

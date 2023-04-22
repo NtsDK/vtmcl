@@ -15,6 +15,7 @@ import {
   Possessions,
 } from "../charSheets/commons/domain";
 import { Arts, Realms } from "../charSheets/ctd/domain";
+import { Settings, Version } from "../charSheets/meta/domain";
 import {
   Disciplines,
   DisciplinePaths,
@@ -23,7 +24,6 @@ import {
 } from "../charSheets/vtm/domain";
 
 import { Profile, State, Abilities } from "./characterDataTypes";
-import { Settings, Version } from "./nonCharacterDataTypes";
 import { Preset } from "./presets";
 
 export interface CharSheet {

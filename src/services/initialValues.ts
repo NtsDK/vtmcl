@@ -1,5 +1,6 @@
 import * as R from "ramda";
 import { Arts, Realms } from "../charSheets/ctd/domain";
+import { Settings } from "../charSheets/meta/domain";
 import {
   DisciplinePaths,
   Disciplines,
@@ -27,7 +28,6 @@ import {
   Possessions,
   Preset,
   Profile,
-  Settings,
   State,
 } from "../domain";
 

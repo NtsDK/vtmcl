@@ -2,9 +2,10 @@ import React, { PropsWithChildren } from "react";
 import classnames from "classnames";
 
 import { useSettings } from "../../../../services/storageAdapter";
-import { Settings } from "../../../../domain";
+// import { Settings } from "../../../../domain";
 
 import "./CharSheetBody.css";
+import { Settings } from "../../../meta/domain";
 
 interface CharSheetBodyProps {
   className?: string;

@@ -11,3 +11,8 @@ export interface Settings {
   charsheetBackImage_v2: string;
   charsheetBackMode: CharsheetBackMode;
 }
+
+export interface ErrorDescription {
+  title: string;
+  text: string;
+}

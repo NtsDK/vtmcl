@@ -1,11 +1,6 @@
 import { JSONSchemaType } from "ajv";
-import {
-  // Meta,
-  // Log,
-  Version,
-  Settings,
-} from "../../domain";
 import { CURRENT_VERSION } from "../../constants";
+import { Settings, Version } from "../../charSheets/meta/domain";
 
 // export const logSchema: JSONSchemaType<Log> = {
 //   type: "array",

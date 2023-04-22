@@ -1,4 +1,5 @@
 import { Arts, Realms } from "../../charSheets/ctd/domain";
+import { Settings, Version } from "../../charSheets/meta/domain";
 import {
   Disciplines,
   DisciplinePaths,
@@ -6,9 +7,6 @@ import {
   Virtues,
 } from "../../charSheets/vtm/domain";
 import {
-  // Meta,
-  Version,
-  // Log,
   Profile,
   Attributes,
   Abilities,
@@ -16,7 +14,6 @@ import {
   Merits,
   Flaws,
   State,
-  Settings,
   Notes,
   Health,
   AbilitiesExtension,

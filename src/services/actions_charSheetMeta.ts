@@ -1,4 +1,5 @@
-import { CharSheet, CharsheetBackMode, Preset } from "../domain";
+import { CharsheetBackMode } from "../charSheets/meta/domain";
+import { CharSheet, Preset } from "../domain";
 import { mutateObj } from "./typesAndUtils";
 
 export const charSheetMetaActions = {
