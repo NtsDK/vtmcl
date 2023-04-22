@@ -1,4 +1,6 @@
-import { Abilities, AbilitiesExtension } from "./abilities";
+import { AbilitiesExtension } from "../charSheets/commons/domain";
+
+import { Abilities } from "./abilities";
 import {
   AlliesAndContacts,
   AppearanceDescription,

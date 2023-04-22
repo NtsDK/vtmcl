@@ -1,6 +1,9 @@
 import { Abilities, AbilitiesConfig } from "../../../domain";
+import { VtMAbilities } from "../domain";
 
-export const talentsArr: (keyof Abilities)[] = [
+type AbilitiesT = keyof Abilities & keyof VtMAbilities;
+
+export const talentsArr: AbilitiesT[] = [
   "athletics",
   "alertness",
   "brawl",
@@ -12,7 +15,7 @@ export const talentsArr: (keyof Abilities)[] = [
   "awareness",
   "empathy",
 ];
-export const skillsArr: (keyof Abilities)[] = [
+export const skillsArr: AbilitiesT[] = [
   "drive",
   "larceny",
   "survival",
@@ -24,7 +27,7 @@ export const skillsArr: (keyof Abilities)[] = [
   "melee",
   "etiquette",
 ];
-export const knowledgesArr: (keyof Abilities)[] = [
+export const knowledgesArr: AbilitiesT[] = [
   "academics",
   "science",
   "law",
