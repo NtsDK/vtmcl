@@ -11,7 +11,6 @@ import {
   CharSheetStorageService,
   DisciplinePathsService,
   DisciplinesService,
-  ErrorDescriptionService,
   HistoryService,
   LimitService,
   MeritsNFlawsService,
@@ -22,7 +21,6 @@ import {
   ProfileService,
   RealmsService,
   RitualsService,
-  SettingsService,
   StatusService,
   HealthService,
   VirtuesService,
@@ -30,9 +28,8 @@ import {
 
 import { useStore } from "./store";
 
-export function useErrorDescription(): ErrorDescriptionService {
-  return R.pick(["errorDescription", "setErrorDescription"], useStore());
-}
+export * from "./miscStorageAdapter";
+
 export function useCharSheetStorage(): CharSheetStorageService {
   return R.pick(["setCharSheet", "getCharSheet"], useStore());
 }
@@ -156,18 +153,6 @@ export function useOtherTraits(): OtherTraitsService {
       "setOtherTraitName",
       "setOtherTraitValue",
       "removeOtherTrait",
-    ],
-    useStore()
-  );
-}
-export function useSettings(): SettingsService {
-  return R.pick(
-    [
-      "settings",
-      "setBackgroundColor",
-      "setCharsheetBackColor",
-      "setCharsheetBackImage",
-      "setCharsheetBackMode",
     ],
     useStore()
   );

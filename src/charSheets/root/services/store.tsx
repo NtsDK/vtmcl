@@ -9,14 +9,12 @@ import React, {
 import * as R from "ramda";
 
 import {
-  ErrorDescriptionService,
   AbilitiesService,
   AttributesService,
   DisciplinesService,
   MeritsNFlawsService,
   NotesService,
   ProfileService,
-  SettingsService,
   HealthService,
   StatusService,
   BackgroundsService,
@@ -60,6 +58,10 @@ import {
 import { Virtues } from "../../vtm/domain";
 import { Realms } from "../../ctd/domain";
 import { CharsheetBackMode, ErrorDescription } from "../../misc/domain";
+import {
+  SettingsService,
+  ErrorDescriptionService,
+} from "../application/miscPorts";
 
 import { initialCharSheet } from "./initialValues";
 import { getLimits } from "./getLimits";

@@ -1,9 +1,5 @@
 import { Arts, Realms } from "../../ctd/domain";
-import {
-  CharsheetBackMode,
-  ErrorDescription,
-  Settings,
-} from "../../misc/domain";
+
 import {
   Disciplines,
   DisciplinePaths,
@@ -37,11 +33,24 @@ import {
 
 // char sheet
 
+// root
 export interface PresetService {
   preset: Preset;
   setPreset(preset: Preset): void;
 }
 
+// root
+export interface LimitService {
+  limits: Limits;
+}
+
+// root
+export interface CharSheetStorageService {
+  setCharSheet(charSheet: CharSheet): void;
+  getCharSheet(): CharSheet;
+}
+
+// generic
 export interface ProfileService {
   profile: Profile;
   setProfileItem(itemName: keyof Profile, value: string): void;
@@ -69,6 +78,23 @@ export interface AbilitiesExtensionService {
   ): void;
 }
 
+export interface BackgroundsService {
+  backgrounds: Backgrounds;
+  addBackground(): void;
+  setBackgroundName(index: number, name: string): void;
+  setBackgroundValue(index: number, value: number): void;
+  removeBackground(index: number): void;
+}
+
+export interface OtherTraitsService {
+  otherTraits: OtherTraits;
+  addOtherTrait(): void;
+  setOtherTraitName(index: number, name: string): void;
+  setOtherTraitValue(index: number, value: number): void;
+  removeOtherTrait(index: number): void;
+}
+
+// vtm
 export interface DisciplinesService {
   disciplines: Disciplines;
   addDiscipline(): void;
@@ -93,27 +119,12 @@ export interface RitualsService {
   removeRitual(index: number): void;
 }
 
-export interface BackgroundsService {
-  backgrounds: Backgrounds;
-  addBackground(): void;
-  setBackgroundName(index: number, name: string): void;
-  setBackgroundValue(index: number, value: number): void;
-  removeBackground(index: number): void;
-}
-
-export interface OtherTraitsService {
-  otherTraits: OtherTraits;
-  addOtherTrait(): void;
-  setOtherTraitName(index: number, name: string): void;
-  setOtherTraitValue(index: number, value: number): void;
-  removeOtherTrait(index: number): void;
-}
-
 export interface VirtuesService {
   virtues: Virtues;
   setVirtue(virtueName: keyof Virtues, value: number): void;
 }
 
+// ctd
 export interface RealmsService {
   realms: Realms;
   setRealm(realmName: keyof Realms, value: number): void;
@@ -126,6 +137,7 @@ export interface ArtsService {
   removeArt(index: number): void;
 }
 
+// generic
 export interface MeritsNFlawsService {
   merits: Merits;
   addMerit(): void;
@@ -137,6 +149,7 @@ export interface MeritsNFlawsService {
   removeFlaw(index: number): void;
 }
 
+// generic & ctd
 export interface HealthService {
   health: Health;
   setHealth(healthName: keyof Health, value: number): void;
@@ -176,28 +189,4 @@ export interface HistoryService {
   setCharHistory(charHistory: CharHistory): void;
   goals: Goals;
   setGoals(goals: Goals): void;
-}
-
-// non char sheet
-
-export interface SettingsService {
-  settings: Settings;
-  setBackgroundColor(backgroundColor: string): void;
-  setCharsheetBackColor(charsheetBackColor: string): void;
-  setCharsheetBackImage(charsheetBackImage: string): void;
-  setCharsheetBackMode(charsheetBackMode: CharsheetBackMode): void;
-}
-
-export interface LimitService {
-  limits: Limits;
-}
-
-export interface CharSheetStorageService {
-  setCharSheet(charSheet: CharSheet): void;
-  getCharSheet(): CharSheet;
-}
-
-export interface ErrorDescriptionService {
-  errorDescription: ErrorDescription | null;
-  setErrorDescription(errorDescription: ErrorDescription | null): void;
 }

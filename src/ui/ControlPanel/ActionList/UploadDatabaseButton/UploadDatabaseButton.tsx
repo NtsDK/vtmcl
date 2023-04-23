@@ -5,10 +5,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
 import { readTextFile } from "../../../../lib/fileUtils";
 import { strToCharSheet } from "../../../../charSheets/root/infrastructure/dbLoader";
-import {
-  CharSheetStorageService,
-  ErrorDescriptionService,
-} from "../../../../charSheets/root/application/ports";
+import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
+import { ErrorDescriptionService } from "../../../../charSheets/root/application/miscPorts";
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {
