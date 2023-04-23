@@ -4,15 +4,12 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { RealmsSection } from "./RealmsSection";
 import { ArtsSection } from "./ArtsSection";
-import {
-  useArts,
-  useBackgrounds,
-  useLimits,
-  useRealms,
-} from "../../../../charSheets/root/services/storageAdapter";
+import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
 import { BackgroundsSection } from "../../../generic/uiSections";
 import { useCtDResource } from "../../dropdownContent";
+import { useBackgrounds } from "../../../generic/services/storageAdapter";
+import { useArts, useRealms } from "../../services/storageAdapter";
 
 interface AdvantagesSectionProps {
   className?: string;

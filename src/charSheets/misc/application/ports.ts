@@ -1,8 +1,4 @@
-import {
-  CharsheetBackMode,
-  ErrorDescription,
-  Settings,
-} from "../../misc/domain";
+import { CharsheetBackMode, ErrorDescription, Settings } from "../domain";
 
 export interface SettingsService {
   settings: Settings;

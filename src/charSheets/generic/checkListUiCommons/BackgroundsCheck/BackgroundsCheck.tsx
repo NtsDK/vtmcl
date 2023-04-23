@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useBackgrounds } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkBackgrounds,
   EXPECTED_BACKGROUND_DOTS,
 } from "../../checkListLogic/commonCharacterChecks";
+import { useBackgrounds } from "../../services/storageAdapter";
 
 interface BackgroundsCheckProps {
   className?: string;

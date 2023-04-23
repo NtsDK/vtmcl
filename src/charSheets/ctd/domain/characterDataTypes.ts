@@ -10,7 +10,17 @@ export interface CtDProfile extends CommonProfile {
   motley: string;
 }
 
-// Changeling
+export interface CtDState extends CommonState {
+  antithesis: string;
+  thresholds: string;
+  birthrightsFrailties: string;
+  glamourRating: number;
+  glamourPool: number;
+  banalityRating: number;
+  banalityPool: number;
+  nightmare: number;
+}
+
 export type Arts = {
   name: string;
   value: number;
@@ -23,15 +33,4 @@ export interface Realms {
   prop: number;
   scene: number;
   time: number;
-}
-
-export interface CtDState extends CommonState {
-  antithesis: string;
-  thresholds: string;
-  birthrightsFrailties: string;
-  glamourRating: number;
-  glamourPool: number;
-  banalityRating: number;
-  banalityPool: number;
-  nightmare: number;
 }

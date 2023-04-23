@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useStatus } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../../generic/checkList";
 import {
   checkBanality,
   EXPECTED_BANALITY_DOTS,
 } from "../../checkListLogic/changelingCharacterChecks";
+import { useStatus } from "../../../generic/services/storageAdapter";
 
 interface BanalityCheckProps {
   className?: string;

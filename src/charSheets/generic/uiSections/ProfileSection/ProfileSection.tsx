@@ -4,8 +4,8 @@ import * as R from "ramda";
 
 import "./ProfileSection.css";
 import { ProfileSectionItem } from "./ProfileSectionItem";
-import { ProfileService } from "../../../../charSheets/root/application/ports";
 import { Resources, Profile, ProfileConfig } from "../../../root/domain";
+import { ProfileService } from "../../application/ports";
 
 interface ProfileSectionProps extends ProfileService {
   profileConfig: ProfileConfig;

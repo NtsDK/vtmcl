@@ -2,12 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import {
-  useLimits,
-  useMeritsNFlaws,
-  useStatus,
-  useHealth,
-} from "../../../../charSheets/root/services/storageAdapter";
+import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import {
   ExperienceSection,
   FlawsSection,
@@ -21,6 +16,11 @@ import { useVtMResource } from "../../dropdownContent";
 import { HumanitySection } from "./HumanitySection";
 import { BloodpoolSection } from "./BloodpoolSection";
 import { WeaknessSection } from "./WeaknessSection";
+import {
+  useMeritsNFlaws,
+  useStatus,
+  useHealth,
+} from "../../../generic/services/storageAdapter";
 
 interface StatusSectionProps {
   className?: string;

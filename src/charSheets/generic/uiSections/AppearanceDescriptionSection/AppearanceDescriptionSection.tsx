@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { TextAreaSection } from "../../uiPrimitives/TextAreaSection";
-import { AppearanceService } from "../../../../charSheets/root/application/ports";
+import { AppearanceService } from "../../application/ports";
 
 interface AppearanceDescriptionSectionProps extends AppearanceService {
   className?: string;

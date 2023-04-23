@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { StatusService } from "../../../../../charSheets/root/application/ports";
+import { StatusService } from "../../../../generic/application/ports";
 import { RatingPoolSection } from "../../../../generic/uiPrimitives";
 
 import "./GlamourSection.css";

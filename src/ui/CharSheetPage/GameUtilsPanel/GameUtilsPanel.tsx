@@ -10,7 +10,8 @@ import classnames from "classnames";
 import { AccordionToggle } from "../../../uiLib/AccordionToggle";
 
 import { CharacterCheckList } from "./CharacterCheckList";
-import { FreebiePointsPanel } from "./FreebiePointsPanel";
+import { FreebiePointsPanel } from "./FreebiePointsPanel/FreebiePointsPanel";
+// import { FreebiePointsPanel } from "./FreebiePointsPanel";
 
 interface GameUtilsPanelProps {
   className?: string;

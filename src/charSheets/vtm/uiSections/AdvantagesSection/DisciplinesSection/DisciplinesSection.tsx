@@ -2,12 +2,10 @@ import React, { memo } from "react";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import {
-  DisciplinesService,
-  LimitService,
-} from "../../../../../charSheets/root/application/ports";
+import { LimitService } from "../../../../../charSheets/root/application/ports";
 import { NameNumberSection } from "../../../../generic/uiPrimitives";
 import { OptionGroup } from "../../../../../charSheets/root/domain";
+import { DisciplinesService } from "../../../application/ports";
 
 interface DisciplinesSectionProps extends DisciplinesService, LimitService {
   disciplineOptions: OptionGroup[];

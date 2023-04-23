@@ -4,15 +4,12 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { VirtuesSection } from "./VirtuesSection";
 import { DisciplinesSection } from "./DisciplinesSection";
-import {
-  useBackgrounds,
-  useDisciplines,
-  useLimits,
-  useVirtues,
-} from "../../../../charSheets/root/services/storageAdapter";
+import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
 import { BackgroundsSection } from "../../../generic/uiSections";
 import { useVtMResource } from "../../dropdownContent";
+import { useDisciplines, useVirtues } from "../../services/storageAdapter";
+import { useBackgrounds } from "../../../generic/services/storageAdapter";
 
 interface AdvantagesSectionProps {
   className?: string;

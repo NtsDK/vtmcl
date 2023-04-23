@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useAttributes } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkAttributesFilled,
   EXPECTED_ATTRIBUTE_DOTS,
 } from "../../checkListLogic/commonCharacterChecks";
 import { usePresetSettings } from "../../..";
+import { useAttributes } from "../../services/storageAdapter";
 
 interface AttributesCheckProps {
   className?: string;

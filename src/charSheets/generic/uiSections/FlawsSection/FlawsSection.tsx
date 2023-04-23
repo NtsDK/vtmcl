@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { NameSection } from "../../uiPrimitives/NameSection";
 
 import "./FlawsSection.css";
-import { MeritsNFlawsService } from "../../../../charSheets/root/application/ports";
 import { OptionGroup } from "../../../root/domain";
+import { MeritsNFlawsService } from "../../application/ports";
 
 interface FlawsSectionProps extends MeritsNFlawsService {
   flawOptions: OptionGroup[];

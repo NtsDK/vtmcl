@@ -4,15 +4,15 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { usePresetSettings } from "../../..";
-import {
-  useAbilities,
-  useAbilitiesExtension,
-} from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   ABILITY_LIMIT,
   checkAbilitiesDotLimit,
 } from "../../checkListLogic/commonCharacterChecks";
+import {
+  useAbilitiesExtension,
+  useAbilities,
+} from "../../services/storageAdapter";
 
 interface AbilitiesDotLimitCheckProps {
   className?: string;

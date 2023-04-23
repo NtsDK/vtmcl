@@ -6,8 +6,8 @@ import { Subheader } from "../../uiPrimitives/Subheader";
 import { RangeInput2 } from "../../uiPrimitives/RangeInput2";
 
 import "./AttributeSection.css";
-import { AttributesService } from "../../../../charSheets/root/application/ports";
 import { Attributes, AttributesConfig, Limits } from "../../../root/domain";
+import { AttributesService } from "../../application/ports";
 
 interface AttributeSectionProps extends AttributesService {
   limits: Limits;

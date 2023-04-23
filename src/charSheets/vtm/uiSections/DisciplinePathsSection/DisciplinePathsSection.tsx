@@ -2,9 +2,10 @@ import React, { memo } from "react";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { DisciplinePathsService } from "../../../../charSheets/root/application/ports";
+// import { DisciplinePathsService } from "../../../../charSheets/root/application/ports";
 import { Limits, OptionGroup } from "../../../../charSheets/root/domain";
 import { NameNumberSection } from "../../../generic/uiPrimitives";
+import { DisciplinePathsService } from "../../application/ports";
 
 interface DisciplinePathsSectionProps extends DisciplinePathsService {
   disciplinePathOptions: OptionGroup[];

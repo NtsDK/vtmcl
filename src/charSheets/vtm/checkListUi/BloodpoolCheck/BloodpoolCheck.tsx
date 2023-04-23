@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useStatus } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../../generic/checkList";
 import {
   checkBloodpool,
   INITIAL_BLOODPOOL_MAX_LIMIT,
 } from "../../checkListLogic/vampireCharacterChecks";
 import { randomInteger } from "../../../../lib/miscUtils";
+import { useStatus } from "../../../generic/services/storageAdapter";
 
 interface BloodpoolCheckProps {
   className?: string;

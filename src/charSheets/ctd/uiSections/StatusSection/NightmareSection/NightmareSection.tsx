@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import "./NightmareSection.css";
-import { StatusService } from "../../../../../charSheets/root/application/ports";
 import { RangeInput2 } from "../../../../generic/uiPrimitives";
+import { StatusService } from "../../../../generic/application/ports";
 
 interface NightmareSectionProps extends StatusService {
   className?: string;

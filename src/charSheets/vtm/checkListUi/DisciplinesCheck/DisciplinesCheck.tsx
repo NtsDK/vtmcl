@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useDisciplines } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../../generic/checkList";
 import {
   checkDisciplines,
   EXPECTED_DISCIPLINE_DOTS,
 } from "../../checkListLogic/vampireCharacterChecks";
+import { useDisciplines } from "../../services/storageAdapter";
 
 interface DisciplinesCheckProps {
   className?: string;

@@ -3,10 +3,8 @@ import { NameNumberSection } from "../../uiPrimitives/NameNumberSection";
 
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import {
-  BackgroundsService,
-  LimitService,
-} from "../../../../charSheets/root/application/ports";
+import { LimitService } from "../../../../charSheets/root/application/ports";
+import { BackgroundsService } from "../../application/ports";
 
 interface BackgroundsSectionProps extends BackgroundsService, LimitService {
   backgroundOptions: string[];

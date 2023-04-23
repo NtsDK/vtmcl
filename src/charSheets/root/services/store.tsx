@@ -9,29 +9,9 @@ import React, {
 import * as R from "ramda";
 
 import {
-  AbilitiesService,
-  AttributesService,
-  DisciplinesService,
-  MeritsNFlawsService,
-  NotesService,
-  ProfileService,
-  HealthService,
-  StatusService,
-  BackgroundsService,
-  VirtuesService,
   CharSheetStorageService,
-  AbilitiesExtensionService,
   PresetService,
-  RealmsService,
-  ArtsService,
   LimitService,
-  HistoryService,
-  DisciplinePathsService,
-  RitualsService,
-  AlliesAndContactsService,
-  PossessionsService,
-  AppearanceService,
-  OtherTraitsService,
 } from "../application/ports";
 import {
   Attributes,
@@ -59,9 +39,32 @@ import { Virtues } from "../../vtm/domain";
 import { Realms } from "../../ctd/domain";
 import { CharsheetBackMode, ErrorDescription } from "../../misc/domain";
 import {
+  AbilitiesExtensionService,
+  AbilitiesService,
+  AlliesAndContactsService,
+  AppearanceService,
+  AttributesService,
+  BackgroundsService,
+  HealthService,
+  HistoryService,
+  MeritsNFlawsService,
+  NotesService,
+  OtherTraitsService,
+  PossessionsService,
+  ProfileService,
+  StatusService,
+} from "../../generic/application/ports";
+import { RealmsService, ArtsService } from "../../ctd/application/ports";
+import {
+  DisciplinesService,
+  DisciplinePathsService,
+  RitualsService,
+  VirtuesService,
+} from "../../vtm/application/ports";
+import {
   SettingsService,
   ErrorDescriptionService,
-} from "../application/miscPorts";
+} from "../../misc/application/ports";
 
 import { initialCharSheet } from "./initialValues";
 import { getLimits } from "./getLimits";

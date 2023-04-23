@@ -1,17 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { useLimits } from "../../charSheets/root/services/storageAdapter";
 import {
-  useAlliesAndContacts,
-  useAppearance,
-  useCharHistory,
-  useDisciplinePaths,
-  useLimits,
-  useNotes,
   useOtherTraits,
+  useCharHistory,
+  useAlliesAndContacts,
   usePossessions,
-  useRituals,
-} from "../../charSheets/root/services/storageAdapter";
+  useAppearance,
+  useNotes,
+} from "../generic/services/storageAdapter";
 import { CharSheetBody, SectionHeader } from "../generic/uiPrimitives";
 import {
   AlliesAndContactsSection,
@@ -25,6 +23,7 @@ import {
   PossessionsSection,
 } from "../generic/uiSections";
 import { useVtMResource } from "./dropdownContent";
+import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
 
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";

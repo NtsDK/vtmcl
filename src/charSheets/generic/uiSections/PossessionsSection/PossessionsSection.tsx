@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { TextAreaSection } from "../../uiPrimitives/TextAreaSection";
-import { PossessionsService } from "../../../../charSheets/root/application/ports";
+import { PossessionsService } from "../../application/ports";
 
 interface PossessionsSectionProps extends PossessionsService {
   className?: string;

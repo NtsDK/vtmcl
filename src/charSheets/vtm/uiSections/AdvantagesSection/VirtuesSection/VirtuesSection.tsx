@@ -4,9 +4,9 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import "./VirtuesSection.css";
-import { VirtuesService } from "../../../../../charSheets/root/application/ports";
 import { RangeInput2 } from "../../../../generic/uiPrimitives";
 import { Virtues } from "../../../domain";
+import { VirtuesService } from "../../../application/ports";
 
 interface VirtuesSectionProps extends VirtuesService {
   className?: string;

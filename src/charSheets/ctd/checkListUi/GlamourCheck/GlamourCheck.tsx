@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useStatus } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../../generic/checkList";
 import {
   checkGlamour,
   EXPECTED_GLAMOUR_DOTS,
 } from "../../checkListLogic/changelingCharacterChecks";
+import { useStatus } from "../../../generic/services/storageAdapter";
 
 interface GlamourCheckProps {
   className?: string;

@@ -3,10 +3,6 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import {
-  useStatus,
-  useHealth,
-} from "../../../../charSheets/root/services/storageAdapter";
-import {
   ExperienceSection,
   WillSection,
   HealthSection,
@@ -19,6 +15,7 @@ import { NightmareSection } from "./NightmareSection";
 import { AntitesisSection } from "./AntitesisSection";
 import { BirthrightsFrailtiesSection } from "./BirthrightsFrailtiesSection";
 import { ThresholdsSection } from "./ThresholdsSection";
+import { useHealth, useStatus } from "../../../generic/services/storageAdapter";
 
 interface StatusSectionProps {
   className?: string;

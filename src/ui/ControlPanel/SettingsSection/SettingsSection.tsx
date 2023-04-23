@@ -3,8 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useTranslation } from "react-i18next";
 
-import { useSettings } from "../../../charSheets/root/services/storageAdapter";
 import { initialSettings } from "../../../charSheets/misc/services/initialValues";
+import { useSettings } from "../../../charSheets/misc/services/storageAdapter";
 
 interface SettingsSectionProps {}
 

@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { TextAreaSection } from "../../uiPrimitives/TextAreaSection";
-import { NotesService } from "../../../../charSheets/root/application/ports";
+import { NotesService } from "../../application/ports";
 
 interface NotesSectionProps extends NotesService {
   className?: string;

@@ -6,7 +6,7 @@ import { Health } from "../../../root/domain";
 import { HealthInput } from "../../uiPrimitives/HealthInput";
 
 import "./HealthSection.css";
-import { HealthService } from "../../../../charSheets/root/application/ports";
+import { HealthService } from "../../application/ports";
 
 interface HealthSectionProps extends HealthService {
   variant?: "common" | "changeling";

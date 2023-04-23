@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { useArts } from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../../generic/checkList";
 import {
   checkArts,
   EXPECTED_ART_DOTS,
 } from "../../checkListLogic/changelingCharacterChecks";
+import { useArts } from "../../services/storageAdapter";
 
 interface ArtsCheckProps {
   className?: string;

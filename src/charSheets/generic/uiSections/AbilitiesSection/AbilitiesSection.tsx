@@ -7,16 +7,16 @@ import { RangeInput2 } from "../../uiPrimitives/RangeInput2";
 
 import "./AbilitiesSection.css";
 import {
-  AbilitiesExtensionService,
-  AbilitiesService,
-} from "../../../../charSheets/root/application/ports";
-import {
   Abilities,
   AbilitiesConfig,
   AbilitiesExtensionValue,
   Limits,
   PresetSettings,
 } from "../../../root/domain";
+import {
+  AbilitiesExtensionService,
+  AbilitiesService,
+} from "../../application/ports";
 
 interface AbilitiesSectionProps
   extends AbilitiesService,

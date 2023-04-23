@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, ChangeEvent, memo } from "react";
 import Button from "react-bootstrap/Button";
 import { useTranslation } from "react-i18next";
-import { AppearanceService } from "../../../../charSheets/root/application/ports";
+import { AppearanceService } from "../../application/ports";
 
 interface CharacterImageSectionProps extends AppearanceService {}
 

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { readTextFile } from "../../../../lib/fileUtils";
 import { strToCharSheet } from "../../../../charSheets/root/infrastructure/dbLoader";
 import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
-import { ErrorDescriptionService } from "../../../../charSheets/root/application/miscPorts";
+import { ErrorDescriptionService } from "../../../../charSheets/misc/application/ports";
 
 // @ts-ignore
 function uploadDatabaseFile(evt) {

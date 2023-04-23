@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { TextAreaSection } from "../../uiPrimitives/TextAreaSection";
-import { AlliesAndContactsService } from "../../../../charSheets/root/application/ports";
+import { AlliesAndContactsService } from "../../application/ports";
 
 interface AlliesAndContactsSectionProps extends AlliesAndContactsService {
   className?: string;

@@ -4,15 +4,15 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { usePresetSettings } from "../../..";
-import {
-  useAbilities,
-  useAbilitiesExtension,
-} from "../../../../charSheets/root/services/storageAdapter";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkAbilitiesFilled,
   EXPECTED_ABILITY_DOTS,
 } from "../../checkListLogic/commonCharacterChecks";
+import {
+  useAbilities,
+  useAbilitiesExtension,
+} from "../../services/storageAdapter";
 
 interface AbilitiesCheckProps {
   className?: string;

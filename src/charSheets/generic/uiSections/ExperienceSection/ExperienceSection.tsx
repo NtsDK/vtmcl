@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { LineSection } from "../../uiPrimitives/LineSection";
 
 import "./ExperienceSection.css";
-import { StatusService } from "../../../../charSheets/root/application/ports";
+import { StatusService } from "../../application/ports";
 
 interface ExperienceSectionProps extends StatusService {
   className?: string;

@@ -15,6 +15,19 @@ export interface VtMProfile extends CommonProfile {
   sire: string;
 }
 
+export interface VtMState extends CommonState {
+  // path
+  humanity: number;
+  pathName: string;
+  bearingName: string;
+  bearingModifier: string;
+  // bloodpool
+  bloodpool: number;
+  bloodPerTurn: string;
+  // other
+  weakness: string;
+}
+
 // Advantages
 export interface Virtues {
   conscience: number;
@@ -28,16 +41,3 @@ export type Rituals = {
   name: string;
   level: string;
 }[];
-
-export interface VtMState extends CommonState {
-  // path
-  humanity: number;
-  pathName: string;
-  bearingName: string;
-  bearingModifier: string;
-  // bloodpool
-  bloodpool: number;
-  bloodPerTurn: string;
-  // other
-  weakness: string;
-}

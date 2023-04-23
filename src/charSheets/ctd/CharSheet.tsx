@@ -1,16 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { useLimits } from "../../charSheets/root/services/storageAdapter";
 import {
-  useAlliesAndContacts,
-  useAppearance,
-  useCharHistory,
-  useLimits,
   useMeritsNFlaws,
-  useNotes,
   useOtherTraits,
+  useCharHistory,
+  useAlliesAndContacts,
   usePossessions,
-} from "../../charSheets/root/services/storageAdapter";
+  useAppearance,
+  useNotes,
+} from "../generic/services/storageAdapter";
 import {
   CharSheetBody,
   SectionHeader,

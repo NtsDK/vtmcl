@@ -3,8 +3,8 @@ import { NameNumberSection } from "../../uiPrimitives/NameNumberSection";
 
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
-import { OtherTraitsService } from "../../../../charSheets/root/application/ports";
 import { Limits } from "../../../root/domain";
+import { OtherTraitsService } from "../../application/ports";
 
 interface OtherTraitsSectionProps extends OtherTraitsService {
   limits: Limits;

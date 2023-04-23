@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { TextAreaSection } from "../../uiPrimitives/TextAreaSection";
-import { HistoryService } from "../../../../charSheets/root/application/ports";
+import { HistoryService } from "../../application/ports";
 
 interface CharHistorySectionProps extends HistoryService {
   className?: string;
