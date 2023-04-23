@@ -1,6 +1,11 @@
 import { Disciplines, DisciplinePaths, Rituals, Virtues } from "../domain";
 
-// vtm
+export interface CombinedVtMService
+  extends DisciplinesService,
+    DisciplinePathsService,
+    RitualsService,
+    VirtuesService {}
+
 export interface DisciplinesService {
   disciplines: Disciplines;
   addDiscipline(): void;

@@ -1,5 +1,7 @@
 import { Realms, Arts } from "../domain";
 
+export interface CombinedCtDService extends RealmsService, ArtsService {}
+
 export interface RealmsService {
   realms: Realms;
   setRealm(realmName: keyof Realms, value: number): void;

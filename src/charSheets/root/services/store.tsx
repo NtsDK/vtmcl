@@ -9,11 +9,6 @@ import React, {
 import * as R from "ramda";
 
 import {
-  CharSheetStorageService,
-  PresetService,
-  LimitService,
-} from "../application/ports";
-import {
   Attributes,
   Abilities,
   AbilitiesExtensionName,
@@ -38,33 +33,11 @@ import {
 import { Virtues } from "../../vtm/domain";
 import { Realms } from "../../ctd/domain";
 import { CharsheetBackMode, ErrorDescription } from "../../misc/domain";
-import {
-  AbilitiesExtensionService,
-  AbilitiesService,
-  AlliesAndContactsService,
-  AppearanceService,
-  AttributesService,
-  BackgroundsService,
-  HealthService,
-  HistoryService,
-  MeritsNFlawsService,
-  NotesService,
-  OtherTraitsService,
-  PossessionsService,
-  ProfileService,
-  StatusService,
-} from "../../generic/application/ports";
-import { RealmsService, ArtsService } from "../../ctd/application/ports";
-import {
-  DisciplinesService,
-  DisciplinePathsService,
-  RitualsService,
-  VirtuesService,
-} from "../../vtm/application/ports";
-import {
-  SettingsService,
-  ErrorDescriptionService,
-} from "../../misc/application/ports";
+import { CombinedRootService } from "../application/ports";
+import { CombinedGenericService } from "../../generic/application/ports";
+import { CombinedCtDService } from "../../ctd/application/ports";
+import { CombinedVtMService } from "../../vtm/application/ports";
+import { CombinedMiscService } from "../../misc/application/ports";
 
 import { initialCharSheet } from "./initialValues";
 import { getLimits } from "./getLimits";
@@ -75,31 +48,11 @@ import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
 
 export interface StateStore
-  extends PresetService,
-    ProfileService,
-    AttributesService,
-    AbilitiesService,
-    AbilitiesExtensionService,
-    DisciplinesService,
-    DisciplinePathsService,
-    RitualsService,
-    BackgroundsService,
-    VirtuesService,
-    MeritsNFlawsService,
-    HealthService,
-    StatusService,
-    NotesService,
-    SettingsService,
-    CharSheetStorageService,
-    ErrorDescriptionService,
-    RealmsService,
-    ArtsService,
-    LimitService,
-    HistoryService,
-    AlliesAndContactsService,
-    PossessionsService,
-    AppearanceService,
-    OtherTraitsService {}
+  extends CombinedRootService,
+    CombinedGenericService,
+    CombinedCtDService,
+    CombinedVtMService,
+    CombinedMiscService {}
 
 // @ts-ignore
 const StoreContext = React.createContext<StateStore>({});

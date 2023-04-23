@@ -18,6 +18,22 @@ import {
   Possessions,
 } from "../domain";
 
+export interface CombinedGenericService
+  extends ProfileService,
+    AttributesService,
+    AbilitiesService,
+    AbilitiesExtensionService,
+    BackgroundsService,
+    OtherTraitsService,
+    MeritsNFlawsService,
+    HealthService,
+    StatusService,
+    NotesService,
+    AppearanceService,
+    AlliesAndContactsService,
+    PossessionsService,
+    HistoryService {}
+
 // generic
 export interface ProfileService {
   profile: Profile;
