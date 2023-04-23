@@ -1,13 +1,13 @@
 import * as R from "ramda";
 
-import {
-  initialAbilities,
-  initialAbilitiesExtension,
-  initialAttributes,
-  initialBackgrounds,
-} from "../../../charSheets/root/services/initialValues";
+import { initialAbilities } from "../../../charSheets/root/services/initialValues";
 import { abilitiesConfig as vampireAbilitiesConfig } from "../../vtm/presetSettings/abilitiesConfig";
 import { attributesConfig } from "../presetSettings/attributesConfig";
+import {
+  initialAttributes,
+  initialAbilitiesExtension,
+  initialBackgrounds,
+} from "../services/initialValues";
 
 import {
   ABILITY_LIMIT,

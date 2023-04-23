@@ -1,8 +1,4 @@
-import {
-  CommonFreebiePointName,
-  CommonProfile,
-  CommonState,
-} from "../../generic/domain";
+import { CommonFreebiePointName } from "../../generic/domain";
 import {
   CtDProfile,
   CtDState,
@@ -19,11 +15,11 @@ import {
 } from "../../vtm/domain";
 
 // Profile
-export interface Profile extends CommonProfile, VtMProfile, CtDProfile {}
+export interface Profile extends VtMProfile, CtDProfile {}
 
-export interface State extends CommonState, VtMState, CtDState {}
+export interface State extends VtMState, CtDState {}
 
-export interface Abilities extends CtDAbilities, VtMAbilities {}
+export interface Abilities extends VtMAbilities, CtDAbilities {}
 
 export type Preset = VtMPresetName | CtDPresetName;
 

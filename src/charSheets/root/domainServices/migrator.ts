@@ -1,6 +1,6 @@
 import * as R from "ramda";
-import { defaultBackgroundUrl } from "../services/defaultBackground";
-// import { defaultBackgroundUrl } from "../charSheets/root/services/defaultBackground";
+
+import { defaultBackgroundUrl } from "../../misc/services/initialValues";
 
 export function migrate(charSheetSrc: any): unknown {
   let charSheet = R.clone(charSheetSrc);

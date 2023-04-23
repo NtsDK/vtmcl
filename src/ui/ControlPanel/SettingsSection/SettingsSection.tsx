@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useTranslation } from "react-i18next";
 
 import { useSettings } from "../../../charSheets/root/services/storageAdapter";
-import { initialSettings } from "../../../charSheets/root/services/initialValues";
+import { initialSettings } from "../../../charSheets/misc/services/initialValues";
 
 interface SettingsSectionProps {}
 

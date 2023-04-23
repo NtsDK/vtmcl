@@ -1,6 +1,7 @@
 import { CharSheetInJson } from "./types";
 import { CURRENT_VERSION } from "../../../../constants";
-import { defaultBackgroundUrl } from "../../services/defaultBackground";
+import { defaultBackgroundUrl } from "../../../misc/services/initialValues";
+// import { defaultBackgroundUrl } from "../../services/defaultBackground";
 // import { defaultBackgroundUrl } from "../../charSheets/root/services/defaultBackground";
 
 export const m: CharSheetInJson = {

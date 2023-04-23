@@ -1,8 +1,7 @@
 import * as R from "ramda";
 
-import { State } from "../../root/domain";
 import { CheckNumberResult, checkArrSumFilled } from "../../generic/checkList";
-import { Arts, Realms } from "../domain";
+import { Arts, Realms, CtDState } from "../domain";
 
 export const EXPECTED_ART_DOTS = 3;
 export const EXPECTED_BANALITY_DOTS = 3;
@@ -14,11 +13,11 @@ export function checkArts(arts: Arts): CheckNumberResult {
   return checkArrSumFilled(R.pluck("value", arts), EXPECTED_ART_DOTS);
 }
 
-export function checkBanality(state: State): boolean {
+export function checkBanality(state: CtDState): boolean {
   return state.banalityRating === EXPECTED_BANALITY_DOTS;
 }
 
-export function checkGlamour(state: State): boolean {
+export function checkGlamour(state: CtDState): boolean {
   return state.glamourRating === EXPECTED_GLAMOUR_DOTS;
 }
 
@@ -26,6 +25,6 @@ export function checkRealms(realms: Realms): CheckNumberResult {
   return checkArrSumFilled(R.values(realms), EXPECTED_REALM_DOTS);
 }
 
-export function checkChangelingWillpower(state: State): boolean {
+export function checkChangelingWillpower(state: CtDState): boolean {
   return state.willpowerRating === EXPECTED_WILLPOWER_DOTS;
 }

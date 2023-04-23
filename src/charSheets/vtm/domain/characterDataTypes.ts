@@ -1,6 +1,10 @@
-import { NameStringArray } from "../../generic/domain";
+import {
+  CommonProfile,
+  CommonState,
+  NameStringArray,
+} from "../../generic/domain";
 
-export interface VtMProfile {
+export interface VtMProfile extends CommonProfile {
   nature: string;
   age: string;
   sex: string;
@@ -25,7 +29,7 @@ export type Rituals = {
   level: string;
 }[];
 
-export interface VtMState {
+export interface VtMState extends CommonState {
   // path
   humanity: number;
   pathName: string;

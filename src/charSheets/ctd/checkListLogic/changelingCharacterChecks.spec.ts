@@ -3,8 +3,8 @@ import * as R from "ramda";
 import {
   initialArts,
   initialRealms,
-  initialState,
-} from "../../../charSheets/root/services/initialValues";
+  initialCtDState,
+} from "../services/initialValues";
 
 import {
   checkChangelingWillpower,
@@ -17,48 +17,48 @@ import {
 describe("Changeling character checks", () => {
   describe("checkChangelingWillpower", () => {
     it("willpowerRating = 0 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       expect(checkChangelingWillpower(state)).toStrictEqual(false);
     });
     it("willpowerRating = 4 - valid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.willpowerRating = 4;
       expect(checkChangelingWillpower(state)).toStrictEqual(true);
     });
     it("willpowerRating = 5 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.willpowerRating = 5;
       expect(checkChangelingWillpower(state)).toStrictEqual(false);
     });
   });
   describe("checkGlamour", () => {
     it("Banality = 0 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       expect(checkGlamour(state)).toStrictEqual(false);
     });
     it("Banality = 4 - valid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.glamourRating = 4;
       expect(checkGlamour(state)).toStrictEqual(true);
     });
     it("Banality = 5 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.glamourRating = 5;
       expect(checkGlamour(state)).toStrictEqual(false);
     });
   });
   describe("checkBanality", () => {
     it("Banality = 0 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       expect(checkBanality(state)).toStrictEqual(false);
     });
     it("Banality = 3 - valid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.banalityRating = 3;
       expect(checkBanality(state)).toStrictEqual(true);
     });
     it("Banality = 5 - invalid", () => {
-      const state = R.clone(initialState);
+      const state = R.clone(initialCtDState);
       state.banalityRating = 5;
       expect(checkBanality(state)).toStrictEqual(false);
     });

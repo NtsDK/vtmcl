@@ -1,4 +1,6 @@
-export interface CtDProfile {
+import { CommonProfile, CommonState } from "../../generic/domain";
+
+export interface CtDProfile extends CommonProfile {
   court: string;
   primaryLegacy: string;
   secondaryLegacy: string;
@@ -23,7 +25,7 @@ export interface Realms {
   time: number;
 }
 
-export interface CtDState {
+export interface CtDState extends CommonState {
   antithesis: string;
   thresholds: string;
   birthrightsFrailties: string;
