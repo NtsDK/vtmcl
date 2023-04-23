@@ -26,23 +26,23 @@ import {
 import { Profile, State, Abilities, Preset } from "./combinedDataTypes";
 
 export interface CharSheet {
+  // root
+  preset: Preset;
+
+  // misc
   Version: Version;
   settings: Settings;
-  preset: Preset;
+
+  // generic
   profile: Profile;
   attributes: Attributes;
   abilities: Abilities;
   abilitiesExtension: AbilitiesExtension;
-  disciplines: Disciplines;
-  disciplinePaths: DisciplinePaths;
-  rituals: Rituals;
-  backgrounds: Backgrounds;
-  virtues: Virtues;
-  merits: Merits;
-  flaws: Flaws;
   state: State;
   health: Health;
-  healthChimerical: Health;
+  backgrounds: Backgrounds;
+  merits: Merits;
+  flaws: Flaws;
   notes: Notes;
   charHistory: CharHistory;
   goals: Goals;
@@ -52,6 +52,14 @@ export interface CharSheet {
   alliesAndContacts: AlliesAndContacts;
   possessions: Possessions;
 
+  // vtm
+  disciplines: Disciplines;
+  disciplinePaths: DisciplinePaths;
+  rituals: Rituals;
+  virtues: Virtues;
+
+  // ctd
+  healthChimerical: Health;
   arts: Arts;
   realms: Realms;
 }

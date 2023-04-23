@@ -32,3 +32,36 @@ export type AbilitiesExtensionValue = keyof Pick<
   | "knowledgeValue1"
   | "knowledgeValue2"
 >;
+
+export interface CommonAbilities {
+  alertness: number;
+  athletics: number;
+  brawl: number;
+  empathy: number;
+  expression: number;
+  intimidation: number;
+  leadership: number;
+  streetwise: number;
+  subterfuge: number;
+  awareness: number;
+  animalken: number;
+  crafts: number;
+  drive: number;
+  etiquette: number;
+  firearms: number;
+  melee: number;
+  performance: number;
+  stealth: number;
+  survival: number;
+  larceny: number;
+  academics: number;
+  computer: number;
+  finance: number;
+  investigation: number;
+  law: number;
+  medicine: number;
+  occult: number;
+  politics: number;
+  science: number;
+  technology: number;
+}
