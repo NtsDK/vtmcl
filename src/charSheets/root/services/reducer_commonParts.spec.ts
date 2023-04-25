@@ -1,9 +1,11 @@
 import * as R from "ramda";
+
+import { capitalize } from "../../../lib/miscUtils";
 import { CharSheet } from "../domain";
+
 import { commonPartActions } from "./actions_commonParts";
 import { CompositeReducer } from "./CompositeReducer";
 import { initialCharSheet } from "./initialValues";
-import { StringValueNames } from "./typesAndUtils";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(commonPartActions);
 
@@ -88,8 +90,8 @@ describe("commonPartActions", () => {
     expect(charSheet.state.antithesis).toBe("abn");
   });
 
-  describe("setStringItem", () => {
-    const stringValueNames: StringValueNames[] = [
+  describe("set string values", () => {
+    const stringValueNames = [
       "notes",
       "alliesAndContacts",
       "possessions",
@@ -97,14 +99,16 @@ describe("commonPartActions", () => {
       "characterImage",
       "charHistory",
       "goals",
-    ];
+    ] as const;
 
     stringValueNames.forEach((stringValueName) => {
       it(`${stringValueName}`, () => {
         expect(initialCharSheet[stringValueName]).toBe("");
         const charSheet = reduce(initialCharSheet, {
-          type: "setStringItem",
-          props: [stringValueName, "pepper"],
+          type: `set${capitalize(stringValueName)}` as `set${Capitalize<
+            typeof stringValueName
+          >}`,
+          props: ["pepper"],
         });
         expect(charSheet[stringValueName]).toBe("pepper");
       });

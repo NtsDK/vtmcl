@@ -1,9 +1,10 @@
 import * as R from "ramda";
+
 import { defaultBackgroundUrl } from "../../misc/services/initialValues";
 import { CharSheet } from "../domain";
+
 import { charSheetMetaActions } from "./actions_charSheetMeta";
 import { CompositeReducer } from "./CompositeReducer";
-// import { defaultBackgroundUrl } from "./defaultBackground";
 import { initialCharSheet } from "./initialValues";
 
 const { reduce } = new CompositeReducer<CharSheet>().assign(
@@ -24,10 +25,10 @@ describe("charSheetMetaActions", () => {
     expect(charSheet).toEqual(otherCharSheet2);
   });
 
-  it("setPresetValue", () => {
+  it("setPreset", () => {
     expect(initialCharSheet.preset).toBe("vampire_v20");
     const charSheet = reduce(initialCharSheet, {
-      type: "setPresetValue",
+      type: "setPreset",
       props: ["changeling_v20"],
     });
     expect(charSheet.preset).toBe("changeling_v20");

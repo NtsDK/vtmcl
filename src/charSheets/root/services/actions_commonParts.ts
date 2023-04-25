@@ -1,4 +1,6 @@
 import * as R from "ramda";
+
+import { capitalize } from "../../../lib/miscUtils";
 import {
   Abilities,
   AbilitiesExtensionName,
@@ -9,10 +11,50 @@ import {
   Profile,
   State,
 } from "../domain";
+
 import { getLimits } from "./getLimits";
-import { applyRange, mutateObj, StringValueNames } from "./typesAndUtils";
+import { applyRange, mutateObj } from "./typesAndUtils";
+
+const stringValues = [
+  "notes",
+  "alliesAndContacts",
+  "possessions",
+  "appearanceDescription",
+  "characterImage",
+  "charHistory",
+  "goals",
+] as const;
+
+function generateStringMutators<T extends readonly any[]>(
+  arr: T
+): {
+  [key in T[number] as `set${Capitalize<key>}`]: (
+    state: CharSheet,
+    [value]: [string]
+  ) => CharSheet;
+} {
+  return arr.reduce((acc, itemName) => {
+    acc[`set${capitalize(itemName)}`] = (
+      state: CharSheet,
+      [value]: [string]
+    ): CharSheet => {
+      return mutateObj(state, itemName, value);
+    };
+    return acc;
+  }, {});
+}
+
+const res = generateStringMutators(stringValues);
+
+// setStringItem(
+//   state: CharSheet,
+//   [itemName, value]: [StringValueNames, string]
+// ): CharSheet {
+//   return mutateObj(state, itemName, value);
+// },
 
 export const commonPartActions = {
+  ...res,
   setProfileItem(
     state: CharSheet,
     [itemName, value]: [keyof Profile, string]
@@ -106,12 +148,6 @@ export const commonPartActions = {
         mutateObj(state.state, stateName, value)
       );
     }
-  },
-  setStringItem(
-    state: CharSheet,
-    [itemName, value]: [StringValueNames, string]
-  ): CharSheet {
-    return mutateObj(state, itemName, value);
   },
 
   addMerit(state: CharSheet): CharSheet {

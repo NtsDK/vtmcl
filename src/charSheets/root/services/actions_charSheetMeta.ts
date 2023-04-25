@@ -9,7 +9,7 @@ export const charSheetMetaActions = {
     };
   },
 
-  setPresetValue(state: CharSheet, [preset]: [Preset]): CharSheet {
+  setPreset(state: CharSheet, [preset]: [Preset]): CharSheet {
     return mutateObj(state, "preset", preset);
   },
 
