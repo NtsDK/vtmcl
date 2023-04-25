@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-import { capitalize } from "../../../lib/miscUtils";
+import { applyRange, capitalize, mutateObj } from "../../../lib/miscUtils";
 import {
   Abilities,
   AbilitiesExtensionName,
@@ -13,7 +13,6 @@ import {
 } from "../domain";
 
 import { getLimits } from "./getLimits";
-import { applyRange, mutateObj } from "./typesAndUtils";
 
 const stringValues = [
   "notes",

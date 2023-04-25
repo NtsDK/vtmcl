@@ -1,6 +1,6 @@
 import { CharsheetBackMode } from "../../misc/domain";
 import { CharSheet, Preset } from "../domain";
-import { mutateObj } from "./typesAndUtils";
+import { mutateObj } from "../../../lib/miscUtils";
 
 export const charSheetMetaActions = {
   setCharSheet(state: CharSheet, [newState]: [CharSheet]): CharSheet {

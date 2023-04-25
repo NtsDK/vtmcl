@@ -1,8 +1,10 @@
 import * as R from "ramda";
+
 import { Realms } from "../../ctd/domain";
 import { CharSheet, Health } from "../domain";
+import { applyRange, mutateObj } from "../../../lib/miscUtils";
+
 import { getLimits } from "./getLimits";
-import { applyRange, mutateObj } from "./typesAndUtils";
 
 export const ctdPartActions = {
   setRealm(
