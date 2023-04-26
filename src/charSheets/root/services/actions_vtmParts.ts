@@ -1,8 +1,10 @@
 import * as R from "ramda";
+
+import { applyRange, mutateObj } from "../../../lib/miscUtils";
 import { Virtues } from "../../vtm/domain";
 import { CharSheet } from "../domain";
+
 import { getLimits } from "./getLimits";
-import { applyRange, mutateObj } from "./typesAndUtils";
 
 export const vtmPartActions = {
   setVirtue(
