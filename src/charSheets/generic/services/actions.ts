@@ -1,18 +1,20 @@
 import * as R from "ramda";
 
 import { applyRange, capitalize, mutateObj } from "../../../lib/miscUtils";
+import { CombinedGenericService } from "../application/ports";
 import {
   Abilities,
-  AbilitiesExtensionName,
-  AbilitiesExtensionValue,
   Attributes,
   CharSheet,
-  Health,
   Profile,
   State,
+} from "../../root/domain";
+import {
+  AbilitiesExtensionName,
+  AbilitiesExtensionValue,
+  Health,
 } from "../domain";
-
-import { getLimits } from "./getLimits";
+import { getLimits, ServiceToActions } from "../../root/services/public";
 
 const stringValues = [
   "notes",
@@ -52,7 +54,7 @@ const res = generateStringMutators(stringValues);
 //   return mutateObj(state, itemName, value);
 // },
 
-export const commonPartActions = {
+export const genericActions: ServiceToActions<CombinedGenericService> = {
   ...res,
   setProfileItem(
     state: CharSheet,
@@ -123,6 +125,16 @@ export const commonPartActions = {
       state,
       "health",
       mutateObj(state.health, healthName, applyRange(0, 3, value))
+    );
+  },
+  setHealthChimerical(
+    state: CharSheet,
+    [healthName, value]: [keyof Health, number]
+  ): CharSheet {
+    return mutateObj(
+      state,
+      "healthChimerical",
+      mutateObj(state.healthChimerical, healthName, applyRange(0, 3, value))
     );
   },
 

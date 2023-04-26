@@ -43,7 +43,7 @@ export function FreebiePointsPanel(
   const { className } = props;
   const { t } = useTranslation();
 
-  const { getCharSheet, setCharSheet } = useCharSheetStorage();
+  const { charSheet, setCharSheet } = useCharSheetStorage();
   const { freebiePointsConfig } = usePresetSettings();
 
   const [prevCharSheet, setPrevCharSheet] = useState<CharSheet | undefined>(
@@ -59,7 +59,6 @@ export function FreebiePointsPanel(
         filledFreebiePoint: [],
       };
     }
-    const charSheet = getCharSheet();
 
     const arr: FilledFreebiePointItem[] = freebiePointsConfig.map((el) => ({
       name: el.name,
@@ -73,7 +72,7 @@ export function FreebiePointsPanel(
       meritsSum: R.sum(charSheet.merits.map(strToNumber)),
       filledFreebiePoint: arr,
     };
-  }, [prevCharSheet, freebiePointsConfig, getCharSheet]);
+  }, [prevCharSheet, freebiePointsConfig, charSheet]);
 
   return (
     <div
@@ -84,7 +83,7 @@ export function FreebiePointsPanel(
     >
       <Button
         className="custom-btn-bg-color tw-mx-auto tw-block disabled:tw-cursor-not-allowed tw-mb-4"
-        onClick={() => setPrevCharSheet(getCharSheet())}
+        onClick={() => setPrevCharSheet(charSheet)}
         disabled={prevCharSheet !== undefined}
       >
         {t("freebiePoints.beginFreebiePointAssignment")}

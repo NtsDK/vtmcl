@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import "./DownloadDatabaseButton.css";
-
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
+
 import { json2File, makeFileName } from "../../../../lib/fileUtils";
 import { charSheetToJson } from "../../../../charSheets/root/infrastructure/dbLoader";
 import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
 
 interface DownloadDatabaseButtonProps extends CharSheetStorageService {}
 
-export function DownloadDatabaseButton(props: DownloadDatabaseButtonProps) {
+export function DownloadDatabaseButton(
+  props: DownloadDatabaseButtonProps
+): JSX.Element {
   const { t } = useTranslation();
-  const { getCharSheet } = props;
+  const { charSheet } = props;
 
-  function downloadDatabaseAsFile() {
-    const charSheet = getCharSheet();
+  function downloadDatabaseAsFile(): void {
     json2File(
       charSheetToJson(charSheet),
       makeFileName(

@@ -1,15 +1,16 @@
 import React, { ChangeEventHandler, ChangeEvent } from "react";
-import "./UploadDatabaseButton.css";
 
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
 import { readTextFile } from "../../../../lib/fileUtils";
 import { strToCharSheet } from "../../../../charSheets/root/infrastructure/dbLoader";
-import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
-import { ErrorDescriptionService } from "../../../../charSheets/misc/application/ports";
+import {
+  CharSheetStorageService,
+  ErrorDescriptionService,
+} from "../../../../charSheets/root/application/ports";
 
 // @ts-ignore
-function uploadDatabaseFile(evt) {
+function uploadDatabaseFile(evt): void {
   const input = evt.target.querySelector("input");
   if (input) {
     input.value = "";
@@ -21,12 +22,14 @@ interface UploadDatabaseButtonProps
   extends ErrorDescriptionService,
     CharSheetStorageService {}
 
-export function UploadDatabaseButton(props: UploadDatabaseButtonProps) {
+export function UploadDatabaseButton(
+  props: UploadDatabaseButtonProps
+): JSX.Element {
   const { t } = useTranslation();
 
   const { setErrorDescription, setCharSheet } = props;
 
-  function onUploadFileSelected(evt: ChangeEvent<HTMLInputElement>) {
+  function onUploadFileSelected(evt: ChangeEvent<HTMLInputElement>): void {
     readTextFile(evt)
       .then((databaseStr) => {
         try {

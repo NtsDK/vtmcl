@@ -1,12 +1,12 @@
 import * as R from "ramda";
 
 import { applyRange, mutateObj } from "../../../lib/miscUtils";
-import { Virtues } from "../../vtm/domain";
-import { CharSheet } from "../domain";
+import { CharSheet } from "../../root/domain";
+import { getLimits, ServiceToActions } from "../../root/services/public";
+import { CombinedVtMService } from "../application/ports";
+import { Virtues } from "../domain";
 
-import { getLimits } from "./getLimits";
-
-export const vtmPartActions = {
+export const vtmActions: ServiceToActions<CombinedVtMService> = {
   setVirtue(
     state: CharSheet,
     [virtueName, value]: [keyof Virtues, number]

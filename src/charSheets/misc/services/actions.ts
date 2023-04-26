@@ -1,18 +1,10 @@
 import { CharsheetBackMode } from "../../misc/domain";
-import { CharSheet, Preset } from "../domain";
 import { mutateObj } from "../../../lib/miscUtils";
+import { CombinedMiscService } from "../application/ports";
+import { ServiceToActions } from "../../root/services/public";
+import { CharSheet } from "../../root/domain";
 
-export const charSheetMetaActions = {
-  setCharSheet(state: CharSheet, [newState]: [CharSheet]): CharSheet {
-    return {
-      ...newState,
-    };
-  },
-
-  setPreset(state: CharSheet, [preset]: [Preset]): CharSheet {
-    return mutateObj(state, "preset", preset);
-  },
-
+export const miscActions: ServiceToActions<CombinedMiscService> = {
   setBackgroundColor(state: CharSheet, [backgroundColor]: [string]): CharSheet {
     return mutateObj(
       state,

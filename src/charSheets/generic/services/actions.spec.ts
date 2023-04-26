@@ -1,15 +1,14 @@
 import * as R from "ramda";
 
 import { capitalize } from "../../../lib/miscUtils";
-import { CharSheet } from "../domain";
+import { CharSheet } from "../../root/domain";
+import { CompositeReducer, initialCharSheet } from "../../root/services/public";
 
-import { commonPartActions } from "./actions_commonParts";
-import { CompositeReducer } from "./CompositeReducer";
-import { initialCharSheet } from "./initialValues";
+import { genericActions } from "./actions";
 
-const { reduce } = new CompositeReducer<CharSheet>().assign(commonPartActions);
+const { reduce } = new CompositeReducer<CharSheet>().assign(genericActions);
 
-describe("commonPartActions", () => {
+describe("genericActions", () => {
   it("setProfileItem", () => {
     expect(initialCharSheet.profile.clan).toBe("");
     const charSheet = reduce(initialCharSheet, {
@@ -70,6 +69,22 @@ describe("commonPartActions", () => {
       props: ["bruised", 4],
     });
     expect(charSheet.health.bruised).toBe(3);
+  });
+  it("setHealthChimerical", () => {
+    expect(initialCharSheet.healthChimerical.bruised).toBe(0);
+    const charSheet = reduce(initialCharSheet, {
+      type: "setHealthChimerical",
+      props: ["bruised", 1],
+    });
+    expect(charSheet.healthChimerical.bruised).toBe(1);
+  });
+  it("setHealthChimerical overflow", () => {
+    expect(initialCharSheet.healthChimerical.bruised).toBe(0);
+    const charSheet = reduce(initialCharSheet, {
+      type: "setHealthChimerical",
+      props: ["bruised", 4],
+    });
+    expect(charSheet.healthChimerical.bruised).toBe(3);
   });
 
   it("setState willpower", () => {

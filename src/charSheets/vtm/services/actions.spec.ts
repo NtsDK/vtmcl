@@ -1,12 +1,13 @@
 import * as R from "ramda";
-import { CharSheet } from "../domain";
-import { vtmPartActions } from "./actions_vtmParts";
-import { CompositeReducer } from "./CompositeReducer";
-import { initialCharSheet } from "./initialValues";
 
-const { reduce } = new CompositeReducer<CharSheet>().assign(vtmPartActions);
+import { CharSheet } from "../../root/domain";
+import { CompositeReducer, initialCharSheet } from "../../root/services/public";
 
-describe("vtmPartActions", () => {
+import { vtmActions } from "./actions";
+
+const { reduce } = new CompositeReducer<CharSheet>().assign(vtmActions);
+
+describe("vtmActions", () => {
   it("setVirtue", () => {
     expect(initialCharSheet.virtues.courage).toBe(1);
     const charSheet = reduce(initialCharSheet, {

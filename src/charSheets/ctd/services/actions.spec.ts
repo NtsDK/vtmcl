@@ -1,12 +1,13 @@
 import * as R from "ramda";
-import { CharSheet } from "../domain";
-import { ctdPartActions } from "./actions_ctdParts";
-import { CompositeReducer } from "./CompositeReducer";
-import { initialCharSheet } from "./initialValues";
 
-const { reduce } = new CompositeReducer<CharSheet>().assign(ctdPartActions);
+import { CharSheet } from "../../root/domain";
+import { CompositeReducer, initialCharSheet } from "../../root/services/public";
 
-describe("ctdPartActions", () => {
+import { ctdActions } from "./actions";
+
+const { reduce } = new CompositeReducer<CharSheet>().assign(ctdActions);
+
+describe("ctdActions", () => {
   it("setRealm", () => {
     expect(initialCharSheet.realms.nature).toBe(0);
     const charSheet = reduce(initialCharSheet, {
@@ -14,23 +15,6 @@ describe("ctdPartActions", () => {
       props: ["nature", 4],
     });
     expect(charSheet.realms.nature).toBe(4);
-  });
-
-  it("setHealthChimerical", () => {
-    expect(initialCharSheet.healthChimerical.bruised).toBe(0);
-    const charSheet = reduce(initialCharSheet, {
-      type: "setHealthChimerical",
-      props: ["bruised", 1],
-    });
-    expect(charSheet.healthChimerical.bruised).toBe(1);
-  });
-  it("setHealthChimerical overflow", () => {
-    expect(initialCharSheet.healthChimerical.bruised).toBe(0);
-    const charSheet = reduce(initialCharSheet, {
-      type: "setHealthChimerical",
-      props: ["bruised", 4],
-    });
-    expect(charSheet.healthChimerical.bruised).toBe(3);
   });
 
   it("addArt", () => {

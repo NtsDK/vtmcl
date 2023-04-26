@@ -5,29 +5,31 @@ import React, {
   useReducer,
   useMemo,
   useContext,
-  useCallback,
 } from "react";
 import * as R from "ramda";
 
-import { CharSheet } from "../domain";
+import { CharSheet, ErrorDescription } from "../domain";
 import {
   getCharSheetFromLS,
   saveCharSheetInLS,
 } from "../infrastructure/lsDbService";
-import { ErrorDescription } from "../../misc/domain";
-import { CombinedRootService } from "../application/ports";
+import {
+  CombinedRootService,
+  ErrorDescriptionService,
+} from "../application/ports";
 import { CombinedGenericService } from "../../generic/application/ports";
 import { CombinedCtDService } from "../../ctd/application/ports";
 import { CombinedVtMService } from "../../vtm/application/ports";
 import { CombinedMiscService } from "../../misc/application/ports";
+import { miscActions } from "../../misc/services/actions";
+import { genericActions } from "../../generic/services/actions";
+import { vtmActions } from "../../vtm/services/actions";
+import { ctdActions } from "../../ctd/services/actions";
 
 import { initialCharSheet } from "./initialValues";
 import { getLimits } from "./getLimits";
-import { charSheetMetaActions } from "./actions_charSheetMeta";
-import { commonPartActions } from "./actions_commonParts";
-import { vtmPartActions } from "./actions_vtmParts";
-import { ctdPartActions } from "./actions_ctdParts";
 import { CompositeReducer } from "./CompositeReducer";
+import { rootActions } from "./actions";
 
 type TakeActions<Reducer> = Reducer extends CompositeReducer<any, infer T>
   ? T
@@ -46,7 +48,8 @@ export interface StateStore
     CombinedGenericService,
     CombinedCtDService,
     CombinedVtMService,
-    CombinedMiscService {}
+    CombinedMiscService,
+    ErrorDescriptionService {}
 
 // @ts-ignore
 const StoreContext = React.createContext<StateStore>({});
@@ -55,10 +58,11 @@ export const useStore = () => useContext(StoreContext);
 interface ProviderProps {}
 
 const reducer = new CompositeReducer<CharSheet>()
-  .assign(charSheetMetaActions)
-  .assign(commonPartActions)
-  .assign(vtmPartActions)
-  .assign(ctdPartActions);
+  .assign(rootActions)
+  .assign(miscActions)
+  .assign(genericActions)
+  .assign(vtmActions)
+  .assign(ctdActions);
 
 export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({
   children,
@@ -104,15 +108,13 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({
     }
   }
 
-  const getCharSheet = useCallback(() => R.clone(charSheet), [charSheet]);
-
   const value: StateStore = {
     ...charSheet,
     ...functions,
 
     limits,
 
-    getCharSheet,
+    charSheet,
     errorDescription,
     setErrorDescription,
   };

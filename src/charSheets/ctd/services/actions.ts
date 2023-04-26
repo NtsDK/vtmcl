@@ -1,12 +1,12 @@
 import * as R from "ramda";
 
 import { Realms } from "../../ctd/domain";
-import { CharSheet, Health } from "../domain";
 import { applyRange, mutateObj } from "../../../lib/miscUtils";
+import { CombinedCtDService } from "../application/ports";
+import { CharSheet } from "../../root/domain";
+import { getLimits, ServiceToActions } from "../../root/services/public";
 
-import { getLimits } from "./getLimits";
-
-export const ctdPartActions = {
+export const ctdActions: ServiceToActions<CombinedCtDService> = {
   setRealm(
     state: CharSheet,
     [realmName, value]: [keyof Realms, number]
@@ -15,16 +15,6 @@ export const ctdPartActions = {
       state,
       "realms",
       mutateObj(state.realms, realmName, value)
-    );
-  },
-  setHealthChimerical(
-    state: CharSheet,
-    [healthName, value]: [keyof Health, number]
-  ): CharSheet {
-    return mutateObj(
-      state,
-      "healthChimerical",
-      mutateObj(state.healthChimerical, healthName, applyRange(0, 3, value))
     );
   },
 
