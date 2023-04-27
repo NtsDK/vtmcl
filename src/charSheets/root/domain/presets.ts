@@ -16,7 +16,11 @@ export interface Limits {
   bloodpool: number;
 }
 
-export const presetList: Preset[] = ["vampire_v20", "changeling_v20"];
+export const presetList: Preset[] = [
+  "vampire_v20",
+  "changeling_v20",
+  "hunter_v20",
+];
 
 export type ProfileConfigItem =
   | keyof Profile
@@ -57,6 +61,6 @@ export interface PresetSettings {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
-  freebiePointsConfig: FreebiePointItem[];
-  resources: Resources;
+  freebiePointsConfig?: FreebiePointItem[];
+  resources?: Resources;
 }

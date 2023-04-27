@@ -9,7 +9,7 @@ import { ProfileService } from "../../application/ports";
 
 interface ProfileSectionProps extends ProfileService {
   profileConfig: ProfileConfig;
-  resources: Resources;
+  resources?: Resources;
   className?: string;
 }
 
@@ -62,7 +62,7 @@ export const ProfileSection = memo(function ProfileSection(
                 setValue={setValue}
                 dataContext={item.name}
                 // @ts-ignore
-                options={item.optionsName && resources[item.optionsName]}
+                options={item.optionsName && resources?.[item.optionsName]}
               />
             );
           }

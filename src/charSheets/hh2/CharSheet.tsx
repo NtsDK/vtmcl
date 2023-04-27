@@ -1,53 +1,54 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { useLimits } from "../../charSheets/root/services/storageAdapter";
+// import { useLimits } from "../../charSheets/root/services/storageAdapter";
+// import {
+//   useMeritsNFlaws,
+//   useOtherTraits,
+//   useCharHistory,
+//   useAlliesAndContacts,
+//   usePossessions,
+//   useAppearance,
+//   useNotes,
+// } from "../generic/services/storageAdapter";
 import {
-  useOtherTraits,
-  useCharHistory,
-  useAlliesAndContacts,
-  usePossessions,
-  useAppearance,
-  useNotes,
-} from "../generic/services/storageAdapter";
-import { CharSheetBody, SectionHeader } from "../generic/uiPrimitives";
+  CharSheetBody,
+  SectionHeader,
+  Subheader,
+} from "../generic/uiPrimitives";
 import {
-  AlliesAndContactsSection,
-  AppearanceDescriptionSection,
-  CharacterImageSection,
-  CharHistorySection,
-  CharSheetStarter,
-  GoalsSection,
-  NotesSection,
+  MeritsSection,
+  FlawsSection,
   OtherTraitsSection,
+  CharHistorySection,
+  GoalsSection,
+  AlliesAndContactsSection,
   PossessionsSection,
+  CharacterImageSection,
+  AppearanceDescriptionSection,
+  NotesSection,
+  CharSheetStarter,
 } from "../generic/uiSections";
 
-import { useVtMResource } from "./dropdownContent";
-import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
-import { AdvantagesSection } from "./uiSections/AdvantagesSection";
-import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
-import { RitualsSection } from "./uiSections/RitualsSection";
-import { StatusSection } from "./uiSections/StatusSection";
+// import { useCtDResource } from "./dropdownContent";
+// import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+// import { StatusSection } from "./uiSections/StatusSection";
 
 interface CharSheetProps {}
 
 export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
-  const otherTraitsService = useOtherTraits();
-  const historyService = useCharHistory();
-  const disciplinePathsService = useDisciplinePaths();
-  const { limits } = useLimits();
-  const alliesAndContactsService = useAlliesAndContacts();
-  const possessionsService = usePossessions();
-  const appearanceService = useAppearance();
-  const notesService = useNotes();
+  // const meritsNFlawsService = useMeritsNFlaws();
+  // const { meritOptions, flawOptions } = useCtDResource();
+  // const { limits } = useLimits();
 
-  const ritualsService = useRituals();
-
-  const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
-    useVtMResource();
+  // const otherTraitsService = useOtherTraits();
+  // const historyService = useCharHistory();
+  // const alliesAndContactsService = useAlliesAndContacts();
+  // const possessionsService = usePossessions();
+  // const appearanceService = useAppearance();
+  // const notesService = useNotes();
 
   return (
     <>
@@ -56,13 +57,33 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <SectionHeader className="tw-mb-3">
           {t("charsheet.advantages.header")}
         </SectionHeader>
-        <AdvantagesSection className="tw-mb-3" />
+        {/* <AdvantagesSection className="tw-mb-3" /> */}
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>
-        <StatusSection className="tw-mb-3" />
+        {/* <StatusSection className="tw-mb-3" /> */}
       </CharSheetBody>
-      <CharSheetBody>
+      {/* <CharSheetBody>
+        <div className="tw-flex tw-flex-row tw-gap-x-4">
+          <div className="tw-flex-1">
+            <Subheader className="tw-mb-2">
+              {t("charsheet.status.merits")}
+            </Subheader>
+            <MeritsSection
+              className="tw-mb-4"
+              {...meritsNFlawsService}
+              meritOptions={meritOptions}
+            />
+          </div>
+
+          <div className="tw-flex-1">
+            <Subheader className="tw-mb-2">
+              {t("charsheet.status.flaws")}
+            </Subheader>
+            <FlawsSection {...meritsNFlawsService} flawOptions={flawOptions} />
+          </div>
+        </div>
+
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
             <SectionHeader className="tw-mb-3">
@@ -81,30 +102,6 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
               {t("charsheet.goals")}
             </SectionHeader>
             <GoalsSection className="tw-mb-6" {...historyService} />
-          </div>
-        </div>
-
-        <div className="tw-flex tw-gap-x-4 tw-mb-6">
-          <div className="tw-flex-1">
-            <SectionHeader className="tw-mb-3">
-              {t("charsheet.advantages.rituals")}
-            </SectionHeader>
-            <RitualsSection
-              ritualOptions={ritualOptions}
-              ritualValueOptions={ritualValueOptions}
-              {...ritualsService}
-            />
-          </div>
-
-          <div className="tw-flex-1">
-            <SectionHeader className="tw-mb-3">
-              {t("charsheet.advantages.discipline-paths")}
-            </SectionHeader>
-            <DisciplinePathsSection
-              limits={limits}
-              disciplinePathOptions={disciplinePathOptions}
-              {...disciplinePathsService}
-            />
           </div>
         </div>
 
@@ -142,7 +139,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           {t("charsheet.notes")}
         </SectionHeader>
         <NotesSection {...notesService} />
-      </CharSheetBody>
+      </CharSheetBody> */}
     </>
   );
 }

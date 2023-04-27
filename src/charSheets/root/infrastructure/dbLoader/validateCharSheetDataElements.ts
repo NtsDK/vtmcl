@@ -56,6 +56,8 @@ export const profileSchema: JSONSchemaType<Profile> = {
     secondaryLegacy: { type: "string" },
     motley: { type: "string" },
     seeming: { type: "string" },
+
+    residence: { type: "string" },
   },
   required: [
     "name",
@@ -77,6 +79,8 @@ export const profileSchema: JSONSchemaType<Profile> = {
     "secondaryLegacy",
     "motley",
     "seeming",
+
+    "residence",
   ],
   additionalProperties: false,
 };
@@ -181,6 +185,8 @@ export const stateSchema: JSONSchemaType<State> = {
     banalityRating: { type: "number" },
     banalityPool: { type: "number" },
     nightmare: { type: "number" },
+
+    faith: { type: "number" },
   },
   required: [
     "humanity",
@@ -201,6 +207,7 @@ export const stateSchema: JSONSchemaType<State> = {
     "banalityRating",
     "banalityPool",
     "nightmare",
+    "faith",
   ],
   additionalProperties: false,
 };
@@ -224,6 +231,7 @@ export const backgroundsSchema = stringNumberArrSchema;
 export const disciplinePathsSchema = stringNumberArrSchema;
 export const artsSchema = stringNumberArrSchema;
 export const otherTraitsSchema = stringNumberArrSchema;
+export const numinaAndOtherTraitsSchema = stringNumberArrSchema;
 
 export const ritualsSchema: JSONSchemaType<Rituals> = {
   type: "array",

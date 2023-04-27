@@ -27,8 +27,8 @@ import {
   CharacterImageSection,
   AppearanceDescriptionSection,
   NotesSection,
+  CharSheetStarter,
 } from "../generic/uiSections";
-import { CharSheetStarter } from "../generic/uiSections/CharSheetStarter";
 
 import { useCtDResource } from "./dropdownContent";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";

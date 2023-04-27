@@ -9,9 +9,9 @@ import {
   CharSheet,
   FreebiePointItem,
 } from "../../../../charSheets/root/domain";
-import { usePresetSettings } from "../../../../charSheets";
 
 interface FreebiePointsPanelProps {
+  freebiePointsConfig: FreebiePointItem[];
   className?: string;
 }
 
@@ -40,11 +40,10 @@ function formatNumber(num: number): string {
 export function FreebiePointsPanel(
   props: FreebiePointsPanelProps
 ): JSX.Element {
-  const { className } = props;
+  const { className, freebiePointsConfig } = props;
   const { t } = useTranslation();
 
   const { charSheet, setCharSheet } = useCharSheetStorage();
-  const { freebiePointsConfig } = usePresetSettings();
 
   const [prevCharSheet, setPrevCharSheet] = useState<CharSheet | undefined>(
     undefined

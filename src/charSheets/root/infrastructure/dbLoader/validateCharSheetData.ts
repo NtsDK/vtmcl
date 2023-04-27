@@ -23,6 +23,7 @@ import {
   appearanceDescriptionSchema,
   characterImageSchema,
   possessionsSchema,
+  numinaAndOtherTraitsSchema,
 } from "./validateCharSheetDataElements";
 import { abilitiesSchema, abilitiesExtensionSchema } from "./abilitiesSchema";
 
@@ -54,6 +55,7 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     possessions: possessionsSchema,
     arts: artsSchema,
     realms: realmsSchema,
+    numinaAndOtherTraits: numinaAndOtherTraitsSchema,
   },
   required: [
     "preset",
@@ -81,6 +83,7 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "characterImage",
     "alliesAndContacts",
     "possessions",
+    "numinaAndOtherTraits",
   ],
   additionalProperties: false,
 };

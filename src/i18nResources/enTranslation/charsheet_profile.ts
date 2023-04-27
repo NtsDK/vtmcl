@@ -20,4 +20,6 @@ export const profile = {
   seeming: "Seeming:",
   kith: "Kith:",
   motley: "Motley:",
+
+  residence: "Residence:",
 };

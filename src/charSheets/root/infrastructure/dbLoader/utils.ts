@@ -35,6 +35,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       characterImage: charSheet.characterImage,
       alliesAndContacts: charSheet.alliesAndContacts,
       possessions: charSheet.possessions,
+      numinaAndOtherTraits: charSheet.numinaAndOtherTraits,
     },
   };
 }
@@ -69,5 +70,6 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     characterImage: charSheetInJson.Charsheet.characterImage,
     alliesAndContacts: charSheetInJson.Charsheet.alliesAndContacts,
     possessions: charSheetInJson.Charsheet.possessions,
+    numinaAndOtherTraits: charSheetInJson.Charsheet.numinaAndOtherTraits,
   };
 }

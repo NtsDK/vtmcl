@@ -22,6 +22,7 @@ import {
   Rituals,
   Virtues,
 } from "../../vtm/domain";
+import { NuminaAndOtherTraits } from "../../hh2/domain";
 
 import { Profile, State, Abilities, Preset } from "./combinedDataTypes";
 
@@ -62,4 +63,7 @@ export interface CharSheet {
   healthChimerical: Health;
   arts: Arts;
   realms: Realms;
+
+  // hh2
+  numinaAndOtherTraits: NuminaAndOtherTraits;
 }

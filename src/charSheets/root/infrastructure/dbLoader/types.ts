@@ -1,4 +1,5 @@
 import { Arts, Realms } from "../../../ctd/domain";
+import { NuminaAndOtherTraits } from "../../../hh2/domain";
 import { Settings, Version } from "../../../misc/domain";
 import {
   Disciplines,
@@ -53,6 +54,7 @@ export interface CharSheetData {
   possessions: Possessions;
   arts: Arts;
   realms: Realms;
+  numinaAndOtherTraits: NuminaAndOtherTraits;
 }
 
 export interface CharSheetInJson {

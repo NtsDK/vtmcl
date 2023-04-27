@@ -28,6 +28,7 @@ export const m: CharSheetInJson = {
       secondaryLegacy: "",
       motley: "",
       seeming: "",
+      residence: "",
     },
     attributes: {
       strength: 3,
@@ -123,6 +124,7 @@ export const m: CharSheetInJson = {
       banalityRating: 0,
       banalityPool: 0,
       nightmare: 0,
+      faith: 0,
     },
     health: {
       bruised: 0,
@@ -158,6 +160,7 @@ export const m: CharSheetInJson = {
       scene: 0,
       time: 0,
     },
+    numinaAndOtherTraits: [],
   },
   Settings: {
     backgroundColor: "#ababab",

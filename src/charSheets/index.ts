@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePreset } from "../charSheets/root/services/storageAdapter";
-// import { PresetSettings } from "../domain";
 import { useStore } from "../charSheets/root/services/store";
 
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
+import { HH2 } from "./hh2";
 import { attributesConfig } from "./generic/presetSettings";
 import { PresetSettings } from "./root/domain";
 
 type PresetInfo = {
   CharSheet(props: {}): JSX.Element;
-  CheckList(props: {}): JSX.Element;
+  CheckList?(props: {}): JSX.Element;
 };
 
 export function usePresetInfo(): PresetInfo {
@@ -29,6 +29,11 @@ export function usePresetInfo(): PresetInfo {
       return {
         CharSheet: CtD.CharSheet,
         CheckList: CtD.CheckList,
+      };
+    }
+    case "hunter_v20": {
+      return {
+        CharSheet: HH2.CharSheet,
       };
     }
   }
@@ -49,10 +54,15 @@ export function useCharsheetContentI18n(): void {
         return;
       }
 
-      if (preset === "vampire_v20") {
-        VtM.translateVtMCharsheetContentI18n(store, prevLanguage, lng);
-      } else {
-        CtD.translateCtDCharsheetContentI18n(store, prevLanguage, lng);
+      switch (preset) {
+        case "vampire_v20":
+          VtM.translateVtMCharsheetContentI18n(store, prevLanguage, lng);
+          break;
+        case "changeling_v20":
+          CtD.translateCtDCharsheetContentI18n(store, prevLanguage, lng);
+          break;
+        case "hunter_v20":
+          console.warn("TODO implement translation for HH2");
       }
     };
 
@@ -69,16 +79,18 @@ export function usePresetSettings(): PresetSettings {
   const vtmResource = VtM.useVtMResource();
   const ctdResource = CtD.useCtDResource();
 
-  return preset === "vampire_v20"
-    ? {
+  switch (preset) {
+    case "vampire_v20":
+      return {
         displayName: "VtM V20",
         profileConfig: VtM.profileConfig,
         attributesConfig,
         abilitiesConfig: VtM.abilitiesConfig,
         freebiePointsConfig: VtM.freebiePointsConfig,
         resources: vtmResource as unknown as PresetSettings["resources"],
-      }
-    : {
+      };
+    case "changeling_v20":
+      return {
         displayName: "CtD V20",
         profileConfig: CtD.profileConfig,
         attributesConfig,
@@ -86,4 +98,12 @@ export function usePresetSettings(): PresetSettings {
         freebiePointsConfig: CtD.freebiePointsConfig,
         resources: ctdResource as unknown as PresetSettings["resources"],
       };
+    case "hunter_v20":
+      return {
+        displayName: "HH2 V20",
+        profileConfig: HH2.profileConfig,
+        attributesConfig,
+        abilitiesConfig: HH2.abilitiesConfig,
+      };
+  }
 }

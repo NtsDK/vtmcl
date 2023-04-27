@@ -134,5 +134,8 @@ export function migrate(charSheetSrc: any): unknown {
   if (charSheet.Version === "0.4.0") {
     charSheet.Version = "0.4.1";
   }
+  if (charSheet.Version === "0.4.1") {
+    charSheet.Version = "0.5.0";
+  }
   return charSheet;
 }
