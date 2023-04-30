@@ -65,6 +65,5 @@ export interface PresetSettings {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
-  freebiePointsConfig?: FreebiePointItem[];
   dropdownOptions?: DropdownOptions;
 }

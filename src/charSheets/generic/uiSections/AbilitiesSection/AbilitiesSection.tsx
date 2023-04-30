@@ -4,14 +4,11 @@ import classnames from "classnames";
 
 import { Subheader } from "../../uiPrimitives/Subheader";
 import { RangeInput2 } from "../../uiPrimitives/RangeInput2";
-
-import "./AbilitiesSection.css";
 import {
   Abilities,
   AbilitiesConfig,
   AbilitiesExtensionValue,
   Limits,
-  PresetSettings,
 } from "../../../root/domain";
 import {
   AbilitiesExtensionService,

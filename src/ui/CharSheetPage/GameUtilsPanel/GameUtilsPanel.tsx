@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import { AccordionToggle } from "../../../uiLib/AccordionToggle";
-import { usePresetInfo, usePresetSettings } from "../../../charSheets";
+import { useExternalPresetProps } from "../../../charSheets";
 
 import { FreebiePointsPanel } from "./FreebiePointsPanel/FreebiePointsPanel";
 // import { FreebiePointsPanel } from "./FreebiePointsPanel";
@@ -16,8 +16,7 @@ interface GameUtilsPanelProps {
 
 export function GameUtilsPanel(props: GameUtilsPanelProps): JSX.Element | null {
   const { t } = useTranslation();
-  const { CheckList } = usePresetInfo();
-  const { freebiePointsConfig } = usePresetSettings();
+  const { CheckList, freebiePointsConfig } = useExternalPresetProps();
 
   const { className } = props;
 
