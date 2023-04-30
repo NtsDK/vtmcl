@@ -12,7 +12,7 @@ import { AttributeSection } from "../AttributeSection";
 import { PresetSelect } from "../PresetSelect";
 import { ProfileSection } from "../ProfileSection";
 import { SectionHeader } from "../../uiPrimitives/SectionHeader";
-import { usePresetSettings } from "../../..";
+import { useInternalPresetProps } from "../../..";
 import {
   useAbilities,
   useAbilitiesExtension,
@@ -26,7 +26,7 @@ export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
   const { t } = useTranslation();
 
   const profileService = useProfile();
-  const presetSettings = usePresetSettings();
+  const presetSettings = useInternalPresetProps();
   const presetService = usePreset();
 
   const title = useMemo(() => {

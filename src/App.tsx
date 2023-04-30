@@ -24,13 +24,13 @@ import { AboutPage } from "./ui/AboutPage";
 import { ControlPanel } from "./ui/ControlPanel";
 import { InstructionPage } from "./ui/InstructionPage";
 import { CURRENT_VERSION } from "./constants";
-import { usePresetSettings } from "./charSheets";
+import { useInternalPresetProps } from "./charSheets";
 import { useSettings } from "./charSheets/misc/services/storageAdapter";
 
 function App(): JSX.Element {
   const { t } = useTranslation();
   const { settings } = useSettings();
-  const { displayName } = usePresetSettings();
+  const { displayName } = useInternalPresetProps();
 
   useEffect(() => {
     document.body.style.backgroundColor = settings.backgroundColor;

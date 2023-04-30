@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { usePresetSettings } from "../../..";
+import { useInternalPresetProps } from "../../..";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   ABILITY_LIMIT,
@@ -18,11 +18,13 @@ interface AbilitiesDotLimitCheckProps {
   className?: string;
 }
 
-export function AbilitiesDotLimitCheck(props: AbilitiesDotLimitCheckProps) {
+export function AbilitiesDotLimitCheck(
+  props: AbilitiesDotLimitCheckProps
+): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { abilitiesConfig } = usePresetSettings();
+  const { abilitiesConfig } = useInternalPresetProps();
   const { abilitiesExtension } = useAbilitiesExtension();
 
   const { abilities } = useAbilities();

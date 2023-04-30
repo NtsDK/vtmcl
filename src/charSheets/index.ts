@@ -8,7 +8,11 @@ import { useStore } from "../charSheets/root/services/store";
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
 import { HH2 } from "./hh2";
-import { FreebiePointItem, PresetName, PresetSettings } from "./root/domain";
+import {
+  FreebiePointItem,
+  PresetName,
+  InternalPresetProps,
+} from "./root/domain";
 import { Preset } from "./types";
 
 type ExternalPresetProps = {
@@ -32,7 +36,7 @@ export function useExternalPresetProps(): ExternalPresetProps {
   );
 }
 
-export function usePresetSettings(): PresetSettings {
+export function useInternalPresetProps(): InternalPresetProps {
   const { preset } = usePreset();
   const {
     i18n: { language },

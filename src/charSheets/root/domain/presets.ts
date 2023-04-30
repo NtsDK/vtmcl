@@ -60,7 +60,7 @@ export type Options = OptionItem[] | OptionGroup[];
 
 export type DropdownOptions = Record<string, Options>;
 
-export interface PresetSettings {
+export interface InternalPresetProps {
   displayName: string;
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;

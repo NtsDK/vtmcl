@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 import classnames from "classnames";
 
-import { usePresetSettings } from "../../..";
+import { useInternalPresetProps } from "../../..";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkAbilitiesFilled,
@@ -18,11 +18,11 @@ interface AbilitiesCheckProps {
   className?: string;
 }
 
-export function AbilitiesCheck(props: AbilitiesCheckProps) {
+export function AbilitiesCheck(props: AbilitiesCheckProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { abilitiesConfig } = usePresetSettings();
+  const { abilitiesConfig } = useInternalPresetProps();
 
   const { abilities } = useAbilities();
   const { abilitiesExtension } = useAbilitiesExtension();

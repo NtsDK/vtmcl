@@ -8,19 +8,19 @@ import {
   checkAttributesFilled,
   EXPECTED_ATTRIBUTE_DOTS,
 } from "../../checkListLogic/commonCharacterChecks";
-import { usePresetSettings } from "../../..";
+import { useInternalPresetProps } from "../../..";
 import { useAttributes } from "../../services/storageAdapter";
 
 interface AttributesCheckProps {
   className?: string;
 }
 
-export function AttributesCheck(props: AttributesCheckProps) {
+export function AttributesCheck(props: AttributesCheckProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
   const { attributes } = useAttributes();
-  const { attributesConfig } = usePresetSettings();
+  const { attributesConfig } = useInternalPresetProps();
   const attributesFilled = useMemo(() => {
     return checkAttributesFilled(
       attributes,
