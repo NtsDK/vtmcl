@@ -3,10 +3,10 @@ import classnames from "classnames";
 import { TFuncKey, useTranslation } from "react-i18next";
 
 import { RangeInput2 } from "../RangeInput2";
-import { SelectButtonOption } from "../SelectButton/type";
 import { SelectButton } from "../SelectButton";
 import { RemoveEntityButton } from "../RemoveEntityButton";
 import { AddEntityButton } from "../AddEntityButton";
+import { Options } from "../../../root/domain";
 
 interface NameNumberSectionProps {
   items: {
@@ -22,12 +22,12 @@ interface NameNumberSectionProps {
   sectionItemName: string;
   max: number;
   className?: string;
-  options?: SelectButtonOption[];
+  options?: Options;
   selectOptionMsg?: string;
   nameLabel?: TFuncKey;
 }
 
-export function NameNumberSection(props: NameNumberSectionProps) {
+export function NameNumberSection(props: NameNumberSectionProps): JSX.Element {
   const {
     items,
     addItem,

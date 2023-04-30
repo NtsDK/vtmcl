@@ -62,7 +62,7 @@ export function CharSheetStarter(props: CharSheetStarterProps): JSX.Element {
       </SectionHeader>
       <ProfileSection
         {...profileService}
-        resources={presetSettings.resources}
+        dropdownOptions={presetSettings.dropdownOptions}
         profileConfig={presetSettings.profileConfig}
         className="tw-mb-3 tw-mt-4"
       />

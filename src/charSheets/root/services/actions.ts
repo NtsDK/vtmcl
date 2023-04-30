@@ -1,4 +1,4 @@
-import { CharSheet, Preset } from "../domain";
+import { CharSheet, PresetName } from "../domain";
 import { mutateObj } from "../../../lib/miscUtils";
 import { CombinedRootService } from "../application/ports";
 
@@ -11,7 +11,7 @@ export const rootActions: ServiceToActions<CombinedRootService> = {
     };
   },
 
-  setPreset(state: CharSheet, [preset]: [Preset]): CharSheet {
+  setPreset(state: CharSheet, [preset]: [PresetName]): CharSheet {
     return mutateObj(state, "preset", preset);
   },
 };

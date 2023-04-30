@@ -2,20 +2,22 @@ import React from "react";
 import "./AdvantagesSection.css";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
-import { RealmsSection } from "./RealmsSection";
-import { ArtsSection } from "./ArtsSection";
+
 import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
 import { BackgroundsSection } from "../../../generic/uiSections";
-import { useCtDResource } from "../../dropdownContent";
+import { useCtDDropdownOptions } from "../../dropdownContent";
 import { useBackgrounds } from "../../../generic/services/storageAdapter";
 import { useArts, useRealms } from "../../services/storageAdapter";
+
+import { ArtsSection } from "./ArtsSection";
+import { RealmsSection } from "./RealmsSection";
 
 interface AdvantagesSectionProps {
   className?: string;
 }
 
-export function AdvantagesSection(props: AdvantagesSectionProps) {
+export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
@@ -24,7 +26,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps) {
   const artsService = useArts();
   const realmsService = useRealms();
 
-  const { artOptions, backgroundOptions } = useCtDResource();
+  const { artOptions, backgroundOptions } = useCtDDropdownOptions();
 
   return (
     <div

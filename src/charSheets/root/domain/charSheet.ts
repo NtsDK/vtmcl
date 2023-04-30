@@ -24,11 +24,11 @@ import {
 } from "../../vtm/domain";
 import { NuminaAndOtherTraits } from "../../hh2/domain";
 
-import { Profile, State, Abilities, Preset } from "./combinedDataTypes";
+import { Profile, State, Abilities, PresetName } from "./combinedDataTypes";
 
 export interface CharSheet {
   // root
-  preset: Preset;
+  preset: PresetName;
 
   // misc
   Version: Version;

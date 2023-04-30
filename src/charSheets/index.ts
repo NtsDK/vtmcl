@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePreset } from "../charSheets/root/services/storageAdapter";
@@ -7,36 +7,29 @@ import { useStore } from "../charSheets/root/services/store";
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
 import { HH2 } from "./hh2";
-import { attributesConfig } from "./generic/presetSettings";
-import { PresetSettings } from "./root/domain";
+import { PresetName, PresetSettings } from "./root/domain";
+import { Preset } from "./types";
 
 type PresetInfo = {
   CharSheet(props: {}): JSX.Element;
   CheckList?(props: {}): JSX.Element;
 };
 
+const presetIndex: Record<PresetName, Preset> = {
+  vampire_v20: VtM,
+  changeling_v20: CtD,
+  hunter_v20: HH2,
+};
+
 export function usePresetInfo(): PresetInfo {
   const { preset } = usePreset();
 
-  switch (preset) {
-    case "vampire_v20": {
-      return {
-        CharSheet: VtM.CharSheet,
-        CheckList: VtM.CheckList,
-      };
-    }
-    case "changeling_v20": {
-      return {
-        CharSheet: CtD.CharSheet,
-        CheckList: CtD.CheckList,
-      };
-    }
-    case "hunter_v20": {
-      return {
-        CharSheet: HH2.CharSheet,
-      };
-    }
-  }
+  const { CharSheet, CheckList } = presetIndex[preset];
+
+  return {
+    CharSheet,
+    CheckList,
+  };
 }
 
 export function useCharsheetContentI18n(): void {
@@ -54,15 +47,13 @@ export function useCharsheetContentI18n(): void {
         return;
       }
 
-      switch (preset) {
-        case "vampire_v20":
-          VtM.translateVtMCharsheetContentI18n(store, prevLanguage, lng);
-          break;
-        case "changeling_v20":
-          CtD.translateCtDCharsheetContentI18n(store, prevLanguage, lng);
-          break;
-        case "hunter_v20":
-          console.warn("TODO implement translation for HH2");
+      const { translateDropdownOptions: translateCharsheetContentI18n } =
+        presetIndex[preset];
+
+      if (translateCharsheetContentI18n !== undefined) {
+        translateCharsheetContentI18n(store, prevLanguage, lng);
+      } else {
+        console.warn(`TODO implement translation for ${preset}`);
       }
     };
 
@@ -75,35 +66,27 @@ export function useCharsheetContentI18n(): void {
 
 export function usePresetSettings(): PresetSettings {
   const { preset } = usePreset();
+  const {
+    i18n: { language },
+  } = useTranslation();
 
-  const vtmResource = VtM.useVtMResource();
-  const ctdResource = CtD.useCtDResource();
+  return useMemo(() => {
+    const {
+      displayName,
+      profileConfig,
+      attributesConfig,
+      abilitiesConfig,
+      freebiePointsConfig,
+      getDropdownOptions,
+    } = presetIndex[preset];
 
-  switch (preset) {
-    case "vampire_v20":
-      return {
-        displayName: "VtM V20",
-        profileConfig: VtM.profileConfig,
-        attributesConfig,
-        abilitiesConfig: VtM.abilitiesConfig,
-        freebiePointsConfig: VtM.freebiePointsConfig,
-        resources: vtmResource as unknown as PresetSettings["resources"],
-      };
-    case "changeling_v20":
-      return {
-        displayName: "CtD V20",
-        profileConfig: CtD.profileConfig,
-        attributesConfig,
-        abilitiesConfig: CtD.abilitiesConfig,
-        freebiePointsConfig: CtD.freebiePointsConfig,
-        resources: ctdResource as unknown as PresetSettings["resources"],
-      };
-    case "hunter_v20":
-      return {
-        displayName: "HH2 V20",
-        profileConfig: HH2.profileConfig,
-        attributesConfig,
-        abilitiesConfig: HH2.abilitiesConfig,
-      };
-  }
+    return {
+      displayName,
+      profileConfig,
+      attributesConfig,
+      abilitiesConfig,
+      freebiePointsConfig,
+      dropdownOptions: getDropdownOptions?.(language),
+    };
+  }, [preset, language]);
 }

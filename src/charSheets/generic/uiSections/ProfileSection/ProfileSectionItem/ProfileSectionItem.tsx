@@ -1,18 +1,15 @@
 import React, { ChangeEvent, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { Profile } from "../../../../root/domain";
 
+import { Options, Profile } from "../../../../root/domain";
 import { SelectButton } from "../../../uiPrimitives/SelectButton";
-// import { Profile } from "../../../../../domain";
-
-import "./ProfileSectionItem.css";
 
 interface ProfileSectionItemProps<DataContext> {
   itemName: keyof Profile;
   value: string;
   dataContext: DataContext;
   setValue(value: string, dataContext: DataContext): void;
-  options?: string[];
+  options?: Options;
 }
 
 export const ProfileSectionItem = memo(function ProfileSectionItem<DataContext>(

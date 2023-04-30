@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import "./PresetSelect.css";
-import { Preset, presetList } from "../../../root/domain";
+import { PresetName, presetList } from "../../../root/domain";
 import { PresetService } from "../../../../charSheets/root/application/ports";
 
 interface PresetSelectProps extends PresetService {
@@ -20,7 +20,7 @@ export const PresetSelect = memo(function PresetSelect(
     <select
       className={classnames("PresetSelect", className)}
       value={preset}
-      onChange={(e) => setPreset(e.currentTarget.value as Preset)}
+      onChange={(e) => setPreset(e.currentTarget.value as PresetName)}
       aria-label={t("charsheet.type-select")}
     >
       {presetList.map((item) => (

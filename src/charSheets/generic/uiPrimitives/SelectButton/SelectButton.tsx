@@ -2,16 +2,16 @@ import React from "react";
 import classnames from "classnames";
 
 import "./SelectButton.css";
-import { SelectButtonOption } from "./type";
+import { Options } from "../../../root/domain";
 
 interface SelectButtonProps {
-  options: SelectButtonOption[];
+  options: Options;
   onChange: (value: string) => void;
   className?: string;
   selectOptionMsg?: string;
 }
 
-export function SelectButton(props: SelectButtonProps) {
+export function SelectButton(props: SelectButtonProps): JSX.Element {
   const { options, onChange, className, selectOptionMsg } = props;
 
   return (

@@ -23,7 +23,7 @@ import {
   PossessionsSection,
 } from "../generic/uiSections";
 
-import { useVtMResource } from "./dropdownContent";
+import { useDropdownOptions } from "./dropdownContent";
 import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
@@ -47,7 +47,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const ritualsService = useRituals();
 
   const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
-    useVtMResource();
+    useDropdownOptions();
 
   return (
     <>

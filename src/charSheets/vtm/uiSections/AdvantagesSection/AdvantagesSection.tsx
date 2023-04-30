@@ -2,24 +2,26 @@ import React from "react";
 import "./AdvantagesSection.css";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
-import { VirtuesSection } from "./VirtuesSection";
-import { DisciplinesSection } from "./DisciplinesSection";
+
 import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
 import { BackgroundsSection } from "../../../generic/uiSections";
-import { useVtMResource } from "../../dropdownContent";
+import { useDropdownOptions } from "../../dropdownContent";
 import { useDisciplines, useVirtues } from "../../services/storageAdapter";
 import { useBackgrounds } from "../../../generic/services/storageAdapter";
+
+import { DisciplinesSection } from "./DisciplinesSection";
+import { VirtuesSection } from "./VirtuesSection";
 
 interface AdvantagesSectionProps {
   className?: string;
 }
 
-export function AdvantagesSection(props: AdvantagesSectionProps) {
+export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
-  const { backgroundOptions, disciplineOptions } = useVtMResource();
+  const { backgroundOptions, disciplineOptions } = useDropdownOptions();
   const { limits } = useLimits();
   const disciplinesService = useDisciplines();
   const backgroundsService = useBackgrounds();

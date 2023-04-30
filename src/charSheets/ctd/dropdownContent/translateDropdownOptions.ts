@@ -1,4 +1,4 @@
-import { StateStore } from "../../../charSheets/root/services/store";
+import { StateStore } from "../../root/services/store";
 
 import { translateArt } from "./resources/arts";
 import { c20_translateBackground } from "./resources/backgrounds";
@@ -9,7 +9,7 @@ import { translateLegacy } from "./resources/legacies";
 import { c20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 import { translateSeeming } from "./resources/seemings";
 
-export function translateCtDCharsheetContentI18n(
+export function translateDropdownOptions(
   store: StateStore,
   prevLanguage: string,
   lng: string

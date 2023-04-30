@@ -1,4 +1,4 @@
-import { StateStore } from "../../../charSheets/root/services/store";
+import { StateStore } from "../../root/services/store";
 
 import { v20_translateBackground } from "./resources/backgrounds";
 import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
@@ -10,7 +10,7 @@ import { translateDisciplinePath } from "./resources/disciplinePaths";
 import { translateRitual } from "./resources/rituals";
 import { translatePath } from "./resources/paths";
 
-export function translateVtMCharsheetContentI18n(
+export function translateDropdownOptions(
   store: StateStore,
   prevLanguage: string,
   lng: string

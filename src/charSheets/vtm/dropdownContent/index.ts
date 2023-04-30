@@ -1,7 +1,11 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { CommonResources, OptionGroup } from "../../../charSheets/root/domain";
+import {
+  CommonDropdownOptions,
+  OptionGroup,
+} from "../../../charSheets/root/domain";
+import { Merge } from "../../../lib/types";
 
 import { archetypes_ru, archetypes_en } from "./resources/archetypes";
 import {
@@ -31,48 +35,53 @@ import {
   ritualDisplayGroups_en,
 } from "./resources/rituals";
 
-export interface VtMResources extends CommonResources {
-  archetypeOptions: string[];
-  generationOptions: string[];
-  clanOptions: OptionGroup[];
-  disciplineOptions: OptionGroup[];
-  disciplinePathOptions: OptionGroup[];
-  pathOptions: string[];
-  ritualOptions: OptionGroup[];
-  ritualValueOptions: string[];
+export type VtMDropdownOptions = Merge<
+  CommonDropdownOptions,
+  {
+    archetypeOptions: string[];
+    generationOptions: string[];
+    clanOptions: OptionGroup[];
+    disciplineOptions: OptionGroup[];
+    disciplinePathOptions: OptionGroup[];
+    pathOptions: string[];
+    ritualOptions: OptionGroup[];
+    ritualValueOptions: string[];
+  }
+>;
+
+export function getDropdownOptions(language: string): VtMDropdownOptions {
+  return language === "ru"
+    ? {
+        archetypeOptions: archetypes_ru,
+        generationOptions: generations_ru,
+        clanOptions: clanDisplayGroups_ru,
+        backgroundOptions: v20_backgrounds_ru,
+        disciplineOptions: disciplineDisplayGroups_ru,
+        disciplinePathOptions: disciplinePathDisplayGroups_ru,
+        pathOptions: paths_ru,
+        flawOptions: v20_flaws_ru,
+        meritOptions: v20_merits_ru,
+        ritualOptions: ritualDisplayGroups_ru,
+        ritualValueOptions,
+      }
+    : {
+        archetypeOptions: archetypes_en,
+        generationOptions: generations_en,
+        clanOptions: clanDisplayGroups_en,
+        backgroundOptions: v20_backgrounds_en,
+        disciplineOptions: disciplineDisplayGroups_en,
+        disciplinePathOptions: disciplinePathDisplayGroups_en,
+        pathOptions: paths_en,
+        flawOptions: v20_flaws_en,
+        meritOptions: v20_merits_en,
+        ritualOptions: ritualDisplayGroups_en,
+        ritualValueOptions,
+      };
 }
 
-export function useVtMResource(): VtMResources {
+export function useDropdownOptions(): VtMDropdownOptions {
   const { i18n } = useTranslation();
   const { language } = i18n;
 
-  return useMemo(() => {
-    return language === "ru"
-      ? {
-          archetypeOptions: archetypes_ru,
-          generationOptions: generations_ru,
-          clanOptions: clanDisplayGroups_ru,
-          backgroundOptions: v20_backgrounds_ru,
-          disciplineOptions: disciplineDisplayGroups_ru,
-          disciplinePathOptions: disciplinePathDisplayGroups_ru,
-          pathOptions: paths_ru,
-          flawOptions: v20_flaws_ru,
-          meritOptions: v20_merits_ru,
-          ritualOptions: ritualDisplayGroups_ru,
-          ritualValueOptions,
-        }
-      : {
-          archetypeOptions: archetypes_en,
-          generationOptions: generations_en,
-          clanOptions: clanDisplayGroups_en,
-          backgroundOptions: v20_backgrounds_en,
-          disciplineOptions: disciplineDisplayGroups_en,
-          disciplinePathOptions: disciplinePathDisplayGroups_en,
-          pathOptions: paths_en,
-          flawOptions: v20_flaws_en,
-          meritOptions: v20_merits_en,
-          ritualOptions: ritualDisplayGroups_en,
-          ritualValueOptions,
-        };
-  }, [language]);
+  return useMemo(() => getDropdownOptions(language), [language]);
 }

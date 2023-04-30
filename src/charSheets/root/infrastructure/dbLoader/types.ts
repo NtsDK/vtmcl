@@ -18,7 +18,7 @@ import {
   Notes,
   Health,
   AbilitiesExtension,
-  Preset,
+  PresetName,
   CharHistory,
   Goals,
   AlliesAndContacts,
@@ -29,7 +29,7 @@ import {
 } from "../../domain";
 
 export interface CharSheetData {
-  preset: Preset;
+  preset: PresetName;
   profile: Profile;
   attributes: Attributes;
   abilities: Abilities;

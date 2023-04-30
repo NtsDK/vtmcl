@@ -1,4 +1,4 @@
-import { Preset, Limits, CharSheet, ErrorDescription } from "../domain";
+import { PresetName, Limits, CharSheet, ErrorDescription } from "../domain";
 
 export interface CombinedRootService
   extends PresetService,
@@ -6,8 +6,8 @@ export interface CombinedRootService
     CharSheetStorageService {}
 
 export interface PresetService {
-  preset: Preset;
-  setPreset(preset: Preset): void;
+  preset: PresetName;
+  setPreset(preset: PresetName): void;
 }
 
 export interface LimitService {

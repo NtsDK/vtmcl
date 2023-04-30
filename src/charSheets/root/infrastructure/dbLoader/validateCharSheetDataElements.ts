@@ -16,7 +16,7 @@ import {
   Health,
   Notes,
   State,
-  Preset,
+  PresetName,
 } from "../../domain";
 
 export const notesSchema: JSONSchemaType<Notes> = {
@@ -29,9 +29,9 @@ export const characterImageSchema = notesSchema;
 export const alliesAndContactsSchema = notesSchema;
 export const possessionsSchema = notesSchema;
 
-export const presetSchema: JSONSchemaType<Preset> = {
+export const presetSchema: JSONSchemaType<PresetName> = {
   type: "string",
-  enum: ["vampire_v20", "changeling_v20"],
+  enum: ["vampire_v20", "changeling_v20", "hunter_v20"],
 };
 
 export const profileSchema: JSONSchemaType<Profile> = {

@@ -2,12 +2,10 @@ import React, { ChangeEvent } from "react";
 import classnames from "classnames";
 import { TFuncKey, useTranslation } from "react-i18next";
 
-import { SelectButtonOption } from "../SelectButton/type";
 import { SelectButton } from "../SelectButton";
 import { RemoveEntityButton } from "../RemoveEntityButton";
 import { AddEntityButton } from "../AddEntityButton";
-
-import "./NameSection.css";
+import { Options } from "../../../root/domain";
 
 interface NameSectionProps {
   items: string[];
@@ -17,12 +15,12 @@ interface NameSectionProps {
   addItemMsg: string;
   removeItemMsg: string;
   className?: string;
-  options?: SelectButtonOption[];
+  options?: Options;
   selectOptionMsg?: string;
   nameLabel?: TFuncKey;
 }
 
-export function NameSection(props: NameSectionProps) {
+export function NameSection(props: NameSectionProps): JSX.Element {
   const {
     items,
     addItem,

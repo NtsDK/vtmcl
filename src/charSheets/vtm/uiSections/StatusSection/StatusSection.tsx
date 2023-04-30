@@ -11,27 +11,27 @@ import {
   WillSection,
 } from "../../../generic/uiSections";
 import { Subheader } from "../../../generic/uiPrimitives";
-import { useVtMResource } from "../../dropdownContent";
-
-import { HumanitySection } from "./HumanitySection";
-import { BloodpoolSection } from "./BloodpoolSection";
-import { WeaknessSection } from "./WeaknessSection";
+import { useDropdownOptions } from "../../dropdownContent";
 import {
   useMeritsNFlaws,
   useStatus,
   useHealth,
 } from "../../../generic/services/storageAdapter";
 
+import { HumanitySection } from "./HumanitySection";
+import { BloodpoolSection } from "./BloodpoolSection";
+import { WeaknessSection } from "./WeaknessSection";
+
 interface StatusSectionProps {
   className?: string;
 }
 
-export function StatusSection(props: StatusSectionProps) {
+export function StatusSection(props: StatusSectionProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
-  const { meritOptions, flawOptions, pathOptions } = useVtMResource();
+  const { meritOptions, flawOptions, pathOptions } = useDropdownOptions();
   const statusService = useStatus();
   const healthService = useHealth();
   const { limits } = useLimits();

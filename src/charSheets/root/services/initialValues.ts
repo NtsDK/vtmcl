@@ -1,7 +1,7 @@
 import * as R from "ramda";
 
 import { CURRENT_VERSION } from "../../../constants";
-import { Abilities, CharSheet, Preset, Profile, State } from "../domain";
+import { Abilities, CharSheet, PresetName, Profile, State } from "../domain";
 import {
   initialArts,
   initialCtDAbilities,
@@ -43,7 +43,7 @@ import {
   initialNuminaAndOtherTraits,
 } from "../../hh2/services/initialValues";
 
-export const initialPreset: Preset = "vampire_v20";
+export const initialPreset: PresetName = "vampire_v20";
 
 export const initialProfile: Profile = {
   ...initialVtMProfile,

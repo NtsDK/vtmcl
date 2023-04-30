@@ -4,7 +4,7 @@ import { CharSheet } from "./charSheet";
 import {
   Abilities,
   FreebiePointName,
-  Preset,
+  PresetName,
   Profile,
 } from "./combinedDataTypes";
 
@@ -16,7 +16,7 @@ export interface Limits {
   bloodpool: number;
 }
 
-export const presetList: Preset[] = [
+export const presetList: PresetName[] = [
   "vampire_v20",
   "changeling_v20",
   "hunter_v20",
@@ -43,18 +43,22 @@ export type FreebiePointItem = {
   multiplier: number;
 };
 
+export type OptionItem = string;
+
 export type OptionGroup = {
   groupName: string;
-  arr: string[];
+  arr: OptionItem[];
 };
 
-export interface CommonResources {
-  backgroundOptions: string[];
+export type CommonDropdownOptions = {
+  backgroundOptions: OptionItem[];
   flawOptions: OptionGroup[];
   meritOptions: OptionGroup[];
-}
+};
 
-export type Resources = Record<string, string[] | OptionGroup[]>;
+export type Options = OptionItem[] | OptionGroup[];
+
+export type DropdownOptions = Record<string, Options>;
 
 export interface PresetSettings {
   displayName: string;
@@ -62,5 +66,5 @@ export interface PresetSettings {
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
   freebiePointsConfig?: FreebiePointItem[];
-  resources?: Resources;
+  dropdownOptions?: DropdownOptions;
 }

@@ -2,10 +2,10 @@ import React, { ChangeEvent } from "react";
 import classnames from "classnames";
 import { TFuncKey, useTranslation } from "react-i18next";
 
-import { SelectButtonOption } from "../SelectButton/type";
 import { SelectButton } from "../SelectButton";
 import { RemoveEntityButton } from "../RemoveEntityButton";
 import { AddEntityButton } from "../AddEntityButton";
+import { Options } from "../../../root/domain";
 
 interface NameStringSectionProps {
   items: {
@@ -21,13 +21,13 @@ interface NameStringSectionProps {
   sectionItemName: string;
   // max: number;
   className?: string;
-  options?: SelectButtonOption[];
-  valueOptions?: SelectButtonOption[];
+  options?: Options;
+  valueOptions?: Options;
   selectOptionMsg?: string;
   nameLabel?: TFuncKey;
 }
 
-export function NameStringSection(props: NameStringSectionProps) {
+export function NameStringSection(props: NameStringSectionProps): JSX.Element {
   const {
     items,
     addItem,

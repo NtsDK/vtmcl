@@ -27,7 +27,7 @@ export interface State extends VtMState, CtDState, HH2State {}
 
 export interface Abilities extends VtMAbilities, CtDAbilities, HH2Abilities {}
 
-export type Preset = VtMPresetName | CtDPresetName | HH2PresetName;
+export type PresetName = VtMPresetName | CtDPresetName | HH2PresetName;
 
 export type FreebiePointName =
   | CommonFreebiePointName

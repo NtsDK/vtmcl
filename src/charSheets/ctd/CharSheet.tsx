@@ -30,7 +30,7 @@ import {
   CharSheetStarter,
 } from "../generic/uiSections";
 
-import { useCtDResource } from "./dropdownContent";
+import { useCtDDropdownOptions } from "./dropdownContent";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { StatusSection } from "./uiSections/StatusSection";
 
@@ -40,7 +40,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
-  const { meritOptions, flawOptions } = useCtDResource();
+  const { meritOptions, flawOptions } = useCtDDropdownOptions();
   const { limits } = useLimits();
 
   const otherTraitsService = useOtherTraits();

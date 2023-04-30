@@ -2,21 +2,21 @@ import React, { memo, useCallback } from "react";
 import classnames from "classnames";
 import * as R from "ramda";
 
-import "./ProfileSection.css";
-import { ProfileSectionItem } from "./ProfileSectionItem";
-import { Resources, Profile, ProfileConfig } from "../../../root/domain";
+import { DropdownOptions, Profile, ProfileConfig } from "../../../root/domain";
 import { ProfileService } from "../../application/ports";
+
+import { ProfileSectionItem } from "./ProfileSectionItem";
 
 interface ProfileSectionProps extends ProfileService {
   profileConfig: ProfileConfig;
-  resources?: Resources;
+  dropdownOptions?: DropdownOptions;
   className?: string;
 }
 
 export const ProfileSection = memo(function ProfileSection(
   props: ProfileSectionProps
 ) {
-  const { className, profileConfig, profile, setProfileItem, resources } =
+  const { className, profileConfig, profile, setProfileItem, dropdownOptions } =
     props;
 
   const itemCount = R.sum(profileConfig.map((el) => el.length));
@@ -61,8 +61,11 @@ export const ProfileSection = memo(function ProfileSection(
                 value={profile[item.name]}
                 setValue={setValue}
                 dataContext={item.name}
-                // @ts-ignore
-                options={item.optionsName && resources?.[item.optionsName]}
+                options={
+                  item.optionsName === undefined
+                    ? undefined
+                    : dropdownOptions?.[item.optionsName]
+                }
               />
             );
           }
