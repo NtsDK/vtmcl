@@ -8,18 +8,8 @@ import { useStore } from "../charSheets/root/services/store";
 import { VtM } from "./vtm";
 import { CtD } from "./ctd";
 import { HH2 } from "./hh2";
-import {
-  FreebiePointItem,
-  PresetName,
-  InternalPresetProps,
-} from "./root/domain";
-import { Preset } from "./types";
-
-type ExternalPresetProps = {
-  CharSheet(props: {}): JSX.Element;
-  CheckList?(props: {}): JSX.Element;
-  freebiePointsConfig?: FreebiePointItem[];
-};
+import { PresetName, InternalPresetProps, presetList } from "./root/domain";
+import { ExternalPresetProps, Preset } from "./types";
 
 const presetIndex: Record<PresetName, Preset> = {
   vampire_v20: VtM,
@@ -90,4 +80,8 @@ export function useTranslateDropdownOptions(): void {
       i18n.off("languageChanged", cb);
     };
   }, [i18n, preset, prevLanguage, store]);
+}
+
+export function usePresetList(): Preset[] {
+  return useMemo(() => presetList.map((el) => presetIndex[el]), []);
 }

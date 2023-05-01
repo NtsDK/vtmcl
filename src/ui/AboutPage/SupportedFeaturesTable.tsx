@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import { useTranslation } from "react-i18next";
 
 import { CheckListBadge } from "../../charSheets/generic/checkList";
+import { usePresetList } from "../../charSheets";
 
 interface SupportedFeaturesTableProps {
   className?: string;
@@ -14,6 +15,8 @@ export function SupportedFeaturesTable(
 ): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
+
+  const presetList = usePresetList();
 
   return (
     <div className={classnames("SupportedFeaturesTable", className)}>
@@ -29,36 +32,25 @@ export function SupportedFeaturesTable(
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{t("about.vtm")}</td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-          </tr>
-          <tr>
-            <td>{t("about.ctd")}</td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-            <td className="tw-text-center">
-              <CheckListBadge checked className="" />
-            </td>
-          </tr>
+          {presetList.map((el) => (
+            <tr key={el.displayName}>
+              <td>{el.displayName}</td>
+              <td className="tw-text-center">
+                <CheckListBadge checked={el.CharSheet !== undefined} />
+              </td>
+              <td className="tw-text-center">
+                <CheckListBadge checked={el.getDropdownOptions !== undefined} />
+              </td>
+              <td className="tw-text-center">
+                <CheckListBadge checked={el.CheckList !== undefined} />
+              </td>
+              <td className="tw-text-center">
+                <CheckListBadge
+                  checked={el.freebiePointsConfig !== undefined}
+                />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>

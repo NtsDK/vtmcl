@@ -24,3 +24,8 @@ export type Preset = {
   ) => void;
   getDropdownOptions?(language: string): DropdownOptions;
 };
+
+export type ExternalPresetProps = Pick<
+  Preset,
+  "CharSheet" | "CheckList" | "freebiePointsConfig"
+>;
