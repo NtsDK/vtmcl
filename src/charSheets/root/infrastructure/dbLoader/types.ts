@@ -1,12 +1,7 @@
 import { Arts, Realms } from "../../../ctd/domain";
 import { NuminaAndOtherTraits } from "../../../hh2/domain";
 import { Settings, Version } from "../../../misc/domain";
-import {
-  Disciplines,
-  DisciplinePaths,
-  Rituals,
-  Virtues,
-} from "../../../vtm/domain";
+import { Disciplines, DisciplinePaths, Rituals } from "../../../vtm/domain";
 import {
   Profile,
   Attributes,
@@ -26,6 +21,7 @@ import {
   CharacterImage,
   OtherTraits,
   Possessions,
+  Virtues,
 } from "../../domain";
 
 export interface CharSheetData {

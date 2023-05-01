@@ -1,11 +1,7 @@
 import Ajv, { JSONSchemaType } from "ajv";
+
 import { Arts, Realms } from "../../../ctd/domain";
-import {
-  Virtues,
-  Disciplines,
-  DisciplinePaths,
-  Rituals,
-} from "../../../vtm/domain";
+import { Disciplines, DisciplinePaths, Rituals } from "../../../vtm/domain";
 import {
   Profile,
   // Abilities,
@@ -17,6 +13,7 @@ import {
   Notes,
   State,
   PresetName,
+  Virtues,
 } from "../../domain";
 
 export const notesSchema: JSONSchemaType<Notes> = {

@@ -25,12 +25,12 @@ import {
   initialNotes,
   initialOtherTraits,
   initialPossessions,
+  initialVirtues,
 } from "../../generic/services/initialValues";
 import {
   initialDisciplinePaths,
   initialDisciplines,
   initialRituals,
-  initialVirtues,
   initialVtMAbilities,
   initialVtMProfile,
   initialVtMState,

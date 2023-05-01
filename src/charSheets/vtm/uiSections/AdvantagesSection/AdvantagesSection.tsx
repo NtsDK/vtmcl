@@ -5,13 +5,18 @@ import classnames from "classnames";
 
 import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
-import { BackgroundsSection } from "../../../generic/uiSections";
+import {
+  BackgroundsSection,
+  VirtuesSection,
+} from "../../../generic/uiSections";
 import { useDropdownOptions } from "../../dropdownContent";
-import { useDisciplines, useVirtues } from "../../services/storageAdapter";
-import { useBackgrounds } from "../../../generic/services/storageAdapter";
+import { useDisciplines } from "../../services/storageAdapter";
+import {
+  useBackgrounds,
+  useVirtues,
+} from "../../../generic/services/storageAdapter";
 
 import { DisciplinesSection } from "./DisciplinesSection";
-import { VirtuesSection } from "./VirtuesSection";
 
 interface AdvantagesSectionProps {
   className?: string;

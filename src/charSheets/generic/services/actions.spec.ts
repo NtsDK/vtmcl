@@ -285,4 +285,13 @@ describe("genericActions", () => {
     });
     expect(charSheet2.otherTraits).toEqual([{ name: "", value: 3 }]);
   });
+
+  it("setVirtue", () => {
+    expect(initialCharSheet.virtues.courage).toBe(1);
+    const charSheet = reduce(initialCharSheet, {
+      type: "setVirtue",
+      props: ["courage", 4],
+    });
+    expect(charSheet.virtues.courage).toBe(4);
+  });
 });

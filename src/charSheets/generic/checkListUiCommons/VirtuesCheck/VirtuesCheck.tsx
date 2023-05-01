@@ -4,11 +4,11 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
+import { useVirtues } from "../../services/storageAdapter";
 import {
   checkVirtues,
   EXPECTED_VIRTUE_DOTS,
-} from "../../checkListLogic/vampireCharacterChecks";
-import { useVirtues } from "../../services/storageAdapter";
+} from "../../checkListLogic/commonCharacterChecks";
 
 interface VirtuesCheckProps {
   className?: string;

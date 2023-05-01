@@ -1,16 +1,12 @@
 import * as R from "ramda";
 
-import {
-  initialDisciplines,
-  initialVirtues,
-  initialVtMState,
-} from "../services/initialValues";
+import { initialVirtues } from "../../generic/services/initialValues";
+import { initialDisciplines, initialVtMState } from "../services/initialValues";
 
 import {
   checkBloodpool,
   checkVampireWillpower,
   checkHumanity,
-  checkVirtues,
   checkDisciplines,
 } from "./vampireCharacterChecks";
 
@@ -62,7 +58,7 @@ describe("Vampire character checks", () => {
       expect(checkVampireWillpower(state, virtues)).toStrictEqual(true);
     });
   });
-  describe("checkVirtues", () => {
+  describe("checkHumanity", () => {
     it("Initial virtues and zero humanity - invalid", () => {
       const state = R.clone(initialVtMState);
       const virtues = R.clone(initialVirtues);
@@ -89,43 +85,7 @@ describe("Vampire character checks", () => {
       expect(checkHumanity(state, virtues)).toStrictEqual(true);
     });
   });
-  describe("checkHumanity", () => {
-    it("Virtues zero - invalid", () => {
-      const virtues = R.clone(initialVirtues);
-      expect(checkVirtues(virtues)).toStrictEqual({
-        value: 0,
-        checked: false,
-      });
-    });
-    it("Virtues not enough - invalid", () => {
-      const virtues = R.clone(initialVirtues);
-      virtues.conscience = 4;
-      expect(checkVirtues(virtues)).toStrictEqual({
-        value: 3,
-        checked: false,
-      });
-    });
-    it("Virtues enough - valid", () => {
-      const virtues = R.clone(initialVirtues);
-      virtues.conscience = 4;
-      virtues.courage = 4;
-      virtues.self_control = 2;
-      expect(checkVirtues(virtues)).toStrictEqual({
-        value: 7,
-        checked: true,
-      });
-    });
-    it("Virtues too many - invalid", () => {
-      const virtues = R.clone(initialVirtues);
-      virtues.conscience = 4;
-      virtues.courage = 4;
-      virtues.self_control = 4;
-      expect(checkVirtues(virtues)).toStrictEqual({
-        value: 9,
-        checked: false,
-      });
-    });
-  });
+
   describe("checkDisciplines", () => {
     it("Disciplines zero - invalid", () => {
       const disciplines = R.clone(initialDisciplines);

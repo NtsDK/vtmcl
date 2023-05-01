@@ -13,6 +13,7 @@ import {
   AbilitiesExtensionName,
   AbilitiesExtensionValue,
   Health,
+  Virtues,
 } from "../domain";
 import { getLimits, ServiceToActions } from "../../root/services/public";
 
@@ -278,6 +279,16 @@ export const genericActions: ServiceToActions<CombinedGenericService> = {
         },
         state.otherTraits
       )
+    );
+  },
+  setVirtue(
+    state: CharSheet,
+    [virtueName, value]: [keyof Virtues, number]
+  ): CharSheet {
+    return mutateObj(
+      state,
+      "virtues",
+      mutateObj(state.virtues, virtueName, applyRange(1, 5, value))
     );
   },
 };

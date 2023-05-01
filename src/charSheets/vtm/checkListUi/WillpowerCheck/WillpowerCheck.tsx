@@ -5,8 +5,10 @@ import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
 import { checkVampireWillpower } from "../../checkListLogic/vampireCharacterChecks";
-import { useVirtues } from "../../services/storageAdapter";
-import { useStatus } from "../../../generic/services/storageAdapter";
+import {
+  useStatus,
+  useVirtues,
+} from "../../../generic/services/storageAdapter";
 
 interface WillpowerCheckProps {
   className?: string;

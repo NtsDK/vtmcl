@@ -16,6 +16,7 @@ import {
   Notes,
   OtherTraits,
   Possessions,
+  Virtues,
 } from "../domain";
 
 export interface CombinedGenericService
@@ -32,7 +33,8 @@ export interface CombinedGenericService
     AppearanceService,
     AlliesAndContactsService,
     PossessionsService,
-    HistoryService {}
+    HistoryService,
+    VirtuesService {}
 
 // generic
 export interface ProfileService {
@@ -129,4 +131,9 @@ export interface HistoryService {
   setCharHistory(charHistory: CharHistory): void;
   goals: Goals;
   setGoals(goals: Goals): void;
+}
+
+export interface VirtuesService {
+  virtues: Virtues;
+  setVirtue(virtueName: keyof Virtues, value: number): void;
 }

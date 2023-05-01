@@ -7,6 +7,7 @@ import {
   initialAttributes,
   initialAbilitiesExtension,
   initialBackgrounds,
+  initialVirtues,
 } from "../services/initialValues";
 
 import {
@@ -15,6 +16,7 @@ import {
   checkAbilitiesFilled,
   checkAttributesFilled,
   checkBackgrounds,
+  checkVirtues,
   EXPECTED_ABILITY_DOTS,
   EXPECTED_ATTRIBUTE_DOTS,
   EXPECTED_BACKGROUND_DOTS,
@@ -329,6 +331,44 @@ describe("Common character checks", () => {
       ).toStrictEqual({
         checked: false,
         value: 6,
+      });
+    });
+  });
+
+  describe("checkVirtues", () => {
+    it("Virtues zero - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 0,
+        checked: false,
+      });
+    });
+    it("Virtues not enough - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 3,
+        checked: false,
+      });
+    });
+    it("Virtues enough - valid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      virtues.courage = 4;
+      virtues.self_control = 2;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 7,
+        checked: true,
+      });
+    });
+    it("Virtues too many - invalid", () => {
+      const virtues = R.clone(initialVirtues);
+      virtues.conscience = 4;
+      virtues.courage = 4;
+      virtues.self_control = 4;
+      expect(checkVirtues(virtues)).toStrictEqual({
+        value: 9,
+        checked: false,
       });
     });
   });

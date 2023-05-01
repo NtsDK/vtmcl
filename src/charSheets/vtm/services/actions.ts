@@ -4,20 +4,8 @@ import { applyRange, mutateObj } from "../../../lib/miscUtils";
 import { CharSheet } from "../../root/domain";
 import { getLimits, ServiceToActions } from "../../root/services/public";
 import { CombinedVtMService } from "../application/ports";
-import { Virtues } from "../domain";
 
 export const vtmActions: ServiceToActions<CombinedVtMService> = {
-  setVirtue(
-    state: CharSheet,
-    [virtueName, value]: [keyof Virtues, number]
-  ): CharSheet {
-    return mutateObj(
-      state,
-      "virtues",
-      mutateObj(state.virtues, virtueName, applyRange(1, 5, value))
-    );
-  },
-
   addDiscipline(state: CharSheet): CharSheet {
     return mutateObj(
       state,

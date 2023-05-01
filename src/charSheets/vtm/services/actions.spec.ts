@@ -8,15 +8,6 @@ import { vtmActions } from "./actions";
 const { reduce } = new CompositeReducer<CharSheet>().assign(vtmActions);
 
 describe("vtmActions", () => {
-  it("setVirtue", () => {
-    expect(initialCharSheet.virtues.courage).toBe(1);
-    const charSheet = reduce(initialCharSheet, {
-      type: "setVirtue",
-      props: ["courage", 4],
-    });
-    expect(charSheet.virtues.courage).toBe(4);
-  });
-
   it("addDiscipline", () => {
     expect(initialCharSheet.disciplines.length).toBe(0);
     const charSheet = reduce(initialCharSheet, {

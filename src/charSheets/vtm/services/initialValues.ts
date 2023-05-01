@@ -7,7 +7,6 @@ import {
   DisciplinePaths,
   Disciplines,
   Rituals,
-  Virtues,
   VtMAbilities,
   VtMProfile,
   VtMState,
@@ -42,11 +41,6 @@ export const initialVtMAbilities: VtMAbilities = {
   ...initialCommonAbilities,
 };
 
-export const initialVirtues: Virtues = {
-  conscience: 1,
-  self_control: 1,
-  courage: 1,
-};
 export const initialDisciplines: Disciplines = [];
 export const initialDisciplinePaths: DisciplinePaths = [];
 export const initialRituals: Rituals = [];

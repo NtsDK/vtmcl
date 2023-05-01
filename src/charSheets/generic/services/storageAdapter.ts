@@ -15,6 +15,7 @@ import {
   AppearanceService,
   OtherTraitsService,
   HistoryService,
+  VirtuesService,
 } from "../application/ports";
 
 export function useProfile(): ProfileService {
@@ -111,4 +112,8 @@ export function useCharHistory(): HistoryService {
     ["charHistory", "setCharHistory", "goals", "setGoals"],
     useStore()
   );
+}
+
+export function useVirtues(): VirtuesService {
+  return R.pick(["virtues", "setVirtue"], useStore());
 }

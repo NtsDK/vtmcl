@@ -1,15 +1,11 @@
 import * as R from "ramda";
+
 import { useStore } from "../../root/services/store";
 import {
-  VirtuesService,
   DisciplinesService,
   DisciplinePathsService,
   RitualsService,
 } from "../application/ports";
-
-export function useVirtues(): VirtuesService {
-  return R.pick(["virtues", "setVirtue"], useStore());
-}
 
 export function useDisciplines(): DisciplinesService {
   return R.pick(

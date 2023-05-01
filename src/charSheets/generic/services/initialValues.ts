@@ -16,6 +16,7 @@ import {
   OtherTraits,
   Possessions,
   CommonAbilities,
+  Virtues,
 } from "../domain";
 
 export const initialCommonState: CommonState = {
@@ -115,3 +116,9 @@ export const initialAppearanceDescription: AppearanceDescription = "";
 export const initialCharacterImage: CharacterImage = "";
 export const initialAlliesAndContacts: AlliesAndContacts = "";
 export const initialPossessions: Possessions = "";
+
+export const initialVirtues: Virtues = {
+  conscience: 1,
+  self_control: 1,
+  courage: 1,
+};

@@ -58,3 +58,9 @@ export interface CommonState {
   willpowerPool: number;
   experience: string;
 }
+
+export interface Virtues {
+  conscience: number;
+  self_control: number;
+  courage: number;
+}

@@ -1,10 +1,9 @@
-import { Disciplines, DisciplinePaths, Rituals, Virtues } from "../domain";
+import { Disciplines, DisciplinePaths, Rituals } from "../domain";
 
 export interface CombinedVtMService
   extends DisciplinesService,
     DisciplinePathsService,
-    RitualsService,
-    VirtuesService {}
+    RitualsService {}
 
 export interface DisciplinesService {
   disciplines: Disciplines;
@@ -28,9 +27,4 @@ export interface RitualsService {
   setRitualName(index: number, name: string): void;
   setRitualLevel(index: number, level: string): void;
   removeRitual(index: number): void;
-}
-
-export interface VirtuesService {
-  virtues: Virtues;
-  setVirtue(virtueName: keyof Virtues, value: number): void;
 }

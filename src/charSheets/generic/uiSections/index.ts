@@ -17,3 +17,4 @@ export { PresetSelect } from "./PresetSelect";
 export { ProfileSection } from "./ProfileSection";
 export { WillSection } from "./WillSection";
 export { CharSheetStarter } from "./CharSheetStarter";
+export { VirtuesSection } from "./VirtuesSection";

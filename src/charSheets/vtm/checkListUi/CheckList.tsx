@@ -5,12 +5,12 @@ import {
   AbilitiesDotLimitCheck,
   AttributesCheck,
   BackgroundsCheck,
+  VirtuesCheck,
 } from "../../generic/checkList";
 
 import { BloodpoolCheck } from "./BloodpoolCheck";
 import { DisciplinesCheck } from "./DisciplinesCheck";
 import { HumanityCheck } from "./HumanityCheck";
-import { VirtuesCheck } from "./VirtuesCheck";
 import { WillpowerCheck } from "./WillpowerCheck";
 
 interface CheckListProps {}

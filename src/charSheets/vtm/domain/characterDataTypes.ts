@@ -29,12 +29,6 @@ export interface VtMState extends CommonState {
 }
 
 // Advantages
-export interface Virtues {
-  conscience: number;
-  self_control: number;
-  courage: number;
-}
-
 export type Disciplines = NameStringArray;
 export type DisciplinePaths = NameStringArray;
 export type Rituals = {

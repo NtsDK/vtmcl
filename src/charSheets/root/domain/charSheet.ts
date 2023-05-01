@@ -13,15 +13,11 @@ import {
   Notes,
   OtherTraits,
   Possessions,
+  Virtues,
 } from "../../generic/domain";
 import { Arts, Realms } from "../../ctd/domain";
 import { Settings, Version } from "../../misc/domain";
-import {
-  Disciplines,
-  DisciplinePaths,
-  Rituals,
-  Virtues,
-} from "../../vtm/domain";
+import { Disciplines, DisciplinePaths, Rituals } from "../../vtm/domain";
 import { NuminaAndOtherTraits } from "../../hh2/domain";
 
 import { Profile, State, Abilities, PresetName } from "./combinedDataTypes";

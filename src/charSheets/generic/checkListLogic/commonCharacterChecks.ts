@@ -7,6 +7,7 @@ import {
   Attributes,
   AttributesConfig,
   Backgrounds,
+  Virtues,
 } from "../../root/domain";
 
 import {
@@ -19,6 +20,7 @@ export const EXPECTED_ABILITY_DOTS = [13, 9, 5] as const;
 export const ABILITY_LIMIT = 3;
 export const EXPECTED_ATTRIBUTE_DOTS = [7, 5, 3] as const;
 export const EXPECTED_BACKGROUND_DOTS = 5;
+export const EXPECTED_VIRTUE_DOTS = 7;
 
 export function checkAttributesFilled(
   attributes: Attributes,
@@ -102,4 +104,8 @@ export function checkBackgrounds(
     R.pluck("value", backgrounds),
     expectedBackgroundDots
   );
+}
+
+export function checkVirtues(virtues: Virtues): CheckNumberResult {
+  return checkArrSumFilled([...R.values(virtues), -3], EXPECTED_VIRTUE_DOTS);
 }
