@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import "./ThresholdsSection.css";
 import { TextAreaSection } from "../../../../generic/uiPrimitives";
 import { StatusService } from "../../../../generic/application/ports";
 

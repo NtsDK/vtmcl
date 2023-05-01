@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { StatusService } from "../../../../generic/application/ports";
 import { LineSection } from "../../../../generic/uiPrimitives";
 
-import "./AntitesisSection.css";
-
 interface AntitesisSectionProps extends StatusService {
   className?: string;
 }

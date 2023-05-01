@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { StatusService } from "../../../../generic/application/ports";
 import { TextAreaSection } from "../../../../generic/uiPrimitives";
 
-import "./BirthrightsFrailtiesSection.css";
-
 interface BirthrightsFrailtiesSectionProps extends StatusService {
   className?: string;
 }

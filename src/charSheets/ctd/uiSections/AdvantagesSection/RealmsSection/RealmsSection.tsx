@@ -4,7 +4,6 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 import { Realms } from "../../../domain";
 
-import "./RealmsSection.css";
 import { RangeInput2 } from "../../../../generic/uiPrimitives";
 import { RealmsService } from "../../../application/ports";
 

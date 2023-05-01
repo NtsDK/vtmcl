@@ -7,7 +7,7 @@ import { LimitService } from "../../../../charSheets/root/application/ports";
 import { BackgroundsService } from "../../application/ports";
 
 interface BackgroundsSectionProps extends BackgroundsService, LimitService {
-  backgroundOptions: string[];
+  backgroundOptions?: string[];
   className?: string;
 }
 

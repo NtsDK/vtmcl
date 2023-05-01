@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import "./ArtsSection.css";
 import { Limits } from "../../../../root/domain";
 import { NameNumberSection } from "../../../../generic/uiPrimitives";
 import { ArtsService } from "../../../application/ports";

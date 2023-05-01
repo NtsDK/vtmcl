@@ -31,8 +31,8 @@ import {
 } from "../generic/uiSections";
 
 // import { useCtDResource } from "./dropdownContent";
-// import { AdvantagesSection } from "./uiSections/AdvantagesSection";
-// import { StatusSection } from "./uiSections/StatusSection";
+import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+import { StatusSection } from "./uiSections/StatusSection";
 
 interface CharSheetProps {}
 
@@ -57,11 +57,11 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <SectionHeader className="tw-mb-3">
           {t("charsheet.advantages.header")}
         </SectionHeader>
-        {/* <AdvantagesSection className="tw-mb-3" /> */}
+        <AdvantagesSection className="tw-mb-3" />
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>
-        {/* <StatusSection className="tw-mb-3" /> */}
+        <StatusSection className="tw-mb-3" />
       </CharSheetBody>
       {/* <CharSheetBody>
         <div className="tw-flex tw-flex-row tw-gap-x-4">

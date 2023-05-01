@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { StatusService } from "../../../../generic/application/ports";
 import { RatingPoolSection } from "../../../../generic/uiPrimitives";
 
-import "./BanalitySection.css";
-
 interface BanalitySectionProps extends StatusService {
   className?: string;
 }
