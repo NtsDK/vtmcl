@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import "./WeaknessSection.css";
 import { LineSection } from "../../../../generic/uiPrimitives";
 import { StatusService } from "../../../../generic/application/ports";
 

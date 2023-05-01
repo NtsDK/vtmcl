@@ -1,10 +1,8 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
+
 import { StatusService } from "../../application/ports";
-
 import { RatingPoolSection } from "../../uiPrimitives/RatingPoolSection";
-
-import "./WillSection.css";
 
 interface WillSectionProps extends StatusService {
   className?: string;

@@ -31,6 +31,12 @@ export const advantages = {
   "select-otherTrait": "Select other trait",
   "otherTrait-label": "Other Trait {{index}}",
 
+  numinaAndOtherTraits: "Numina & Other Traits",
+  "add-numinaAndOtherTrait": "Add numina or trait",
+  "remove-numinaAndOtherTrait": "Remove numina or trait",
+  "select-numinaAndOtherTrait": "Select numina or trait",
+  "numinaAndOtherTrait-label": "Numina or trait {{index}}",
+
   // 'traits': 'Traits',
   virtues: "Virtues",
   conscience: "Conscience/Conviction",

@@ -4,12 +4,11 @@ import { useTranslation } from "react-i18next";
 
 import { NameSection } from "../../uiPrimitives/NameSection";
 
-import "./MeritsSection.css";
 import { OptionGroup } from "../../../root/domain";
 import { MeritsNFlawsService } from "../../application/ports";
 
 interface MeritsSectionProps extends MeritsNFlawsService {
-  meritOptions: OptionGroup[];
+  meritOptions?: OptionGroup[];
   className?: string;
 }
 

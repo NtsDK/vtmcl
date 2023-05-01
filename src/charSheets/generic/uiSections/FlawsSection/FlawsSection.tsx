@@ -3,13 +3,11 @@ import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { NameSection } from "../../uiPrimitives/NameSection";
-
-import "./FlawsSection.css";
 import { OptionGroup } from "../../../root/domain";
 import { MeritsNFlawsService } from "../../application/ports";
 
 interface FlawsSectionProps extends MeritsNFlawsService {
-  flawOptions: OptionGroup[];
+  flawOptions?: OptionGroup[];
   className?: string;
 }
 

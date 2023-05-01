@@ -4,7 +4,8 @@ export const status = {
   merits: "Достоинства",
   flaws: "Недостатки",
   state: "Состояние",
-  humanity: "Человечность/Путь",
+  humanity: "Человечность",
+  humanityOrPath: "Человечность/Путь",
 
   willpower: "Воля",
   "willpower-rating": "Значение воли",
@@ -22,6 +23,8 @@ export const status = {
   "health-real-long": "Реальное",
   "health-chimerical-short": "Х",
   "health-chimerical-long": "Химерическое",
+
+  faith: "Вера",
 
   // health
   bruised: "Помят",

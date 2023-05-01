@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import { LineSection } from "../../uiPrimitives/LineSection";
-
-import "./ExperienceSection.css";
 import { StatusService } from "../../application/ports";
 
 interface ExperienceSectionProps extends StatusService {

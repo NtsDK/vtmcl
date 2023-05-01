@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import "./PresetSelect.css";
 import { PresetName, presetList } from "../../../root/domain";
 import { PresetService } from "../../../../charSheets/root/application/ports";
 

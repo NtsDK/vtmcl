@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
-import "./HumanitySection.css";
 import { RangeInput2, SelectButton } from "../../../../generic/uiPrimitives";
 import { StatusService } from "../../../../generic/application/ports";
 
@@ -20,11 +19,11 @@ export const HumanitySection = memo(function HumanitySection(
   return (
     <fieldset
       className={classnames("HumanitySection", className)}
-      aria-label={t("charsheet.status.humanity")}
+      aria-label={t("charsheet.status.humanityOrPath")}
     >
       <div className="tw-mb-2 tw-flex">
         <input
-          aria-label={t("charsheet.status.humanity")}
+          aria-label={t("charsheet.status.humanityOrPath")}
           style={{ boxShadow: "0 1px 0 #333333" }}
           className="tw-flex-1
             tw-text-center

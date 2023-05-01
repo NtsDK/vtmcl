@@ -4,9 +4,15 @@ import classnames from "classnames";
 
 import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
-import { BackgroundsSection } from "../../../generic/uiSections";
+import {
+  BackgroundsSection,
+  VirtuesSection,
+} from "../../../generic/uiSections";
 // import { useCtDDropdownOptions } from "../../dropdownContent";
-import { useBackgrounds } from "../../../generic/services/storageAdapter";
+import {
+  useBackgrounds,
+  useVirtues,
+} from "../../../generic/services/storageAdapter";
 // import { useArts, useRealms } from "../../services/storageAdapter";
 
 // import { ArtsSection } from "./ArtsSection";
@@ -22,6 +28,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
 
   const { limits } = useLimits();
   const backgroundsService = useBackgrounds();
+  const virtuesService = useVirtues();
   // const artsService = useArts();
   // const realmsService = useRealms();
 
@@ -31,6 +38,12 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
     <div
       className={classnames("AdvantagesSection tw-flex tw-gap-x-4", className)}
     >
+      <div className="tw-flex-1">
+        <Subheader className="tw-mb-2 print:tw-hidden">
+          {t("charsheet.advantages.numinaAndOtherTraits")}
+        </Subheader>
+        {/* <ArtsSection limits={limits} artOptions={artOptions} {...artsService} /> */}
+      </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2 print:tw-hidden">
           {t("charsheet.advantages.backgrounds")}
@@ -43,15 +56,9 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2 print:tw-hidden">
-          {t("charsheet.advantages.arts")}
+          {t("charsheet.advantages.virtues")}
         </Subheader>
-        {/* <ArtsSection limits={limits} artOptions={artOptions} {...artsService} /> */}
-      </div>
-      <div className="tw-flex-1">
-        <Subheader className="tw-mb-2 print:tw-hidden">
-          {t("charsheet.advantages.realms")}
-        </Subheader>
-        {/* <RealmsSection {...realmsService} /> */}
+        <VirtuesSection {...virtuesService} />
       </div>
     </div>
   );

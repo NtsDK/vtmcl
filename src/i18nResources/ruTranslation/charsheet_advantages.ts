@@ -31,6 +31,12 @@ export const advantages = {
   "select-otherTrait": "Выбрать другой параметр",
   "otherTrait-label": "Другой параметр {{index}}",
 
+  numinaAndOtherTraits: "Дары и прочие параметры",
+  "add-numinaAndOtherTrait": "Добавить дар или параметр",
+  "remove-numinaAndOtherTrait": "Удалить дар или параметр",
+  "select-numinaAndOtherTrait": "Выбрать дар или параметр",
+  "numinaAndOtherTrait-label": "Дар или параметр {{index}}",
+
   // 'traits': 'Трайты',
   virtues: "Добродетели",
   conscience: "Совесть/Решимость",

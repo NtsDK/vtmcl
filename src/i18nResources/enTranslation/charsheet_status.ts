@@ -4,7 +4,8 @@ export const status = {
   merits: "Merits",
   flaws: "Flaws",
   state: "State",
-  humanity: "Humanity/Path",
+  humanity: "Humanity",
+  humanityOrPath: "Humanity/Path",
 
   willpower: "Willpower",
   "willpower-rating": "Willpower rating",
@@ -18,6 +19,8 @@ export const status = {
   antithesis: "Antithesis",
   thresholds: "Ravaging/Musing Threshold",
   birthrightsFrailties: "Birthright/Frailty",
+
+  faith: "Faith",
 
   // health
   bruised: "Bruised",

@@ -53,7 +53,7 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
       </div>
       <div className="tw-flex-1">
         <Subheader id="humanity.header" className="tw-mb-2">
-          {t("charsheet.status.humanity")}
+          {t("charsheet.status.humanityOrPath")}
         </Subheader>
         <HumanitySection
           className="tw-mb-4 print:tw-mb-2"
