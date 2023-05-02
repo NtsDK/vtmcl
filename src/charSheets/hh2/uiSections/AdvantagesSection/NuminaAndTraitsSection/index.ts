@@ -1,0 +1,1 @@
+export { NuminaAndTraitsSection } from "./NuminaAndTraitsSection";

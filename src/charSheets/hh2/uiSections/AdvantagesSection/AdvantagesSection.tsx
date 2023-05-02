@@ -8,15 +8,13 @@ import {
   BackgroundsSection,
   VirtuesSection,
 } from "../../../generic/uiSections";
-// import { useCtDDropdownOptions } from "../../dropdownContent";
 import {
   useBackgrounds,
   useVirtues,
 } from "../../../generic/services/storageAdapter";
-// import { useArts, useRealms } from "../../services/storageAdapter";
+import { useNuminaAndTraits } from "../../services/storageAdapter";
 
-// import { ArtsSection } from "./ArtsSection";
-// import { RealmsSection } from "./RealmsSection";
+import { NuminaAndTraitsSection } from "./NuminaAndTraitsSection";
 
 interface AdvantagesSectionProps {
   className?: string;
@@ -29,8 +27,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const { limits } = useLimits();
   const backgroundsService = useBackgrounds();
   const virtuesService = useVirtues();
-  // const artsService = useArts();
-  // const realmsService = useRealms();
+  const numinaAndTraitsService = useNuminaAndTraits();
 
   // const { artOptions, backgroundOptions } = useCtDDropdownOptions();
 
@@ -42,6 +39,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         <Subheader className="tw-mb-2 print:tw-hidden">
           {t("charsheet.advantages.numinaAndOtherTraits")}
         </Subheader>
+        <NuminaAndTraitsSection {...numinaAndTraitsService} limits={limits} />
         {/* <ArtsSection limits={limits} artOptions={artOptions} {...artsService} /> */}
       </div>
       <div className="tw-flex-1">
