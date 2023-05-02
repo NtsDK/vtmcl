@@ -9,6 +9,7 @@ import { translateDiscipline } from "./resources/disciplines";
 import { translateDisciplinePath } from "./resources/disciplinePaths";
 import { translateRitual } from "./resources/rituals";
 import { translatePath } from "./resources/paths";
+import { translateConcept } from "./resources/concepts";
 
 export function translateDropdownOptions(
   store: StateStore,
@@ -47,6 +48,10 @@ export function translateDropdownOptions(
     translateGeneration(profile.generation, prevLanguage, lng)
   );
   setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
+  setProfileItem(
+    "concept",
+    translateConcept(profile.concept, prevLanguage, lng)
+  );
 
   // vampire
   backgrounds.forEach((background, index) => {

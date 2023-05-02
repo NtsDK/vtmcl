@@ -11,7 +11,10 @@ export const profileConfig: ProfileConfig = [
       name: "demeanor",
       optionsName: "archetypeOptions",
     },
-    "concept",
+    {
+      name: "concept",
+      optionsName: "conceptOptions",
+    },
     {
       name: "clan",
       optionsName: "clanOptions",

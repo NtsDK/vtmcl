@@ -13,6 +13,7 @@ import {
   v20_backgrounds_en,
 } from "./resources/backgrounds";
 import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
+import { concepts_en, concepts_ru } from "./resources/concepts";
 import {
   disciplinePathDisplayGroups_ru,
   disciplinePathDisplayGroups_en,
@@ -39,6 +40,7 @@ export type VtMDropdownOptions = Merge<
   CommonDropdownOptions,
   {
     archetypeOptions: string[];
+    conceptOptions: string[];
     generationOptions: string[];
     clanOptions: OptionGroup[];
     disciplineOptions: OptionGroup[];
@@ -53,6 +55,7 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
   return language === "ru"
     ? {
         archetypeOptions: archetypes_ru,
+        conceptOptions: concepts_ru,
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
         backgroundOptions: v20_backgrounds_ru,
@@ -66,6 +69,7 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
       }
     : {
         archetypeOptions: archetypes_en,
+        conceptOptions: concepts_en,
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
         backgroundOptions: v20_backgrounds_en,

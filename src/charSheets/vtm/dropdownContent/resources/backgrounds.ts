@@ -1,12 +1,13 @@
 import * as R from "ramda";
 
-import { backgroundsSource } from "./backgroundsSource";
 import {
   generateEnRuEntities,
   generateSequence,
   makeTranslateFunction,
   sortStrArr,
 } from "../../../generic/dropdownContent";
+
+import { backgroundsSource } from "./backgroundsSource";
 
 const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, backgroundsSource)),
