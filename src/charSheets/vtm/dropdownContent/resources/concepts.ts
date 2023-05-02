@@ -9,7 +9,7 @@ import {
 
 import { conceptsSource } from "./conceptsSource";
 
-const sourceArr = [
+export const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, conceptsSource)),
 ];
 

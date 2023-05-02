@@ -21,10 +21,13 @@ import {
   v20_merits_en,
 } from "../../vtm/dropdownContent/resources/meritsAndFlaws";
 
+import { conceptGroups_en, conceptGroups_ru } from "./resources/concepts";
+
 export type HH2DropdownOptions = Merge<
   CommonDropdownOptions,
   {
     archetypeOptions: string[];
+    conceptOptions: OptionGroup[];
   }
 >;
 
@@ -32,12 +35,14 @@ export function getDropdownOptions(language: string): HH2DropdownOptions {
   return language === "ru"
     ? {
         archetypeOptions: archetypes_ru,
+        conceptOptions: conceptGroups_ru,
         backgroundOptions: v20_backgrounds_ru,
         flawOptions: v20_flaws_ru,
         meritOptions: v20_merits_ru,
       }
     : {
         archetypeOptions: archetypes_en,
+        conceptOptions: conceptGroups_en,
         backgroundOptions: v20_backgrounds_en,
         flawOptions: v20_flaws_en,
         meritOptions: v20_merits_en,
