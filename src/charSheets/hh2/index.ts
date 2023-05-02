@@ -6,7 +6,7 @@ import { profileConfig } from "./presetSettings/profileConfig";
 import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
 // import { CheckList } from "./checkListUi";
 // import { freebiePointsConfig } from "./presetSettings/freebiePoints";
-// import { useCtDResource } from "./dropdownContent";
+import { getDropdownOptions } from "./dropdownContent";
 // import { translateCtDCharsheetContentI18n } from "./dropdownContent/useCharsheetContentI18n";
 
 export const HH2: Preset = {
@@ -18,6 +18,6 @@ export const HH2: Preset = {
   CharSheet,
   // freebiePointsConfig,
   // CheckList,
-  // useCtDResource,
+  getDropdownOptions,
   // translateCtDCharsheetContentI18n,
 };

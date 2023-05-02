@@ -2,25 +2,16 @@ import { ProfileConfig } from "../../../charSheets/root/domain";
 
 export const profileConfig: ProfileConfig = [
   ["name", "player", "chronicle", "age", "sex"],
-  ["nature", "demeanor", "concept", "residence"],
-  // [
-  //   {
-  //     name: "nature",
-  //     optionsName: "archetypeOptions",
-  //   },
-  //   {
-  //     name: "demeanor",
-  //     optionsName: "archetypeOptions",
-  //   },
-  //   "concept",
-  //   {
-  //     name: "clan",
-  //     optionsName: "clanOptions",
-  //   },
-  //   {
-  //     name: "generation",
-  //     optionsName: "generationOptions",
-  //   },
-  //   "sire",
-  // ],
+  [
+    {
+      name: "nature",
+      optionsName: "archetypeOptions",
+    },
+    {
+      name: "demeanor",
+      optionsName: "archetypeOptions",
+    },
+    "concept",
+    "residence",
+  ],
 ];
