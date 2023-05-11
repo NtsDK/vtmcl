@@ -13,6 +13,7 @@ import {
   useVirtues,
 } from "../../../generic/services/storageAdapter";
 import { useNuminaAndTraits } from "../../services/storageAdapter";
+import { useDropdownOptions } from "../../dropdownContent";
 
 import { NuminaAndTraitsSection } from "./NuminaAndTraitsSection";
 
@@ -29,7 +30,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const virtuesService = useVirtues();
   const numinaAndTraitsService = useNuminaAndTraits();
 
-  // const { artOptions, backgroundOptions } = useCtDDropdownOptions();
+  const { backgroundOptions } = useDropdownOptions();
 
   return (
     <div
@@ -48,7 +49,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         </Subheader>
         <BackgroundsSection
           limits={limits}
-          // backgroundOptions={backgroundOptions}
+          backgroundOptions={backgroundOptions}
           {...backgroundsService}
         />
       </div>

@@ -3,7 +3,7 @@ import { StateStore } from "../../root/services/store";
 import { translateArchetype } from "../../vtm/dropdownContent/resources/archetypes";
 import { translateConcept } from "./resources/concepts";
 
-// import { v20_translateBackground } from "./resources/backgrounds";
+import { translateBackground } from "./resources/backgrounds";
 // import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 // import { translateArchetype } from "./resources/archetypes";
 // import { translateGeneration } from "./resources/generations";
@@ -21,8 +21,8 @@ export function translateDropdownOptions(
   const {
     profile,
     setProfileItem,
-    // backgrounds,
-    // setBackgroundName,
+    backgrounds,
+    setBackgroundName,
     // disciplines,
     // setDisciplineName,
     // disciplinePaths,
@@ -56,12 +56,12 @@ export function translateDropdownOptions(
   // setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
 
   // vampire
-  // backgrounds.forEach((background, index) => {
-  //   setBackgroundName(
-  //     index,
-  //     v20_translateBackground(background.name, prevLanguage, lng)
-  //   );
-  // });
+  backgrounds.forEach((background, index) => {
+    setBackgroundName(
+      index,
+      translateBackground(background.name, prevLanguage, lng)
+    );
+  });
   // disciplines.forEach((discipline, index) => {
   //   setDisciplineName(
   //     index,

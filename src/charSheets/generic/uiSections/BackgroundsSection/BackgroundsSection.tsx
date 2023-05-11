@@ -1,13 +1,14 @@
 import React, { memo } from "react";
-import { NameNumberSection } from "../../uiPrimitives/NameNumberSection";
-
 import classnames from "classnames";
 import { useTranslation } from "react-i18next";
+
+import { NameNumberSection } from "../../uiPrimitives/NameNumberSection";
 import { LimitService } from "../../../../charSheets/root/application/ports";
 import { BackgroundsService } from "../../application/ports";
+import { Options } from "../../../root/domain";
 
 interface BackgroundsSectionProps extends BackgroundsService, LimitService {
-  backgroundOptions?: string[];
+  backgroundOptions?: Options;
   className?: string;
 }
 

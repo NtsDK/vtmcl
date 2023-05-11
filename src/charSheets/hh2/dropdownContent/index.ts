@@ -11,10 +11,6 @@ import {
   archetypes_ru,
 } from "../../vtm/dropdownContent/resources/archetypes";
 import {
-  v20_backgrounds_ru,
-  v20_backgrounds_en,
-} from "../../vtm/dropdownContent/resources/backgrounds";
-import {
   v20_flaws_ru,
   v20_merits_ru,
   v20_flaws_en,
@@ -22,6 +18,10 @@ import {
 } from "../../vtm/dropdownContent/resources/meritsAndFlaws";
 
 import { conceptGroups_en, conceptGroups_ru } from "./resources/concepts";
+import {
+  backgroundGroups_en,
+  backgroundGroups_ru,
+} from "./resources/backgrounds";
 
 export type HH2DropdownOptions = Merge<
   CommonDropdownOptions,
@@ -36,14 +36,14 @@ export function getDropdownOptions(language: string): HH2DropdownOptions {
     ? {
         archetypeOptions: archetypes_ru,
         conceptOptions: conceptGroups_ru,
-        backgroundOptions: v20_backgrounds_ru,
+        backgroundOptions: backgroundGroups_ru,
         flawOptions: v20_flaws_ru,
         meritOptions: v20_merits_ru,
       }
     : {
         archetypeOptions: archetypes_en,
         conceptOptions: conceptGroups_en,
-        backgroundOptions: v20_backgrounds_en,
+        backgroundOptions: backgroundGroups_en,
         flawOptions: v20_flaws_en,
         meritOptions: v20_merits_en,
       };

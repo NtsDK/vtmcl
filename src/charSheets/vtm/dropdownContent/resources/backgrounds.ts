@@ -9,7 +9,7 @@ import {
 
 import { backgroundsSource } from "./backgroundsSource";
 
-const sourceArr = [
+export const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, backgroundsSource)),
 ];
 

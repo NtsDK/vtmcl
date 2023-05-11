@@ -51,7 +51,7 @@ export type OptionGroup = {
 };
 
 export type CommonDropdownOptions = {
-  backgroundOptions: OptionItem[];
+  backgroundOptions: Options;
   flawOptions: OptionGroup[];
   meritOptions: OptionGroup[];
 };
