@@ -30,7 +30,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const virtuesService = useVirtues();
   const numinaAndTraitsService = useNuminaAndTraits();
 
-  const { backgroundOptions } = useDropdownOptions();
+  const { backgroundOptions, numinaOptions } = useDropdownOptions();
 
   return (
     <div
@@ -40,7 +40,11 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         <Subheader className="tw-mb-2 print:tw-hidden">
           {t("charsheet.advantages.numinaAndOtherTraits")}
         </Subheader>
-        <NuminaAndTraitsSection {...numinaAndTraitsService} limits={limits} />
+        <NuminaAndTraitsSection
+          {...numinaAndTraitsService}
+          limits={limits}
+          numinaAndTraitsOptions={numinaOptions}
+        />
         {/* <ArtsSection limits={limits} artOptions={artOptions} {...artsService} /> */}
       </div>
       <div className="tw-flex-1">

@@ -1,9 +1,10 @@
 // export {};
 import { StateStore } from "../../root/services/store";
 import { translateArchetype } from "../../vtm/dropdownContent/resources/archetypes";
-import { translateConcept } from "./resources/concepts";
 
+import { translateConcept } from "./resources/concepts";
 import { translateBackground } from "./resources/backgrounds";
+import { translateNumina } from "./resources/numinas";
 // import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 // import { translateArchetype } from "./resources/archetypes";
 // import { translateGeneration } from "./resources/generations";
@@ -23,6 +24,8 @@ export function translateDropdownOptions(
     setProfileItem,
     backgrounds,
     setBackgroundName,
+    numinaAndOtherTraits,
+    setNuminaOrTraitName,
     // disciplines,
     // setDisciplineName,
     // disciplinePaths,
@@ -60,6 +63,12 @@ export function translateDropdownOptions(
     setBackgroundName(
       index,
       translateBackground(background.name, prevLanguage, lng)
+    );
+  });
+  numinaAndOtherTraits.forEach((numinaOrTrait, index) => {
+    setNuminaOrTraitName(
+      index,
+      translateNumina(numinaOrTrait.name, prevLanguage, lng)
     );
   });
   // disciplines.forEach((discipline, index) => {

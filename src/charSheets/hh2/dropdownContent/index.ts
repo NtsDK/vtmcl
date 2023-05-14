@@ -22,12 +22,17 @@ import {
   backgroundGroups_en,
   backgroundGroups_ru,
 } from "./resources/backgrounds";
+import {
+  numinaDisplayGroups_en,
+  numinaDisplayGroups_ru,
+} from "./resources/numinas";
 
 export type HH2DropdownOptions = Merge<
   CommonDropdownOptions,
   {
     archetypeOptions: string[];
     conceptOptions: OptionGroup[];
+    numinaOptions: OptionGroup[];
   }
 >;
 
@@ -39,6 +44,7 @@ export function getDropdownOptions(language: string): HH2DropdownOptions {
         backgroundOptions: backgroundGroups_ru,
         flawOptions: v20_flaws_ru,
         meritOptions: v20_merits_ru,
+        numinaOptions: numinaDisplayGroups_ru,
       }
     : {
         archetypeOptions: archetypes_en,
@@ -46,6 +52,7 @@ export function getDropdownOptions(language: string): HH2DropdownOptions {
         backgroundOptions: backgroundGroups_en,
         flawOptions: v20_flaws_en,
         meritOptions: v20_merits_en,
+        numinaOptions: numinaDisplayGroups_en,
       };
 }
 
