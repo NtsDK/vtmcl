@@ -1,24 +1,20 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// import { useLimits } from "../../charSheets/root/services/storageAdapter";
-// import {
-//   useMeritsNFlaws,
-//   useOtherTraits,
-//   useCharHistory,
-//   useAlliesAndContacts,
-//   usePossessions,
-//   useAppearance,
-//   useNotes,
-// } from "../generic/services/storageAdapter";
+import {
+  useAlliesAndContacts,
+  useAppearance,
+  useCharHistory,
+  useNotes,
+  useOtherTraits,
+  usePossessions,
+} from "../generic/services/storageAdapter";
 import {
   CharSheetBody,
   SectionHeader,
   Subheader,
 } from "../generic/uiPrimitives";
 import {
-  MeritsSection,
-  FlawsSection,
   OtherTraitsSection,
   CharHistorySection,
   GoalsSection,
@@ -29,8 +25,8 @@ import {
   NotesSection,
   CharSheetStarter,
 } from "../generic/uiSections";
+import { useLimits } from "../root/services/storageAdapter";
 
-// import { useCtDResource } from "./dropdownContent";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 import { StatusSection } from "./uiSections/StatusSection";
 
@@ -39,16 +35,14 @@ interface CharSheetProps {}
 export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
-  // const meritsNFlawsService = useMeritsNFlaws();
-  // const { meritOptions, flawOptions } = useCtDResource();
-  // const { limits } = useLimits();
+  const { limits } = useLimits();
 
-  // const otherTraitsService = useOtherTraits();
-  // const historyService = useCharHistory();
-  // const alliesAndContactsService = useAlliesAndContacts();
-  // const possessionsService = usePossessions();
-  // const appearanceService = useAppearance();
-  // const notesService = useNotes();
+  const otherTraitsService = useOtherTraits();
+  const historyService = useCharHistory();
+  const alliesAndContactsService = useAlliesAndContacts();
+  const possessionsService = usePossessions();
+  const appearanceService = useAppearance();
+  const notesService = useNotes();
 
   return (
     <>
@@ -58,31 +52,12 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           {t("charsheet.advantages.header")}
         </SectionHeader>
         <AdvantagesSection className="tw-mb-3" />
+      </CharSheetBody>
+      <CharSheetBody>
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>
         <StatusSection className="tw-mb-3" />
-      </CharSheetBody>
-      {/* <CharSheetBody>
-        <div className="tw-flex tw-flex-row tw-gap-x-4">
-          <div className="tw-flex-1">
-            <Subheader className="tw-mb-2">
-              {t("charsheet.status.merits")}
-            </Subheader>
-            <MeritsSection
-              className="tw-mb-4"
-              {...meritsNFlawsService}
-              meritOptions={meritOptions}
-            />
-          </div>
-
-          <div className="tw-flex-1">
-            <Subheader className="tw-mb-2">
-              {t("charsheet.status.flaws")}
-            </Subheader>
-            <FlawsSection {...meritsNFlawsService} flawOptions={flawOptions} />
-          </div>
-        </div>
 
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
@@ -139,7 +114,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           {t("charsheet.notes")}
         </SectionHeader>
         <NotesSection {...notesService} />
-      </CharSheetBody> */}
+      </CharSheetBody>
     </>
   );
 }
