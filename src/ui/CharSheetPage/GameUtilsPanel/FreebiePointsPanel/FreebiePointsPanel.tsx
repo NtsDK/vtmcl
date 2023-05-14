@@ -9,6 +9,7 @@ import {
   CharSheet,
   FreebiePointItem,
 } from "../../../../charSheets/root/domain";
+import { strToNumber } from "../../../../lib/miscUtils";
 
 interface FreebiePointsPanelProps {
   freebiePointsConfig: FreebiePointItem[];
@@ -27,11 +28,6 @@ type FreebiePointStats = {
   flawsSum: number;
   filledFreebiePoint: FilledFreebiePointItem[];
 };
-
-function strToNumber(str: string): number {
-  const str2 = str.replace(/\D/g, "");
-  return str2 === "" ? 0 : Number(str2);
-}
 
 function formatNumber(num: number): string {
   return num === 0 ? "0" : num > 0 ? `+${num}` : String(num);

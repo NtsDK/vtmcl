@@ -1,18 +1,10 @@
-// export {};
 import { StateStore } from "../../root/services/store";
 import { translateArchetype } from "../../vtm/dropdownContent/resources/archetypes";
 
 import { translateConcept } from "./resources/concepts";
 import { translateBackground } from "./resources/backgrounds";
 import { translateNumina } from "./resources/numinas";
-// import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
-// import { translateArchetype } from "./resources/archetypes";
-// import { translateGeneration } from "./resources/generations";
-// import { translateClan } from "./resources/clans";
-// import { translateDiscipline } from "./resources/disciplines";
-// import { translateDisciplinePath } from "./resources/disciplinePaths";
-// import { translateRitual } from "./resources/rituals";
-// import { translatePath } from "./resources/paths";
+import { translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 
 export function translateDropdownOptions(
   store: StateStore,
@@ -26,18 +18,10 @@ export function translateDropdownOptions(
     setBackgroundName,
     numinaAndOtherTraits,
     setNuminaOrTraitName,
-    // disciplines,
-    // setDisciplineName,
-    // disciplinePaths,
-    // setDisciplinePathName,
-    // rituals,
-    // setRitualName,
-    // state,
-    // setState,
-    // merits,
-    // setMerit,
-    // flaws,
-    // setFlaw,
+    merits,
+    setMerit,
+    flaws,
+    setFlaw,
   } = store;
 
   setProfileItem(
@@ -52,13 +36,7 @@ export function translateDropdownOptions(
     "concept",
     translateConcept(profile.concept, prevLanguage, lng)
   );
-  // setProfileItem(
-  //   "generation",
-  //   translateGeneration(profile.generation, prevLanguage, lng)
-  // );
-  // setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
 
-  // vampire
   backgrounds.forEach((background, index) => {
     setBackgroundName(
       index,
@@ -71,26 +49,10 @@ export function translateDropdownOptions(
       translateNumina(numinaOrTrait.name, prevLanguage, lng)
     );
   });
-  // disciplines.forEach((discipline, index) => {
-  //   setDisciplineName(
-  //     index,
-  //     translateDiscipline(discipline.name, prevLanguage, lng)
-  //   );
-  // });
-  // disciplinePaths.forEach((disciplinePath, index) => {
-  //   setDisciplinePathName(
-  //     index,
-  //     translateDisciplinePath(disciplinePath.name, prevLanguage, lng)
-  //   );
-  // });
-  // rituals.forEach((ritual, index) => {
-  //   setRitualName(index, translateRitual(ritual.name, prevLanguage, lng));
-  // });
-  // setState("pathName", translatePath(state.pathName, prevLanguage, lng));
-  // merits.forEach((merit, index) => {
-  //   setMerit(index, v20_translateMeritsAndFlaws(merit, prevLanguage, lng));
-  // });
-  // flaws.forEach((flaw, index) => {
-  //   setFlaw(index, v20_translateMeritsAndFlaws(flaw, prevLanguage, lng));
-  // });
+  merits.forEach((merit, index) => {
+    setMerit(index, translateMeritsAndFlaws(merit, prevLanguage, lng));
+  });
+  flaws.forEach((flaw, index) => {
+    setFlaw(index, translateMeritsAndFlaws(flaw, prevLanguage, lng));
+  });
 }

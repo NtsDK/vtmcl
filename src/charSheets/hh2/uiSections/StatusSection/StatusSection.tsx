@@ -15,6 +15,7 @@ import {
   useMeritsNFlaws,
   useStatus,
 } from "../../../generic/services/storageAdapter";
+import { useDropdownOptions } from "../../dropdownContent";
 
 import { HumanitySection } from "./HumanitySection";
 import { FaithSection } from "./FaithSection";
@@ -31,6 +32,8 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
   const healthService = useHealth();
   const meritsNFlawsService = useMeritsNFlaws();
 
+  const { meritOptions, flawOptions } = useDropdownOptions();
+
   return (
     <div className={classnames("StatusSection tw-flex tw-gap-x-4", className)}>
       <div className="tw-flex-1">
@@ -40,14 +43,11 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
         <MeritsSection
           className="tw-mb-4"
           {...meritsNFlawsService}
-          // meritOptions={meritOptions}
+          meritOptions={meritOptions}
         />
 
         <Subheader className="tw-mb-2">{t("charsheet.status.flaws")}</Subheader>
-        <FlawsSection
-          {...meritsNFlawsService}
-          // flawOptions={flawOptions}
-        />
+        <FlawsSection {...meritsNFlawsService} flawOptions={flawOptions} />
       </div>
       <div className="tw-flex-1">
         <Subheader id="faith.header" className="tw-mb-2">

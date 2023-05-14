@@ -1,0 +1,43 @@
+// Format for everything:
+// <en>
+//   <ru>
+
+export const hh2MeritsSource = `Detached (4pt)
+  Отрешённый (4 пункта)
+Occult Library (2pt)
+  Оккультная библиотека (2 пункта)
+Occult Library (4pt)
+  Оккультная библиотека (4 пункта)
+Science Laboratory (2pt)
+  Научная лаборатория (2 пункта)
+Pale Aura (2pt)
+  Бледная аура (2 пункта)
+Clear-Sighted (3pt)
+  Ясный взор (3 пункта)
+Poisonous Blood (5pt)
+  Испорченная кровь (5 пунктов)
+Sanctuary (5pt)
+  Святилище (5 пунктов)`;
+
+export const hh2FlawsSource = `Black and White (1pt)
+  Чёрно-белый мир (1 пункт)
+Combat Novice (2pt)
+  Салага (2 пункта)
+Addicted to Vampire Blood (3pt)
+  Гематоман (3 пункта)
+Hemophiliac (3pt)
+  Гемофилия (3 пункта)
+Psychic Feedback (1pt)
+  Психоотдача (1 пункт)
+Psychic Feedback (2pt)
+  Психоотдача (2 пункта)
+Psychic Feedback (6pt)
+  Психоотдача (6 пунктов)
+Unsettling Effect (1pt)
+  Странные явления (1 пункт)
+Unsettling Effect (3pt)
+  Странные явления (3 пункта)
+Psi Focus (3pt)
+  Пси-фокус (3 пункта)
+Psi Focus (5pt)
+  Пси-фокус (5 пунктов)`;

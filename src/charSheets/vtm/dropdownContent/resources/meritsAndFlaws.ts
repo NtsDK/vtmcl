@@ -1,5 +1,16 @@
 import * as R from "ramda";
 
+import { strToNumber } from "../../../../lib/miscUtils";
+import {
+  generateEnRuEntities,
+  generateSequence,
+  makeTranslateFunction,
+  generateIdEnRuEntities,
+  sortStrArr,
+  IdEnRuEntity,
+  EnRuEntity,
+} from "../../../generic/dropdownContent";
+
 import {
   meritsAndFlawsGroupsSource,
   mentalFlawsSource,
@@ -12,15 +23,6 @@ import {
   supernaturalMeritsSource,
 } from "./meritsAndFlawsSource";
 
-import {
-  generateEnRuEntities,
-  generateSequence,
-  makeTranslateFunction,
-  generateIdEnRuEntities,
-  sortStrArr,
-  IdEnRuEntity,
-} from "../../../generic/dropdownContent";
-
 type MeritsAndFlawsGroups =
   | "physical-merits"
   | "physical-flaws"
@@ -30,6 +32,15 @@ type MeritsAndFlawsGroups =
   | "social-flaws"
   | "supernatural-merits"
   | "supernatural-flaws";
+
+export function checkNumberEquivalence(el: EnRuEntity): EnRuEntity {
+  if (strToNumber(el.en) !== strToNumber(el.ru)) {
+    throw new Error(
+      `Point impact is different for merit/prop: ${JSON.stringify(el)}`
+    );
+  }
+  return el;
+}
 
 const mentalFlawsArr = [
   ...generateEnRuEntities(generateSequence(2, mentalFlawsSource)),
@@ -56,7 +67,7 @@ const supernaturalMeritsArr = [
   ...generateEnRuEntities(generateSequence(2, supernaturalMeritsSource)),
 ];
 
-const allMeritsAndFlaws = [
+export const allMeritsAndFlaws = [
   ...mentalFlawsArr,
   ...mentalMeritsArr,
   ...physicalFlawsArr,
@@ -65,7 +76,7 @@ const allMeritsAndFlaws = [
   ...socialMeritsArr,
   ...supernaturalFlawsArr,
   ...supernaturalMeritsArr,
-];
+].map(checkNumberEquivalence);
 
 export const v20_translateMeritsAndFlaws =
   makeTranslateFunction(allMeritsAndFlaws);

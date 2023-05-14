@@ -1,6 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
 
-interface EnRuEntity {
+export interface EnRuEntity {
   en: string;
   ru: string;
 }
