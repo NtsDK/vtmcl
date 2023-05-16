@@ -136,8 +136,8 @@ export function FreebiePointsPanel(
                       (el) => el.diff * el.multiplier
                     )
                   ) +
-                    freebiePointsStatus.freebiePoints +
-                    freebiePointsStatus.meritsSum -
+                    freebiePointsStatus.freebiePoints -
+                    freebiePointsStatus.meritsSum +
                     freebiePointsStatus.flawsSum
                 )}
               </span>
