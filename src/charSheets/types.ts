@@ -1,9 +1,9 @@
 import {
   AbilitiesConfig,
   AttributesConfig,
-  FreebiePointItem,
   ProfileConfig,
   DropdownOptions,
+  FreebiePointsConfig,
 } from "./root/domain";
 import { StateStore } from "./root/services/store";
 
@@ -12,7 +12,7 @@ export type Preset = {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
-  freebiePointsConfig?: FreebiePointItem[];
+  freebiePointsConfig?: FreebiePointsConfig;
   dropdownOptions?: DropdownOptions;
 
   CharSheet: (props: {}) => JSX.Element;

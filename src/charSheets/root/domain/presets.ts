@@ -37,6 +37,11 @@ export type AbilitiesConfig = {
   extension: "talent" | "skill" | "knowledge";
 }[];
 
+export type FreebiePointsConfig = {
+  initialPoints: number;
+  list: FreebiePointItem[];
+};
+
 export type FreebiePointItem = {
   name: FreebiePointName;
   extractor: (charSheet: CharSheet) => number;

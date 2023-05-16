@@ -8,11 +8,12 @@ import { useCharSheetStorage } from "../../../../charSheets/root/services/storag
 import {
   CharSheet,
   FreebiePointItem,
+  FreebiePointsConfig,
 } from "../../../../charSheets/root/domain";
 import { strToNumber } from "../../../../lib/miscUtils";
 
 interface FreebiePointsPanelProps {
-  freebiePointsConfig: FreebiePointItem[];
+  freebiePointsConfig: FreebiePointsConfig;
   className?: string;
 }
 
@@ -48,21 +49,23 @@ export function FreebiePointsPanel(
   const freebiePointsStatus = useMemo<FreebiePointStats>(() => {
     if (prevCharSheet === undefined) {
       return {
-        freebiePoints: 15,
+        freebiePoints: freebiePointsConfig.initialPoints,
         flawsSum: 0,
         meritsSum: 0,
         filledFreebiePoint: [],
       };
     }
 
-    const arr: FilledFreebiePointItem[] = freebiePointsConfig.map((el) => ({
-      name: el.name,
-      multiplier: el.multiplier,
-      diff: el.extractor(prevCharSheet) - el.extractor(charSheet),
-    }));
+    const arr: FilledFreebiePointItem[] = freebiePointsConfig.list.map(
+      (el) => ({
+        name: el.name,
+        multiplier: el.multiplier,
+        diff: el.extractor(prevCharSheet) - el.extractor(charSheet),
+      })
+    );
 
     return {
-      freebiePoints: 15,
+      freebiePoints: freebiePointsConfig.initialPoints,
       flawsSum: R.sum(charSheet.flaws.map(strToNumber)),
       meritsSum: R.sum(charSheet.merits.map(strToNumber)),
       filledFreebiePoint: arr,
