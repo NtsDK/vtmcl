@@ -25,4 +25,7 @@ export const freebiePoints = {
   art: "Искусство ({{cost}})",
   realm: "Королевство ({{cost}})",
   glamour: "Глэмор ({{cost}})",
+
+  // hh2
+  numina: "Дар ({{cost}})",
 };

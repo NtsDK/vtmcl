@@ -8,18 +8,12 @@ import {
   sumBackgrounds,
   willpowerRating,
 } from "../../generic/presetSettings";
+import { humanity, sumVirtues } from "../../vtm/presetSettings/freebiePoints";
 
 import { abilitiesConfig } from "./abilitiesConfig";
 
-export function humanity(charSheet: CharSheet): number {
-  return charSheet.state.humanity;
-}
-export function sumVirtues(charSheet: CharSheet): number {
-  return R.sum(R.values(charSheet.virtues));
-}
-
-function sumDisciplines(charSheet: CharSheet): number {
-  return R.sum(R.pluck("value", charSheet.disciplines));
+function sumNuminas(charSheet: CharSheet): number {
+  return R.sum(R.pluck("value", charSheet.numinaAndOtherTraits));
 }
 
 export const freebiePointsConfig: FreebiePointItem[] = [
@@ -34,8 +28,8 @@ export const freebiePointsConfig: FreebiePointItem[] = [
     multiplier: 2,
   },
   {
-    name: "discipline",
-    extractor: sumDisciplines,
+    name: "numina",
+    extractor: sumNuminas,
     multiplier: 7,
   },
   {

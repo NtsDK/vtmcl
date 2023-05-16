@@ -18,6 +18,7 @@ import {
   HH2State,
   HH2Abilities,
   HH2PresetName,
+  HH2FreebiePointName,
 } from "../../hh2/domain";
 
 // Profile
@@ -32,4 +33,5 @@ export type PresetName = VtMPresetName | CtDPresetName | HH2PresetName;
 export type FreebiePointName =
   | CommonFreebiePointName
   | VtMFreebiePointName
-  | CtDFreebiePointName;
+  | CtDFreebiePointName
+  | HH2FreebiePointName;
