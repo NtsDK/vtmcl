@@ -7,7 +7,7 @@ import { CheckListItem } from "../../../generic/checkList";
 import {
   checkBloodpool,
   INITIAL_BLOODPOOL_MAX_LIMIT,
-} from "../../checkListLogic/vampireCharacterChecks";
+} from "../../checkListLogic";
 import { randomInteger } from "../../../../lib/miscUtils";
 import { useStatus } from "../../../generic/services/storageAdapter";
 

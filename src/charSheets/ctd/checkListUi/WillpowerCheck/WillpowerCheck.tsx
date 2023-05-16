@@ -7,7 +7,7 @@ import { CheckListItem } from "../../../generic/checkList";
 import {
   checkChangelingWillpower,
   EXPECTED_WILLPOWER_DOTS,
-} from "../../checkListLogic/changelingCharacterChecks";
+} from "../../checkListLogic";
 import { useStatus } from "../../../generic/services/storageAdapter";
 
 interface WillpowerCheckProps {

@@ -4,7 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
-import { checkHumanity } from "../../checkListLogic/vampireCharacterChecks";
+import { checkHumanity } from "../../checkListLogic";
 import {
   useStatus,
   useVirtues,

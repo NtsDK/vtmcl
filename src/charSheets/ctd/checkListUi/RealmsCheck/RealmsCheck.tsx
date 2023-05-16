@@ -4,10 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
-import {
-  checkRealms,
-  EXPECTED_REALM_DOTS,
-} from "../../checkListLogic/changelingCharacterChecks";
+import { checkRealms, EXPECTED_REALM_DOTS } from "../../checkListLogic";
 import { useRealms } from "../../services/storageAdapter";
 
 interface RealmsCheckProps {

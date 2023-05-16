@@ -7,7 +7,7 @@ import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkAttributesFilled,
   EXPECTED_ATTRIBUTE_DOTS,
-} from "../../checkListLogic/commonCharacterChecks";
+} from "../../checkListLogic";
 import { useInternalPresetProps } from "../../..";
 import { useAttributes } from "../../services/storageAdapter";
 

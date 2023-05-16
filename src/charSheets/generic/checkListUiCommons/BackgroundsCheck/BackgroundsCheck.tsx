@@ -7,7 +7,7 @@ import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkBackgrounds,
   EXPECTED_BACKGROUND_DOTS,
-} from "../../checkListLogic/commonCharacterChecks";
+} from "../../checkListLogic";
 import { useBackgrounds } from "../../services/storageAdapter";
 
 interface BackgroundsCheckProps {

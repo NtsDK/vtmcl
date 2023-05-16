@@ -8,7 +8,7 @@ import {
   checkVampireWillpower,
   checkHumanity,
   checkDisciplines,
-} from "./vampireCharacterChecks";
+} from "./index";
 
 describe("Vampire character checks", () => {
   describe("checkBloodpool", () => {

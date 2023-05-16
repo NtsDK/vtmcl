@@ -20,7 +20,7 @@ import {
   EXPECTED_ABILITY_DOTS,
   EXPECTED_ATTRIBUTE_DOTS,
   EXPECTED_BACKGROUND_DOTS,
-} from "./commonCharacterChecks";
+} from "./index";
 
 describe("Common character checks", () => {
   describe("checkAttributesFilled", () => {

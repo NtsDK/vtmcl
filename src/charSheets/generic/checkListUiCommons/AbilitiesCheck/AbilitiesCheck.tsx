@@ -8,7 +8,7 @@ import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
 import {
   checkAbilitiesFilled,
   EXPECTED_ABILITY_DOTS,
-} from "../../checkListLogic/commonCharacterChecks";
+} from "../../checkListLogic";
 import {
   useAbilities,
   useAbilitiesExtension,

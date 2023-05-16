@@ -4,10 +4,7 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
-import {
-  checkGlamour,
-  EXPECTED_GLAMOUR_DOTS,
-} from "../../checkListLogic/changelingCharacterChecks";
+import { checkGlamour, EXPECTED_GLAMOUR_DOTS } from "../../checkListLogic";
 import { useStatus } from "../../../generic/services/storageAdapter";
 
 interface GlamourCheckProps {

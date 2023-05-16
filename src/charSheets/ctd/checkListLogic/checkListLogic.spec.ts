@@ -12,7 +12,7 @@ import {
   checkBanality,
   checkRealms,
   checkArts,
-} from "./changelingCharacterChecks";
+} from "./index";
 
 describe("Changeling character checks", () => {
   describe("checkChangelingWillpower", () => {

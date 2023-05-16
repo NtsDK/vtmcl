@@ -5,10 +5,7 @@ import classnames from "classnames";
 
 import { useInternalPresetProps } from "../../..";
 import { CheckListItem } from "../../checkListUiPrimitives/CheckListItem";
-import {
-  ABILITY_LIMIT,
-  checkAbilitiesDotLimit,
-} from "../../checkListLogic/commonCharacterChecks";
+import { ABILITY_LIMIT, checkAbilitiesDotLimit } from "../../checkListLogic";
 import {
   useAbilitiesExtension,
   useAbilities,

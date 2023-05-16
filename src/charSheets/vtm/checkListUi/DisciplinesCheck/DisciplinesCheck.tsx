@@ -7,7 +7,7 @@ import { CheckListItem } from "../../../generic/checkList";
 import {
   checkDisciplines,
   EXPECTED_DISCIPLINE_DOTS,
-} from "../../checkListLogic/vampireCharacterChecks";
+} from "../../checkListLogic";
 import { useDisciplines } from "../../services/storageAdapter";
 
 interface DisciplinesCheckProps {

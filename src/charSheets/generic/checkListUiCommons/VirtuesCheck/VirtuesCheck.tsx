@@ -5,10 +5,7 @@ import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
 import { useVirtues } from "../../services/storageAdapter";
-import {
-  checkVirtues,
-  EXPECTED_VIRTUE_DOTS,
-} from "../../checkListLogic/commonCharacterChecks";
+import { checkVirtues, EXPECTED_VIRTUE_DOTS } from "../../checkListLogic";
 
 interface VirtuesCheckProps {
   className?: string;

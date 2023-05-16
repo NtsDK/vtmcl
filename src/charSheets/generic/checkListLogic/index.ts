@@ -14,7 +14,7 @@ import {
   CheckArrResult,
   checkArrSumFilled,
   CheckNumberResult,
-} from "./characterCheckGeneric";
+} from "./generic";
 
 export const EXPECTED_ABILITY_DOTS = [13, 9, 5] as const;
 export const ABILITY_LIMIT = 3;

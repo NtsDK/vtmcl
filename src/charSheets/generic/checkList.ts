@@ -8,5 +8,5 @@ export { VirtuesCheck } from "./checkListUiCommons/VirtuesCheck";
 export type {
   CheckArrResult,
   CheckNumberResult,
-} from "./checkListLogic/characterCheckGeneric";
-export { checkArrSumFilled } from "./checkListLogic/characterCheckGeneric";
+} from "./checkListLogic/generic";
+export { checkArrSumFilled } from "./checkListLogic/generic";
