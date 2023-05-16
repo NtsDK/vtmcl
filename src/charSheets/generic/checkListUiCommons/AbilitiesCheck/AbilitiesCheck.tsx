@@ -15,11 +15,12 @@ import {
 } from "../../services/storageAdapter";
 
 interface AbilitiesCheckProps {
+  expectedAbilitiesDots?: readonly [number, number, number];
   className?: string;
 }
 
 export function AbilitiesCheck(props: AbilitiesCheckProps): JSX.Element {
-  const { className } = props;
+  const { className, expectedAbilitiesDots = EXPECTED_ABILITY_DOTS } = props;
   const { t } = useTranslation();
 
   const { abilitiesConfig } = useInternalPresetProps();
@@ -31,9 +32,9 @@ export function AbilitiesCheck(props: AbilitiesCheckProps): JSX.Element {
       abilities,
       abilitiesConfig,
       abilitiesExtension,
-      EXPECTED_ABILITY_DOTS
+      expectedAbilitiesDots
     );
-  }, [abilities, abilitiesConfig, abilitiesExtension]);
+  }, [abilities, abilitiesConfig, abilitiesExtension, expectedAbilitiesDots]);
 
   return (
     <CheckListItem
@@ -42,7 +43,7 @@ export function AbilitiesCheck(props: AbilitiesCheckProps): JSX.Element {
       checked={abilitiesFilled.checked}
       text={t("checklist.ability-dots", {
         value: abilitiesFilled.arr.join("/"),
-        expected: EXPECTED_ABILITY_DOTS.join("/"),
+        expected: expectedAbilitiesDots.join("/"),
       })}
     />
   );

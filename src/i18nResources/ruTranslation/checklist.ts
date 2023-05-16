@@ -7,10 +7,10 @@ export const checklist = {
   "ability-dot-limit": "Не больше {{expected}} точек на способность",
   "discipline-dots": "{{expected}} точки в дисциплинах (факт\xa0{{value}})",
   "background-dots":
-    "{{expected}} точки в фактах биографии (факт\xa0{{value}})",
+    "{{expected}} точек в фактах биографии (факт\xa0{{value}})",
   "virtue-dots": "{{expected}} точек в добродетелях (факт\xa0{{value}})",
   "humanity-dots":
-    "Человечность = Сознательность + Самоконтроль (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+    "Человечность = Совесть + Самоконтроль (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "willpower-dots":
     "Сила воли = Смелость (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "bloodpool-dots": "Запас крови = бросок d10 (факт\xa0{{value}})",

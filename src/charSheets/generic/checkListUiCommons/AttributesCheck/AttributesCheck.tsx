@@ -12,11 +12,12 @@ import { useInternalPresetProps } from "../../..";
 import { useAttributes } from "../../services/storageAdapter";
 
 interface AttributesCheckProps {
+  expectedAttributeDots?: readonly [number, number, number];
   className?: string;
 }
 
 export function AttributesCheck(props: AttributesCheckProps): JSX.Element {
-  const { className } = props;
+  const { className, expectedAttributeDots = EXPECTED_ATTRIBUTE_DOTS } = props;
   const { t } = useTranslation();
 
   const { attributes } = useAttributes();
@@ -25,9 +26,9 @@ export function AttributesCheck(props: AttributesCheckProps): JSX.Element {
     return checkAttributesFilled(
       attributes,
       attributesConfig,
-      EXPECTED_ATTRIBUTE_DOTS
+      expectedAttributeDots
     );
-  }, [attributes, attributesConfig]);
+  }, [attributes, attributesConfig, expectedAttributeDots]);
 
   return (
     <CheckListItem
@@ -35,7 +36,7 @@ export function AttributesCheck(props: AttributesCheckProps): JSX.Element {
       checked={attributesFilled.checked}
       text={t("checklist.attribute-dots", {
         value: attributesFilled.arr.join("/"),
-        expected: EXPECTED_ATTRIBUTE_DOTS.join("/"),
+        expected: expectedAttributeDots.join("/"),
       })}
     />
   );

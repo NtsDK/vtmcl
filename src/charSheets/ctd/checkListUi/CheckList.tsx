@@ -2,6 +2,7 @@ import React from "react";
 
 import {
   AbilitiesCheck,
+  AbilitiesDotLimitCheck,
   AttributesCheck,
   BackgroundsCheck,
 } from "../../generic/checkList";
@@ -19,6 +20,7 @@ export function CheckList(props: CheckListProps): JSX.Element {
     <ul className="ChangelingCheckList">
       <AttributesCheck className="tw-mx-5 tw-my-3" />
       <AbilitiesCheck className="tw-mx-5 tw-my-3" />
+      <AbilitiesDotLimitCheck className="tw-mx-5 tw-my-3" />
       <BackgroundsCheck className="tw-mx-5 tw-my-3" />
       <ArtsCheck className="tw-mx-5 tw-my-3" />
       <RealmsCheck className="tw-mx-5 tw-my-3" />
