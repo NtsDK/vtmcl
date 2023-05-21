@@ -6,6 +6,7 @@ import { usePreset } from "../charSheets/root/services/storageAdapter";
 import { useStore } from "../charSheets/root/services/store";
 
 import { VtM } from "./vtm";
+import { VtDA } from "./vtda";
 import { CtD } from "./ctd";
 import { HH2 } from "./hh2";
 import { PresetName, InternalPresetProps, presetList } from "./root/domain";
@@ -15,6 +16,7 @@ const presetIndex: Record<PresetName, Preset> = {
   vampire_v20: VtM,
   changeling_v20: CtD,
   hunter_v20: HH2,
+  vampire_da_v20: VtDA,
 };
 
 export function useExternalPresetProps(): ExternalPresetProps {

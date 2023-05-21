@@ -35,6 +35,7 @@ import {
   initialVtMProfile,
   initialVtMState,
 } from "../../vtm/services/initialValues";
+import { initialVtDAAbilities } from "../../vtda/services/initialValues";
 import { initialSettings } from "../../misc/services/initialValues";
 import {
   initialHH2Abilities,
@@ -56,6 +57,7 @@ export const initialAbilities: Abilities = {
   ...initialVtMAbilities,
   ...initialCtDAbilities,
   ...initialHH2Abilities,
+  ...initialVtDAAbilities,
 };
 
 export const initialState: State = {

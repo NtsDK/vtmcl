@@ -47,6 +47,14 @@ export const abilities = {
   "extension-knowledge": "Дополнительное знание {{id}}",
 
   kenning: "Кеннинг",
-  enigmas: "Загадки",
+  enigmas: "Головоломки",
   gremayre: "Гримеир",
+
+  legerdemain: "Ловкость рук",
+  archery: "Стрельба из лука",
+  commerce: "Коммерция",
+  ride: "Верховая езда",
+  hearthWisdom: "Житейская мудрость",
+  seneschal: "Распорядительство",
+  theology: "Теология",
 };

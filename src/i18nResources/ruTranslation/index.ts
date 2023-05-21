@@ -41,6 +41,7 @@ export const ruTranslation = {
     "type-select": "Тип листа персонажа",
     preset: {
       vampire_v20: "Вампиры: Маскарад. V20",
+      vampire_da_v20: "Вампиры: Тёмные века. V20",
       changeling_v20: "Подменыши: Грёза. V20",
       hunter_v20: "Охота на охотников II. V20",
     },

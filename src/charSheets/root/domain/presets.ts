@@ -16,10 +16,19 @@ export interface Limits {
   bloodpool: number;
 }
 
+// This object should generate TS error if new preset is not added here
+const presetStubs: Record<PresetName, number> = {
+  vampire_v20: 0,
+  changeling_v20: 0,
+  hunter_v20: 0,
+  vampire_da_v20: 0,
+};
+
 export const presetList: PresetName[] = [
   "vampire_v20",
   "changeling_v20",
   "hunter_v20",
+  "vampire_da_v20",
 ];
 
 export type ProfileConfigItem =

@@ -44,6 +44,7 @@ export const enTranslation: TranslationInfo = {
     "type-select": "Character sheet type",
     preset: {
       vampire_v20: "Vampire: The Masquerade. V20",
+      vampire_da_v20: "Vampire: The Dark Ages. V20",
       changeling_v20: "Changeling: The Dreaming. V20",
       hunter_v20: "The Hunters Hunted II. V20",
     },

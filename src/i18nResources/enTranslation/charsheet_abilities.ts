@@ -47,4 +47,12 @@ export const abilities = {
   kenning: "Kenning",
   enigmas: "Enigmas",
   gremayre: "Gremayre",
+
+  legerdemain: "Legerdemain",
+  archery: "Archery",
+  commerce: "Commerce",
+  ride: "Ride",
+  hearthWisdom: "Hearth Wisdom",
+  seneschal: "Seneschal",
+  theology: "Theology",
 };

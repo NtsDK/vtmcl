@@ -76,6 +76,14 @@ export const m: CharSheetInJson = {
       enigmas: 0,
       gremayre: 0,
       kenning: 0,
+
+      legerdemain: 0,
+      archery: 0,
+      commerce: 0,
+      ride: 0,
+      hearthWisdom: 0,
+      seneschal: 0,
+      theology: 0,
     },
     abilitiesExtension: {
       talentName1: "",
