@@ -5,7 +5,7 @@ import { translateGeneration } from "../../vtm/dropdownContent/resources/generat
 // import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 import { translateArchetype } from "./resources/archetypes";
 // import { translateGeneration } from "./resources/generations";
-// import { translateClan } from "./resources/clans";
+import { translateClan } from "./resources/clans";
 // import { translateDiscipline } from "./resources/disciplines";
 // import { translateDisciplinePath } from "./resources/disciplinePaths";
 // import { translateRitual } from "./resources/rituals";
@@ -48,7 +48,7 @@ export function translateDropdownOptions(
     "generation",
     translateGeneration(profile.generation, prevLanguage, lng)
   );
-  // setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
+  setProfileItem("clan", translateClan(profile.clan, prevLanguage, lng));
   setProfileItem(
     "concept",
     translateConcept(profile.concept, prevLanguage, lng)

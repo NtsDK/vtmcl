@@ -16,7 +16,7 @@ import { archetypes_ru, archetypes_en } from "./resources/archetypes";
 //   v20_backgrounds_ru,
 //   v20_backgrounds_en,
 // } from "./resources/backgrounds";
-// import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
+import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
 import { concepts_en, concepts_ru } from "./resources/concepts";
 // import {
 //   disciplinePathDisplayGroups_ru,
@@ -46,7 +46,7 @@ export type VtMDropdownOptions = Merge<
     archetypeOptions: string[];
     conceptOptions: string[];
     generationOptions: string[];
-    // clanOptions: OptionGroup[];
+    clanOptions: OptionGroup[];
     // disciplineOptions: OptionGroup[];
     // disciplinePathOptions: OptionGroup[];
     // pathOptions: string[];
@@ -64,7 +64,7 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
         meritOptions: [],
         conceptOptions: concepts_ru,
         generationOptions: generations_ru,
-        // clanOptions: clanDisplayGroups_ru,
+        clanOptions: clanDisplayGroups_ru,
         // backgroundOptions: v20_backgrounds_ru,
         // disciplineOptions: disciplineDisplayGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
@@ -81,7 +81,7 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
         meritOptions: [],
         conceptOptions: concepts_en,
         generationOptions: generations_en,
-        // clanOptions: clanDisplayGroups_en,
+        clanOptions: clanDisplayGroups_en,
         // backgroundOptions: v20_backgrounds_en,
         // disciplineOptions: disciplineDisplayGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,

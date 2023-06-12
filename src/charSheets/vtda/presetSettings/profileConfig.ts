@@ -17,7 +17,7 @@ export const profileConfig: ProfileConfig = [
     },
     {
       name: "clan",
-      // optionsName: "clanOptions",
+      optionsName: "clanOptions",
     },
     {
       name: "generation",
