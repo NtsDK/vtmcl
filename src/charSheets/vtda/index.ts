@@ -6,8 +6,8 @@ import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
 // import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
 import { CharSheet } from "./CharSheet";
-// import { getDropdownOptions } from "./dropdownContent";
-// import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
+import { getDropdownOptions } from "./dropdownContent";
+import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
 
 export const VtDA: Preset = {
   displayName: "VtDA V20",
@@ -17,6 +17,6 @@ export const VtDA: Preset = {
   // freebiePointsConfig,
   // CheckList,
   CharSheet,
-  // getDropdownOptions,
-  // translateDropdownOptions,
+  getDropdownOptions,
+  translateDropdownOptions,
 };

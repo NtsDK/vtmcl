@@ -5,15 +5,15 @@ export const profileConfig: ProfileConfig = [
   [
     {
       name: "nature",
-      // optionsName: "archetypeOptions",
+      optionsName: "archetypeOptions",
     },
     {
       name: "demeanor",
-      // optionsName: "archetypeOptions",
+      optionsName: "archetypeOptions",
     },
     {
       name: "concept",
-      // optionsName: "conceptOptions",
+      optionsName: "conceptOptions",
     },
     {
       name: "clan",
@@ -21,7 +21,7 @@ export const profileConfig: ProfileConfig = [
     },
     {
       name: "generation",
-      // optionsName: "generationOptions",
+      optionsName: "generationOptions",
     },
     "sire",
   ],

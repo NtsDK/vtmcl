@@ -110,8 +110,7 @@ Wu Zao (Orphans, Salubri)
 //   <en>
 //     <ru>
 
-export const clanGroupsSource = `
-high-clan
+export const clanGroupsSource = `high-clan
   High Clans
     Высшие кланы
 low-clan
@@ -119,8 +118,7 @@ low-clan
     Низшие кланы
 bloodline
   Bloodlines
-    Линии крови
-`;
+    Линии крови`;
 
 // High Clans
 //   Высшие кланы

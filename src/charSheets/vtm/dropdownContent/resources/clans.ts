@@ -1,14 +1,14 @@
 import Ajv, { JSONSchemaType } from "ajv";
 import * as R from "ramda";
 
-import { clansSource, clanGroupsSource } from "./clansSource";
-
 import {
   generateIdEnRuEntities,
   generateSequence,
   makeTranslateFunction,
   sortStrArr,
 } from "../../../generic/dropdownContent";
+
+import { clansSource, clanGroupsSource } from "./clansSource";
 
 const ajv = new Ajv({
   allErrors: true,

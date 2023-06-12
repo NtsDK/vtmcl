@@ -14,7 +14,10 @@ export const maxDefaultLimits: Limits = {
 };
 
 export function getLimits(limitArgs: LimitArgs): Limits {
-  if (limitArgs.preset === "vampire_v20") {
+  if (
+    limitArgs.preset === "vampire_v20" ||
+    limitArgs.preset === "vampire_da_v20"
+  ) {
     const { generation } = limitArgs.profile;
     const str = generation.replace(/\D/g, "");
     if (str !== "") {

@@ -1,11 +1,12 @@
 import * as R from "ramda";
 
-import { generationsSource } from "./generationsSource";
 import {
   generateEnRuEntities,
   generateSequence,
   makeTranslateFunction,
 } from "../../../generic/dropdownContent";
+
+import { generationsSource } from "./generationsSource";
 
 const sourceArr = [
   ...generateEnRuEntities(generateSequence(2, generationsSource)),
