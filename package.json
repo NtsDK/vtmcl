@@ -13,7 +13,8 @@
     "check-build": "http-server ./build",
     "lint": "eslint --fix",
     "format": "prettier --write ./src/**/*.{ts,tsx}",
-    "lf": "npm run lint && npm run format"
+    "lf": "npm run lint && npm run format",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -79,6 +80,7 @@
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "prettier": "2.8.8",
     "prettier-eslint": "^15.0.1",
     "prettier-eslint-cli": "^7.1.0",
