@@ -136,6 +136,16 @@ export function migrate(charSheetSrc: any): unknown {
   }
   if (charSheet.Version === "0.4.1") {
     charSheet.Version = "0.5.0";
+    charSheet.Charsheet.state.faith = 0;
+    charSheet.Charsheet.abilities.theology = 0;
+    charSheet.Charsheet.abilities.seneschal = 0;
+    charSheet.Charsheet.abilities.hearthWisdom = 0;
+    charSheet.Charsheet.abilities.ride = 0;
+    charSheet.Charsheet.abilities.commerce = 0;
+    charSheet.Charsheet.abilities.archery = 0;
+    charSheet.Charsheet.abilities.legerdemain = 0;
+    charSheet.Charsheet.profile.residence = "";
+    charSheet.Charsheet.numinaAndOtherTraits = [];
   }
   return charSheet;
 }
