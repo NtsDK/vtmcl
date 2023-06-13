@@ -57,7 +57,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
     // ritualValueOptions,
     // disciplinePathOptions,
     backgroundOptions,
-    // disciplineOptions,
+    disciplineOptions,
   } = useDropdownOptions();
 
   return (
@@ -70,6 +70,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <AdvantagesSection
           className="tw-mb-3"
           backgroundOptions={backgroundOptions}
+          disciplineOptions={disciplineOptions}
         />
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}

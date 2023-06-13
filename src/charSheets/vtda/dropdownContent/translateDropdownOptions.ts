@@ -4,9 +4,8 @@ import { translateGeneration } from "../../vtm/dropdownContent/resources/generat
 import { translateBackground } from "./resources/backgrounds";
 // import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 import { translateArchetype } from "./resources/archetypes";
-// import { translateGeneration } from "./resources/generations";
 import { translateClan } from "./resources/clans";
-// import { translateDiscipline } from "./resources/disciplines";
+import { translateDiscipline } from "./resources/disciplines";
 // import { translateDisciplinePath } from "./resources/disciplinePaths";
 // import { translateRitual } from "./resources/rituals";
 // import { translatePath } from "./resources/paths";
@@ -61,12 +60,12 @@ export function translateDropdownOptions(
       translateBackground(background.name, prevLanguage, lng)
     );
   });
-  // disciplines.forEach((discipline, index) => {
-  //   setDisciplineName(
-  //     index,
-  //     translateDiscipline(discipline.name, prevLanguage, lng)
-  //   );
-  // });
+  disciplines.forEach((discipline, index) => {
+    setDisciplineName(
+      index,
+      translateDiscipline(discipline.name, prevLanguage, lng)
+    );
+  });
   // disciplinePaths.forEach((disciplinePath, index) => {
   //   setDisciplinePathName(
   //     index,

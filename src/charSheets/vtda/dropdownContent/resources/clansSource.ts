@@ -98,7 +98,7 @@ Assamite Vizier (Scholars, Artisans)
   Ассамиты Визири (Книжники, Искусники)
     [bloodline]
 Assamite Warrior
-  Ассамиты воины
+  Ассамиты Воины
     [bloodline]
 Caitiff
   Каитифы
