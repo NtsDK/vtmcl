@@ -46,8 +46,13 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
 
   const ritualsService = useRituals();
 
-  const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
-    useDropdownOptions();
+  const {
+    ritualOptions,
+    ritualValueOptions,
+    disciplinePathOptions,
+    backgroundOptions,
+    disciplineOptions,
+  } = useDropdownOptions();
 
   return (
     <>
@@ -56,7 +61,11 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <SectionHeader className="tw-mb-3">
           {t("charsheet.advantages.header")}
         </SectionHeader>
-        <AdvantagesSection className="tw-mb-3" />
+        <AdvantagesSection
+          className="tw-mb-3"
+          backgroundOptions={backgroundOptions}
+          disciplineOptions={disciplineOptions}
+        />
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>

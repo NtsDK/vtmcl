@@ -8,7 +8,7 @@ import { OptionGroup } from "../../../../../charSheets/root/domain";
 import { DisciplinesService } from "../../../application/ports";
 
 interface DisciplinesSectionProps extends DisciplinesService, LimitService {
-  disciplineOptions: OptionGroup[];
+  disciplineOptions?: OptionGroup[];
   className?: string;
 }
 

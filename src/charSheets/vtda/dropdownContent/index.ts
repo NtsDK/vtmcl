@@ -12,10 +12,7 @@ import {
 } from "../../vtm/dropdownContent/resources/generations";
 
 import { archetypes_ru, archetypes_en } from "./resources/archetypes";
-// import {
-//   v20_backgrounds_ru,
-//   v20_backgrounds_en,
-// } from "./resources/backgrounds";
+import { backgrounds_ru, backgrounds_en } from "./resources/backgrounds";
 import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
 import { concepts_en, concepts_ru } from "./resources/concepts";
 // import {
@@ -40,7 +37,7 @@ import { concepts_en, concepts_ru } from "./resources/concepts";
 //   ritualDisplayGroups_en,
 // } from "./resources/rituals";
 
-export type VtMDropdownOptions = Merge<
+export type VtDADropdownOptions = Merge<
   CommonDropdownOptions,
   {
     archetypeOptions: string[];
@@ -55,17 +52,16 @@ export type VtMDropdownOptions = Merge<
   }
 >;
 
-export function getDropdownOptions(language: string): VtMDropdownOptions {
+export function getDropdownOptions(language: string): VtDADropdownOptions {
   return language === "ru"
     ? {
         archetypeOptions: archetypes_ru,
-        backgroundOptions: [],
         flawOptions: [],
         meritOptions: [],
         conceptOptions: concepts_ru,
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
-        // backgroundOptions: v20_backgrounds_ru,
+        backgroundOptions: backgrounds_ru,
         // disciplineOptions: disciplineDisplayGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
         // pathOptions: paths_ru,
@@ -76,13 +72,12 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
       }
     : {
         archetypeOptions: archetypes_en,
-        backgroundOptions: [],
         flawOptions: [],
         meritOptions: [],
         conceptOptions: concepts_en,
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
-        // backgroundOptions: v20_backgrounds_en,
+        backgroundOptions: backgrounds_en,
         // disciplineOptions: disciplineDisplayGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,
         // pathOptions: paths_en,
@@ -93,7 +88,7 @@ export function getDropdownOptions(language: string): VtMDropdownOptions {
       };
 }
 
-export function useDropdownOptions(): VtMDropdownOptions {
+export function useDropdownOptions(): VtDADropdownOptions {
   const { i18n } = useTranslation();
   const { language } = i18n;
 

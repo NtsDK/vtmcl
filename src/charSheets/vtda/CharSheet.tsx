@@ -22,6 +22,9 @@ import {
   OtherTraitsSection,
   PossessionsSection,
 } from "../generic/uiSections";
+import { AdvantagesSection } from "../vtm/uiSections/AdvantagesSection";
+
+import { useDropdownOptions } from "./dropdownContent";
 
 // import { useDropdownOptions } from "./dropdownContent";
 // import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
@@ -49,6 +52,14 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   // const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
   //   useDropdownOptions();
 
+  const {
+    // ritualOptions,
+    // ritualValueOptions,
+    // disciplinePathOptions,
+    backgroundOptions,
+    // disciplineOptions,
+  } = useDropdownOptions();
+
   return (
     <>
       <CharSheetBody>
@@ -56,7 +67,10 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <SectionHeader className="tw-mb-3">
           {t("charsheet.advantages.header")}
         </SectionHeader>
-        {/* <AdvantagesSection className="tw-mb-3" /> */}
+        <AdvantagesSection
+          className="tw-mb-3"
+          backgroundOptions={backgroundOptions}
+        />
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>

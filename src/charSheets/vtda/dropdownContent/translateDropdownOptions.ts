@@ -1,7 +1,7 @@
 import { StateStore } from "../../root/services/store";
 import { translateGeneration } from "../../vtm/dropdownContent/resources/generations";
 
-// import { v20_translateBackground } from "./resources/backgrounds";
+import { translateBackground } from "./resources/backgrounds";
 // import { v20_translateMeritsAndFlaws } from "./resources/meritsAndFlaws";
 import { translateArchetype } from "./resources/archetypes";
 // import { translateGeneration } from "./resources/generations";
@@ -55,12 +55,12 @@ export function translateDropdownOptions(
   );
 
   // vampire
-  // backgrounds.forEach((background, index) => {
-  //   setBackgroundName(
-  //     index,
-  //     v20_translateBackground(background.name, prevLanguage, lng)
-  //   );
-  // });
+  backgrounds.forEach((background, index) => {
+    setBackgroundName(
+      index,
+      translateBackground(background.name, prevLanguage, lng)
+    );
+  });
   // disciplines.forEach((discipline, index) => {
   //   setDisciplineName(
   //     index,

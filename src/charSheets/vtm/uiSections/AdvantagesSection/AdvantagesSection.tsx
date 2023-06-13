@@ -9,24 +9,25 @@ import {
   BackgroundsSection,
   VirtuesSection,
 } from "../../../generic/uiSections";
-import { useDropdownOptions } from "../../dropdownContent";
 import { useDisciplines } from "../../services/storageAdapter";
 import {
   useBackgrounds,
   useVirtues,
 } from "../../../generic/services/storageAdapter";
+import { OptionGroup, Options } from "../../../root/domain";
 
 import { DisciplinesSection } from "./DisciplinesSection";
 
 interface AdvantagesSectionProps {
+  backgroundOptions?: Options;
+  disciplineOptions?: OptionGroup[];
   className?: string;
 }
 
 export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
-  const { className } = props;
+  const { className, backgroundOptions, disciplineOptions } = props;
   const { t } = useTranslation();
 
-  const { backgroundOptions, disciplineOptions } = useDropdownOptions();
   const { limits } = useLimits();
   const disciplinesService = useDisciplines();
   const backgroundsService = useBackgrounds();
