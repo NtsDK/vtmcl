@@ -25,6 +25,7 @@ import {
 import { AdvantagesSection } from "../vtm/uiSections/AdvantagesSection";
 
 import { useDropdownOptions } from "./dropdownContent";
+import { StatusSection } from "./uiSections";
 
 // import { useDropdownOptions } from "./dropdownContent";
 // import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
@@ -75,7 +76,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}
         </SectionHeader>
-        {/* <StatusSection className="tw-mb-3" /> */}
+        <StatusSection className="tw-mb-3" />
       </CharSheetBody>
       <CharSheetBody>
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
