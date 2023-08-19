@@ -1,5 +1,18 @@
-import { initialCommonAbilities } from "../../generic/services/initialValues";
-import { VtDAAbilities } from "../domain";
+import {
+  initialCommonAbilities,
+  initialCommonState,
+} from "../../generic/services/initialValues";
+import { initialVtMState } from "../../vtm/services/initialValues";
+import { VtDAAbilities, VtDAState } from "../domain";
+
+export const initialVtDAState: VtDAState = {
+  ...initialCommonState,
+  ...initialVtMState,
+  roadValue: 0,
+  roadName: "",
+  auraName: "",
+  auraModifier: "",
+};
 
 export const initialVtDAAbilities: VtDAAbilities = {
   ...initialCommonAbilities,

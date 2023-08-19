@@ -133,6 +133,12 @@ export const m: CharSheetInJson = {
       banalityPool: 0,
       nightmare: 0,
       faith: 0,
+
+      // vtda
+      roadValue: 0,
+      roadName: "",
+      auraName: "",
+      auraModifier: "",
     },
     health: {
       bruised: 0,

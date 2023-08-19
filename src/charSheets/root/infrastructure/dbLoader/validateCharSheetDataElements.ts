@@ -165,6 +165,11 @@ export const stateSchema: JSONSchemaType<State> = {
     bearingName: { type: "string" },
     bearingModifier: { type: "string" },
 
+    roadValue: { type: "number" },
+    roadName: { type: "string" },
+    auraName: { type: "string" },
+    auraModifier: { type: "string" },
+
     willpowerRating: { type: "number" },
     willpowerPool: { type: "number" },
 
@@ -190,6 +195,10 @@ export const stateSchema: JSONSchemaType<State> = {
     "pathName",
     "bearingName",
     "bearingModifier",
+    "roadValue",
+    "roadName",
+    "auraName",
+    "auraModifier",
     "willpowerRating",
     "willpowerPool",
     "bloodpool",

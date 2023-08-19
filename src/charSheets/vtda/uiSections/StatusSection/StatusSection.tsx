@@ -5,38 +5,19 @@ import {
   useHealth,
   useMeritsNFlaws,
   useStatus,
-} from "../../generic/services/storageAdapter";
-import { useLimits } from "../../root/services/storageAdapter";
-import { Subheader } from "../../generic/uiPrimitives";
+} from "../../../generic/services/storageAdapter";
+import { useLimits } from "../../../root/services/storageAdapter";
+import { Subheader } from "../../../generic/uiPrimitives";
 import {
   ExperienceSection,
   FlawsSection,
   HealthSection,
   MeritsSection,
   WillSection,
-} from "../../generic/uiSections";
-import { BloodpoolSection } from "../../vtm/uiSections/StatusSection/BloodpoolSection";
-import { WeaknessSection } from "../../vtm/uiSections/StatusSection/WeaknessSection";
-
-// import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
-// import {
-//   ExperienceSection,
-//   FlawsSection,
-//   HealthSection,
-//   MeritsSection,
-//   WillSection,
-// } from "../../../generic/uiSections";
-// import { Subheader } from "../../../generic/uiPrimitives";
-// import { useDropdownOptions } from "../../dropdownContent";
-// import {
-//   useMeritsNFlaws,
-//   useStatus,
-//   useHealth,
-// } from "../../../generic/services/storageAdapter";
-
-// import { HumanitySection } from "./HumanitySection";
-// import { BloodpoolSection } from "./BloodpoolSection";
-// import { WeaknessSection } from "./WeaknessSection";
+} from "../../../generic/uiSections";
+import { BloodpoolSection } from "../../../vtm/uiSections/StatusSection/BloodpoolSection";
+import { WeaknessSection } from "../../../vtm/uiSections/StatusSection/WeaknessSection";
+import { RoadSection } from "./RoadSection";
 
 interface StatusSectionProps {
   className?: string;
@@ -71,14 +52,15 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
         />
       </div>
       <div className="tw-flex-1">
-        {/* <Subheader id="humanity.header" className="tw-mb-2">
-          {t("charsheet.status.humanityOrPath")}
+        <Subheader id="road.header" className="tw-mb-2">
+          {t("charsheet.status.road")}
         </Subheader>
-        <HumanitySection
+        <RoadSection
+          roadOptions={[]}
           className="tw-mb-4 print:tw-mb-2"
-          pathOptions={pathOptions}
+          // pathOptions={pathOptions}
           {...statusService}
-        /> */}
+        />
 
         <Subheader className="tw-mb-2 tw-mt-2">
           {t("charsheet.status.willpower")}

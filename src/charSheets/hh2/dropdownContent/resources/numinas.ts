@@ -95,10 +95,10 @@ const groupIndex = R.indexBy(R.prop("id"), numinaGroupsArr);
 
 export const numinaDisplayGroups_en = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].en,
-  arr: groups_en[groupName],
+  arr: groups_en[groupName] as string[],
 }));
 
 export const numinaDisplayGroups_ru = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].ru,
-  arr: groups_ru[groupName],
+  arr: groups_ru[groupName] as string[],
 }));

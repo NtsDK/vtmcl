@@ -91,7 +91,7 @@ export function checkAbilitiesDotLimit(
       "knowledgeValue2",
     ],
     abilitiesExtension
-  ).every((el) => el <= abilityLimit);
+  ).every((el) => (el as number) <= abilityLimit);
 
   return isValid && isValidExtra;
 }

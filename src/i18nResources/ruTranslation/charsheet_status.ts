@@ -6,6 +6,7 @@ export const status = {
   state: "Состояние",
   humanity: "Человечность",
   humanityOrPath: "Человечность/Путь",
+  road: "Дорога",
 
   willpower: "Воля",
   "willpower-rating": "Значение воли",
@@ -53,6 +54,8 @@ export const status = {
   "select-path": "Выбрать путь",
   "merit-label": "Достоинство {{index}}",
   "flaw-label": "Недостаток {{index}}",
+  aura: "Аура",
+  "aura-modifier": "Модификатор ауры",
 
   glamour: "Глэмор",
   "glamour-rating": "Значение глэмора",

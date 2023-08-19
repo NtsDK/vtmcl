@@ -6,6 +6,7 @@ export const status = {
   state: "State",
   humanity: "Humanity",
   humanityOrPath: "Humanity/Path",
+  road: "Road",
 
   willpower: "Willpower",
   "willpower-rating": "Willpower rating",
@@ -53,6 +54,8 @@ export const status = {
   "select-path": "Select path",
   "merit-label": "Merit {{index}}",
   "flaw-label": "Flaw {{index}}",
+  aura: "Aura",
+  "aura-modifier": "Aura Modifier",
 
   glamour: "Glamour",
   "glamour-rating": "Glamour rating",

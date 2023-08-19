@@ -76,7 +76,10 @@ const sourceArr = [...generatePathEntities(generateSequence(3, pathsSource))];
 
 export const translatePath = makeTranslateFunction(sourceArr);
 
-const groups = R.groupBy(R.prop("groupName"), sourceArr);
+const groups = R.groupBy(R.prop("groupName"), sourceArr) as Record<
+  PathGroupName,
+  PathEntity[]
+>;
 
 const paths_v20 = [...groups["v20-core"], ...groups["v20-addon"]];
 

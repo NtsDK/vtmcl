@@ -1,10 +1,5 @@
 import i18n from "i18next";
-import {
-  DefaultNamespace,
-  initReactI18next,
-  TFuncKey,
-  Resources,
-} from "react-i18next";
+import { initReactI18next, Resources } from "react-i18next";
 import { resources, defaultLang } from "./i18nResources";
 // see https://www.npmjs.com/package/i18next-browser-languagedetector
 // for details
@@ -75,4 +70,11 @@ export { i18n };
 declare module "react-i18next" {
   type DefaultResources2 = (typeof resources)[typeof defaultLang];
   interface Resources extends DefaultResources2 {}
+}
+
+declare module "i18next" {
+  interface CustomTypeOptions {
+    // defaultNS: typeof i18n["defaultNS"];
+    resources: (typeof resources)["en"];
+  }
 }

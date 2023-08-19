@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useCallback } from "react";
 import classnames from "classnames";
-import { TFuncKey, useTranslation } from "react-i18next";
+import { ParseKeys } from "i18next";
+import { useTranslation } from "react-i18next";
 
 import { RangeInput2 } from "../RangeInput2";
 import { SelectButton } from "../SelectButton";
@@ -24,7 +25,7 @@ interface NameNumberSectionProps {
   className?: string;
   options?: Options;
   selectOptionMsg?: string;
-  nameLabel?: TFuncKey;
+  nameLabel?: ParseKeys;
 }
 
 export function NameNumberSection(props: NameNumberSectionProps): JSX.Element {

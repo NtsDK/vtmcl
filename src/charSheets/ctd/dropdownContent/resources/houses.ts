@@ -100,12 +100,12 @@ const groupIndex = R.indexBy(R.prop("id"), houseGroupsArr);
 
 export const houseDisplayGroups_en = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].en,
-  arr: groups_en[groupName],
+  arr: groups_en[groupName] as string[],
 }));
 
 export const houseDisplayGroups_ru = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].ru,
-  arr: groups_ru[groupName],
+  arr: groups_ru[groupName] as string[],
 }));
 
 // console.log('displayGroups_en', displayGroups_en);

@@ -1,7 +1,10 @@
 import * as R from "ramda";
 
-import { CheckNumberResult, checkArrSumFilled } from "../../generic/checkList";
 import { Arts, Realms, CtDState } from "../domain";
+import {
+  CheckNumberResult,
+  checkArrSumFilled,
+} from "../../generic/checkListLogic/generic";
 
 export const EXPECTED_ART_DOTS = 3;
 export const EXPECTED_BANALITY_DOTS = 3;

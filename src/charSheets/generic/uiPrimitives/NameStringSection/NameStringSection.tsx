@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from "react";
 import classnames from "classnames";
-import { TFuncKey, useTranslation } from "react-i18next";
+import { ParseKeys } from "i18next";
+import { useTranslation } from "react-i18next";
 
 import { SelectButton } from "../SelectButton";
 import { RemoveEntityButton } from "../RemoveEntityButton";
@@ -24,7 +25,7 @@ interface NameStringSectionProps {
   options?: Options;
   valueOptions?: Options;
   selectOptionMsg?: string;
-  nameLabel?: TFuncKey;
+  nameLabel?: ParseKeys;
 }
 
 export function NameStringSection(props: NameStringSectionProps): JSX.Element {

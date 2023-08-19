@@ -137,6 +137,10 @@ export function migrate(charSheetSrc: any): unknown {
   if (charSheet.Version === "0.4.1") {
     charSheet.Version = "0.5.0";
     charSheet.Charsheet.state.faith = 0;
+    charSheet.Charsheet.state.roadValue = 0;
+    charSheet.Charsheet.state.roadName = "";
+    charSheet.Charsheet.state.auraName = "";
+    charSheet.Charsheet.state.auraModifier = "";
     charSheet.Charsheet.abilities.theology = 0;
     charSheet.Charsheet.abilities.seneschal = 0;
     charSheet.Charsheet.abilities.hearthWisdom = 0;

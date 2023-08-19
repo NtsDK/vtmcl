@@ -1,8 +1,11 @@
 import * as R from "ramda";
 
-import { CheckNumberResult, checkArrSumFilled } from "../../generic/checkList";
 import { Virtues } from "../../generic/domain";
 import { Disciplines, VtMState } from "../domain";
+import {
+  CheckNumberResult,
+  checkArrSumFilled,
+} from "../../generic/checkListLogic/generic";
 
 export const EXPECTED_DISCIPLINE_DOTS = 3;
 export const INITIAL_BLOODPOOL_MAX_LIMIT = 10;

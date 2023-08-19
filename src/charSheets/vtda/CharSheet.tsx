@@ -25,7 +25,8 @@ import {
 import { AdvantagesSection } from "../vtm/uiSections/AdvantagesSection";
 
 import { useDropdownOptions } from "./dropdownContent";
-import { StatusSection } from "./uiSections";
+import { StatusSection } from "./uiSections/StatusSection";
+// import { StatusSection } from "./uiSections";
 
 // import { useDropdownOptions } from "./dropdownContent";
 // import { useDisciplinePaths, useRituals } from "./services/storageAdapter";

@@ -102,10 +102,10 @@ const groupIndex = R.indexBy(R.prop("id"), disciplineGroupsArr);
 
 export const disciplineDisplayGroups_en = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].en,
-  arr: groups_en[groupName],
+  arr: groups_en[groupName] as string[],
 }));
 
 export const disciplineDisplayGroups_ru = groupOrder.map((groupName) => ({
   groupName: groupIndex[groupName].ru,
-  arr: groups_ru[groupName],
+  arr: groups_ru[groupName] as string[],
 }));
