@@ -23,7 +23,7 @@
   border-image-outset: 0 0 0 0;
   border-image-repeat: stretch stretch;
   /* border-image-source: url('images/border.png'); */
-  border-image-source: url('../../../../../public/images/border.png');
+  border-image-source: url('../../../../../images/border.png');
 
   /* margin: 0 auto; */
   break-after: page;

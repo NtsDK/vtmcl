@@ -14,13 +14,13 @@ input.CheckListBadge::after {
   content: "";
   width: 0.75rem;
   height: 0.75rem;
-  mask: url("../../../../../public/images/circle-xmark-solid.svg");
+  mask: url("../../../../../images/circle-xmark-solid.svg");
   display: block;
   background-color: white;
 }
 
 input.CheckListBadge:checked::after {
-  mask: url("../../../../../public/images/circle-check-solid.svg");
+  mask: url("../../../../../images/circle-check-solid.svg");
 }
 
 input.CheckListBadge:checked {

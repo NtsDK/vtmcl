@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: "CentSchbkCyrill";
-  src: url('../public/images/CentSchbkCyrill.ttf') format("truetype");
+  src: url('../images/CentSchbkCyrill.ttf') format("truetype");
 }
 
 body {
