@@ -8,7 +8,7 @@ import { NameNumberSection } from "../../../generic/uiPrimitives";
 import { DisciplinePathsService } from "../../application/ports";
 
 interface DisciplinePathsSectionProps extends DisciplinePathsService {
-  disciplinePathOptions: OptionGroup[];
+  disciplinePathOptions?: OptionGroup[];
   limits: Limits;
   className?: string;
 }

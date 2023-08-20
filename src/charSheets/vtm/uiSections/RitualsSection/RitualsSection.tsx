@@ -7,7 +7,7 @@ import { OptionGroup } from "../../../../charSheets/root/domain";
 import { RitualsService } from "../../application/ports";
 
 interface RitualsSectionProps extends RitualsService {
-  ritualOptions: OptionGroup[];
+  ritualOptions?: OptionGroup[];
   ritualValueOptions: string[];
   className?: string;
 }

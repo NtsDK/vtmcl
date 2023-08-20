@@ -26,6 +26,10 @@ import { AdvantagesSection } from "../vtm/uiSections/AdvantagesSection";
 
 import { useDropdownOptions } from "./dropdownContent";
 import { StatusSection } from "./uiSections/StatusSection";
+import { RitualsSection } from "../vtm/uiSections/RitualsSection";
+import { DisciplinePathsSection } from "../vtm/uiSections/DisciplinePathsSection";
+import { ritualValueOptions } from "../vtm/dropdownContent/resources/rituals";
+import { useDisciplinePaths, useRituals } from "../vtm/services/storageAdapter";
 // import { StatusSection } from "./uiSections";
 
 // import { useDropdownOptions } from "./dropdownContent";
@@ -42,14 +46,14 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
 
   const otherTraitsService = useOtherTraits();
   const historyService = useCharHistory();
-  // const disciplinePathsService = useDisciplinePaths();
+  const disciplinePathsService = useDisciplinePaths();
   const { limits } = useLimits();
   const alliesAndContactsService = useAlliesAndContacts();
   const possessionsService = usePossessions();
   const appearanceService = useAppearance();
   const notesService = useNotes();
 
-  // const ritualsService = useRituals();
+  const ritualsService = useRituals();
 
   // const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
   //   useDropdownOptions();
@@ -101,13 +105,13 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           </div>
         </div>
 
-        {/* <div className="tw-flex tw-gap-x-4 tw-mb-6">
+        <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
             <SectionHeader className="tw-mb-3">
               {t("charsheet.advantages.rituals")}
             </SectionHeader>
             <RitualsSection
-              ritualOptions={ritualOptions}
+              // ritualOptions={ritualOptions}
               ritualValueOptions={ritualValueOptions}
               {...ritualsService}
             />
@@ -119,11 +123,11 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
             </SectionHeader>
             <DisciplinePathsSection
               limits={limits}
-              disciplinePathOptions={disciplinePathOptions}
+              // disciplinePathOptions={disciplinePathOptions}
               {...disciplinePathsService}
             />
           </div>
-        </div> */}
+        </div>
 
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
