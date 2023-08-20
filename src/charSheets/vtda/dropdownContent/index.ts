@@ -15,6 +15,12 @@ import { archetypes_ru, archetypes_en } from "./resources/archetypes";
 import { backgrounds_ru, backgrounds_en } from "./resources/backgrounds";
 import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
 import { concepts_en, concepts_ru } from "./resources/concepts";
+import {
+  roads_en,
+  roads_ru,
+  auraGroups_en,
+  auraGroups_ru,
+} from "./resources/roads";
 // import {
 //   disciplinePathDisplayGroups_ru,
 //   disciplinePathDisplayGroups_en,
@@ -45,6 +51,8 @@ export type VtDADropdownOptions = Merge<
     generationOptions: string[];
     clanOptions: OptionGroup[];
     disciplineOptions: OptionGroup[];
+    roadOptions: string[];
+    auraOptions: OptionGroup[];
     // disciplinePathOptions: OptionGroup[];
     // pathOptions: string[];
     // ritualOptions: OptionGroup[];
@@ -63,6 +71,8 @@ export function getDropdownOptions(language: string): VtDADropdownOptions {
         clanOptions: clanDisplayGroups_ru,
         backgroundOptions: backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
+        roadOptions: roads_ru,
+        auraOptions: auraGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
         // pathOptions: paths_ru,
         // flawOptions: v20_flaws_ru,
@@ -79,6 +89,8 @@ export function getDropdownOptions(language: string): VtDADropdownOptions {
         clanOptions: clanDisplayGroups_en,
         backgroundOptions: backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
+        roadOptions: roads_en,
+        auraOptions: auraGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,
         // pathOptions: paths_en,
         // flawOptions: v20_flaws_en,

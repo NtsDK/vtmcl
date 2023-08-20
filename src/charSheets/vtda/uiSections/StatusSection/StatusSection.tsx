@@ -18,6 +18,7 @@ import {
 import { BloodpoolSection } from "../../../vtm/uiSections/StatusSection/BloodpoolSection";
 import { WeaknessSection } from "../../../vtm/uiSections/StatusSection/WeaknessSection";
 import { RoadSection } from "./RoadSection";
+import { useDropdownOptions } from "../../dropdownContent";
 
 interface StatusSectionProps {
   className?: string;
@@ -28,7 +29,8 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
   const { t } = useTranslation();
 
   const meritsNFlawsService = useMeritsNFlaws();
-  // const { meritOptions, flawOptions, pathOptions } = useDropdownOptions();
+  const { meritOptions, flawOptions, roadOptions, auraOptions } =
+    useDropdownOptions();
   const statusService = useStatus();
   const healthService = useHealth();
   const { limits } = useLimits();
@@ -56,9 +58,9 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
           {t("charsheet.status.road")}
         </Subheader>
         <RoadSection
-          roadOptions={[]}
           className="tw-mb-4 print:tw-mb-2"
-          // pathOptions={pathOptions}
+          roadOptions={roadOptions}
+          auraOptions={auraOptions}
           {...statusService}
         />
 

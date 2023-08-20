@@ -4,15 +4,17 @@ import classnames from "classnames";
 
 import { RangeInput2, SelectButton } from "../../../../generic/uiPrimitives";
 import { StatusService } from "../../../../generic/application/ports";
+import { OptionGroup } from "../../../../root/domain";
 
 interface RoadSectionProps extends StatusService {
   roadOptions: string[];
+  auraOptions: OptionGroup[];
   className?: string;
 }
 
 export const RoadSection = memo(function RoadSection(props: RoadSectionProps) {
   const { t } = useTranslation();
-  const { state, setState, className, roadOptions } = props;
+  const { state, setState, className, roadOptions, auraOptions } = props;
 
   return (
     <fieldset
@@ -57,6 +59,12 @@ export const RoadSection = memo(function RoadSection(props: RoadSectionProps) {
             hover:tw-outline-1 hover:tw-outline-red-600"
           value={state.auraName}
           onChange={(e) => setState("auraName", e.target.value)}
+        />
+        <SelectButton
+          options={auraOptions}
+          className="tw-ml-2 print:tw-hidden tw-flex-0"
+          onChange={(value) => setState("auraName", value)}
+          selectOptionMsg={t("charsheet.status.select-path")}
         />
         (
         <input

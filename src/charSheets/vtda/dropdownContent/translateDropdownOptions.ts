@@ -10,6 +10,7 @@ import { translateDiscipline } from "./resources/disciplines";
 // import { translateRitual } from "./resources/rituals";
 // import { translatePath } from "./resources/paths";
 import { translateConcept } from "./resources/concepts";
+import { translateRoad, translateAura } from "./resources/roads";
 
 export function translateDropdownOptions(
   store: StateStore,
@@ -76,6 +77,8 @@ export function translateDropdownOptions(
   //   setRitualName(index, translateRitual(ritual.name, prevLanguage, lng));
   // });
   // setState("pathName", translatePath(state.pathName, prevLanguage, lng));
+  setState("roadName", translateRoad(state.roadName, prevLanguage, lng));
+  setState("auraName", translateAura(state.auraName, prevLanguage, lng));
   // merits.forEach((merit, index) => {
   //   setMerit(index, v20_translateMeritsAndFlaws(merit, prevLanguage, lng));
   // });
