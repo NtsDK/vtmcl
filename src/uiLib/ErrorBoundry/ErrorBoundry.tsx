@@ -17,8 +17,8 @@ export class ErrorBoundry extends Component<
   ErrorBoundryProps,
   ErrorBoundryState
 > {
-  reloadTimeoutId: number | undefined;
-  secondsIntevalId: number | undefined;
+  reloadTimeoutId: NodeJS.Timeout | undefined;
+  secondsIntevalId: NodeJS.Timer | undefined;
 
   constructor(props: ErrorBoundryProps) {
     super(props);

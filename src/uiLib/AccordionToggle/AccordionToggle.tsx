@@ -18,8 +18,10 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
   const currentEventKey = useContext(AccordionContext);
   const { eventKey, title, ariaId, ariaControls } = props;
 
-  const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log("totally custom!")
+  const decoratedOnClick = useAccordionToggle(
+    eventKey,
+    () => {}
+    // console.log("totally custom!")
   );
 
   const isCurrentEventKey = currentEventKey === eventKey;
