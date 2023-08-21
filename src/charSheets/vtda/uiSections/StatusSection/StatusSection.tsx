@@ -44,14 +44,11 @@ export function StatusSection(props: StatusSectionProps): JSX.Element {
         <MeritsSection
           className="tw-mb-4"
           {...meritsNFlawsService}
-          // meritOptions={meritOptions}
+          meritOptions={meritOptions}
         />
 
         <Subheader className="tw-mb-2">{t("charsheet.status.flaws")}</Subheader>
-        <FlawsSection
-          {...meritsNFlawsService}
-          // flawOptions={flawOptions}
-        />
+        <FlawsSection {...meritsNFlawsService} flawOptions={flawOptions} />
       </div>
       <div className="tw-flex-1">
         <Subheader id="road.header" className="tw-mb-2">

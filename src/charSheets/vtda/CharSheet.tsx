@@ -28,7 +28,6 @@ import { useDropdownOptions } from "./dropdownContent";
 import { StatusSection } from "./uiSections/StatusSection";
 import { RitualsSection } from "../vtm/uiSections/RitualsSection";
 import { DisciplinePathsSection } from "../vtm/uiSections/DisciplinePathsSection";
-import { ritualValueOptions } from "../vtm/dropdownContent/resources/rituals";
 import { useDisciplinePaths, useRituals } from "../vtm/services/storageAdapter";
 // import { StatusSection } from "./uiSections";
 
@@ -55,12 +54,9 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
 
   const ritualsService = useRituals();
 
-  // const { ritualOptions, ritualValueOptions, disciplinePathOptions } =
-  //   useDropdownOptions();
-
   const {
     // ritualOptions,
-    // ritualValueOptions,
+    ritualValueOptions,
     // disciplinePathOptions,
     backgroundOptions,
     disciplineOptions,

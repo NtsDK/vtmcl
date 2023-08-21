@@ -29,14 +29,13 @@ import {
   disciplineDisplayGroups_ru,
   disciplineDisplayGroups_en,
 } from "./resources/disciplines";
-// import { generations_ru, generations_en } from "./resources/generations";
-// import {
-//   v20_flaws_ru,
-//   v20_merits_ru,
-//   v20_flaws_en,
-//   v20_merits_en,
-// } from "./resources/meritsAndFlaws";
-// import { paths_ru, paths_en } from "./resources/paths";
+import {
+  v20_flaws_en,
+  v20_flaws_ru,
+  v20_merits_en,
+  v20_merits_ru,
+} from "../../vtm/dropdownContent/resources/meritsAndFlaws";
+import { ritualValueOptions } from "../../vtm/dropdownContent/resources/rituals";
 // import {
 //   ritualDisplayGroups_ru,
 //   ritualValueOptions,
@@ -54,9 +53,8 @@ export type VtDADropdownOptions = Merge<
     roadOptions: string[];
     auraOptions: OptionGroup[];
     // disciplinePathOptions: OptionGroup[];
-    // pathOptions: string[];
     // ritualOptions: OptionGroup[];
-    // ritualValueOptions: string[];
+    ritualValueOptions: string[];
   }
 >;
 
@@ -64,8 +62,6 @@ export function getDropdownOptions(language: string): VtDADropdownOptions {
   return language === "ru"
     ? {
         archetypeOptions: archetypes_ru,
-        flawOptions: [],
-        meritOptions: [],
         conceptOptions: concepts_ru,
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
@@ -74,16 +70,13 @@ export function getDropdownOptions(language: string): VtDADropdownOptions {
         roadOptions: roads_ru,
         auraOptions: auraGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
-        // pathOptions: paths_ru,
-        // flawOptions: v20_flaws_ru,
-        // meritOptions: v20_merits_ru,
+        flawOptions: v20_flaws_ru,
+        meritOptions: v20_merits_ru,
         // ritualOptions: ritualDisplayGroups_ru,
-        // ritualValueOptions,
+        ritualValueOptions,
       }
     : {
         archetypeOptions: archetypes_en,
-        flawOptions: [],
-        meritOptions: [],
         conceptOptions: concepts_en,
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
@@ -92,11 +85,10 @@ export function getDropdownOptions(language: string): VtDADropdownOptions {
         roadOptions: roads_en,
         auraOptions: auraGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,
-        // pathOptions: paths_en,
-        // flawOptions: v20_flaws_en,
-        // meritOptions: v20_merits_en,
+        flawOptions: v20_flaws_en,
+        meritOptions: v20_merits_en,
         // ritualOptions: ritualDisplayGroups_en,
-        // ritualValueOptions,
+        ritualValueOptions,
       };
 }
 
