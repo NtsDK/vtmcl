@@ -11,6 +11,8 @@ export const checklist = {
   "virtue-dots": "{{expected}} точек в добродетелях (факт\xa0{{value}})",
   "humanity-dots":
     "Человечность = Совесть + Самоконтроль (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+  "road-dots":
+    "Дорога = Совесть + Самоконтроль (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "willpower-dots":
     "Сила воли = Смелость (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "bloodpool-dots": "Запас крови = бросок d10 (факт\xa0{{value}})",

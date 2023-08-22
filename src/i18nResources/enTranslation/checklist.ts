@@ -10,6 +10,8 @@ export const checklist = {
   "virtue-dots": "{{expected}} virtue dots (fact\xa0{{value}})",
   "humanity-dots":
     "Humanity = Conscience + Self Control (fact\xa0{{value}}\xa0=\xa0{{expected}})",
+  "road-dots":
+    "Road = Conscience + Self Control (fact\xa0{{value}}\xa0=\xa0{{expected}})",
   "willpower-dots":
     "Will power = Courage (fact\xa0{{value}}\xa0=\xa0{{expected}})",
   "bloodpool-dots": "Blood pool = roll d10 (fact\xa0{{value}})",

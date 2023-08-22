@@ -8,6 +8,7 @@ import {
   checkVampireWillpower,
   checkHumanity,
   checkDisciplines,
+  EXPECTED_DISCIPLINE_DOTS,
 } from "./index";
 
 describe("Vampire character checks", () => {
@@ -89,7 +90,9 @@ describe("Vampire character checks", () => {
   describe("checkDisciplines", () => {
     it("Disciplines zero - invalid", () => {
       const disciplines = R.clone(initialDisciplines);
-      expect(checkDisciplines(disciplines)).toStrictEqual({
+      expect(
+        checkDisciplines(disciplines, EXPECTED_DISCIPLINE_DOTS)
+      ).toStrictEqual({
         value: 0,
         checked: false,
       });
@@ -106,7 +109,9 @@ describe("Vampire character checks", () => {
           value: 1,
         }
       );
-      expect(checkDisciplines(disciplines)).toStrictEqual({
+      expect(
+        checkDisciplines(disciplines, EXPECTED_DISCIPLINE_DOTS)
+      ).toStrictEqual({
         value: 2,
         checked: false,
       });
@@ -123,7 +128,9 @@ describe("Vampire character checks", () => {
           value: 2,
         }
       );
-      expect(checkDisciplines(disciplines)).toStrictEqual({
+      expect(
+        checkDisciplines(disciplines, EXPECTED_DISCIPLINE_DOTS)
+      ).toStrictEqual({
         value: 3,
         checked: true,
       });
@@ -140,7 +147,9 @@ describe("Vampire character checks", () => {
           value: 2,
         }
       );
-      expect(checkDisciplines(disciplines)).toStrictEqual({
+      expect(
+        checkDisciplines(disciplines, EXPECTED_DISCIPLINE_DOTS)
+      ).toStrictEqual({
         value: 5,
         checked: false,
       });

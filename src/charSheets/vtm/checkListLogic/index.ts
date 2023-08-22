@@ -21,10 +21,13 @@ export function checkVampireWillpower(
   return state.willpowerRating === virtues.courage;
 }
 
-export function checkDisciplines(disciplines: Disciplines): CheckNumberResult {
+export function checkDisciplines(
+  disciplines: Disciplines,
+  expectedDisciplineDots: number
+): CheckNumberResult {
   return checkArrSumFilled(
     R.pluck("value", disciplines),
-    EXPECTED_DISCIPLINE_DOTS
+    expectedDisciplineDots
   );
 }
 

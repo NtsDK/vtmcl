@@ -4,23 +4,21 @@ import * as R from "ramda";
 import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
-import {
-  checkDisciplines,
-  EXPECTED_DISCIPLINE_DOTS,
-} from "../../checkListLogic";
+import { checkDisciplines } from "../../checkListLogic";
 import { useDisciplines } from "../../services/storageAdapter";
 
 interface DisciplinesCheckProps {
+  expectedDisciplineDots: number;
   className?: string;
 }
 
 export function DisciplinesCheck(props: DisciplinesCheckProps): JSX.Element {
-  const { className } = props;
+  const { className, expectedDisciplineDots } = props;
   const { t } = useTranslation();
 
   const { disciplines } = useDisciplines();
   const disciplinesFilled = useMemo(() => {
-    return checkDisciplines(disciplines);
+    return checkDisciplines(disciplines, expectedDisciplineDots);
   }, [disciplines]);
 
   return (
@@ -29,7 +27,7 @@ export function DisciplinesCheck(props: DisciplinesCheckProps): JSX.Element {
       checked={disciplinesFilled.checked}
       text={t("checklist.discipline-dots", {
         value: disciplinesFilled.value,
-        expected: EXPECTED_DISCIPLINE_DOTS,
+        expected: expectedDisciplineDots,
       })}
     />
   );

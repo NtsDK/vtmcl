@@ -1,6 +1,6 @@
 {
   "plugins": ["prettier", "@typescript-eslint", "import"],
-  "extends": [ "react-app", "prettier", "plugin:import/recommended", "plugin:import/typescript"], 
+  "extends": [ "prettier", "plugin:import/recommended", "plugin:import/typescript"], 
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -15,7 +15,7 @@
       },
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "src/"],
+        "moduleDirectory": ["node_modules", "src/"]
       }
     }
   },
