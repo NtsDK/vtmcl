@@ -28,4 +28,7 @@ export const freebiePoints = {
 
   // hh2
   numina: "Numina ({{cost}})",
+
+  // vtda
+  road: "Road ({{cost}})",
 };

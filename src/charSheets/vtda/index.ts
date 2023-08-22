@@ -3,7 +3,7 @@ import { Preset } from "../types";
 
 import { CheckList } from "./checkListUi";
 import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
-// import { freebiePointsConfig } from "./presetSettings/freebiePoints";
+import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
 import { CharSheet } from "./CharSheet";
 import { getDropdownOptions } from "./dropdownContent";
@@ -14,7 +14,7 @@ export const VtDA: Preset = {
   profileConfig,
   attributesConfig,
   abilitiesConfig,
-  // freebiePointsConfig,
+  freebiePointsConfig,
   CheckList,
   CharSheet,
   getDropdownOptions,

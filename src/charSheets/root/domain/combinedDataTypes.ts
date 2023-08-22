@@ -18,7 +18,7 @@ import {
   VtDAState,
   VtDAAbilities,
   VtDAPresetName,
-  // VtDAFreebiePointName,
+  VtDAFreebiePointName,
 } from "../../vtda/domain";
 import {
   HH2Profile,
@@ -53,4 +53,5 @@ export type FreebiePointName =
   | CommonFreebiePointName
   | VtMFreebiePointName
   | CtDFreebiePointName
-  | HH2FreebiePointName;
+  | HH2FreebiePointName
+  | VtDAFreebiePointName;
