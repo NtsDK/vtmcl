@@ -32,9 +32,9 @@ i18n
   // .use(languageDetector)
   .init({
     resources,
-    lng: "ru",
+    lng: window.GLOBAL_DEFAULT_LANG || "en",
     // lng: lang,
-    fallbackLng: "ru",
+    fallbackLng: window.GLOBAL_DEFAULT_LANG || "en",
 
     // keySeparator: false, // we do not use keys in form messages.welcome
 

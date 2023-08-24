@@ -30,8 +30,12 @@ export function ActionList(props: ActionListProps): JSX.Element {
       />
       <DownloadDatabaseButton {...charSheetStorageService} />
       <CreateDatabaseButton {...charSheetStorageService} />
-      <LangButton lang="ru" />
-      <LangButton lang="en" />
+      {window.GLOBAL_DEFAULT_LANG === "ru" && (
+        <>
+          <LangButton lang="ru" />
+          <LangButton lang="en" />
+        </>
+      )}
       <FullscreenButton />
     </div>
   );
