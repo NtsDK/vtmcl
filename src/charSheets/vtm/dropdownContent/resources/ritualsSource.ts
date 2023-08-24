@@ -3,206 +3,206 @@
 //   <ru>
 //     groupName
 
-export const ritualsSource = `Call of the Hungry Dead
-  Зов ненасытной смерти
+export const ritualsSource = `N1 Call of the Hungry Dead
+  Н1 Зов ненасытной смерти
     necromantic-1
-Minestra di Morte
-  Минестра ди морте
+N1 Minestra di Morte
+  Н1 Минестра ди морте
     necromantic-1
-Insight
-  Озарение
+N1 Insight
+  Н1 Озарение
     necromantic-1
-Eldritch Beacon
-  Потусторонний маяк
+N1 Eldritch Beacon
+  Н1 Потусторонний маяк
     necromantic-1
-Ritual of the Smoking Mirror
-  Ритуал Тескатлипоки
+N1 Ritual of the Smoking Mirror
+  Н1 Ритуал Тескатлипоки
     necromantic-1
-Knowing Stone
-  Указующий камень
+N1 Knowing Stone
+  Н1 Указующий камень
     necromantic-1
-Eyes of the Grave
-  Взгляд в могилу
+N2 Eyes of the Grave
+  Н2 Взгляд в могилу
     necromantic-2
-Two Centimes
-  Два сантима
+N2 Two Centimes
+  Н2 Два сантима
     necromantic-2
-Puppet
-  Марионетка
+N2 Puppet
+  Н2 Марионетка
     necromantic-2
-Occhio d’Uomo Morto
-  Оккио д’уомо морто
+N2 Occhio d’Uomo Morto
+  Н2 Оккио д’уомо морто
     necromantic-2
-The Ritual of Pochtli
-  Ритуал Уицилопочтли
+N2 The Ritual of Pochtli
+  Н2 Ритуал Уицилопочтли
     necromantic-2
-The Hand of Glory
-  Рука славы
+N2 The Hand of Glory
+  Н2 Рука славы
     necromantic-2
-Nightmare Drums
-  Барабаны ночных кошмаров
+N3 Nightmare Drums
+  Н3 Барабаны ночных кошмаров
     necromantic-3
-Din of the Damned
-  Гам проклятых
+N3 Din of the Damned
+  Н3 Гам проклятых
     necromantic-3
-Divine Sign
-  Знак свыше
+N3 Divine Sign
+  Н3 Знак свыше
     necromantic-3
-Ritual of The Unearthed Fetter
-  Поиск призрачного якоря
+N3 Ritual of The Unearthed Fetter
+  Н3 Поиск призрачного якоря
     necromantic-3
-Blood Dance
-  Танец крови
+N3 Blood Dance
+  Н3 Танец крови
     necromantic-3
-Tempesta Scudo
-  Темпеста скудо
+N3 Tempesta Scudo
+  Н3 Темпеста скудо
     necromantic-3
-Bastone Diabolico
-  Бастоне диаболико
+N4 Bastone Diabolico
+  Н4 Бастоне диаболико
     necromantic-4
-Peek Past the Shroud
-  Взгляд за Завесу
+N4 Peek Past the Shroud
+  Н4 Взгляд за Завесу
     necromantic-4
-Baleful Doll
-  Зловещая кукла
+N4 Baleful Doll
+  Н4 Зловещая кукла
     necromantic-4
-Cadaver’s Touch
-  Касание мертвеца
+N4 Cadaver’s Touch
+  Н4 Касание мертвеца
     necromantic-4
-Ritual of Xipe Totec
-  Ритуал Шипе-Тотека
+N4 Ritual of Xipe Totec
+  Н4 Ритуал Шипе-Тотека
     necromantic-4
-Grasp the Ghostly
-  Призрачная добыча
+N5 Grasp the Ghostly
+  Н5 Призрачная добыча
     necromantic-5
-Dead Man’s Hand
-  Рука мертвеца
+N5 Dead Man’s Hand
+  Н5 Рука мертвеца
     necromantic-5
-Chill of Oblivion
-  Холод забвения
+N5 Chill of Oblivion
+  Н5 Холод забвения
     necromantic-5
-Esilio
-  Эзилио
+N5 Esilio
+  Н5 Эзилио
     necromantic-5
-Wake with Evening’s Freshness
-  Вечерняя бодрость
+T1 Wake with Evening’s Freshness
+  Т1 Вечерняя бодрость
     thaumaturgical-1
-Domino of Life
-  Видимость жизни
+T1 Domino of Life
+  Т1 Видимость жизни
     thaumaturgical-1
-Incantation of the Shepherd
-  Заклинание пастыря
+T1 Incantation of the Shepherd
+  Т1 Заклинание пастыря
     thaumaturgical-1
-Defense of the Sacred Haven
-  Защита неприкосновенного убежища
+T1 Defense of the Sacred Haven
+  Т1 Защита неприкосновенного убежища
     thaumaturgical-1
-Widow’s Spite
-  Злая вдова
+T1 Widow’s Spite
+  Т1 Злая вдова
     thaumaturgical-1
-Devil’s Touch
-  Метка Дьявола
+T1 Devil’s Touch
+  Т1 Метка Дьявола
     thaumaturgical-1
-Deflection of Wooden Doom
-  Отторжение губительного древа
+T1 Deflection of Wooden Doom
+  Т1 Отторжение губительного древа
     thaumaturgical-1
-Illuminate the Trail of Prey
-  Свечение следопыта
+T1 Illuminate the Trail of Prey
+  Т1 Свечение следопыта
     thaumaturgical-1
-Communicate with Kindred Sire
-  Связь с сиром
+T1 Communicate with Kindred Sire
+  Т1 Связь с сиром
     thaumaturgical-1
-Bind the Accusing Tongue
-  Смежение злословных уст
+T1 Bind the Accusing Tongue
+  Т1 Смежение злословных уст
     thaumaturgical-1
-Engaging the Vessel of Transference
-  Создание переливающего сосуда
+T1 Engaging the Vessel of Transference
+  Т1 Создание переливающего сосуда
     thaumaturgical-1
-Blood Rush
-  Ток крови
+T1 Blood Rush
+  Т1 Ток крови
     thaumaturgical-1
-Purity of Flesh
-  Чистота плоти
+T1 Purity of Flesh
+  Т1 Чистота плоти
     thaumaturgical-1
-Ward Versus Ghouls
-  Защитная печать против гулей
+T2 Ward Versus Ghouls
+  Т2 Защитная печать против гулей
     thaumaturgical-2
-Warding Circle versus Ghouls
-  Защитный круг против гулей
+T2 Warding Circle versus Ghouls
+  Т2 Защитный круг против гулей
     thaumaturgical-2
-Donning the Mask of Shadows
-  Облачение в маску теней
+T2 Donning the Mask of Shadows
+  Т2 Облачение в маску теней
     thaumaturgical-2
-Eyes of the Night Hawk
-  Око ночного ястреба
+T2 Eyes of the Night Hawk
+  Т2 Око ночного ястреба
     thaumaturgical-2
-Machine Blitz
-  Отключение машины
+T2 Machine Blitz
+  Т2 Отключение машины
     thaumaturgical-2
-Blood Walk
-  Постижение Крови
+T2 Blood Walk
+  Т2 Постижение Крови
     thaumaturgical-2
-Burning Blade
-  Пылающий клинок
+T2 Burning Blade
+  Т2 Пылающий клинок
     thaumaturgical-2
-Principal Focus of Vitae Infusion
-  Хранилище пролитой витэ
+T2 Principal Focus of Vitae Infusion
+  Т2 Хранилище пролитой витэ
     thaumaturgical-2
-Recure of the Homeland
-  Целебная сила родной земли
+T2 Recure of the Homeland
+  Т2 Целебная сила родной земли
     thaumaturgical-2
-Incorporeal Passage
-  Бесплотный путь
+T3 Incorporeal Passage
+  Т3 Бесплотный путь
     thaumaturgical-3
-Sanguine Assistant
-  Гомункул-помощник
+T3 Sanguine Assistant
+  Т3 Гомункул-помощник
     thaumaturgical-3
-Shaft of Belated Quiescence
-  Жезл неизбежного покоя
+T3 Shaft of Belated Quiescence
+  Т3 Жезл неизбежного покоя
     thaumaturgical-3
-Ward versus Lupines
-  Защитная печать против Люпенов
+T3 Ward versus Lupines
+  Т3 Защитная печать против Люпенов
     thaumaturgical-3
-Mirror of Second Sight
-  Зеркало второго зрения
+T3 Mirror of Second Sight
+  Т3 Зеркало второго зрения
     thaumaturgical-3
-Flesh of Fiery Touch
-  Огненная плоть
+T3 Flesh of Fiery Touch
+  Т3 Огненная плоть
     thaumaturgical-3
-Pavis of Foul Presence
-  Отражённое Величие
+T3 Pavis of Foul Presence
+  Т3 Отражённое Величие
     thaumaturgical-3
-Clinging of the Insect
-  Паучьи лапы
+T3 Clinging of the Insect
+  Т3 Паучьи лапы
     thaumaturgical-3
-Splinter Servant
-  Деревянный слуга
+T4 Splinter Servant
+  Т4 Деревянный слуга
     thaumaturgical-4
-Ward versus Kindred
-  Защитная печать против Сородичей
+T4 Ward versus Kindred
+  Т4 Защитная печать против Сородичей
     thaumaturgical-4
-Heart of Stone
-  Каменное сердце
+T4 Heart of Stone
+  Т4 Каменное сердце
     thaumaturgical-4
-Bone of Lies
-  Кость лжи
+T4 Bone of Lies
+  Т4 Кость лжи
     thaumaturgical-4
-Firewalker
-  Пожиратель пламени
+T4 Firewalker
+  Т4 Пожиратель пламени
     thaumaturgical-4
-Paper Flesh
-  Бумажная плоть
+T5 Paper Flesh
+  Т5 Бумажная плоть
     thaumaturgical-5
-Escape to a True Friend
-  Врата истинной дружбы
+T5 Escape to a True Friend
+  Т5 Врата истинной дружбы
     thaumaturgical-5
-Enchant Talisman
-  Зачарование талисмана
+T5 Enchant Talisman
+  Т5 Зачарование талисмана
     thaumaturgical-5
-Ward versus Spirits
-  Защитная печать против духов
+T5 Ward versus Spirits
+  Т5 Защитная печать против духов
     thaumaturgical-5
-Blood Contract
-  Кровавый договор
+T5 Blood Contract
+  Т5 Кровавый договор
     thaumaturgical-5`;
 
 // Format:
