@@ -18,7 +18,7 @@ export class ErrorBoundry extends Component<
   ErrorBoundryState
 > {
   reloadTimeoutId: NodeJS.Timeout | undefined;
-  secondsIntevalId: NodeJS.Timer | undefined;
+  secondsIntevalId: NodeJS.Timeout | undefined;
 
   constructor(props: ErrorBoundryProps) {
     super(props);
@@ -88,7 +88,7 @@ export class ErrorBoundry extends Component<
             onClick={() =>
               str2File(
                 localStorage.getItem(LS_KEY),
-                makeFileName("vtm_broken_charsheet", "txt", new Date())
+                makeFileName("vtm_broken_charsheet", "txt", new Date()),
               )
             }
           >
