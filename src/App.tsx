@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // eslint-disable-next-line import/order
 import DocumentTitle from "react-document-title";
 
@@ -57,13 +57,12 @@ function App(): JSX.Element {
               <ControlPanel />
             </div>
             <div className="tw-flex-grow-1 tw-w-full">
-              <Switch>
-                <Route path="/charsheet" component={CharSheetPage} />
-                <Route path="/instruction" component={InstructionPage} />
-                {/* <Route path="/log" component={LogPage} /> */}
-                <Route path="/about" component={AboutPage} />
-                <Route path="/" component={CharSheetPage} />
-              </Switch>
+              <Routes>
+                <Route path="/charsheet" element={<CharSheetPage />} />
+                <Route path="/instruction" element={<InstructionPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/" element={<CharSheetPage />} />
+              </Routes>
             </div>
           </div>
           <ErrorNotification />
