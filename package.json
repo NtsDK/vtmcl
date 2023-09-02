@@ -17,12 +17,6 @@
     "tsc": "tsc --noEmit --watch",
     "test": "npx jest"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,7 +47,7 @@
     "@types/react-router-dom": "^5.3.3",
     "ajv": "^8.12.0",
     "autoprefixer": "^10.4.14",
-    "bootstrap": "^4.6.2",
+    "bootstrap": "^5.3.1",
     "classnames": "^2.3.2",
     "file-saver": "^2.0.5",
     "http-server": "^14.1.1",
@@ -64,7 +58,7 @@
     "postcss": "^8.4.24",
     "ramda": "^0.29.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^1.6.7",
+    "react-bootstrap": "^2.8.0",
     "react-document-title": "^2.0.3",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.1.2",

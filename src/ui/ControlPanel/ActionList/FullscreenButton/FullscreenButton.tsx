@@ -1,12 +1,15 @@
 import React from "react";
-import "./FullscreenButton.css";
 import { useTranslation } from "react-i18next";
 import Dropdown from "react-bootstrap/Dropdown";
+import classnames from "classnames";
 
-interface FullscreenButtonProps {}
+interface FullscreenButtonProps {
+  className?: string;
+}
 
 export function FullscreenButton(props: FullscreenButtonProps) {
   const { t } = useTranslation();
+  const { className } = props;
 
   function onClick() {
     if (!document.fullscreenElement) {
@@ -23,8 +26,7 @@ export function FullscreenButton(props: FullscreenButtonProps) {
       as="button"
       type="button"
       onClick={onClick}
-      // title={t('header.fullcreen-toggle')}
-      className="FullscreenButton tw-py-3 tw-text-lg"
+      className={classnames("FullscreenButton", className)}
     >
       {t("actionMenu.fullcreen-toggle")}
     </Dropdown.Item>

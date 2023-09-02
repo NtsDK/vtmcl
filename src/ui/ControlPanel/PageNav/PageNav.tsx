@@ -17,13 +17,25 @@ export function PageNav(props: PageNavProps): JSX.Element {
   // https://stackoverflow.com/questions/35687353/react-bootstrap-link-item-in-a-navitem
   return (
     <Nav as="nav" className={classnames("PageNav", className)}>
-      <Nav.Link as={NavLink} to="/charsheet" className="tw-px-5 tw-py-3">
+      <Nav.Link
+        as={NavLink}
+        to="/charsheet"
+        className="tw-px-5 tw-py-3 tw-text-gray-900"
+      >
         {t("charsheet.charsheet")}
       </Nav.Link>
-      <Nav.Link as={NavLink} to="/instruction" className="tw-px-5 tw-py-3">
+      <Nav.Link
+        as={NavLink}
+        to="/instruction"
+        className="tw-px-5 tw-py-3 tw-text-gray-900"
+      >
         {t("instruction.header")}
       </Nav.Link>
-      <Nav.Link as={NavLink} to="/about" className="tw-px-5 tw-py-3">
+      <Nav.Link
+        as={NavLink}
+        to="/about"
+        className="tw-px-5 tw-py-3 tw-text-gray-900"
+      >
         {t("about.header")}
       </Nav.Link>
     </Nav>

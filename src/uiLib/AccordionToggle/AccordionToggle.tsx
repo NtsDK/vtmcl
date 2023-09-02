@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
+// import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
+import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import AccordionContext from "react-bootstrap/AccordionContext";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import classnames from "classnames";
 
 interface AccordionToggleProps {
   eventKey: string;
@@ -18,13 +20,13 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
   const currentEventKey = useContext(AccordionContext);
   const { eventKey, title, ariaId, ariaControls } = props;
 
-  const decoratedOnClick = useAccordionToggle(
+  const decoratedOnClick = useAccordionButton(
     eventKey,
     () => {}
     // console.log("totally custom!")
   );
 
-  const isCurrentEventKey = currentEventKey === eventKey;
+  const isCurrentEventKey = currentEventKey.activeEventKey === eventKey;
 
   return (
     <h2 className="AccordionToggle" onClick={decoratedOnClick}>
@@ -36,8 +38,14 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
       >
         {title}
         <FontAwesomeIcon
-          className="tw-float-right tw-mt-1 tw-mr-2 tw-ml-4"
-          icon={isCurrentEventKey ? faChevronUp : faChevronDown}
+          className={classnames(
+            "tw-float-right tw-mt-1 tw-mr-2 tw-ml-4 tw-transform tw-transition-transform",
+            {
+              "tw-rotate-180": isCurrentEventKey,
+              "tw-rotate-0": !isCurrentEventKey,
+            }
+          )}
+          icon={faChevronUp}
         />
       </Button>
     </h2>

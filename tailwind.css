@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .ActionListItem {
+    @apply tw-py-3 tw-text-lg tw-px-6;
+  }
+
+  .ActionListItem:focus, .ActionListItem:hover {
+    @apply tw-bg-gray-100;
+  }
+}

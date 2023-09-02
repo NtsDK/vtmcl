@@ -1,25 +1,25 @@
 import React from "react";
-import "./LangButton.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
+import classnames from "classnames";
+
 import { i18n } from "../../../../i18n";
 
 interface LangButtonProps {
   lang: "ru" | "en";
+  className?: string;
 }
 
 export function LangButton(props: LangButtonProps) {
   const { t } = useTranslation();
-  const { lang } = props;
+  const { lang, className } = props;
 
   return (
     <Dropdown.Item
       as="button"
       type="button"
-      // data-original-title=""
       onClick={() => i18n.changeLanguage(lang)}
-      // title={t(`header.lang-${lang}`)}
-      className="LangButton tw-py-3 tw-text-lg"
+      className={classnames("LangButton", className)}
     >
       <img
         className="tw-w-5 tw-inline tw-leading-5 tw-mr-2"

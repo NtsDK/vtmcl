@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
+import classnames from "classnames";
 
 import { json2File, makeFileName } from "../../../../lib/fileUtils";
 import { charSheetToJson } from "../../../../charSheets/root/infrastructure/dbLoader";
 import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
 
-interface DownloadDatabaseButtonProps extends CharSheetStorageService {}
+interface DownloadDatabaseButtonProps extends CharSheetStorageService {
+  className?: string;
+}
 
 export function DownloadDatabaseButton(
   props: DownloadDatabaseButtonProps
 ): JSX.Element {
   const { t } = useTranslation();
-  const { charSheet } = props;
+  const { charSheet, className } = props;
 
   function downloadDatabaseAsFile(): void {
     json2File(
@@ -31,8 +34,7 @@ export function DownloadDatabaseButton(
       type="button"
       data-original-title=""
       onClick={() => downloadDatabaseAsFile()}
-      // title={t('header.save-database')}
-      className="tw-py-3 tw-text-lg"
+      className={classnames("DownloadDatabaseButton", className)}
     >
       {t("actionMenu.save-database")}
     </Dropdown.Item>

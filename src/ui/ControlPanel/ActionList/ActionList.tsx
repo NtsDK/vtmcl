@@ -25,18 +25,25 @@ export function ActionList(props: ActionListProps): JSX.Element {
   return (
     <div className={classnames("ActionList", className)}>
       <UploadDatabaseButton
+        className="ActionListItem"
         {...errorDescriptionService}
         {...charSheetStorageService}
       />
-      <DownloadDatabaseButton {...charSheetStorageService} />
-      <CreateDatabaseButton {...charSheetStorageService} />
+      <DownloadDatabaseButton
+        className="ActionListItem"
+        {...charSheetStorageService}
+      />
+      <CreateDatabaseButton
+        className="ActionListItem"
+        {...charSheetStorageService}
+      />
       {window.GLOBAL_DEFAULT_LANG === "ru" && (
         <>
-          <LangButton lang="ru" />
-          <LangButton lang="en" />
+          <LangButton className="ActionListItem" lang="ru" />
+          <LangButton className="ActionListItem" lang="en" />
         </>
       )}
-      <FullscreenButton />
+      <FullscreenButton className="ActionListItem" />
     </div>
   );
 }

@@ -1,24 +1,24 @@
 import React, { FormEvent, useState } from "react";
 import * as R from "ramda";
-import "./CreateDatabaseButton.css";
-
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
-
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import classnames from "classnames";
 
 import { initialCharSheet } from "../../../../charSheets/root/services/initialValues";
 import { CharSheetStorageService } from "../../../../charSheets/root/application/ports";
 
-interface CreateDatabaseButtonProps extends CharSheetStorageService {}
+interface CreateDatabaseButtonProps extends CharSheetStorageService {
+  className?: string;
+}
 
 export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
 
-  const { setCharSheet } = props;
+  const { setCharSheet, className } = props;
 
   function setEmptyCharSheet() {
     setCharSheet(R.clone(initialCharSheet));
@@ -37,8 +37,7 @@ export function CreateDatabaseButton(props: CreateDatabaseButtonProps) {
         type="button"
         data-original-title=""
         onClick={() => setShowModal(true)}
-        // title={t('header.create-database')}
-        className="CreateDatabaseButton tw-py-3 tw-text-lg"
+        className={classnames("CreateDatabaseButton", className)}
       >
         {t("actionMenu.create-database")}
       </Dropdown.Item>

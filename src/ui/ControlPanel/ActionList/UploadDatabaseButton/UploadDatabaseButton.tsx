@@ -1,7 +1,8 @@
 import React, { ChangeEventHandler, ChangeEvent } from "react";
-
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
+import classnames from "classnames";
+
 import { readTextFile } from "../../../../lib/fileUtils";
 import { strToCharSheet } from "../../../../charSheets/root/infrastructure/dbLoader";
 import {
@@ -20,14 +21,16 @@ function uploadDatabaseFile(evt): void {
 
 interface UploadDatabaseButtonProps
   extends ErrorDescriptionService,
-    CharSheetStorageService {}
+    CharSheetStorageService {
+  className?: string;
+}
 
 export function UploadDatabaseButton(
   props: UploadDatabaseButtonProps
 ): JSX.Element {
   const { t } = useTranslation();
 
-  const { setErrorDescription, setCharSheet } = props;
+  const { setErrorDescription, setCharSheet, className } = props;
 
   function onUploadFileSelected(evt: ChangeEvent<HTMLInputElement>): void {
     readTextFile(evt)
@@ -60,7 +63,7 @@ export function UploadDatabaseButton(
       as="button"
       type="button"
       onClick={uploadDatabaseFile}
-      className="tw-py-3 tw-text-lg"
+      className={classnames("UploadDatabaseButton tw-bg-gray-100", className)}
       id="uploadDatabaseButton"
     >
       <input

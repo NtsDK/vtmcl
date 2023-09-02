@@ -82,7 +82,7 @@ export function ControlPanel(props: ControlPanelProps): JSX.Element {
           showContent ? "buttons.hide-panel" : "buttons.show-panel"
         )}
         onClick={() => setShowContent((prevState) => !prevState)}
-        className="tw-py-3 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
+        className="tw-py-3 tw-px-6 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"
       >
         {showContent && (
           <span className="tw-mr-4">{t("buttons.hide-panel")}</span>
