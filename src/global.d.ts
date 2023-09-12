@@ -1,3 +1,5 @@
-interface Window {
-  GLOBAL_DEFAULT_LANG: "ru" | "en";
+export {};
+
+declare global {
+  var GLOBAL_DEFAULT_LANG: "ru" | "en";
 }

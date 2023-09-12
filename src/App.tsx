@@ -47,27 +47,25 @@ function App(): JSX.Element {
         version: CURRENT_VERSION,
       })}
     >
-      <Router>
-        <div className="app">
-          <div className="tw-flex">
-            <div
-              className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm  print:tw-hidden"
-              // style={{flexBasis: '25rem'}}
-            >
-              <ControlPanel />
-            </div>
-            <div className="tw-flex-grow-1 tw-w-full">
-              <Routes>
-                <Route path="/charsheet" element={<CharSheetPage />} />
-                <Route path="/instruction" element={<InstructionPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/" element={<CharSheetPage />} />
-              </Routes>
-            </div>
+      <div className="app">
+        <div className="tw-flex">
+          <div
+            className="tw-flex-grow-0 tw-flex-shrink-0 tw-bg-gray-200 tw-max-w-sm  print:tw-hidden"
+            // style={{flexBasis: '25rem'}}
+          >
+            <ControlPanel />
           </div>
-          <ErrorNotification />
+          <div className="tw-flex-grow-1 tw-w-full">
+            <Routes>
+              <Route path="/charsheet" element={<CharSheetPage />} />
+              <Route path="/instruction" element={<InstructionPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/" element={<CharSheetPage />} />
+            </Routes>
+          </div>
         </div>
-      </Router>
+        <ErrorNotification />
+      </div>
     </DocumentTitle>
   );
 }

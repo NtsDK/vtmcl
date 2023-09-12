@@ -36,5 +36,5 @@
     ],
     "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }]
   },
-  "ignorePatterns":["vite.config.ts"]
+  "ignorePatterns":["vite.config.ts","prerender.ts", "*.js"]
 }

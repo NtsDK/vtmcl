@@ -5,9 +5,9 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
-    "types": ["vite/client"],
+    "types": ["vite/client","node"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +21,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "allowImportingTsExtensions": true
     // "paths": {
     //   "@/*": ["src/*"]
     // }

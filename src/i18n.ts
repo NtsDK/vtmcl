@@ -23,46 +23,64 @@ import { envInfo } from "./lib/envUtils";
 // };
 // i18n.on('languageChanged', setHtmlLangAttr);
 i18n.on("languageChanged", (lng) => {
-  localStorage.setItem("i18nextLng", lng);
-  document.documentElement.setAttribute("lang", lng);
+  // используем globalThis для SSG
+  globalThis.localStorage?.setItem("i18nextLng", lng);
+  globalThis.document?.documentElement.setAttribute("lang", lng);
 });
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  // .use(languageDetector)
-  .init({
+function getInitOptions() {
+  return {
     resources,
-    lng: window.GLOBAL_DEFAULT_LANG || "en",
+    lng: globalThis.GLOBAL_DEFAULT_LANG || "en",
     // lng: lang,
-    fallbackLng: window.GLOBAL_DEFAULT_LANG || "en",
+    fallbackLng: globalThis.GLOBAL_DEFAULT_LANG || "en",
 
     // keySeparator: false, // we do not use keys in form messages.welcome
 
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
-    // detection: {
-    //   order: [
-    //     "reactSnap",
-    //     "querystring",
-    //     "cookie",
-    //     "localStorage",
-    //     "sessionStorage",
-    //     "navigator",
-    //     "htmlTag",
-    //   ],
-    //   lookupQuerystring: "lng",
-    //   lookupCookie: "i18next",
-    //   lookupLocalStorage: "i18nextLng",
-    //   lookupSessionStorage: "i18nextLng",
+  };
+}
 
-    //   // cache user language
-    //   caches: ["localStorage"],
-    //   excludeCacheFor: ["cimode"],
-    //   //cookieMinutes: 10,
-    //   //cookieDomain: 'myDomain'
-    // },
-  });
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  // .use(languageDetector)
+  .init(getInitOptions());
+// .init(() => i18n.init(getInitOptions()));
+// .init({
+//   resources,
+//   lng: globalThis.GLOBAL_DEFAULT_LANG || "en",
+//   // lng: lang,
+//   fallbackLng: globalThis.GLOBAL_DEFAULT_LANG || "en",
+
+//   // keySeparator: false, // we do not use keys in form messages.welcome
+
+//   interpolation: {
+//     escapeValue: false, // react already safes from xss
+//   },
+//   // detection: {
+//   //   order: [
+//   //     "reactSnap",
+//   //     "querystring",
+//   //     "cookie",
+//   //     "localStorage",
+//   //     "sessionStorage",
+//   //     "navigator",
+//   //     "htmlTag",
+//   //   ],
+//   //   lookupQuerystring: "lng",
+//   //   lookupCookie: "i18next",
+//   //   lookupLocalStorage: "i18nextLng",
+//   //   lookupSessionStorage: "i18nextLng",
+
+//   //   // cache user language
+//   //   caches: ["localStorage"],
+//   //   excludeCacheFor: ["cimode"],
+//   //   //cookieMinutes: 10,
+//   //   //cookieDomain: 'myDomain'
+//   // },
+// });
 
 export { i18n };
 
