@@ -1,6 +1,8 @@
 // import dateFormat from 'dateformat';
-import { saveAs } from "file-saver";
+import fileSaver from "file-saver";
 import { DateTime } from "luxon";
+
+const { saveAs } = fileSaver;
 
 // const R = require('ramda');
 // const { saveAs } = require('file-saver');
@@ -113,7 +115,7 @@ function sanitizeStr2FileName(input: string, replacement = ""): string {
 export function makeFileName(
   root: string,
   extension: string,
-  date?: Date
+  date?: Date,
 ): string {
   date = date || new Date();
   const timeStr = DateTime.fromJSDate(date).toFormat("dd-LLL-yyyy_HH-MM-ss", {

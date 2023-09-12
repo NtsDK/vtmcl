@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Dropdown from "react-bootstrap/Dropdown";
+import Dropdown from "react-bootstrap/cjs/Dropdown";
 import classnames from "classnames";
 
 interface FullscreenButtonProps {

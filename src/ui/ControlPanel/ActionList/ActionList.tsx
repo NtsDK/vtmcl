@@ -37,7 +37,7 @@ export function ActionList(props: ActionListProps): JSX.Element {
         className="ActionListItem"
         {...charSheetStorageService}
       />
-      {window.GLOBAL_DEFAULT_LANG === "ru" && (
+      {globalThis.GLOBAL_DEFAULT_LANG === "ru" && (
         <>
           <LangButton className="ActionListItem" lang="ru" />
           <LangButton className="ActionListItem" lang="en" />

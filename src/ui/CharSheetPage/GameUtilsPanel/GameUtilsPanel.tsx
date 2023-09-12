@@ -1,6 +1,6 @@
 import React from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/cjs/Accordion";
+import Card from "react-bootstrap/cjs/Card";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
@@ -28,7 +28,7 @@ export function GameUtilsPanel(props: GameUtilsPanelProps): JSX.Element | null {
     <aside
       className={classnames(
         "GameUtilsPanel tw-flex-grow-0 tw-flex-shrink-0 print:tw-hidden",
-        className
+        className,
       )}
     >
       <Accordion className="tw-sticky tw-top-0">

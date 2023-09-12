@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import Dropdown from "react-bootstrap/cjs/Dropdown";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
@@ -12,7 +12,7 @@ interface DownloadDatabaseButtonProps extends CharSheetStorageService {
 }
 
 export function DownloadDatabaseButton(
-  props: DownloadDatabaseButtonProps
+  props: DownloadDatabaseButtonProps,
 ): JSX.Element {
   const { t } = useTranslation();
   const { charSheet, className } = props;
@@ -23,8 +23,8 @@ export function DownloadDatabaseButton(
       makeFileName(
         "vtm_charsheet_" + charSheet.profile.name,
         "json",
-        new Date()
-      )
+        new Date(),
+      ),
     );
   }
 

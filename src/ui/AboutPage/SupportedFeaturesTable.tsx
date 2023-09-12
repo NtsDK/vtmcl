@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import Table from "react-bootstrap/Table";
+import Table from "react-bootstrap/cjs/Table";
 import { useTranslation } from "react-i18next";
 
 import { CheckListBadge } from "../../charSheets/generic/checkList";
@@ -11,7 +11,7 @@ interface SupportedFeaturesTableProps {
 }
 
 export function SupportedFeaturesTable(
-  props: SupportedFeaturesTableProps
+  props: SupportedFeaturesTableProps,
 ): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();

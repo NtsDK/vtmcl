@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/cjs/Form";
+import Button from "react-bootstrap/cjs/Button";
 import { useTranslation } from "react-i18next";
 
 import { initialSettings } from "../../../charSheets/misc/services/initialValues";

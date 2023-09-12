@@ -1,12 +1,12 @@
 import React from "react";
-import Alert from "react-bootstrap/Alert";
+import Alert from "react-bootstrap/cjs/Alert";
 
 import { useErrorDescription } from "../../charSheets/root/services/storageAdapter";
 
 interface ErrorNotificationProps {}
 
 export function ErrorNotification(
-  props: ErrorNotificationProps
+  props: ErrorNotificationProps,
 ): JSX.Element | null {
   const { errorDescription, setErrorDescription } = useErrorDescription();
 

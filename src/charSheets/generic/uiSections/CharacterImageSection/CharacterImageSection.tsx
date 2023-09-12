@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, ChangeEvent, memo } from "react";
-import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/cjs/Button";
 import { useTranslation } from "react-i18next";
 import { AppearanceService } from "../../application/ports";
 
@@ -15,7 +15,7 @@ function uploadDatabaseFile(evt) {
 }
 
 export const CharacterImageSection = memo(function CharacterImageSection(
-  props: CharacterImageSectionProps
+  props: CharacterImageSectionProps,
 ) {
   const { characterImage, setCharacterImage } = props;
   const { t } = useTranslation();

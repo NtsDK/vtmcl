@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Dropdown from "react-bootstrap/Dropdown";
+import Accordion from "react-bootstrap/cjs/Accordion";
+import Card from "react-bootstrap/cjs/Card";
+import Dropdown from "react-bootstrap/cjs/Dropdown";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,7 +31,7 @@ export function ControlPanel(props: ControlPanelProps): JSX.Element {
     <div
       className={classnames(
         "ControlPanel tw-sticky tw-top-0 tw-flex tw-flex-col tw-h-screen",
-        className
+        className,
       )}
     >
       {showContent && <PageNav className="tw-flex-col tw-mb-8" />}
@@ -79,7 +79,7 @@ export function ControlPanel(props: ControlPanelProps): JSX.Element {
         as="button"
         type="button"
         aria-label={t(
-          showContent ? "buttons.hide-panel" : "buttons.show-panel"
+          showContent ? "buttons.hide-panel" : "buttons.show-panel",
         )}
         onClick={() => setShowContent((prevState) => !prevState)}
         className="tw-py-3 tw-px-6 tw-text-lg tw-flex tw-justify-end tw-items-center tw-h-16"

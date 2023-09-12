@@ -55,7 +55,14 @@ export interface StateStore
     ErrorDescriptionService {}
 
 // @ts-ignore
-const StoreContext = React.createContext<StateStore>({});
+const StoreContext = React.createContext<StateStore>({
+  ...initialCharSheet,
+  errorDescription: {
+    title: "",
+    text: "",
+  },
+  limits: { bloodPerTurnLimit: 1, bloodpool: 20, parameterLimit: 5 },
+});
 export const useStore = () => useContext(StoreContext);
 
 interface ProviderProps {}
@@ -94,14 +101,17 @@ export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({
     useState<ErrorDescription | null>(null);
 
   const functions = useMemo(() => {
-    return Object.keys(reducer.actionMap).reduce((acc, el) => {
-      // @ts-ignore
-      acc[el] = function (...rest: any[]) {
+    return Object.keys(reducer.actionMap).reduce(
+      (acc, el) => {
         // @ts-ignore
-        dispatch({ type: el, props: [...rest] });
-      };
-      return acc;
-    }, {} as MergeTuples<TakeActions<typeof reducer>>);
+        acc[el] = function (...rest: any[]) {
+          // @ts-ignore
+          dispatch({ type: el, props: [...rest] });
+        };
+        return acc;
+      },
+      {} as MergeTuples<TakeActions<typeof reducer>>,
+    );
   }, [dispatch]);
 
   if (!initialized) {

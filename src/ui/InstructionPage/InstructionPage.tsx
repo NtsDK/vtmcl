@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import DocumentTitle from "react-document-title";
-import Card from "react-bootstrap/Card";
+import Card from "react-bootstrap/cjs/Card";
 
 import { InstructionRu } from "./InstructionRu";
 import { InstructionEn } from "./InstructionEn";

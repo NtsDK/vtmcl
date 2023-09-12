@@ -1,4 +1,5 @@
 import React from "react";
+import addSquaredButtonImgUrl from "../../../../../images/add-squared-button.svg";
 
 interface AddEntityButtonProps {
   title: string;
@@ -15,7 +16,7 @@ export function AddEntityButton(props: AddEntityButtonProps): JSX.Element {
       aria-label={title}
       title={title}
     >
-      <img className="tw-w-8" src="images/add-squared-button.svg" alt="" />
+      <img className="tw-w-8" src={addSquaredButtonImgUrl} alt="" />
     </button>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./PageNav.css";
-import Nav from "react-bootstrap/Nav";
+import Nav from "react-bootstrap/cjs/Nav";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";

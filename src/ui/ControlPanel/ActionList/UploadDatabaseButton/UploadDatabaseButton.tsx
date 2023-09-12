@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, ChangeEvent } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import Dropdown from "react-bootstrap/cjs/Dropdown";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
@@ -26,7 +26,7 @@ interface UploadDatabaseButtonProps
 }
 
 export function UploadDatabaseButton(
-  props: UploadDatabaseButtonProps
+  props: UploadDatabaseButtonProps,
 ): JSX.Element {
   const { t } = useTranslation();
 

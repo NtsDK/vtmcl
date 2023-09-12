@@ -1,6 +1,6 @@
 import React from "react";
 import DocumentTitle from "react-document-title";
-import Card from "react-bootstrap/Card";
+import Card from "react-bootstrap/cjs/Card";
 import { useTranslation } from "react-i18next";
 
 import { ExternalLink } from "../../uiLib/ExternalLink";

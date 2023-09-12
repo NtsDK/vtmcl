@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-// import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
-import { useAccordionButton } from "react-bootstrap/AccordionButton";
-import AccordionContext from "react-bootstrap/AccordionContext";
-import Button from "react-bootstrap/Button";
+import { useAccordionButton } from "react-bootstrap/cjs/AccordionButton";
+import AccordionContext from "react-bootstrap/cjs/AccordionContext";
+import Button from "react-bootstrap/cjs/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classnames from "classnames";
@@ -22,11 +21,12 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
 
   const decoratedOnClick = useAccordionButton(
     eventKey,
-    () => {}
+    () => {},
     // console.log("totally custom!")
   );
 
-  const isCurrentEventKey = currentEventKey.activeEventKey === eventKey;
+  // опционально для работы SSG
+  const isCurrentEventKey = currentEventKey?.activeEventKey === eventKey;
 
   return (
     <h2 className="AccordionToggle" onClick={decoratedOnClick}>
@@ -43,7 +43,7 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
             {
               "tw-rotate-180": isCurrentEventKey,
               "tw-rotate-0": !isCurrentEventKey,
-            }
+            },
           )}
           icon={faChevronUp}
         />

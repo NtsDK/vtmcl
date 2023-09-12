@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/cjs/Button";
 
 import { LS_KEY } from "../../constants";
 import { str2File, makeFileName } from "../../lib/fileUtils";
@@ -48,7 +48,6 @@ export class ErrorBoundry extends Component<
   }
 
   render(): JSX.Element | React.ReactNode {
-    // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       return (
         <div className="tw-m-8">
@@ -97,7 +96,6 @@ export class ErrorBoundry extends Component<
         </div>
       );
     }
-    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children;
   }
 }

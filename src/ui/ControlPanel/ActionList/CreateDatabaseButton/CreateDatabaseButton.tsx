@@ -1,10 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import * as R from "ramda";
-import Dropdown from "react-bootstrap/Dropdown";
+import Dropdown from "react-bootstrap/cjs/Dropdown";
 import { useTranslation } from "react-i18next";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/cjs/Modal";
+import Button from "react-bootstrap/cjs/Button";
+import Form from "react-bootstrap/cjs/Form";
 import classnames from "classnames";
 
 import { initialCharSheet } from "../../../../charSheets/root/services/initialValues";

@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import classnames from "classnames";
-import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/cjs/Button";
 import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 
@@ -35,7 +35,7 @@ function formatNumber(num: number): string {
 }
 
 export function FreebiePointsPanel(
-  props: FreebiePointsPanelProps
+  props: FreebiePointsPanelProps,
 ): JSX.Element {
   const { className, freebiePointsConfig } = props;
   const { t } = useTranslation();
@@ -43,7 +43,7 @@ export function FreebiePointsPanel(
   const { charSheet, setCharSheet } = useCharSheetStorage();
 
   const [prevCharSheet, setPrevCharSheet] = useState<CharSheet | undefined>(
-    undefined
+    undefined,
   );
 
   const freebiePointsStatus = useMemo<FreebiePointStats>(() => {
@@ -61,7 +61,7 @@ export function FreebiePointsPanel(
         name: el.name,
         multiplier: el.multiplier,
         diff: el.extractor(prevCharSheet) - el.extractor(charSheet),
-      })
+      }),
     );
 
     return {
@@ -76,7 +76,7 @@ export function FreebiePointsPanel(
     <div
       className={classnames(
         "FreebiePointsPanel tw-max-w-sm tw-mx-5 tw-my-3",
-        className
+        className,
       )}
     >
       <Button
@@ -136,12 +136,12 @@ export function FreebiePointsPanel(
                 {formatNumber(
                   R.sum(
                     freebiePointsStatus.filledFreebiePoint.map(
-                      (el) => el.diff * el.multiplier
-                    )
+                      (el) => el.diff * el.multiplier,
+                    ),
                   ) +
                     freebiePointsStatus.freebiePoints -
                     freebiePointsStatus.meritsSum +
-                    freebiePointsStatus.flawsSum
+                    freebiePointsStatus.flawsSum,
                 )}
               </span>
             </div>
