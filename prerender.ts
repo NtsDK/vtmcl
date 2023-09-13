@@ -21,9 +21,12 @@ const enTemplate = fs.readFileSync(
     lang: string,
   ) {
     const context = {};
-    const { render } = await import("./dist/server/entry-server.js");
+    const { render, CURRENT_VERSION } = await import(
+      "./dist/server/entry-server.js"
+    );
     const appHtml = await render("/", lang);
-    const html = template.replace(`<!--app-html-->`, appHtml);
+    const html1 = template.replace(`<!--app-html-->`, appHtml);
+    const html = html1.replace(`<!--version-->`, `v${CURRENT_VERSION}`);
     const filePath = `dist/static/${outFile}.html`;
     fs.writeFileSync(toAbsolute(filePath), html);
     console.log("📦 pre-rendered:", filePath);

@@ -4,23 +4,26 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "tsc": "tsc --noEmit --watch",
+    "build-tailwind": "npx tailwindcss ./tailwind.css -o ./src/tailwind.css -w",
     "start": "vite",
+    
+    "check-build": "http-server ./dist/static",
+
+    "build": "vite build --outDir dist/static && npm run build:ssr",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "postbuild": "npx ts-node --esm prerender.ts",
+    "prebuild": "rm -rf dist",
+
     "build0": "tsc && vite build",
     "serve": "vite preview",
-    "build-tailwind": "npx tailwindcss ./tailwind.css -o ./src/tailwind.css -w",
-    "check-build": "http-server ./dist/static",
     "lint": "eslint --quiet",
     "lint2": "eslint --fix",
     "format": "prettier --write ./src/**/*.{ts,tsx}",
     "lf": "npm run lint && npm run format",
     "prepare": "husky install",
-    "tsc": "tsc --noEmit --watch",
     "test": "npx jest",
-    "build": "vite build --outDir dist/static && npm run build:ssr",
-    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "postbuild": "npx ts-node --esm prerender.ts",
-    "prebuild": "rm -rf dist"
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "browserslist": {
     "production": [
