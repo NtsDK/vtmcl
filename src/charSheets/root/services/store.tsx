@@ -57,10 +57,7 @@ export interface StateStore
 // @ts-ignore
 const StoreContext = React.createContext<StateStore>({
   ...initialCharSheet,
-  errorDescription: {
-    title: "",
-    text: "",
-  },
+  errorDescription: null,
   limits: { bloodPerTurnLimit: 1, bloodpool: 20, parameterLimit: 5 },
 });
 export const useStore = () => useContext(StoreContext);

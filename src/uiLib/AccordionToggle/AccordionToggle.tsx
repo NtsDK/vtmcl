@@ -39,7 +39,7 @@ export function AccordionToggle(props: AccordionToggleProps): JSX.Element {
         {title}
         <FontAwesomeIcon
           className={classnames(
-            "tw-float-right tw-mt-1 tw-mr-2 tw-ml-4 tw-transform tw-transition-transform",
+            "tw-float-right tw-mt-1 tw-mr-2 tw-ml-4 tw-transform tw-transition-transform tw-max-w-[1.25rem]",
             {
               "tw-rotate-180": isCurrentEventKey,
               "tw-rotate-0": !isCurrentEventKey,

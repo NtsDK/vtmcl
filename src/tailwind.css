@@ -794,6 +794,10 @@ video {
   max-height: 16rem;
 }
 
+.tw-max-h-\[1\.25rem\] {
+  max-height: 1.25rem;
+}
+
 .tw-w-14 {
   width: 3.5rem;
 }
@@ -840,6 +844,18 @@ video {
 
 .tw-max-w-sm {
   max-width: 24rem;
+}
+
+.tw-max-w-xl {
+  max-width: 36rem;
+}
+
+.tw-max-w-\[2rem\] {
+  max-width: 2rem;
+}
+
+.tw-max-w-\[1\.25rem\] {
+  max-width: 1.25rem;
 }
 
 .tw-flex-1 {

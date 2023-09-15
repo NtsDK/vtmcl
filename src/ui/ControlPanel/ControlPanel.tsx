@@ -87,7 +87,10 @@ export function ControlPanel(props: ControlPanelProps): JSX.Element {
         {showContent && (
           <span className="tw-mr-4">{t("buttons.hide-panel")}</span>
         )}
-        <FontAwesomeIcon icon={showContent ? faChevronLeft : faChevronRight} />
+        <FontAwesomeIcon
+          className="tw-max-h-[1.25rem]"
+          icon={showContent ? faChevronLeft : faChevronRight}
+        />
       </Dropdown.Item>
     </div>
   );
