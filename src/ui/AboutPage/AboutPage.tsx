@@ -105,6 +105,7 @@ export function AboutPage(props: AboutPageProps): JSX.Element {
                   {t("about.version-history")}
                 </h2>
                 <UnorderedList>
+                  <li>{t("about.version-0.5.0")}</li>
                   <li>{t("about.version-0.4.1")}</li>
                   <li>{t("about.version-0.4.0")}</li>
                   <li>{t("about.version-0.3.0")}</li>

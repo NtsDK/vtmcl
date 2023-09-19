@@ -28,6 +28,8 @@ export const about = {
   worldofdarkness: "World of Darkness game universe website",
 
   "version-history": "Version history",
+  "version-0.5.0":
+    "Version 0.5.0 (19 Sep 2023) - Added character sheets for Vampire the Dark Ages and Hunters Hunted II. Fixed bug in freebie points calculation. Added English version of character sheet. Reworked code to simplify adding new types of character sheets.",
   "version-0.4.1":
     "Version 0.4.1 (20 Apr 2023) - Add freebie points panel. Improved data utilities and improved performance.",
   "version-0.4.0":

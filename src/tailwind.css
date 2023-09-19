@@ -842,20 +842,12 @@ video {
   width: 100%;
 }
 
-.tw-max-w-sm {
-  max-width: 24rem;
-}
-
-.tw-max-w-xl {
-  max-width: 36rem;
-}
-
-.tw-max-w-\[2rem\] {
-  max-width: 2rem;
-}
-
 .tw-max-w-\[1\.25rem\] {
   max-width: 1.25rem;
+}
+
+.tw-max-w-sm {
+  max-width: 24rem;
 }
 
 .tw-flex-1 {
