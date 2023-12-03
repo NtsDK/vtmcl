@@ -47,6 +47,7 @@ export const enTranslation: TranslationInfo = {
       vampire_da_v20: "Vampire: The Dark Ages. V20",
       changeling_v20: "Changeling: The Dreaming. V20",
       hunter_v20: "The Hunters Hunted II. V20",
+      vampire_v3_revised: "Vampire: The Masquerade. V3 Revised",
     },
     profile,
     attributes,

@@ -10,16 +10,16 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.health = charSheet.Charsheet.state.health;
     delete charSheet.Charsheet.state.health;
     charSheet.Charsheet.disciplines = Object.entries(
-      charSheet.Charsheet.disciplines
+      charSheet.Charsheet.disciplines,
     ).map((el) => ({ name: el[0], value: el[1] }));
     charSheet.Charsheet.backgrounds = Object.entries(
-      charSheet.Charsheet.backgrounds
+      charSheet.Charsheet.backgrounds,
     ).map((el) => ({ name: el[0], value: el[1] }));
     charSheet.Charsheet.merits = Object.entries(charSheet.Charsheet.merits).map(
-      (el) => el[0]
+      (el) => el[0],
     );
     charSheet.Charsheet.flaws = Object.entries(charSheet.Charsheet.flaws).map(
-      (el) => el[0]
+      (el) => el[0],
     );
     charSheet.Version = "0.2.0";
   }
@@ -150,6 +150,12 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.abilities.legerdemain = 0;
     charSheet.Charsheet.profile.residence = "";
     charSheet.Charsheet.numinaAndOtherTraits = [];
+  }
+  if (charSheet.Version === "0.5.0") {
+    charSheet.Version = "0.6.0";
+    charSheet.Charsheet.abilities.dodge = 0;
+    charSheet.Charsheet.abilities.security = 0;
+    charSheet.Charsheet.abilities.linguistics = 0;
   }
   return charSheet;
 }

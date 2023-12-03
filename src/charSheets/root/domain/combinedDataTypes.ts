@@ -27,27 +27,41 @@ import {
   HH2PresetName,
   HH2FreebiePointName,
 } from "../../hh2/domain";
+import {
+  VtM_V3Profile,
+  VtM_V3State,
+  VtM_V3Abilities,
+  VtM_V3PresetName,
+} from "../../vtm_v3/domain";
 
 // Profile
 export interface Profile
   extends VtMProfile,
     CtDProfile,
     HH2Profile,
-    VtDAProfile {}
+    VtDAProfile,
+    VtM_V3Profile {}
 
-export interface State extends VtMState, CtDState, HH2State, VtDAState {}
+export interface State
+  extends VtMState,
+    CtDState,
+    HH2State,
+    VtDAState,
+    VtM_V3State {}
 
 export interface Abilities
   extends VtMAbilities,
     CtDAbilities,
     HH2Abilities,
-    VtDAAbilities {}
+    VtDAAbilities,
+    VtM_V3Abilities {}
 
 export type PresetName =
   | VtMPresetName
   | CtDPresetName
   | HH2PresetName
-  | VtDAPresetName;
+  | VtDAPresetName
+  | VtM_V3PresetName;
 
 export type FreebiePointName =
   | CommonFreebiePointName

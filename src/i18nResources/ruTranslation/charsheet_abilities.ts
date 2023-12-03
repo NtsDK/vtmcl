@@ -12,7 +12,7 @@ export const abilities = {
   subterfuge: "Хитрость",
   awareness: "Шестое чувство",
   empathy: "Эмпатия",
-  // 'dodge': 'Уворот',
+  dodge: "Уклонение",
 
   skills: "Навыки",
   drive: "Вождение",
@@ -26,7 +26,7 @@ export const abilities = {
   melee: "Фехтование",
   etiquette: "Этикет",
 
-  // 'security': 'Безопасность',
+  security: "Безопасность",
 
   knowledges: "Знания",
   academics: "Гум. науки",
@@ -40,7 +40,7 @@ export const abilities = {
   technology: "Электроника",
   law: "Законы",
 
-  // 'linguistics': 'Языки',
+  linguistics: "Лингвистика",
 
   "extension-talent": "Дополнительный талант {{id}}",
   "extension-skill": "Дополнительный навык {{id}}",

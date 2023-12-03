@@ -46,6 +46,11 @@ import {
   initialHH2State,
   initialNuminaAndOtherTraits,
 } from "../../hh2/services/initialValues";
+import {
+  initialVtM_V3Profile,
+  initialVtM_V3Abilities,
+  initialVtM_V3State,
+} from "../../vtm_v3/services/initialValues";
 
 export const initialPreset: PresetName = "vampire_v20";
 
@@ -54,6 +59,7 @@ export const initialProfile: Profile = {
   ...initialCommonProfile,
   ...initialCtDProfile,
   ...initialHH2Profile,
+  ...initialVtM_V3Profile,
 };
 
 export const initialAbilities: Abilities = {
@@ -61,6 +67,7 @@ export const initialAbilities: Abilities = {
   ...initialCtDAbilities,
   ...initialHH2Abilities,
   ...initialVtDAAbilities,
+  ...initialVtM_V3Abilities,
 };
 
 export const initialState: State = {
@@ -68,6 +75,7 @@ export const initialState: State = {
   ...initialCtDState,
   ...initialHH2State,
   ...initialVtDAState,
+  ...initialVtM_V3State,
 };
 
 export const initialCharSheet: CharSheet = {

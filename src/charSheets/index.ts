@@ -9,6 +9,7 @@ import { VtM } from "./vtm";
 import { VtDA } from "./vtda";
 import { CtD } from "./ctd";
 import { HH2 } from "./hh2";
+import { VtM_v3 } from "./vtm_v3";
 import { PresetName, InternalPresetProps, presetList } from "./root/domain";
 import { ExternalPresetProps, Preset } from "./types";
 
@@ -17,6 +18,7 @@ const presetIndex: Record<PresetName, Preset> = {
   changeling_v20: CtD,
   hunter_v20: HH2,
   vampire_da_v20: VtDA,
+  vampire_v3_revised: VtM_v3,
 };
 
 export function useExternalPresetProps(): ExternalPresetProps {
@@ -24,7 +26,7 @@ export function useExternalPresetProps(): ExternalPresetProps {
 
   return R.pick(
     ["CharSheet", "CheckList", "freebiePointsConfig"],
-    presetIndex[preset]
+    presetIndex[preset],
   );
 }
 

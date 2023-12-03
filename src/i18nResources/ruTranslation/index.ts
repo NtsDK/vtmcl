@@ -44,6 +44,7 @@ export const ruTranslation = {
       vampire_da_v20: "Вампиры: Тёмные века. V20",
       changeling_v20: "Подменыши: Грёза. V20",
       hunter_v20: "Охота на охотников II. V20",
+      vampire_v3_revised: "Вампиры: Маскарад. V3 Revised",
     },
     profile,
     attributes,
