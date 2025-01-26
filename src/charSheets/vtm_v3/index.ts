@@ -6,7 +6,7 @@ import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
 // import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
 import { CharSheet } from "./CharSheet";
-// import { getDropdownOptions } from "./dropdownContent";
+import { getDropdownOptions } from "./dropdownContent";
 // import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
 
 export const VtM_v3: Preset = {
@@ -17,6 +17,6 @@ export const VtM_v3: Preset = {
   // freebiePointsConfig,
   // CheckList,
   CharSheet,
-  // getDropdownOptions,
+  getDropdownOptions,
   // translateDropdownOptions,
 };

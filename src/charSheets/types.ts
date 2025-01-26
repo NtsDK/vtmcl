@@ -12,6 +12,7 @@ export type Preset = {
   profileConfig: ProfileConfig;
   attributesConfig: AttributesConfig;
   abilitiesConfig: AbilitiesConfig;
+
   freebiePointsConfig?: FreebiePointsConfig;
   dropdownOptions?: DropdownOptions;
 
@@ -20,7 +21,7 @@ export type Preset = {
   translateDropdownOptions?: (
     store: StateStore,
     prevLanguage: string,
-    lng: string
+    lng: string,
   ) => void;
   getDropdownOptions?(language: string): DropdownOptions;
 };
