@@ -39,7 +39,7 @@ export const about = {
   "version-0.2.4":
     "Version 0.2.4 (28 Aug 2022) - Now character sheet supports all single page features of official and Studio 101 character sheets. Added selects with English translation support.",
   "version-0.2.3":
-    "Version 0.2.3 (22 Aug 2022) - Reworked UI for better keyboard accessibility. Made all names consistent with Studio 101 Russian translation. Fixed will and blood pool icons. Added aggravated damade. Added generation selection list. Improved PDF printing from browser.",
+    "Version 0.2.3 (22 Aug 2022) - Reworked UI for better keyboard accessibility. Made all names consistent with Studio 101 Russian translation. Fixed will and blood pool icons. Added aggravated damage. Added generation selection list. Improved PDF printing from browser.",
   "version-0.2.2":
     "Version 0.2.2 (1 Jul 2022) - Added character creation checklist. Minor UI updates and bug fixes.",
   "version-0.2.1":

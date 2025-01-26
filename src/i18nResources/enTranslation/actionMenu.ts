@@ -8,5 +8,5 @@ export const actionMenu = {
     "On character sheet creation current character sheet will be deleted.",
   "lang-ru": "Russian language",
   "lang-en": "English language",
-  "fullcreen-toggle": "Fullscreen mode",
+  "fullscreen-toggle": "Fullscreen mode",
 };

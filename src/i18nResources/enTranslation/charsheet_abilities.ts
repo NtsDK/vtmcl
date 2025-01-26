@@ -15,7 +15,7 @@ export const abilities = {
   awareness: "Awareness",
 
   skills: "Skills",
-  animalken: "Animalken",
+  animalken: "Animal Ken",
   drive: "Drive",
   etiquette: "Etiquette",
   firearms: "Firearms",

@@ -28,7 +28,7 @@ export function FullscreenButton(props: FullscreenButtonProps) {
       onClick={onClick}
       className={classnames("FullscreenButton", className)}
     >
-      {t("actionMenu.fullcreen-toggle")}
+      {t("actionMenu.fullscreen-toggle")}
     </Dropdown.Item>
   );
 }
