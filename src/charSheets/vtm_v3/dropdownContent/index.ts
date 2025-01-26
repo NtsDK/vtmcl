@@ -8,10 +8,7 @@ import {
 import { Merge } from "../../../lib/types";
 
 import { archetypes_ru, archetypes_en } from "./resources/archetypes";
-// import {
-//   v20_backgrounds_ru,
-//   v20_backgrounds_en,
-// } from "./resources/backgrounds";
+import { v3_backgrounds_ru, v3_backgrounds_en } from "./resources/backgrounds";
 import { clanDisplayGroups_ru, clanDisplayGroups_en } from "./resources/clans";
 import { concepts_en, concepts_ru } from "./resources/concepts";
 // import {
@@ -59,10 +56,9 @@ export function getDropdownOptions(language: string): VtMv3DropdownOptions {
         generationOptions: generations_ru,
         clanOptions: clanDisplayGroups_ru,
 
-        backgroundOptions: [],
+        backgroundOptions: v3_backgrounds_ru,
         flawOptions: [],
         meritOptions: [],
-        // backgroundOptions: v20_backgrounds_ru,
         disciplineOptions: disciplineDisplayGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
         // pathOptions: paths_ru,
@@ -77,10 +73,9 @@ export function getDropdownOptions(language: string): VtMv3DropdownOptions {
         generationOptions: generations_en,
         clanOptions: clanDisplayGroups_en,
 
-        backgroundOptions: [],
+        backgroundOptions: v3_backgrounds_en,
         flawOptions: [],
         meritOptions: [],
-        // backgroundOptions: v20_backgrounds_en,
         disciplineOptions: disciplineDisplayGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,
         // pathOptions: paths_en,

@@ -70,7 +70,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         </SectionHeader>
         <AdvantagesSection
           className="tw-mb-3"
-          // backgroundOptions={backgroundOptions}
+          backgroundOptions={backgroundOptions}
           disciplineOptions={disciplineOptions}
         />
         <SectionHeader className="tw-mb-3">
