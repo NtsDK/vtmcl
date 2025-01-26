@@ -29,7 +29,8 @@ import { useDisciplinePaths, useRituals } from "../vtm/services/storageAdapter";
 import { ritualValueOptions } from "../vtm/dropdownContent/resources/rituals";
 import { DisciplinePathsSection } from "../vtm/uiSections/DisciplinePathsSection";
 
-// import { useDropdownOptions } from "./dropdownContent";
+import { useDropdownOptions } from "./dropdownContent";
+
 // import { useDisciplinePaths, useRituals } from "./services/storageAdapter";
 // import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 // import { DisciplinePathsSection } from "./uiSections/DisciplinePathsSection";
@@ -52,13 +53,13 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
 
   const ritualsService = useRituals();
 
-  // const {
-  //   ritualOptions,
-  //   ritualValueOptions,
-  //   disciplinePathOptions,
-  //   backgroundOptions,
-  //   disciplineOptions,
-  // } = useDropdownOptions();
+  const {
+    // ritualOptions,
+    // ritualValueOptions,
+    // disciplinePathOptions,
+    backgroundOptions,
+    disciplineOptions,
+  } = useDropdownOptions();
 
   return (
     <>
@@ -70,7 +71,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         <AdvantagesSection
           className="tw-mb-3"
           // backgroundOptions={backgroundOptions}
-          // disciplineOptions={disciplineOptions}
+          disciplineOptions={disciplineOptions}
         />
         <SectionHeader className="tw-mb-3">
           {t("charsheet.status.header")}

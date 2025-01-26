@@ -18,10 +18,10 @@ import { concepts_en, concepts_ru } from "./resources/concepts";
 //   disciplinePathDisplayGroups_ru,
 //   disciplinePathDisplayGroups_en,
 // } from "./resources/disciplinePaths";
-// import {
-//   disciplineDisplayGroups_ru,
-//   disciplineDisplayGroups_en,
-// } from "./resources/disciplines";
+import {
+  disciplineDisplayGroups_ru,
+  disciplineDisplayGroups_en,
+} from "./resources/disciplines";
 import { generations_ru, generations_en } from "./resources/generations";
 // import {
 //   v20_flaws_ru,
@@ -43,7 +43,7 @@ export type VtMv3DropdownOptions = Merge<
     conceptOptions: string[];
     generationOptions: string[];
     clanOptions: OptionGroup[];
-    // disciplineOptions: OptionGroup[];
+    disciplineOptions: OptionGroup[];
     // disciplinePathOptions: OptionGroup[];
     // pathOptions: string[];
     // ritualOptions: OptionGroup[];
@@ -63,7 +63,7 @@ export function getDropdownOptions(language: string): VtMv3DropdownOptions {
         flawOptions: [],
         meritOptions: [],
         // backgroundOptions: v20_backgrounds_ru,
-        // disciplineOptions: disciplineDisplayGroups_ru,
+        disciplineOptions: disciplineDisplayGroups_ru,
         // disciplinePathOptions: disciplinePathDisplayGroups_ru,
         // pathOptions: paths_ru,
         // flawOptions: v20_flaws_ru,
@@ -81,7 +81,7 @@ export function getDropdownOptions(language: string): VtMv3DropdownOptions {
         flawOptions: [],
         meritOptions: [],
         // backgroundOptions: v20_backgrounds_en,
-        // disciplineOptions: disciplineDisplayGroups_en,
+        disciplineOptions: disciplineDisplayGroups_en,
         // disciplinePathOptions: disciplinePathDisplayGroups_en,
         // pathOptions: paths_en,
         // flawOptions: v20_flaws_en,
