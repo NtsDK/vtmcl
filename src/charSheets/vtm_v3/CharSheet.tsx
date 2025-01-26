@@ -26,7 +26,6 @@ import { AdvantagesSection } from "../vtm/uiSections/AdvantagesSection";
 import { StatusSection } from "../vtm/uiSections/StatusSection";
 import { RitualsSection } from "../vtm/uiSections/RitualsSection";
 import { useDisciplinePaths, useRituals } from "../vtm/services/storageAdapter";
-import { ritualValueOptions } from "../vtm/dropdownContent/resources/rituals";
 import { DisciplinePathsSection } from "../vtm/uiSections/DisciplinePathsSection";
 
 import { useDropdownOptions } from "./dropdownContent";
@@ -54,9 +53,9 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const ritualsService = useRituals();
 
   const {
-    // ritualOptions,
-    // ritualValueOptions,
-    // disciplinePathOptions,
+    ritualOptions,
+    ritualValueOptions,
+    disciplinePathOptions,
     backgroundOptions,
     disciplineOptions,
   } = useDropdownOptions();
@@ -106,7 +105,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
               {t("charsheet.advantages.rituals")}
             </SectionHeader>
             <RitualsSection
-              // ritualOptions={ritualOptions}
+              ritualOptions={ritualOptions}
               ritualValueOptions={ritualValueOptions}
               {...ritualsService}
             />
@@ -118,7 +117,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
             </SectionHeader>
             <DisciplinePathsSection
               limits={limits}
-              // disciplinePathOptions={disciplinePathOptions}
+              disciplinePathOptions={disciplinePathOptions}
               {...disciplinePathsService}
             />
           </div>

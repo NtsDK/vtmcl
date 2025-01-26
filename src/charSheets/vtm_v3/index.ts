@@ -7,7 +7,7 @@ import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
 import { profileConfig } from "./presetSettings/profileConfig";
 import { CharSheet } from "./CharSheet";
 import { getDropdownOptions } from "./dropdownContent";
-// import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
+import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
 
 export const VtM_v3: Preset = {
   displayName: "VtM Revised",
@@ -18,5 +18,5 @@ export const VtM_v3: Preset = {
   // CheckList,
   CharSheet,
   getDropdownOptions,
-  // translateDropdownOptions,
+  translateDropdownOptions,
 };
