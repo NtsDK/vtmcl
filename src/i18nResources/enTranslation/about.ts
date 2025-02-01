@@ -28,6 +28,8 @@ export const about = {
   worldofdarkness: "World of Darkness game universe website",
 
   "version-history": "Version history",
+  "version-0.6.0":
+    "Version 0.6.0 (1 Feb 2025) - Added character sheet Vampire: the Masquerade. V3 Revised.",
   "version-0.5.0":
     "Version 0.5.0 (19 Sep 2023) - Added character sheets for Vampire the Dark Ages and Hunters Hunted II. Fixed bug in freebie points calculation. Added English version of character sheet. Reworked code to simplify adding new types of character sheets.",
   "version-0.4.1":
