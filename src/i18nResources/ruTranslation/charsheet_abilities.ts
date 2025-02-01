@@ -26,7 +26,7 @@ export const abilities = {
   melee: "Фехтование",
   etiquette: "Этикет",
 
-  security: "Безопасность",
+  security: "Взлом",
 
   knowledges: "Знания",
   academics: "Гум. науки",
