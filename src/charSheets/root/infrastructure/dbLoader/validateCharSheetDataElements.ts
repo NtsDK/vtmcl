@@ -28,7 +28,13 @@ export const possessionsSchema = notesSchema;
 
 export const presetSchema: JSONSchemaType<PresetName> = {
   type: "string",
-  enum: ["vampire_v20", "changeling_v20", "hunter_v20", "vampire_da_v20"],
+  enum: [
+    "vampire_v20",
+    "changeling_v20",
+    "hunter_v20",
+    "vampire_da_v20",
+    "vampire_v3_revised",
+  ],
 };
 
 export const profileSchema: JSONSchemaType<Profile> = {
