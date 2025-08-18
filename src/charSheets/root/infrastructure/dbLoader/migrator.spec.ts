@@ -8,10 +8,10 @@ import { CharSheetInJson } from "./types";
 
 const presets: Record<PresetName, PresetName> = {
   vampire_v20: "vampire_v20",
-  changeling_v20: "vampire_v20",
-  hunter_v20: "vampire_v20",
-  vampire_da_v20: "vampire_v20",
-  vampire_v3_revised: "vampire_v20",
+  changeling_v20: "changeling_v20",
+  hunter_v20: "hunter_v20",
+  vampire_da_v20: "vampire_da_v20",
+  vampire_v3_revised: "vampire_v3_revised",
 };
 
 describe("migrator check", () => {
