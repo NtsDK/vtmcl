@@ -157,5 +157,8 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.abilities.security = 0;
     charSheet.Charsheet.abilities.linguistics = 0;
   }
+  if (charSheet.Version === "0.6.0") {
+    charSheet.Version = "0.6.1";
+  }
   return charSheet;
 }

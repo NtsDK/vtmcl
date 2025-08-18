@@ -28,6 +28,8 @@ export const about = {
   worldofdarkness: "World of Darkness game universe website",
 
   "version-history": "Version history",
+  "version-0.6.1":
+    "Version 0.6.1 (19 Aug 2025) - Fixed couple bugs for V3 Revised.",
   "version-0.6.0":
     "Version 0.6.0 (1 Feb 2025) - Added character sheet Vampire: the Masquerade. V3 Revised.",
   "version-0.5.0":

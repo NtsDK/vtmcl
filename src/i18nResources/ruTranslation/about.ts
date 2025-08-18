@@ -28,6 +28,8 @@ export const about = {
   worldofdarkness: "Сайт игровой вселенной Мир тьмы",
 
   "version-history": "История версий",
+  "version-0.6.1":
+    "Version 0.6.1 (19 августа 2025) - Исправлена пара ошибок для V3 Revised.",
   "version-0.6.0":
     "Версия 0.6.0 (1 февраля 2025) - Добавлен лист персонажа Vampire: the Masquerade. V3 Revised.",
   "version-0.5.0":
