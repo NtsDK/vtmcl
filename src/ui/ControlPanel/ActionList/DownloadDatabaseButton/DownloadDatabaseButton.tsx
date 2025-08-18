@@ -21,7 +21,7 @@ export function DownloadDatabaseButton(
     json2File(
       charSheetToJson(charSheet),
       makeFileName(
-        "vtm_charsheet_" + charSheet.profile.name,
+        charSheet.preset + "_" + charSheet.profile.name,
         "json",
         new Date(),
       ),
