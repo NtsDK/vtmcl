@@ -1,8 +1,18 @@
 import * as R from "ramda";
 
 import { migrate } from "../../domainServices";
+import { PresetName } from "../../domain";
 
 import { validateCharSheetInJson } from "./validateCharSheetInJson";
+import { CharSheetInJson } from "./types";
+
+const presets: Record<PresetName, PresetName> = {
+  vampire_v20: "vampire_v20",
+  changeling_v20: "vampire_v20",
+  hunter_v20: "vampire_v20",
+  vampire_da_v20: "vampire_v20",
+  vampire_v3_revised: "vampire_v20",
+};
 
 describe("migrator check", () => {
   it("Char sheet should be valid after migration", () => {
@@ -10,11 +20,26 @@ describe("migrator check", () => {
     if (!validateCharSheetInJson(charSheet)) {
       console.log(
         "migration errors",
-        JSON.stringify(validateCharSheetInJson.errors, null, "  ")
+        JSON.stringify(validateCharSheetInJson.errors, null, "  "),
       );
     }
     expect(validateCharSheetInJson(charSheet)).toBe(true);
   });
+
+  for (const presetName of Object.keys(presets) as PresetName[]) {
+    it(`Char sheet with preset ${presetName} should pass validation`, () => {
+      const charSheet = migrate(charSheetV011) as CharSheetInJson;
+      charSheet.Charsheet.preset = presetName;
+      if (!validateCharSheetInJson(charSheet)) {
+        console.log(
+          "migration errors",
+          JSON.stringify(validateCharSheetInJson.errors, null, "  "),
+        );
+      }
+
+      expect(validateCharSheetInJson(charSheet)).toBe(true);
+    });
+  }
 });
 
 var charSheetV011 = {
