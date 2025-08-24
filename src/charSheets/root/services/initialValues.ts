@@ -51,6 +51,7 @@ import {
   initialVtM_V3Abilities,
   initialVtM_V3State,
 } from "../../vtm_v3/services/initialValues";
+import { initialMtAAbilities, initialMtAProfile } from "../../mta/services/initialValues";
 
 export const initialPreset: PresetName = "vampire_v20";
 
@@ -60,6 +61,7 @@ export const initialProfile: Profile = {
   ...initialCtDProfile,
   ...initialHH2Profile,
   ...initialVtM_V3Profile,
+  ...initialMtAProfile,
 };
 
 export const initialAbilities: Abilities = {
@@ -68,6 +70,7 @@ export const initialAbilities: Abilities = {
   ...initialHH2Abilities,
   ...initialVtDAAbilities,
   ...initialVtM_V3Abilities,
+  ...initialMtAAbilities,
 };
 
 export const initialState: State = {

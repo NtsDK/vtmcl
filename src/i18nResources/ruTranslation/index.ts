@@ -45,6 +45,7 @@ export const ruTranslation = {
       changeling_v20: "Подменыши: Грёза. V20",
       hunter_v20: "Охота на охотников II. V20",
       vampire_v3_revised: "Вампиры: Маскарад. V3 Revised",
+      mage_v20: "Маги: Восхождение. V20",
     },
     profile,
     attributes,

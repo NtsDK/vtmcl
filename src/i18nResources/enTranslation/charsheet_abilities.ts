@@ -55,4 +55,11 @@ export const abilities = {
   hearthWisdom: "Hearth Wisdom",
   seneschal: "Seneschal",
   theology: "Theology",
+
+  art: "Art",
+  martialArts: "Martial Arts",
+  meditation: "Meditation",
+  research: "Research",
+  cosmology: "Cosmology",
+  esoterica: "Esoterica",
 };

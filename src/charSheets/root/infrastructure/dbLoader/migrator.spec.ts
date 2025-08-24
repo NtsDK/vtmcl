@@ -12,6 +12,7 @@ const presets: Record<PresetName, PresetName> = {
   hunter_v20: "hunter_v20",
   vampire_da_v20: "vampire_da_v20",
   vampire_v3_revised: "vampire_v3_revised",
+  mage_v20: "mage_v20",
 };
 
 describe("migrator check", () => {

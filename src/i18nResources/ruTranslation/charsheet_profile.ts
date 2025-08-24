@@ -22,4 +22,8 @@ export const profile = {
   motley: "Группа:",
 
   residence: "Проживание:",
+
+  essence: "Essence:",
+  affiliation: "Affiliation:",
+  sect: "Sect:",
 };

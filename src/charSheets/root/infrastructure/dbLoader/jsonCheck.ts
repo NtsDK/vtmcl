@@ -1,8 +1,6 @@
 import { CharSheetInJson } from "./types";
 import { CURRENT_VERSION } from "../../../../constants";
 import { defaultBackgroundUrl } from "../../../misc/services/initialValues";
-// import { defaultBackgroundUrl } from "../../services/defaultBackground";
-// import { defaultBackgroundUrl } from "../../charSheets/root/services/defaultBackground";
 
 export const m: CharSheetInJson = {
   Version: CURRENT_VERSION,
@@ -29,6 +27,10 @@ export const m: CharSheetInJson = {
       motley: "",
       seeming: "",
       residence: "",
+
+      affiliation: "",
+      sect: "",
+      essence: "",
     },
     attributes: {
       strength: 3,
@@ -88,6 +90,13 @@ export const m: CharSheetInJson = {
       dodge: 0,
       linguistics: 0,
       security: 0,
+
+      art: 0,
+      martialArts: 0,
+      meditation: 0,
+      research: 0,
+      cosmology: 0,
+      esoterica: 0,
     },
     abilitiesExtension: {
       talentName1: "",

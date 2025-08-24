@@ -49,6 +49,7 @@ export const enTranslation: TranslationInfo = {
       changeling_v20: "Changeling: The Dreaming. V20",
       hunter_v20: "The Hunters Hunted II. V20",
       vampire_v3_revised: "Vampire: The Masquerade. V3 Revised",
+      mage_v20: "Mage: The Ascension. V20",
     },
     profile,
     attributes,

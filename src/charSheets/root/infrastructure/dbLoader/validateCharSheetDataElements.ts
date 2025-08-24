@@ -61,6 +61,10 @@ export const profileSchema: JSONSchemaType<Profile> = {
     seeming: { type: "string" },
 
     residence: { type: "string" },
+
+    affiliation: { type: "string" },
+    sect: { type: "string" },
+    essence: { type: "string" },
   },
   required: [
     "name",
@@ -84,6 +88,10 @@ export const profileSchema: JSONSchemaType<Profile> = {
     "seeming",
 
     "residence",
+
+    "affiliation",
+    "sect",
+    "essence",
   ],
   additionalProperties: false,
 };

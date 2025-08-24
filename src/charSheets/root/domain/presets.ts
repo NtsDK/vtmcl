@@ -23,6 +23,7 @@ const presetStubs: Record<PresetName, number> = {
   hunter_v20: 0,
   vampire_da_v20: 0,
   vampire_v3_revised: 0,
+  mage_v20: 0,
 };
 
 export const presetList: PresetName[] = [
@@ -31,6 +32,7 @@ export const presetList: PresetName[] = [
   "hunter_v20",
   "vampire_da_v20",
   "vampire_v3_revised",
+  "mage_v20"
 ];
 
 export type ProfileConfigItem =

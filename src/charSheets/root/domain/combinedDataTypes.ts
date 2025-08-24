@@ -33,6 +33,7 @@ import {
   VtM_V3Abilities,
   VtM_V3PresetName,
 } from "../../vtm_v3/domain";
+import { MtAAbilities, MtAPresetName, MtAProfile } from "../../mta/domain";
 
 // Profile
 export interface Profile
@@ -40,7 +41,8 @@ export interface Profile
     CtDProfile,
     HH2Profile,
     VtDAProfile,
-    VtM_V3Profile {}
+    VtM_V3Profile,
+    MtAProfile {}
 
 export interface State
   extends VtMState,
@@ -54,14 +56,16 @@ export interface Abilities
     CtDAbilities,
     HH2Abilities,
     VtDAAbilities,
-    VtM_V3Abilities {}
+    VtM_V3Abilities,
+    MtAAbilities {}
 
 export type PresetName =
   | VtMPresetName
   | CtDPresetName
   | HH2PresetName
   | VtDAPresetName
-  | VtM_V3PresetName;
+  | VtM_V3PresetName
+  | MtAPresetName;
 
 export type FreebiePointName =
   | CommonFreebiePointName
