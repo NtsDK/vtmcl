@@ -34,6 +34,7 @@ export const presetSchema: JSONSchemaType<PresetName> = {
     "hunter_v20",
     "vampire_da_v20",
     "vampire_v3_revised",
+    "mage_v20",
   ],
 };
 

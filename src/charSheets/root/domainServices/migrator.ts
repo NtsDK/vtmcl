@@ -160,5 +160,18 @@ export function migrate(charSheetSrc: any): unknown {
   if (charSheet.Version === "0.6.0") {
     charSheet.Version = "0.6.1";
   }
+  if (charSheet.Version === "0.6.1") {
+    charSheet.Version = "0.7.0";
+    charSheet.Charsheet.abilities.art = 0;
+    charSheet.Charsheet.abilities.martialArts = 0;
+    charSheet.Charsheet.abilities.meditation = 0;
+    charSheet.Charsheet.abilities.research = 0;
+    charSheet.Charsheet.abilities.cosmology = 0;
+    charSheet.Charsheet.abilities.enigmas = 0;
+    charSheet.Charsheet.abilities.esoterica = 0;
+    charSheet.Charsheet.profile.essence = "";
+    charSheet.Charsheet.profile.affiliation = "";
+    charSheet.Charsheet.profile.sect = "";
+  }
   return charSheet;
 }
