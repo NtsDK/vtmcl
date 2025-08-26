@@ -19,6 +19,7 @@ import { Arts, Realms } from "../../ctd/domain";
 import { Settings, Version } from "../../misc/domain";
 import { Disciplines, DisciplinePaths, Rituals } from "../../vtm/domain";
 import { NuminaAndOtherTraits } from "../../hh2/domain";
+import { Spheres } from "../../mta/domain";
 
 import { Profile, State, Abilities, PresetName } from "./combinedDataTypes";
 
@@ -62,4 +63,7 @@ export interface CharSheet {
 
   // hh2
   numinaAndOtherTraits: NuminaAndOtherTraits;
+
+  // mta
+  spheres: Spheres;
 }

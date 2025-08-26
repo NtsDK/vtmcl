@@ -1,4 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
+
 import { CharSheetData } from "./types";
 import {
   attributesSchema,
@@ -24,6 +25,7 @@ import {
   characterImageSchema,
   possessionsSchema,
   numinaAndOtherTraitsSchema,
+  spheresSchema,
 } from "./validateCharSheetDataElements";
 import { abilitiesSchema, abilitiesExtensionSchema } from "./abilitiesSchema";
 
@@ -56,6 +58,7 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     arts: artsSchema,
     realms: realmsSchema,
     numinaAndOtherTraits: numinaAndOtherTraitsSchema,
+    spheres: spheresSchema,
   },
   required: [
     "preset",
@@ -84,6 +87,7 @@ export const charSheetDataSchema: JSONSchemaType<CharSheetData> = {
     "alliesAndContacts",
     "possessions",
     "numinaAndOtherTraits",
+    "spheres",
   ],
   additionalProperties: false,
 };

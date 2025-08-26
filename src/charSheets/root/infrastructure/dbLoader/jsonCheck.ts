@@ -1,6 +1,7 @@
-import { CharSheetInJson } from "./types";
 import { CURRENT_VERSION } from "../../../../constants";
 import { defaultBackgroundUrl } from "../../../misc/services/initialValues";
+
+import { CharSheetInJson } from "./types";
 
 export const m: CharSheetInJson = {
   Version: CURRENT_VERSION,
@@ -152,6 +153,11 @@ export const m: CharSheetInJson = {
       roadName: "",
       auraName: "",
       auraModifier: "",
+
+      // mta
+      arete: 0,
+      quintessence: 0,
+      paradox: 0,
     },
     health: {
       bruised: 0,
@@ -188,6 +194,17 @@ export const m: CharSheetInJson = {
       time: 0,
     },
     numinaAndOtherTraits: [],
+    spheres: {
+      correspondence: 0,
+      entropy: 0,
+      forces: 0,
+      life: 0,
+      matter: 0,
+      mind: 0,
+      prime: 0,
+      spirit: 0,
+      time: 0,
+    },
   },
   Settings: {
     backgroundColor: "#ababab",

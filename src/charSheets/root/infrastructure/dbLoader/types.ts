@@ -1,6 +1,7 @@
 import { Arts, Realms } from "../../../ctd/domain";
 import { NuminaAndOtherTraits } from "../../../hh2/domain";
 import { Settings, Version } from "../../../misc/domain";
+import { Spheres } from "../../../mta/domain";
 import { Disciplines, DisciplinePaths, Rituals } from "../../../vtm/domain";
 import {
   Profile,
@@ -51,6 +52,7 @@ export interface CharSheetData {
   arts: Arts;
   realms: Realms;
   numinaAndOtherTraits: NuminaAndOtherTraits;
+  spheres: Spheres;
 }
 
 export interface CharSheetInJson {

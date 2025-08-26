@@ -172,6 +172,20 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.profile.essence = "";
     charSheet.Charsheet.profile.affiliation = "";
     charSheet.Charsheet.profile.sect = "";
+    charSheet.Charsheet.state.arete = 0;
+    charSheet.Charsheet.state.quintessence = 0;
+    charSheet.Charsheet.state.paradox = 0;
+    charSheet.Charsheet.spheres = {
+      correspondence: 0,
+      entropy: 0,
+      forces: 0,
+      life: 0,
+      matter: 0,
+      mind: 0,
+      prime: 0,
+      spirit: 0,
+      time: 0,
+    };
   }
   return charSheet;
 }

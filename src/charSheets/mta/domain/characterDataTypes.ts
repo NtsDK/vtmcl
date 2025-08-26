@@ -1,5 +1,4 @@
-import { CommonProfile } from "../../generic/domain";
-// import { VtMProfile, VtMState } from "../../vtm/domain";
+import { CommonProfile, CommonState } from "../../generic/domain";
 
 export interface MtAProfile extends CommonProfile {
   age: string;
@@ -12,10 +11,20 @@ export interface MtAProfile extends CommonProfile {
   sect: string;
 }
 
-// export interface VtDAState extends VtMState {
-//   // road
-//   roadValue: number;
-//   roadName: string;
-//   auraName: string;
-//   auraModifier: string;
-// }
+export interface MtAState extends CommonState {
+  arete: number;
+  quintessence: number;
+  paradox: number;
+}
+
+export interface Spheres {
+  correspondence: number;
+  entropy: number;
+  forces: number;
+  life: number;
+  matter: number;
+  mind: number;
+  prime: number;
+  spirit: number;
+  time: number;
+}

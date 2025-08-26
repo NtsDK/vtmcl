@@ -15,6 +15,7 @@ import {
   PresetName,
   Virtues,
 } from "../../domain";
+import { Spheres } from "../../../mta/domain";
 
 export const notesSchema: JSONSchemaType<Notes> = {
   type: "string",
@@ -204,6 +205,10 @@ export const stateSchema: JSONSchemaType<State> = {
     nightmare: { type: "number" },
 
     faith: { type: "number" },
+
+    arete: { type: "number" },
+    quintessence: { type: "number" },
+    paradox: { type: "number" },
   },
   required: [
     "humanity",
@@ -229,6 +234,9 @@ export const stateSchema: JSONSchemaType<State> = {
     "banalityPool",
     "nightmare",
     "faith",
+    "arete",
+    "quintessence",
+    "paradox",
   ],
   additionalProperties: false,
 };
@@ -275,3 +283,30 @@ const stringArraySchema: JSONSchemaType<Flaws & Merits> = {
 
 export const meritsSchema = stringArraySchema;
 export const flawsSchema = stringArraySchema;
+
+export const spheresSchema: JSONSchemaType<Spheres> = {
+  type: "object",
+  properties: {
+    correspondence: { type: "number" },
+    entropy: { type: "number" },
+    forces: { type: "number" },
+    life: { type: "number" },
+    matter: { type: "number" },
+    mind: { type: "number" },
+    prime: { type: "number" },
+    spirit: { type: "number" },
+    time: { type: "number" },
+  },
+  required: [
+    "correspondence",
+    "entropy",
+    "forces",
+    "life",
+    "matter",
+    "mind",
+    "prime",
+    "spirit",
+    "time",
+  ],
+  additionalProperties: false,
+};

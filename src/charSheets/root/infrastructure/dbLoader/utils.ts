@@ -1,4 +1,5 @@
 import * as R from "ramda";
+
 import { CharSheet } from "../../domain/charSheet";
 
 import { CharSheetInJson } from "./types";
@@ -36,6 +37,7 @@ export function charSheetToJson(charSheet: CharSheet): CharSheetInJson {
       alliesAndContacts: charSheet.alliesAndContacts,
       possessions: charSheet.possessions,
       numinaAndOtherTraits: charSheet.numinaAndOtherTraits,
+      spheres: charSheet.spheres,
     },
   };
 }
@@ -71,5 +73,6 @@ export function charSheetFromJson(charSheetInJson: CharSheetInJson): CharSheet {
     alliesAndContacts: charSheetInJson.Charsheet.alliesAndContacts,
     possessions: charSheetInJson.Charsheet.possessions,
     numinaAndOtherTraits: charSheetInJson.Charsheet.numinaAndOtherTraits,
+    spheres: charSheetInJson.Charsheet.spheres,
   };
 }

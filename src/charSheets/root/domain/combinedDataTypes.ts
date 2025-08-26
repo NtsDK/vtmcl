@@ -33,7 +33,7 @@ import {
   VtM_V3Abilities,
   VtM_V3PresetName,
 } from "../../vtm_v3/domain";
-import { MtAAbilities, MtAPresetName, MtAProfile } from "../../mta/domain";
+import { MtAAbilities, MtAPresetName, MtAProfile, MtAState } from "../../mta/domain";
 
 // Profile
 export interface Profile
@@ -49,7 +49,8 @@ export interface State
     CtDState,
     HH2State,
     VtDAState,
-    VtM_V3State {}
+    VtM_V3State,
+    MtAState {}
 
 export interface Abilities
   extends VtMAbilities,
