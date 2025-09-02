@@ -4,10 +4,9 @@ import classnames from "classnames";
 
 import { Subheader } from "../../uiPrimitives/Subheader";
 import { RangeInput2 } from "../../uiPrimitives/RangeInput2";
-
-import "./AttributeSection.css";
 import { Attributes, AttributesConfig, Limits } from "../../../root/domain";
 import { AttributesService } from "../../application/ports";
+import "./AttributeSection.css";
 
 interface AttributeSectionProps extends AttributesService {
   limits: Limits;
@@ -16,7 +15,7 @@ interface AttributeSectionProps extends AttributesService {
 }
 
 export const AttributeSection = memo(function AttributeSection(
-  props: AttributeSectionProps
+  props: AttributeSectionProps,
 ) {
   const { t } = useTranslation();
   const { className, attributes, setAttribute, limits, attributesConfig } =
@@ -26,7 +25,7 @@ export const AttributeSection = memo(function AttributeSection(
     function setValue(value: number, attribute: keyof Attributes) {
       setAttribute(attribute, value);
     },
-    [setAttribute]
+    [setAttribute],
   );
 
   return (

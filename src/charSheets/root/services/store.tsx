@@ -27,6 +27,8 @@ import { vtmActions } from "../../vtm/services/actions";
 import { ctdActions } from "../../ctd/services/actions";
 import { hh2Actions } from "../../hh2/services/actions";
 import { CombinedHH2Service } from "../../hh2/application/ports";
+import { CombinedMtAService } from "../../mta/application/ports";
+import { mtaActions } from "../../mta/services/actions";
 
 import { initialCharSheet } from "./initialValues";
 import { getLimits } from "./getLimits";
@@ -52,6 +54,7 @@ export interface StateStore
     CombinedVtMService,
     CombinedMiscService,
     CombinedHH2Service,
+    CombinedMtAService,
     ErrorDescriptionService {}
 
 // @ts-ignore
@@ -70,7 +73,8 @@ const reducer = new CompositeReducer<CharSheet>()
   .assign(genericActions)
   .assign(vtmActions)
   .assign(ctdActions)
-  .assign(hh2Actions);
+  .assign(hh2Actions)
+  .assign(mtaActions);
 
 export const Provider: React.FC<PropsWithChildren<ProviderProps>> = ({
   children,

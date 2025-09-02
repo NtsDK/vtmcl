@@ -56,4 +56,14 @@ export const advantages = {
   prop: "Prop",
   scene: "Scene",
   time: "Time",
+
+  spheres: "Spheres",
+  correspondence: "Correspondence",
+  entropy: "Entropy",
+  forces: "Forces",
+  life: "Life",
+  matter: "Matter",
+  mind: "Mind",
+  prime: "Prime",
+  spirit: "Spirit",
 };

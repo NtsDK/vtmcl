@@ -27,6 +27,9 @@ import {
 } from "../generic/uiSections";
 import { useLimits } from "../root/services/storageAdapter";
 
+import { SpheresSections } from "./uiSections/SpheresSection";
+import { useSpheres } from "./services/storageAdapter";
+
 // import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 // import { StatusSection } from "./uiSections/StatusSection";
 
@@ -43,14 +46,19 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const possessionsService = usePossessions();
   const appearanceService = useAppearance();
   const notesService = useNotes();
+  const spheresService = useSpheres();
 
   return (
     <>
       <CharSheetBody>
         <CharSheetStarter />
         <SectionHeader className="tw-mb-3">
-          {t("charsheet.advantages.header")}
+          {t("charsheet.advantages.spheres")}
         </SectionHeader>
+        <SpheresSections className="tw-mb-3" {...spheresService} />
+        {/* <SectionHeader className="tw-mb-3">
+          {t("charsheet.advantages.header")}
+        </SectionHeader> */}
         {/* <AdvantagesSection className="tw-mb-3" /> */}
       </CharSheetBody>
       {/* <CharSheetBody>

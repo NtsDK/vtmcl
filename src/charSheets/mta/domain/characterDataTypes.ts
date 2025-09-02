@@ -28,3 +28,5 @@ export interface Spheres {
   spirit: number;
   time: number;
 }
+
+export type SpheresConfig = (keyof Spheres)[][];
