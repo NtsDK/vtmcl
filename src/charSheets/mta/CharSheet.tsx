@@ -30,7 +30,7 @@ import { useLimits } from "../root/services/storageAdapter";
 import { SpheresSections } from "./uiSections/SpheresSection";
 import { useSpheres } from "./services/storageAdapter";
 
-// import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 // import { StatusSection } from "./uiSections/StatusSection";
 
 interface CharSheetProps {}
@@ -56,10 +56,10 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           {t("charsheet.advantages.spheres")}
         </SectionHeader>
         <SpheresSections className="tw-mb-3" {...spheresService} />
-        {/* <SectionHeader className="tw-mb-3">
+        <SectionHeader className="tw-mb-3">
           {t("charsheet.advantages.header")}
-        </SectionHeader> */}
-        {/* <AdvantagesSection className="tw-mb-3" /> */}
+        </SectionHeader>
+        <AdvantagesSection className="tw-mb-3" />
       </CharSheetBody>
       {/* <CharSheetBody>
         <SectionHeader className="tw-mb-3">
