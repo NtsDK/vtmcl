@@ -64,4 +64,8 @@ export const status = {
   banality: "Banality",
   "banality-rating": "Banality rating",
   "banality-pool": "Banality pool",
+
+  arete: "Arete",
+  paradox : "Paradox",
+  quintessence: "Quintessence",
 };

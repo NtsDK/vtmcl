@@ -145,11 +145,18 @@ export const genericActions: ServiceToActions<CombinedGenericService> = {
   ): CharSheet {
     const limits = getLimits(state);
     if (typeof value === "number") {
+      let max = 10;
+      if (stateName === "bloodpool") {
+        max = limits.bloodpool;
+      }
+      if (stateName === "paradox" || stateName === "quintessence") {
+        max = 20;
+      }
       return mutateObj(state, "state", {
         ...state.state,
         [stateName]: applyRange(
           0,
-          stateName === "bloodpool" ? limits.bloodpool : 10,
+          max,
           value
         ),
       });

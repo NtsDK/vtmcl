@@ -18,6 +18,9 @@ import {
   useStatus,
   useHealth,
 } from "../../../generic/services/storageAdapter";
+import { AreteSection } from "../AreteSection";
+import { QuintessenceSection } from "../QuintessenceSection";
+import { ParadoxSection } from "../ParadoxSection";
 // import { useDropdownOptions } from "../../dropdownContent";
 
 interface AdvantagesSectionProps {
@@ -57,10 +60,23 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         <OtherTraitsSection limits={limits} {...otherTraitsService} />
       </div>
       <div className="tw-flex-1">
+        <Subheader id="arete.header" className="tw-mb-2">
+          {t("charsheet.status.arete")}
+        </Subheader>
+        <AreteSection {...statusService} />
         <Subheader className="tw-mb-2 tw-mt-2">
           {t("charsheet.status.willpower")}
         </Subheader>
         <WillSection className="tw-mb-4 print:tw-mb-2" {...statusService} />
+
+        <Subheader id="quintessence.header" className="tw-mb-2">
+          {t("charsheet.status.quintessence")}
+        </Subheader>
+        <QuintessenceSection {...statusService} />
+        <Subheader id="paradox.header" className="tw-mb-2">
+          {t("charsheet.status.paradox")}
+        </Subheader>
+        <ParadoxSection {...statusService} />
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2">

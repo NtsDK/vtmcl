@@ -1,0 +1,1 @@
+export { ParadoxSection } from "./ParadoxSection";
