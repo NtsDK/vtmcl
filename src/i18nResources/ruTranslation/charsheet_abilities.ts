@@ -58,10 +58,10 @@ export const abilities = {
   seneschal: "Распорядительство",
   theology: "Теология",
 
-  art: "Art",
-  martialArts: "Martial Arts",
-  meditation: "Meditation",
-  research: "Research",
-  cosmology: "Cosmology",
-  esoterica: "Esoterica",
+  art: "Искусство",
+  martialArts: "Боевые искусства",
+  meditation: "Медитация",
+  research: "Исследование",
+  cosmology: "Космология",
+  esoterica: "Эзотерика",
 };

@@ -65,7 +65,7 @@ export const status = {
   "banality-rating": "Значение банальности",
   "banality-pool": "Запас банальности",
 
-  arete: "Arete",
-  paradox : "Paradox",
-  quintessence: "Quintessence",
+  arete: "Арете",
+  paradox : "Парадокс",
+  quintessence: "Квинтэссенция",
 };
