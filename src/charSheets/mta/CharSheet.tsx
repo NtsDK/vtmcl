@@ -5,6 +5,7 @@ import {
   useAlliesAndContacts,
   useAppearance,
   useCharHistory,
+  useMeritsNFlaws,
   useNotes,
   useOtherTraits,
   usePossessions,
@@ -24,12 +25,13 @@ import {
   AppearanceDescriptionSection,
   NotesSection,
   CharSheetStarter,
+  MeritsSection,
+  FlawsSection,
 } from "../generic/uiSections";
 import { useLimits } from "../root/services/storageAdapter";
 
 import { SpheresSections } from "./uiSections/SpheresSection";
 import { useSpheres } from "./services/storageAdapter";
-
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
 // import { StatusSection } from "./uiSections/StatusSection";
 
@@ -47,6 +49,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const appearanceService = useAppearance();
   const notesService = useNotes();
   const spheresService = useSpheres();
+  const meritsNFlawsService = useMeritsNFlaws();
 
   return (
     <>
@@ -61,18 +64,23 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
         </SectionHeader>
         <AdvantagesSection className="tw-mb-3" />
       </CharSheetBody>
-      {/* <CharSheetBody>
-        <SectionHeader className="tw-mb-3">
-          {t("charsheet.status.header")}
-        </SectionHeader>
-        <StatusSection className="tw-mb-3" />
-
+      <CharSheetBody>
         <div className="tw-flex tw-gap-x-4 tw-mb-6">
           <div className="tw-flex-1">
-            <SectionHeader className="tw-mb-3">
-              {t("charsheet.advantages.otherTraits")}
-            </SectionHeader>
-            <OtherTraitsSection limits={limits} {...otherTraitsService} />
+            <Subheader className="tw-mb-2">
+              {t("charsheet.status.merits")}
+            </Subheader>
+            <MeritsSection
+              className="tw-mb-4"
+              {...meritsNFlawsService}
+              // meritOptions={meritOptions}
+            />
+            <Subheader className="tw-mb-2">
+              {t("charsheet.status.flaws")}
+            </Subheader>
+            <FlawsSection {...meritsNFlawsService}
+            // flawOptions={flawOptions}
+            />
           </div>
 
           <div className="tw-flex-1" style={{ flexGrow: 2 }}>
@@ -122,7 +130,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
           {t("charsheet.notes")}
         </SectionHeader>
         <NotesSection {...notesService} />
-      </CharSheetBody> */}
+      </CharSheetBody>
     </>
   );
 }
