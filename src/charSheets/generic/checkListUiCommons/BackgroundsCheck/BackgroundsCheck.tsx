@@ -11,16 +11,17 @@ import {
 import { useBackgrounds } from "../../services/storageAdapter";
 
 interface BackgroundsCheckProps {
+  expectedBackgroundDots?: number;
   className?: string;
 }
 
 export function BackgroundsCheck(props: BackgroundsCheckProps): JSX.Element {
-  const { className } = props;
+  const { className, expectedBackgroundDots } = props;
   const { t } = useTranslation();
 
   const { backgrounds } = useBackgrounds();
   const backgroundsFilled = useMemo(() => {
-    return checkBackgrounds(backgrounds, EXPECTED_BACKGROUND_DOTS);
+    return checkBackgrounds(backgrounds, expectedBackgroundDots || EXPECTED_BACKGROUND_DOTS);
   }, [backgrounds]);
 
   return (
@@ -29,7 +30,7 @@ export function BackgroundsCheck(props: BackgroundsCheckProps): JSX.Element {
       checked={backgroundsFilled.checked}
       text={t("checklist.background-dots", {
         value: backgroundsFilled.value,
-        expected: EXPECTED_BACKGROUND_DOTS,
+        expected: expectedBackgroundDots || EXPECTED_BACKGROUND_DOTS,
       })}
     />
   );

@@ -8,23 +8,24 @@ import { profileConfig } from "./presetSettings/profileConfig";
 
 export * from "./CharSheet";
 import { CharSheet } from "./CharSheet";
+import { CheckList } from "./checkListUi";
 
 export const MtA: Preset = {
-    displayName: "MtA V20",
-    profileConfig,
-    attributesConfig,
-    abilitiesConfig,
+  displayName: "MtA V20",
+  profileConfig,
+  attributesConfig,
+  abilitiesConfig,
 
-    CharSheet
+  CharSheet,
 
-    //   freebiePointsConfig?: FreebiePointsConfig;
-    //   dropdownOptions?: DropdownOptions;
+  //   freebiePointsConfig?: FreebiePointsConfig;
+  //   dropdownOptions?: DropdownOptions;
 
-    //   CheckList?: (props: {}) => JSX.Element;
-    //   translateDropdownOptions?: (
-    //     store: StateStore,
-    //     prevLanguage: string,
-    //     lng: string,
-    //   ) => void;
-    //   getDropdownOptions?(language: string): DropdownOptions;
-}
+  CheckList,
+  //   translateDropdownOptions?: (
+  //     store: StateStore,
+  //     prevLanguage: string,
+  //     lng: string,
+  //   ) => void;
+  //   getDropdownOptions?(language: string): DropdownOptions;
+};
