@@ -18,8 +18,19 @@ export const checklist = {
   // changeling
   "art-dots": "{{expected}} art dots (fact\xa0{{value}})",
   "realm-dots": "{{expected}} realm dots (fact\xa0{{value}})",
-  "c20-willpower-dots":
+  "ctd-willpower-dots":
     "Will power = 4 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
   "glamour-dots": "Glamour = 4 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
   "banality-dots": "Banality = 3 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
+  // mage
+  "sphere-dots": "{{expected}} sphere dots (fact\xa0{{value}})",
+  "sphere-dot-limit": "Not more than Arete ({{expected}}) dots per sphere",
+  "mta-willpower-dots":
+    "Will power = 5 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
+  "arete-dots":
+    "Arete = 1 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
+  "paradox-dots":
+    "Paradox = 1 (fact\xa0{{value}}\xa0=\xa0{{expected}})",
+  "quintessence-dots":
+    "Quintessence = Avatar (fact\xa0{{value}}\xa0=\xa0{{expected}})",
 };

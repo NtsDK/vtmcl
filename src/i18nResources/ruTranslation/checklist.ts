@@ -19,8 +19,19 @@ export const checklist = {
   // changeling
   "art-dots": "{{expected}} точки в искусствах (факт\xa0{{value}})",
   "realm-dots": "{{expected}} точки в королевствах (факт\xa0{{value}})",
-  "c20-willpower-dots":
+  "ctd-willpower-dots":
     "Сила воли = 4 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "glamour-dots": "Глэмор = 4 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
   "banality-dots": "Банальность = 3 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+  // mage
+  "sphere-dots": "{{expected}} точек в сферах (факт\xa0{{value}})",
+  "sphere-dot-limit": "Не больше Арете ({{expected}}) точек на сферу",
+  "mta-willpower-dots":
+    "Сила воли = 5 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+  "arete-dots":
+    "Арете = 1 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+  "paradox-dots":
+    "Парадокс = 1 (факт\xa0{{value}}\xa0=\xa0{{expected}})",
+  "quintessence-dots":
+    "Квинтэссенция = Аватар (факт\xa0{{value}}\xa0=\xa0{{expected}})",
 };

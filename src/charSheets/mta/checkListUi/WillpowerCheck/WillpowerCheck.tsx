@@ -5,7 +5,7 @@ import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
 import {
-  checkChangelingWillpower,
+  checkMageWillpower,
   EXPECTED_WILLPOWER_DOTS,
 } from "../../checkListLogic";
 import { useStatus } from "../../../generic/services/storageAdapter";
@@ -14,6 +14,7 @@ interface WillpowerCheckProps {
   className?: string;
 }
 
+// в целом дублирует WillpowerCheck из ctd
 export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
@@ -23,8 +24,8 @@ export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
   return (
     <CheckListItem
       className={classnames("WillpowerCheck", className)}
-      checked={checkChangelingWillpower(state)}
-      text={t("checklist.ctd-willpower-dots", {
+      checked={checkMageWillpower(state)}
+      text={t("checklist.mta-willpower-dots", {
         value: state.willpowerRating,
         expected: EXPECTED_WILLPOWER_DOTS,
       })}

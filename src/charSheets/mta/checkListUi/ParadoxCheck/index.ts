@@ -1,0 +1,1 @@
+export { ParadoxCheck } from "./ParadoxCheck";

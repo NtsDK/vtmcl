@@ -32,16 +32,16 @@ describe("Changeling character checks", () => {
     });
   });
   describe("checkGlamour", () => {
-    it("Banality = 0 - invalid", () => {
+    it("Glamour = 0 - invalid", () => {
       const state = R.clone(initialCtDState);
       expect(checkGlamour(state)).toStrictEqual(false);
     });
-    it("Banality = 4 - valid", () => {
+    it("Glamour = 4 - valid", () => {
       const state = R.clone(initialCtDState);
       state.glamourRating = 4;
       expect(checkGlamour(state)).toStrictEqual(true);
     });
-    it("Banality = 5 - invalid", () => {
+    it("Glamour = 5 - invalid", () => {
       const state = R.clone(initialCtDState);
       state.glamourRating = 5;
       expect(checkGlamour(state)).toStrictEqual(false);
@@ -107,7 +107,7 @@ describe("Changeling character checks", () => {
         checked: false,
       });
     });
-    it("Small discipline points - invalid", () => {
+    it("Small arts points - invalid", () => {
       const arts = R.clone(initialArts);
       arts.push(
         {
@@ -124,7 +124,7 @@ describe("Changeling character checks", () => {
         checked: false,
       });
     });
-    it("Enough discipline points - valid", () => {
+    it("Enough arts points - valid", () => {
       const arts = R.clone(initialArts);
       arts.push(
         {
@@ -141,7 +141,7 @@ describe("Changeling character checks", () => {
         checked: true,
       });
     });
-    it("Too many discipline points - invalid", () => {
+    it("Too many arts points - invalid", () => {
       const arts = R.clone(initialArts);
       arts.push(
         {

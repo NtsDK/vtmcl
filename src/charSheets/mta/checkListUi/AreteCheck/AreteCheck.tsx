@@ -5,16 +5,16 @@ import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
 import {
-  checkChangelingWillpower,
-  EXPECTED_WILLPOWER_DOTS,
+  checkArete,
+  EXPECTED_ARETE_DOTS,
 } from "../../checkListLogic";
 import { useStatus } from "../../../generic/services/storageAdapter";
 
-interface WillpowerCheckProps {
+interface AreteCheckProps {
   className?: string;
 }
 
-export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
+export function AreteCheck(props: AreteCheckProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
@@ -22,13 +22,13 @@ export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
 
   return (
     <CheckListItem
-      className={classnames("WillpowerCheck", className)}
-      checked={checkChangelingWillpower(state)}
-      text={t("checklist.ctd-willpower-dots", {
-        value: state.willpowerRating,
-        expected: EXPECTED_WILLPOWER_DOTS,
+      className={classnames("AreteCheck", className)}
+      checked={checkArete(state)}
+      text={t("checklist.arete-dots", {
+        value: state.arete,
+        expected: EXPECTED_ARETE_DOTS,
       })}
-      onFix={() => setState("willpowerRating", EXPECTED_WILLPOWER_DOTS)}
+      onFix={() => setState("arete", EXPECTED_ARETE_DOTS)}
     />
   );
 }

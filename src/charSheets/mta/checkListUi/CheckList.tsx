@@ -5,14 +5,16 @@ import {
   AbilitiesDotLimitCheck,
   AttributesCheck,
   BackgroundsCheck,
-  VirtuesCheck,
 } from "../../generic/checkList";
-import { DisciplinesCheck } from "../../vtm/checkListUi/DisciplinesCheck";
-// import { EXPECTED_DISCIPLINE_DOTS } from "../checkListLogic";
-import { WillpowerCheck } from "../../vtm/checkListUi/WillpowerCheck";
-import { BloodpoolCheck } from "../../vtm/checkListUi/BloodpoolCheck";
+
+import { SpheresCheck } from "./SpheresCheck";
+import { WillpowerCheck } from "./WillpowerCheck";
+import { AreteCheck } from "./AreteCheck";
+import { ParadoxCheck } from "./ParadoxCheck";
 
 interface CheckListProps {}
+
+// quintessence, sphere limit
 
 export function CheckList(props: CheckListProps): JSX.Element {
   return (
@@ -21,10 +23,10 @@ export function CheckList(props: CheckListProps): JSX.Element {
       <AbilitiesCheck className="tw-mx-5 tw-my-3" />
       <AbilitiesDotLimitCheck className="tw-mx-5 tw-my-3" />
       <BackgroundsCheck className="tw-mx-5 tw-my-3"  expectedBackgroundDots={7}/>
-      {/* <VirtuesCheck className="tw-mx-5 tw-my-3" />
-      <RoadCheck className="tw-mx-5 tw-my-3" />
+      <SpheresCheck className="tw-mx-5 tw-my-3" />
+      <AreteCheck className="tw-mx-5 tw-my-3" />
+      <ParadoxCheck className="tw-mx-5 tw-my-3" />
       <WillpowerCheck className="tw-mx-5 tw-my-3" />
-      <BloodpoolCheck className="tw-mx-5 tw-my-3" /> */}
     </ul>
   );
 }

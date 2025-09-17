@@ -5,16 +5,16 @@ import classnames from "classnames";
 
 import { CheckListItem } from "../../../generic/checkList";
 import {
-  checkChangelingWillpower,
-  EXPECTED_WILLPOWER_DOTS,
+  checkParadox,
+  EXPECTED_PARADOX_DOTS,
 } from "../../checkListLogic";
 import { useStatus } from "../../../generic/services/storageAdapter";
 
-interface WillpowerCheckProps {
+interface ParadoxCheckProps {
   className?: string;
 }
 
-export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
+export function ParadoxCheck(props: ParadoxCheckProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
 
@@ -22,13 +22,13 @@ export function WillpowerCheck(props: WillpowerCheckProps): JSX.Element {
 
   return (
     <CheckListItem
-      className={classnames("WillpowerCheck", className)}
-      checked={checkChangelingWillpower(state)}
-      text={t("checklist.ctd-willpower-dots", {
-        value: state.willpowerRating,
-        expected: EXPECTED_WILLPOWER_DOTS,
+      className={classnames("ParadoxCheck", className)}
+      checked={checkParadox(state)}
+      text={t("checklist.paradox-dots", {
+        value: state.paradox,
+        expected: EXPECTED_PARADOX_DOTS,
       })}
-      onFix={() => setState("willpowerRating", EXPECTED_WILLPOWER_DOTS)}
+      onFix={() => setState("paradox", EXPECTED_PARADOX_DOTS)}
     />
   );
 }
