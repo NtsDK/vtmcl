@@ -10,6 +10,7 @@ import {
   checkMageWillpower,
   checkParadox,
   checkSpheres,
+  checkSpheresDotLimit
 } from "./index";
 
 describe("Mage character checks", () => {
@@ -56,10 +57,32 @@ describe("Mage character checks", () => {
       expect(checkParadox(state)).toStrictEqual(false);
     });
   });
+  describe("checkSpheresDotLimit", () => {
+    it("Spheres less than Arete - valid", () => {
+      const spheres = R.clone(initialSpheres);
+      const state = R.clone(initialMtAState);
+      state.arete = 1;
+      expect(checkSpheresDotLimit(spheres, state)).toStrictEqual(true);
+    });
+    it("Spheres equal to Arete - valid", () => {
+      const spheres = R.clone(initialSpheres);
+      spheres.correspondence = 1;
+      const state = R.clone(initialMtAState);
+      state.arete = 1;
+      expect(checkSpheresDotLimit(spheres, state)).toStrictEqual(true);
+    });
+    it("Spheres greater than Arete - invalid", () => {
+      const spheres = R.clone(initialSpheres);
+      spheres.correspondence = 2;
+      const state = R.clone(initialMtAState);
+      state.arete = 1;
+      expect(checkSpheresDotLimit(spheres, state)).toStrictEqual(false);
+    });
+  });
   describe("checkSpheres", () => {
     it("Spheres zero - invalid", () => {
-      const arts = R.clone(initialSpheres);
-      expect(checkSpheres(arts)).toStrictEqual({
+      const spheres = R.clone(initialSpheres);
+      expect(checkSpheres(spheres)).toStrictEqual({
         value: 0,
         checked: false,
       });

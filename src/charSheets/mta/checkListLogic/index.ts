@@ -26,3 +26,10 @@ export function checkArete(state: MtAState): boolean {
 export function checkParadox(state: MtAState): boolean {
   return state.paradox === EXPECTED_PARADOX_DOTS;
 }
+
+export function checkSpheresDotLimit(
+  spheres: Spheres,
+  state: MtAState
+): boolean {
+  return R.values(spheres).every((el) => el <= state.arete);
+}
