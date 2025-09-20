@@ -21,7 +21,7 @@ import {
 import { AreteSection } from "../AreteSection";
 import { QuintessenceSection } from "../QuintessenceSection";
 import { ParadoxSection } from "../ParadoxSection";
-// import { useDropdownOptions } from "../../dropdownContent";
+import { useMtADropdownOptions } from "../../dropdownContent";
 
 interface AdvantagesSectionProps {
   className?: string;
@@ -39,7 +39,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const statusService = useStatus();
   const healthService = useHealth();
 
-  // const { backgroundOptions, numinaOptions } = useDropdownOptions();
+  const { backgroundOptions } = useMtADropdownOptions();
 
   return (
     <div
@@ -51,7 +51,7 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         </Subheader>
         <BackgroundsSection
           limits={limits}
-          // backgroundOptions={backgroundOptions}
+          backgroundOptions={backgroundOptions}
           {...backgroundsService}
         />
         <Subheader className="tw-mb-2">

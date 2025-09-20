@@ -5,10 +5,12 @@ import { Preset } from "../types";
 import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
 import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
-
-export * from "./CharSheet";
 import { CharSheet } from "./CharSheet";
 import { CheckList } from "./checkListUi";
+import { getDropdownOptions } from "./dropdownContent";
+import { translateDropdownOptions } from "./dropdownContent/translateDropdownOptions";
+
+export * from "./CharSheet";
 
 export const MtA: Preset = {
   displayName: "MtA V20",
@@ -18,13 +20,7 @@ export const MtA: Preset = {
 
   CharSheet,
   freebiePointsConfig,
-  //   dropdownOptions?: DropdownOptions;
-
+  getDropdownOptions,
+  translateDropdownOptions,
   CheckList,
-  //   translateDropdownOptions?: (
-  //     store: StateStore,
-  //     prevLanguage: string,
-  //     lng: string,
-  //   ) => void;
-  //   getDropdownOptions?(language: string): DropdownOptions;
 };

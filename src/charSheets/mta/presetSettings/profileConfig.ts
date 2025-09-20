@@ -5,18 +5,27 @@ export const profileConfig: ProfileConfig = [
   [
     {
       name: "nature",
-      //   optionsName: "archetypeOptions",
+      optionsName: "archetypeOptions",
     },
     {
       name: "demeanor",
-      //   optionsName: "archetypeOptions",
+      optionsName: "archetypeOptions",
     },
     {
       name: "concept",
-      //   optionsName: "conceptOptions",
+      optionsName: "conceptOptions",
     },
-    "essence",
-    "affiliation",
-    "sect",
+    {
+      name: "essence",
+      optionsName: "essenceOptions",
+    },
+    {
+      name: "affiliation",
+      optionsName: "factionOptions",
+    },
+    {
+      name: "sect",
+      optionsName: "sectOptions",
+    },
   ],
 ];
