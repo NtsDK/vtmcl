@@ -31,4 +31,9 @@ export const freebiePoints = {
 
   // vtda
   road: "Road ({{cost}})",
+
+  // mta
+  spheres: "Spheres ({{cost}})",
+  arete: "Arete (Макс. 3) ({{cost}})",
+  quintessence: "Quintessence ({{cost}})",
 };

@@ -33,7 +33,13 @@ import {
   VtM_V3Abilities,
   VtM_V3PresetName,
 } from "../../vtm_v3/domain";
-import { MtAAbilities, MtAPresetName, MtAProfile, MtAState } from "../../mta/domain";
+import {
+  MtAAbilities,
+  MtAFreebiePointName,
+  MtAPresetName,
+  MtAProfile,
+  MtAState,
+} from "../../mta/domain";
 
 // Profile
 export interface Profile
@@ -73,4 +79,5 @@ export type FreebiePointName =
   | VtMFreebiePointName
   | CtDFreebiePointName
   | HH2FreebiePointName
-  | VtDAFreebiePointName;
+  | VtDAFreebiePointName
+  | MtAFreebiePointName;

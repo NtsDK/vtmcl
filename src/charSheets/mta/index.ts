@@ -3,7 +3,7 @@ import { Preset } from "../types";
 
 // import { CheckList } from "./checkListUi";
 import { abilitiesConfig } from "./presetSettings/abilitiesConfig";
-// import { freebiePointsConfig } from "./presetSettings/freebiePoints";
+import { freebiePointsConfig } from "./presetSettings/freebiePoints";
 import { profileConfig } from "./presetSettings/profileConfig";
 
 export * from "./CharSheet";
@@ -17,8 +17,7 @@ export const MtA: Preset = {
   abilitiesConfig,
 
   CharSheet,
-
-  //   freebiePointsConfig?: FreebiePointsConfig;
+  freebiePointsConfig,
   //   dropdownOptions?: DropdownOptions;
 
   CheckList,
