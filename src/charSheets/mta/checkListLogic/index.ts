@@ -51,7 +51,9 @@ export function checkQuintessence(
 
 function getAvatarBackgroundValue(backgrounds: Backgrounds): number {
   const value = backgrounds.find(
-    (b) => b.name === "Avatar" || b.name === "Аватар",
+    (b) =>
+      b.name.toLowerCase().includes("avatar") ||
+      b.name.toLowerCase().includes("аватар"),
   )?.value;
   return value ?? 0;
 }
