@@ -12,10 +12,9 @@ import { WillpowerCheck } from "./WillpowerCheck";
 import { AreteCheck } from "./AreteCheck";
 import { ParadoxCheck } from "./ParadoxCheck";
 import { SpheresDotLimitCheck } from "./SpheresDotLimitCheck";
+import { QuintessenceCheck } from "./QuintessenceCheck";
 
 interface CheckListProps {}
-
-// quintessence
 
 export function CheckList(props: CheckListProps): JSX.Element {
   return (
@@ -23,7 +22,11 @@ export function CheckList(props: CheckListProps): JSX.Element {
       <AttributesCheck className="tw-mx-5 tw-my-3" />
       <AbilitiesCheck className="tw-mx-5 tw-my-3" />
       <AbilitiesDotLimitCheck className="tw-mx-5 tw-my-3" />
-      <BackgroundsCheck className="tw-mx-5 tw-my-3"  expectedBackgroundDots={7}/>
+      <BackgroundsCheck
+        className="tw-mx-5 tw-my-3"
+        expectedBackgroundDots={7}
+      />
+      <QuintessenceCheck className="tw-mx-5 tw-my-3" />
       <SpheresCheck className="tw-mx-5 tw-my-3" />
       <SpheresDotLimitCheck className="tw-mx-5 tw-my-3" />
       <AreteCheck className="tw-mx-5 tw-my-3" />
