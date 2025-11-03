@@ -3,10 +3,10 @@
 //   <ru>
 
 export const essencesSource = `Dynamic
-  Динамическая
+  Динамичная
 Static
-  Статическая
+  Статичная
 Primordial
-  Первозданная
+  Изначальная
 Questing
-  Исследующая`;
+  Ищущая`;

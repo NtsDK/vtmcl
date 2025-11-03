@@ -2,38 +2,40 @@
 // <en>
 //   <ru>
 
-export const backgroundsCount = 31;
+export const backgroundsCount = 33;
 
 export const backgroundsSource = `Allies
   Союзники
 Alternate Identity
-  Альтернативная личность
+  Альтер эго
 Arcane/Cloaking
-  Магия/Маскировка
+  Морок/Маскировка
 Avatar/Genius
-  Аватар/Гений
+  Аватара/Гений
 Backup
-  Запасной план
+  Прикрытие
+Blessing
+  Благословение
 Certification
-  Сертификаты
+  Удостоверение
 Chantry/Construct
-  Храм/Конструкт
+  Капелла/Конструкт
 Contacts
-  Контакты
+  Информаторы
 Cult
   Культ
 Demesne
-  Владения
+  Поместье
 Destiny
   Судьба
 Dream/Hypercam
-  Сон/Гиперкамера
+  Транс/Гиперзубрёжка
 Enhancement $
   Улучшение $
 Fame
   Слава
 Familiar/Companion
-  Знакомый/Компаньон
+  Фамильяр/Компаньон
 Influence
   Влияние
 Legend
@@ -49,19 +51,21 @@ Past Lives
 Patron
   Покровитель
 Rank
-  Ранг
+  Титул
 Requisitions *
-  Поставки *
+  Снабжение *
 Resources
-  Ресурсы
+  Богатство
 Retainers
-  Прислужники
+  Подручные
 Sanctum/Laboratory $
   Святилище/Лаборатория $
 Secret Weapons *
   Секретное оружие *
 Spies
   Шпионы
+Status
+  Статус
 Totem $
   Тотем $
 Wonder

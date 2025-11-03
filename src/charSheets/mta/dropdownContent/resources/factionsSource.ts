@@ -8,4 +8,4 @@ The Traditions
 The Technocracy
   Технократия
 The Disparates
-  Разрозненные`;
+  Отщепенцы`;

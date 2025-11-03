@@ -58,12 +58,12 @@ export const advantages = {
   time: "Время",
 
   spheres: "Сферы",
-  correspondence: "Связи",
+  correspondence: "Связи/Данные",
   entropy: "Энтропия",
   forces: "Силы",
   life: "Жизнь",
   matter: "Материя",
   mind: "Разум",
-  prime: "Основы",
-  spirit: "Дух",
+  prime: "Первооснова/Польза",
+  spirit: "Дух/Простр. наука",
 };

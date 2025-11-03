@@ -13,21 +13,21 @@ Caretaker
 Criminal
   Преступник
 Executive
-  Руководитель
+  Администратор
 Guardian
-  Защитник
+  Страж
 Intellectual
   Интеллектуал
 Kid
-  Подросток
+  Малец
 Laborer
-  Работяга
+  Рабочий
 Mystic
   Мистик
 Night-Owl
-  Ночной житель
+  Полуночник
 Rebel
-  Бунтарь
+  Мятежник
 Technician
   Техник
 Warrior

@@ -5,11 +5,11 @@
 export const archetypesSource = `Activist
   Активист
 Benefactor
-  Благодетель
+  Меценат
 Contrary
-  Непокорный
+  Противоборец
 Crusader
-  Крестоносец
+  Правдоискатель
 Hacker
   Хакер
 Idealist
@@ -17,23 +17,23 @@ Idealist
 Innovator
   Новатор
 Kid
-  Подросток
+  Дитя
 Loner
   Одиночка
 Machine
-  Машина
+  Человек-машина
 Mad Scientist
   Безумный учёный
 Martyr
   Мученик
 Monster
-  Чудовище
+  Монстр
 Prophet
   Пророк
 Rogue
-  Эгоцентрист
+  Бунтарь
 Sensualist
-  Сентименталист
+  Сладострастник
 Survivor
   Борец
 Traditionalist

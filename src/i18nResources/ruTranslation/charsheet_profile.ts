@@ -23,7 +23,7 @@ export const profile = {
 
   residence: "Проживание:",
 
-  essence: "Эссенция:",
-  affiliation: "Фракция:",
-  sect: "Кабал:",
+  essence: "Сущность:",
+  affiliation: "Принадлежность:",
+  sect: "Фракция:",
 };

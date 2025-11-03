@@ -4,19 +4,19 @@
 //     [groupName]
 
 export const sectsSource = `Akashayana/Akashic Brotherhood
-  Акашаяна/Акашик
+  Акашаяна/Акашийское Братство
     [traditions]
 Celestial Chorus
   Небесный Хор
     [traditions]
-Cult of Ecstasy
-  Культ Экстаза
+Cult of Ecstasy/Sahajiya
+  Культ Экстаза/Сахаджия
     [traditions]
 Dreamspeakers/Kha'vadi
-  Вестники Снов
+  Говорящие с Грёзой/Кха'вади
     [traditions]
 Euthanatoi/Chakravanti
-  Эвтанатои/Чакраванти
+  Эвтанаты/Чакраванти
     [traditions]
 Order of Hermes
   Орден Гермеса
@@ -28,7 +28,7 @@ Verbena
   Вербена
     [traditions]
 Virtual Adepts
-  Виртуальные Адепты
+  Адепты Виртуальности
     [traditions]
 Iteration X
   Итерация Икс
@@ -37,7 +37,7 @@ New World Order
   Новый Мировой Порядок
     [technocracy]
 Progenitors
-  Прогениторы
+  Родоначальники
     [technocracy]
 Syndicate
   Синдикат
@@ -46,7 +46,7 @@ Void Engineers
   Инженеры Пустоты
     [technocracy]
 Ahl-i-Batin
-  Ахл-и-Батин
+  Аль-и-Батин
     [disparates]
 Bata'a
   Бата'а
@@ -67,29 +67,22 @@ Orphanes
   Сироты
     [disparates]
 Sisters of Hippolyta
-  Сестры Ипполиты
+  Сёстры Ипполиты
     [disparates]
 Taftani
   Тафтани
     [disparates]
 Templar Knights
-  Тамплиеры
+  Рыцари-Тамплиеры
     [disparates]
 Wu Long
-  Ву Лонг
+  У-Лун
     [disparates]`;
 
 // Format:
 // <id>
 //   <en>
 //     <ru>
-
-// export const houseGroupsSource = `seelie
-// 	Seelie
-// 		Благие
-// unseelie
-// 	UnSeelie
-// 		Неблагие`;
 
 export const factionsSource = `traditions
   The Traditions
@@ -99,4 +92,4 @@ technocracy
     Технократия
 disparates
   The Disparates
-    Разрозненные`;
+    Отщепенцы`;

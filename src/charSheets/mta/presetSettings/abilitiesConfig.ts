@@ -8,39 +8,39 @@ export const talentsArr: AbilitiesT[] = [
   "alertness",
   "brawl",
   "intimidation",
+  "art",
   "expression",
   "leadership",
+  "streetwise",
   "subterfuge",
   "awareness",
   "empathy",
-  "art",
-  "streetwise",
 ];
 export const skillsArr: AbilitiesT[] = [
+  "martialArts",
+  "drive",
   "survival",
+  "research",
+  "meditation",
   "crafts",
   "stealth",
-  "melee",
-  "etiquette",
-  "drive",
   "firearms",
-  "meditation",
-  "martialArts",
-  "research",
-  "technology"
+  "melee",
+  "technology",
+  "etiquette",
 ];
 export const knowledgesArr: AbilitiesT[] = [
   "academics",
+  "science",
+  "enigmas",
   "law",
+  "computer",
+  "cosmology",
   "medicine",
   "occult",
   "politics",
   "investigation",
-  "enigmas",
-  "computer",
-  "cosmology",
   "esoterica",
-  "science"
 ];
 
 export const abilitiesConfig: AbilitiesConfig = [

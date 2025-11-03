@@ -11,9 +11,9 @@ interface SpheresSectionsProps extends SpheresService {
 }
 
 const spheresConfig: SpheresConfig = [
-  ["correspondence", "entropy", "forces"],
-  ["life", "matter", "mind"],
-  ["prime", "spirit", "time"],
+  ["time", "spirit", "life"],
+  ["matter", "prime", "mind"],
+  ["correspondence", "forces", "entropy"],
 ];
 
 export const SpheresSections = memo(function SpheresSections(
