@@ -15,7 +15,7 @@ export const initialMtAProfile: MtAProfile = {
 
 export const initialMtAAbilities: MtAAbilities = {
   ...initialCommonAbilities,
-  enigmas: 0,
+  enigmas_mta: 0,
   art: 0,
   martialArts: 0,
   meditation: 0,

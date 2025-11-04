@@ -32,7 +32,7 @@ export const skillsArr: AbilitiesT[] = [
 export const knowledgesArr: AbilitiesT[] = [
   "academics",
   "science",
-  "enigmas",
+  "enigmas_mta",
   "law",
   "computer",
   "cosmology",

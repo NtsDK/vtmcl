@@ -6,6 +6,6 @@ export interface MtAAbilities extends CommonAbilities {
   meditation: number;
   research: number;
   cosmology: number;
-  enigmas: number;
+  enigmas_mta: number;
   esoterica: number;
 }

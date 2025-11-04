@@ -167,7 +167,7 @@ export function migrate(charSheetSrc: any): unknown {
     charSheet.Charsheet.abilities.meditation = 0;
     charSheet.Charsheet.abilities.research = 0;
     charSheet.Charsheet.abilities.cosmology = 0;
-    charSheet.Charsheet.abilities.enigmas = 0;
+    charSheet.Charsheet.abilities.enigmas_mta = 0;
     charSheet.Charsheet.abilities.esoterica = 0;
     charSheet.Charsheet.profile.essence = "";
     charSheet.Charsheet.profile.affiliation = "";

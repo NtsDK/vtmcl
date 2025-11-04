@@ -64,4 +64,5 @@ export const abilities = {
   research: "Исследование",
   cosmology: "Космология",
   esoterica: "Эзотерика",
+  enigmas_mta: "Загадки",
 };
