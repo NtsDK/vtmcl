@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink, faLinkSlash } from "@fortawesome/free-solid-svg-icons";
 
 import { useLimits } from "../../../../charSheets/root/services/storageAdapter";
 import { Subheader } from "../../../generic/uiPrimitives";
@@ -30,6 +32,8 @@ interface AdvantagesSectionProps {
 export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
+
+  const [linkQnP, setLinkQnP] = useState(true);
 
   const { limits } = useLimits();
   const backgroundsService = useBackgrounds();
@@ -72,11 +76,25 @@ export function AdvantagesSection(props: AdvantagesSectionProps): JSX.Element {
         <Subheader id="quintessence.header" className="tw-mb-2">
           {t("charsheet.status.quintessence")}
         </Subheader>
-        <QuintessenceSection {...statusService} />
+        <QuintessenceSection {...statusService} linkQnP={linkQnP} />
         <Subheader id="paradox.header" className="tw-mb-2">
           {t("charsheet.status.paradox")}
+          <button
+            className="tw-ml-4"
+            onClick={() => setLinkQnP(!linkQnP)}
+            title={
+              linkQnP
+                ? t("charsheet.status.unlink-q-and-p")
+                : t("charsheet.status.link-q-and-p")
+            }
+          >
+            <FontAwesomeIcon
+              className=" tw-w-3 tw-text-sm tw-text-gray-700"
+              icon={linkQnP ? faLink : faLinkSlash}
+            />
+          </button>
         </Subheader>
-        <ParadoxSection {...statusService} />
+        <ParadoxSection {...statusService} linkQnP={linkQnP} />
       </div>
       <div className="tw-flex-1">
         <Subheader className="tw-mb-2">

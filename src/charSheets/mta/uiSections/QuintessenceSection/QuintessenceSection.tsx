@@ -7,13 +7,14 @@ import { RangeInput2 } from "../../../generic/uiPrimitives";
 
 interface QuintessenceSectionProps extends StatusService {
   className?: string;
+  linkQnP: boolean;
 }
 
 export const QuintessenceSection = memo(function QuintessenceSection(
   props: QuintessenceSectionProps,
 ) {
   const { t } = useTranslation();
-  const { state, setState, className } = props;
+  const { state, setState, className, linkQnP } = props;
 
   return (
     <fieldset
@@ -26,7 +27,15 @@ export const QuintessenceSection = memo(function QuintessenceSection(
         variant="square"
         value={state.quintessence}
         dataContext={"quintessence"}
-        onClick={(value: number) => setState("quintessence", value)}
+        onClick={(value: number) => {
+          if (linkQnP) {
+            const paradoxLimit = 20 - value;
+            if (state.paradox > paradoxLimit) {
+              setState("paradox", paradoxLimit);
+            }
+          }
+          setState("quintessence", value);
+        }}
         className="tw-mb-2"
         multiplier={1.3}
         splitEvery={10}

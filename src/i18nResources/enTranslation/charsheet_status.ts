@@ -68,4 +68,6 @@ export const status = {
   arete: "Arete",
   paradox : "Paradox",
   quintessence: "Quintessence",
+  "link-q-and-p": "Link Quintessence to Paradox",
+  "unlink-q-and-p": "Unlink Quintessence from Paradox",
 };

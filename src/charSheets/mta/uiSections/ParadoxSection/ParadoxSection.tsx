@@ -7,13 +7,14 @@ import { RangeInput2 } from "../../../generic/uiPrimitives";
 
 interface ParadoxSectionProps extends StatusService {
   className?: string;
+  linkQnP: boolean;
 }
 
 export const ParadoxSection = memo(function ParadoxSection(
   props: ParadoxSectionProps,
 ) {
   const { t } = useTranslation();
-  const { state, setState, className } = props;
+  const { state, setState, className, linkQnP } = props;
 
   return (
     <fieldset
@@ -27,6 +28,12 @@ export const ParadoxSection = memo(function ParadoxSection(
         value={state.paradox}
         dataContext={"paradox"}
         onClick={(value: number) => {
+          if (linkQnP) {
+            const quintessenceLimit = 20 - value;
+            if( state.quintessence > quintessenceLimit ) {
+              setState("quintessence", quintessenceLimit);
+            }
+          }
           setState("paradox", value);
         }}
         className="tw-mb-2"

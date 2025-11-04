@@ -68,4 +68,6 @@ export const status = {
   arete: "Арете",
   paradox : "Парадокс",
   quintessence: "Квинтэссенция",
+  "link-q-and-p": "Связать Квинтэссенцию и Парадокс",
+  "unlink-q-and-p": "Отвязать Квинтэссенцию от Парадокса",
 };
