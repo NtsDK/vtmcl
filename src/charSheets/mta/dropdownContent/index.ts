@@ -17,6 +17,7 @@ import {
   sectDisplayGroups_en,
   sectDisplayGroups_ru,
 } from "./resources/sects";
+import { mta_flaws_en, mta_flaws_ru, mta_merits_en, mta_merits_ru } from "./resources/meritsAndFlaws";
 
 export type MtADropdownOptions = Merge<
   CommonDropdownOptions,
@@ -33,8 +34,8 @@ export function getDropdownOptions(language: string): MtADropdownOptions {
   return language === "ru"
     ? {
         backgroundOptions: mta_backgrounds_ru,
-        flawOptions: [],
-        meritOptions: [],
+        flawOptions: mta_flaws_ru,
+        meritOptions: mta_merits_ru,
         archetypeOptions: archetypes_ru,
         conceptOptions: concepts_ru,
         essenceOptions: essences_ru,
@@ -43,8 +44,8 @@ export function getDropdownOptions(language: string): MtADropdownOptions {
       }
     : {
         backgroundOptions: mta_backgrounds_en,
-        flawOptions: [],
-        meritOptions: [],
+        flawOptions: mta_flaws_en,
+        meritOptions: mta_merits_en,
         archetypeOptions: archetypes_en,
         conceptOptions: concepts_en,
         essenceOptions: essences_en,

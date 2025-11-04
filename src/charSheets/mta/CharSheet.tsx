@@ -33,6 +33,7 @@ import { useLimits } from "../root/services/storageAdapter";
 import { SpheresSections } from "./uiSections/SpheresSection";
 import { useSpheres } from "./services/storageAdapter";
 import { AdvantagesSection } from "./uiSections/AdvantagesSection";
+import { useMtADropdownOptions } from "./dropdownContent";
 // import { StatusSection } from "./uiSections/StatusSection";
 
 interface CharSheetProps {}
@@ -41,6 +42,7 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
   const { t } = useTranslation();
 
   const { limits } = useLimits();
+  const { flawOptions, meritOptions } = useMtADropdownOptions();
 
   const otherTraitsService = useOtherTraits();
   const historyService = useCharHistory();
@@ -73,13 +75,13 @@ export function CharSheet(props: CharSheetProps): JSX.Element {
             <MeritsSection
               className="tw-mb-4"
               {...meritsNFlawsService}
-              // meritOptions={meritOptions}
+              meritOptions={meritOptions}
             />
             <Subheader className="tw-mb-2">
               {t("charsheet.status.flaws")}
             </Subheader>
             <FlawsSection {...meritsNFlawsService}
-            // flawOptions={flawOptions}
+            flawOptions={flawOptions}
             />
           </div>
 
