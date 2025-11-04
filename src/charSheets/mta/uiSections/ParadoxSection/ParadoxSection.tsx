@@ -23,6 +23,7 @@ export const ParadoxSection = memo(function ParadoxSection(
       <RangeInput2
         max={20}
         name="paradox"
+        variant="square"
         value={state.paradox}
         dataContext={"paradox"}
         onClick={(value: number) => {

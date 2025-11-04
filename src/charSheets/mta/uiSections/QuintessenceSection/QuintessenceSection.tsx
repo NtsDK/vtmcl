@@ -23,6 +23,7 @@ export const QuintessenceSection = memo(function QuintessenceSection(
       <RangeInput2
         max={20}
         name="quintessence"
+        variant="square"
         value={state.quintessence}
         dataContext={"quintessence"}
         onClick={(value: number) => setState("quintessence", value)}
