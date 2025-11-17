@@ -28,11 +28,11 @@ const presetStubs: Record<PresetName, number> = {
 
 export const presetList: PresetName[] = [
   "vampire_v20",
-  "changeling_v20",
-  "hunter_v20",
   "vampire_da_v20",
   "vampire_v3_revised",
-  "mage_v20"
+  "changeling_v20",
+  "mage_v20",
+  "hunter_v20",
 ];
 
 export type ProfileConfigItem =

@@ -5,7 +5,7 @@ export const about = {
 
   header: "О листе персонажа",
   aboutCharsheetH1: "Об электронном листе персонажа от NtsDK",
-  curVersion: "Версия {{version}} от 20 апреля 2023",
+  curVersion: "Версия {{version}} от 17 ноября 2025",
   license: "Проект с открытым исходным кодом под лицензией Apache 2.0",
   "flaticon-mention":
     "В проекте используются иконки с сайта www.flaticon.com от авторов Freepik, Picol, Nice и Serious.",
@@ -18,8 +18,10 @@ export const about = {
   "vk-group": "Группа проекта вконтакте",
   "tg-channel": "Канал проекта в телеграмме",
   "tg-chat": "Чат проекта в телеграмме",
+  "tg-developer-channel": "Канал разработчика в телеграмме",
   "project-source": "Исходный код проекта",
 
+  thirdPartyLinks: "Сторонние ссылки",
   "studio-101":
     "Издатель и переводчик ролевых игр Студия 101, в продаже есть книги правил на бумаге на русском языке",
   rpgbook:
@@ -28,8 +30,10 @@ export const about = {
   worldofdarkness: "Сайт игровой вселенной Мир тьмы",
 
   "version-history": "История версий",
+  "version-0.7.0":
+    "Версия 0.7.0 (17 ноября 2025) - Добавлен лист персонажа для Mage: The Ascension.",
   "version-0.6.1":
-    "Version 0.6.1 (19 августа 2025) - Исправлена пара ошибок для V3 Revised.",
+    "Версия 0.6.1 (19 августа 2025) - Исправлена пара ошибок для V3 Revised.",
   "version-0.6.0":
     "Версия 0.6.0 (1 февраля 2025) - Добавлен лист персонажа Vampire: the Masquerade. V3 Revised.",
   "version-0.5.0":

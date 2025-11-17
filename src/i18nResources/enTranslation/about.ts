@@ -6,7 +6,7 @@ export const about = {
 
   header: "About Character Sheet",
   aboutCharsheetH1: "About Character Sheet {{type}} by NtsDK",
-  curVersion: "Version {{version}}, 18 January 2023",
+  curVersion: "Version {{version}}, 17 Nov 2025",
   license: "Source code is open under Apache 2 license.",
   "flaticon-mention":
     "Project uses icons from www.flaticon.com, authors Freepik, Picol, Nice and Serious.",
@@ -18,8 +18,10 @@ export const about = {
   "vk-group": "Project group in Vkontakte",
   "tg-channel": "Project channel in Telegram",
   "tg-chat": "Project chat in Telegram",
+  "tg-developer-channel": "Developer channel in Telegram",
   "project-source": "Project source code",
 
+  thirdPartyLinks: "Third party links",
   "studio-101":
     "Publisher and translator of role-playing games Studio 101, rulebooks on paper in Russian on sale",
   rpgbook: "Webstore stanciya «Rolevaya», e-rulebooks in Russian on sale",
@@ -28,6 +30,8 @@ export const about = {
   worldofdarkness: "World of Darkness game universe website",
 
   "version-history": "Version history",
+  "version-0.7.0":
+    "Version 0.7.0 (17 Nov 2025) - Added character sheet Mage: The Ascension.",
   "version-0.6.1":
     "Version 0.6.1 (19 Aug 2025) - Fixed couple bugs for V3 Revised.",
   "version-0.6.0":
