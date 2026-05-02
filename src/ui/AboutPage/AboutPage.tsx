@@ -188,7 +188,7 @@ export function AboutPage(props: AboutPageProps): JSX.Element {
                 <li>{t("about.non-official-notification")}</li>
               </UnorderedList>
               <img
-                src="../public/darkpack_logo1.png"
+                src="./darkpack_logo1.png"
                 alt="Logo of Dark Pack agreement"
               />
             </div>

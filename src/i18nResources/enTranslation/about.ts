@@ -5,7 +5,7 @@ export const about = {
   charsheetWithoutName: "Character Sheet {{type}}. v{{version}}",
 
   header: "About Character Sheet",
-  aboutCharsheetH1: "About Character Sheet {{type}} by NtsDK",
+  aboutCharsheetH1: "About Character Sheet by NtsDK",
   curVersion: "Version {{version}}, 17 Nov 2025",
   license: "Source code is open under Apache 2 license.",
   "flaticon-mention":
