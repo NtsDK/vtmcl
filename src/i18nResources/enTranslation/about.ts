@@ -65,6 +65,10 @@ export const about = {
   "paradox-copyright":
     "Text and illustrations, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.",
   "studio-101-copyright": "Russian translation © «Studio 101», 2019.",
+  "paradox-copyright-2":
+    "Portions of the materials are the copyrights and trademarks of Paradox Interactive AB, and are used with permission. All rights reserved. For more information please visit worldofdarkness.com.",
+  "non-official-notification":
+    "This character sheet is not official World of Darkness material.",
 
   // supported-features
   "supported-features": "Supported features",

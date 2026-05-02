@@ -184,7 +184,13 @@ export function AboutPage(props: AboutPageProps): JSX.Element {
               <UnorderedList>
                 <li>{t("about.paradox-copyright")}</li>
                 <li>{t("about.studio-101-copyright")}</li>
+                <li>{t("about.paradox-copyright-2")}</li>
+                <li>{t("about.non-official-notification")}</li>
               </UnorderedList>
+              <img
+                src="../public/darkpack_logo1.png"
+                alt="Logo of Dark Pack agreement"
+              />
             </div>
           </Card.Body>
         </Card>

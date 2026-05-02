@@ -65,6 +65,10 @@ export const about = {
   "paradox-copyright":
     "Текст и иллюстрации, Vampire™, Vampire: the Masquerade™, World of Darkness™ © Paradox Interactive AB, 2011.",
   "studio-101-copyright": "Перевод ©ООО «Студия 101», 2019.",
+  "paradox-copyright-2":
+    "Частью этого произведения являются торговые марки и защищённые авторским правом материалы, которые принадлежат компании Paradox Interactive AB и используются с её разрешения. Все права защищены. За подробностями обращайтесь по адресу worldofdarkness.com.",
+  "non-official-notification":
+    "Данный лист персонажа не является официальной продукцией по Миру Тьмы.",
 
   // supported-features
   "supported-features": "Поддерживаемые фичи",
